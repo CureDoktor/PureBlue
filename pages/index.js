@@ -92,7 +92,7 @@ export default function Home() {
               <Col md={5}>
                 <div className="d-flex justify-content-center">
                   <Image
-                    src="/../public/assets/homepage/pills.png"
+                    src="/assets/homepage/pills.png"
                     width={320}
                     height={430}
                   />
@@ -124,7 +124,7 @@ export default function Home() {
             <Container>
               <Col md={{ span: 8, offset: 4 }}>
                 <Image
-                  src="/../public/assets/homepage/chart.png"
+                  src="/assets/homepage/chart.png"
                   height={350}
                   width={800}
                 />
@@ -291,7 +291,7 @@ export default function Home() {
               kind of damage these pills can do to your body.
             </p>
             <Image
-              src="/../public/assets/homepage/images.png"
+              src="/assets/homepage/images.png"
               height={970}
               width={1200}
               layout="responsive"
@@ -350,7 +350,7 @@ export default function Home() {
                 </Col>
                 <Col md={5}>
                   <Image
-                    src="/../public/assets/homepage/fake-pill.png"
+                    src="/assets/homepage/fake-pill.png"
                     height={340}
                     width={470}
                     layout="responsive"
