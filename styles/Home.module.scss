@@ -1,0 +1,546 @@
+$primary-color: #0077f0;
+$secondary-color: #003b60;
+
+.primaryColor {
+  color: $primary-color;
+}
+
+.secondaryColor {
+  color: $secondary-color;
+}
+// .main {
+//   min-height: 100vh;
+//   padding: 4rem 0;
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.fieldOneBg {
+  background-image: url("../public/assets/homepage/doctor-bg.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  .fieldOne {
+    padding: 20px 0px 40px 0px;
+    .callUs {
+      text-align: right;
+      font-size: 21px;
+      letter-spacing: -1px;
+      line-height: 30px;
+      color: #2d2d2d;
+      font-weight: 700;
+      padding-bottom: 30px;
+    }
+    .placeholder {
+      max-width: 728px;
+      height: 410px;
+      background-color: #b7b7b7;
+    }
+    h2 {
+      font-size: 54px;
+      line-height: 54px;
+      color: #000000;
+      font-weight: 700;
+    }
+    p {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 600;
+      font-family: "Poppins";
+    }
+  }
+}
+.fieldTwo {
+  text-align: center;
+  background-color: $primary-color;
+  .container {
+    max-width: 920px;
+    display: flex;
+    p {
+      font-size: 33px;
+      line-height: 46px;
+      color: #ffffff;
+      font-weight: 700;
+      font-family: "Poppins";
+      padding: 15px 5px 0px 5px;
+    }
+  }
+}
+.fieldThree {
+  background-color: #f6f6f6;
+  padding: 100px 0px;
+  ul {
+    li {
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 500;
+      font-family: "Poppins";
+    }
+  }
+  p {
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 26px;
+    color: #868e93;
+    font-weight: 400;
+    padding-left: 20px;
+  }
+  h2 {
+    font-size: 34px;
+    line-height: 48px;
+    color: #000000;
+    font-weight: 400;
+    font-family: "Poppins";
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 0px 90px 0px;
+  }
+  .pillsBg {
+    background-image: url("../public/assets/homepage/pills-bg.png");
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+}
+.fieldFour {
+  padding: 80px 0px 100px 0px;
+  color: #ffffff;
+  background-color: $primary-color;
+  h3 {
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    font-weight: 700;
+    padding-top: 50px;
+  }
+  p {
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    font-weight: 300;
+    b {
+      font-weight: 700;
+    }
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+  }
+}
+.fieldFive {
+  padding: 80px 0px;
+  h2 {
+    font-size: 61px;
+    line-height: 51px;
+    color: $primary-color;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    font-weight: 700;
+    padding-top: 20px;
+  }
+  .blueLine {
+    padding: 30px 60px 130px 60px;
+    border-bottom: 4px solid #0077f0;
+  }
+  .boxBg {
+    background-image: url("../public/assets/homepage/box-bg.png");
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  .getRight {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 0px;
+    h3 {
+      padding-left: 40px;
+      padding-bottom: 60px;
+      font-size: 41px;
+      line-height: 51px;
+      font-weight: 700;
+    }
+    .grayField {
+      font-size: 12px;
+      letter-spacing: 0px;
+      line-height: 24px;
+      color: #868e93;
+      font-weight: 400;
+      background-color: #f6f6f6;
+      padding: 30px 30px 20px 30px;
+      margin-top: 100px;
+    }
+  }
+}
+.fieldSix {
+  text-align: center;
+  padding: 60px 0px;
+  background-color: $primary-color;
+  h2 {
+    padding-bottom: 40px;
+    font-size: 41px;
+    line-height: 51px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 21px;
+    line-height: 51px;
+    color: #fefefe;
+    font-weight: 700;
+    border: 2px solid #fefefe;
+    max-width: 850px;
+    margin: auto;
+    padding: 12px;
+  }
+}
+.fieldSeven {
+  background-color: #f6f6f6;
+  padding: 120px 0px;
+  h2 {
+    text-align: center;
+    font-size: 41px;
+    line-height: 51px;
+    color: #010101;
+    font-weight: 700;
+    max-width: 1100px;
+    margin: auto;
+    padding-bottom: 50px;
+  }
+  p {
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 40px;
+  }
+}
+.fieldEight {
+  padding: 90px 0px 120px 0px;
+  .pillPart {
+    border-bottom: 4px solid $primary-color;
+    padding: 50px;
+  }
+  h2 {
+    font-size: 41px;
+    line-height: 51px;
+    color: #000000;
+    font-weight: 700;
+    padding-top: 50px;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 32px;
+    color: #000000;
+    font-weight: 400;
+  }
+  ul {
+    padding: 40px 30px 40px 80px;
+  }
+  h4 {
+    font-size: 18px;
+    letter-spacing: 0px;
+    line-height: 26px;
+    color: #0077f0;
+    font-weight: 500;
+    padding-top: 30px;
+  }
+  p {
+    font-size: 12px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: #868e93;
+    font-weight: 400;
+  }
+  .satisfied {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+  .rectangle {
+    margin: 15px;
+    padding: 40px 30px;
+    border-radius: 27px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.35);
+    .member {
+      &::after {
+        content: url("../public/assets/homepage/blue-check.png");
+        position: relative;
+        left: 5px;
+        bottom: -5px;
+      }
+    }
+  }
+  .satisfiedCustomers {
+    max-width: 1050px;
+    margin: auto;
+    .rectangle {
+      height: 300px;
+    }
+  }
+}
+.fieldNine {
+  background-color: $primary-color;
+  padding: 120px 0px 80px 0px;
+  .expand {
+    margin: auto;
+    color: #ffffff;
+    max-width: 900px;
+  }
+  .cardHeader {
+    background-color: $primary-color;
+    border: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid $secondary-color;
+  }
+  .header {
+    background-color: $primary-color;
+    border: 0px;
+    padding: 10px 0px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 41px;
+    line-height: 51px;
+    color: #ffffff;
+    font-weight: 700;
+    padding-bottom: 80px;
+  }
+  .plus {
+    color: $primary-color;
+    background-color: white;
+    text-align: center;
+    width: 34px;
+    height: 36px;
+    padding-top: 6px;
+  }
+  .textPart {
+    padding-top: 6px;
+  }
+}
+.fieldTen {
+  padding: 100px 0px;
+  text-align: center;
+  h2 {
+    font-size: 41px;
+    line-height: 51px;
+    color: #000000;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 33px;
+    color: #000000;
+    font-weight: 400;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 0px 80px 0px;
+  }
+  .blueField {
+    background-color: $primary-color;
+    text-align: left;
+    border-radius: 27px;
+    padding: 40px 30px;
+    h2 {
+      font-size: 24px;
+      letter-spacing: 0px;
+      line-height: 24px;
+      color: #fefefe;
+      border-bottom: 1px solid #ffffff;
+      padding-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      letter-spacing: 0px;
+      line-height: 24px;
+      color: #fefefe;
+      font-weight: 400;
+      padding-top: 25px;
+    }
+  }
+  h4 {
+    font-size: 21px;
+    letter-spacing: 0px;
+    line-height: 34px;
+    color: #000000;
+    font-weight: 700;
+    padding: 60px 20px 80px 20px;
+  }
+}
+.fieldEleven {
+  background-color: #f6f6f6;
+  padding-bottom: 150px;
+  h2 {
+    font-size: 41px;
+    line-height: 41px;
+    font-weight: 700;
+    text-align: center;
+    padding: 80px 0px 60px 0px;
+  }
+  .plan {
+    padding-bottom: 100px;
+    button {
+      font-size: 15px;
+      line-height: 58px;
+      font-weight: 400;
+      border-radius: 10px;
+      background-color: #ffffff;
+      color: #bdbdbd;
+    }
+  }
+  h3 {
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: #000000;
+    font-weight: 700;
+    padding-top: 10px;
+  }
+
+  .planType {
+    font-size: 15px;
+    line-height: 38px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px 10px 10px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #bdbdbd;
+  }
+  .plans {
+    background-color: #ffffff;
+    padding: 40px 40px;
+    h3 {
+      font-size: 28px;
+      letter-spacing: 0px;
+      line-height: 24px;
+      color: #000000;
+      font-weight: 700;
+    }
+    ul {
+      padding: 30px 5px;
+      li {
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        font-weight: 400;
+      }
+    }
+    .startOrder {
+      font-size: 20px;
+      padding: 15px 100px;
+    }
+  }
+  .containerPlan {
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 550px) {
+}
