@@ -1,0 +1,71 @@
+$primary-color: #0077f0;
+$secondary-color: #003b60;
+
+.faqPage {
+  background-color: #fff;
+  padding: 120px 0px 80px 0px;
+  h3 {
+    margin: auto;
+    color: #999999;
+    max-width: 900px;
+    font-weight: 500;
+    padding: 70px 0px 20px 0px;
+  }
+  .expand {
+    margin: auto;
+    color: #999999;
+    max-width: 900px;
+    font-weight: 500;
+  }
+  .cardHeader {
+    background-color: #fff;
+    border: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid $primary-color;
+  }
+  .header {
+    background-color: #fff;
+    border: 0px;
+    padding: 10px 0px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 41px;
+    line-height: 51px;
+    color: #000;
+    font-weight: 700;
+    padding-bottom: 80px;
+  }
+  h3 {
+    max-width: 900px;
+    margin: auto;
+  }
+  .plus {
+    color: #fff;
+    background-color: $primary-color;
+    text-align: center;
+    width: 34px;
+    height: 36px;
+    padding-top: 6px;
+  }
+  .textPart {
+    padding-top: 6px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .faqPage {
+    padding: 40px 0px;
+    h2 {
+      font-size: 25px;
+      line-height: 28px;
+      padding-bottom: 0px;
+    }
+    .plus {
+      width: 25px;
+      height: 28px;
+      padding: 3.5px;
+    }
+    font-size: 15px;
+  }
+}

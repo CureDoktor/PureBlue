@@ -6,11 +6,11 @@ import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import Header from "../components/Header";
-import { BsCheck, Cpu } from "react-bootstrap-icons";
+import { Check, PatchCheck } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
-import Check from "../components/Check";
+import CheckForm from "../components/CheckForm";
 
 export default function Home() {
   function ContextAwareToggle({ children, eventKey, callback }) {
@@ -100,14 +100,29 @@ export default function Home() {
               </Col>
               <Col md={7}>
                 <ul>
-                  <li>Genuine Sildenafil Formulation from Pfizer</li>
                   <li>
-                    PureBlue ED focused online medical support and consultation*
+                    <Check className={styles.checkmark} /> Genuine Sildenafil
+                    Formulation from Pfizer
                   </li>
-                  <li>FDA and CGMP compliant laboratory</li>
-                  <li>Convenient and easy prescription pills</li>
-                  <li>Total Privacy Promise</li>
-                  <li>Best price guaranteed!</li>
+                  <li>
+                    <Check className={styles.checkmark} /> PureBlue ED focused
+                    online medical support and consultation*
+                  </li>
+                  <li>
+                    <Check className={styles.checkmark} /> FDA and CGMP
+                    compliant laboratory
+                  </li>
+                  <li>
+                    <Check className={styles.checkmark} /> Convenient and easy
+                    prescription pills
+                  </li>
+                  <li>
+                    <Check className={styles.checkmark} /> Total Privacy Promise
+                  </li>
+                  <li>
+                    <Check className={styles.checkmark} /> Best price
+                    guaranteed!
+                  </li>
                 </ul>
                 <p>
                   *Prescriptions are provided pending on the online evaluation
@@ -338,14 +353,26 @@ export default function Home() {
                     pills!{" "}
                   </h3>
                   <ul>
-                    <li>Fly-by-night companies</li>
-                    <li>Offshore-based companies </li>
-                    <li>Manufactured overseas</li>
                     <li>
-                      Non-prescription E.D. pill (over-the-counter quality
-                      pills){" "}
+                      <Check className={styles.checkmark} /> Fly-by-night
+                      companies
                     </li>
-                    <li>Unapproved and/or unlicensed source</li>
+                    <li>
+                      <Check className={styles.checkmark} /> Offshore-based
+                      companies{" "}
+                    </li>
+                    <li>
+                      <Check className={styles.checkmark} /> Manufactured
+                      overseas
+                    </li>
+                    <li>
+                      <Check className={styles.checkmark} /> Non-prescription
+                      E.D. pill (over-the-counter quality pills)
+                    </li>
+                    <li>
+                      <Check className={styles.checkmark} /> Unapproved and/or
+                      unlicensed source
+                    </li>
                   </ul>
                 </Col>
                 <Col md={5}>
@@ -386,6 +413,7 @@ export default function Home() {
                     <p className={styles.member}>
                       <span className={styles.secondaryColor}>Pure</span>
                       <span className={styles.primaryColor}>Blue</span> Member
+                      <PatchCheck className={styles.patchCheck} />
                     </p>
                   </div>
                 </Col>
@@ -401,6 +429,7 @@ export default function Home() {
                     <p className={styles.member}>
                       <span className={styles.secondaryColor}>Pure</span>
                       <span className={styles.primaryColor}>Blue</span> Member
+                      <PatchCheck className={styles.patchCheck} />
                     </p>
                   </div>
                 </Col>
@@ -416,6 +445,7 @@ export default function Home() {
                     <p className={styles.member}>
                       <span className={styles.secondaryColor}>Pure</span>
                       <span className={styles.primaryColor}>Blue</span> Member
+                      <PatchCheck className={styles.patchCheck} />
                     </p>
                   </div>
                 </Col>
