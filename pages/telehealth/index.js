@@ -163,6 +163,8 @@ export default function Home() {
               treatment options may be limited.
             </li>
           </ul>
+          <br />
+          <br />
           <div className={styles.grayField}>
             <h4>
               By accepting this Consent to Telehealth, you acknowledge,
@@ -231,7 +233,7 @@ export default function Home() {
                 shared in the following circumstances:
               </li>
             </ul>
-            <ul>
+            <ul className={styles.grayList}>
               <li>When a valid court order is issued for medical records.</li>
               <li>Reporting suspected abuse, neglect, or domestic violence.</li>
               <li>
@@ -240,6 +242,8 @@ export default function Home() {
               </li>
             </ul>
           </div>
+          <br />
+          <br />
           <p className={styles.blueText}>
             PureBlue Asynchronous Telehealth Informed Consent
           </p>
@@ -418,6 +422,8 @@ export default function Home() {
               </li>
             </ul>
           </div>
+          <br />
+          <br />
           <p>
             <b>Call/Email/Text Messaging Consent:</b> I expressly consent to
             allow PureBlue or its health care Providers to call, email, or text
