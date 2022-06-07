@@ -37,28 +37,28 @@ export default function Footer() {
           <Container>
             <Row className={styles.footerRow}>
               <div className={styles.links}>
-                <Link href="/home">
+                <Link className={styles.link} href="/home">
                   <a>Home</a>
                 </Link>
-                <Link href="/about">
+                <Link className={styles.link} href="/about">
                   <a>About Us</a>
                 </Link>
-                <Link href="/faq">
+                <Link className={styles.link} href="/faq">
                   <a>FAQs</a>
                 </Link>
-                <Link href="/contact">
+                <Link className={styles.link} href="/contact">
                   <a>Contact Us</a>
                 </Link>
-                <Link href="/login">
+                <Link className={styles.link} href="/login">
                   <a>LOGIN</a>
                 </Link>
-                <Link href="/telehealth">
+                <Link className={styles.link} href="/telehealth">
                   <a>Telehealth</a>
                 </Link>
-                <Link href="/terms">
+                <Link className={styles.link} href="/terms">
                   <a>Terms of Use</a>
                 </Link>
-                <Link href="/privacy">
+                <Link className={styles.link} href="/privacy">
                   <a>Privacy Policy</a>
                 </Link>
               </div>

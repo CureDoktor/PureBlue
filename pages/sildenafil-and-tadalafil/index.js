@@ -52,7 +52,8 @@ export default function Home() {
               <Col md={5}></Col>
               <Col md={7}>
                 <h3>
-                  What's the difference between <br /> Sildenafil and Tadalafil?
+                  What's the difference between <br className={styles.br} />{" "}
+                  Sildenafil and Tadalafil?
                 </h3>
               </Col>
             </Row>
@@ -61,13 +62,7 @@ export default function Home() {
         <div className={styles.fieldTwo}>
           <Container>
             <div className={styles.blueBorder}>
-              <Row>
-                <Col md={5}>
-                  <Image
-                    src="/assets/difference/man-thinking.png"
-                    className={styles.image}
-                  />
-                </Col>
+              <Row className="flex-row-reverse">
                 <Col md={7}>
                   <p>
                     Dealing with ED has never been easier with the help of the
@@ -78,9 +73,15 @@ export default function Home() {
                     rate of more than 80%.
                   </p>
                 </Col>
+                <Col md={5}>
+                  <Image
+                    src="/assets/difference/man-thinking.png"
+                    className={styles.image}
+                  />
+                </Col>
               </Row>
-              <br />
-              <br />
+              <br className={styles.br} />
+              <br className={styles.br} />
             </div>
             <p>
               While both ED medications have plenty of things in common, a few
@@ -88,6 +89,159 @@ export default function Home() {
               major differences between Sildenafil and Tadalafil to help you
               understand which option works best for your needs:
             </p>
+            <br />
+            <Row>
+              <Col md={{ span: 4, offset: 1 }}>
+                <div className={styles.rectangles}>
+                  <h3>Sildenafil</h3>
+                  <p>
+                    Sildenafil is the generic name for the active component used
+                    in Viagra. Typically, Sildenafil works faster, and the
+                    effects may last for 4-8 hours after taking a single dose.
+                  </p>
+                </div>
+              </Col>
+              <Col md={{ span: 4, offset: 1 }}>
+                <div className={styles.rectangles}>
+                  <h3>Tadalafil</h3>
+                  <p>
+                    Tadalafil is the generic name for the active component used
+                    in Cialis. It takes about 2-3 hours for the effects of
+                    Tadalafil to take full effect, but its benefits last for
+                    24-36 hours after taking a single dose.
+                  </p>
+                </div>
+              </Col>
+            </Row>
+            <div className={styles.grayField}>
+              <p>
+                <b>Caution:</b> <br />
+                Do not take Sildenafil and Tadalafil if you take medication if
+                you take prescription medication for hypertension (nitrates) and
+                pulmonary hypertension (guanylate cyclase stimulator), since
+                these drugs have contraindications with the effects of ED
+                medication. Do not take Sildenafil and Tadalafil if you are
+                known to have allergies with either medication. Consult with
+                your doctor to ensure that you are adequately healthy to enjoy
+                sexual intercourse. Discontinue the use of these medications if
+                you encounter dizziness, lightheadedness, pain, and nausea
+                during sex. Sildenafil and Tadalafil may cause side effects.
+                Seek immediate medical help if you experience any side effects.
+              </p>
+            </div>
+          </Container>
+        </div>
+        <div className={styles.fieldThree}>
+          <Container>
+            <h2>
+              Here’s what you need to know before choosing between Sildenafil
+              and Tadalafil
+            </h2>
+            <Row className={styles.toKnow}>
+              <Col sm={2}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="/assets/difference/icon-1.png"
+                    className={styles.images}
+                  />
+                </div>
+              </Col>
+              <Col sm={10}>
+                <p>
+                  <b>Plan ahead</b>
+                  <br className={styles.br} />
+                  <br /> Timing your intake of both Sildenafil and Tadalafil are
+                  matters of personal preference. You may want to be spontaneous
+                  and take Tadalafil hours before your expected opportunity for
+                  sex since Tadalafil gives you a longer window of opportunity,
+                  or you may want to take Sildenafil an hour before you’re more
+                  certain of your opportunity to have sex since Sildenafil only
+                  stays in your body for a shorter period.
+                  <br />
+                  <br /> It’s important to note that while Tadalafil stays in
+                  your body longer, it also takes more time before you
+                  experience the effects of the drug. On the other hand,
+                  Sildenafil works faster but wears off in a matter of hours.
+                </p>
+              </Col>
+            </Row>
+            <Row className={styles.toKnow}>
+              <Col sm={2}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="/assets/difference/icon-2.png"
+                    className={styles.images}
+                  />
+                </div>
+              </Col>
+              <Col sm={10}>
+                <p>
+                  <b>Food types to avoid</b>
+                  <br className={styles.br} />
+                  <br />
+                  It’s important to know that certain foods may prolong the
+                  effectiveness of Sildenafil. Fatty foods may delay the
+                  effectiveness of Sildenafil. If you are expecting to eat
+                  before having sex, take Sildenafil before your meal. Drinking
+                  grapefruit juice may alter the metabolism of Tadalafil.
+                  <br />
+                  <br /> You may also want to limit your intake of alcohol when
+                  taking Sildenafil or Tadalafil. Alcohol may cause low blood
+                  pressure, which may increase your chances of having side
+                  effects such as dizziness and increased heart rate.
+                </p>
+              </Col>
+            </Row>
+            <Row className={styles.toKnow}>
+              <Col sm={2}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="/assets/difference/icon-3.png"
+                    className={styles.images}
+                  />
+                </div>
+              </Col>
+              <Col sm={10}>
+                <p>
+                  <b>Daily pill or On-demand</b>
+                  <br className={styles.br} />
+                  <br />
+                  If you want to limit your use of ED medication to only a few
+                  hours every day, you may want to consider taking Sildenafil as
+                  it only stays in your system for a few hours. If you want to
+                  have the ability to enjoy sexual intercourse whenever the
+                  opportunity presents itself, Tadalafil may be the better
+                  option as it remains effective for 24-36 hours.
+                </p>
+              </Col>
+            </Row>
+            <Row className={styles.toKnow}>
+              <Col sm={2}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src="/assets/difference/icon-4.png"
+                    className={styles.images}
+                  />
+                </div>
+              </Col>
+              <Col sm={10}>
+                <p>
+                  <b>Price</b>
+                  <br className={styles.br} />
+                  <br />
+                  We now have the opportunity to enjoy off-brand Sildenafil and
+                  Tadalafil, which are priced considerably lower compared to
+                  their branded counterparts. You no longer have to spend
+                  hundreds of dollars every month to maintain a healthy sex
+                  life. Prescription drugs for sexual and erectile dysfunction
+                  are excluded from most health insurance plans, including the
+                  Part D coverage of Medicare, so it helps that you have the
+                  option to buy off-brand drugs for erectile dysfunction. You
+                  may want to purchase branded Viagra and Cialis for a higher
+                  cost, but with the confidence of using a well-known brand.
+                </p>
+              </Col>
+            </Row>
           </Container>
         </div>
       </main>

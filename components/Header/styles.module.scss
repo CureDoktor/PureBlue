@@ -9,6 +9,13 @@
   @media (max-width: 992px) {
     padding: unset;
   }
+
+  @media (max-width: 550px) {
+    padding: 15px;
+    .collapse {
+      padding-top: 20px;
+    }
+  }
 }
 
 .collapse {
@@ -33,7 +40,6 @@
 
 .link {
   margin: 0 15px;
-
   a {
     &::after {
       display: none;

@@ -54,4 +54,16 @@
   font-weight: 400;
   font-family: "Poppins";
   padding-bottom: 30px;
+  margin-bottom: 0px;
+}
+@media screen and (max-width: 550px) {
+  .link {
+    display: block;
+  }
+  .links a {
+    display: block;
+    padding: 5px;
+    width: 45%;
+    float: left;
+  }
 }
