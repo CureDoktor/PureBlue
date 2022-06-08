@@ -37,7 +37,7 @@ export default function Footer() {
           <Container>
             <Row className={styles.footerRow}>
               <div className={styles.links}>
-                <Link className={styles.link} href="/home">
+                <Link className={styles.link} href="/">
                   <a>Home</a>
                 </Link>
                 <Link className={styles.link} href="/about">
