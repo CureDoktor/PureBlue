@@ -16,6 +16,7 @@ $secondary-color: #003b60;
     line-height: 32px;
     font-weight: 700;
     color: #0077f0;
+    padding-top: 40px;
   }
   h2 {
     padding: 50px 0px 10px 0px;
@@ -66,6 +67,33 @@ $secondary-color: #003b60;
   }
   .grayText {
     color: #999999;
+  }
+  .table {
+    margin: 50px 0px;
+    tr {
+      th {
+        padding: 15px;
+      }
+    }
+  }
+  .numbers {
+    padding: 40px 0px;
+    .blueText {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    p {
+      padding-left: 60px;
+    }
+    .privacy {
+      font-size: 24px;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+    }
+  }
+  .tableHead {
+    background-color: $primary-color;
+    color: #fff;
   }
 }
 @media screen and (max-width: 550px) {
@@ -135,6 +163,22 @@ $secondary-color: #003b60;
     }
     .grayText {
       color: #999999;
+    }
+    .numbers {
+      padding: 40px 0px;
+      .blueText {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      p {
+        padding-left: 12px;
+        text-indent: -1em;
+      }
+      .privacy {
+        font-size: 24px;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+      }
     }
   }
 }

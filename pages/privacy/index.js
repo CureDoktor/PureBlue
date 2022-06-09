@@ -6,7 +6,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { Check, PatchCheck } from "react-bootstrap-icons";
-import { Card } from "react-bootstrap";
+import { Card, Table } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
 export default function Home() {
@@ -82,7 +82,11 @@ export default function Home() {
             NOT USE THE SERVICES.
           </p>
           <div className={styles.numbers}>
-            <b>This Privacy Policy contains the following sections:</b>
+            <b className={styles.privacy}>
+              This Privacy Policy contains the following sections:
+            </b>
+            <br />
+            <br />
             <p>
               1.{" "}
               <span className={styles.blueText}>
@@ -455,6 +459,7 @@ export default function Home() {
               products we offer
             </li>
           </ul>
+          <p>While providing services, we may use your information to:</p>
           <ul>
             <li>
               Administer, improve, and support the all of our Services and, as
@@ -815,183 +820,226 @@ export default function Home() {
             that are subject to the CCPA and the third parties to whom we
             disclose:
           </p>
-
-          <div className={styles.blueLine}></div>
-          <h2>What is Asynchronous Telehealth?</h2>
+          <Table striped bordered hover className={styles.table}>
+            <thead className={styles.tableHead}>
+              <tr>
+                <th>Category of Personal Information</th>
+                <th>Categories of Third Parties to Which we Disclose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Commercial and transactional information (e.g., information
+                  about your purchases)
+                </td>
+                <td>
+                  Service providers; our affiliates; health care providers and
+                  services; entities for legal and fraud prevention
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Customer service data (e.g., information you provide through a
+                  chat or call with our PureBlue's Customer Service Team)
+                </td>
+                <td>
+                  Service providers; our affiliates; health care providers and
+                  services; entities for legal and fraud prevention
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Demographic and statistical data (e.g., your gender, interests
+                  based on products and services you use)
+                </td>
+                <td>
+                  Service providers; our affiliates; entities for legal and
+                  fraud prevention
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Financial information (e.g., credit card info collected by our
+                  payment processors)
+                </td>
+                <td>
+                  Payment processors; service providers; our affiliates;
+                  entities for legal and fraud prevention
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Geolocation information (e.g., general location and precise
+                  location, with your permission)
+                </td>
+                <td>
+                  Service providers; our affiliates; entities for legal and
+                  fraud prevention
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Internet or other network or device activity (e.g., IP
+                  address, browsing history, app usage)
+                </td>
+                <td>
+                  Service providers; our affiliates; entities for legal and
+                  fraud prevention
+                </td>
+              </tr>
+              <tr>
+                <td>Physical characteristics (e.g., photos of you)</td>
+                <td>Service providers; our affiliates</td>
+              </tr>
+              <tr>
+                <td>Physical characteristics (e.g., photos of you)</td>
+                <td>Service providers; our affiliates</td>
+              </tr>
+              <tr>
+                <td>
+                  User-generated content (e.g., information you choose to post
+                  in our online forums)
+                </td>
+                <td>
+                  Service providers; our affiliates; entities for legal and
+                  fraud prevention
+                </td>
+              </tr>
+            </tbody>
+          </Table>
           <p>
-            Asynchronous telehealth is a way to deliver telehealth using
-            asynchronous communication. Asynchronous communication often
-            referred to as “store-and-forward” communication, is communication
-            that between participants that doesn’t happen at the same time. An
-            example of asynchronous communication is a telehealth encounter with
-            a health care provider that involves sending photos, video, or other
-            communications via email or text message. “Asynchronous” means “not
-            occurring at the same time” and is different from “synchronous”
-            telemedicine, which generally includes visits conducted in real-time
-            between patients and health care Providers through audio- or
-            video-based technology including live phone calls or
-            video-conferencing. Health care Providers may use asynchronous
-            telehealth to aid in diagnoses and medical consultations when live
-            communication or face-to-face contact is not possible or necessary.
+            The business purposes for which we use the personal information we
+            collect are: manage, facilitate, and improve the Services; research,
+            marketing, and analytics; communicate with users; technical support
+            and customer service; security and fraud prevention; and legal
+            compliance and defense. For more information about how we use and
+            share your personal information, please see the “Purposes for How We
+            Use Your Information” and “How We Share and Disclose Your
+            Information” sections of this Policy above.
           </p>
-          <h2>How Does PureBlue Offer Asynchronous Telehealth?</h2>
+          <p className={styles.blueText}>YOUR CALIFORNIA PRIVACY RIGHTS</p>
           <p>
-            PureBlue’s platform (“Platform”) allows for the following
-            asynchronous telehealth services: 1) text-based health care
-            provider-patient interactions through short message service (“SMS”)
-            and multimedia messaging service (“MMS”) communications; and 2)
-            secure information collection through asynchronous store-and-forward
-            patient questionnaires.
+            CCPA Rights Disclosure. If you are a California resident, the CCPA
+            permits you to make certain requests about your personal
+            information. In particular, the CCPA allows you to request us to:
           </p>
-          <h2>The Benefits of Asynchronous Telehealth</h2>
           <ul>
             <li>
-              Asynchronous telehealth allows you and your health care provider
-              to interact at a time that suits your schedule.
+              Inform you about the categories of personal information we collect
+              or disclose about you; the categories of sources of such
+              information; the business or commercial purpose for collecting
+              your personal information; and the categories of third parties
+              with whom we share/disclose personal information.
             </li>
             <li>
-              You and your health care provider can access telehealth from where
-              and when you want, at different times.
+              Provide access to and/or a copy of certain information we hold
+              about you.
             </li>
-            <li>
-              Because you are not limited by the scheduled time of an in-person
-              or synchronous video or audio visit, you can give your health care
-              provider more detailed information than you would if you were
-              feeling the pressure under a timed visit.
-            </li>
+            <li>Delete certain information we have about you.</li>
           </ul>
-          <h2>Possible Risks to Using Asynchronous Telehealth?</h2>
-          <ul>
-            <li>
-              Your visit with your health care provider may be delayed due to
-              technological deficiencies, disruptions, or failures, which may
-              include poor data quality, Internet outages, or other service
-              interruption issues. You may have to reschedule the visit with
-              your health care provider should these interruptions occur.
-            </li>
-            <li>
-              Security protocols could fail, causing a breach of privacy of your
-              personal health information.
-            </li>
-            <li>
-              Your health care provider may not be able to fully assess your
-              condition without access to your complete medical history, which
-              may require you to seek alternative care.
-            </li>
-            <li>
-              Your health care provider does not have access of your complete
-              medical records. To reduce the chances of negative outcomes such
-              as drug interactions and/or allergic reactions, you should
-              disclose a full list of your medical history including diagnoses,
-              treatments, medications/supplements, and allergies to your health
-              care provider.
-            </li>
-            <li>
-              Asynchronous telehealth services are NOT emergency services and
-              your Personal Data (as defined in the PureBlue Privacy Policy)
-              WILL NOT BE MONITORED AT ALL TIMES. If you think you are
-              experiencing a medical emergency, you should CALL 911 IMMEDIATELY.
-            </li>
-          </ul>
-          <p className={styles.grayText}>
-            THE CARE YOU RECEIVE WILL BE AT THE SOLE DISCRETION OF THE HEALTH
-            CARE PROVIDER WHO IS TREATING YOU, WITH NO GUARANTEE OF DIAGNOSIS,
-            TREATMENT, OR PRESCRIPTION. THE HEALTH CARE PROVIDER WILL DETERMINE
-            WHETHER OR NOT THE CONDITION BEING DIAGNOSED AND/OR TREATED IS
-            APPROPRIATE FOR THE CARE PROVIDED THROUGH AN ASYNCHRONOUS TELEHEALTH
-            ENCOUNTER VIA THE PLATFORM.
+          <p>
+            The CCPA also gives you the right to opt-out of the sale of your
+            personal information. The CCPA further prohibits us from
+            discriminating against you for exercising your rights under the law,
+            including your right to request access to your personal information,
+            to delete information, and to opt out of the sale of your personal
+            information. <br />
+            <br /> Please note that certain information may be exempt from such
+            requests under California law. For example, we need certain
+            information in order to provide the Services to you. We also will
+            take reasonable steps to verify your identity before responding to a
+            request.
             <br />
-            <br /> ASYNCHRONOUS TELEHEALTH MAY NOT BE AVAILABLE TO YOU AS MANY
-            STATES LEGISLATE AGAINST ITS USE.
+            <br /> If you are a California resident and you would like to
+            exercise any of your data rights under California law, you can email
+            us at support@pureblue.com. Please include your full name, email
+            address and residential address associated with your use of our
+            Services, along with the rights you would like to exercise, so that
+            we can process your request in an efficient manner. If you would
+            like to receive a copy of your medical record in connection with
+            your request, please indicate that in your email message. By
+            requesting your medical record in this way, you are agreeing to
+            receive your medical record in an unencrypted email message.
+            <br />
+            <br /> Sale of Personal Information. PureBlue does not, and will
+            not, sell information that identifies you such as your name, email
+            address, phone number, or postal address. Like many companies with
+            an internet presence, we do work with third parties that provide
+            marketing and advertising services to us, including interest-based
+            advertising services, and these third parties may place tags,
+            pixels, cookies, beacons, and other similar tracking mechanisms on
+            our Website and App and collect your online identifiers. Because of
+            the CCPA’s broad definitions of “sale” and “personal information,”
+            making certain online identifiers available to these companies so
+            that they can provide marketing and advertising services to PureBlue
+            may be considered a “sale” under the CCPA. To opt out of sharing
+            your information with participating third parties for interest-based
+            advertising, please visit the Network Advertising Initiative’s
+            Consumer Opt-Out link, the Digital Advertising Alliance’s Consumer
+            Opt-Out link, and Your Online Choices. Please note that these
+            opt-outs are device and browser based, so you will need to opt out
+            on each of your devices and browsers. For more information, see the
+            Online Analytics and Advertising Section above.
+            <br />
+            <br />
+            <b>Shine the Light Disclosure.</b> The California “Shine the Light”
+            law gives residents of California the right under certain
+            circumstances to request information from us regarding the manner in
+            which we share certain categories of personal information (as
+            defined in the Shine the Light law) with third parties for their
+            direct marketing purposes. We do not share your personal information
+            with third parties for their own direct marketing purposes.
           </p>
-          <div className={styles.grayField}>
-            <h4>
-              By accepting this Consent to Asynchronous Telehealth, you
-              acknowledge, understand and agree to the following:
-            </h4>
-            <ul>
-              <li>
-                I have read this special Consent to Asynchronous Telehealth
-                carefully, and understand the risks and benefits of the use of
-                telehealth in the medical care and treatment provided to me
-                through PureBlue’s platform by “Providers.”
-              </li>
-              <li>
-                I have the same privacy rights via asynchronous telehealth that
-                I would have during an in-person visit. Dissemination of any
-                identifiable images or protected health information from the
-                asynchronous telehealth visit to researchers or other
-                third-parties will not occur without my written consent. For
-                more information about how PureBlue protects your privacy,
-                please read the PureBlue Privacy Policy.
-              </li>
-              <li>
-                Asynchronous telehealth may involve electronic communication of
-                my protected health information to health care Providers who may
-                be located in other areas, including out of state.
-              </li>
-              <li>
-                I understand that I may expect the anticipated benefits from the
-                use of asynchronous telehealth, but that no results can be
-                guaranteed or assured.
-              </li>
-              <li>
-                I understand that all information submitted to PureBlue via text
-                message and entered by my health care provider in the PureBlue
-                Platform will be part of my medical record and available to me
-                by emailing support@pureblue.com. This information will have the
-                same restrictions on dissemination without my consent.
-              </li>
-              <li>
-                I understand that my health care provider’s initial text message
-                to me will include his/her name and credentials, and this will
-                be recorded in the PureBlue Platform as part of my medical
-                record.
-              </li>
-              <li>
-                I understand that I can withhold or withdraw this consent at any
-                time by emailing PureBlue at support@pureblue.com with such
-                instruction. Otherwise, this consent will be considered renewed
-                upon each new asynchronous telehealth consultation with my
-                health care provider.
-              </li>
-              <li>
-                I understand that this consent is not a condition of purchase.
-              </li>
-              <li>
-                I understand that my health care information may be shared with
-                other individuals in accordance with the PureBlue Privacy Policy
-                and regulations or laws in the state or territory in which I am
-                located.
-              </li>
-              <li>
-                I agree and understand that my health care information may be
-                shared in the following circumstances:
-              </li>
-            </ul>
-            <ul>
-              <li>When a valid court order is issued for medical records.</li>
-              <li>Reporting suspected abuse, neglect, or domestic violence.</li>
-              <li>
-                Preventing or reducing a serious threat to anyone’s health or
-                safety.
-              </li>
-            </ul>
-          </div>
-          <br />
-          <br />
+          <p className={styles.blueText}>
+            PRIVACY INFORMATION FOR NEVADA RESIDENTS
+          </p>
           <p>
-            <b>Call/Email/Text Messaging Consent:</b> I expressly consent to
-            allow PureBlue or its health care Providers to call, email, or text
-            me (via SMS and/or MMS) with or regarding Personal Data (as defined
-            in the PureBlue Privacy Policy), appointments, or similar matters
-            related to my telehealth encounters using the contact information I
-            have provided. I understand and agree that any calls or texts to me
-            may be placed using an auto-dialer or a pre-recorded or artificial
-            voice, even if my number is on a do-not-call list, and that my phone
-            carrier’s normal rates may apply. This Asynchronous Telehealth
-            Informed Consent is valid during your entire treatment with
-            PureBlue.
+            Under Nevada law, certain Nevada consumers may opt out of the sale
+            (as such terms are defined under Nevada law) of “personally
+            identifiable information” to a person who further licenses or sells
+            such information to additional persons. We do not engage in such
+            activity; however, if you are a Nevada resident who has purchased
+            services from us, you may submit a request to opt out of any
+            potential future sales under Nevada law by email at
+            support@pureblue.com. Please note that we will take reasonable steps
+            to verify your identity and the authenticity of the request. Once
+            verified, we will maintain your request in the event our practices
+            change.
+          </p>
+          <p className={styles.blueText}>RETENTION OF YOUR INFORMATION</p>
+          <p>
+            We keep your information for no longer than is necessary for the
+            purposes for which it is processed. The length of time for which we
+            retain information is determined by the purposes for which we
+            collected and use it and/or compliance requirements of applicable
+            laws.
+          </p>
+          <p className={styles.blueText}>REVISIONS TO OUR PRIVACY POLICY</p>
+          <p>
+            We reserve the right to change this Privacy Policy and the terms of
+            this Notice at any time to comply with any changes in the law,
+            update our data collection and use practices, the features of our
+            Services, or advances in technology. Any revised Privacy Policy will
+            be accessible through the Services Site, please be sure to review it
+            periodically. The date this Privacy Policy was last revised is
+            identified at the top of the document. You are responsible for
+            periodically monitoring and reviewing any updates to the Privacy
+            Policy. If we make a material change to the Privacy Policy, we will
+            provide you with appropriate notice in accordance with legal
+            requirements. Your continued use of our Websites or Apps after such
+            amendments (and notice, where applicable) will be deemed your
+            acknowledgment of these changes to this Privacy Policy.
+          </p>
+          <p className={styles.blueText}>CONTACTING US</p>
+          <p>
+            If you would like to opt-out from the disclosure or sale of your
+            personal information to any third party for marketing purposes,
+            please contact us via email at: support@pureblue.com or send us U.S.
+            Mail to:
+            <br /> PureBlue LLC,
+            <br /> 5020 Sunrise Hwy
+            <br /> Massapeque Park, NY 11762
           </p>
         </Container>
       </main>
