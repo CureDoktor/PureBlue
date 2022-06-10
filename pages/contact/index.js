@@ -57,8 +57,32 @@ export default function Home() {
             </Col>
           </Row>
           <br />
+          <Row>
+            <Col md={6}>
+              <h3>Send A Message</h3>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="sample@email.com" />
+                  <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                  </Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="text" placeholder="Enter message here." />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </Col>
+            <Col md={6}>
+              <h3>Give Us A Call</h3>
+            </Col>
+          </Row>
           <div className={styles.contactForm}>
-            <h2>Send A Message</h2>
+            <h3>Send A Message</h3>
           </div>
         </Container>
       </main>
