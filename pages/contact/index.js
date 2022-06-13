@@ -58,30 +58,94 @@ export default function Home() {
           </Row>
           <br />
           <Row>
-            <Col md={6}>
+            <Col md={5}>
               <h3>Send A Message</h3>
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control type="email" placeholder="sample@email.com" />
-                  <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                  </Form.Text>
+                  <Form.Control
+                    type="email"
+                    placeholder="sample@email.com"
+                    className={styles.formInputTwo}
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Control type="text" placeholder="Enter message here." />
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter message here."
+                    className={styles.formInput}
+                  />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button
+                  className={styles.submitBtn}
+                  variant="primary"
+                  type="submit"
+                >
                   Submit
                 </Button>
               </Form>
             </Col>
-            <Col md={6}>
+            <Col md={2}>
+              <div className={styles.grayLine}></div>
+            </Col>
+            <Col md={5}>
               <h3>Give Us A Call</h3>
+              <Row>
+                <Col md={4}>
+                  <p className={styles.blueText}>Monday - Friday:</p>
+                  <p>7AM - 1AM (EST)</p>
+                </Col>
+                <Col md={6}>
+                  <p className={styles.blueText}>Saturday - Sunday:</p>
+                  <p>8AM - 9PM (EST)</p>
+                </Col>
+              </Row>
+              <Row className="mx-md-0 pt-md-3">
+                <Col md={1} className="px-md-0">
+                  <Image
+                    src="/assets/contact/address-icon.svg"
+                    width={40}
+                    height={40}
+                  />
+                </Col>
+                <Col md={10}>
+                  <p>5020 Sunrise Hwy Massapequa Park, NY 11762</p>
+                </Col>
+              </Row>
+              <Row className="mx-md-0">
+                <Col md={1} className="px-md-0">
+                  <Image
+                    src="/assets/contact/call-icon.svg"
+                    width={40}
+                    height={40}
+                  />
+                </Col>
+                <Col md={10}>
+                  <p>1-877-260-6968</p>
+                </Col>
+              </Row>
+              <Row className="mx-md-0 pb-md-1">
+                <Col md={1} className="px-md-0">
+                  <Image
+                    src="/assets/contact/mail-icon.svg"
+                    width={40}
+                    height={40}
+                  />
+                </Col>
+                <Col md={10}>
+                  <p>support@pureblue.com</p>
+                </Col>
+              </Row>
+              <br />
+              <p className={styles.blueText}>For more questions or concerns:</p>
+              <p>
+                Visit our{" "}
+                <Link href="/faq">
+                  <a className={styles.blueText}>FAQ</a>
+                </Link>{" "}
+                page
+              </p>
             </Col>
           </Row>
-          <div className={styles.contactForm}>
-            <h3>Send A Message</h3>
-          </div>
         </Container>
       </main>
     </div>
