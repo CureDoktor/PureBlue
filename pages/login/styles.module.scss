@@ -1,0 +1,129 @@
+$primary-color: #0077f0;
+$secondary-color: #003b60;
+
+.loginPage {
+  .fieldOne {
+    .callUs {
+      text-align: right;
+      font-size: 21px;
+      letter-spacing: -1px;
+      line-height: 30px;
+      color: #2d2d2d;
+      font-weight: 800;
+      padding-bottom: 30px;
+    }
+    .formField {
+      font-weight: bold;
+    }
+  }
+  padding: 50px 0px 190px 0px;
+  h2 {
+    padding: 30px 0px 30px 20px;
+    font-size: 54px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 42px;
+    font-weight: 800;
+    padding-bottom: 10px;
+  }
+  .grayText {
+    color: #999;
+    font-size: 20px;
+    line-height: 32px;
+    max-width: 900px;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+  .formControl {
+    border-radius: 5px;
+    height: 50px;
+  }
+  .member {
+    padding-bottom: 80px;
+  }
+  .blueText {
+    color: $primary-color;
+    font-weight: 600;
+    padding-top: 10px;
+    margin-bottom: 0px;
+  }
+  .blueLine {
+    height: 5px;
+    width: 100%;
+    background-color: $primary-color;
+    margin-top: 60px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 32px;
+  }
+  .formInput {
+    border-radius: 5px;
+    height: 200px;
+  }
+  .formInputTwo {
+    border-radius: 5px;
+    height: 50px;
+  }
+  .submitBtn {
+    width: 100%;
+    background-color: $primary-color;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  .grayLine {
+    width: 2px;
+    height: 100%;
+    background-color: #999999;
+    margin: auto;
+  }
+  .buttons {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    margin: 10px 30px 10px 0px;
+    padding: 15px 5px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+    box-shadow: 0px 3px 6px #00000029;
+  }
+  .continueWithGoogle {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 5px;
+    color: black;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    &::before {
+      content: url("/assets/register/google-logo.png");
+      position: relative;
+      bottom: -10px;
+      left: -10px;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .registerPage {
+    padding: 50px 0px 90px 0px;
+    h2 {
+      padding: 30px 0px 30px 20px;
+      font-size: 54px;
+      font-weight: bold;
+    }
+    .blueLine {
+      height: 5px;
+      width: 100%;
+      background-color: $primary-color;
+      margin-top: 0px;
+      margin-bottom: 40px;
+    }
+    p {
+      padding-top: 20px;
+    }
+  }
+}
