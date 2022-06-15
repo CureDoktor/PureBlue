@@ -70,7 +70,11 @@ export default function Home() {
                     Professor John Ashcroft
                   </span>
                 </p>
-                <div className={styles.placeholder}></div>
+                <Image
+                  src="/assets/homepage/banner-1-desktop.png"
+                  height={440}
+                  width={800}
+                />
               </Col>
             </div>
           </Container>

@@ -59,7 +59,7 @@ export default function Home() {
           <br />
           <Row>
             <Col sm={6}>
-              <Image src="/assets/about/doctor.png" width={580} height={475} />
+              <Image src="/assets/about/doctor2.jpg" width={650} height={455} />
             </Col>
             <Col sm={6}>
               <p>
