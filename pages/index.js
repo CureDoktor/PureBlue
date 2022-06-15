@@ -136,7 +136,8 @@ export default function Home() {
             </Row>
             <h2>
               PureBlue gives you the best quality, price, and performance of
-              generic Sildenafil pills without jumping through hoops!
+              generic sildenafil pills without jumping through hoops! Get your
+              E.D. pills fast and easy with PureBlue!
             </h2>
           </Container>
           <div className={styles.pillsBg}>
@@ -156,28 +157,28 @@ export default function Home() {
             <div className="container">
               <h3>Generic E.D. pills VS Branded E.D. Pills</h3>
               <p>
-                Pfizer’s exclusive market rights to Sildenafil ended after a
-                20-year domination of the E.D. market, and now men can get
-                genuine Sildenafil pills at a significantly lower price by
-                buying generic E.D. pills. This is in no way diminishing the
-                quality and effectiveness of E.D. pills as other companies can
-                manufacture generic E.D. pills in the same quality and
-                performance as branded pills. <br />
+                Pfizer’s exclusive market rights to sildenafil(brand name
+                Viagra) ended after a 20-year domination of the erectile
+                dysfunction(E.D.) market, and now men can get genuine sildenafil
+                pills at a significantly lower price .Generic pills in no way
+                diminish the quality and effectiveness of E.D. pills as other
+                companies can manufacture generic E.D. pills in the same quality
+                and performance as branded pills. <br />
                 <br />
-                Generic Sildenafil pills can be just as effective and potent as
+                Generic sildenafil pills can be just as effective and potent as
                 Viagra, provided that the pills are made by laboratories in the
-                United States that are certified to produce Sildenafil pills in
-                the same potency and formulation as Viagra.
+                United States that are certified to produce sildenafil pills in
+                the same potency and active ingredients as Viagra.
               </p>
               <h3>
                 How Pure<span className={styles.secondaryColor}>Blue</span>
                 Makes it Work
               </h3>
               <p>
-                PureBlue gives you the best price on generic Sildenafil pills
+                PureBlue gives you the best price on generic sildenafil pills
                 without sacrificing quality, effectiveness, and potency of your
                 E.D. pills. We take pride in operating a lean business that cut
-                out all the unnecessary expense such as endorsements, TV and
+                out all the unnecessary expenses such as endorsements, TV and
                 radio advertising, and over-the-top marketing schemes and simply
                 let our quality and service do the talking.
                 <br />
@@ -194,7 +195,7 @@ export default function Home() {
                 dependable results from E.D. pills, and we want our customers to
                 never worry about E.D. again in their lives. PureBlue is all
                 about bringing back the mojo that made life exciting, and we
-                won’t get high prices be in the way of making that happen for
+                won’t lethigh prices get in the way of making that happen for
                 all of our customers.
               </p>
             </div>
@@ -251,15 +252,15 @@ export default function Home() {
               <div className={styles.grayField}>
                 <p>
                   Important Safety Information <br />
-                  Do not take Sildenafil (sildenafil citrate) or Tadalafil if
+                  Do not take sildenafil (sildenafil citrate) or tadalafil if
                   you take medication containing nitrates or guanylate cyclase
-                  stimulators for pulmonary hypertension as this could cause an
-                  unsafe drop in blood pressure or if you are allergic to
-                  sildenafil, tadalafil or any ingredients in either medication.
-                  Discuss your health with your doctor to ensure that you are
-                  healthy enough for sex. If you experience chest pain,
-                  dizziness, or nausea during sex, seek immediate medical help.
-                  Sildenafil and Tadalafil can cause serious side effects.
+                  stimulators as this could cause an unsafe drop in blood
+                  pressure or if you are allergic to sildenafil, tadalafil or
+                  any ingredients in either medication. Discuss your health with
+                  your doctor to ensure that you are healthy enough for sex. If
+                  you experience chest pain, dizziness, or nausea during sex,
+                  seek immediate medical help. Sildenafil and tadalafil can
+                  cause serious side effects.
                 </p>
               </div>
             </div>
