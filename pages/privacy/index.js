@@ -636,7 +636,7 @@ export default function Home() {
               and services to you, ensure a consistent level of service across
               our products and services, and enhance our products, services, and
               your customer experience, we may share information we collect
-              within any UltraPharmRx member or group (i.e., our subsidiaries
+              within any PureBlue LLC member or group (i.e., our subsidiaries
               and affiliates, including our ultimate holding company and its
               subsidiaries).
             </li>
@@ -787,8 +787,8 @@ export default function Home() {
               U.S. Mail to:
               <br />
               PureBlue LLC,
-              <br /> 5020 Sunrise Hwy
-              <br /> Massapeque Park, NY 11762
+              <br /> 42 Broadway, 12th Floor
+              <br /> New York, NY 10004
             </li>
             <li>
               The right to request us to disclose certain information to you
@@ -1038,8 +1038,8 @@ export default function Home() {
             please contact us via email at: support@pureblue.com or send us U.S.
             Mail to:
             <br /> PureBlue LLC,
-            <br /> 5020 Sunrise Hwy
-            <br /> Massapeque Park, NY 11762
+            <br /> 42 Broadway, 12th Floor
+            <br /> New York, NY 10004
           </p>
         </Container>
       </main>

@@ -108,7 +108,7 @@ export default function Home() {
                   />
                 </Col>
                 <Col md={10}>
-                  <p>5020 Sunrise Hwy Massapequa Park, NY 11762</p>
+                  <p>42 Broadway, 12th Floor New York, NY 10004</p>
                 </Col>
               </Row>
               <Row className="mx-md-0">
@@ -120,7 +120,7 @@ export default function Home() {
                   />
                 </Col>
                 <Col md={10}>
-                  <p>1-877-260-6968</p>
+                  <p>1-888-534-8977</p>
                 </Col>
               </Row>
               <Row className="mx-md-0 pb-md-1">

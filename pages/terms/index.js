@@ -51,8 +51,8 @@ export default function Home() {
           <h1>Terms and Conditions</h1>
           <p>
             Thank you for visiting the PureBlue website located at PureBlue.com
-            (the “Site”). The Site is an Internet property of UltraCore Meds,
-            LLC (collectively, “PureBlue,” “we,” “our” or “us”). The following
+            (the “Site”). The Site is an Internet property of PureBlue, LLC
+            (collectively, “PureBlue,” “we,” “our” or “us”). The following
             PureBlue Terms and Conditions (“Terms and Conditions”) are inclusive
             of the PureBlue Privacy Policy (“Privacy Policy”), the Consent to
             Telehealth, the Frequently Asked Questions (“FAQ”) and any and all
@@ -83,12 +83,12 @@ export default function Home() {
             “Interactive Services”); (d) registers to receive the PureBlue
             e-mail newsletter (“Newsletter”); (e) purchases any of the
             non-prescription items made available by and through the Site
-            (collectively, the “UltraCore Meds Products”) as provided by
-            PureBlue; (f) purchases prescription medicines via the Site
-            (“Prescription Medications,” and together with the PureBlue
-            Products, the “Products”), as same are prescribed by certain
-            third-party licensed medical doctors (“Healthcare Providers”) that
-            provide telemedicine-related services in connection with the Site
+            (collectively, the “PureBlue Products”) as provided by PureBlue; (f)
+            purchases prescription medicines via the Site (“Prescription
+            Medications,” and together with the PureBlue Products, the
+            “Products”), as same are prescribed by certain third-party licensed
+            medical doctors (“Healthcare Providers”) that provide
+            telemedicine-related services in connection with the Site
             (“Telemedicine Services”); and/or (g) utilizes the various contact
             forms and/or contact information made available on the Site as a
             means to contact directly, or request to be contacted by, PureBlue
@@ -277,9 +277,9 @@ export default function Home() {
             time up to forty-eight (48) hours before the applicable renewal
             processing date of your subscription. If you wish to cancel an
             Automatic Renewal Program, you may do so at any time by: (i) signing
-            in to your member portal here; (ii) calling us at: 877-260-6968; or
-            (iii) e-mailing us at: support@pureblue.com. Please be advised, all
-            automatic renewal program subscription orders must be cancelled
+            in to your member portal here; (ii) calling us at: 1-888-534-8977;
+            or (iii) e-mailing us at: support@pureblue.com. Please be advised,
+            all automatic renewal program subscription orders must be cancelled
             within (12) hours of the renewal subscription date to avoid the
             order being shipped and you incurring charges for same.
             <br />
@@ -287,7 +287,7 @@ export default function Home() {
             Payment Method is cancelled or is no longer valid (e.g., due to loss
             or theft) or your Product shipment may be delayed or cancelled.
             Changes to such information can be made by contacting a customer
-            care professional at: 877-260-6968 or support@pureblue.com. If you
+            care professional at: 1-888-534-8977 or support@pureblue.com. If you
             participate in an automatic shipment Recurring Fee program using a
             credit card and your credit card fails to process for a subsequent
             shipment, you agree that PureBlue may contact you on any phone
@@ -296,21 +296,21 @@ export default function Home() {
             product or service received, your account may be sent to collection.
             UNLESS OTHERWISE INDICATED, ALL SALES ARE FINAL AND NON-REFUNDABLE.
             The fees associated with your purchases will appear on your Payment
-            Method statement through the identifiers “PureBlue” or “UltraCore
-            Meds ” All prices displayed on the Site are quoted in U.S. Dollars,
-            are payable in U.S. Dollars and are valid and effective only in the
-            United States. Failure to use the Products does not constitute a
-            basis for refusing to pay any of the associated charges. Subject to
-            the conditions set forth herein, you agree to be bound by the
-            Billing Provisions of PureBlue in effect at any given time. Upon
-            reasonable prior notice to you (with Site-updates and/or e-mail
-            sufficing), PureBlue reserves the right to change its Billing
-            Provisions whenever necessary, in its sole discretion. Continued use
-            of the Site and/or purchase of Products after receipt of such notice
-            shall constitute consent to any and all such changes; provided,
-            however, that any amendment or modification to the Billing
-            Provisions shall not apply to any charges incurred prior to the
-            applicable amendment or modification.
+            Method statement through the identifiers “PureBlue”. All prices
+            displayed on the Site are quoted in U.S. Dollars, are payable in
+            U.S. Dollars and are valid and effective only in the United States.
+            Failure to use the Products does not constitute a basis for refusing
+            to pay any of the associated charges. Subject to the conditions set
+            forth herein, you agree to be bound by the Billing Provisions of
+            PureBlue in effect at any given time. Upon reasonable prior notice
+            to you (with Site-updates and/or e-mail sufficing), PureBlue
+            reserves the right to change its Billing Provisions whenever
+            necessary, in its sole discretion. Continued use of the Site and/or
+            purchase of Products after receipt of such notice shall constitute
+            consent to any and all such changes; provided, however, that any
+            amendment or modification to the Billing Provisions shall not apply
+            to any charges incurred prior to the applicable amendment or
+            modification.
             <br />
             <br /> Restrictions: You agree that any Products you purchase from
             PureBlue will be used for your personal, non-commercial use. You
@@ -345,8 +345,8 @@ export default function Home() {
           <h2>6. Return and Refund Policy.</h2>
           <p>
             If you wish to return PureBlue Products, you may contact a customer
-            care professional at: 877-260-6968. Prescription Medications can not
-            be returned or refunded.
+            care professional at: 1-888-534-8977. Prescription Medications can
+            not be returned or refunded.
           </p>
           <h2>7. Telemedicine Services.</h2>
           <p>
@@ -705,8 +705,8 @@ export default function Home() {
             by US Mail to PureBlue,
             <br />
             <br /> Attention: Customer Service Department -<br />
-            5020 Sunrise Hwy
-            <br /> Massapeque Park, NY 11762
+            42 Broadway, 12th Floor
+            <br /> New York, NY 10004
             <br />
             <br /> PureBlue will contact you by letter at the billing address
             you provided to us or at the e-mail address you provided to us. You
@@ -838,10 +838,10 @@ export default function Home() {
             practices of PureBlue, you may utilize the contact method applicable
             to the subject matter of your inquiry, as set forth on the “Contact
             Us” page of the Site, or you can e-mail us at: support@pureblue.com;
-            call us at: 877-260-6968; or send us U.S. mail to:
+            call us at: 1-888-534-8977; or send us U.S. mail to:
             <br /> PureBlue (d/b/a PureBlue),
-            <br /> 5020 Sunrise Hwy
-            <br /> Massapequa Park, NY 11762
+            <br /> 42 Broadway, 12th Floor
+            <br /> New York, NY 10004
             <br />
             <br /> MD Integrations
             <br /> 9071 E Mississippi Ave, Unit 6C, Denver, CO 80247
