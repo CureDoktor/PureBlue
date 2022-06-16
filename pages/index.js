@@ -269,6 +269,10 @@ export default function Home() {
         <div className={styles.fieldSix}>
           <Container>
             <h2>
+              Sildenafil or tadalafil?
+              <br /> Which E.D. treatment suits your lifestyle?
+            </h2>
+            <h2>
               Can You Get SAFE, Effective, <br />
               and High-Quality E.D. Pills Online? <br />
               <br />
@@ -481,14 +485,14 @@ export default function Home() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="0">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      PureBlue is an online outlet that links potential patients
+                      who need a more convenient way to procure E.D. medication
+                      legally with a doctor’s approval. PureBlue provides a
+                      complete infrastructure that provides potential patients
+                      with convenient options that do not require an in-person
+                      doctor’s visit, but maintains the supervision of medical
+                      doctors for the prescription of erectile dysfunction
+                      medication.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -503,21 +507,19 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} sm={11}>
-                          Is ED normal?
+                          Is E.D. normal?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      ED is one of the most common problems that men in the
+                      United States face. About 52% of American men between the
+                      ages of 40 and 70 years of age experience ED, and PureBlue
+                      provides a convenient and affordable way for men to
+                      experience stronger erections without the risk of taking
+                      low-quality ED pills produced overseas.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -539,14 +541,13 @@ export default function Home() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="2">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      PureBlue pills contain the active ingredients of
+                      sildenafil and tadalafil, the same active ingredients used
+                      in the branded ED medications Viagra and Cialis. Customers
+                      have the option to buy branded Viagra and Cialis, which
+                      are FDA approved for the treatment of erectile
+                      dysfunction. The ED medications sold through PureBlue are
+                      prescribed by PureBlue-affiliated physicians.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -561,22 +562,25 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} sm={11}>
-                          What is the difference between Sildenafil and
-                          Tadalafil?
+                          What is the difference between sildenafil and
+                          tadalafil?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="3">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      Sildenafil and tadalafil are FDA-approved medications for
+                      the treatment of erectile dysfunction. Both medications
+                      inhibit the phosphodiesterase-5 enzyme (PDE-5), which
+                      results in the dilation of blood vessels in the penile
+                      region, which makes erections easier to achieve. The main
+                      difference between the two medications is that sildenafil
+                      is recommended to be taken 30-60 minutes before sexual
+                      activity and remains active in the body for 4 hours, while
+                      tadalafil is also recommended to be taken 30-60 minutes
+                      before sexual activity and remains active in the body for
+                      36 hours.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -628,14 +632,13 @@ export default function Home() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="5">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      PureBlue is for prospective patients who experience the
+                      symptoms of E.D. and want to get high-quality, regulated,
+                      and genuine E.D. medication without having to go through
+                      the process of an in-person visit with their physician.
+                      PureBlue offers the best price on both sildenafil and
+                      tadalafil pills, without sacrificing the quality, potency,
+                      or effectiveness of the product.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -657,14 +660,10 @@ export default function Home() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="6">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      During the order process, our affiliated providers will
+                      evaluate your medical eligibility to take your chosen E.D.
+                      medication after completing your medical profile and
+                      digital consultation.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -686,14 +685,12 @@ export default function Home() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="7">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      PureBlue utilizes the same active ingredients used by
+                      Viagra and Cialis to ensure high-quality results. PureBlue
+                      only sources sildenafil and tadalafil pills from FDA and
+                      CGMP-compliant facilities in the United States that have a
+                      long-established reputation for providing genuine,
+                      high-quality E.D. medication.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -716,14 +713,11 @@ export default function Home() {
                   </Card.Header>
                   <Accordion.Collapse eventKey="8">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      To provide an accurate medical profile to our affiliated
+                      providers, we require prospective customers to complete a
+                      medical profile, which may include certain questions that
+                      address the compatibility of the treatment offered to your
+                      current state of health.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
