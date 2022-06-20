@@ -1,6 +1,8 @@
 $primary-color: #0077f0;
 $secondary-color: #003b60;
-
+.brMobile {
+  display: none;
+}
 .primaryColor {
   color: $primary-color;
 }
@@ -559,4 +561,69 @@ $secondary-color: #003b60;
   }
 }
 @media screen and (max-width: 550px) {
+  .fieldOneBg {
+    background-size: 1100px 400px;
+    background-position-x: -200px;
+    .container {
+      padding: 0px;
+    }
+    .ffImage {
+      margin-bottom: -10px;
+    }
+    .fieldOne {
+      padding: 10px 0px 0px 0px;
+      h2 {
+        text-align: right;
+        font-size: 23px;
+        max-width: 250px;
+        line-height: 35px;
+        margin-left: auto;
+        padding-top: 20px;
+      }
+      p {
+        text-align: right;
+        padding-top: 20px;
+      }
+      .fieldOneText {
+        padding: 15px 25px;
+        .primaryColor {
+          font-weight: bold;
+        }
+      }
+      .brMobile {
+        display: block;
+      }
+    }
+    .callUs {
+      text-align: center !important;
+      a {
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .fieldTwo {
+    .container {
+      display: unset;
+      p {
+        margin-bottom: 0px;
+        padding-top: 0px;
+        line-height: 30px;
+        font-size: 20px;
+      }
+    }
+  }
+  .fieldThree{
+    
+  }
+  .fieldFive {
+    .blueLine {
+      padding: 10px 20px 50px 20px;
+      h2 {
+        font-size: 40px;
+        line-height: 36px;
+      }
+    }
+  }
 }

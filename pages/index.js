@@ -50,28 +50,38 @@ export default function Home() {
       </Head>
       <main>
         <div className={styles.fieldOneBg}>
-          <Container>
+          <Container className={styles.container}>
             <div className={styles.fieldOne}>
               <Col md={{ span: 7, offset: 5 }}>
-                <div className={styles.callUs}>
-                  <Link href="tel: 1-888-534-8977">
-                    <a>
-                      Call Us Anytime:{" "}
-                      <span className={styles.primaryColor}>
-                        1-888-534-8977
-                      </span>
-                    </a>
-                  </Link>
+                <div className={styles.fieldOneText}>
+                  <div className={styles.callUs}>
+                    <Link href="tel: 1-888-534-8977">
+                      <a>
+                        Call Us Anytime:{" "}
+                        <span className={styles.primaryColor}>
+                          1-888-534-8977
+                        </span>
+                      </a>
+                    </Link>
+                  </div>
+                  <h2>
+                    Your #1 Source <br className={styles.brMobile} /> for
+                    Branded and
+                    <br className={styles.brMobile} /> Generic E.D. Pills
+                  </h2>
+                  <p>
+                    By WebMDMen's <br className={styles.brMobile} /> Award
+                    Winning <br className={styles.brMobile} /> Formulator
+                    <span className={styles.primaryColor}>
+                      {" "}
+                      <br className={styles.brMobile} /> Professor John{" "}
+                      <br className={styles.brMobile} /> Ashcroft
+                    </span>
+                  </p>
                 </div>
-                <h2>Your #1 Source for Branded and Generic E.D. Pills</h2>
-                <p>
-                  By WebMDMen's Award Winning Formulator
-                  <span className={styles.primaryColor}>
-                    Professor John Ashcroft
-                  </span>
-                </p>
                 <Image
                   src="/assets/homepage/banner-1-desktop.png"
+                  className={styles.ffImage}
                   height={440}
                   width={800}
                 />
