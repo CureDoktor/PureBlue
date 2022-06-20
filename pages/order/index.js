@@ -87,7 +87,7 @@ export default function Home() {
                     </ul>
                   </Col>
                   <Col md={4}>
-                    <Button />
+                    <Button>SWITCH</Button>
                   </Col>
                 </Row>
                 <div className={styles.totalPrice}>
@@ -120,12 +120,98 @@ export default function Home() {
                 </p>
               </Col>
               <Col md={6}>
-                <div className={styles.formField}>
-                  <div className={styles.formHeader}>
-                    <p>1. The Basics</p>
+                <Form>
+                  <div className={styles.formField}>
+                    <div className={styles.formHeader}>
+                      <p>1. The Basics</p>
+                    </div>
+                    <div className={styles.formBody}>
+                      <Row className="mb-3">
+                        <Col md={8}>
+                          <Form.Group as={Col} controlId="formGridFirstname">
+                            <Form.Label>
+                              Patient First Name *{" "}
+                              <small>(As it appears on your ID)</small>
+                            </Form.Label>
+                            <Form.Control
+                              type="name"
+                              className={styles.formControl}
+                              placeholder="Enter name"
+                            />
+                          </Form.Group>
+                        </Col>
+                        <Col md={4}>
+                          <br />
+                          <br />
+                          <Button>APPLY</Button>
+                        </Col>
+                      </Row>
+                      <div key={`inline-radio`} className="mb-3">
+                        <Form.Check
+                          inline
+                          label="1"
+                          name="group1"
+                          type="radio"
+                          id={`inline-radio-1`}
+                        />
+                        <Form.Check
+                          inline
+                          label="2"
+                          name="group1"
+                          type="radio"
+                          id={`inline-radio-2`}
+                        />
+                        <Form.Check
+                          inline
+                          label="3"
+                          name="group1"
+                          type="radio"
+                          id={`inline-radio-3`}
+                        />
+                      </div>
+                    </div>
+                    <p className={styles.grayText}>
+                      Next Day Shipping if ordered before 12PM CST Monday -
+                      Thursday <br />
+                      This will save you shipping time, but physician review
+                      still takes 24-48 hours.
+                    </p>
+                    <Row className="mb-3">
+                      <Col>
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Label>
+                            PatientPhone *{" "}
+                            <small>(verified after checkout)</small>
+                          </Form.Label>
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="XXX-XXX-XXXX"
+                          />
+                        </Form.Group>
+                        <Button>SAVE AND CONTINUE</Button>
+                      </Col>
+                    </Row>
                   </div>
-                  <div className={styles.formBody}></div>
-                </div>
+                  <div className={styles.formField}>
+                    <div className={styles.formHeader}>
+                      <p>2. Shipping Address</p>
+                    </div>
+                    <div className={styles.formBody}></div>
+                  </div>
+                  <div className={styles.formField}>
+                    <div className={styles.formHeader}>
+                      <p>3. Billing Address</p>
+                    </div>
+                    <div className={styles.formBody}></div>
+                  </div>
+                  <div className={styles.formField}>
+                    <div className={styles.formHeader}>
+                      <p>4. Secure Payment</p>
+                    </div>
+                    <div className={styles.formBody}></div>
+                  </div>
+                </Form>
               </Col>
             </Row>
             <Col md={{ span: 6, offset: 3 }}>
