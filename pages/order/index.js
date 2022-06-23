@@ -104,7 +104,7 @@ export default function Home() {
                     </ul>
                   </Col>
                   <Col md={4}>
-                    <Button>SWITCH</Button>
+                    <Button className={styles.switch}>SWITCH</Button>
                   </Col>
                 </Row>
                 <div className={styles.totalPrice}>
@@ -172,55 +172,61 @@ export default function Home() {
                         <Col md={4}>
                           <br />
                           <br />
-                          <Button>APPLY</Button>
+                          <Button className={styles.switch}>APPLY</Button>
                         </Col>
                       </Row>
+                      <Form.Label>Choose Shipping Option</Form.Label>
                       <div key={`inline-radio`} className="mb-3">
                         <Form.Check
                           inline
-                          label="1"
+                          className={styles.radioButton}
+                          label="USPS Ground (3-4 Business Days)"
                           name="group1"
                           type="radio"
                           id={`inline-radio-1`}
                         />
                         <Form.Check
                           inline
-                          label="2"
+                          className={styles.radioButton}
+                          label="USPS Ground (2-3 Business Days)"
                           name="group1"
                           type="radio"
                           id={`inline-radio-2`}
                         />
                         <Form.Check
                           inline
-                          label="3"
+                          className={styles.radioButton}
+                          label="UPS Next Business Day Overnight"
                           name="group1"
                           type="radio"
                           id={`inline-radio-3`}
                         />
                       </div>
+                      <p className={styles.grayText}>
+                        Next Day Shipping if ordered before 12PM CST Monday -
+                        Thursday <br />
+                        This will save you shipping time, but physician review
+                        still takes 24-48 hours.
+                      </p>
+                      <Row className="mb-3">
+                        <Col>
+                          <Form.Group as={Col} controlId="formGridFirstname">
+                            <Form.Label>
+                              PatientPhone *{" "}
+                              <small>(verified after checkout)</small>
+                            </Form.Label>
+                            <Form.Control
+                              type="name"
+                              className={styles.formControl}
+                              placeholder="XXX-XXX-XXXX"
+                            />
+                          </Form.Group>
+                          <Button className={styles.button}>
+                            SAVE AND CONTINUE
+                          </Button>
+                        </Col>
+                      </Row>
                     </div>
-                    <p className={styles.grayText}>
-                      Next Day Shipping if ordered before 12PM CST Monday -
-                      Thursday <br />
-                      This will save you shipping time, but physician review
-                      still takes 24-48 hours.
-                    </p>
-                    <Row className="mb-3">
-                      <Col>
-                        <Form.Group as={Col} controlId="formGridFirstname">
-                          <Form.Label>
-                            PatientPhone *{" "}
-                            <small>(verified after checkout)</small>
-                          </Form.Label>
-                          <Form.Control
-                            type="name"
-                            className={styles.formControl}
-                            placeholder="XXX-XXX-XXXX"
-                          />
-                        </Form.Group>
-                        <Button>SAVE AND CONTINUE</Button>
-                      </Col>
-                    </Row>
                   </div>
                   <div className={styles.formField}>
                     <div className={styles.formHeader}>

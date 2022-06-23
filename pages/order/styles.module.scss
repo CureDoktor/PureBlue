@@ -2,6 +2,27 @@ $primary-color: #0077f0;
 $secondary-color: #003b60;
 
 .orderPage {
+  .fieldOne {
+    .formField {
+      .radioButton {
+        display: block;
+        padding: 18px 40px;
+        background-color: white;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        label {
+          padding-top: 0px;
+          font-size: 15px;
+          line-height: 20px;
+          color: #767f84;
+          font-weight: 400;
+        }
+        input {
+          border: 1px solid gray;
+        }
+      }
+    }
+  }
   ul {
     padding: 20px 0px;
     padding-left: 0px;
@@ -24,6 +45,45 @@ $secondary-color: #003b60;
       }
     }
   }
+  .switch {
+    border-radius: 8px;
+    background-color: #09a5e3;
+    max-width: 120px;
+    padding: 15px 30px;
+    margin-top: 5px;
+  }
+  .button {
+    background-color: #09a5e3;
+    border-radius: 8px;
+    padding: 15px 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .formField {
+    .formHeader {
+      background-color: #767f84;
+      padding: 20px 50px;
+      p {
+        margin-bottom: 0px;
+        font-size: 24px;
+        line-height: 22px;
+        color: #fefefe;
+        font-weight: 700;
+      }
+    }
+    .formBody {
+      padding: 30px 50px;
+      background-color: #f4f4f4;
+    }
+    .grayText {
+      font-size: 12px;
+      letter-spacing: 0px;
+      line-height: 24px;
+      color: #767f84;
+      font-weight: 400;
+      padding-top: 30px;
+    }
+  }
   .valid {
     font-size: 12px;
     letter-spacing: 0px;
@@ -34,8 +94,8 @@ $secondary-color: #003b60;
     &::before {
       content: url("/assets/order/warning.png");
       position: relative;
-      left: -10px;
       bottom: -4px;
+      left: -10px;
     }
   }
   .totalPrice {
@@ -63,7 +123,7 @@ $secondary-color: #003b60;
     }
     .formField {
       font-weight: bold;
-      padding-top: 40px;
+      padding-bottom: 30px;
       label {
         padding-top: 20px;
       }
