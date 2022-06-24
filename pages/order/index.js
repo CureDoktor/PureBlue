@@ -11,6 +11,7 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
+
 export default function Home() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
@@ -19,6 +20,19 @@ export default function Home() {
     { name: "Yes", value: "yes" },
     { name: "No", value: "no" },
   ];
+
+  function cc() {
+    return (
+      <div>
+        <p>Credit or Debit Card</p>
+        <Image src="/assets/order/cc.png" width={180} height={20} />
+      </div>
+    );
+  }
+  function pp() {
+    return <Image src="/assets/order/pp.png" width={80} height={20} />;
+  }
+
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(
@@ -158,14 +172,11 @@ export default function Home() {
                       <Row className="mb-3">
                         <Col md={8}>
                           <Form.Group as={Col} controlId="formGridFirstname">
-                            <Form.Label>
-                              Patient First Name *{" "}
-                              <small>(As it appears on your ID)</small>
-                            </Form.Label>
+                            <Form.Label>Coupon Code</Form.Label>
                             <Form.Control
                               type="name"
                               className={styles.formControl}
-                              placeholder="Enter name"
+                              placeholder="XXXXXXXXX"
                             />
                           </Form.Group>
                         </Col>
@@ -232,681 +243,178 @@ export default function Home() {
                     <div className={styles.formHeader}>
                       <p>2. Shipping Address</p>
                     </div>
-                    <div className={styles.formBody}></div>
+                    <div className={styles.formBody}>
+                      <Form.Label>
+                        Ship To Name:
+                        <small> must be your legal name (edit name)</small>
+                      </Form.Label>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="First Name"
+                          />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridLastname">
+                          <Form.Control
+                            type="lastname"
+                            className={styles.formControl}
+                            placeholder="Last Name"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="Street Address 1"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="Street Address 2"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="City"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridState">
+                          <Form.Select
+                            className={styles.formControl}
+                            defaultValue="State"
+                          >
+                            <option>State</option>
+                            <option>...</option>
+                          </Form.Select>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="Zipcode"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Button className={styles.button}>
+                        SAVE AND CONTINUE
+                      </Button>
+                    </div>
                   </div>
                   <div className={styles.formField}>
                     <div className={styles.formHeader}>
                       <p>3. Billing Address</p>
                     </div>
-                    <div className={styles.formBody}></div>
+                    <div className={styles.formBody}>
+                      <Form.Label>Bill To:</Form.Label>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="First Name"
+                          />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridLastname">
+                          <Form.Control
+                            type="lastname"
+                            className={styles.formControl}
+                            placeholder="Last Name"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="Street Address 1"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="Street Address 2"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="City"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="formGridState">
+                          <Form.Select
+                            className={styles.formControl}
+                            defaultValue="State"
+                          >
+                            <option>State</option>
+                            <option>...</option>
+                          </Form.Select>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Control
+                            type="name"
+                            className={styles.formControl}
+                            placeholder="Zipcode"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Button className={styles.button}>
+                        SAVE AND CONTINUE
+                      </Button>
+                    </div>
                   </div>
                   <div className={styles.formField}>
                     <div className={styles.formHeader}>
                       <p>4. Secure Payment</p>
                     </div>
-                    <div className={styles.formBody}></div>
+                    <div className={styles.formBody}>
+                      <div key={`inline-radio`} className="mb-3">
+                        <Form.Check
+                          inline
+                          className={styles.radioButton}
+                          label={cc()}
+                          name="group2"
+                          type="radio"
+                          id={`inline-radio-4`}
+                        />
+                        <Form.Check
+                          inline
+                          className={styles.radioButton}
+                          label={pp()}
+                          name="group2"
+                          type="radio"
+                          id={`inline-radio-5`}
+                        />
+                      </div>
+                      <Button className={styles.button}>PAY NOW</Button>
+                    </div>
                   </div>
                 </Form>
               </Col>
             </Row>
-            <Col md={{ span: 6, offset: 3 }}>
-              <div className={styles.formField}>
-                <Form>
-                  <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridFirstname">
-                      <Form.Label>
-                        Patient First Name *{" "}
-                        <small>(As it appears on your ID)</small>
-                      </Form.Label>
-                      <Form.Control
-                        type="name"
-                        className={styles.formControl}
-                        placeholder="Enter name"
-                      />
-                    </Form.Group>
-                  </Row>
-                  <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridLastname">
-                      <Form.Label>
-                        Patient Last Name *{" "}
-                        <small>(As it appears on your ID)</small>
-                      </Form.Label>
-                      <Form.Control
-                        type="lastname"
-                        className={styles.formControl}
-                        placeholder="Enter lastname"
-                      />
-                    </Form.Group>
-                  </Row>
-                  <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridBirthday">
-                      <Form.Label>Birthday</Form.Label>
-                      <Form.Control
-                        type="date"
-                        className={styles.formControl}
-                        placeholder="Enter birthday"
-                      />
-                    </Form.Group>
-                  </Row>
-                  <Form.Group as={Col} controlId="formGridSexualActivity">
-                    <Form.Label>
-                      Are you seeking treatment for improved sexual activity?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Are you currently taking any medication for ED (erectile
-                      dysfunction)?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <br />
-                  <Form.Group
-                    as={Col}
-                    controlId="formGridED"
-                    className={styles.checkbox}
-                  >
-                    <Form.Label>
-                      Please identify all ED medications or drugs you take?
-                    </Form.Label>
-                    {["checkbox"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
-                        <Form.Check
-                          inline
-                          label="Viagra"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-1`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Cialis"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-2`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Levitra"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-3`}
-                        />
-                      </div>
-                    ))}
-                    {["checkbox"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
-                        <Form.Check
-                          inline
-                          label="Sildenafil"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-4`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Tadalafil"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-5`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Other Medications"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-6`}
-                        />
-                      </div>
-                    ))}
-                  </Form.Group>
-                  <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridFirstname">
-                      <Form.Label>
-                        Please specify other ED medications or drugs you take?
-                      </Form.Label>
-                      <Form.Control
-                        type="textbox"
-                        className={styles.formControl}
-                      />
-                    </Form.Group>
-                  </Row>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Can you walk 1 mile on a flat surface in 20 minutes?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Are you currently taking any nitrate medications?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Are you currently taking any prescription medications?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Are you taking any other medications, vitamins or
-                      supplements?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Do you have any allergies (medication, environmental,
-                      foods, other)?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Have you ever been told you are not healthy enough to have
-                      sexual intercourse?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Do you have any other medical conditions or surgeries?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <br />
-                  <Form.Group
-                    as={Col}
-                    controlId="formGridED"
-                    className={styles.checkbox}
-                  >
-                    <Form.Label>
-                      Please identify all ED medications or drugs you take?
-                    </Form.Label>
-                    {["checkbox"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
-                        <Form.Check
-                          inline
-                          label="I Do Not Take Any Of These"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-1`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Nitroglycerin"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-2`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Isosorbide Dinitrate"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-3`}
-                        />
-                      </div>
-                    ))}
-                    {["checkbox"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
-                        <Form.Check
-                          inline
-                          label="Isosorbide Mononitrate"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-4`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Riociguat"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-5`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Ritonavir"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-6`}
-                        />
-                      </div>
-                    ))}
-                    {["checkbox"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
-                        <Form.Check
-                          inline
-                          label="Amyl Nitrate"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-7`}
-                        />
-                        <Form.Check
-                          inline
-                          label="Poppers"
-                          name="group1"
-                          type={type}
-                          id={`inline-${type}-8`}
-                        />
-                      </div>
-                    ))}
-                  </Form.Group>
-                  <br />
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Have you ever been diagnosed with low blood pressure?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Have you ever been diagnosed with high blood pressure?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Do you have any heart conditions or experience abnormal
-                      heart beats (fast, irregular, unusually slow)?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Have you experienced chest pain/pressure or difficulty
-                      breathing while active?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Have you experienced any episodes of fainting, severe
-                      lightheadedness-dizziness?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Is there anything else you would like to tell the doctor?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Do you have any other medical conditions or surgeries?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Do you have any other medical conditions or surgeries?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridED">
-                    <Form.Label>
-                      Do you have any other medical conditions or surgeries?
-                    </Form.Label>
-                    <Row>
-                      {gender.map((radio, idx) => (
-                        <Col xs={3}>
-                          <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            name="radio"
-                            className={styles.buttons}
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
-                            }
-                          >
-                            {radio.name}
-                          </ToggleButton>
-                        </Col>
-                      ))}
-                    </Row>
-                  </Form.Group>
-                  <br />
-                  <br />
-                  <Button
-                    variant="primary"
-                    className={styles.submitBtn}
-                    type="submit"
-                  >
-                    Submit
-                  </Button>
-                </Form>
-              </div>
-            </Col>
           </div>
         </Container>
       </main>
