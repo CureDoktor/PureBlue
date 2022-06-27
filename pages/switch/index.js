@@ -14,6 +14,8 @@ import { AccordionContext, Form } from "react-bootstrap";
 export default function Home() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
+  const [radioValue1, setRadioValue1] = useState("1");
+  const [radioValue2, setRadioValue2] = useState("1");
 
   const medication = [
     { name: "Sildenafil (generic Viagra)", value: "1" },
@@ -113,9 +115,9 @@ export default function Home() {
                             name="radio1"
                             className={styles.buttons}
                             value={radio.value}
-                            checked={radioValue === radio.value}
+                            checked={radioValue1 === radio.value}
                             onChange={(e) =>
-                              setRadioValue(e.currentTarget.value)
+                              setRadioValue1(e.currentTarget.value)
                             }
                           >
                             {radio.name}
@@ -138,9 +140,9 @@ export default function Home() {
                               name="radio2"
                               className={styles.buttons}
                               value={radio.value}
-                              checked={radioValue === radio.value}
+                              checked={radioValue2 === radio.value}
                               onChange={(e) =>
-                                setRadioValue(e.currentTarget.value)
+                                setRadioValue2(e.currentTarget.value)
                               }
                             >
                               {radio.name}
@@ -165,6 +167,7 @@ export default function Home() {
                   <Button className={styles.backToCheckout}>
                     BACK TO CHECKOUT
                   </Button>
+                  <br />
                 </div>
               </Col>
             </Row>

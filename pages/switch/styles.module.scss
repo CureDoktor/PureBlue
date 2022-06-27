@@ -193,6 +193,11 @@ $secondary-color: #003b60;
 @media screen and (max-width: 550px) {
   .registerPage {
     padding: 50px 0px 90px 0px;
+    .fieldOne {
+      .fields {
+        padding: 10px;
+      }
+    }
     h2 {
       padding: 30px 0px 30px 20px;
       font-size: 54px;
