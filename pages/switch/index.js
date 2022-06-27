@@ -74,7 +74,7 @@ export default function Home() {
         <Container>
           <div className={styles.fieldOne}>
             <Row>
-              <Col md={6}>
+              <Col md={6} className={styles.fields}>
                 <div className={styles.formField}>
                   <Form>
                     <Form.Group as={Col} controlId="formGridSexualActivity">
@@ -82,10 +82,10 @@ export default function Home() {
                         First decide your preferred medication, select one:
                       </Form.Label>
                       {medication.map((radio, idx) => (
-                        <Col md={6}>
+                        <Col md={12}>
                           <ToggleButton
                             key={idx}
-                            id={`radio-${idx}`}
+                            id={`radios-${idx}`}
                             type="radio"
                             name="radio"
                             className={styles.buttons}
@@ -105,12 +105,12 @@ export default function Home() {
                         How strong per serving you think you need, select one:
                       </Form.Label>
                       {strong.map((radio, idx) => (
-                        <Col md={6}>
+                        <Col md={12}>
                           <ToggleButton
                             key={idx}
-                            id={`radio-${idx}`}
+                            id={`radiod-${idx}`}
                             type="radio"
-                            name="radio"
+                            name="radio1"
                             className={styles.buttons}
                             value={radio.value}
                             checked={radioValue === radio.value}
@@ -123,7 +123,6 @@ export default function Home() {
                         </Col>
                       ))}
                     </Form.Group>
-
                     <Form.Group as={Col} controlId="formGridSexualActivity">
                       <Form.Label>
                         How many times you believe you will take the medication
@@ -134,9 +133,9 @@ export default function Home() {
                           <Col md={4}>
                             <ToggleButton
                               key={idx}
-                              id={`radio-${idx}`}
+                              id={`radioa-${idx}`}
                               type="radio"
-                              name="radio"
+                              name="radio2"
                               className={styles.buttons}
                               value={radio.value}
                               checked={radioValue === radio.value}
@@ -153,15 +152,19 @@ export default function Home() {
                   </Form>
                 </div>
               </Col>
-              <Col md={6}>
+              <Col md={6} className={styles.fields}>
                 <div className={styles.whitePart}>
                   <h2>YOUR PRICE BASED ON ANSWERS</h2>
                   <h3>
                     You chose Sildenafil at "Intermediate" level 4 times a month
                   </h3>
-                  <h1>$24</h1>
+                  <h1>
+                    <span className={styles.currency}>$</span>24
+                  </h1>
                   <p>Change your answers to discover more pricing options.</p>
-                  <Button>BACK TO CHECKOUT</Button>
+                  <Button className={styles.backToCheckout}>
+                    BACK TO CHECKOUT
+                  </Button>
                 </div>
               </Col>
             </Row>

@@ -3,8 +3,67 @@ $secondary-color: #003b60;
 
 .registerPage {
   .fieldOne {
+    .backToCheckout {
+      width: 100%;
+      border-radius: 8px;
+      background-color: #09a5e3;
+      font-size: 15px;
+      line-height: 38px;
+      color: #fefefe;
+      font-weight: 400;
+    }
     padding: 0px 0px 60px 0px;
     background-color: #f4f4f4;
+    .currency {
+      font-size: 36px;
+      position: relative;
+      top: -15px;
+    }
+    .fields {
+      padding: 30px 60px;
+      .buttons {
+        text-align: left;
+        padding-left: 30px;
+      }
+      .whitePart {
+        background-color: white;
+        margin-top: 100px;
+        padding: 30px 20px;
+        h2 {
+          font-size: 28px;
+          letter-spacing: 0px;
+          line-height: 24px;
+          color: #21293c;
+          font-weight: 700;
+          padding-bottom: 14px;
+        }
+        h3 {
+          font-size: 14px;
+          letter-spacing: 0px;
+          line-height: 24px;
+          color: #09a5e3;
+          font-weight: 700;
+          text-align: center;
+        }
+        h1 {
+          font-size: 57px;
+          letter-spacing: -3px;
+          line-height: 58px;
+          color: #09a5e3;
+          font-weight: 700;
+          text-align: center;
+          padding: 30px 0px;
+        }
+        p {
+          font-size: 14px;
+          letter-spacing: 0px;
+          line-height: 24px;
+          color: #767f84;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+    }
     .callUs {
       text-align: right;
       font-size: 21px;
@@ -26,8 +85,8 @@ $secondary-color: #003b60;
         padding-top: 2px;
       }
       .form-check-input:checked {
-        background-color: $primary-color !important;
-        border-color: $primary-color !important;
+        background-color: #09a5e3 !important;
+        border-color: #09a5e3 !important;
       }
       input {
         border-color: #ced4da;
@@ -36,8 +95,8 @@ $secondary-color: #003b60;
       }
     }
     input:checked {
-      background-color: $primary-color !important;
-      border-color: $primary-color !important;
+      background-color: #09a5e3 !important;
+      border-color: #09a5e3 !important;
     }
   }
   padding: 50px 0px 40px 0px;
