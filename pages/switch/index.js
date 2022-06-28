@@ -1,14 +1,8 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useContext, useState, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
-import Accordion from "react-bootstrap/Accordion";
-import Image from "next/image";
 import styles from "./styles.module.scss";
-import { Check, PatchCheck } from "react-bootstrap-icons";
-import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 export default function Home() {
