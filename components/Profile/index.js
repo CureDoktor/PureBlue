@@ -75,9 +75,9 @@ export default function Profile() {
           </div>
           <div className={styles.rectangleTwo}>
             <p>PAYMENT INFO</p>
-            <div className={styles.buttonHolder}>
-              <Button className={styles.buttons}>Pending</Button>
-            </div>
+            <Image src="/assets/order/cc.png" width={180} height={20} />
+            <br />
+            <br />
             <div className={styles.orderInfo}>
               <Row>
                 <Col>
