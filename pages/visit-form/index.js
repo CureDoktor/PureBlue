@@ -115,7 +115,6 @@ export default function Home() {
                       />
                     </Form.Group>
                   </Row>
-
                   <Form.Group as={Col} controlId="formGridSexualActivity">
                     <Form.Label>
                       Are you seeking treatment for improved sexual activity?
@@ -238,6 +237,19 @@ export default function Home() {
                       />
                     </Form.Group>
                   </Row>
+                  <>
+                    <Form.Label>
+                      How long does it take you to climb 2 flights of stairs?
+                    </Form.Label>
+                    <Form.Range
+                      defaultValue={3}
+                      min="0"
+                      max="5"
+                      step="1"
+                      id="customRange3"
+                      label="Example range"
+                    />
+                  </>
                   <Form.Group as={Col} controlId="formGridED">
                     <Form.Label>
                       Can you walk 1 mile on a flat surface in 20 minutes?

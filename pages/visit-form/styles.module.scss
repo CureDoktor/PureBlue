@@ -4,7 +4,6 @@ $secondary-color: #003b60;
 .registerPage {
   .fieldOne {
     padding: 0px 0px 60px 0px;
-
     .callUs {
       text-align: right;
       font-size: 21px;
@@ -35,7 +34,6 @@ $secondary-color: #003b60;
         margin-top: -2px;
       }
     }
-
     input:checked {
       background-color: $primary-color !important;
       border-color: $primary-color !important;
@@ -131,7 +129,6 @@ $secondary-color: #003b60;
     }
   }
 }
-
 @media screen and (max-width: 550px) {
   .registerPage {
     padding: 50px 0px 90px 0px;

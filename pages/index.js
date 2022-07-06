@@ -69,15 +69,6 @@ export default function Home() {
                     Branded and
                     <br className={styles.brMobile} /> Generic E.D. Pills
                   </h2>
-                  <p>
-                    By WebMDMen's <br className={styles.brMobile} /> Award
-                    Winning <br className={styles.brMobile} /> Formulator
-                    <span className={styles.primaryColor}>
-                      {" "}
-                      <br className={styles.brMobile} /> Professor John{" "}
-                      <br className={styles.brMobile} /> Ashcroft
-                    </span>
-                  </p>
                 </div>
                 <Image
                   src="/assets/homepage/banner-1-desktop.png"
