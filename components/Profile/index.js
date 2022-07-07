@@ -2,6 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import React from "react";
 import Image from "next/image";
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import {
   Col,
@@ -16,6 +17,11 @@ import {
 import styles from "./styles.module.scss";
 
 export default function Profile() {
+  const [save, setSave] = useState(false);
+
+  const saveEnable = () => {
+    setSave(true);
+  };
   return (
     <div className={styles.membership}>
       <Row>
@@ -45,16 +51,18 @@ export default function Profile() {
                 type="switch"
                 id="custom-switch"
                 label="SMS Notifications"
+                onChange={saveEnable}
               />
               <Form.Check
                 type="switch"
                 label="Marketing E-mails"
                 id="disabled-custom-switch"
+                onChange={saveEnable}
               />
               <div className={styles.buttonHolder}>
                 <br />
                 <br />
-                <Button className={styles.buttons}>Save</Button>
+                {save && <Button className={styles.buttons}>Save</Button>}
               </div>
             </Form>
           </div>
