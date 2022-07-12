@@ -3,6 +3,8 @@ import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 import { useState } from "react";
+import { PencilFill } from "react-bootstrap-icons";
+import ShipInfo from "../ShipInfo";
 import Form from "react-bootstrap/Form";
 import {
   Col,
@@ -18,12 +20,17 @@ import styles from "./styles.module.scss";
 
 export default function Profile() {
   const [save, setSave] = useState(false);
-
+  const [shipInfo, setShipInfo] = useState(false);
   const saveEnable = () => {
     setSave(true);
   };
+
+  const editField = (field) => {
+    console.log(field);
+  };
+
   return (
-    <div className={styles.membership}>
+    <div className={styles.profile}>
       <Row>
         <Col md={6}>
           <div className={styles.rectangle}>
@@ -69,21 +76,49 @@ export default function Profile() {
         </Col>
         <Col md={6}>
           <div className={styles.rectangleTwo}>
-            <p>SHIPPING INFO</p>
-            <p className={styles.highlight}>John Irwin Achas</p>
-            <p>(631)355-4940</p>
-            <p>One icon</p>
-            <p>Foothill Farms, CA, 92610</p>
+            <Row>
+              <Col md={9}>
+                <p>SHIPPING INFO</p>
+                <p className={styles.highlight}>John Irwin Achas</p>
+                <p>(631)355-4940</p>
+                <p>One icon</p>
+                <p>Foothill Farms, CA, 92610</p>
+              </Col>
+              <Col>
+                <Button className={styles.edit} onClick={() => editField(1)}>
+                  <PencilFill /> EDIT
+                </Button>
+              </Col>
+            </Row>
+            {shipInfo && <ShipInfo />}
           </div>
           <div className={styles.rectangleTwo}>
-            <p>BILLING INFO</p>
-            <p className={styles.highlight}>Marie Gaviola</p>
-            <p>100 Riviera Dr S Massapequa</p>
-            <p>Massapequa, NY, 11758</p>
+            <Row>
+              <Col md={9}>
+                <p>BILLING INFO</p>
+                <p className={styles.highlight}>Marie Gaviola</p>
+                <p>100 Riviera Dr S Massapequa</p>
+                <p>Massapequa, NY, 11758</p>
+              </Col>
+              <Col>
+                <Button className={styles.edit} onClick={() => editField(2)}>
+                  <PencilFill /> EDIT
+                </Button>
+              </Col>
+            </Row>
           </div>
           <div className={styles.rectangleTwo}>
-            <p>PAYMENT INFO</p>
-            <Image src="/assets/order/cc.png" width={180} height={20} />
+            <Row>
+              <Col md={9}>
+                <p>PAYMENT INFO</p>
+                <Image src="/assets/order/cc.png" width={180} height={20} />
+              </Col>
+              <Col>
+                <Button className={styles.edit} onClick={() => editField(3)}>
+                  <PencilFill /> EDIT
+                </Button>
+              </Col>
+            </Row>
             <br />
             <br />
             <div className={styles.orderInfo}>
