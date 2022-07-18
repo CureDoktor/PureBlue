@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { PencilFill } from "react-bootstrap-icons";
 import ShipInfo from "../ShipInfo";
+import PayInfo from "../PayInfo";
+import BillInfo from "../BillInfo";
 import Form from "react-bootstrap/Form";
 import {
   Col,
@@ -21,12 +23,20 @@ import styles from "./styles.module.scss";
 export default function Profile() {
   const [save, setSave] = useState(false);
   const [shipInfo, setShipInfo] = useState(false);
+  const [billInfo, setBillInfo] = useState(false);
+  const [payInfo, setPayInfo] = useState(false);
   const saveEnable = () => {
     setSave(true);
   };
 
   const editField = (field) => {
-    console.log(field);
+    if (field === 1) {
+      setShipInfo(true);
+    } else if (field === 2) {
+      setBillInfo(true);
+    } else {
+      setPayInfo(true);
+    }
   };
 
   return (
@@ -106,6 +116,7 @@ export default function Profile() {
                 </Button>
               </Col>
             </Row>
+            {billInfo && <BillInfo />}
           </div>
           <div className={styles.rectangleTwo}>
             <Row>
@@ -151,6 +162,7 @@ export default function Profile() {
                 </Col>
               </Row>
             </div>
+            {payInfo && <PayInfo />}
           </div>
         </Col>
       </Row>
