@@ -17,9 +17,11 @@ import styles from "./styles.module.scss";
 import Form from "react-bootstrap/Form";
 
 export default function ShipInfo(props) {
+  console.log(props);
+
   return (
     <div>
-      <Row className="mb-3">
+      <Row className="mb-3 pt-5">
         <Form.Group as={Col} controlId="formGridFirstname">
           <Form.Control
             type="name"
@@ -77,7 +79,7 @@ export default function ShipInfo(props) {
           />
         </Form.Group>
       </Row>
-      <Button className={styles.button} onClick={props.SaveInfo}>
+      <Button className={styles.button} onClick={props.saveInfo}>
         SAVE AND CONTINUE
       </Button>
     </div>

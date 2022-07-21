@@ -29,13 +29,24 @@ export default function Profile() {
     setSave(true);
   };
 
-  const editField = (field) => {
-    if (field === 1) {
-      setShipInfo(true);
-    } else if (field === 2) {
-      setBillInfo(true);
+  const editField = (field, save) => {
+    console.log(field, save);
+    if (save === 1) {
+      if (field === 1) {
+        setShipInfo(true);
+      } else if (field === 2) {
+        setBillInfo(true);
+      } else {
+        setPayInfo(true);
+      }
     } else {
-      setPayInfo(true);
+      if (field === 1) {
+        setShipInfo(false);
+      } else if (field === 2) {
+        setBillInfo(false);
+      } else {
+        setPayInfo(false);
+      }
     }
   };
 
@@ -95,12 +106,18 @@ export default function Profile() {
                 <p>Foothill Farms, CA, 92610</p>
               </Col>
               <Col>
-                <Button className={styles.edit} onClick={() => editField(1)}>
+                <Button className={styles.edit} onClick={() => editField(1, 1)}>
                   <PencilFill /> EDIT
                 </Button>
               </Col>
             </Row>
-            {shipInfo && <ShipInfo />}
+            {shipInfo && (
+              <ShipInfo
+                saveInfo={() => {
+                  editField(1, 0);
+                }}
+              />
+            )}
           </div>
           <div className={styles.rectangleTwo}>
             <Row>
@@ -111,12 +128,18 @@ export default function Profile() {
                 <p>Massapequa, NY, 11758</p>
               </Col>
               <Col>
-                <Button className={styles.edit} onClick={() => editField(2)}>
+                <Button className={styles.edit} onClick={() => editField(2, 1)}>
                   <PencilFill /> EDIT
                 </Button>
               </Col>
             </Row>
-            {billInfo && <BillInfo />}
+            {billInfo && (
+              <BillInfo
+                saveInfo={() => {
+                  editField(2, 0);
+                }}
+              />
+            )}
           </div>
           <div className={styles.rectangleTwo}>
             <Row>
@@ -125,7 +148,7 @@ export default function Profile() {
                 <Image src="/assets/order/cc.png" width={180} height={20} />
               </Col>
               <Col>
-                <Button className={styles.edit} onClick={() => editField(3)}>
+                <Button className={styles.edit} onClick={() => editField(3, 1)}>
                   <PencilFill /> EDIT
                 </Button>
               </Col>
@@ -162,7 +185,13 @@ export default function Profile() {
                 </Col>
               </Row>
             </div>
-            {payInfo && <PayInfo />}
+            {payInfo && (
+              <PayInfo
+                saveInfo={() => {
+                  editField(3, 0);
+                }}
+              />
+            )}
           </div>
         </Col>
       </Row>

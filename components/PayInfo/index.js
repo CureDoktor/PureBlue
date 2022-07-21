@@ -18,24 +18,8 @@ import Form from "react-bootstrap/Form";
 
 export default function PayInfo(props) {
   return (
-    <div>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFirstname">
-          <Form.Control
-            type="name"
-            className={styles.formControl}
-            placeholder="First Name"
-          />
-        </Form.Group>
-        <Form.Group as={Col} controlId="formGridLastname">
-          <Form.Control
-            type="lastname"
-            className={styles.formControl}
-            placeholder="Last Name"
-          />
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
+    <>
+      <Row className="mb-3 pt-5">
         <Form.Group as={Col} controlId="formGridFirstname">
           <Form.Control
             type="name"
@@ -77,9 +61,9 @@ export default function PayInfo(props) {
           />
         </Form.Group>
       </Row>
-      <Button className={styles.button} onClick={props.SaveInfo}>
+      <Button className={styles.button} onClick={props.saveInfo}>
         SAVE AND CONTINUE
       </Button>
-    </div>
+    </>
   );
 }
