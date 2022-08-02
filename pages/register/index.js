@@ -77,7 +77,11 @@ export default function Home() {
               </p>
               <p className={styles.member}>
                 Already a member?{" "}
-                <span className={styles.blueText}>Log in</span>
+                <Link href="/login">
+                  <a>
+                    <span className={styles.blueText}>Log in</span>
+                  </a>
+                </Link>
               </p>
             </div>
             <Col md={{ span: 7, offset: 5 }}>

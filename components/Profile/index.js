@@ -52,7 +52,7 @@ export default function Profile() {
 
   return (
     <div className={styles.profile}>
-      <Row>
+      <Row className="ml-0 mr-0">
         <Col md={6}>
           <div className={styles.rectangle}>
             <h2>Personal Information</h2>

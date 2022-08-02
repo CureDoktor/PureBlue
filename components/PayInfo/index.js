@@ -23,7 +23,7 @@ export default function PayInfo(props) {
         <Form.Group as={Col} controlId="formGridFirstname">
           <Form.Control
             type="name"
-            className={styles.formControl}
+            className={styles.formControl}  
             placeholder="Street Address 1"
           />
         </Form.Group>
@@ -47,7 +47,7 @@ export default function PayInfo(props) {
         </Form.Group>
       </Row>
       <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridState">
+        <Form.Group as={Col} controlId="formGridState"> 
           <Form.Select className={styles.formControl} defaultValue="State">
             <option>State</option>
             <option>...</option>
