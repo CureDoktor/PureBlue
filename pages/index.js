@@ -6,7 +6,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import Header from "../components/Header";
-import { Check, PatchCheck } from "react-bootstrap-icons";
+import { Check, PatchCheck, CheckCircleFill } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
@@ -52,219 +52,177 @@ export default function Home() {
         <div className={styles.fieldOneBg}>
           <Container className={styles.container}>
             <div className={styles.fieldOne}>
-              <Col md={{ span: 7, offset: 5 }}>
+              <Col md={8}>
                 <div className={styles.fieldOneText}>
                   <div className={styles.callUs}>
-                    <Link href="tel: 1-888-534-8977">
-                      <a>
-                        Call Us Anytimee:{" "}
-                        <span className={styles.primaryColor}>
-                          1-888-534-8977
-                        </span>
-                      </a>
-                    </Link>
+                    <p>
+                      Introducing PureBlue, your online clinic for men's health
+                    </p>
                   </div>
-                  <h2>
-                    Your #1 Source <br className={styles.brMobile} /> for
-                    Branded and
-                    <br className={styles.brMobile} /> Generic E.D. Pills
-                  </h2>
+                  <h2>ONLINE PRESCRIPTION SERVICE FOR ED MEDICATIONS</h2>
+                  <Row>
+                    <Col md={9}>
+                      <ul>
+                        <li>
+                          {" "}
+                          <CheckCircleFill className={styles.checkmarks} />
+                          Same Day Prescription Approval
+                        </li>
+                        <li>
+                          <CheckCircleFill className={styles.checkmarks} />
+                          We do not require payment <br /> until the
+                          prescription is approved
+                        </li>
+                        <li>
+                          <CheckCircleFill className={styles.checkmarks} />
+                          Starting at $1.30 a pill
+                        </li>
+                      </ul>
+                      <p className={styles.firstMedication}>
+                        <span className={styles.blueText}>First, </span>pick a
+                        medication that works for you
+                      </p>
+                      <Row className={styles.pillChoice}>
+                        <Col md={6}>
+                          <Image
+                            src="/assets/homepage/VIAGRA.png"
+                            width={300}
+                            height={160}
+                          />
+                          <b>Only use when it's needed!</b>
+                        </Col>
+                        <Col md={6}>
+                          <Image
+                            src="/assets/homepage/CIALIS.png"
+                            width={300}
+                            height={160}
+                          />
+                          <b>Always be prepared!</b>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col md={3} className={styles.bottle}>
+                      <Image
+                        src="/assets/homepage/bottle.png"
+                        width={217}
+                        height={406}
+                      />
+                    </Col>
+                  </Row>
                 </div>
-                <Image
-                  src="/assets/homepage/banner-1-desktop.png"
-                  className={styles.ffImage}
-                  height={440}
-                  width={800}
-                />
               </Col>
             </div>
           </Container>
         </div>
         <div className={styles.fieldTwo}>
           <Container className={styles.container}>
-            <p>Pure Quality</p>
-            <p>•</p>
-            <p>Safe</p>
-            <p>•</p>
-            <p>Regulated</p>
-            <p>•</p>
-            <p>Consistent Results</p>
+            <h2>
+              Welcome to Pure<span className={styles.blueText}>Blue</span>
+            </h2>
+            <h3>We provide E.D. medication that you can trust</h3>
           </Container>
         </div>
         <div className={styles.fieldThree}>
           <Container>
-            <Row className="justify-content-center align-items-center">
-              <Col md={5}>
-                <div className="d-flex justify-content-center">
-                  <Image
-                    src="/assets/homepage/pills.png"
-                    width={320}
-                    height={430}
-                  />
-                </div>
-              </Col>
-              <Col md={7}>
-                <ul>
-                  <li>
-                    <Check className={styles.checkmark} /> Genuine Sildenafil
-                    Formulation from Pfizer
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> PureBlue ED focused
-                    online medical support and consultation*
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> FDA and CGMP
-                    compliant laboratory
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> Convenient and easy
-                    prescription pills
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> Total Privacy Promise
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> Best price
-                    guaranteed!
-                  </li>
-                </ul>
-                <p>
-                  *Prescriptions are provided pending on the online evaluation
-                  of an affiliated PureBlue provider
-                </p>
-              </Col>
-            </Row>
-            <h2>
-              PureBlue gives you the best quality, price, and performance of
-              generic sildenafil pills without jumping through hoops! Get your
-              E.D. pills fast and easy with PureBlue!
-            </h2>
+            <Col md={{ span: 7, offset: 5 }}></Col>
           </Container>
-          <div className={styles.pillsBg}>
-            <Container>
-              <Col md={{ span: 8, offset: 4 }}>
-                <Image
-                  src="/assets/homepage/chart.png"
-                  height={350}
-                  width={800}
-                />
-              </Col>
-            </Container>
-          </div>
         </div>
         <div className={styles.fieldFour}>
-          <Container>
-            <div className="container">
-              <h3>Generic E.D. pills VS Branded E.D. Pills</h3>
-              <p>
-                Pfizer’s exclusive market rights to sildenafil(brand name
-                Viagra) ended after a 20-year domination of the erectile
-                dysfunction(E.D.) market, and now men can get genuine sildenafil
-                pills at a significantly lower price .Generic pills in no way
-                diminish the quality and effectiveness of E.D. pills as other
-                companies can manufacture generic E.D. pills in the same quality
-                and performance as branded pills. <br />
-                <br />
-                Generic sildenafil pills can be just as effective and potent as
-                Viagra, provided that the pills are made by laboratories in the
-                United States that are certified to produce sildenafil pills in
-                the same potency and active ingredients as Viagra.
-              </p>
-              <h3>
-                How Pure<span className={styles.secondaryColor}>Blue</span>
-                Makes it Work
-              </h3>
-              <p>
-                PureBlue gives you the best price on generic sildenafil pills
-                without sacrificing quality, effectiveness, and potency of your
-                E.D. pills. We take pride in operating a lean business that cut
-                out all the unnecessary expenses such as endorsements, TV and
-                radio advertising, and over-the-top marketing schemes and simply
-                let our quality and service do the talking.
-                <br />
-                <br />
-                <b>
-                  Let’s not kid ourselves – celebrities have people who can get
-                  them anything they need, including E.D. pills, and spending
-                  heavily on celebrity endorsements isn’t our style. We care
-                  more about what you need. Safe, reliable, and effective E.D.
-                  pills without breaking the bank.{" "}
-                </b>
-                <br />
-                <br /> We know how important it is to get consistent and
-                dependable results from E.D. pills, and we want our customers to
-                never worry about E.D. again in their lives. PureBlue is all
-                about bringing back the mojo that made life exciting, and we
-                won’t lethigh prices get in the way of making that happen for
-                all of our customers.
-              </p>
-            </div>
+          <Container className={styles.fourBG}>
+            <Col md={{ span: 6, offset: 6 }}>
+              <h4>
+                PureBlue provides secure, discreet, and fast delivery of your
+                E.D. medication to your home.
+              </h4>
+              <Row>
+                <Col md={2}>
+                  <Image
+                    src="/assets/homepage/img1.png"
+                    width={85}
+                    height={70}
+                  />
+                </Col>
+                <Col md={10}>
+                  <p>
+                    Using our 100% online ordering process, you can boost your
+                    confidence and performance in bed without ever leaving your
+                    home.
+                  </p>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={2}>
+                  <Image
+                    src="/assets/homepage/img2.png"
+                    width={85}
+                    height={70}
+                  />
+                </Col>
+                <Col md={10}>
+                  <p>
+                    PureBlue offers a 30-day money back guarantee to ensure you
+                    are satisfied with our products or services.
+                  </p>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={2}>
+                  <Image
+                    src="/assets/homepage/img3.png"
+                    width={85}
+                    height={70}
+                  />
+                </Col>
+                <Col md={10}>
+                  <p>
+                    There will be no charge until your prescription for FDA
+                    approved E.D. medications is approved.
+                  </p>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={2}>
+                  <Image
+                    src="/assets/homepage/img4.png"
+                    width={85}
+                    height={70}
+                  />
+                </Col>
+                <Col md={10}>
+                  <p>
+                    Our PureBlue care team is available seven days a week to
+                    provide the highest possible service to our customers.
+                  </p>
+                </Col>
+              </Row>
+            </Col>
           </Container>
         </div>
         <div className={styles.fieldFive}>
-          <div className={styles.boxBg}>
-            <Container>
-              <div className={styles.blueLine}>
-                <Row className="align-items-center">
-                  <Col md={7}>
-                    <h2>
-                      SAFE <br />
-                      <span className={styles.secondaryColor}>DISCREET</span>
-                      <br /> CONVENIENT
-                    </h2>
-                    <h4>
-                      Get Genuine Sildenafil Pills Online the RIGHT Way! The
-                      right way doesn’t have to be inconvenient. <br />
-                      <br />
-                      Pure<span className={styles.primaryColor}>Blue </span>
-                      makes it EASY.
-                    </h4>
-                  </Col>
-                </Row>
-              </div>
-            </Container>
-          </div>
           <Container>
-            <div className={styles.getRight}>
-              <h3>Get the right E.D. treatment for you – PRONTO.</h3>
-              <p>
-                What’s the point of getting your E.D. pills online if you spend
-                days jumping through hoops just to get the treatment you need?
-                PureBlue made it easy to get the answers, treatments, and
-                prescriptions you need. Our affiliated providers are on standby
-                to evaluate your medical profile to ensure the safety of your
-                health and your medical eligibility to take E.D. medication.{" "}
-                <br />
-                <br />
-                <b>
-                  Instead of waiting for your doctor’s schedule to open up for
-                  an in-person visit, or spending days trying to get an E.D.
-                  prescription online, you can complete the entire process with
-                  PureBlue in 10 minutes or less. No shortcuts, no gray areas.
-                  Everything is done perfectly by the book – the smart way.
-                </b>
-                <br /> <br /> Never sacrifice quality and safety for
-                convenience, and PureBlue is here to ensure that you get exactly
-                what you need, without the hassle. Our order process is
-                optimized to make everything simple, easy, and convenient – just
-                the way you like it.
-              </p>
-              <div className={styles.grayField}>
-                <p>
-                  Important Safety Information <br />
-                  Do not take sildenafil (sildenafil citrate) or tadalafil if
-                  you take medication containing nitrates or guanylate cyclase
-                  stimulators as this could cause an unsafe drop in blood
-                  pressure or if you are allergic to sildenafil, tadalafil or
-                  any ingredients in either medication. Discuss your health with
-                  your doctor to ensure that you are healthy enough for sex. If
-                  you experience chest pain, dizziness, or nausea during sex,
-                  seek immediate medical help. Sildenafil and tadalafil can
-                  cause serious side effects.
-                </p>
-              </div>
-            </div>
+            <ul>
+              <li>
+                <CheckCircleFill className={styles.checkmarks} />
+              </li>
+              <li>
+                <CheckCircleFill className={styles.checkmarks} />
+              </li>
+              <li>
+                <CheckCircleFill className={styles.checkmarks} />
+              </li>
+              <li>
+                <CheckCircleFill className={styles.checkmarks} />
+              </li>
+              <li>
+                <CheckCircleFill className={styles.checkmarks} />
+              </li>
+              <li>
+                <CheckCircleFill className={styles.checkmarks} />
+              </li>
+              <li>
+                <CheckCircleFill className={styles.checkmarks} />
+              </li>
+            </ul>
           </Container>
         </div>
         <div className={styles.fieldSix}>

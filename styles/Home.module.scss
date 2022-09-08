@@ -123,19 +123,56 @@ $secondary-color: #003b60;
 }
 
 .fieldOneBg {
-  background-image: url("../public/assets/homepage/doctor-bg.png");
-  background-position: left;
+  background-image: url("../public/assets/homepage/BG.png");
+  background-position: center;
   background-repeat: no-repeat;
   .fieldOne {
-    padding: 20px 0px 40px 0px;
+    padding: 20px 0px 20px 0px;
+    .bottle {
+      padding-top: 150px;
+    }
+    .checkmarks {
+      color: #0077f0;
+      margin-right: 10px;
+      font-size: 30px;
+    }
+    ul {
+      padding: 22px 0px;
+      padding-left: 35px;
+      li {
+        font-size: 25px;
+        color: #000000;
+        padding-top: 15px;
+        line-height: 35px;
+        text-indent: -1.6em;
+        &::marker {
+          content: none;
+        }
+      }
+    }
+    .blueText {
+      color: #0077f0;
+    }
+    .firstMedication {
+      font-size: 25px;
+      font-weight: 600;
+      padding-bottom: 10px;
+      padding-top: 40px;
+    }
     .callUs {
-      text-align: right;
-      font-size: 21px;
-      letter-spacing: -1px;
-      line-height: 30px;
-      color: #2d2d2d;
-      font-weight: 700;
-      padding-bottom: 30px;
+      max-width: 620px;
+      margin-top: 10px;
+      p {
+        padding: 5px 15px;
+        text-align: left;
+        font-size: 21px;
+        letter-spacing: 0px;
+        line-height: 30px;
+        color: #003f7e;
+        font-weight: 400;
+        background-color: #c8f1f5;
+        border-radius: 20px;
+      }
     }
     .placeholder {
       max-width: 728px;
@@ -143,9 +180,11 @@ $secondary-color: #003b60;
       background-color: #b7b7b7;
     }
     h2 {
-      font-size: 54px;
+      font-size: 50px;
+      padding-top: 20px;
+      padding-bottom: 0px;
       line-height: 54px;
-      color: #000000;
+      color: #00356a;
       font-weight: 700;
     }
     p {
@@ -154,14 +193,35 @@ $secondary-color: #003b60;
       font-weight: 600;
       font-family: "Poppins";
     }
+    .pillChoice {
+      text-align: center;
+    }
   }
 }
 .fieldTwo {
+  background-image: url("../public/assets/homepage/welcome-pureblue-bg.png");
+  background-position: 150px;
+  background-repeat: no-repeat;
+  padding: 80px 0px 145px 0px;
+  color: #000000;
+  .blueText {
+    color: #0077f0;
+  }
   text-align: center;
   background-color: $primary-color;
+  h2 {
+    font-size: 40px;
+    letter-spacing: -1px;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
   .container {
     max-width: 920px;
-    display: flex;
     p {
       font-size: 33px;
       line-height: 46px;
@@ -215,9 +275,18 @@ $secondary-color: #003b60;
   }
 }
 .fieldFour {
-  padding: 80px 0px 100px 0px;
-  color: #ffffff;
-  background-color: $primary-color;
+  color: #000;
+  .fourBG {
+    padding: 180px 0px 210px 0px;
+    background-image: url("../public/assets/homepage/prescription.png");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+  }
+  h4 {
+    padding-bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+  }
   h3 {
     font-size: 24px;
     letter-spacing: 0px;
@@ -226,13 +295,8 @@ $secondary-color: #003b60;
     padding-top: 50px;
   }
   p {
-    font-size: 14px;
-    letter-spacing: 0px;
-    line-height: 24px;
-    font-weight: 300;
-    b {
-      font-weight: 700;
-    }
+    padding-bottom: 25px;
+    padding-right: 40px;
   }
   .container {
     max-width: 900px;
