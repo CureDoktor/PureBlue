@@ -304,7 +304,45 @@ $secondary-color: #003b60;
   }
 }
 .fieldFive {
+  background-image: url("../public/assets/homepage/pick-med-bg.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
   padding: 80px 0px;
+  .blueText {
+    color: #0077f0;
+  }
+  .stepOne {
+    padding-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .containerFive {
+    max-width: 1200px;
+  }
+  .checkmarks {
+    color: #0077f0;
+    margin-right: 10px;
+    font-size: 30px;
+  }
+  ul {
+    padding: 0px 0px 20px 0px;
+    padding-left: 35px;
+    li {
+      font-size: 18px;
+      color: #000000;
+      padding-bottom: 15px;
+      line-height: 25px;
+      text-indent: -1.6em;
+      font-style: italic;
+      &::marker {
+        content: none;
+      }
+      &::before {
+        content: "-";
+        padding-right: 5px;
+      }
+    }
+  }
   h2 {
     font-size: 61px;
     line-height: 51px;
@@ -375,6 +413,28 @@ $secondary-color: #003b60;
 .fieldSeven {
   background-color: #f6f6f6;
   padding: 120px 0px;
+  .steps {
+    border: 2px solid #0070f3;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 40px;
+    margin-bottom: 50px;
+    max-height: 224px;
+    h3 {
+      padding-top: 40px;
+      padding-left: 30px;
+      font-size: 27px;
+      color: #0070f3;
+      font-weight: 600;
+    }
+    p {
+      padding: 20px 30px;
+    }
+  }
+  .stepImages {
+    border-bottom-left-radius: 36px;
+    border-top-left-radius: 36px;
+  }
   h2 {
     text-align: center;
     font-size: 41px;
@@ -393,6 +453,33 @@ $secondary-color: #003b60;
 }
 .fieldEight {
   padding: 90px 0px 120px 0px;
+  .headerOne {
+    background-color: white;
+    color: #000;
+  }
+  .cardHeader {
+    border: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid $primary-color;
+  }
+  .caret {
+    color: $primary-color;
+    font-size: 25px;
+  }
+  .header {
+    background-color: #fff;
+    .textPart {
+      font-weight: bold;
+      font-size: 21px;
+    }
+    button {
+      background-color: white !important;
+      color: black !important;
+    }
+    color: #000;
+    border: 0px;
+    padding: 10px 0px;
+  }
   .pillPart {
     border-bottom: 4px solid $primary-color;
     padding: 50px;
@@ -465,23 +552,26 @@ $secondary-color: #003b60;
   }
 }
 .fieldNine {
-  background-color: $primary-color;
-  padding: 120px 0px 80px 0px;
+  background-color: #f3f3f3;
+  padding: 50px 0px;
+  .important {
+    color: red;
+    padding-bottom: 20px;
+  }
+  .triangle {
+    font-size: 30px;
+  }
   .expand {
     margin: auto;
     color: #ffffff;
     max-width: 900px;
   }
-  .cardHeader {
-    background-color: $primary-color;
-    border: 0px;
-    padding: 15px 0px;
-    border-bottom: 1px solid $secondary-color;
+  a {
+    text-decoration: underline;
+    color: $primary-color;
   }
-  .header {
-    background-color: $primary-color;
-    border: 0px;
-    padding: 10px 0px;
+  p {
+    margin-bottom: 0px;
   }
   h2 {
     text-align: center;
@@ -506,6 +596,28 @@ $secondary-color: #003b60;
 .fieldTen {
   padding: 100px 0px;
   text-align: center;
+  .checkmarks {
+    color: #0077f0;
+    margin-right: 10px;
+    font-size: 30px;
+  }
+  ul {
+    padding: 22px 0px;
+    padding-left: 35px;
+    li {
+      font-size: 25px;
+      color: #000000;
+      padding-top: 15px;
+      line-height: 35px;
+      text-indent: -1.6em;
+      &::marker {
+        content: none;
+      }
+    }
+  }
+  .pillChoice {
+    text-align: center;
+  }
   h2 {
     font-size: 41px;
     line-height: 51px;
