@@ -595,21 +595,28 @@ $secondary-color: #003b60;
 }
 .fieldTen {
   padding: 100px 0px;
-  text-align: center;
+  background-color: $primary-color;
   .checkmarks {
     color: #0077f0;
     margin-right: 10px;
     font-size: 30px;
   }
+  .nowStarted {
+    max-width: 1200px;
+    background-color: #fff;
+    max-height: 510px;
+    margin: auto;
+  }
   ul {
-    padding: 22px 0px;
-    padding-left: 35px;
+    padding: 7px 0px;
+    padding-left: 120px;
     li {
-      font-size: 25px;
+      font-size: 20px;
       color: #000000;
       padding-top: 15px;
-      line-height: 35px;
+      line-height: 25px;
       text-indent: -1.6em;
+      font-weight: bold;
       &::marker {
         content: none;
       }
@@ -737,67 +744,180 @@ $secondary-color: #003b60;
   }
 }
 @media screen and (max-width: 550px) {
+  .container {
+    padding: 0px;
+  }
   .fieldOneBg {
-    background-size: 1100px 400px;
-    background-position-x: -200px;
-    .container {
-      padding: 0px;
-    }
-    .ffImage {
-      margin-bottom: -10px;
-    }
+    background-image: url("../../public/assets/homepage/header-bg-mobile.png");
+    background-size: 100% 100%;
     .fieldOne {
-      padding: 10px 0px 0px 0px;
-      h2 {
-        text-align: right;
-        font-size: 23px;
-        max-width: 250px;
-        line-height: 35px;
-        margin-left: auto;
-        padding-top: 20px;
+      .firstMedication {
+        text-align: center;
+        padding: 25px 5px;
       }
-      p {
-        text-align: right;
-        padding-top: 20px;
-      }
-      .fieldOneText {
-        padding: 15px 25px;
-        .primaryColor {
-          font-weight: bold;
+      padding-top: 0px;
+      .callUs {
+        margin-top: 0px;
+        p {
+          background-color: #005cba;
+          color: white;
+          font-size: 16px;
+          border-radius: 0px;
         }
       }
-      .brMobile {
-        display: block;
-      }
-    }
-    .callUs {
-      text-align: center !important;
-      a {
-        text-align: center;
-        font-size: 18px;
-      }
-    }
-  }
-
-  .fieldTwo {
-    .container {
-      display: unset;
-      p {
-        margin-bottom: 0px;
-        padding-top: 0px;
-        line-height: 30px;
-        font-size: 20px;
-      }
-    }
-  }
-
-  .fieldFive {
-    .blueLine {
-      padding: 10px 20px 50px 20px;
       h2 {
-        font-size: 40px;
-        line-height: 36px;
+        padding-left: 20px;
+      }
+      ul {
+        padding-left: 70px;
+        li {
+          font-size: 18px;
+        }
+      }
+      .bottle {
+        display: none;
       }
     }
+  }
+  .fieldTwo {
+    display: none;
+  }
+  .fieldFour {
+    .fourBG {
+      padding: 50px 10px 770px 10px;
+      background-position-x: -80px;
+      h4 {
+        font-size: 24px;
+      }
+    }
+    p {
+      font-size: 14px;
+      padding-right: 0px;
+    }
+  }
+  .bluePart {
+    height: 100px;
+    width: 100%;
+    background-color: $primary-color;
+  }
+  .fieldFive {
+    background-image: url("../../public/assets/homepage/man-woman-bg.png");
+    padding-bottom: 0px;
+    background-position: center center;
+    background-position-y: 575px;
+    .stepOne {
+      text-align: center;
+      padding: 20px 0px;
+    }
+    .centerMob {
+      text-align: center;
+    }
+    .ul {
+      padding-top: 55px;
+      ul {
+        padding-bottom: 0px;
+      }
+      li {
+        color: #fff;
+        font-size: 15px;
+        padding-bottom: 0px;
+        font-weight: 600;
+        line-height: 25px;
+        &:before {
+          content: "-";
+        }
+      }
+    }
+    ul {
+      padding-left: 50px;
+      padding-bottom: 500px;
+      li {
+        &::before {
+          content: "";
+        }
+        text-indent: -2.6em;
+        font-weight: 600;
+      }
+    }
+  }
+  .fieldSeven {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    h2 {
+      font-size: 30px;
+    }
+    .steps {
+      border: 2px solid #0070f3;
+      margin: auto;
+      border-radius: 40px;
+      margin-bottom: 50px;
+      max-height: none;
+      h3 {
+        text-align: center;
+        padding: 20px 20px 0px 20px;
+        font-size: 20px;
+        color: #0070f3;
+        font-weight: 600;
+      }
+      p {
+        padding: 20px 30px;
+        font-size: 15px;
+      }
+    }
+    .stepImages {
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 36px;
+      border-top-right-radius: 36px;
+    }
+  }
+  .fieldEight {
+    padding: 60px 0px 80px 0px;
+    h2 {
+      font-size: 30px;
+    }
+  }
+  .fieldNine {
+    margin-bottom: 100px;
+    .important {
+      text-align: center;
+    }
+  }
+  .fieldTen {
+    padding: 0px;
+    .nowStarted {
+      max-height: none;
+      ul {
+        padding-left: 70px;
+        li {
+          font-size: 17px;
+          text-indent: -2.4em;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .fieldOneBg {
+    .fieldOne {
+      h2 {
+        padding-left: 20px;
+        font-size: 38px;
+      }
+    }
+  }
+  .fieldFour {
+    padding: 0px 10px;
+    .fourBG {
+      padding: 50px 0px 700px 0px;
+      background-position-x: -50px;
+      h4 {
+        font-size: 21px;
+      }
+    }
+  }
+}
+.d-md-none {
+  span {
+    display: none;
   }
 }

@@ -89,7 +89,7 @@ export default function Home() {
                         medication that works for you
                       </p>
                       <Row className={styles.pillChoice}>
-                        <Col md={6}>
+                        <Col>
                           <Image
                             src="/assets/homepage/VIAGRA.png"
                             width={300}
@@ -97,7 +97,7 @@ export default function Home() {
                           />
                           <b>Only use when it's needed!</b>
                         </Col>
-                        <Col md={6}>
+                        <Col>
                           <Image
                             src="/assets/homepage/CIALIS.png"
                             width={300}
@@ -112,6 +112,7 @@ export default function Home() {
                         src="/assets/homepage/bottle.png"
                         width={217}
                         height={406}
+                        className="d-none d-md-block"
                       />
                     </Col>
                   </Row>
@@ -119,6 +120,14 @@ export default function Home() {
               </Col>
             </div>
           </Container>
+        </div>
+        <div className="d-block d-md-none">
+          <Image
+            src="/assets/homepage/welcome-pure-blue.png"
+            width={520}
+            height={277}
+            className="d-block d-md-none"
+          />
         </div>
         <div className={styles.fieldTwo}>
           <Container className={styles.container}>
@@ -128,11 +137,11 @@ export default function Home() {
             <h3>We provide E.D. medication that you can trust</h3>
           </Container>
         </div>
-        <div className={styles.fieldThree}>
+        {/* <div className={styles.fieldThree}>
           <Container>
             <Col md={{ span: 7, offset: 5 }}></Col>
           </Container>
-        </div>
+        </div> */}
         <div className={styles.fieldFour}>
           <Container className={styles.fourBG}>
             <Col md={{ span: 6, offset: 6 }}>
@@ -141,14 +150,14 @@ export default function Home() {
                 E.D. medication to your home.
               </h4>
               <Row>
-                <Col md={2}>
+                <Col xs={3} md={2}>
                   <Image
                     src="/assets/homepage/img1.png"
                     width={85}
                     height={70}
                   />
                 </Col>
-                <Col md={10}>
+                <Col xs={9} md={10}>
                   <p>
                     Using our 100% online ordering process, you can boost your
                     confidence and performance in bed without ever leaving your
@@ -157,14 +166,14 @@ export default function Home() {
                 </Col>
               </Row>
               <Row>
-                <Col md={2}>
+                <Col xs={3} md={2}>
                   <Image
                     src="/assets/homepage/img2.png"
                     width={85}
                     height={70}
                   />
                 </Col>
-                <Col md={10}>
+                <Col xs={9} md={10}>
                   <p>
                     PureBlue offers a 30-day money back guarantee to ensure you
                     are satisfied with our products or services.
@@ -172,14 +181,14 @@ export default function Home() {
                 </Col>
               </Row>
               <Row>
-                <Col md={2}>
+                <Col xs={3} md={2}>
                   <Image
                     src="/assets/homepage/img3.png"
                     width={85}
                     height={70}
                   />
                 </Col>
-                <Col md={10}>
+                <Col xs={9} md={10}>
                   <p>
                     There will be no charge until your prescription for FDA
                     approved E.D. medications is approved.
@@ -187,14 +196,14 @@ export default function Home() {
                 </Col>
               </Row>
               <Row>
-                <Col md={2}>
+                <Col xs={3} md={2}>
                   <Image
                     src="/assets/homepage/img4.png"
                     width={85}
                     height={70}
                   />
                 </Col>
-                <Col md={10}>
+                <Col xs={9} md={10}>
                   <p>
                     Our PureBlue care team is available seven days a week to
                     provide the highest possible service to our customers.
@@ -204,9 +213,10 @@ export default function Home() {
             </Col>
           </Container>
         </div>
+        <div className={styles.bluePart}></div>
         <div className={styles.fieldFive}>
           <Container className={styles.containerFive}>
-            <ul>
+            <ul className={styles.ulPart}>
               <li>
                 <CheckCircleFill className={styles.checkmarks} />
                 Our treatments begin at $1.30 per pill
@@ -237,28 +247,35 @@ export default function Home() {
               </li>
             </ul>
             <Row>
-              <Col md={6} className="pt-5">
+              <Col md={6} className="pt-md-5">
                 <div className="text-center">
                   <Image
                     src="/assets/homepage/lets-get-started.png"
                     width={523}
                     height={159}
+                    className="d-none d-md-block"
                   />
                 </div>
               </Col>
-              <Col>
+              <Col className={styles.centerMob}>
                 <Image
                   src="/assets/homepage/3-bottles.png"
                   width={250}
                   height={250}
                 />
               </Col>
+              <Image
+                src="/assets/homepage/lets-get-started-mobile.png"
+                width={523}
+                height={159}
+                className="d-block d-md-none pt-4"
+              />
               <p className={styles.stepOne}>
                 <span className={styles.blueText}>Step 1:</span> Pick a
                 medication
               </p>
               <Row>
-                <Col md={4}>
+                <Col md={4} xs={6}>
                   <div className="text-center">
                     <Image
                       src="/assets/homepage/VIAGRA.png"
@@ -267,7 +284,7 @@ export default function Home() {
                     />
                   </div>
                 </Col>
-                <Col md={4}>
+                <Col md={4} xs={6}>
                   <div className="text-center">
                     <Image
                       src="/assets/homepage/CIALIS.png"
@@ -394,10 +411,10 @@ export default function Home() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="0">
                     <Row>
-                      <Col className={styles.textPart} sm={11}>
+                      <Col className={styles.textPart} xs={11} sm={11}>
                         What exactly is E.D. and how does it happen?
                       </Col>
-                      <Col sm={1} className={styles.plus}>
+                      <Col xs={1} sm={1} className={styles.plus}>
                         <CaretDownFill className={styles.caret} />
                       </Col>
                     </Row>
@@ -430,10 +447,10 @@ export default function Home() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="1">
                     <Row>
-                      <Col className={styles.textPart} sm={11}>
+                      <Col className={styles.textPart} xs={11} sm={11}>
                         How does PureBlue differ from going to the doctor?
                       </Col>
-                      <Col sm={1} className={styles.plus}>
+                      <Col xs={1} sm={1} className={styles.plus}>
                         <CaretDownFill className={styles.caret} />
                       </Col>
                     </Row>
@@ -457,10 +474,10 @@ export default function Home() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="2">
                     <Row>
-                      <Col className={styles.textPart} sm={11}>
+                      <Col className={styles.textPart} xs={11} sm={11}>
                         How safe is PureBlue's E.D. Telemedicine service?
                       </Col>
-                      <Col sm={1} className={styles.plus}>
+                      <Col xs={1} sm={1} className={styles.plus}>
                         <CaretDownFill className={styles.caret} />
                       </Col>
                     </Row>
@@ -489,10 +506,10 @@ export default function Home() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="3">
                     <Row>
-                      <Col className={styles.textPart} sm={11}>
+                      <Col className={styles.textPart} xs={11} sm={11}>
                         Will I be required to meet with the doctor in person?
                       </Col>
-                      <Col sm={1} className={styles.plus}>
+                      <Col xs={1} sm={1} className={styles.plus}>
                         <CaretDownFill className={styles.caret} />
                       </Col>
                     </Row>
@@ -510,11 +527,11 @@ export default function Home() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="4">
                     <Row>
-                      <Col className={styles.textPart} sm={11}>
+                      <Col className={styles.textPart} xs={11} sm={11}>
                         How long will it take for a doctor to review my medical
                         intake form?
                       </Col>
-                      <Col sm={1} className={styles.plus}>
+                      <Col xs={1} sm={1} className={styles.plus}>
                         <CaretDownFill className={styles.caret} />
                       </Col>
                     </Row>
@@ -538,11 +555,11 @@ export default function Home() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="5">
                     <Row>
-                      <Col className={styles.textPart} sm={11}>
+                      <Col className={styles.textPart} xs={11} sm={11}>
                         What is the expiration date of my PureBlue E.D.
                         prescription?
                       </Col>
-                      <Col sm={1} className={styles.plus}>
+                      <Col xs={1} sm={1} className={styles.plus}>
                         <CaretDownFill className={styles.caret} />
                       </Col>
                     </Row>
@@ -581,16 +598,34 @@ export default function Home() {
           </Container>
         </div>
         <div className={styles.fieldTen}>
-          <Container>
-            <div className={styles.nowStarted}>
-              <Row>
-                <Col md={7}>
-                  <Image
-                    src="/assets/homepage/now-get-started.png"
-                    width={718}
-                    height={144}
-                    className={styles.stepImages}
-                  />
+          <Container className="px-0">
+            <div className="d-block d-md-none">
+              <Image
+                src="/assets/homepage/3-bottles-bg.png"
+                width={500}
+                height={510}
+                className="d-block d-md-none"
+              />
+            </div>
+            <div>
+              <Row className={styles.nowStarted}>
+                <Col md={7} className="px-md-0">
+                  <div className="d-none d-md-block">
+                    <Image
+                      src="/assets/homepage/now-get-started.png"
+                      width={718}
+                      height={124}
+                      className={styles.stepImages}
+                    />
+                  </div>
+                  <div className="d-block d-md-none">
+                    <Image
+                      src="/assets/homepage/get-started-mobile.png"
+                      width={414}
+                      height={242}
+                      className={styles.stepImages}
+                    />
+                  </div>
                   <ul>
                     <li>
                       <CheckCircleFill className={styles.checkmarks} />
@@ -609,25 +644,40 @@ export default function Home() {
                     <Col md={6}>
                       <Image
                         src="/assets/homepage/VIAGRA.png"
-                        width={300}
-                        height={160}
+                        width={280}
+                        height={150}
                       />
-                      <b>Only use when it's needed!</b>
+                      <p>
+                        <b>Only use when it's needed!</b>
+                      </p>
                     </Col>
                     <Col md={6}>
                       <Image
                         src="/assets/homepage/CIALIS.png"
-                        width={300}
-                        height={160}
+                        width={280}
+                        height={150}
                       />
-                      <b>Always be prepared!</b>
+                      <p>
+                        <b>Always be prepared!</b>
+                      </p>
                     </Col>
                   </Row>
                 </Col>
-                <Col md={5}></Col>
+                <Col md={5} className="px-md-0">
+                  <div className="d-none d-md-block">
+                    <Image
+                      src="/assets/homepage/3-bottles-bg.png"
+                      width={500}
+                      height={510}
+                    />
+                  </div>
+                </Col>
               </Row>
             </div>
           </Container>
+          <div className="d-block d-md-none">
+            <div className={styles.bluePart}></div>
+          </div>
         </div>
       </main>
     </div>
