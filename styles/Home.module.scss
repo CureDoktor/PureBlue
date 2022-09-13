@@ -490,7 +490,7 @@ $secondary-color: #003b60;
 }
 .fieldEleven {
   background-color: #f6f6f6;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
   h2 {
     font-size: 41px;
     line-height: 41px;
@@ -559,6 +559,42 @@ $secondary-color: #003b60;
     max-width: 1100px;
     margin: auto;
   }
+  .planChange {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    Button {
+      background-color: $primary-color;
+      font-size: 20px;
+      margin: auto;
+    }
+    h2 {
+      line-height: 26px;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: left;
+      padding: 0px;
+      padding-top: 15px;
+    }
+
+    p {
+      color: gray;
+      font-size: 16px;
+      margin-bottom: 0px;
+      padding-bottom: 10px;
+    }
+    .planText {
+      text-decoration: underline;
+      color: $primary-color;
+      font-size: 12px;
+      text-align: center;
+      padding-top: 10px;
+    }
+  }
+  h3 {
+    text-align: center;
+    padding-top: 40px;
+  }
 }
 @media screen and (max-width: 550px) {
   .fieldOneBg {
@@ -586,6 +622,7 @@ $secondary-color: #003b60;
       }
       .fieldOneText {
         padding: 15px 25px;
+        height: 400px;
         .primaryColor {
           font-weight: bold;
         }
@@ -602,7 +639,6 @@ $secondary-color: #003b60;
       }
     }
   }
-
   .fieldTwo {
     .container {
       display: unset;
@@ -610,17 +646,159 @@ $secondary-color: #003b60;
         margin-bottom: 0px;
         padding-top: 0px;
         line-height: 30px;
-        font-size: 20px;
+        font-size: 16px;
       }
     }
   }
-
+  .fieldThree {
+    padding: 100px 0px 50px 0px;
+    .pillsBg {
+      height: 500px;
+      background-size: 100% 100%;
+      background-position-y: 100px;
+    }
+    ul {
+      padding-left: 35px;
+      padding-top: 30px;
+      .checkmark {
+        font-size: 35px;
+      }
+      li {
+        text-indent: -2.5em;
+        padding-bottom: 15px;
+        line-height: 25px;
+        font-size: 16px;
+      }
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+  .fieldFour {
+    padding: 40px 0px 50px 0px;
+    h3 {
+      padding-bottom: 30px;
+    }
+  }
   .fieldFive {
     .blueLine {
       padding: 10px 20px 50px 20px;
       h2 {
         font-size: 40px;
         line-height: 36px;
+      }
+    }
+    .boxBg {
+      .blueLine {
+        padding-bottom: 400px;
+        h4 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+      background-position-x: -650px;
+      background-position-y: 300px;
+      background-size: 1200px 400px;
+    }
+    .getRight {
+      padding: 50px 20px;
+      h3 {
+        padding-left: 0px;
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+  }
+  .fieldSix {
+    text-align: left;
+    padding: 60px 30px;
+    h2 {
+      font-size: 28px;
+      line-height: 40px;
+    }
+    h4 {
+      font-size: 18px;
+      line-height: 35px;
+      font-weight: 400;
+    }
+    .truth {
+      color: rgb(29, 48, 87);
+    }
+  }
+  .fieldSeven {
+    padding: 60px 20px;
+    h2 {
+      padding-bottom: 0px;
+      font-size: 22px;
+      line-height: 35px;
+      text-align: left;
+    }
+  }
+  .fieldEight {
+    padding: 20px 0px 60px 0px;
+    .pillPart {
+      padding: 20px;
+      .checkmark {
+        font-size: 38px;
+      }
+    }
+    h2 {
+      padding-top: 0px;
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 20px;
+      padding-top: 15px;
+    }
+    ul {
+      padding: 0px;
+      padding-top: 30px;
+      padding-left: 35px;
+      li {
+        text-indent: -2.7em;
+        padding-bottom: 15px;
+        line-height: 20px;
+      }
+    }
+    .satisfied {
+      font-size: 30px;
+    }
+  }
+  .fieldTen {
+    padding: 50px 0px;
+    .blueText {
+      color: $primary-color;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 20px;
+      text-align: left;
+      padding: 40px 20px 60px 20px;
+    }
+    .blueField {
+      margin-bottom: 30px;
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  .fieldEleven {
+    h2 {
+      font-size: 28px;
+    }
+    .planChange {
+      margin-bottom: 40px;
+      h2 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      p {
+        color: gray;
+        font-size: 20px;
       }
     }
   }

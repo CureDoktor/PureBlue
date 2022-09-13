@@ -10,9 +10,16 @@ import { Check, PatchCheck } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import CheckForm from "../components/CheckForm";
 
 export default function Home() {
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Salmon eater
+    </Tooltip>
+  );
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(
@@ -82,13 +89,17 @@ export default function Home() {
         </div>
         <div className={styles.fieldTwo}>
           <Container className={styles.container}>
-            <p>Pure Quality</p>
-            <p>•</p>
-            <p>Safe</p>
-            <p>•</p>
-            <p>Regulated</p>
-            <p>•</p>
-            <p>Consistent Results</p>
+            <p className="d-none d-md-block">Pure Quality</p>
+            <p className="d-none d-md-block">•</p>
+            <p className="d-none d-md-block">Safe</p>
+            <p className="d-none d-md-block">•</p>
+            <p className="d-none d-md-block">Regulated</p>
+            <p className="d-none d-md-block">•</p>
+            <p className="d-none d-md-block">Consistent Results</p>
+
+            <p className="d-block d-md-none">
+              Pure Quality • Safe • Regulated • Consistent Results
+            </p>
           </Container>
         </div>
         <div className={styles.fieldThree}>
@@ -269,15 +280,15 @@ export default function Home() {
         </div>
         <div className={styles.fieldSix}>
           <Container>
-            <h2>
+            <h2 className="d-none d-md-block">
               Sildenafil or tadalafil?
               <br /> Which E.D. treatment suits your lifestyle?
             </h2>
             <h2>
-              Can You Get SAFE, Effective, <br />
+              Can You Get SAFE, Effective, <br className="d-none d-md-block" />
               and High-Quality E.D. Pills Online? <br />
               <br />
-              The TRUTH will surprise you!
+              <span className={styles.truth}>The TRUTH will surprise you!</span>
             </h2>
             <h4>
               Learn the dark truth about 90% of E.D. pills online before you
@@ -475,10 +486,10 @@ export default function Home() {
                       eventKey="0"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           What is PureBlue?
                         </Col>
                       </Row>
@@ -504,10 +515,10 @@ export default function Home() {
                       eventKey="1"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           Is E.D. normal?
                         </Col>
                       </Row>
@@ -531,10 +542,10 @@ export default function Home() {
                       eventKey="2"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           Are PureBlue pills FDA approved?
                         </Col>
                       </Row>
@@ -559,10 +570,10 @@ export default function Home() {
                       eventKey="3"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           What is the difference between sildenafil and
                           tadalafil?
                         </Col>
@@ -592,10 +603,10 @@ export default function Home() {
                       eventKey="4"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           Can I buy PureBlue pills anywhere in the United
                           States?
                         </Col>
@@ -622,10 +633,10 @@ export default function Home() {
                       eventKey="5"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           Who is PureBlue for?
                         </Col>
                       </Row>
@@ -650,10 +661,10 @@ export default function Home() {
                       eventKey="6"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           Do I need a prescription to get PureBlue pills?
                         </Col>
                       </Row>
@@ -675,10 +686,10 @@ export default function Home() {
                       eventKey="7"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           What makes PureBlue unique?
                         </Col>
                       </Row>
@@ -702,10 +713,10 @@ export default function Home() {
                       eventKey="8"
                     >
                       <Row>
-                        <Col sm={1} className={styles.plus}>
+                        <Col xs={2} sm={1} className={styles.plus}>
                           <p>+</p>
                         </Col>
-                        <Col className={styles.textPart} sm={11}>
+                        <Col className={styles.textPart} xs={10} sm={11}>
                           Is sharing my medical history required to get PureBlue
                           Pills?
                         </Col>
@@ -728,7 +739,9 @@ export default function Home() {
         </div>
         <div className={styles.fieldTen}>
           <Container>
-            <h2>PureBlue Makes it Easy</h2>
+            <h2>
+              Pure<span className={styles.blueText}>Blue</span> Makes it Easy
+            </h2>
             <h3>
               All you’ll ever pay for is the cost of your E.D. medication. No
               insurance claims, no co-pays, no pharmacy refills. Even your 2-day
@@ -787,7 +800,7 @@ export default function Home() {
                 </div>
               </Col>
             </Row>
-            <h4>
+            <h4 className="d-none d-md-block">
               Getting the help you need doesn’t have to be more difficult than
               the problem that you’re having. That’s why we made PureBlue more
               convenient than any other provider today.
@@ -799,15 +812,90 @@ export default function Home() {
             <h2>CHOOSE YOUR PLAN</h2>
             <div className={styles.plan}>
               <Row>
-                <Col md={{ span: 2, offset: 4 }}>
+                <Col xs={6} md={{ span: 2, offset: 4 }}>
                   <Button>SILDENAFIL</Button>
                 </Col>
-                <Col>
+                <Col xs={6}>
                   <Button>VIAGRA</Button>
                 </Col>
               </Row>
             </div>
-            <div className={styles.containerPlan}>
+            <Row>
+              <Col sm={3}>
+                <div className={styles.planChange}>
+                  <h2>Sildenafil Elite</h2>
+                  <p>25 mg</p>
+                  <br />
+                  <p>6 Pills</p>
+                  <Button>GET STARTED</Button>
+                  <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                  >
+                    <p className={styles.planText} variant="success">
+                      important Safety Information
+                    </p>
+                  </OverlayTrigger>
+                </div>
+              </Col>
+              <Col sm={3}>
+                <div className={styles.planChange}>
+                  <h2>Sildenafil Elite Plus</h2>
+                  <p>50 mg</p>
+                  <br />
+                  <p>6 Pills</p>
+                  <Button>GET STARTED</Button>
+                  <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                  >
+                    <p className={styles.planText} variant="success">
+                      important Safety Information
+                    </p>
+                  </OverlayTrigger>
+                </div>
+              </Col>
+              <Col sm={3}>
+                <div className={styles.planChange}>
+                  <h2>Sildenafil Max</h2>
+                  <p>25 mg</p>
+                  <br />
+                  <p>12 Pills</p>
+                  <Button>GET STARTED</Button>
+                  <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                  >
+                    <p className={styles.planText} variant="success">
+                      important Safety Information
+                    </p>
+                  </OverlayTrigger>
+                </div>
+              </Col>
+              <Col sm={3}>
+                <div className={styles.planChange}>
+                  <h2>Sildenafil Max Plus</h2>
+                  <p>50 mg</p>
+                  <br />
+                  <p>12 Pills</p>
+                  <Button>GET STARTED</Button>
+                  <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                  >
+                    <p className={styles.planText} variant="success">
+                      important Safety Information
+                    </p>
+                  </OverlayTrigger>
+                </div>
+              </Col>
+            </Row>
+            <h3>*Sildenafil Citrate is the active component in Viagra</h3>
+            {/* <div className={styles.containerPlan}>
               <Row>
                 <Col sm={5}>
                   <div className={styles.planType}>
@@ -850,7 +938,7 @@ export default function Home() {
                   </div>
                 </Col>
               </Row>
-            </div>
+            </div> */}
           </Container>
         </div>
       </main>
