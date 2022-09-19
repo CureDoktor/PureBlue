@@ -877,78 +877,157 @@ export default function Home() {
             <Row>
               <Col sm={3}>
                 <div className={styles.planChange}>
-                  <h2>Sildenafil Elite</h2>
-                  <p>25 mg</p>
-                  <br />
-                  <p>6 Pills</p>
-                  <Button>GET STARTED</Button>
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                  >
-                    <p className={styles.planText} variant="success">
-                      important Safety Information
+                  <div className={styles.topPlanChange}>
+                    <h2>Active</h2>
+                    <h1>
+                      $30 <span className={styles.only}>ONLY</span>
+                    </h1>
+                    <br />
+                    <p className={styles.miligrams}>
+                      <span className={styles.mg}>30MG</span> | 45MG
                     </p>
-                  </OverlayTrigger>
+                    <Button>CHOOSE THIS PLAN</Button>
+                  </div>
+                  <Row>
+                    <Col>
+                      <Image
+                        src="/assets/homepage/pureblue-sachet.png"
+                        className={styles.ffImage}
+                        height={179}
+                        width={138}
+                      />
+                    </Col>
+                    <Col>
+                      <h3>x6</h3>
+                      <p className={styles.miligrams}>
+                        <span className={styles.mg}>30 MG</span> <br />{" "}
+                        Sildenafil <br /> Chewables
+                      </p>
+                      <Image
+                        src="/assets/homepage/made-in-usa.png"
+                        className={styles.ffImage}
+                        height={32}
+                        width={70}
+                      />
+                    </Col>
+                  </Row>
                 </div>
               </Col>
               <Col sm={3}>
                 <div className={styles.planChange}>
-                  <h2>Sildenafil Elite Plus</h2>
-                  <p>50 mg</p>
-                  <br />
-                  <p>6 Pills</p>
-                  <Button>GET STARTED</Button>
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                  >
-                    <p className={styles.planText} variant="success">
-                      important Safety Information
+                  <div className={styles.topPlanChange}>
+                    <h2>Busy</h2>
+                    <h1>
+                      $30 <span className={styles.only}>ONLY</span>
+                    </h1>
+                    <br />
+                    <p className={styles.miligrams}>
+                      <span className={styles.mg}>30MG</span> | 45MG
                     </p>
-                  </OverlayTrigger>
+                    <Button>CHOOSE THIS PLAN</Button>
+                  </div>
+                  <Row>
+                    <Col>
+                      <Image
+                        src="/assets/homepage/pureblue-sachet.png"
+                        className={styles.ffImage}
+                        height={179}
+                        width={138}
+                      />
+                    </Col>
+                    <Col>
+                      <h3>x10</h3>
+                      <p className={styles.miligrams}>
+                        <span className={styles.mg}>30 MG</span> <br />{" "}
+                        Sildenafil <br /> Chewables
+                      </p>
+                      <Image
+                        src="/assets/homepage/made-in-usa.png"
+                        className={styles.ffImage}
+                        height={32}
+                        width={70}
+                      />
+                    </Col>
+                  </Row>
                 </div>
               </Col>
               <Col sm={3}>
                 <div className={styles.planChange}>
-                  <h2>Sildenafil Max</h2>
-                  <p>25 mg</p>
-                  <br />
-                  <p>12 Pills</p>
-                  <Button>GET STARTED</Button>
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                  >
-                    <p className={styles.planText} variant="success">
-                      important Safety Information
+                  <div className={styles.topPlanChange}>
+                    <h2>Popular</h2>
+                    <h1>
+                      $50 <span className={styles.only}>ONLY</span>
+                    </h1>
+                    <br />
+                    <p className={styles.miligrams}>
+                      <span className={styles.mg}>30MG</span> | 45MG
                     </p>
-                  </OverlayTrigger>
+                    <Button>CHOOSE THIS PLAN</Button>
+                  </div>
+                  <Row>
+                    <Col>
+                      <Image
+                        src="/assets/homepage/pureblue-sachet.png"
+                        className={styles.ffImage}
+                        height={179}
+                        width={138}
+                      />
+                    </Col>
+                    <Col>
+                      <h3>x17</h3>
+                      <p className={styles.miligrams}>
+                        <span className={styles.mg}>30 MG</span> <br />{" "}
+                        Sildenafil <br /> Chewables
+                      </p>
+                      <Image
+                        src="/assets/homepage/made-in-usa.png"
+                        className={styles.ffImage}
+                        height={32}
+                        width={70}
+                      />
+                    </Col>
+                  </Row>
                 </div>
               </Col>
               <Col sm={3}>
                 <div className={styles.planChange}>
-                  <h2>Sildenafil Max Plus</h2>
-                  <p>50 mg</p>
-                  <br />
-                  <p>12 Pills</p>
-                  <Button>GET STARTED</Button>
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}
-                  >
-                    <p className={styles.planText} variant="success">
-                      important Safety Information
+                  <div className={styles.topPlanChange}>
+                    <h2>Pro</h2>
+                    <h1>
+                      $90 <span className={styles.only}>ONLY</span>
+                    </h1>
+                    <br />
+                    <p className={styles.miligrams}>
+                      <span className={styles.mg}>30MG</span> | 45MG
                     </p>
-                  </OverlayTrigger>
+                    <Button>CHOOSE THIS PLAN</Button>
+                  </div>
+                  <Row>
+                    <Col>
+                      <Image
+                        src="/assets/homepage/pureblue-sachet.png"
+                        className={styles.ffImage}
+                        height={179}
+                        width={138}
+                      />
+                    </Col>
+                    <Col>
+                      <h3>x34</h3>
+                      <p className={styles.miligrams}>
+                        <span className={styles.mg}>30 MG</span> <br />{" "}
+                        Sildenafil <br /> Chewables
+                      </p>
+                      <Image
+                        src="/assets/homepage/made-in-usa.png"
+                        className={styles.ffImage}
+                        height={32}
+                        width={70}
+                      />
+                    </Col>
+                  </Row>
                 </div>
               </Col>
             </Row>
-            <h3>*Sildenafil Citrate is the active component in Viagra</h3>
             {/* <div className={styles.containerPlan}>
               <Row>
                 <Col sm={5}>
@@ -993,6 +1072,28 @@ export default function Home() {
                 </Col>
               </Row>
             </div> */}
+            <Row className={styles.checkmarkBottom}>
+              <Col md={3}>
+                <Check className={styles.checkmark} />
+                Rx-only chewable tablet
+              </Col>
+              <Col md={3}>
+                <Check className={styles.checkmark} />
+                FREE online consultation
+              </Col>
+              <Col md={3}>
+                <Check className={styles.checkmark} />
+                Discreet shipping
+              </Col>
+              <Col md={3}>
+                <Check className={styles.checkmark} />
+                Monthly refills
+              </Col>
+            </Row>
+            <p className={styles.gray_footer}>
+              *A prescription will only be written if deemed appropriate after
+              the digital consultation by the licensed medical provider
+            </p>
           </Container>
         </div>
       </main>
