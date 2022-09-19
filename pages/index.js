@@ -77,12 +77,14 @@ export default function Home() {
                     <br className={styles.brMobile} /> Generic E.D. Pills
                   </h2>
                 </div>
-                <Image
-                  src="/assets/homepage/banner-1-desktop.png"
-                  className={styles.ffImage}
-                  height={440}
-                  width={800}
-                />
+                <div className={styles.bgImage}>
+                  <Image
+                    src="/assets/homepage/banner-1-desktop.png"
+                    className={styles.ffImage}
+                    height={440}
+                    width={800}
+                  />
+                </div>
               </Col>
             </div>
           </Container>
@@ -98,7 +100,7 @@ export default function Home() {
             <p className="d-none d-md-block">Consistent Results</p>
 
             <p className="d-block d-md-none">
-              Pure Quality • Safe • Regulated • Consistent Results
+              Pure Quality • Safe • <br /> Regulated • Consistent Results
             </p>
           </Container>
         </div>
@@ -326,12 +328,64 @@ export default function Home() {
               rules that American companies follow, and there’s no limit to the
               kind of damage these pills can do to your body.
             </p>
-            <Image
-              src="/assets/homepage/images.png"
-              height={970}
-              width={1200}
-              layout="responsive"
-            />
+            <div className="d-none d-md-block">
+              <Image
+                src="/assets/homepage/images.png"
+                height={970}
+                width={1206}
+              />
+            </div>
+            <div className="d-block d-md-none">
+              <div className={styles.images_div}>
+                <div>
+                  <Image
+                    src="/assets/homepage/news-image-1.png"
+                    height={530}
+                    width={436}
+                  />
+                </div>
+                <div className={styles.images_part}>
+                  <Image
+                    src="/assets/homepage/news-image-2.png"
+                    height={458}
+                    width={404}
+                    layout="responsive"
+                  />
+                </div>
+                <div className={styles.images_part_2}>
+                  <Image
+                    src="/assets/homepage/news-image-3.png"
+                    height={434}
+                    width={465}
+                    layout="responsive"
+                  />
+                </div>
+                <div className={styles.images_part_3}>
+                  <Image
+                    src="/assets/homepage/news-image-4.png"
+                    height={471}
+                    width={401}
+                    layout="responsive"
+                  />
+                </div>
+                <div className={styles.images_part_4}>
+                  <Image
+                    src="/assets/homepage/news-image-5.png"
+                    height={406}
+                    width={322}
+                    layout="responsive"
+                  />
+                </div>
+                <div className={styles.images_part_5}>
+                  <Image
+                    src="/assets/homepage/news-image-6.png"
+                    height={400}
+                    width={350}
+                    layout="responsive"
+                  />
+                </div>
+              </div>
+            </div>
             <p>
               <b>
                 If there’s a 9 in 10 chance that you’ll end up with a

@@ -605,6 +605,7 @@ $secondary-color: #003b60;
     }
     .ffImage {
       margin-bottom: -10px;
+      display: block;
     }
     .fieldOne {
       padding: 10px 0px 0px 0px;
@@ -629,6 +630,9 @@ $secondary-color: #003b60;
       }
       .brMobile {
         display: block;
+      }
+      .bgImage {
+        margin-bottom: -20px;
       }
     }
     .callUs {
@@ -735,6 +739,33 @@ $secondary-color: #003b60;
       line-height: 35px;
       text-align: left;
     }
+    .images_div {
+      margin-bottom: -250px;
+    }
+    .images_part {
+      position: relative;
+      top: -50px;
+    }
+    .images_part_2 {
+      position: relative;
+      top: -100px;
+    }
+    .images_part_3 {
+      position: relative;
+      top: -150px;
+    }
+    .images_part_4 {
+      position: relative;
+      top: -200px;
+    }
+    .images_part_5 {
+      position: relative;
+      top: -250px;
+    }
+    .images_part_6 {
+      position: relative;
+      top: -300px;
+    }
   }
   .fieldEight {
     padding: 20px 0px 60px 0px;
@@ -764,6 +795,28 @@ $secondary-color: #003b60;
     }
     .satisfied {
       font-size: 30px;
+    }
+    .satisfiedCustomers {
+      .rectangle {
+        height: unset;
+        p {
+          font-weight: 500;
+          color: #000;
+          font-size: 13px;
+        }
+        .member {
+          font-size: 16px;
+          .patchCheck {
+            font-size: 26px;
+            font-weight: 800;
+          }
+        }
+      }
+    }
+  }
+  .fieldNine {
+    h2 {
+      font-size: 22px;
     }
   }
   .fieldTen {
