@@ -544,7 +544,8 @@ $secondary-color: #003b60;
     }
   }
   .satisfiedCustomers {
-    max-width: 1050px;
+    //display: none; //temporary because of permission
+    max-width: 750px;
     margin: auto;
     .rectangle {
       height: 300px;
