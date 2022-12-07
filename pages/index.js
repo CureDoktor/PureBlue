@@ -64,7 +64,7 @@ export default function Home() {
                   <div className={styles.callUs}>
                     <Link href="tel: 1-888-534-8977">
                       <a>
-                        Call Us Anytimee:{" "}
+                        Call Us Anytime:{" "}
                         <span className={styles.primaryColor}>
                           1-888-534-8977
                         </span>
