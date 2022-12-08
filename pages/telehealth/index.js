@@ -212,7 +212,7 @@ export default function Home() {
               </li>
               <li>
                 I understand that I can withhold or withdraw this consent at any
-                time by emailing PureBlue at support@pureblue.com with such
+                time by emailing PureBlue at info@trypureblue.com with such
                 instruction. Otherwise, this consent will be considered renewed
                 upon each new telehealth consultation with my health care
                 provider.
@@ -383,7 +383,7 @@ export default function Home() {
                 I understand that all information submitted to PureBlue via text
                 message and entered by my health care provider in the PureBlue
                 Platform will be part of my medical record and available to me
-                by emailing support@pureblue.com. This information will have the
+                by emailing info@trypureblue.com. This information will have the
                 same restrictions on dissemination without my consent.
               </li>
               <li>
@@ -394,7 +394,7 @@ export default function Home() {
               </li>
               <li>
                 I understand that I can withhold or withdraw this consent at any
-                time by emailing PureBlue at support@pureblue.com with such
+                time by emailing PureBlue at info@trypureblue.com with such
                 instruction. Otherwise, this consent will be considered renewed
                 upon each new asynchronous telehealth consultation with my
                 health care provider.

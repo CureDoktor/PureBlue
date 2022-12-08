@@ -132,7 +132,7 @@ export default function Home() {
                   />
                 </Col>
                 <Col md={10}>
-                  <p>support@pureblue.com</p>
+                  <p>info@trypureblue.com</p>
                 </Col>
               </Row>
               <br />

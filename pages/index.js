@@ -98,7 +98,6 @@ export default function Home() {
             <p className="d-none d-md-block">Regulated</p>
             <p className="d-none d-md-block">•</p>
             <p className="d-none d-md-block">Consistent Results</p>
-
             <p className="d-block d-md-none">
               Pure Quality • Safe • <br /> Regulated • Consistent Results
             </p>
@@ -798,7 +797,7 @@ export default function Home() {
             </h2>
             <h3>
               All you’ll ever pay for is the cost of your E.D. medication. No
-              insurance claims, no co-pays, no pharmacy refills. Even your 2-day
+              insurance claims, no co-pays, no pharmacy refills. Even your free
               shipping is on us!{" "}
             </h3>
             <Row>
@@ -809,7 +808,7 @@ export default function Home() {
                     Choose a plan based on your lifestyle. <br />
                     <br /> Complete your medical profile and order within 10
                     minutes. <br />
-                    <br /> Get your E.D. pills via free 2-day express shipping
+                    <br /> Get your E.D. pills via free 2-day shipping
                   </p>
                 </div>
               </Col>
@@ -901,7 +900,7 @@ export default function Home() {
                       <h3>x6</h3>
                       <p className={styles.miligrams}>
                         <span className={styles.mg}>30 MG</span> <br />{" "}
-                        Sildenafil <br /> Chewables
+                        Sildenafil <br />
                       </p>
                       <Image
                         src="/assets/homepage/made-in-usa.png"
@@ -939,7 +938,7 @@ export default function Home() {
                       <h3>x10</h3>
                       <p className={styles.miligrams}>
                         <span className={styles.mg}>30 MG</span> <br />{" "}
-                        Sildenafil <br /> Chewables
+                        Sildenafil <br />
                       </p>
                       <Image
                         src="/assets/homepage/made-in-usa.png"
@@ -977,7 +976,7 @@ export default function Home() {
                       <h3>x17</h3>
                       <p className={styles.miligrams}>
                         <span className={styles.mg}>30 MG</span> <br />{" "}
-                        Sildenafil <br /> Chewables
+                        Sildenafil <br />
                       </p>
                       <Image
                         src="/assets/homepage/made-in-usa.png"
@@ -1015,7 +1014,7 @@ export default function Home() {
                       <h3>x34</h3>
                       <p className={styles.miligrams}>
                         <span className={styles.mg}>30 MG</span> <br />{" "}
-                        Sildenafil <br /> Chewables
+                        Sildenafil <br />
                       </p>
                       <Image
                         src="/assets/homepage/made-in-usa.png"
@@ -1062,7 +1061,7 @@ export default function Home() {
                         Professional customer service hotline & online medical
                         support
                       </li>
-                      <li>2-day express discret shipping</li>
+                      <li>2-day discret shipping</li>
                       <li>Total Privacy Promise</li>
                     </ul>
                     <Button className={styles.startOrder}>

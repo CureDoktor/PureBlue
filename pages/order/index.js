@@ -93,11 +93,11 @@ export default function Home() {
                 </div>
                 <Row>
                   <Col md={8}>
-                    <h3>17 x Sildenafil Chewables</h3>
+                    <h3>17 x Sildenafil </h3>
                     <ul>
                       <li>
                         <Check className={styles.checkmark} />
-                        Seventeen 30 MG Sildenafil Chewables
+                        Seventeen 30 MG Sildenafil
                       </li>
                       <li>
                         <Check className={styles.checkmark} />

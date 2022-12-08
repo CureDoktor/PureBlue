@@ -783,7 +783,7 @@ export default function Home() {
             <li>
               If you would like to opt-out from the disclosure or sale of your
               personal information to any third party for marketing purposes,
-              please contact us via email at: support@pureblue.com or send us
+              please contact us via email at: info@trypureblue.com or send us
               U.S. Mail to:
               <br />
               PureBlue LLC,
@@ -953,7 +953,7 @@ export default function Home() {
             <br />
             <br /> If you are a California resident and you would like to
             exercise any of your data rights under California law, you can email
-            us at support@pureblue.com. Please include your full name, email
+            us at info@trypureblue.com. Please include your full name, email
             address and residential address associated with your use of our
             Services, along with the rights you would like to exercise, so that
             we can process your request in an efficient manner. If you would
@@ -1002,7 +1002,7 @@ export default function Home() {
             activity; however, if you are a Nevada resident who has purchased
             services from us, you may submit a request to opt out of any
             potential future sales under Nevada law by email at
-            support@pureblue.com. Please note that we will take reasonable steps
+            info@trypureblue.com. Please note that we will take reasonable steps
             to verify your identity and the authenticity of the request. Once
             verified, we will maintain your request in the event our practices
             change.
@@ -1035,7 +1035,7 @@ export default function Home() {
           <p>
             If you would like to opt-out from the disclosure or sale of your
             personal information to any third party for marketing purposes,
-            please contact us via email at: support@pureblue.com or send us U.S.
+            please contact us via email at: info@trypureblue.com or send us U.S.
             Mail to:
             <br /> PureBlue LLC,
             <br /> 42 Broadway, 12th Floor
