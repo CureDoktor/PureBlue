@@ -1074,7 +1074,7 @@ export default function Home() {
             <Row className={styles.checkmarkBottom}>
               <Col md={3}>
                 <Check className={styles.checkmark} />
-                Rx-only chewable tablet
+                Rx-only tablet
               </Col>
               <Col md={3}>
                 <Check className={styles.checkmark} />
