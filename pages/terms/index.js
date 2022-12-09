@@ -827,10 +827,9 @@ export default function Home() {
             Integrations; 629-777-5752 (phone); lpurdy@mdintegrations.com
             (email)
             <br />
-            <br /> Ryan Taylor, PharmD., Director of Operations; Curexa®
-            Pharmacy; 3007 Ocean Heights Ave, Egg Harbor Township, NJ 08234;
-            855.927.0390 (Office); rtaylor@curexa.com (Email); 855.927.0390
-            (Office); 855.927.0392 (Fax); 609.457.5693 (Cell).
+            <br /> Dan Maduri, Chief Revenue Officer; GogoMeds; 525 Alexandria
+            Pike Suite 100, Southgate, KY 41071; d.maduri@gogomeds.com (email);
+            1-888-795-5826 (office)
           </p>
           <h2>29. Contact Us.</h2>
           <p>
