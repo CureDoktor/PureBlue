@@ -13,14 +13,6 @@ export default function PasswordReset() {
     console.log("Cure");
   };
 
-  const buttonChange = () => {
-    if (disabled == true) {
-      return <Button>Confirm</Button>;
-    } else {
-      return <Button disabled>Confirm</Button>;
-    }
-  };
-
   return (
     <>
       <Container className={styles.container}>
@@ -44,7 +36,11 @@ export default function PasswordReset() {
               />
             </Form.Group>
           </div>
-          {buttonChange()}
+          {disabled ? (
+            <Button>Confirm</Button>
+          ) : (
+            <Button disabled>Confirm</Button>
+          )}
         </Form>
       </Container>
     </>

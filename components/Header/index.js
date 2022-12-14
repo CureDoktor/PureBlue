@@ -15,9 +15,10 @@ import {
 import { CaretDownFill, List } from "react-bootstrap-icons";
 import styles from "./styles.module.scss";
 
-export default function Header() {
+export default function Header(props) {
+  console.log(props.header);
   const sentToLogin = () => {
-    location.replace("/login");
+    props.logout();
   };
   return (
     <>
@@ -100,7 +101,17 @@ export default function Header() {
               <Link href="/contact" passHref>
                 <Nav.Link className={styles.link}>Contact</Nav.Link>
               </Link>
-              <Button onClick={sentToLogin}>LOGIN</Button>
+
+              {props.header ? (
+                <Link href="/account" passHref>
+                  <Nav.Link className={styles.link}>Account</Nav.Link>
+                </Link>
+              ) : (
+                ""
+              )}
+              <Button onClick={sentToLogin}>
+                {props.header ? "LOGOUT" : "LOGIN"}
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
