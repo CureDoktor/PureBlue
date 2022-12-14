@@ -73,6 +73,14 @@ export default function Home() {
                 Please fill out the following fields to login.
               </p>
               <br />
+              <Link href="/register">
+                <a>
+                  You don't have account?
+                  <span className={styles.blueText}> Register Now</span>
+                </a>
+              </Link>
+              <br />
+              <br />
             </div>
             <Col md={{ span: 6, offset: 3 }}>
               <div className={styles.formField}>
