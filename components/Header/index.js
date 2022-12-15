@@ -16,7 +16,6 @@ import { CaretDownFill, List } from "react-bootstrap-icons";
 import styles from "./styles.module.scss";
 
 export default function Header(props) {
-  console.log(props.header);
   const sentToLogin = () => {
     props.logout();
   };

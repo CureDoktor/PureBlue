@@ -10,43 +10,43 @@ import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
-import { AccordionContext, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 export default function Home() {
   const [checked, setChecked] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
+
+  const [formData, setFormData] = useState({
+    password: "",
+    email: "",
+    passwordRetype: "",
+    state: "",
+    yearOfBirth: "",
+  });
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    var payload = [
+      formData.email,
+      formData.password,
+      formData.passwordRetype,
+      formData.state,
+      formData.yearOfBirth,
+    ];
+    alert("A name was submitted: " + payload);
+    event.preventDefault();
+  };
 
   const gender = [
     { name: "Male", value: "male" },
     { name: "Female", value: "female" },
   ];
-  function ContextAwareToggle({ children, eventKey, callback }) {
-    const { activeEventKey } = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionButton(
-      eventKey,
-      () => callback && callback(eventKey)
-    );
-
-    const isCurrentEventKey = activeEventKey === eventKey;
-
-    return (
-      <button
-        type="button"
-        className="headerOne"
-        style={{
-          backgroundColor: isCurrentEventKey ? "#fff" : "#fff",
-          border: "0px",
-          color: "#000",
-          fontWeight: "800",
-          padding: "0px 12px 0px 12px",
-          width: "100%",
-          textAlign: "left",
-        }}
-        onClick={decoratedOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
 
   return (
     <div className={styles.container}>
@@ -86,31 +86,61 @@ export default function Home() {
             </div>
             <Col md={{ span: 7, offset: 5 }}>
               <div className={styles.formField}>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
-                      <Form.Label>Email</Form.Label>
+                    <Form.Group controlId="email" className={styles.group}>
+                      <Form.Label className={styles.label}>Email</Form.Label>
                       <Form.Control
+                        required
+                        name="email"
                         type="email"
+                        onChange={handleChange}
+                        value={formData.email}
                         className={styles.formControl}
-                        placeholder="Enter email"
                       />
+                      <Form.Control.Feedback type="invalid">
+                        Incorrect Email
+                      </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
                   <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridPassword">
-                      <Form.Label>Password</Form.Label>
+                    <Form.Group
+                      as={Col}
+                      controlId="password"
+                      className={styles.group}
+                    >
+                      <Form.Label className={styles.label}>Password</Form.Label>
                       <Form.Control
-                        className={styles.formControl}
+                        required
+                        name="password"
                         type="password"
+                        onChange={handleChange}
+                        value={formData.password}
+                        className={styles.formControl}
                       />
+                      <Form.Control.Feedback type="invalid">
+                        Incorrect Password
+                      </Form.Control.Feedback>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formGridPassword">
-                      <Form.Label>Retype Password</Form.Label>
+                    <Form.Group
+                      as={Col}
+                      controlId="Password-retype"
+                      className={styles.group}
+                    >
+                      <Form.Label className={styles.label}>
+                        Password Retype
+                      </Form.Label>
                       <Form.Control
+                        required
+                        name="passwordRetype"
+                        type="password-retype"
+                        onChange={handleChange}
+                        value={formData.passwordRetype}
                         className={styles.formControl}
-                        type="password"
                       />
+                      <Form.Control.Feedback type="invalid">
+                        Incorrect Password Retype
+                      </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
                   <Row className="mb-3">
@@ -118,27 +148,40 @@ export default function Home() {
                       <Form.Label>State</Form.Label>
                       <Form.Select
                         className={styles.formControl}
-                        defaultValue="Choose..."
+                        value={formData.state}
+                        name="state"
+                        onChange={handleChange}
                       >
                         <option>Choose...</option>
                         <option>...</option>
                       </Form.Select>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formGridZip">
-                      <Form.Label>Year of Birth</Form.Label>
+                    <Form.Group
+                      as={Col}
+                      controlId="Year-of-birth"
+                      className={styles.group}
+                    >
+                      <Form.Label className={styles.label}>
+                        Year of Birth
+                      </Form.Label>
                       <Form.Control
-                        className={styles.formControl}
+                        required
+                        name="yearOfBirth"
                         type="number"
-                        placeholder="Ex. 1995"
+                        onChange={handleChange}
+                        value={formData.yearOfBirth}
+                        className={styles.formControl}
                       />
+                      <Form.Control.Feedback type="invalid">
+                        Incorrect Year of Birth
+                      </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
                   <Form.Label>Gender</Form.Label>
                   <Row>
                     {gender.map((radio, idx) => (
-                      <Col xs={3}>
+                      <Col key={idx} xs={3}>
                         <ToggleButton
-                          key={idx}
                           id={`radio-${idx}`}
                           type="radio"
                           name="radio"
