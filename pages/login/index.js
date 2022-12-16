@@ -18,34 +18,50 @@ export default function Home() {
     { name: "Male", value: "male" },
     { name: "Female", value: "female" },
   ];
-  function ContextAwareToggle({ children, eventKey, callback }) {
-    const { activeEventKey } = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionButton(
-      eventKey,
-      () => callback && callback(eventKey)
-    );
 
-    const isCurrentEventKey = activeEventKey === eventKey;
+  const [formData, setFormData] = useState({
+    password: "",
+    email: "",
+    passwordRetype: "",
+    state: "",
+    yearOfBirth: "",
+  });
 
-    return (
-      <button
-        type="button"
-        className="headerOne"
-        style={{
-          backgroundColor: isCurrentEventKey ? "#fff" : "#fff",
-          border: "0px",
-          color: "#000",
-          fontWeight: "800",
-          padding: "0px 12px 0px 12px",
-          width: "100%",
-          textAlign: "left",
-        }}
-        onClick={decoratedOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
+  let loginInfo = [
+    { id: 1, email: "test@test.com", password: "test" },
+    { id: 2, email: "test2@test.com", password: "test2" },
+    { id: 3, email: "test3@test.com", password: "test3" },
+  ];
+
+  const checkIfExists = () => {
+    let loginUsernames = loginInfo.find((o, i) => {
+      if (o.email === formData.email && o.password === formData.password) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  };
+
+  const handleSubmit = (event) => {
+    if (checkIfExists()) {
+      alert("UserLogovan");
+      event.preventDefault();
+    } else {
+      alert("Username or password does not match!");
+      event.preventDefault();
+    }
+
+    event.preventDefault();
+  };
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   return (
     <div className={styles.container}>
@@ -84,25 +100,39 @@ export default function Home() {
             </div>
             <Col md={{ span: 6, offset: 3 }}>
               <div className={styles.formField}>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Group as={Col} controlId="email">
                       <Form.Label>Email</Form.Label>
                       <Form.Control
+                        required
+                        name="email"
                         type="email"
-                        className={styles.formControl}
+                        onChange={handleChange}
                         placeholder="Enter email"
+                        value={formData.email}
+                        className={styles.formControl}
                       />
+                      <Form.Control.Feedback type="invalid">
+                        Incorrect Email
+                      </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
                   <br />
                   <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridPassword">
-                      <Form.Label>Password</Form.Label>
+                    <Form.Group as={Col} controlId="password">
+                      <Form.Label className={styles.label}>Password</Form.Label>
                       <Form.Control
-                        className={styles.formControl}
+                        required
+                        name="password"
                         type="password"
+                        onChange={handleChange}
+                        value={formData.password}
+                        className={styles.formControl}
                       />
+                      <Form.Control.Feedback type="invalid">
+                        Incorrect Password
+                      </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
                   <Form.Group className="mb-3">

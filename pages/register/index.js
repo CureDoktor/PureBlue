@@ -39,7 +39,12 @@ export default function Home() {
       formData.state,
       formData.yearOfBirth,
     ];
-    alert("A name was submitted: " + payload);
+    if (formData.password === formData.passwordRetype) {
+      alert("Form passed: " + payload);
+    } else {
+      alert("Passwords doesn't match!");
+    }
+
     event.preventDefault();
   };
 
@@ -133,13 +138,13 @@ export default function Home() {
                       <Form.Control
                         required
                         name="passwordRetype"
-                        type="password-retype"
+                        type="password"
                         onChange={handleChange}
                         value={formData.passwordRetype}
                         className={styles.formControl}
                       />
                       <Form.Control.Feedback type="invalid">
-                        Incorrect Password Retype
+                        Incorrect Password Retype 
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
