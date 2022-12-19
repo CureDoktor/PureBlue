@@ -24,6 +24,18 @@ export default function Home() {
     product_image: "Viagra_25mg_4",
   });
 
+  function findRightOne() {
+    medications.find((element) => {
+      if (
+        element.product_tag === chooseMed &&
+        element.product_dosage_tag === strong &&
+        element.product_dosages_per_month === numberOfTimes
+      ) {
+        console.log(element.id);
+      }
+    });
+  }
+
   const changingProduct = () => {};
 
   const medications = [
@@ -378,11 +390,8 @@ export default function Home() {
                             checked={chooseMed === radio.value}
                             onChange={(e) => {
                               setChooseMed(e.currentTarget.value);
-                              setChosenMed({
-                                ...chosenMed,
-                                product_tag: e.currentTarget.value,
-                              });
-                              console.log(chosenMed);
+                              // findRightOne();
+                              console.log(e.currentTarget.value);
                             }}
                           >
                             {radio.name}
