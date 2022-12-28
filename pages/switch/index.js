@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useContext, useState, React } from "react";
+import { useContext, useState, useEffect, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
@@ -7,9 +7,6 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 export default function Home() {
   const [checked, setChecked] = useState(false);
-  const [chooseMed, setChooseMed] = useState("1");
-  const [strong, setStrong] = useState("begginer");
-  const [numberOfTimes, setNumberOfTimes] = useState("4");
 
   const [chosenMed, setChosenMed] = useState({
     id: 1,
@@ -24,19 +21,36 @@ export default function Home() {
     product_image: "Viagra_25mg_4",
   });
 
+  useEffect(() => {
+    //console.log(chosenMed);
+    findRightOne();
+  }, [chosenMed]);
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setChosenMed({
+      ...chosenMed,
+      [name]: value,
+    });
+  };
+
   function findRightOne() {
     medications.find((element) => {
+      // console.log(element.product_tag);
+      // console.log(chooseMed);
       if (
-        element.product_tag === chooseMed &&
-        element.product_dosage_tag === strong &&
-        element.product_dosages_per_month === numberOfTimes
+        element.product_tag === chosenMed.product_tag &&
+        element.product_dosage_tag === chosenMed.product_dosage_tag &&
+        element.product_dosages_per_month ===
+          chosenMed.product_dosages_per_month
       ) {
         console.log(element.id);
+        console.log(chosenMed);
+      } else {
+        console.log("Ne radi");
       }
     });
   }
-
-  const changingProduct = () => {};
 
   const medications = [
     {
@@ -355,9 +369,9 @@ export default function Home() {
   ];
 
   const times = [
-    { name: "4 TIMES", value: "4" },
-    { name: "8 TIMES", value: "8" },
-    { name: "12 TIMES", value: "12" },
+    { name: "4 TIMES", value: 4 },
+    { name: "8 TIMES", value: 8 },
+    { name: "12 TIMES", value: 12 },
   ];
 
   return (
@@ -379,20 +393,16 @@ export default function Home() {
                         First decide your preferred medication, select one:
                       </Form.Label>
                       {medication.map((radio, idx) => (
-                        <Col md={12}>
+                        <Col md={12} key={idx}>
                           <ToggleButton
                             key={idx}
                             id={`radios-${idx}`}
                             type="radio"
-                            name="radio"
+                            name="product_tag"
                             className={styles.buttons}
                             value={radio.value}
-                            checked={chooseMed === radio.value}
-                            onChange={(e) => {
-                              setChooseMed(e.currentTarget.value);
-                              // findRightOne();
-                              console.log(e.currentTarget.value);
-                            }}
+                            checked={chosenMed.product_tag === radio.value}
+                            onChange={handleChange}
                           >
                             {radio.name}
                           </ToggleButton>
@@ -409,11 +419,13 @@ export default function Home() {
                             key={idx}
                             id={`radiod-${idx}`}
                             type="radio"
-                            name="radio1"
+                            name="product_dosage_tag"
                             className={styles.buttons}
                             value={radio.value}
-                            checked={strong === radio.value}
-                            onChange={(e) => setStrong(e.currentTarget.value)}
+                            checked={
+                              chosenMed.product_dosage_tag === radio.value
+                            }
+                            onChange={handleChange}
                           >
                             {radio.name}
                           </ToggleButton>
@@ -432,13 +444,14 @@ export default function Home() {
                               key={idx}
                               id={`radioa-${idx}`}
                               type="radio"
-                              name="radio2"
+                              name="product_dosages_per_month"
                               className={styles.buttons}
                               value={radio.value}
-                              checked={numberOfTimes === radio.value}
-                              onChange={(e) =>
-                                setNumberOfTimes(e.currentTarget.value)
+                              checked={
+                                chosenMed.product_dosages_per_month ===
+                                radio.value
                               }
+                              onChange={handleChange}
                             >
                               {radio.name}
                             </ToggleButton>

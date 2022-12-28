@@ -144,7 +144,7 @@ export default function Home() {
                         className={styles.formControl}
                       />
                       <Form.Control.Feedback type="invalid">
-                        Incorrect Password Retype 
+                        Incorrect Password Retype
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
