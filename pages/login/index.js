@@ -51,7 +51,6 @@ export default function Home() {
       alert("Username or password does not match!");
       event.preventDefault();
     }
-
     event.preventDefault();
   };
 
