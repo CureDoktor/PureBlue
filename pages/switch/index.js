@@ -6,8 +6,6 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 export default function Home() {
-  const [checked, setChecked] = useState(false);
-
   const [chosenMed, setChosenMed] = useState({
     id: 1,
     product_title: "Viagra 25 mg, 4 day supply",
@@ -20,6 +18,27 @@ export default function Home() {
     product_price: "280.00",
     product_image: "Viagra_25mg_4",
   });
+
+  const [strong1, setStrong1] = useState([
+    { name: "Begginer", value: "begginer" },
+    { name: "Intermediate", value: "intermediate" },
+    { name: "Strong", value: "strong" },
+  ]);
+
+  const [times, setTimes] = useState([
+    { name: "4", value: 4 },
+    { name: "8", value: 8 },
+    { name: "12", value: 12 },
+  ]);
+
+  const returnObject = (value) => {
+    let obj = {
+      name: value,
+      value: value,
+    };
+
+    return obj;
+  };
 
   useEffect(() => {
     //console.log(chosenMed);
@@ -35,21 +54,37 @@ export default function Home() {
   };
 
   function findRightOne() {
+    let similarStrong = [];
+    let similarDosage = [];
+
     medications.find((element) => {
-      // console.log(element.product_tag);
-      // console.log(chooseMed);
-      if (
-        element.product_tag === chosenMed.product_tag &&
-        element.product_dosage_tag === chosenMed.product_dosage_tag &&
-        element.product_dosages_per_month ===
-          chosenMed.product_dosages_per_month
-      ) {
-        console.log(element.id);
-        console.log(chosenMed);
+      if (element.product_tag === chosenMed.product_tag) {
+        if (!similarStrong.includes(element.product_dosage_tag)) {
+          similarStrong.push(element.product_dosage_tag);
+        }
+
+        if (element.product_dosage_tag === chosenMed.product_dosage_tag) {
+          if (!similarDosage.includes(element.product_dosages_per_month)) {
+            similarDosage.push(element.product_dosages_per_month);
+          }
+        }
+
+        //console.log(chosenMed);
       } else {
-        console.log("Ne radi");
+        //console.log("Ne radi");
       }
     });
+
+    let objectMaking = [];
+    let objectMakingTimes = [];
+    similarStrong.forEach((object) => objectMaking.push(returnObject(object)));
+    similarDosage.forEach((object) =>
+      objectMakingTimes.push(returnObject(object))
+    );
+
+    //console.log(objectMaking);
+    setStrong1(objectMaking);
+    setTimes(objectMakingTimes);
   }
 
   const medications = [
@@ -362,18 +397,6 @@ export default function Home() {
     { name: "Cialis", value: "Cialis" },
   ];
 
-  const strong1 = [
-    { name: "Begginer", value: "begginer" },
-    { name: "Intermediate", value: "intermediate" },
-    { name: "Strong", value: "strong" },
-  ];
-
-  const times = [
-    { name: "4 TIMES", value: 4 },
-    { name: "8 TIMES", value: 8 },
-    { name: "12 TIMES", value: 12 },
-  ];
-
   return (
     <div className={styles.container}>
       <Head>
@@ -453,7 +476,7 @@ export default function Home() {
                               }
                               onChange={handleChange}
                             >
-                              {radio.name}
+                              {radio.name + " TIMES"}
                             </ToggleButton>
                           </Col>
                         ))}
