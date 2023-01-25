@@ -4,6 +4,7 @@ import { useContext, useState, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
+import Axios from "axios";
 import styles from "./styles.module.scss";
 import { Check, PatchCheck } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
@@ -12,13 +13,6 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 export default function Home() {
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState("1");
-  const gender = [
-    { name: "Male", value: "male" },
-    { name: "Female", value: "female" },
-  ];
-
   const [formData, setFormData] = useState({
     password: "",
     email: "",
@@ -27,31 +21,43 @@ export default function Home() {
     yearOfBirth: "",
   });
 
-  let loginInfo = [
-    { id: 1, email: "test@test.com", password: "test" },
-    { id: 2, email: "test2@test.com", password: "test2" },
-    { id: 3, email: "test3@test.com", password: "test3" },
-  ];
+  // let loginInfo = [
+  //   { id: 1, email: "test@test.com", password: "test" },
+  //   { id: 2, email: "test2@test.com", password: "test2" },
+  //   { id: 3, email: "test3@test.com", password: "test3" },
+  // ];
 
-  const checkIfExists = () => {
-    let loginUsernames = loginInfo.find((o, i) => {
-      if (o.email === formData.email && o.password === formData.password) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-  };
+  // const checkIfExists = async () => {
+  //   // let loginUsernames = loginInfo.find((o, i) => {
+  //   //   if (o.email === formData.email && o.password === formData.password) {
+  //   //     return true;
+  //   //   } else {
+  //   //     return false;
+  //   //   }
+  //   // });
+  // };
 
-  const handleSubmit = (event) => {
-    if (checkIfExists()) {
-      alert("UserLogovan");
-      event.preventDefault();
-    } else {
-      alert("Username or password does not match!");
-      event.preventDefault();
-    }
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("Cure");
+    const route = "/api/auth/login";
+    const payload = {
+      email: formData.email,
+      password: formData.password,
+    };
+    try {
+      const rese = await Axios.post(route, payload)
+        .then((res) => {
+          console.log(res.data.access_token);
+          alert("Podaci su iznad");
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Username or password are not good!");
+        });
+    } catch (err) {
+      alert("Username or password are not good!" + err);
+    }
   };
 
   const handleChange = (event) => {

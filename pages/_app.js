@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Login from "../pages/login";
 import React, { useState, useEffect } from "react";
+import Axios from "axios";
 
 function MyApp({ Component, pageProps }) {
   const [isLogedIn, setIsLoggedIn] = useState(true);

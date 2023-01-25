@@ -43,7 +43,11 @@ export default function Home() {
   useEffect(() => {
     //console.log(chosenMed);
     findRightOne();
-  }, [chosenMed]);
+  }, [
+    chosenMed.product_tag,
+    chosenMed.product_dosages_per_month,
+    chosenMed.product_dosage_tag,
+  ]);
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -66,6 +70,17 @@ export default function Home() {
         if (element.product_dosage_tag === chosenMed.product_dosage_tag) {
           if (!similarDosage.includes(element.product_dosages_per_month)) {
             similarDosage.push(element.product_dosages_per_month);
+          }
+          if (
+            element.product_dosages_per_month ==
+            chosenMed.product_dosages_per_month
+          ) {
+            setChosenMed({
+              ...chosenMed,
+              product_price: element.product_price,
+            });
+          } else {
+            console.log("cure");
           }
         }
 
