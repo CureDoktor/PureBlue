@@ -12,7 +12,7 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
-export default function Home() {
+export default function Home(props) {
   const [formData, setFormData] = useState({
     password: "",
     email: "",
@@ -49,7 +49,8 @@ export default function Home() {
       const rese = await Axios.post(route, payload)
         .then((res) => {
           console.log(res.data.access_token);
-          alert("Podaci su iznad");
+          props.isLoggedIn();
+          //alert("Podaci su iznad");
         })
         .catch((error) => {
           console.log(error);

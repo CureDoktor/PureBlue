@@ -148,7 +148,7 @@ export default function Home() {
                       </Form.Control.Feedback>
                     </Form.Group>
                   </Row>
-                  <Row className="mb-3">
+                  {/* <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridState">
                       <Form.Label>State</Form.Label>
                       <Form.Select
@@ -181,8 +181,8 @@ export default function Home() {
                         Incorrect Year of Birth
                       </Form.Control.Feedback>
                     </Form.Group>
-                  </Row>
-                  <Form.Label>Gender</Form.Label>
+                  </Row> */}
+                  {/* <Form.Label>Gender</Form.Label>
                   <Row>
                     {gender.map((radio, idx) => (
                       <Col key={idx} xs={3}>
@@ -199,9 +199,12 @@ export default function Home() {
                         </ToggleButton>
                       </Col>
                     ))}
-                  </Row>
+                  </Row> */}
                   <br />
                   <br />
+                  <br />
+                  <br />
+
                   <Button
                     variant="primary"
                     className={styles.submitBtn}

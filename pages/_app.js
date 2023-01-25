@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Login from "../pages/login";
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import AuthContext from "../store/auth-context";
 
 function MyApp({ Component, pageProps }) {
   const [isLogedIn, setIsLoggedIn] = useState(true);
@@ -30,17 +31,17 @@ function MyApp({ Component, pageProps }) {
   const loginChange = () => {
     if (isLogedIn) {
       return (
-        <React.Fragment>
+        <AuthContext.Provider>
           <Header logout={logoutHandler} header={isLogedIn} />
           <Component {...pageProps} />
           <Footer />
-        </React.Fragment>
+        </AuthContext.Provider>
       );
     } else {
       return (
         <React.Fragment>
           <Header logout={loginHandler} header={isLogedIn} />
-          <Login />
+          <Login isLoggedIn={loginHandler} />
           <Footer />
         </React.Fragment>
       );
