@@ -11,16 +11,17 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { Form } from "react-bootstrap";
-export default function Home() {
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState("1");
+import Axios from "axios";
+import AuthContext from "../../store/auth-context";
+import Router, { useRouter } from "next/router";
 
+export default function Home(props) {
+  const router = useRouter();
+  const authCtx = useContext(AuthContext);
   const [formData, setFormData] = useState({
-    password: "",
     email: "",
-    passwordRetype: "",
-    state: "",
-    yearOfBirth: "",
+    password: "",
+    password_repeat: "",
   });
 
   const handleChange = (event) => {
@@ -31,16 +32,37 @@ export default function Home() {
     });
   };
 
-  const handleSubmit = (event) => {
-    var payload = [
-      formData.email,
-      formData.password,
-      formData.passwordRetype,
-      formData.state,
-      formData.yearOfBirth,
-    ];
-    if (formData.password === formData.passwordRetype) {
-      alert("Form passed: " + payload);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const route = "/api/auth/register";
+    const payload = {
+      email: formData.email,
+      password: formData.password,
+      password_repeat: formData.password_repeat,
+    };
+    if (formData.password === formData.password_repeat) {
+      try {
+        const rese = await Axios.post(route, payload)
+          .then((res) => {
+            console.log(res.data);
+            props.isLoggedIn();
+            authCtx.settingToken(res.data.access_token);
+            router.push("/visit-form");
+          })
+          .catch((error) => {
+            console.log(error.response.data.errors);
+            const cure = error.response.data.errors;
+            const rest = Object.values(cure);
+            var values = "";
+            rest.map((element) => {
+              values = values + element + " ";
+            });
+            alert(values);
+          });
+      } catch (err) {
+        alert("Username or password are not good! 2" + err);
+      }
     } else {
       alert("Passwords doesn't match!");
     }
@@ -137,7 +159,7 @@ export default function Home() {
                       </Form.Label>
                       <Form.Control
                         required
-                        name="passwordRetype"
+                        name="password_repeat"
                         type="password"
                         onChange={handleChange}
                         value={formData.passwordRetype}

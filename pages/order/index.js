@@ -169,7 +169,7 @@ export default function Home() {
                       <p>1. The Basics</p>
                     </div>
                     <div className={styles.formBody}>
-                      <Row className="mb-3">
+                      {/* <Row className="mb-3">
                         <Col md={8}>
                           <Form.Group as={Col} controlId="formGridFirstname">
                             <Form.Label>Coupon Code</Form.Label>
@@ -185,8 +185,8 @@ export default function Home() {
                           <br />
                           <Button className={styles.switch}>APPLY</Button>
                         </Col>
-                      </Row>
-                      <Form.Label>Choose Shipping Option</Form.Label>
+                      </Row> */}
+                      {/* <Form.Label>Choose Shipping Option</Form.Label>
                       <div key={`inline-radio`} className="mb-3">
                         <Form.Check
                           inline
@@ -212,13 +212,13 @@ export default function Home() {
                           type="radio"
                           id={`inline-radio-3`}
                         />
-                      </div>
-                      <p className={styles.grayText}>
+                      </div> */}
+                      {/* <p className={styles.grayText}>
                         Next Day Shipping if ordered before 12PM CST Monday -
                         Thursday <br />
                         This will save you shipping time, but physician review
                         still takes 24-48 hours.
-                      </p>
+                      </p> */}
                       <Row className="mb-3">
                         <Col>
                           <Form.Group as={Col} controlId="formGridFirstname">
@@ -265,11 +265,11 @@ export default function Home() {
                         </Form.Group>
                       </Row>
                       <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
+                        <Form.Group as={Col} controlId="formGridLastname">
                           <Form.Control
-                            type="name"
+                            type="text"
                             className={styles.formControl}
-                            placeholder="Street Address 1"
+                            placeholder="Phone"
                           />
                         </Form.Group>
                       </Row>
@@ -278,10 +278,11 @@ export default function Home() {
                           <Form.Control
                             type="name"
                             className={styles.formControl}
-                            placeholder="Street Address 2"
+                            placeholder="Street Address 1"
                           />
                         </Form.Group>
                       </Row>
+
                       <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridFirstname">
                           <Form.Control
@@ -345,15 +346,7 @@ export default function Home() {
                           />
                         </Form.Group>
                       </Row>
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
-                          <Form.Control
-                            type="name"
-                            className={styles.formControl}
-                            placeholder="Street Address 2"
-                          />
-                        </Form.Group>
-                      </Row>
+
                       <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridFirstname">
                           <Form.Control
@@ -400,14 +393,14 @@ export default function Home() {
                           type="radio"
                           id={`inline-radio-4`}
                         />
-                        <Form.Check
+                        {/* <Form.Check
                           inline
                           className={styles.radioButton}
                           label={pp()}
                           name="group2"
                           type="radio"
                           id={`inline-radio-5`}
-                        />
+                        /> */}
                       </div>
                       <Button className={styles.button}>PAY NOW</Button>
                     </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import React from "react";
+import React, { useState, useContext } from "react";
 import {
   Col,
   Container,
@@ -12,58 +12,177 @@ import {
   Button,
   Row,
 } from "react-bootstrap";
-import { CaretDownFill, List } from "react-bootstrap-icons";
+import { CaretDownFill, List, PencilFill } from "react-bootstrap-icons";
+import AuthContext from "../../store/auth-context";
 import styles from "./styles.module.scss";
 import Form from "react-bootstrap/Form";
 
 export default function PayInfo(props) {
+  const [payInfo, setPayInfo] = useState(false);
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const [formData, setFormData] = useState({
+    billingFirstName: "",
+    billingLastName: "",
+    billingAddress: "",
+    billingCityName: "",
+    billingState: "",
+    billingZip: "",
+  });
+
+  const authCtx = useContext(AuthContext);
+  const route = "/api/user/getUserInfo";
+
+  async function submitHandler(event) {
+    event.preventDefault();
+    const route = "/api/user/updateShippingInfo";
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token, formData })
+        .then((res) => {
+          console.log(res.data);
+          setPayInfo(false);
+          props.reloadInfo();
+        })
+        .catch((error) => {
+          console.log(error);
+          return alert("Not Good!");
+        });
+    } catch (err) {
+      return alert("Something went wrong!" + err);
+    }
+  }
+
+  const fields = (
+    <>
+      <Form onSubmit={submitHandler}>
+        <br />
+        <br />
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="billingAddress">
+            <Form.Control
+              required
+              name="billingAddress"
+              type="text"
+              onChange={handleChange}
+              placeholder="Enter Street Address"
+              value={formData.email}
+              className={styles.formControl}
+            />
+            <Form.Control.Feedback type="invalid">
+              Incorrect Street Address
+            </Form.Control.Feedback>
+          </Form.Group>
+          <Form.Group as={Col} controlId="billingCityName">
+            <Form.Control
+              required
+              name="billingCityName"
+              type="text"
+              onChange={handleChange}
+              placeholder="Enter City"
+              value={formData.email}
+              className={styles.formControl}
+            />
+            <Form.Control.Feedback type="invalid">
+              Incorrect City
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+        <Row className="mb-3">
+          <Form.Group as={Col} controlId="billingState">
+            <Form.Control
+              required
+              name="billingState"
+              type="text"
+              onChange={handleChange}
+              placeholder="Enter State"
+              value={formData.email}
+              className={styles.formControl}
+            />
+            <Form.Control.Feedback type="invalid">
+              Incorrect State
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="billingZip">
+            <Form.Control
+              required
+              name="billingZip"
+              type="text"
+              onChange={handleChange}
+              placeholder="Enter Zipcode"
+              value={formData.email}
+              className={styles.formControl}
+            />
+            <Form.Control.Feedback type="invalid">
+              Incorrect Zipcode
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+        <Button
+          type="submit"
+          className={styles.button}
+          onClick={props.saveInfo}
+        >
+          SAVE AND CONTINUE
+        </Button>
+      </Form>
+    </>
+  );
+
   return (
     <>
-      <Row className="mb-3 pt-5">
-        <Form.Group as={Col} controlId="formGridFirstname">
-          <Form.Control
-            type="name"
-            className={styles.formControl}  
-            placeholder="Street Address 1"
-          />
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFirstname">
-          <Form.Control
-            type="name"
-            className={styles.formControl}
-            placeholder="Street Address 2"
-          />
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFirstname">
-          <Form.Control
-            type="name"
-            className={styles.formControl}
-            placeholder="City"
-          />
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridState"> 
-          <Form.Select className={styles.formControl} defaultValue="State">
-            <option>State</option>
-            <option>...</option>
-          </Form.Select>
-        </Form.Group>
-        <Form.Group as={Col} controlId="formGridFirstname">
-          <Form.Control
-            type="name"
-            className={styles.formControl}
-            placeholder="Zipcode"
-          />
-        </Form.Group>
-      </Row>
-      <Button className={styles.button} onClick={props.saveInfo}>
-        SAVE AND CONTINUE
-      </Button>
+      <div className={styles.rectangleTwo}>
+        <Row>
+          <Col md={9}>
+            <b>PAYMENT INFO </b>
+            <Image src="/assets/order/cc.png" width={180} height={20} />
+          </Col>
+          <Col>
+            <Button className={styles.edit} onClick={() => setPayInfo(true)}>
+              <PencilFill /> EDIT
+            </Button>
+          </Col>
+        </Row>
+        <br />
+        <br />
+        <div className={styles.orderInfo}>
+          <Row>
+            <Col>
+              <b>CC#:</b>
+            </Col>
+            <Col>
+              <p>{props.info.creditCardNumber}</p>
+            </Col>
+          </Row>
+        </div>
+        <div className={styles.orderInfo}>
+          <Row>
+            <Col>
+              <b>Exp. Date :</b>
+            </Col>
+            <Col>
+              <p>{props.info.expirationDate}</p>
+            </Col>
+          </Row>
+        </div>
+        <div className={styles.orderInfo}>
+          <Row>
+            <Col>
+              <b>CVC :</b>
+            </Col>
+            <Col>
+              <p>{props.info.cvv}</p>
+            </Col>
+          </Row>
+        </div>
+        {payInfo && fields}
+      </div>
     </>
   );
 }

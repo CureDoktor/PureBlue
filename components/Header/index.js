@@ -19,6 +19,9 @@ export default function Header(props) {
   const sentToLogin = () => {
     props.logout();
   };
+  const redirectToLogin = () => {
+    window.location.replace("/login");
+  };
   return (
     <>
       <Head>
@@ -111,6 +114,11 @@ export default function Header(props) {
               <Button onClick={sentToLogin}>
                 {props.header ? "LOGOUT" : "LOGIN"}
               </Button>
+              {/* {props.header ? (
+                <Button onClick={sentToLogin}>LOGOUT</Button>
+              ) : (
+                ""
+              )} */}
             </Nav>
           </Navbar.Collapse>
         </Container>

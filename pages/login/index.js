@@ -12,6 +12,7 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
+import AuthContext from "../../store/auth-context";
 export default function Home(props) {
   const [formData, setFormData] = useState({
     password: "",
@@ -20,6 +21,8 @@ export default function Home(props) {
     state: "",
     yearOfBirth: "",
   });
+
+  const authCtx = useContext(AuthContext);
 
   // let loginInfo = [
   //   { id: 1, email: "test@test.com", password: "test" },
@@ -39,7 +42,6 @@ export default function Home(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Cure");
     const route = "/api/auth/login";
     const payload = {
       email: formData.email,
@@ -49,15 +51,14 @@ export default function Home(props) {
       const rese = await Axios.post(route, payload)
         .then((res) => {
           console.log(res.data.access_token);
+          authCtx.settingToken(res.data.access_token);
           props.isLoggedIn();
-          //alert("Podaci su iznad");
         })
         .catch((error) => {
-          console.log(error);
-          alert("Username or password are not good!");
+          alert(error.response.data.errors.password);
         });
     } catch (err) {
-      alert("Username or password are not good!" + err);
+      alert("Username or password are not good! 22" + err);
     }
   };
 

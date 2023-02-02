@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import AuthContext from "../../store/auth-context";
 import Image from "next/image";
 import { useState } from "react";
 import { PencilFill } from "react-bootstrap-icons";
@@ -8,6 +9,7 @@ import ShipInfo from "../ShipInfo";
 import PayInfo from "../PayInfo";
 import BillInfo from "../BillInfo";
 import Form from "react-bootstrap/Form";
+import Axios from "axios";
 import {
   Col,
   Container,
@@ -21,13 +23,73 @@ import {
 import styles from "./styles.module.scss";
 
 export default function Profile() {
+  const authCtx = useContext(AuthContext);
+  const gettingUserInfo = async () => {
+    const route = "/api/user/getUserInfo";
+
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token })
+        .then((res) => {
+          console.log(res.data);
+          setUserInfo(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Not Good!");
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
+  };
+
+  useEffect(() => {
+    gettingUserInfo();
+
+    console.log("Refreshed Profile");
+  }, []);
+
   const [save, setSave] = useState(false);
-  const [shipInfo, setShipInfo] = useState(false);
   const [billInfo, setBillInfo] = useState(false);
   const [payInfo, setPayInfo] = useState(false);
   const saveEnable = () => {
     setSave(true);
   };
+
+  const [userInfo, setUserInfo] = useState({
+    auth_customer_payment_id: null,
+    auth_customer_profile_id: null,
+    billingAddress: null,
+    billingCityId: null,
+    billingCityName: null,
+    billingFirstName: null,
+    billingLastName: null,
+    billingSameAsShipping: null,
+    billingState: null,
+    billingZip: null,
+    creditCardNumber: null,
+    creditCardType: null,
+    cvv: null,
+    date_of_birth: null,
+    email_notification: null,
+    expirationDate: null,
+    firstName: " ",
+    id: 1,
+    lastName: " ",
+    patient_id: null,
+    payment_processor: null,
+    phone: "",
+    shippingAddress: "",
+    shippingCityId: "",
+    shippingCityName: "",
+    shippingMethod: null,
+    shippingState: "",
+    shippingZip: "",
+    sms_notification: null,
+    user_id: 2,
+    verification_job_id: null,
+    verification_status: null,
+    verification_token: null,
+  });
 
   const editField = (field, save) => {
     console.log(field, save);
@@ -57,16 +119,18 @@ export default function Profile() {
           <div className={styles.rectangle}>
             <h2>Personal Information</h2>
             <h1>
-              <b>John Irwin Achas</b>
+              <b>
+                {userInfo.firstName} {userInfo.lastName}
+              </b>
             </h1>
             <p>
               <b>Email:</b> Irwinachas@gmail.com
             </p>
             <p>
-              <b>Phone Number:</b> (631)355-4940
+              <b>Phone Number:</b> {userInfo.phone}
             </p>
             <p>
-              <b>DOB:</b> 01 12 1977
+              <b>DOB:</b> {userInfo.date_of_birth}
             </p>
             <p>
               <b>Password:</b> ********
@@ -96,103 +160,13 @@ export default function Profile() {
           </div>
         </Col>
         <Col md={6}>
-          <div className={styles.rectangleTwo}>
-            <Row>
-              <Col md={9}>
-                <p>SHIPPING INFO</p>
-                <p className={styles.highlight}>John Irwin Achas</p>
-                <p>(631)355-4940</p>
-                <p>One icon</p>
-                <p>Foothill Farms, CA, 92610</p>
-              </Col>
-              <Col>
-                <Button className={styles.edit} onClick={() => editField(1, 1)}>
-                  <PencilFill /> EDIT
-                </Button>
-              </Col>
-            </Row>
-            {shipInfo && (
-              <ShipInfo
-                saveInfo={() => {
-                  editField(1, 0);
-                }}
-              />
-            )}
-          </div>
-          <div className={styles.rectangleTwo}>
-            <Row>
-              <Col md={9}>
-                <p>BILLING INFO</p>
-                <p className={styles.highlight}>Marie Gaviola</p>
-                <p>100 Riviera Dr S Massapequa</p>
-                <p>Massapequa, NY, 11758</p>
-              </Col>
-              <Col>
-                <Button className={styles.edit} onClick={() => editField(2, 1)}>
-                  <PencilFill /> EDIT
-                </Button>
-              </Col>
-            </Row>
-            {billInfo && (
-              <BillInfo
-                saveInfo={() => {
-                  editField(2, 0);
-                }}
-              />
-            )}
-          </div>
-          <div className={styles.rectangleTwo}>
-            <Row>
-              <Col md={9}>
-                <p>PAYMENT INFO</p>
-                <Image src="/assets/order/cc.png" width={180} height={20} />
-              </Col>
-              <Col>
-                <Button className={styles.edit} onClick={() => editField(3, 1)}>
-                  <PencilFill /> EDIT
-                </Button>
-              </Col>
-            </Row>
-            <br />
-            <br />
-            <div className={styles.orderInfo}>
-              <Row>
-                <Col>
-                  <b>CC#:</b>
-                </Col>
-                <Col>
-                  <p>5474********6349</p>
-                </Col>
-              </Row>
-            </div>
-            <div className={styles.orderInfo}>
-              <Row>
-                <Col>
-                  <b>Exp. Date :</b>
-                </Col>
-                <Col>
-                  <p> 08/26</p>
-                </Col>
-              </Row>
-            </div>
-            <div className={styles.orderInfo}>
-              <Row>
-                <Col>
-                  <b>CVC :</b>
-                </Col>
-                <Col>
-                  <p>****</p>
-                </Col>
-              </Row>
-            </div>
-            {payInfo && (
-              <PayInfo
-                saveInfo={() => {
-                  editField(3, 0);
-                }}
-              />
-            )}
-          </div>
+          <ShipInfo reloadInfo={gettingUserInfo} info={userInfo} />
+          <br />
+          <br />
+          <BillInfo reloadInfo={gettingUserInfo} info={userInfo} />
+          <br />
+          <br />
+          <PayInfo reloadInfo={gettingUserInfo} info={userInfo} />
         </Col>
       </Row>
     </div>

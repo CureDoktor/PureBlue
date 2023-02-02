@@ -2,9 +2,10 @@ import "../styles/globals.scss";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Login from "../pages/login";
-import React, { useState, useEffect } from "react";
+import Register from "../pages/register";
+import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
-import AuthContext from "../store/auth-context";
+import { AuthContextProvider } from "../store/auth-context";
 
 function MyApp({ Component, pageProps }) {
   const [isLogedIn, setIsLoggedIn] = useState(true);
@@ -31,17 +32,19 @@ function MyApp({ Component, pageProps }) {
   const loginChange = () => {
     if (isLogedIn) {
       return (
-        <AuthContext.Provider>
+        <AuthContextProvider>
           <Header logout={logoutHandler} header={isLogedIn} />
-          <Component {...pageProps} />
+          <Component isLoggedIn={loginHandler} {...pageProps} />
           <Footer />
-        </AuthContext.Provider>
+        </AuthContextProvider>
       );
     } else {
       return (
         <React.Fragment>
           <Header logout={loginHandler} header={isLogedIn} />
-          <Login isLoggedIn={loginHandler} />
+          {/* <Login isLoggedIn={loginHandler} /> */}
+          <Register isLoggedIn={loginHandler} />
+          {/* <Component isLoggedIn={loginHandler} {...pageProps} /> */}
           <Footer />
         </React.Fragment>
       );
