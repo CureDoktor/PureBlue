@@ -50,7 +50,6 @@ export default function Home(props) {
     try {
       const rese = await Axios.post(route, payload)
         .then((res) => {
-          console.log(res.data.access_token);
           authCtx.settingToken(res.data.access_token);
           props.isLoggedIn();
         })

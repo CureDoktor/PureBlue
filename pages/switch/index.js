@@ -5,7 +5,11 @@ import styles from "./styles.module.scss";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
+import Axios from "axios";
+import AuthContext from "../../store/auth-context";
 export default function Home() {
+  const authCtx = useContext(AuthContext);
+  const [medications, setMedications] = useState([{}]);
   const [chosenMed, setChosenMed] = useState({
     id: 1,
     product_title: "Viagra 25 mg, 4 day supply",
@@ -39,6 +43,27 @@ export default function Home() {
 
     return obj;
   };
+
+  const gettingMedications = async () => {
+    const route = "/api/get-products";
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
+        .then((res) => {
+          console.log(res.data);
+          setMedications(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Not Good!");
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
+  };
+
+  useEffect(() => {
+    gettingMedications();
+  }, []);
 
   useEffect(() => {
     //console.log(chosenMed);
@@ -78,6 +103,7 @@ export default function Home() {
             setChosenMed({
               ...chosenMed,
               product_price: element.product_price,
+              id: element.id,
             });
           } else {
             console.log("cure");
@@ -102,7 +128,9 @@ export default function Home() {
     setTimes(objectMakingTimes);
   }
 
-  const medications = [
+  const backToCheckout = () => {};
+
+  const medications2 = [
     {
       id: 1,
       product_title: "Viagra 25 mg, 4 day supply",
@@ -513,7 +541,12 @@ export default function Home() {
                     {chosenMed.product_price}
                   </h1>
                   <p>Change your answers to discover more pricing options.</p>
-                  <Button className={styles.backToCheckout}>
+                  <Button
+                    onClick={() => {
+                      console.log(chosenMed.id);
+                    }}
+                    className={styles.backToCheckout}
+                  >
                     BACK TO CHECKOUT
                   </Button>
                   <br />

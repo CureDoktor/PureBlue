@@ -15,7 +15,9 @@ import {
 import { CaretDownFill, List, PencilFill } from "react-bootstrap-icons";
 import AuthContext from "../../store/auth-context";
 import styles from "./styles.module.scss";
+
 import Form from "react-bootstrap/Form";
+import Axios from "axios";
 
 export default function PayInfo(props) {
   const [payInfo, setPayInfo] = useState(false);
@@ -28,12 +30,11 @@ export default function PayInfo(props) {
   };
 
   const [formData, setFormData] = useState({
-    billingFirstName: "",
-    billingLastName: "",
-    billingAddress: "",
-    billingCityName: "",
-    billingState: "",
-    billingZip: "",
+    payment_processor: "credit_card",
+    creditCardType: "",
+    creditCardNumber: "",
+    expirationDate: "",
+    cvv: "",
   });
 
   const authCtx = useContext(AuthContext);
@@ -41,9 +42,9 @@ export default function PayInfo(props) {
 
   async function submitHandler(event) {
     event.preventDefault();
-    const route = "/api/user/updateShippingInfo";
+    const route = "/api/user/updatePaymentInfo";
     try {
-      const rese = await Axios.post(route, { Token: authCtx.Token, formData })
+      const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
           console.log(res.data);
           setPayInfo(false);
@@ -64,63 +65,63 @@ export default function PayInfo(props) {
         <br />
         <br />
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="billingAddress">
+          <Form.Group as={Col} controlId="creditCardNumber">
             <Form.Control
               required
-              name="billingAddress"
-              type="text"
+              name="creditCardNumber"
+              type="number"
               onChange={handleChange}
-              placeholder="Enter Street Address"
+              placeholder="Enter Credit Card Number"
               value={formData.email}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
-              Incorrect Street Address
+              Incorrect Credit Card Number
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} controlId="billingCityName">
+          <Form.Group as={Col} controlId="creditCardType">
             <Form.Control
               required
-              name="billingCityName"
+              name="creditCardType"
               type="text"
               onChange={handleChange}
-              placeholder="Enter City"
+              placeholder="Enter Credit Card Type"
               value={formData.email}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
-              Incorrect City
+              Incorrect Credit Card Type
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="billingState">
+          <Form.Group as={Col} controlId="expirationDate">
             <Form.Control
               required
-              name="billingState"
+              name="expirationDate"
               type="text"
               onChange={handleChange}
-              placeholder="Enter State"
+              placeholder="exp. MM/DD"
               value={formData.email}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
-              Incorrect State
+              Incorrect Expiration Date
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group as={Col} controlId="billingZip">
+          <Form.Group as={Col} controlId="cvv">
             <Form.Control
               required
-              name="billingZip"
-              type="text"
+              name="cvv"
+              type="number"
               onChange={handleChange}
-              placeholder="Enter Zipcode"
+              placeholder="Enter CVV"
               value={formData.email}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
-              Incorrect Zipcode
+              Incorrect CVV
             </Form.Control.Feedback>
           </Form.Group>
         </Row>

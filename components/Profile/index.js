@@ -28,7 +28,7 @@ export default function Profile() {
     const route = "/api/user/getUserInfo";
 
     try {
-      const rese = await Axios.post(route, { Token: authCtx.Token })
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           console.log(res.data);
           setUserInfo(res.data);

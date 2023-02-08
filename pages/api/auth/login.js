@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export default function handler(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   Axios.post("https://api.trypureblue.com/auth/login", req.body, {
     headers: {
       "Content-Type": "application/json",

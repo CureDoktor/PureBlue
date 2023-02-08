@@ -1,22 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 
 const AuthContext = React.createContext({
-  Token:
-    "yfFDRt6gzmgVFu0DFiooC7L8R9sujnx1rDRVDgc7VPgEWXFgW9FDq8BybrEpy0qJaFwqsutfP7fceKKbe2-nbEsgue-xQlCYOerkCWKqWYxPVdmgdDaFRUgZTo3fjYDu0giyFajpOFK7t4JZVBxvh112zOwUTRKdNNLxNg90WJ0iXVh1oL8Eko8QdO6PxTq8fkEw5OyJ",
+  Token: () => {},
   settingToken: (value) => {},
 });
 
 export const AuthContextProvider = (props) => {
-  const [Token, setToken] = useState(
-    "yfFDRt6gzmgVFu0DFiooC7L8R9sujnx1rDRVDgc7VPgEWXFgW9FDq8BybrEpy0qJaFwqsutfP7fceKKbe2-nbEsgue-xQlCYOerkCWKqWYxPVdmgdDaFRUgZTo3fjYDu0giyFajpOFK7t4JZVBxvh112zOwUTRKdNNLxNg90WJ0iXVh1oL8Eko8QdO6PxTq8fkEw5OyJ"
-  );
+  const Token = () => {
+    var bearerToken = localStorage.getItem("Token");
+    return bearerToken;
+  };
+
+  const removeToken = () => {
+    localStorage.removeItem("isLoggedIn");
+  };
 
   const setBearerToken = (value) => {
-    setToken(value);
+    localStorage.setItem("Token", value);
   };
   return (
     <AuthContext.Provider
-      value={{ Token: Token, settingToken: setBearerToken }}
+      value={{
+        Token: Token,
+        removeToken: removeToken,
+        settingToken: setBearerToken,
+      }}
     >
       {props.children}
     </AuthContext.Provider>

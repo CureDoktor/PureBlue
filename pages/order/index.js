@@ -11,55 +11,43 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
+import ShipInfo from "../../components/ShipInfo";
 
 export default function Home() {
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState("1");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    shippingAddress: "",
+    shippingCityName: "",
+    shippingState: "",
+    shippingZip: "",
+  });
 
-  const gender = [
-    { name: "Yes", value: "yes" },
-    { name: "No", value: "no" },
-  ];
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-  function cc() {
-    return (
-      <div>
-        <p>Credit or Debit Card</p>
-        <Image src="/assets/order/cc.png" width={180} height={20} />
-      </div>
-    );
-  }
-  function pp() {
-    return <Image src="/assets/order/pp.png" width={80} height={20} />;
-  }
-
-  function ContextAwareToggle({ children, eventKey, callback }) {
-    const { activeEventKey } = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionButton(
-      eventKey,
-      () => callback && callback(eventKey)
-    );
-
-    const isCurrentEventKey = activeEventKey === eventKey;
-
-    return (
-      <button
-        type="button"
-        className="headerOne"
-        style={{
-          backgroundColor: isCurrentEventKey ? "#fff" : "#fff",
-          border: "0px",
-          color: "#000",
-          fontWeight: "800",
-          padding: "0px 12px 0px 12px",
-          width: "100%",
-          textAlign: "left",
-        }}
-        onClick={decoratedOnClick}
-      >
-        {children}
-      </button>
-    );
+  async function submitHandler(event) {
+    event.preventDefault();
+    const route = "/api/user/updateShippingInfo";
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
+        .then((res) => {
+          console.log(res.data);
+          setShipInfo(false);
+          props.reloadInfo();
+        })
+        .catch((error) => {
+          console.log(error);
+          return alert("Not Good!");
+        });
+    } catch (err) {
+      return alert("Something went wrong!" + err);
+    }
   }
 
   return (
@@ -163,228 +151,223 @@ export default function Home() {
                 </p>
               </Col>
               <Col md={6}>
-                <Form>
-                  <div className={styles.formField}>
-                    <div className={styles.formHeader}>
-                      <p>1. The Basics</p>
-                    </div>
-                    <div className={styles.formBody}>
-                      {/* <Row className="mb-3">
-                        <Col md={8}>
-                          <Form.Group as={Col} controlId="formGridFirstname">
-                            <Form.Label>Coupon Code</Form.Label>
-                            <Form.Control
-                              type="name"
-                              className={styles.formControl}
-                              placeholder="XXXXXXXXX"
-                            />
-                          </Form.Group>
-                        </Col>
-                        <Col md={4}>
-                          <br />
-                          <br />
-                          <Button className={styles.switch}>APPLY</Button>
-                        </Col>
-                      </Row> */}
-                      {/* <Form.Label>Choose Shipping Option</Form.Label>
-                      <div key={`inline-radio`} className="mb-3">
-                        <Form.Check
-                          inline
-                          className={styles.radioButton}
-                          label="USPS Ground (3-4 Business Days)"
-                          name="group1"
-                          type="radio"
-                          id={`inline-radio-1`}
-                        />
-                        <Form.Check
-                          inline
-                          className={styles.radioButton}
-                          label="USPS Ground (2-3 Business Days)"
-                          name="group1"
-                          type="radio"
-                          id={`inline-radio-2`}
-                        />
-                        <Form.Check
-                          inline
-                          className={styles.radioButton}
-                          label="UPS Next Business Day Overnight"
-                          name="group1"
-                          type="radio"
-                          id={`inline-radio-3`}
-                        />
-                      </div> */}
-                      {/* <p className={styles.grayText}>
-                        Next Day Shipping if ordered before 12PM CST Monday -
-                        Thursday <br />
-                        This will save you shipping time, but physician review
-                        still takes 24-48 hours.
-                      </p> */}
-                      <Row className="mb-3">
-                        <Col>
-                          <Form.Group as={Col} controlId="formGridFirstname">
-                            <Form.Label>
-                              PatientPhone *{" "}
-                              <small>(verified after checkout)</small>
-                            </Form.Label>
-                            <Form.Control
-                              type="name"
-                              className={styles.formControl}
-                              placeholder="XXX-XXX-XXXX"
-                            />
-                          </Form.Group>
-                          <Button className={styles.button}>
-                            SAVE AND CONTINUE
-                          </Button>
-                        </Col>
-                      </Row>
-                    </div>
+                <div className={styles.formField}>
+                  <div className={styles.formHeader}>
+                    <p>1. Shipping Address</p>
                   </div>
-                  <div className={styles.formField}>
-                    <div className={styles.formHeader}>
-                      <p>2. Shipping Address</p>
-                    </div>
-                    <div className={styles.formBody}>
-                      <Form.Label>
-                        Ship To Name:
-                        <small> must be your legal name (edit name)</small>
-                      </Form.Label>
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
+                  <div className={styles.formBody}>
+                    <Form onSubmit={submitHandler}>
+                      <Row className="mb-3 pt-5">
+                        <Form.Group as={Col} controlId="firstName">
                           <Form.Control
-                            type="name"
-                            className={styles.formControl}
-                            placeholder="First Name"
-                          />
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formGridLastname">
-                          <Form.Control
-                            type="lastname"
-                            className={styles.formControl}
-                            placeholder="Last Name"
-                          />
-                        </Form.Group>
-                      </Row>
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridLastname">
-                          <Form.Control
+                            required
+                            name="firstName"
                             type="text"
-                            className={styles.formControl}
-                            placeholder="Phone"
-                          />
-                        </Form.Group>
-                      </Row>
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
-                          <Form.Control
-                            type="name"
-                            className={styles.formControl}
-                            placeholder="Street Address 1"
-                          />
-                        </Form.Group>
-                      </Row>
-
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
-                          <Form.Control
-                            type="name"
-                            className={styles.formControl}
-                            placeholder="City"
-                          />
-                        </Form.Group>
-                      </Row>
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridState">
-                          <Form.Select
-                            className={styles.formControl}
-                            defaultValue="State"
-                          >
-                            <option>State</option>
-                            <option>...</option>
-                          </Form.Select>
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formGridFirstname">
-                          <Form.Control
-                            type="name"
-                            className={styles.formControl}
-                            placeholder="Zipcode"
-                          />
-                        </Form.Group>
-                      </Row>
-                      <Button className={styles.button}>
-                        SAVE AND CONTINUE
-                      </Button>
-                    </div>
-                  </div>
-                  <div className={styles.formField}>
-                    <div className={styles.formHeader}>
-                      <p>3. Billing Address</p>
-                    </div>
-                    <div className={styles.formBody}>
-                      <Form.Label>Bill To:</Form.Label>
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
-                          <Form.Control
-                            type="name"
-                            className={styles.formControl}
+                            onChange={handleChange}
                             placeholder="First Name"
-                          />
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formGridLastname">
-                          <Form.Control
-                            type="lastname"
+                            value={formData.email}
                             className={styles.formControl}
-                            placeholder="Last Name"
                           />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Name
+                          </Form.Control.Feedback>
                         </Form.Group>
-                      </Row>
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
-                          <Form.Control
-                            type="name"
-                            className={styles.formControl}
-                            placeholder="Street Address 1"
-                          />
-                        </Form.Group>
-                      </Row>
 
-                      <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridFirstname">
+                        <Form.Group as={Col} controlId="lastName">
                           <Form.Control
-                            type="name"
+                            required
+                            name="lastName"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Last Name"
+                            value={formData.email}
                             className={styles.formControl}
-                            placeholder="City"
                           />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Last Name
+                          </Form.Control.Feedback>
                         </Form.Group>
                       </Row>
                       <Row className="mb-3">
-                        <Form.Group as={Col} controlId="formGridState">
-                          <Form.Select
-                            className={styles.formControl}
-                            defaultValue="State"
-                          >
-                            <option>State</option>
-                            <option>...</option>
-                          </Form.Select>
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="formGridFirstname">
+                        <Form.Group as={Col} controlId="shippingAddress">
                           <Form.Control
-                            type="name"
+                            required
+                            name="shippingAddress"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter Street Address"
+                            value={formData.email}
                             className={styles.formControl}
-                            placeholder="Zipcode"
                           />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Street Address
+                          </Form.Control.Feedback>
                         </Form.Group>
                       </Row>
-                      <Button className={styles.button}>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="shippingCityName">
+                          <Form.Control
+                            required
+                            name="shippingCityName"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter City"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect City
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="shippingState">
+                          <Form.Control
+                            required
+                            name="shippingState"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter State"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect State
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formGridFirstname">
+                          <Form.Group as={Col} controlId="shippingZip">
+                            <Form.Control
+                              required
+                              name="shippingZip"
+                              type="text"
+                              onChange={handleChange}
+                              placeholder="Enter Zipcode"
+                              value={formData.email}
+                              className={styles.formControl}
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              Incorrect Zipcode
+                            </Form.Control.Feedback>
+                          </Form.Group>
+                        </Form.Group>
+                      </Row>
+                      <Button type="submit" className={styles.button}>
                         SAVE AND CONTINUE
                       </Button>
-                    </div>
+                    </Form>
                   </div>
-                  <div className={styles.formField}>
-                    <div className={styles.formHeader}>
-                      <p>4. Secure Payment</p>
-                    </div>
-                    <div className={styles.formBody}>
-                      <div key={`inline-radio`} className="mb-3">
+                </div>
+                <div className={styles.formField}>
+                  <div className={styles.formHeader}>
+                    <p>2. Billing Address</p>
+                  </div>
+                  <div className={styles.formBody}>
+                    <Form onSubmit={submitHandler}>
+                      <Row className="mb-3 pt-5">
+                        <Form.Group as={Col} controlId="billingFirstName">
+                          <Form.Control
+                            required
+                            name="billingFirstName"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Billing First Name"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Name
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="billingLastName">
+                          <Form.Control
+                            required
+                            name="billingLastName"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Billing Last Name"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Last Name
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="billingAddress">
+                          <Form.Control
+                            required
+                            name="billingAddress"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter Street Address"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Street Address
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="billingCityName">
+                          <Form.Control
+                            required
+                            name="billingCityName"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter City"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect City
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="billingState">
+                          <Form.Control
+                            required
+                            name="billingState"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter State"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect State
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="billingZip">
+                          <Form.Control
+                            required
+                            name="billingZip"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter Zipcode"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Zipcode
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Button type="submit" className={styles.button}>
+                        SAVE AND CONTINUE
+                      </Button>
+                    </Form>
+                  </div>
+                </div>
+                <div className={styles.formField}>
+                  <div className={styles.formHeader}>
+                    <p>3. Secure Payment</p>
+                  </div>
+                  <div className={styles.formBody}>
+                    {/* <div key={`inline-radio`} className="mb-3">
                         <Form.Check
                           inline
                           className={styles.radioButton}
@@ -393,19 +376,18 @@ export default function Home() {
                           type="radio"
                           id={`inline-radio-4`}
                         />
-                        {/* <Form.Check
+                        <Form.Check
                           inline
                           className={styles.radioButton}
                           label={pp()}
                           name="group2"
                           type="radio"
                           id={`inline-radio-5`}
-                        /> */}
+                        />
                       </div>
-                      <Button className={styles.button}>PAY NOW</Button>
-                    </div>
+                      <Button className={styles.button}>PAY NOW</Button> */}
                   </div>
-                </Form>
+                </div>
               </Col>
             </Row>
           </div>

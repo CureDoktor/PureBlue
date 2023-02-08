@@ -2,9 +2,8 @@ import Axios from "axios";
 
 export default function handler(req, res) {
   console.log(req.body);
-  console.log();
   Axios.post(
-    "https://api.trypureblue.com/case/medical-form",
+    "https://api.trypureblue.com/case/save-questions",
     req.body.payload,
     {
       headers: {

@@ -42,9 +42,9 @@ export default function BillInfo(props) {
 
   async function submitHandler(event) {
     event.preventDefault();
-    const route = "/api/user/updateShippingInfo";
+    const route = "/api/user/updateBillingInfo";
     try {
-      const rese = await Axios.post(route, { Token: authCtx.Token, formData })
+      const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
           console.log(res.data);
           setBillInfo(false);

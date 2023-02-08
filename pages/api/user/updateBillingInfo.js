@@ -2,10 +2,9 @@ import Axios from "axios";
 
 export default function handler(req, res) {
   console.log(req.body);
-  console.log();
   Axios.post(
-    "https://api.trypureblue.com/case/medical-form",
-    req.body.payload,
+    "https://api.trypureblue.com/user/billing-info",
+    req.body.formData,
     {
       headers: {
         "Content-Type": "application/json",
@@ -19,6 +18,6 @@ export default function handler(req, res) {
       return res.status(200).json(respond.data);
     })
     .catch(function (error) {
-      res.status(400).json(error.response.data);
+      return res.status(400).json(error);
     });
 }

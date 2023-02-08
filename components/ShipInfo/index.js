@@ -21,6 +21,7 @@ import Axios from "axios";
 
 export default function ShipInfo(props) {
   const [shipInfo, setShipInfo] = useState(false);
+
   const handleChange = (event) => {
     const { value, name } = event.target;
     setFormData({
@@ -36,6 +37,7 @@ export default function ShipInfo(props) {
     shippingCityName: "",
     shippingState: "",
     shippingZip: "",
+    phone: "",
   });
 
   const authCtx = useContext(AuthContext);
@@ -45,7 +47,7 @@ export default function ShipInfo(props) {
     event.preventDefault();
     const route = "/api/user/updateShippingInfo";
     try {
-      const rese = await Axios.post(route, { Token: authCtx.Token, formData })
+      const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
           console.log(res.data);
           setShipInfo(false);
@@ -77,7 +79,6 @@ export default function ShipInfo(props) {
             Incorrect Name
           </Form.Control.Feedback>
         </Form.Group>
-
         <Form.Group as={Col} controlId="lastName">
           <Form.Control
             required
@@ -90,6 +91,22 @@ export default function ShipInfo(props) {
           />
           <Form.Control.Feedback type="invalid">
             Incorrect Last Name
+          </Form.Control.Feedback>
+        </Form.Group>
+      </Row>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="phone">
+          <Form.Control
+            required
+            name="phone"
+            type="text"
+            onChange={handleChange}
+            placeholder="Enter Phone Number"
+            value={formData.email}
+            className={styles.formControl}
+          />
+          <Form.Control.Feedback type="invalid">
+            Incorrect Phone Number
           </Form.Control.Feedback>
         </Form.Group>
       </Row>

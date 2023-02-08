@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps }) {
 
   const logoutHandler = () => {
     localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("Token");
     setIsLoggedIn(false);
   };
 
@@ -40,13 +41,13 @@ function MyApp({ Component, pageProps }) {
       );
     } else {
       return (
-        <React.Fragment>
+        <AuthContextProvider>
           <Header logout={loginHandler} header={isLogedIn} />
-          {/* <Login isLoggedIn={loginHandler} /> */}
-          <Register isLoggedIn={loginHandler} />
+          <Login isLoggedIn={loginHandler} />
+          {/* <Register isLoggedIn={loginHandler} /> */}
           {/* <Component isLoggedIn={loginHandler} {...pageProps} /> */}
           <Footer />
-        </React.Fragment>
+        </AuthContextProvider>
       );
     }
   };
