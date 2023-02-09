@@ -11,9 +11,18 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
+import Axios from "axios";
+import AuthContext from "../../store/auth-context";
+import Router, { useRouter } from "next/router";
 import ShipInfo from "../../components/ShipInfo";
 
 export default function Home() {
+  const authCtx = useContext(AuthContext);
+  const router = useRouter();
+  const switchProduct = () => {
+    router.push("/switch");
+  };
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -38,8 +47,79 @@ export default function Home() {
       const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
           console.log(res.data);
-          setShipInfo(false);
-          props.reloadInfo();
+        })
+        .catch((error) => {
+          console.log(error);
+          return alert("Not Good!");
+        });
+    } catch (err) {
+      return alert("Something went wrong!" + err);
+    }
+  }
+
+  const handlePayChange = (event) => {
+    const { value, name } = event.target;
+    setFormPayData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const [formPayData, setFormPayData] = useState({
+    payment_processor: "credit_card",
+    creditCardType: "",
+    creditCardNumber: "",
+    expirationDate: "",
+    cvv: "",
+  });
+
+  async function submitPayHandler(event) {
+    event.preventDefault();
+    const route = "/api/user/updatePaymentInfo";
+    try {
+      const rese = await Axios.post(route, {
+        Token: authCtx.Token(),
+        formPayData,
+      })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          return alert("Not Good!");
+        });
+    } catch (err) {
+      return alert("Something went wrong!" + err);
+    }
+  }
+
+  const handleBillChange = (event) => {
+    const { value, name } = event.target;
+    setFormBillData({
+      ...formBillData,
+      [name]: value,
+    });
+  };
+
+  const [formBillData, setFormBillData] = useState({
+    billingFirstName: "",
+    billingLastName: "",
+    billingAddress: "",
+    billingCityName: "",
+    billingState: "",
+    billingZip: "",
+  });
+
+  async function submitBillHandler(event) {
+    event.preventDefault();
+    const route = "/api/user/updateBillingInfo";
+    try {
+      const rese = await Axios.post(route, {
+        Token: authCtx.Token(),
+        formBillData,
+      })
+        .then((res) => {
+          console.log(res.data);
         })
         .catch((error) => {
           console.log(error);
@@ -106,7 +186,9 @@ export default function Home() {
                     </ul>
                   </Col>
                   <Col md={4}>
-                    <Button className={styles.switch}>SWITCH</Button>
+                    <Button onClick={switchProduct} className={styles.switch}>
+                      SWITCH
+                    </Button>
                   </Col>
                 </Row>
                 <div className={styles.totalPrice}>
@@ -172,7 +254,6 @@ export default function Home() {
                             Incorrect Name
                           </Form.Control.Feedback>
                         </Form.Group>
-
                         <Form.Group as={Col} controlId="lastName">
                           <Form.Control
                             required
@@ -185,6 +266,22 @@ export default function Home() {
                           />
                           <Form.Control.Feedback type="invalid">
                             Incorrect Last Name
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="phone">
+                          <Form.Control
+                            required
+                            name="phone"
+                            type="text"
+                            onChange={handleChange}
+                            placeholder="Enter Phone Number"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Phone Number
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Row>
@@ -263,14 +360,14 @@ export default function Home() {
                     <p>2. Billing Address</p>
                   </div>
                   <div className={styles.formBody}>
-                    <Form onSubmit={submitHandler}>
+                    <Form onSubmit={submitBillHandler}>
                       <Row className="mb-3 pt-5">
                         <Form.Group as={Col} controlId="billingFirstName">
                           <Form.Control
                             required
                             name="billingFirstName"
                             type="text"
-                            onChange={handleChange}
+                            onChange={handleBillChange}
                             placeholder="Billing First Name"
                             value={formData.email}
                             className={styles.formControl}
@@ -284,7 +381,7 @@ export default function Home() {
                             required
                             name="billingLastName"
                             type="text"
-                            onChange={handleChange}
+                            onChange={handleBillChange}
                             placeholder="Billing Last Name"
                             value={formData.email}
                             className={styles.formControl}
@@ -300,7 +397,7 @@ export default function Home() {
                             required
                             name="billingAddress"
                             type="text"
-                            onChange={handleChange}
+                            onChange={handleBillChange}
                             placeholder="Enter Street Address"
                             value={formData.email}
                             className={styles.formControl}
@@ -316,7 +413,7 @@ export default function Home() {
                             required
                             name="billingCityName"
                             type="text"
-                            onChange={handleChange}
+                            onChange={handleBillChange}
                             placeholder="Enter City"
                             value={formData.email}
                             className={styles.formControl}
@@ -332,7 +429,7 @@ export default function Home() {
                             required
                             name="billingState"
                             type="text"
-                            onChange={handleChange}
+                            onChange={handleBillChange}
                             placeholder="Enter State"
                             value={formData.email}
                             className={styles.formControl}
@@ -346,7 +443,7 @@ export default function Home() {
                             required
                             name="billingZip"
                             type="text"
-                            onChange={handleChange}
+                            onChange={handleBillChange}
                             placeholder="Enter Zipcode"
                             value={formData.email}
                             className={styles.formControl}
@@ -367,6 +464,74 @@ export default function Home() {
                     <p>3. Secure Payment</p>
                   </div>
                   <div className={styles.formBody}>
+                    <Form onSubmit={submitPayHandler}>
+                      <br />
+                      <br />
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="creditCardNumber">
+                          <Form.Control
+                            required
+                            name="creditCardNumber"
+                            type="number"
+                            onChange={handlePayChange}
+                            placeholder="Enter Credit Card Number"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Credit Card Number
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="creditCardType">
+                          <Form.Control
+                            required
+                            name="creditCardType"
+                            type="text"
+                            onChange={handlePayChange}
+                            placeholder="Enter Credit Card Type"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Credit Card Type
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
+                        <Form.Group as={Col} controlId="expirationDate">
+                          <Form.Control
+                            required
+                            name="expirationDate"
+                            type="text"
+                            onChange={handlePayChange}
+                            placeholder="exp. MM/DD"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect Expiration Date
+                          </Form.Control.Feedback>
+                        </Form.Group>
+
+                        <Form.Group as={Col} controlId="cvv">
+                          <Form.Control
+                            required
+                            name="cvv"
+                            type="number"
+                            onChange={handlePayChange}
+                            placeholder="Enter CVV"
+                            value={formData.email}
+                            className={styles.formControl}
+                          />
+                          <Form.Control.Feedback type="invalid">
+                            Incorrect CVV
+                          </Form.Control.Feedback>
+                        </Form.Group>
+                      </Row>
+                      <Button type="submit" className={styles.button}>
+                        SAVE AND CONTINUE
+                      </Button>
+                    </Form>
                     {/* <div key={`inline-radio`} className="mb-3">
                         <Form.Check
                           inline

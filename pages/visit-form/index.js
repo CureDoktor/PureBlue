@@ -429,7 +429,6 @@ export default function Home() {
                         );
                       } else if (question.type === "checkbox") {
                         var labela = <div>{question.label}</div>;
-
                         var options = Object.entries(question.answers).map(
                           ([key, value], index) => {
                             return (
