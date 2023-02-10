@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useContext, useState, React } from "react";
+import { useContext, useEffect, useState, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
@@ -57,32 +57,73 @@ export default function Home() {
     }
   }
 
+  const getProduct = async () => {
+    const route = "/api/case/get-product";
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          return alert("Not Good!");
+        });
+    } catch (err) {
+      return alert("Something went wrong!" + err);
+    }
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
   const handlePayChange = (event) => {
     const { value, name } = event.target;
     setFormPayData({
-      ...formData,
+      ...formPayData,
       [name]: value,
     });
   };
 
   const [formPayData, setFormPayData] = useState({
     payment_processor: "credit_card",
-    creditCardType: "",
     creditCardNumber: "",
     expirationDate: "",
     cvv: "",
   });
 
-  async function submitPayHandler(event) {
-    event.preventDefault();
-    const route = "/api/user/updatePaymentInfo";
+  const orderWithUserProfile = async () => {
+    const route = "/api/order/order-from-profile";
     try {
       const rese = await Axios.post(route, {
         Token: authCtx.Token(),
-        formPayData,
       })
         .then((res) => {
           console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+          return alert(
+            error.response.data.name + " " + error.response.data.message
+          );
+        });
+    } catch (err) {
+      return alert("Something went wrong!" + err);
+    }
+  };
+
+  async function submitPayHandler(event) {
+    event.preventDefault();
+    const route = "/api/user/updatePaymentInfo";
+    const formData = formPayData;
+    try {
+      const rese = await Axios.post(route, {
+        Token: authCtx.Token(),
+        formData,
+      })
+        .then((res) => {
+          console.log(res.data);
+          orderWithUserProfile();
         })
         .catch((error) => {
           console.log(error);
@@ -480,20 +521,6 @@ export default function Home() {
                           />
                           <Form.Control.Feedback type="invalid">
                             Incorrect Credit Card Number
-                          </Form.Control.Feedback>
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="creditCardType">
-                          <Form.Control
-                            required
-                            name="creditCardType"
-                            type="text"
-                            onChange={handlePayChange}
-                            placeholder="Enter Credit Card Type"
-                            value={formData.email}
-                            className={styles.formControl}
-                          />
-                          <Form.Control.Feedback type="invalid">
-                            Incorrect Credit Card Type
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Row>

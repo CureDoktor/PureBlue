@@ -7,8 +7,10 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
+import Router, { useRouter } from "next/router";
 export default function Home() {
   const authCtx = useContext(AuthContext);
+  const router = useRouter();
   const [medications, setMedications] = useState([{}]);
   const [chosenMed, setChosenMed] = useState({
     id: 1,
@@ -129,7 +131,7 @@ export default function Home() {
   }
 
   const backToCheckout = async (medicationId) => {
-    const route = "/api/case/product";
+    const route = "/api/case/save-product";
     try {
       const rese = await Axios.post(route, {
         Token: authCtx.Token(),
@@ -137,6 +139,7 @@ export default function Home() {
       })
         .then((res) => {
           console.log(res.data);
+          router.push("/order");
         })
         .catch((error) => {
           console.log(error);

@@ -67,7 +67,6 @@ export default function Profile() {
     billingState: null,
     billingZip: null,
     creditCardNumber: null,
-    creditCardType: null,
     cvv: null,
     date_of_birth: null,
     email_notification: null,

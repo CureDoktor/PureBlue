@@ -31,7 +31,6 @@ export default function PayInfo(props) {
 
   const [formData, setFormData] = useState({
     payment_processor: "credit_card",
-    creditCardType: "",
     creditCardNumber: "",
     expirationDate: "",
     cvv: "",
@@ -77,20 +76,6 @@ export default function PayInfo(props) {
             />
             <Form.Control.Feedback type="invalid">
               Incorrect Credit Card Number
-            </Form.Control.Feedback>
-          </Form.Group>
-          <Form.Group as={Col} controlId="creditCardType">
-            <Form.Control
-              required
-              name="creditCardType"
-              type="text"
-              onChange={handleChange}
-              placeholder="Enter Credit Card Type"
-              value={formData.email}
-              className={styles.formControl}
-            />
-            <Form.Control.Feedback type="invalid">
-              Incorrect Credit Card Type
             </Form.Control.Feedback>
           </Form.Group>
         </Row>

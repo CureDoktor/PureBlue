@@ -14,8 +14,9 @@ import {
 } from "react-bootstrap";
 import { CaretDownFill, List } from "react-bootstrap-icons";
 import styles from "./styles.module.scss";
-
+import Router, { useRouter } from "next/router";
 export default function Header(props) {
+  const router = useRouter();
   const sentToLogin = () => {
     props.logout();
   };
@@ -111,9 +112,20 @@ export default function Header(props) {
               ) : (
                 ""
               )}
-              <Button onClick={sentToLogin}>
-                {props.header ? "LOGOUT" : "LOGIN"}
-              </Button>
+              {props.header ? (
+                <Button onClick={sentToLogin}>
+                  {props.header ? "LOGOUT" : "LOGIN"}
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    router.push("/login");
+                  }}
+                >
+                  LOGIN
+                </Button>
+              )}
+
               {/* {props.header ? (
                 <Button onClick={sentToLogin}>LOGOUT</Button>
               ) : (

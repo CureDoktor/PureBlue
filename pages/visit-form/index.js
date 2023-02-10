@@ -488,7 +488,9 @@ export default function Home() {
                         );
                       }
                     })}
-                  <Button type="submit">Submit Questions</Button>
+                  {showQuestions && (
+                    <Button type="submit">Submit Questions</Button>
+                  )}
                 </Form>
               </div>
             </Col>
