@@ -132,10 +132,11 @@ export default function Home() {
 
   const backToCheckout = async (medicationId) => {
     const route = "/api/case/save-product";
+    var currentProductId = { "product_id": medicationId };
     try {
       const rese = await Axios.post(route, {
         Token: authCtx.Token(),
-        payload: medicationId,
+        payload: currentProductId,
       })
         .then((res) => {
           console.log(res.data);

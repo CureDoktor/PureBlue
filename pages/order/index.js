@@ -15,8 +15,21 @@ import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 import ShipInfo from "../../components/ShipInfo";
+import Modals from "../../components/Modals";
 
 export default function Home() {
+  const [product, setProduct] = useState({
+    id: 1,
+    partner_medication_id: "eb37cfd0-6b3a-472f-8cf6-2bdd1a0c806a",
+    product_dosage_mg: "25.0",
+    product_dosage_tag: "beginner",
+    product_dosages_per_month: 4,
+    product_image: "Viagra_25mg_4",
+    product_price: "280.00",
+    product_qty: 4,
+    product_tag: "Viagra",
+    product_title: "Viagra 25 mg, 4 day supply",
+  });
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const switchProduct = () => {
@@ -63,6 +76,7 @@ export default function Home() {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           console.log(res.data);
+          setProduct(res.data);
         })
         .catch((error) => {
           console.log(error);
@@ -154,10 +168,11 @@ export default function Home() {
   async function submitBillHandler(event) {
     event.preventDefault();
     const route = "/api/user/updateBillingInfo";
+    var formData = formBillData;
     try {
       const rese = await Axios.post(route, {
         Token: authCtx.Token(),
-        formBillData,
+        formData,
       })
         .then((res) => {
           console.log(res.data);
@@ -179,6 +194,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.orderPage}>
+        <Modals error_message="Cureeee" />
         <Container>
           <div className={styles.fieldOne}>
             <Col md={{ span: 7, offset: 5 }}>
@@ -202,11 +218,11 @@ export default function Home() {
                 </div>
                 <Row>
                   <Col md={8}>
-                    <h3>17 x Sildenafil </h3>
+                    <h3>{product.product_title} </h3>
                     <ul>
                       <li>
                         <Check className={styles.checkmark} />
-                        Seventeen 30 MG Sildenafil
+                        {product.product_title}
                       </li>
                       <li>
                         <Check className={styles.checkmark} />
@@ -235,19 +251,19 @@ export default function Home() {
                 <div className={styles.totalPrice}>
                   <Row className={styles.row}>
                     <Col xs={6}>Price</Col>
-                    <Col xs={6}>$50.00/MO</Col>
+                    <Col xs={6}>${product.product_price}</Col>
                   </Row>
                   <Row className={styles.row}>
                     <Col xs={6}>Shipping</Col>
-                    <Col xs={6}>$29.95</Col>
+                    <Col xs={6}>$0</Col>
                   </Row>
                   <Row className={styles.row}>
                     <Col xs={6}>Service Charge including Tax</Col>
-                    <Col xs={6}>$4.25</Col>
+                    <Col xs={6}>$0</Col>
                   </Row>
                   <Row className={styles.row}>
                     <Col xs={6}>Grand Total</Col>
-                    <Col xs={6}>$84.20</Col>
+                    <Col xs={6}>${product.product_price}</Col>
                   </Row>
                 </div>
                 <ul>
@@ -540,10 +556,11 @@ export default function Home() {
                           </Form.Control.Feedback>
                         </Form.Group>
 
-                        <Form.Group as={Col} controlId="cvv">
+                        <Form.Group maxLength="4" as={Col} controlId="cvv">
                           <Form.Control
                             required
                             name="cvv"
+                            maxLength={4}
                             type="number"
                             onChange={handlePayChange}
                             placeholder="Enter CVV"

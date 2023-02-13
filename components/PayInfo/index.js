@@ -100,6 +100,8 @@ export default function PayInfo(props) {
               required
               name="cvv"
               type="number"
+              htmlSize="4"
+              autoComplete="on"
               onChange={handleChange}
               placeholder="Enter CVV"
               value={formData.email}
