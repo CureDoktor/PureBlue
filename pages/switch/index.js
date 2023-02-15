@@ -8,7 +8,7 @@ import { AccordionContext, Form } from "react-bootstrap";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
-export default function Home() {
+export default function Switch() {
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const [medications, setMedications] = useState([{}]);

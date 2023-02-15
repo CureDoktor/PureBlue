@@ -3,6 +3,7 @@ import React from "react";
 const AuthContext = React.createContext({
   Token: () => {},
   settingToken: (value) => {},
+  removeToken: () => {},
 });
 
 export const AuthContextProvider = (props) => {

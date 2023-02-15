@@ -8,7 +8,7 @@ import Axios from "axios";
 import { AuthContextProvider } from "../store/auth-context";
 
 function MyApp({ Component, pageProps }) {
-  const [isLogedIn, setIsLoggedIn] = useState(true);
+  const [isLogedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
@@ -32,6 +32,7 @@ function MyApp({ Component, pageProps }) {
 
   const loginChange = () => {
     if (isLogedIn) {
+      console.log(Component.name);
       return (
         <AuthContextProvider>
           <Header logout={logoutHandler} header={isLogedIn} />
@@ -39,13 +40,27 @@ function MyApp({ Component, pageProps }) {
           <Footer />
         </AuthContextProvider>
       );
-    } else {
+    } else if (
+      Component.name == "Account" ||
+      Component.name == "VisitForm" ||
+      Component.name == "Switch" ||
+      Component.name == "Order"
+    ) {
       return (
         <AuthContextProvider>
           <Header logout={loginHandler} header={isLogedIn} />
           {/* <Login isLoggedIn={loginHandler} /> */}
-          <Register isLoggedIn={loginHandler} />
+          <Login isLoggedIn={loginHandler} />
           {/* <Component isLoggedIn={loginHandler} {...pageProps} /> */}
+          <Footer />
+        </AuthContextProvider>
+      );
+    } else {
+      console.log(Component.name);
+      return (
+        <AuthContextProvider>
+          <Header logout={loginHandler} header={isLogedIn} />
+          <Component {...pageProps} />
           <Footer />
         </AuthContextProvider>
       );

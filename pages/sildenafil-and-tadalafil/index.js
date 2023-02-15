@@ -8,7 +8,7 @@ import { Check, PatchCheck } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
-export default function Home() {
+export default function SildenafilAndTadalafil() {
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(

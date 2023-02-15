@@ -5,7 +5,7 @@ import { Col, Container, Button, Row } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 
-export default function PasswordReset() {
+export default function PasswordResetProcess() {
   const [disabled, isDisabled] = useState(false);
 
   const onChange = () => {

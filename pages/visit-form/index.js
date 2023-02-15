@@ -14,7 +14,7 @@ import { AccordionContext, Form } from "react-bootstrap";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
-export default function Home() {
+export default function VisitForm() {
   const [questions, setQuestions] = useState({});
   const [showQuestions, setShowQuestions] = useState(false);
   const [checkedState, setCheckedState] = useState(false);

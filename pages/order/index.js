@@ -17,7 +17,7 @@ import Router, { useRouter } from "next/router";
 import ShipInfo from "../../components/ShipInfo";
 import Modals from "../../components/Modals";
 
-export default function Home() {
+export default function Order() {
   const [product, setProduct] = useState({
     id: 1,
     partner_medication_id: "eb37cfd0-6b3a-472f-8cf6-2bdd1a0c806a",
@@ -30,6 +30,12 @@ export default function Home() {
     product_tag: "Viagra",
     product_title: "Viagra 25 mg, 4 day supply",
   });
+  var Image_source =
+    "/assets/order/bottles/" +
+    product.product_image +
+    "/" +
+    product.product_image +
+    "_bottle.png";
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const switchProduct = () => {
@@ -194,7 +200,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.orderPage}>
-        <Modals error_message="Cureeee" />
+        {/* <Modals error_message="Cureeee" /> */}
         <Container>
           <div className={styles.fieldOne}>
             <Col md={{ span: 7, offset: 5 }}>
@@ -210,11 +216,7 @@ export default function Home() {
             <Row>
               <Col md={6}>
                 <div className="d-flex pb-5 justify-content-center">
-                  <Image
-                    src="/assets/order/bottle.png"
-                    height={180}
-                    width={100}
-                  />
+                  <Image src={Image_source} height={280} width={220} />
                 </div>
                 <Row>
                   <Col md={8}>
@@ -555,7 +557,6 @@ export default function Home() {
                             Incorrect Expiration Date
                           </Form.Control.Feedback>
                         </Form.Group>
-
                         <Form.Group maxLength="4" as={Col} controlId="cvv">
                           <Form.Control
                             required

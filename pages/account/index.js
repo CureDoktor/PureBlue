@@ -7,7 +7,7 @@ import Orders from "../../components/Orders";
 import Membership from "../../components/Membership";
 import Profile from "../../components/Profile";
 import Case from "../../components/Case";
-export default function Home() {
+export default function Account() {
   const [checked, setChecked] = useState(false);
   const [content, setContent] = useState(<Membership />);
 

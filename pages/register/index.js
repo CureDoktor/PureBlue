@@ -15,7 +15,7 @@ import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 
-export default function Home(props) {
+export default function Register(props) {
   const router = useRouter();
   const authCtx = useContext(AuthContext);
   const [formData, setFormData] = useState({

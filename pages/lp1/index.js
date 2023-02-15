@@ -18,7 +18,7 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
 import CheckForm from "../../components/CheckForm";
 
-export default function Home() {
+export default function LP1() {
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(

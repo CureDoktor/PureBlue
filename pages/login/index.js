@@ -13,7 +13,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 import AuthContext from "../../store/auth-context";
-export default function Home(props) {
+export default function Login(props) {
   const [formData, setFormData] = useState({
     password: "",
     email: "",
