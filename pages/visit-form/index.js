@@ -40,17 +40,10 @@ export default function VisitForm() {
     }
   };
 
-  const previousQuestion = (event) => {
-    var currentQuestion = event.target.getAttribute("data-question");
-  };
-
-  const nextQuestion = (event) => {
-    var currentQuestion = event.target.getAttribute("data-question");
-  };
-
-  // useEffect(() => {
-  //   gettingQuestions();
-  // }, []);
+  useEffect(() => {
+    try {
+    } catch (error) {}
+  }, []);
 
   const [formQuestions, setFormQuestions] = useState({
     Are_you_seeking_treatment_for_improved_sexual_activity: "",
@@ -134,6 +127,7 @@ export default function VisitForm() {
 
   const handleChange = (event) => {
     const { value, name } = event.target;
+
     setFormData({
       ...formData,
       [name]: value,
@@ -150,7 +144,13 @@ export default function VisitForm() {
   };
 
   const handleQuestions = (event) => {
+    const { value, name } = event.target;
     var showMore = event.target.getAttribute("data-showmore");
+    var validationRegex = event.target.getAttribute("data-regex");
+    var validationReqValue = event.target.getAttribute("data-required_value");
+    var validationErrorMessage =
+      event.target.getAttribute("data-error_message");
+    console.log("Cao1");
 
     if (showMore != "null") {
       const obj = JSON.parse(showMore);
@@ -168,7 +168,15 @@ export default function VisitForm() {
         }
       });
     }
-    const { value, name } = event.target;
+
+    if (validationReqValue != null) {
+      console.log("Cao2");
+      if (value != validationReqValue) {
+        console.log("Cao3");
+        alert(validationErrorMessage);
+      }
+    }
+
     setFormQuestions({
       ...formQuestions,
       [name]: value,
@@ -267,12 +275,18 @@ export default function VisitForm() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), payload })
         .then((res) => {
-          console.log(res.data);
-          router.push("/switch");
+          //console.log(res.data);
+          //router.push("/switch");
         })
         .catch((error) => {
           console.log(error.response.data.errors);
-          alert(error.response.data.errors);
+          const cure = error.response.data.errors;
+          const rest = Object.entries(cure);
+          var values = "";
+          rest.map(([question, answer]) => {
+            values = values + question + " : " + answer + "  ";
+          });
+          alert(values);
         });
     } catch (err) {
       alert("Username or password are not good! 22" + err);
@@ -382,11 +396,29 @@ export default function VisitForm() {
                       question_i++;
                       if (question.type === "radio") {
                         var labela = <div>{question.label}</div>;
+                        if (question.validation != null) {
+                          if (question.validation.message != null) {
+                            var error_message = (
+                              <div>{question.validation.message}</div>
+                            );
+                          } else {
+                            error_message = "";
+                          }
+                        }
+
                         var options = Object.entries(question.answers).map(
                           ([key, value]) => {
                             var yesNo = "";
                             if (value === "YES" || value === "NO") {
                               yesNo = "col-md-3";
+                            }
+                            var validations = {
+                              regex: null,
+                              required_value: null,
+                              message: null,
+                            };
+                            if (question.validation != null) {
+                              validations = question.validation;
                             }
 
                             return (
@@ -396,6 +428,11 @@ export default function VisitForm() {
                                     required
                                     type="radio"
                                     className="btn-check"
+                                    data-regex={validations.regex}
+                                    data-required_value={
+                                      validations.required_value
+                                    }
+                                    data-error_message={validations.message}
                                     data-showmore={JSON.stringify(
                                       question.show_more
                                     )}
@@ -424,6 +461,9 @@ export default function VisitForm() {
                           <div id={name} key={question.label}>
                             {labela}
                             <br /> <Row>{options}</Row>
+                            <div className={styles.error_message}>
+                              {error_message}
+                            </div>
                             <br /> <br /> <br /> <br />
                           </div>
                         );
@@ -432,7 +472,7 @@ export default function VisitForm() {
                         var options = Object.entries(question.answers).map(
                           ([key, value], index) => {
                             return (
-                              <div key={value.label + key} className=" col-12">
+                              <div key={value.label + key} className="col-12">
                                 <Form.Check>
                                   <Form.Check.Input
                                     type="checkbox"

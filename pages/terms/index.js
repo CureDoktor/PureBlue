@@ -844,7 +844,7 @@ export default function Terms() {
             <br />
             <br /> MD Integrations
             <br /> 9071 E Mississippi Ave, Unit 6C, Denver, CO 80247
-            <br /> Dr. Mark Serota Licenses
+            <br /> Dr. Andrew Sakla Licenses
           </p>
           <br />
           <br />
@@ -854,276 +854,110 @@ export default function Terms() {
             <Row>
               <Col md={6}>
                 <p>
-                  FL 1821068115 October 11, 2023 <br />
-                  GA 1821068115 October 11, 2023 <br />
-                  MD 1821068115 October 11, 2023 <br />
-                  MI 1821068115 October 11, 2023 <br />
-                  NJ 1821068115 October 11, 2023 <br />
-                  OH 1821068115 October 11, 2023 <br />
-                  PA 1821068115 October 11, 2023 <br />
-                  TX 1821068115 October 11, 2023 <br />
-                  AK 1356547640 June 5, 2023 <br />
-                  VT 1356547640 November 30, 2024 <br />
-                  AL 1356547640 December 31, 2023 <br />
-                  AZ 1356547640 September 28, 2023 <br />
-                  CA 1356547640 January 31, 2023 <br />
-                  CO 1356547640 April 30, 2023 <br />
-                  FL 1356547640 October 25, 2025 <br />
-                  GA 1356547640 May 31, 2023 <br />
-                  HI 1356547640 January 31, 2024 <br />
-                  IL 1356547640 July 31, 2023 <br />
-                  IN 1356547640 October 31, 2023 <br />
-                  IA 1356547640 May 1, 2023 <br />
-                  KS 1356547640 July 31, 2023 <br />
-                  KY 1356547640 February 28, 2023 <br />
-                  LA 1356547640 May 31, 2023 <br />
-                  ME 1356547640 May 31, 2023 <br />
-                  MD 1356547640 October 30, 2023 <br />
-                  MA 1356547640 May 28, 2023 <br />
-                  MI 1356547640 October 21, 2024 <br />
-                  MN 1356547640 May 31, 2023 <br />
-                  MS 1356547640 June 30, 2023 <br />
-                  MT 1356547640 March 31, 2023 <br />
-                  NE 1356547640 October 1, 2024 <br />
-                  NV 1356547640 June 30, 2023 <br />
-                  NH 1356547640 June 30, 2023 <br />
-                  NJ 1356547640 June 30, 2023 <br />
-                  NY 1356547640 May 31, 2023 <br />
-                  NC 1356547640 May 28, 2023 <br />
-                  ND 1356547640 May 28, 2023 <br />
-                  OH 1356547640 August 12, 2024 <br />
-                  OK 1356547640 November 1, 2023 <br />
-                  OR 1356547640 December 31, 2023 <br />
-                  PA 1356547640 December 31, 2024 <br />
-                  SC 1356547640 June 30, 2023 <br />
-                  SD 1356547640 March 1, 2023 <br />
-                  TN 1356547640 May 31, 2023 <br />
-                  TX 1356547640 May 31, 2023 <br />
-                  VA 1356547640 May 31, 2024 <br />
-                  WA 1356547640 May 28, 2024 <br />
-                  WI 1356547640 October 31, 2023 <br />
-                  WY 1356547640 June 30, 2023 <br />
-                  UT 1356547640 January 31, 2024 <br />
-                  WV 1356547640 June 30, 2023 <br />
-                  ID 1356547640 June 30, 2023 <br />
-                  AR 1356547640 May 31, 2023 <br />
-                  DC FP0790546 December 31, 2023 <br />
-                  DC 1043478878 December 31, 2023 <br />
-                  VA FP0790546 July 31, 2024 <br />
-                  VA 1043478878 July 31, 2024 <br />
-                  FL FS2049458 January 31, 2024 <br />
-                  FL 1740410463 January 31, 2024 <br />
-                  GA FS2049458 October 31, 2023 <br />
-                  GA 1740410463 October 31, 2023 <br />
-                  HI FS2049458 January 31, 2024 <br />
-                  HI 1740410463 January 31, 2024 <br />
-                  AL 1326194945 December 31, 2023 <br />
-                  AZ 1326194945 November 13, 2024 <br />
-                  CA 1326194945 April 30, 2023 <br />
-                  CO 1326194945 April 30, 2023 <br />
-                  GA 1326194945 July 31, 2023 <br />
-                  ID 1326194945 June 30, 2023 <br />
-                  IL 1326194945 July 31, 2023 <br />
-                  IA 1326194945 July 1, 2024 <br />
-                  KS 1326194945 July 31, 2023 <br />
-                  KY 1326194945 February 28, 2023 <br />
-                  LA 1326194945 July 31, 2023 <br />
-                  NE 1326194945 October 1, 2024 <br />
-                  ME 1326194945 July 31, 2024 <br />
-                  MD 1326194945 September 30, 2024 <br />
-                  MA 1326194945 July 13, 2023 <br />
-                  NV 1326194945 June 30, 2023 <br />
-                  MI 1326194945 October 20, 2024 <br />
-                  MN 1326194945 July 31, 2023 <br />
-                  MS 1326194945 June 30, 2023 <br />
-                  MT 1326194945 March 31, 2023 <br />
-                  NH 1326194945 June 30, 2023 <br />
-                  NY 1326194945 September 30, 2024 <br />
-                  ND 1326194945 July 13, 2023 <br />
-                  OH 1326194945 August 24, 2024 <br />
-                  OK 1326194945 November 1, 2023 <br />
-                  SD 1326194945 March 1, 2023 <br />
-                  TN 1326194945 July 31, 2024 <br />
-                  TX 1326194945 May 31, 2023 <br />
-                  UT 1326194945 January 31, 2024 <br />
-                  VT 1326194945 November 30, 2024 <br />
-                  WA 1326194945 July 31, 2024 <br />
-                  WV 1326194945 June 30, 2024 <br />
-                  WI 1326194945 October 31, 2023 <br />
-                  WY 1326194945 June 30, 2023 <br />
-                  FL 1043772627 October 31, 2024 <br />
-                  IL 1043772627 July 31, 2023 <br />
-                  CA 1043772627 October 31, 2024 <br />
-                  TX FB8693384 November 30, 2023 <br />
-                  TX 1730139528 November 30, 2023 <br />
-                  NC FB8693384 January 31, 2023 <br />
-                  NC 1730139528 January 31, 2023 <br />
-                  VA FB8693384 January 31, 2024 <br />
-                  VA 1730139528 January 31, 2024 <br />
-                  CA FB8693384 March 31, 2024 <br />
-                  CA 1730139528 March 31, 2024 <br />
-                  FL FB8693384 January 31, 2024 <br />
-                  FL 1730139528 January 31, 2024 <br />
-                  CO FW5414812 April 30, 2023 <br />
-                  CO 1942592183 April 30, 2023 <br />
-                  FL FW5414812 October 24, 2025 <br />
-                  FL 1942592183 October 24, 2025 <br />
-                  MA 1013276237 July 25, 2023 <br />
-                  IN FH5156016 July 15, 2023 <br />
-                  IN 1013276237 July 15, 2023 <br />
-                  FL FH5156016 December 31, 2030 <br />
-                  FL 1013276237 December 31, 2030 <br />
-                  PA FH5156016 December 31, 2024 <br />
-                  PA 1013276237 December 31, 2024 <br />
-                  ME FH5156016 July 31, 2023 <br />
-                  ME 1013276237 July 31, 2023 <br />
-                  OH FH5156016 November 28, 2024 <br />
-                  OH 1013276237 November 28, 2024 <br />
-                  OR FH5156016 December 31, 2023 <br />
-                  OR 1013276237 December 31, 2023 <br />
-                  KS FS2049458 July 31, 2023 <br />
-                  KS 1740410463 July 31, 2023 <br />
-                  IL FS2049458 July 31, 2023 <br />
-                  IL 1740410463 July 31, 2023 <br />
-                  IN FS2049458 October 31, 2023 <br />
-                  IN 1740410463 October 31, 2023 <br />
+                  Alabama - AL DO.2327 12/31/2023 <br />
+                  Alaska - AK 160520 12/31/2024
+                  <br />
+                  Arizona - AZ 8699 12/31/2024
+                  <br />
+                  Arkansas - AR E-13340 10/31/2023
+                  <br />
+                  California - CA 18058 10/31/2023
+                  <br />
+                  Colorado - CO DR.0063114 4/30/2023
+                  <br />
+                  Connecticut - CT 66855 10/31/2023
+                  <br />
+                  Delaware - DE C2-0023917 3/31/2023
+                  <br />
+                  Florida - FL OS12612 3/31/2024
+                  <br />
+                  Georgia - GA 78730 10/31/2024
+                  <br />
+                  Hawaii - HI DOS-2214 6/30/2024
+                  <br />
+                  Idaho - ID O-1465 6/30/2024
+                  <br />
+                  Illinois - IL 36.148872 7/31/2023
+                  <br />
+                  Indiana - IN 02006145A 10/31/2023
+                  <br />
+                  Iowa - IA DO-05075 10/1/2024
+                  <br />
+                  Kansas - KS 05-43760 10/31/2023
+                  <br />
+                  Kentucky - KY 4809 2/28/2023
+                  <br />
+                  Louisiana - LA 324077 10/31/2023
+                  <br />
+                  Maine - ME DO3113 10/31/2024
+                  <br />
+                  Maryland - MD H0088559 9/30/2023
+                  <br />
+                  Massachusetts - MA 285750 10/20/2024
+                  <br />
+                  Michigan - MI 5101025238 10/1/2025
+                  <br />
+                  Minnesota - MN TM 2634 12/31/2023
+                  <br />
+                  Mississippi - MS 29513 6/30/2023
+                  <br />
+                  Missouri - MO 2020022922 1/31/2024
+                  <br />
+                  Montana - MT MED-PHYS-LIC-100712 3/31/2023
+                  <br />
+                  Nebraska - NE 2238 10/1/2024
+                  <br />
+                  Nevada - NV DO3035 12/31/2023
+                  <br />
+                  New Hampshire - NH 22026 6/30/2023
                 </p>
               </Col>
               <Col md={6}>
                 <p>
-                  IA FS2049458 October 31, 2023 <br />
-                  IA 1740410463 October 31, 2023 <br />
-                  NM FS2049458 July 31, 2023 <br />
-                  NM 1740410463 July 31, 2023 <br />
-                  KY FS2049458 February 28, 2023 <br />
-                  KY 1740410463 February 28, 2023 <br />
-                  LA FS2049458 October 31, 2023 <br />
-                  LA 1740410463 October 31, 2023 <br />
-                  MI FS2049458 October 31, 2025 <br />
-                  MI 1740410463 October 31, 2025 <br />
-                  MS FS2049458 June 30, 2023 <br />
-                  MS 1740410463 June 30, 2023 <br />
-                  MO FS2049458 January 31, 2023 <br />
-                  MO 1740410463 January 31, 2023 <br />
-                  MT FS2049458 March 31, 2024 <br />
-                  MT 1740410463 March 31, 2024 <br />
-                  NE FS2049458 October 31, 2024 <br />
-                  NE 1740410463 October 31, 2024 <br />
-                  NV FS2049458 June 30, 2023 <br />
-                  NV 1740410463 June 30, 2023 <br />
-                  NH FS2049458 June 30, 2023 <br />
-                  NH 1740410463 June 30, 2023 <br />
-                  WV FS2049458 June 30, 2023 <br />
-                  WV 1740410463 June 30, 2023 <br />
-                  NY FS2049458 September 30, 2024 <br />
-                  NY 1740410463 September 30, 2024 <br />
-                  NC FS2049458 October 31, 2023 <br />
-                  NC 1740410463 October 31, 2023 <br />
-                  ND FS2049458 October 31, 2023 <br />
-                  ND 1740410463 October 31, 2023 <br />
-                  OH FS2049458 October 31, 2023 <br />
-                  OH 1740410463 October 31, 2023 <br />
-                  OK FS2049458 February 28, 2023 <br />
-                  OK 1740410463 February 28, 2023 <br />
-                  OR FS2049458 December 31, 2023 <br />
-                  OR 1740410463 December 31, 2023 <br />
-                  PA FS2049458 December 31, 2022 <br />
-                  PA 1740410463 December 31, 2022 <br />
-                  RI FS2049458 July 31, 2024 <br />
-                  RI 1740410463 July 31, 2024 <br />
-                  SC FS2049458 June 30, 2023 <br />
-                  SC 1740410463 June 30, 2023 <br />
-                  SD FS2049458 March 31, 2023 <br />
-                  SD 1740410463 March 31, 2023 <br />
-                  TN FS2049458 October 31, 2023 <br />
-                  TN 1740410463 October 31, 2023 <br />
-                  TX FS2049458 November 30, 2024 <br />
-                  TX 1740410463 November 30, 2024 <br />
-                  UT FS2049458 January 31, 2024 <br />
-                  UT 1740410463 January 31, 2024 <br />
-                  VA FS2049458 October 31, 2024 <br />
-                  VA 1740410463 October 31, 2024 <br />
-                  WA FS2049458 October 31, 2024 <br />
-                  WA 1740410463 October 31, 2024 <br />
-                  MD FS2049458 September 30, 2023 <br />
-                  MD 1740410463 September 30, 2023 <br />
-                  WI FS2049458 October 31, 2023 <br />
-                  WI 1740410463 October 31, 2023 <br />
-                  WY FS2049458 June 30, 2023 <br />
-                  WY 1740410463 June 30, 2023 <br />
-                  ID FS2049458 June 30, 2023 <br />
-                  ID 1740410463 June 30, 2023 <br />
-                  AA FS2049458 April 30, 2040 <br />
-                  AA 1740410463 April 30, 2040 <br />
-                  AP FS2049458 April 30, 2040 <br />
-                  AP 1740410463 April 30, 2040 <br />
-                  AL FS2049458 April 30, 2023 <br />
-                  AL 1740410463 April 30, 2023 <br />
-                  AK FS2049458 April 30, 2023 <br />
-                  AK 1740410463 April 30, 2023 <br />
-                  AZ FS2049458 October 31, 2024 <br />
-                  AZ 1740410463 October 31, 2024 <br />
-                  AR FS2049458 October 31, 2024 <br />
-                  AR 1740410463 October 31, 2024 <br />
-                  CA FS2049458 May 30, 2023 <br />
-                  CA 1740410463 May 30, 2023 <br />
-                  CO FS2049458 April 30, 2023 <br />
-                  CO 1740410463 April 30, 2023 <br />
-                  CT FS2049458 October 31, 2023 <br />
-                  CT 1740410463 October 31, 2023 <br />
-                  DE FS2049458 March 31, 2023 <br />
-                  DE 1740410463 March 31, 2023 <br />
-                  AE FS2049458 April 30, 2040 <br />
-                  AE 1740410463 April 30, 2040 <br />
-                  VT FH5156016 November 30, 2024 <br />
-                  VT 1013276237 November 30, 2024 <br />
-                  CA FH5156016 November 30, 2024 <br />
-                  CA 1013276237 November 30, 2024 <br />
-                  TX FH5156016 May 31, 2023 <br />
-                  TX 1013276237 May 31, 2023 <br />
-                  CO FH5156016 April 30, 2023 <br />
-                  CO 1013276237 April 30, 2023 <br />
-                  IL FH5156016 July 31, 2023 <br />
-                  IL 1013276237 July 31, 2023 <br />
-                  AZ FH5156016 November 25, 2023 <br />
-                  AZ 1013276237 November 25, 2023 <br />
-                  LA FH5156016 July 31, 2023 <br />
-                  LA 1013276237 July 31, 2023 <br />
-                  AR FH5156016 July 31, 2024 <br />
-                  AR 1013276237 July 31, 2024 <br />
-                  TN FH5156016 July 31, 2023 <br />
-                  TN 1013276237 July 31, 2023 <br />
-                  MN FH5156016 July 31, 2023 <br />
-                  MN 1013276237 July 31, 2023 <br />
-                  MI FH5156016 March 31, 2024 <br />
-                  MI 1013276237 March 31, 2024 <br />
-                  ID FH5156016 June 30, 2023 <br />
-                  ID 1013276237 June 30, 2023 <br />
-                  AL FH5156016 December 31, 2023 <br />
-                  AL 1013276237 December 31, 2023 <br />
-                  WI FH5156016 October 31, 2023 <br />
-                  WI 1013276237 October 31, 2023 <br />
-                  WA FH5156016 July 25, 2024 <br />
-                  WA 1013276237 July 25, 2024 <br />
-                  NJ FH5156016 June 30, 2023 <br />
-                  NJ 1013276237 June 30, 2023 <br />
-                  SC FH5156016 June 30, 2023 <br />
-                  SC 1013276237 June 30, 2023 <br />
-                  RI FH5156016 June 30, 2024 <br />
-                  RI 1013276237 June 30, 2024 <br />
-                  NC FH5156016 July 25, 2023 <br />
-                  NC 1013276237 July 25, 2023 <br />
-                  NM FH5156016 July 1, 2025 <br />
-                  NM 1013276237 July 1, 2025 <br />
-                  VA FH5156016 July 31, 2024 <br />
-                  VA 1013276237 July 31, 2024 <br />
-                  NY FH5156016 August 31, 2024 <br />
-                  NY 1013276237 August 31, 2024 <br />
-                  HI FH5156016 January 31, 2024 <br />
-                  HI 1013276237 January 31, 2024 <br />
-                  AK FH5156016 April 30, 2023 <br />
-                  AK 1013276237 April 30, 2023 <br />
-                  MA FH5156016 July 25, 2023 <br />
+                  New Jersey - NJ 25MB10941200 6/30/2023
+                  <br />
+                  New Mexico - NM TM2022-0975 7/1/2025
+                  <br />
+                  New York - NY 297988 9/30/2024
+                  <br />
+                  North Carolina - NC 2019-02671 10/20/2023
+                  <br />
+                  North Dakota - ND 17208 10/20/2023
+                  <br />
+                  Ohio - OH 34.014602 6/11/2024
+                  <br />
+                  Oklahoma - OK 7062 6/30/2023
+                  <br />
+                  Oregon - OR DO198547 12/31/2023
+                  <br />
+                  Pennsylvania - PA OS020431 10/31/2024
+                  <br />
+                  Rhode Island - RI DO01057 6/30/2024
+                  <br />
+                  South Carolina - SC MDO.82979 6/30/2023
+                  <br />
+                  South Dakota - SD 12999 3/1/2023
+                  <br />
+                  Tennessee - TN 3331 10/31/2024
+                  <br />
+                  Texas - TX S1698 5/31/2024
+                  <br />
+                  Utah - UT 10385749-1204 5/31/2024
+                  <br />
+                  Vermont - VT 32.0133963 9/30/2024
+                  <br />
+                  Virginia - VA 102206300 10/31/2024
+                  <br />
+                  Washington - WA OP61055072 10/20/2023
+                  <br />
+                  West Virginia - WV 3750 6/30/2023
+                  <br />
+                  Wisconsin - WI 72103-21 10/31/2023
+                  <br />
+                  Wyoming - WY 14047A 6/30/2023
+                  <br />
+                  District of Columbia - DC DO034895 12/31/2024
+                  <br />
                 </p>
               </Col>
             </Row>

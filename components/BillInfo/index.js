@@ -69,7 +69,7 @@ export default function BillInfo(props) {
             type="text"
             onChange={handleChange}
             placeholder="Billing First Name"
-            value={formData.email}
+            value={formData.billingFirstName}
             className={styles.formControl}
           />
           <Form.Control.Feedback type="invalid">
@@ -83,7 +83,7 @@ export default function BillInfo(props) {
             type="text"
             onChange={handleChange}
             placeholder="Billing Last Name"
-            value={formData.email}
+            value={formData.billingLastName}
             className={styles.formControl}
           />
           <Form.Control.Feedback type="invalid">
@@ -99,7 +99,7 @@ export default function BillInfo(props) {
             type="text"
             onChange={handleChange}
             placeholder="Enter Street Address"
-            value={formData.email}
+            value={formData.billingAddress}
             className={styles.formControl}
           />
           <Form.Control.Feedback type="invalid">
@@ -115,7 +115,7 @@ export default function BillInfo(props) {
             type="text"
             onChange={handleChange}
             placeholder="Enter City"
-            value={formData.email}
+            value={formData.billingCityName}
             className={styles.formControl}
           />
           <Form.Control.Feedback type="invalid">
@@ -131,7 +131,7 @@ export default function BillInfo(props) {
             type="text"
             onChange={handleChange}
             placeholder="Enter State"
-            value={formData.email}
+            value={formData.billingState}
             className={styles.formControl}
           />
           <Form.Control.Feedback type="invalid">
@@ -145,7 +145,7 @@ export default function BillInfo(props) {
             type="text"
             onChange={handleChange}
             placeholder="Enter Zipcode"
-            value={formData.email}
+            value={formData.billingZip}
             className={styles.formControl}
           />
           <Form.Control.Feedback type="invalid">

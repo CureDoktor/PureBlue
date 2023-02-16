@@ -32,7 +32,6 @@ function MyApp({ Component, pageProps }) {
 
   const loginChange = () => {
     if (isLogedIn) {
-      console.log(Component.name);
       return (
         <AuthContextProvider>
           <Header logout={logoutHandler} header={isLogedIn} />
@@ -56,7 +55,6 @@ function MyApp({ Component, pageProps }) {
         </AuthContextProvider>
       );
     } else {
-      console.log(Component.name);
       return (
         <AuthContextProvider>
           <Header logout={loginHandler} header={isLogedIn} />
@@ -66,7 +64,6 @@ function MyApp({ Component, pageProps }) {
       );
     }
   };
-
   return loginChange();
 }
 

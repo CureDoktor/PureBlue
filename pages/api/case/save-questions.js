@@ -1,7 +1,6 @@
 import Axios from "axios";
 
 export default function handler(req, res) {
-  console.log(req.body);
   Axios.post(
     "https://api.trypureblue.com/case/save-questions",
     req.body.payload,
@@ -14,10 +13,11 @@ export default function handler(req, res) {
     }
   )
     .then((respond) => {
-      console.log(respond.data);
+      console.log("Cure1");
       return res.status(200).json(respond.data);
     })
     .catch(function (error) {
+      console.log("Cure2");
       res.status(400).json(error.response.data);
     });
 }

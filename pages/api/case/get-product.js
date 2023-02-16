@@ -9,7 +9,7 @@ export default function handler(req, res) {
     },
   })
     .then((respond) => {
-      console.log(respond.data);
+      //console.log(respond.data);
       res.status(200).json(respond.data);
     })
     .catch(function (error) {

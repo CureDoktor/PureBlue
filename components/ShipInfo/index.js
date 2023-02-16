@@ -192,7 +192,7 @@ export default function ShipInfo(props) {
           <p>{props.info.phone}</p>
           <p>{props.info.shippingState}</p>
           <p>
-            {props.info.shippingAddress}, {props.info.shippingCityName},{" "}
+            {props.info.shippingAddress}, {props.info.shippingCityName},
             {props.info.shippingZip}
           </p>
         </Col>
