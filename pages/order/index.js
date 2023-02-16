@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import { Link } from "next/link";
 import { useContext, useEffect, useState, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
