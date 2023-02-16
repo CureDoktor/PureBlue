@@ -1,4 +1,4 @@
-import { Link } from "next/link";
+import Link from "next/link";
 import Head from "next/head";
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../store/auth-context";

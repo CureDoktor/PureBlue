@@ -1,4 +1,4 @@
-import { Link } from "next/link";
+import Link from "next/link";
 import Head from "next/head";
 import { PencilFill } from "react-bootstrap-icons";
 import React, { useState, useContext, useEffect } from "react";
