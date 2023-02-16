@@ -120,6 +120,7 @@ export default function Order() {
       })
         .then((res) => {
           console.log(res.data);
+          router.push("/account");
         })
         .catch((error) => {
           console.log(error.response.data);

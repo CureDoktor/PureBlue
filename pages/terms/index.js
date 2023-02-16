@@ -10,35 +10,6 @@ import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
 export default function Terms() {
-  function ContextAwareToggle({ children, eventKey, callback }) {
-    const { activeEventKey } = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionButton(
-      eventKey,
-      () => callback && callback(eventKey)
-    );
-
-    const isCurrentEventKey = activeEventKey === eventKey;
-
-    return (
-      <button
-        type="button"
-        className="headerOne"
-        style={{
-          backgroundColor: isCurrentEventKey ? "#fff" : "#fff",
-          border: "0px",
-          color: "#000",
-          fontWeight: "800",
-          padding: "0px 12px 0px 12px",
-          width: "100%",
-          textAlign: "left",
-        }}
-        onClick={decoratedOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
-
   return (
     <div className={styles.container}>
       <Head>
@@ -821,8 +792,8 @@ export default function Terms() {
           </p>
           <h2>28. Doctor and Pharmacy Information.</h2>
           <p>
-            Marc Serota, M.D; CEO MD Integrations; Board certified: Dermatology,
-            Allergy/Immunology, Pediatrics; 816-679-2211 (Cell);
+            Andrew Sakla, M.D; CEO MD Integrations; Board certified:
+            Dermatology, Allergy/Immunology, Pediatrics; 816-679-2211 (Cell);
             mj.serota@gmail.com (Email). Dr. Laura Purdy; Co-Founder MD
             Integrations; 629-777-5752 (phone); lpurdy@mdintegrations.com
             (email)
