@@ -13,7 +13,10 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 import AuthContext from "../../store/auth-context";
+import Router, { useRouter } from "next/router";
+
 export default function Login(props) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     password: "",
     email: "",
@@ -42,7 +45,7 @@ export default function Login(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const route = "/api/auth/login";
+    const route = "/api/auth/login/";
     const payload = {
       email: formData.email,
       password: formData.password,
@@ -50,14 +53,16 @@ export default function Login(props) {
     try {
       const rese = await Axios.post(route, payload)
         .then((res) => {
+          console.log(res.data);
           authCtx.settingToken(res.data.access_token);
           props.isLoggedIn();
+          router.push("/visit-form");
         })
         .catch((error) => {
           alert(error.response.data.errors.password);
         });
     } catch (err) {
-      alert("Username or password are not good! 22" + err);
+      alert("Username or password are not good!" + err);
     }
   };
 

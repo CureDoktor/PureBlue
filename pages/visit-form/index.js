@@ -150,7 +150,6 @@ export default function VisitForm() {
     var validationReqValue = event.target.getAttribute("data-required_value");
     var validationErrorMessage =
       event.target.getAttribute("data-error_message");
-    console.log("Cao1");
 
     if (showMore != "null") {
       const obj = JSON.parse(showMore);
@@ -170,9 +169,7 @@ export default function VisitForm() {
     }
 
     if (validationReqValue != null) {
-      console.log("Cao2");
       if (value != validationReqValue) {
-        console.log("Cao3");
         alert(validationErrorMessage);
       }
     }
@@ -214,7 +211,6 @@ export default function VisitForm() {
   };
 
   const handleQuestionsSubmit = async (event) => {
-    console.log("OKEJ U PITANJIMA SMO");
     event.preventDefault();
     const route = "/api/case/save-questions";
     const payload = {
@@ -276,7 +272,7 @@ export default function VisitForm() {
       const rese = await Axios.post(route, { Token: authCtx.Token(), payload })
         .then((res) => {
           //console.log(res.data);
-          //router.push("/switch");
+          router.push("/switch");
         })
         .catch((error) => {
           console.log(error.response.data.errors);

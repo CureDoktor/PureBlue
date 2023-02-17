@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
       return (
         <AuthContextProvider>
           <Header logout={loginHandler} header={isLogedIn} />
-          <Component {...pageProps} />
+          <Component isLoggedIn={loginHandler} {...pageProps} />
           <Footer />
         </AuthContextProvider>
       );

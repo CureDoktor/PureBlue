@@ -26,7 +26,7 @@ export default function Membership() {
             </div>
             <p>Tadalafil</p>
             <Button className={styles.buttons}>
-              You can't switch plan while order is on Authorization
+              You cant switch plan while order is on Authorization
             </Button>
           </div>
         </Col>

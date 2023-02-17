@@ -9,11 +9,13 @@ export default function handler(req, res) {
     },
   })
     .then((respond) => {
-      //console.log(respond.data);
+      console.log(respond.data);
+      console.log("Success");
       res.status(200).json(respond.data);
     })
     .catch(function (error) {
-      //console.log(error.response.data);
+      console.log("Success not");
+      console.log(error.response.data);
       res.status(400).json(error.response.data);
     });
 }
