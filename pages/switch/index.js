@@ -87,6 +87,7 @@ export default function Switch() {
   function findRightOne() {
     let similarStrong = [];
     let similarDosage = [];
+    console.log(chosenMed.partner_medication_id);
 
     medications.find((element) => {
       if (element.product_tag === chosenMed.product_tag) {
@@ -106,6 +107,7 @@ export default function Switch() {
               ...chosenMed,
               product_price: element.product_price,
               id: element.id,
+              partner_medication_id: element.partner_medication_id,
             });
           } else {
             console.log("cure");

@@ -40,9 +40,23 @@ export default function VisitForm() {
     }
   };
 
-  useEffect(() => {
+  const getCase = async () => {
+    const route = "/api/case/get-case";
     try {
-    } catch (error) {}
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
+        .then((res) => {
+          if (res.data.case_answers != null) {
+            router.push("/switch");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (err) {}
+  };
+
+  useEffect(() => {
+    getCase();
   }, []);
 
   const [formQuestions, setFormQuestions] = useState({
@@ -401,7 +415,6 @@ export default function VisitForm() {
                             error_message = "";
                           }
                         }
-
                         var options = Object.entries(question.answers).map(
                           ([key, value]) => {
                             var yesNo = "";

@@ -12,9 +12,62 @@ import {
   Button,
   Row,
 } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
+import Axios from "axios";
+import { useContext } from "react";
+import AuthContext from "../../store/auth-context";
 
 export default function Membership() {
+  const [UserInfo, setUserInfo] = useState("");
+  const [Case, setCase] = useState({
+    status: "",
+    created_at: "",
+  });
+  const authCtx = useContext(AuthContext);
+  const gettingUserInfo = async () => {
+    const route = "/api/user/getUserInfo";
+
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
+        .then((res) => {
+          console.log(res.data);
+          setUserInfo(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Not Good!");
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
+  };
+
+  const getCase = async () => {
+    const route = "/api/case/get-case";
+
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
+        .then((res) => {
+          console.log(res.data);
+          setCase({
+            status: res.data.status,
+            created_at: res.data.created_at,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getCase();
+    gettingUserInfo();
+  }, []);
+
   return (
     <div className={styles.membership}>
       <Row>
@@ -52,7 +105,7 @@ export default function Membership() {
                   <b>ID Verification</b>
                 </Col>
                 <Col>
-                  <p>Please Upload Your Id</p>
+                  <p>{UserInfo.verification_status}</p>
                 </Col>
               </Row>
             </div>
@@ -62,7 +115,7 @@ export default function Membership() {
                   <b>Medical Status:</b>
                 </Col>
                 <Col>
-                  <p>case_waiting</p>
+                  <p>{Case.status}</p>
                 </Col>
               </Row>
             </div>
@@ -72,7 +125,7 @@ export default function Membership() {
                   <b>Created</b>
                 </Col>
                 <Col>
-                  <p>06-23-2022 15:48:34</p>
+                  <p>{Case.created_at}</p>
                 </Col>
               </Row>
             </div>

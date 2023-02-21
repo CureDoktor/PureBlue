@@ -61,7 +61,7 @@ export default function Register(props) {
             alert(values);
           });
       } catch (err) {
-        alert("Username or password are not good! 2" + err);
+        alert("Username or password are not good!" + err);
       }
     } else {
       alert("Passwords doesn't match!");
