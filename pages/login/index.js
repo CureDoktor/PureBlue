@@ -53,7 +53,6 @@ export default function Login(props) {
     try {
       const rese = await Axios.post(route, payload)
         .then((res) => {
-          console.log(res.data);
           authCtx.settingToken(res.data.access_token);
           props.isLoggedIn();
           router.push("/visit-form");

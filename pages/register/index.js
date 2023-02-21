@@ -45,13 +45,11 @@ export default function Register(props) {
       try {
         const rese = await Axios.post(route, payload)
           .then((res) => {
-            console.log(res.data);
             props.isLoggedIn();
             authCtx.settingToken(res.data.access_token);
             router.push("/visit-form");
           })
           .catch((error) => {
-            console.log(error.response.data.errors);
             const cure = error.response.data.errors;
             const rest = Object.values(cure);
             var values = "";

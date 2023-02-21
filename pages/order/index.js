@@ -64,9 +64,7 @@ export default function Order() {
     const route = "/api/user/updateShippingInfo";
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
-        .then((res) => {
-          console.log(res.data);
-        })
+        .then((res) => {})
         .catch((error) => {
           console.log(error);
           return alert("Not Good!");
@@ -81,7 +79,6 @@ export default function Order() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
           setProduct(res.data);
         })
         .catch((error) => {
@@ -119,11 +116,9 @@ export default function Order() {
         Token: authCtx.Token(),
       })
         .then((res) => {
-          console.log(res.data);
           router.push("/account");
         })
         .catch((error) => {
-          console.log(error.response.data);
           return alert(
             error.response.data.name + " " + error.response.data.message
           );
@@ -143,7 +138,6 @@ export default function Order() {
         formData,
       })
         .then((res) => {
-          console.log(res.data);
           orderWithUserProfile();
         })
         .catch((error) => {
@@ -181,9 +175,7 @@ export default function Order() {
         Token: authCtx.Token(),
         formData,
       })
-        .then((res) => {
-          console.log(res.data);
-        })
+        .then((res) => {})
         .catch((error) => {
           console.log(error);
           return alert("Not Good!");

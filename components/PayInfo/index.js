@@ -45,7 +45,6 @@ export default function PayInfo(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
-          console.log(res.data);
           setPayInfo(false);
           props.reloadInfo();
         })

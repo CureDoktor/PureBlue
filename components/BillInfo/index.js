@@ -46,12 +46,10 @@ export default function BillInfo(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
-          console.log(res.data);
           setBillInfo(false);
           props.reloadInfo();
         })
         .catch((error) => {
-          console.log(error);
           return alert("Not Good!");
         });
     } catch (err) {

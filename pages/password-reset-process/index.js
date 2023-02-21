@@ -10,7 +10,6 @@ export default function PasswordResetProcess() {
 
   const onChange = () => {
     isDisabled(true);
-    console.log("Cure");
   };
 
   const buttonChange = () => {

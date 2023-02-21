@@ -30,7 +30,6 @@ export default function Profile() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
           setUserInfo(res.data);
         })
         .catch((error) => {
@@ -44,8 +43,6 @@ export default function Profile() {
 
   useEffect(() => {
     gettingUserInfo();
-
-    console.log("Refreshed Profile");
   }, []);
 
   const [save, setSave] = useState(false);
@@ -91,7 +88,6 @@ export default function Profile() {
   });
 
   const editField = (field, save) => {
-    console.log(field, save);
     if (save === 1) {
       if (field === 1) {
         setShipInfo(true);

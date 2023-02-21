@@ -51,7 +51,6 @@ export default function Switch() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
           setMedications(res.data);
         })
         .catch((error) => {
@@ -68,7 +67,6 @@ export default function Switch() {
   }, []);
 
   useEffect(() => {
-    //console.log(chosenMed);
     findRightOne();
   }, [
     chosenMed.product_tag,
@@ -87,7 +85,6 @@ export default function Switch() {
   function findRightOne() {
     let similarStrong = [];
     let similarDosage = [];
-    console.log(chosenMed.partner_medication_id);
 
     medications.find((element) => {
       if (element.product_tag === chosenMed.product_tag) {
@@ -110,13 +107,9 @@ export default function Switch() {
               partner_medication_id: element.partner_medication_id,
             });
           } else {
-            console.log("cure");
           }
         }
-
-        //console.log(chosenMed);
       } else {
-        //console.log("Ne radi");
       }
     });
 
@@ -127,7 +120,6 @@ export default function Switch() {
       objectMakingTimes.push(returnObject(object))
     );
 
-    //console.log(objectMaking);
     setStrong1(objectMaking);
     setTimes(objectMakingTimes);
   }
@@ -141,7 +133,6 @@ export default function Switch() {
         payload: currentProductId,
       })
         .then((res) => {
-          console.log(res.data);
           router.push("/order");
         })
         .catch((error) => {
@@ -263,7 +254,6 @@ export default function Switch() {
                   <p>Change your answers to discover more pricing options.</p>
                   <Button
                     onClick={() => {
-                      console.log(chosenMed.partner_medication_id);
                       backToCheckout(chosenMed.partner_medication_id);
                     }}
                     className={styles.backToCheckout}

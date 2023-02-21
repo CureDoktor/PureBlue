@@ -28,7 +28,6 @@ export default function VisitForm() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
           setQuestions(res.data);
         })
         .catch((error) => {
@@ -130,7 +129,7 @@ export default function VisitForm() {
           maskArray.push(element.value);
         }
       });
-      console.log(maskArray);
+
       //event.target.checked = true;
     }
     setFormQuestions({
@@ -169,7 +168,6 @@ export default function VisitForm() {
       const obj = JSON.parse(showMore);
 
       Object.entries(obj).map(([key, value]) => {
-        console.log(value[0]);
         if (event.target.value === key) {
           const element = document.getElementById(value[0]);
 
@@ -211,12 +209,10 @@ export default function VisitForm() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), payload })
         .then((res) => {
-          console.log(res.data);
           gettingQuestions();
           setShowQuestions(true);
         })
         .catch((error) => {
-          console.log(error.response.data.errors);
           alert(error.response.data.errors);
         });
     } catch (err) {
@@ -285,7 +281,6 @@ export default function VisitForm() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), payload })
         .then((res) => {
-          //console.log(res.data);
           router.push("/switch");
         })
         .catch((error) => {

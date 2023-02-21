@@ -49,7 +49,6 @@ export default function ShipInfo(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
-          console.log(res.data);
           setShipInfo(false);
           props.reloadInfo();
         })

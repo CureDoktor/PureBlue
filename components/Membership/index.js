@@ -31,11 +31,9 @@ export default function Membership() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
           setUserInfo(res.data);
         })
         .catch((error) => {
-          console.log(error);
           alert("Not Good!");
         });
     } catch (err) {
@@ -49,7 +47,6 @@ export default function Membership() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
           setCase({
             status: res.data.status,
             created_at: res.data.created_at,

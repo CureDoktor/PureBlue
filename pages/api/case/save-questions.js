@@ -13,11 +13,9 @@ export default function handler(req, res) {
     }
   )
     .then((respond) => {
-      console.log("Cure1");
       return res.status(200).json(respond.data);
     })
     .catch(function (error) {
-      console.log("Cure2");
       res.status(400).json(error.response.data);
     });
 }
