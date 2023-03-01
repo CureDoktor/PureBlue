@@ -44,7 +44,6 @@ export default function Case() {
     <div>
       {Object.entries(CaseAnswers).map(([key, value]) => {
         key.toString();
-        //console.log(value);
         let question = key.replaceAll("_", " ");
         let answer = value;
         let whole = question + ": " + answer;
