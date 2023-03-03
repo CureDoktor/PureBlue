@@ -64,7 +64,27 @@ export default function Switch() {
 
   useEffect(() => {
     gettingMedications();
+    gettingOrderInfo();
   }, []);
+
+  const gettingOrderInfo = async () => {
+    const route = "/api/order/get-orders";
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
+        .then((res) => {
+          console.log(res.data);
+          if (res.data != null) {
+            router.push("/account");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Not Good!");
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
+  };
 
   useEffect(() => {
     findRightOne();

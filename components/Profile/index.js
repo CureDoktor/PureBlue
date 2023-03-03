@@ -2,6 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../store/auth-context";
+import Axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import { PencilFill } from "react-bootstrap-icons";
@@ -9,7 +10,7 @@ import ShipInfo from "../ShipInfo";
 import PayInfo from "../PayInfo";
 import BillInfo from "../BillInfo";
 import Form from "react-bootstrap/Form";
-import Axios from "axios";
+
 import {
   Col,
   Container,
