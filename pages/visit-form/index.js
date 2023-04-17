@@ -342,7 +342,7 @@ export default function VisitForm() {
                           type="name"
                           onChange={handleChange}
                           placeholder="Enter First Name"
-                          value={formData.email}
+                          value={formData.firstName}
                           className={styles.formControl}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -363,7 +363,7 @@ export default function VisitForm() {
                           type="name"
                           onChange={handleChange}
                           placeholder="Enter Last name"
-                          value={formData.email}
+                          value={formData.lastName}
                           className={styles.formControl}
                         />
                         <Form.Control.Feedback type="invalid">
@@ -380,7 +380,7 @@ export default function VisitForm() {
                           type="date"
                           onChange={handleChange}
                           placeholder="Enter Date of birth"
-                          value={formData.email}
+                          value={formData.dob}
                           className={styles.formControl}
                         />
                         <Form.Control.Feedback type="invalid">

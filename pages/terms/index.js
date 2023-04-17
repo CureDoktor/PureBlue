@@ -792,11 +792,9 @@ export default function Terms() {
           </p>
           <h2>28. Doctor and Pharmacy Information.</h2>
           <p>
-            Andrew Sakla, M.D; CEO MD Integrations; Board certified:
-            Dermatology, Allergy/Immunology, Pediatrics; 816-679-2211 (Cell);
-            mj.serota@gmail.com (Email). Dr. Laura Purdy; Co-Founder MD
-            Integrations; 629-777-5752 (phone); lpurdy@mdintegrations.com
-            (email)
+            Marc Serota, M.D; CEO MD Integrations; Board certified: Dermatology,
+            Allergy/Immunology, Pediatrics; 816-679-2211 (Cell);
+            mj.serota@gmail.com (Email).
             <br />
             <br /> Dan Maduri, Chief Revenue Officer; GogoMeds; 525 Alexandria
             Pike Suite 100, Southgate, KY 41071; d.maduri@gogomeds.com (email);

@@ -19,6 +19,7 @@ export const AuthContextProvider = (props) => {
   const setBearerToken = (value) => {
     localStorage.setItem("Token", value);
   };
+
   return (
     <AuthContext.Provider
       value={{
