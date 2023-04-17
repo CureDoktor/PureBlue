@@ -20,12 +20,20 @@ import Axios from "axios";
 
 export default function BillInfo(props) {
   const [billInfo, setBillInfo] = useState(false);
+  const [wrongStateHolder, setWrongStateHolder] = useState(false);
+
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+
+    if (name == "billingState" && value.match(/south carolina/gi)) {
+      setWrongStateHolder(true);
+    } else {
+      setWrongStateHolder(false);
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const [formData, setFormData] = useState({
@@ -135,7 +143,15 @@ export default function BillInfo(props) {
           <Form.Control.Feedback type="invalid">
             Incorrect State
           </Form.Control.Feedback>
+          {wrongStateHolder && (
+            <small style={{ color: "red" }}>
+              Unfortunately our services are not offered in this state. We hope
+              to change that in the near future.
+            </small>
+          )}
         </Form.Group>
+      </Row>
+      <Row className="mb-3">
         <Form.Group as={Col} controlId="billingZip">
           <Form.Control
             required

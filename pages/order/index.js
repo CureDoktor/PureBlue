@@ -19,6 +19,7 @@ import Modals from "../../components/Modals";
 
 export default function Order() {
   const [wrongStateHolder, setWrongStateHolder] = useState(false);
+  const [wrongStateHolderBilling, setWrongStateHolderBilling] = useState(false);
   const [product, setProduct] = useState({
     id: 1,
     partner_medication_id: "eb37cfd0-6b3a-472f-8cf6-2bdd1a0c806a",
@@ -158,10 +159,16 @@ export default function Order() {
 
   const handleBillChange = (event) => {
     const { value, name } = event.target;
-    setFormBillData({
-      ...formBillData,
-      [name]: value,
-    });
+
+    if (name == "billingState" && value.match(/south carolina/gi)) {
+      setWrongStateHolderBilling(true);
+    } else {
+      setWrongStateHolderBilling(false);
+      setFormBillData({
+        ...formBillData,
+        [name]: value,
+      });
+    }
   };
 
   const [formBillData, setFormBillData] = useState({
@@ -504,6 +511,12 @@ export default function Order() {
                           <Form.Control.Feedback type="invalid">
                             Incorrect State
                           </Form.Control.Feedback>
+                          {wrongStateHolderBilling && (
+                            <small style={{ color: "red" }}>
+                              Unfortunately our services are not offered in this
+                              state. We hope to change that in the near future.
+                            </small>
+                          )}
                         </Form.Group>
                         <Form.Group as={Col} controlId="billingZip">
                           <Form.Control
