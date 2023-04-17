@@ -786,6 +786,132 @@ export default function Home() {
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="9"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Is TryPureBlue available in South Carolina?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="9">
+                    <Card.Body>
+                      No, TryPureBlue is currently not available in South
+                      Carolina.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="10"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Why is TryPureBlue not available in South Carolina?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="10">
+                    <Card.Body>
+                      Due to certain state laws and regulations, TryPureBlue is
+                      not able to operate in South Carolina at this time.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="11"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Will TryPureBlue be available in South Carolina in the
+                          future?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="11">
+                    <Card.Body>
+                      We are always evaluating opportunities to expand our
+                      services to more states. However, at this time, we cannot
+                      confirm when or if TryPureBlue will be available in South
+                      Carolina.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="12"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Can I still access TryPureBlue if I am traveling to a
+                          different state?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="12">
+                    <Card.Body>
+                      Yes, if you are traveling to a state where TryPureBlue is
+                      available, you can access our services as long as you have
+                      a reliable internet connection and a device with a web
+                      browser. Please note that some products and services may
+                      not be available in certain states due to state-specific
+                      laws and regulations.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="13"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          How can I stay updated on TryPureBlue's availability
+                          in South Carolina?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="13">
+                    <Card.Body>
+                      We recommend regularly checking our website or contacting
+                      our customer support team for the latest updates on our
+                      products and services and availability in different
+                      states.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
               </Accordion>
             </div>
           </Container>
