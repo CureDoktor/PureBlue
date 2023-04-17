@@ -15,9 +15,9 @@ import {
 
 export default function Footer() {
   return (
-    <div style={{ backgroundColor: "#f6f6f6" }}>
+    <div style={{ backgroundColor: "none" }}>
       <div className="container">
-        <main style={{ paddingBottom: "20px" }} className={styles.main}>
+        <main style={{ padding: "20px" }} className={styles.main}>
           To obtain ED treatments, one must undergo an online consultation with
           a healthcare provider and receive a prescription. The cost per dose is
           determined by the product and subscription plan selected. Lions Pride
