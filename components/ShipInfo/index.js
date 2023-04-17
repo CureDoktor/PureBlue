@@ -21,13 +21,20 @@ import Axios from "axios";
 
 export default function ShipInfo(props) {
   const [shipInfo, setShipInfo] = useState(false);
+  const [wrongStateHolder, setWrongStateHolder] = useState(false);
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+
+    if (name == "shippingState" && value == "South Carolina") {
+      setWrongStateHolder(true);
+    } else {
+      setWrongStateHolder(false);
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const [formData, setFormData] = useState({
@@ -155,7 +162,15 @@ export default function ShipInfo(props) {
           <Form.Control.Feedback type="invalid">
             Incorrect State
           </Form.Control.Feedback>
+          {wrongStateHolder && (
+            <small style={{ color: "red" }}>
+              Unfortunately our services are not offered in this state. We hope
+              to change that in the near future.
+            </small>
+          )}
         </Form.Group>
+      </Row>
+      <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridFirstname">
           <Form.Group as={Col} controlId="shippingZip">
             <Form.Control

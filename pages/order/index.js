@@ -18,6 +18,7 @@ import ShipInfo from "../../components/ShipInfo";
 import Modals from "../../components/Modals";
 
 export default function Order() {
+  const [wrongStateHolder, setWrongStateHolder] = useState(false);
   const [product, setProduct] = useState({
     id: 1,
     partner_medication_id: "eb37cfd0-6b3a-472f-8cf6-2bdd1a0c806a",
@@ -53,10 +54,16 @@ export default function Order() {
 
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+
+    if (name == "shippingState" && value == "South Carolina") {
+      setWrongStateHolder(true);
+    } else {
+      setWrongStateHolder(false);
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   async function submitHandler(event) {
@@ -383,7 +390,15 @@ export default function Order() {
                           <Form.Control.Feedback type="invalid">
                             Incorrect State
                           </Form.Control.Feedback>
+                          {wrongStateHolder && (
+                            <small style={{ color: "red" }}>
+                              Unfortunately our services are not offered in this
+                              state. We hope to change that in the near future.
+                            </small>
+                          )}
                         </Form.Group>
+                      </Row>
+                      <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridFirstname">
                           <Form.Group as={Col} controlId="shippingZip">
                             <Form.Control
