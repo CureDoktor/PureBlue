@@ -796,9 +796,10 @@ export default function Terms() {
             Allergy/Immunology, Pediatrics; 816-679-2211 (Cell);
             mj.serota@gmail.com (Email).
             <br />
-            <br /> Dan Maduri, Chief Revenue Officer; GogoMeds; 525 Alexandria
-            Pike Suite 100, Southgate, KY 41071; d.maduri@gogomeds.com (email);
-            1-888-795-5826 (office)
+            <br />
+            Cole Maudlin, Chief Executive Officer; GenRx Pharmacy; 525
+            Alexandria Pike Suite 100, Southgate, KY 41071;
+            d.maduri@gogomeds.com (email); 1-888-795-5826 (office)
           </p>
           <h2>29. Contact Us.</h2>
           <p>
