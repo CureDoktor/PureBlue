@@ -932,8 +932,8 @@ export default function Home() {
                   <h2>With PureBlue</h2>
                   <p>
                     Choose a plan based on your lifestyle. <br />
-                    <br /> Complete your medical profile and order within 10
-                    minutes. <br />
+                    <br /> Provide your drivers license and complete your
+                    medical profile in two easy steps. <br />
                     <br /> Get your E.D. pills via free 2-day shipping
                   </p>
                 </div>
