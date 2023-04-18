@@ -345,8 +345,6 @@ export default function Telehealth() {
             APPROPRIATE FOR THE CARE PROVIDED THROUGH AN ASYNCHRONOUS TELEHEALTH
             ENCOUNTER VIA THE PLATFORM.
             <br />
-            <br /> ASYNCHRONOUS TELEHEALTH MAY NOT BE AVAILABLE TO YOU AS MANY
-            STATES LEGISLATE AGAINST ITS USE.
           </p>
           <div className={styles.grayField}>
             <h4>
