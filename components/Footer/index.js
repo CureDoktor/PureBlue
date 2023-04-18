@@ -45,8 +45,8 @@ export default function Footer() {
           </div>
           <div className={styles.telephone}>
             <p>QUESTIONS?</p>
-            <Link href="tel:1-888-534-8977">
-              <a className={styles.number}>1-888-534-8977</a>
+            <Link href="tel:1-866-453-6143">
+              <a className={styles.number}>1-866-453-6143</a>
             </Link>
           </div>
           <Container>

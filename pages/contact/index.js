@@ -120,7 +120,7 @@ export default function Contact() {
                   />
                 </Col>
                 <Col md={10}>
-                  <p>1-888-534-8977</p>
+                  <p>1-866-453-6143</p>
                 </Col>
               </Row>
               <Row className="mx-md-0 pb-md-1">
