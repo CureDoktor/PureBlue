@@ -798,8 +798,8 @@ export default function Terms() {
             <br />
             <br />
             Cole Maudlin, Chief Executive Officer; GenRx Pharmacy; 17250 N
-            Hartford Dr Ste 115, Scottsdale, AZ 85255 d.maduri@gogomeds.com
-            (email); 1-888-795-5826 (office)
+            Hartford Dr Ste 115, Scottsdale, AZ 85255; d.maduri@gogomeds.com
+            (email); 1-866-453-6143 (office)
           </p>
           <h2>29. Contact Us.</h2>
           <p>
