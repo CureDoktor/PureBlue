@@ -62,11 +62,11 @@ export default function Home() {
               <Col md={{ span: 7, offset: 5 }}>
                 <div className={styles.fieldOneText}>
                   <div className={styles.callUs}>
-                    <Link href="tel: 1-866-453-6143">
+                    <Link href="tel: 1-888-534-8977">
                       <a>
                         Call Us Anytime:{" "}
                         <span className={styles.primaryColor}>
-                          1-866-453-6143
+                          1-888-534-8977
                         </span>
                       </a>
                     </Link>

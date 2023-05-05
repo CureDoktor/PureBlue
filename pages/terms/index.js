@@ -248,7 +248,7 @@ export default function Terms() {
             time up to forty-eight (48) hours before the applicable renewal
             processing date of your subscription. If you wish to cancel an
             Automatic Renewal Program, you may do so at any time by: (i) signing
-            in to your member portal here; (ii) calling us at: 1-866-453-6143;
+            in to your member portal here; (ii) calling us at: 1-888-534-8977;
             or (iii) e-mailing us at: info@trypureblue.com. Please be advised,
             all automatic renewal program subscription orders must be cancelled
             within (12) hours of the renewal subscription date to avoid the
@@ -258,7 +258,7 @@ export default function Terms() {
             Payment Method is cancelled or is no longer valid (e.g., due to loss
             or theft) or your Product shipment may be delayed or cancelled.
             Changes to such information can be made by contacting a customer
-            care professional at: 1-866-453-6143 or info@trypureblue.com. If you
+            care professional at: 1-888-534-8977 or info@trypureblue.com. If you
             participate in an automatic shipment Recurring Fee program using a
             credit card and your credit card fails to process for a subsequent
             shipment, you agree that PureBlue may contact you on any phone
@@ -316,7 +316,7 @@ export default function Terms() {
           <h2>6. Return and Refund Policy.</h2>
           <p>
             If you wish to return PureBlue Products, you may contact a customer
-            care professional at: 1-866-453-6143. Prescription Medications can
+            care professional at: 1-888-534-8977. Prescription Medications can
             not be returned or refunded.
           </p>
           <h2>7. Telemedicine Services.</h2>
@@ -799,7 +799,7 @@ export default function Terms() {
             <br />
             Cole Maudlin, Chief Executive Officer; GenRx Pharmacy; 17250 N
             Hartford Dr Ste 115, Scottsdale, AZ 85255; d.maduri@gogomeds.com
-            (email); 1-866-453-6143 (office)
+            (email); 1-888-534-8977 (office)
           </p>
           <h2>29. Contact Us.</h2>
           <p>
@@ -807,7 +807,7 @@ export default function Terms() {
             practices of PureBlue, you may utilize the contact method applicable
             to the subject matter of your inquiry, as set forth on the “Contact
             Us” page of the Site, or you can e-mail us at: info@trypureblue.com;
-            call us at: 1-866-453-6143; or send us U.S. mail to:
+            call us at: 1-888-534-8977; or send us U.S. mail to:
             <br /> PureBlue (d/b/a PureBlue),
             <br /> 42 Broadway, 12th Floor
             <br /> New York, NY 10004

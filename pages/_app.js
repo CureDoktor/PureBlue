@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }) {
     } else {
       return (
         <AuthContextProvider>
-          <Header logout={loginHandler} header={isLogedIn} /> 
+          <Header logout={loginHandler} header={isLogedIn} />
           <Component isLoggedIn={loginHandler} {...pageProps} />
           <Footer />
         </AuthContextProvider>
