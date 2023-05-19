@@ -13,13 +13,11 @@ import { AccordionContext, Form } from "react-bootstrap";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import CheckForm from "../components/CheckForm";
+import { useRouter } from "next/router";
 
 export default function Home() {
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Salmon eater
-    </Tooltip>
-  );
+  const history = useRouter();
+
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
     const decoratedOnClick = useAccordionButton(
@@ -1000,7 +998,7 @@ export default function Home() {
               </Row>
             </div>
             <Row>
-              <Col sm={3}>
+              <Col sm={4}>
                 <div className={styles.planChange}>
                   <div className={styles.topPlanChange}>
                     <h2>Active</h2>
@@ -1011,7 +1009,9 @@ export default function Home() {
                     <p className={styles.miligrams}>
                       <span className={styles.mg}>30MG</span> | 45MG
                     </p>
-                    <Button>CHOOSE THIS PLAN</Button>
+                    <Button onClick={() => history.push("/register")}>
+                      CHOOSE THIS PLAN
+                    </Button>
                   </div>
                   <Row>
                     <Col>
@@ -1038,7 +1038,7 @@ export default function Home() {
                   </Row>
                 </div>
               </Col>
-              <Col sm={3}>
+              <Col sm={4}>
                 <div className={styles.planChange}>
                   <div className={styles.topPlanChange}>
                     <h2>Busy</h2>
@@ -1049,7 +1049,9 @@ export default function Home() {
                     <p className={styles.miligrams}>
                       <span className={styles.mg}>30MG</span> | 45MG
                     </p>
-                    <Button>CHOOSE THIS PLAN</Button>
+                    <Button onClick={() => history.push("/register")}>
+                      CHOOSE THIS PLAN
+                    </Button>
                   </div>
                   <Row>
                     <Col>
@@ -1076,7 +1078,7 @@ export default function Home() {
                   </Row>
                 </div>
               </Col>
-              <Col sm={3}>
+              <Col sm={4}>
                 <div className={styles.planChange}>
                   <div className={styles.topPlanChange}>
                     <h2>Popular</h2>
@@ -1087,7 +1089,9 @@ export default function Home() {
                     <p className={styles.miligrams}>
                       <span className={styles.mg}>30MG</span> | 45MG
                     </p>
-                    <Button>CHOOSE THIS PLAN</Button>
+                    <Button onClick={() => history.push("/register")}>
+                      CHOOSE THIS PLAN
+                    </Button>
                   </div>
                   <Row>
                     <Col>
@@ -1114,7 +1118,7 @@ export default function Home() {
                   </Row>
                 </div>
               </Col>
-              <Col sm={3}>
+              {/* <Col sm={3}>
                 <div className={styles.planChange}>
                   <div className={styles.topPlanChange}>
                     <h2>Pro</h2>
@@ -1151,7 +1155,7 @@ export default function Home() {
                     </Col>
                   </Row>
                 </div>
-              </Col>
+              </Col> */}
             </Row>
             {/* <div className={styles.containerPlan}>
               <Row>
