@@ -28,7 +28,7 @@ export default function Footer() {
           pharmacy, or other information. It is advised to seek medical advice
           before making any changes to medication or prescription. Pure Blue USA
           LLC is not an insurance provider or Medicaid/Medicare prescription
-          drug plan. Users must pay the price pres ented during the checkout
+          drug plan. Users must pay the price presented during the checkout
           process.
         </main>
       </div>
