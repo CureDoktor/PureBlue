@@ -20,14 +20,14 @@ export default function Footer() {
         <main style={{ padding: "20px" }} className={styles.main}>
           To obtain ED treatments, one must undergo an online consultation with
           a healthcare provider and receive a prescription. The cost per dose is
-          determined by the product and subscription plan selected. Lions Pride
+          determined by the product and subscription plan selected. Pure Blue
           USA LLC is not affiliated with any manufacturers of the Prescription
           Medications mentioned, and the trademarks and logos belong to their
-          respective owners. Lions Pride USA LLC does not provide advice,
+          respective owners. Pure Blue USA LLC does not provide advice,
           endorsements, or recommendations for any specific prescription drug,
           pharmacy, or other information. It is advised to seek medical advice
-          before making any changes to medication or prescription. Lions Pride
-          USA LLC is not an insurance provider or Medicaid/Medicare prescription
+          before making any changes to medication or prescription. Pure Blue USA
+          LLC is not an insurance provider or Medicaid/Medicare prescription
           drug plan. Users must pay the price pres ented during the checkout
           process.
         </main>
