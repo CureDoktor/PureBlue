@@ -797,9 +797,9 @@ export default function Terms() {
             mj.serota@gmail.com (Email).
             <br />
             <br />
-            Cole Maudlin, Chief Executive Officer; GenRx Pharmacy; 17250 N
-            Hartford Dr Ste 115, Scottsdale, AZ 85255; cole.maudlin@e-tcc.com
-            (email); 1-866-453-6143 (office)
+            Richelle Aldrich, EVP Ops; GenRx Pharmacy; 17250 N Hartford Dr Ste
+            115, Scottsdale, AZ 85255; RAldrich@genrx2u.com (email);
+            817-723-7148 (office)
           </p>
           <h2>29. Contact Us.</h2>
           <p>
