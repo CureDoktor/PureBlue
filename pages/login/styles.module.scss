@@ -2,6 +2,9 @@ $primary-color: #0077f0;
 $secondary-color: #003b60;
 
 .loginPage {
+  .cursorPointer {
+    cursor: pointer;
+  }
   .fieldOne {
     .callUs {
       text-align: right;

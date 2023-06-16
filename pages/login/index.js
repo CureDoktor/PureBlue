@@ -25,6 +25,18 @@ export default function Login(props) {
     yearOfBirth: "",
   });
 
+  const termsAgree = (
+    <div className="fw-normal">
+      Agree to{" "}
+      <b
+        className={styles.blueText + " fw-bold" + " " + styles.cursorPointer}
+        onClick={() => router.push("/terms")}
+      >
+        Terms and Conditions
+      </b>
+    </div>
+  );
+
   const authCtx = useContext(AuthContext);
 
   // let loginInfo = [
@@ -147,8 +159,9 @@ export default function Login(props) {
                   </Row>
                   <Form.Group className="mb-3">
                     <Form.Check
+                      className="d-md-flex"
                       required
-                      label="Agree to terms and conditions"
+                      label={termsAgree}
                       feedback="You must agree before submitting."
                       feedbackType="invalid"
                     />
