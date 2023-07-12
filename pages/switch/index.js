@@ -264,7 +264,7 @@ export default function Switch() {
                   <h2>YOUR PRICE BASED ON ANSWERS</h2>
                   <h3>
                     You chose {chosenMed.product_tag} at "
-                    {chosenMed.product_dosage_tag}" level{" "}
+                    {chosenMed.product_dosage_tag}" level
                     {chosenMed.product_dosages_per_month} times a month
                   </h3>
                   <h1>
