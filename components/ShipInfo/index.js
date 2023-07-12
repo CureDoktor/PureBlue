@@ -26,7 +26,10 @@ export default function ShipInfo(props) {
   const handleChange = (event) => {
     const { value, name } = event.target;
 
-    if (name == "shippingState" && value.match(/south carolina/gi)) {
+    if (
+      name == "shippingState" &&
+      (value.match(/south carolina/gi) || value.match(/alaska/gi))
+    ) {
       setWrongStateHolder(true);
     } else {
       setWrongStateHolder(false);

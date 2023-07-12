@@ -25,7 +25,10 @@ export default function BillInfo(props) {
   const handleChange = (event) => {
     const { value, name } = event.target;
 
-    if (name == "billingState" && value.match(/south carolina/gi)) {
+    if (
+      name == "billingState" &&
+      (value.match(/south carolina/gi) || value.match(/alaska/gi))
+    ) {
       setWrongStateHolder(true);
     } else {
       setWrongStateHolder(false);

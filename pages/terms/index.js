@@ -825,8 +825,6 @@ export default function Terms() {
               <Col md={6}>
                 <p>
                   Alabama - AL DO.2327 12/31/2023 <br />
-                  Alaska - AK 160520 12/31/2024
-                  <br />
                   Arizona - AZ 8699 12/31/2024
                   <br />
                   Arkansas - AR E-13340 10/31/2023
@@ -903,8 +901,6 @@ export default function Terms() {
                   Pennsylvania - PA OS020431 10/31/2024
                   <br />
                   Rhode Island - RI DO01057 6/30/2024
-                  <br />
-                  South Carolina - SC MDO.82979 6/30/2023
                   <br />
                   South Dakota - SD 12999 3/1/2023
                   <br />
