@@ -56,7 +56,10 @@ export default function Order() {
   const handleChange = (event) => {
     const { value, name } = event.target;
 
-    if (name == "shippingState" && value.match(/south carolina/gi)) {
+    if (
+      name == "shippingState" &&
+      (value.match(/south carolina/gi) || value.match(/alaska/gi))
+    ) {
       setWrongStateHolder(true);
     } else {
       setWrongStateHolder(false);
@@ -160,7 +163,10 @@ export default function Order() {
   const handleBillChange = (event) => {
     const { value, name } = event.target;
 
-    if (name == "billingState" && value.match(/south carolina/gi)) {
+    if (
+      name == "billingState" &&
+      (value.match(/south carolina/gi) || value.match(/alaska/gi))
+    ) {
       setWrongStateHolderBilling(true);
     } else {
       setWrongStateHolderBilling(false);

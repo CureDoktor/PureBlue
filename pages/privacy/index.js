@@ -1041,6 +1041,21 @@ export default function Privacy() {
             <br /> 42 Broadway, 12th Floor
             <br /> New York, NY 10004
           </p>
+
+          <h2>Additional Information</h2>
+          <p>
+            Complaints. If you believe your privacy rights have been violated,
+            you can file a complaint with the PureBlue privacy officer (Ana
+            Ramos) by contacting support@mdintegrations.com or calling
+            6297775752.
+            <br />
+            <br />
+            You can also file a complaint with the Secretary of the U.S.
+            Department of Health and Human Services in Washington D.C.
+            <br />
+            <br />A complaint must be made in writing and will not in any way
+            affect the quality of care we provide you.
+          </p>
         </Container>
       </main>
     </div>
