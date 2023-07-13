@@ -21,16 +21,16 @@ export default function Terms() {
         <Container className={styles.container}>
           <h1>Terms and Conditions</h1>
           <p>
-            Thank you for visiting the PureBlue website located at PureBlue.com
-            (the “Site”). The Site is an Internet property of PureBlue, LLC
-            (collectively, “PureBlue,” “we,” “our” or “us”). The following
-            PureBlue Terms and Conditions (“Terms and Conditions”) are inclusive
-            of the PureBlue Privacy Policy (“Privacy Policy”), the Consent to
-            Telehealth, the Frequently Asked Questions (“FAQ”) and any and all
-            other applicable operating rules, policies, price schedules and
-            other supplemental terms and conditions or documents that may be
-            published from time to time, which are expressly incorporated herein
-            by reference (collectively, the “Agreement”).
+            Thank you for visiting the PureBlue website located at
+            TryPureBlue.com (the “Site”). The Site is an Internet property of
+            PureBlue, LLC (collectively, “PureBlue,” “we,” “our” or “us”). The
+            following PureBlue Terms and Conditions (“Terms and Conditions”) are
+            inclusive of the PureBlue Privacy Policy (“Privacy Policy”), the
+            Consent to Telehealth, the Frequently Asked Questions (“FAQ”) and
+            any and all other applicable operating rules, policies, price
+            schedules and other supplemental terms and conditions or documents
+            that may be published from time to time, which are expressly
+            incorporated herein by reference (collectively, the “Agreement”).
             <br />
             <br /> Subject to your compliance with these Terms and Conditions,
             we hereby grant to you a personal, limited, revocable,
