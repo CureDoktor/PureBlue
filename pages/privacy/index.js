@@ -57,7 +57,7 @@ export default function Privacy() {
             “our,” or “us”), and our data protection practices for collecting,
             using, maintaining, protecting and disclosing such information when
             you visit any PureBlue website that links to this Privacy Policy
-            (including pureblue.com (collectively, our “Website”), use any
+            (including trypureblue.com (collectively, our “Website”), use any
             affiliated mobile applications (the “Apps”), or otherwise provide
             data to PureBlue. We refer to the Website, Apps, and other services
             provided by PureBlue together in this Privacy Policy as the
