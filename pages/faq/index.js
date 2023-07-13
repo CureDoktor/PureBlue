@@ -513,14 +513,13 @@ export default function Faq() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="12">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    Erectile dysfunction can affect men of all ages. Certain
+                    health conditions may bring about symptoms of erectile
+                    dysfunction regardless of your age. PureBlue is offered for
+                    men over 18 to help deal with symptoms of ED. PureBlue’s
+                    affiliated licensed physicians can evaluate your health
+                    status and recommend a safe and appropriate treatment plan
+                    to help you deal with erectile dysfunction.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -542,14 +541,15 @@ export default function Faq() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="13">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    Sildenafil and Tadalafil are FDA-approved medications for
+                    the treatment of erectile dysfunction. Both medications
+                    inhibit the phosphodiesterase-5 enzyme (PDE-5), which
+                    results in the dilation of blood vessels in the penile
+                    region, which makes erections easier to achieve. The main
+                    difference between the two medications is that Sildenafil is
+                    recommended to be taken 30-60 minutes before sexual activity
+                    and stays in the system for 4 hours, while Tadalafil remains
+                    active in the body for 36 hours.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -572,14 +572,12 @@ export default function Faq() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="14">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    Both generic-branded and branded (Viagra and Cialis) pills
+                    contain the same active component. Viagra contains
+                    Sildenafil, while Cialis contains Tadalafil, and all
+                    generic-branded erectile dysfunction pills available on
+                    PureBlue are consistent with the dosage and effectiveness
+                    offered by branded erectile dysfunction pills.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -602,14 +600,15 @@ export default function Faq() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="15">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    If you chose Sildenafil or Tadalafil, but it did not work as
+                    you expected, kindly reach out to our PureBlue-affiliated
+                    medical team to review your treatment options and see if
+                    another treatment may be recommended to you. You can reach
+                    out to us through email (info@trypureblue.com) or log into
+                    your PureBlue account, and choose “Switch Plans”. Doing so
+                    will allow the medical team to review your provided
+                    information, and evaluate further for treatments that would
+                    be appropriate and safe for your condition.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -631,14 +630,10 @@ export default function Faq() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="16">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    PureBlue does not accept refunds or returns for prescription
+                    treatments. If there is a problem with your purchase, kindly
+                    reach out to us at info@trypureblue.com or reach us through
+                    chat on our website.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -660,14 +655,10 @@ export default function Faq() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="17">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    PureBlue offers an array of erectile dysfunction medications
+                    and plans for your lifestyle and budget. PureBlue plans
+                    start at $20 a month, plus shipping and tax. You may view
+                    and compare plans available to you on trypureblue.com/plans.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
