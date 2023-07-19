@@ -12,6 +12,7 @@ import {
   Button,
   Row,
 } from "react-bootstrap";
+import Script from "next/script";
 
 export default function Footer() {
   return (
@@ -31,6 +32,7 @@ export default function Footer() {
           plan. Users must pay the price presented during the checkout process.
         </main>
       </div>
+
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.imageContainer}>
@@ -41,6 +43,7 @@ export default function Footer() {
               fluid
               className={styles.image}
             />
+            <Script src="https://static.legitscript.com/seals/16927118.js" />
           </div>
           <div className={styles.telephone}>
             <p>QUESTIONS?</p>
