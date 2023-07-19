@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./styles.module.scss";
+
 import {
   Col,
   Container,
@@ -31,6 +32,10 @@ export default function Footer() {
           is not an insurance provider or Medicaid/Medicare prescription drug
           plan. Users must pay the price presented during the checkout process.
         </main>
+        <script
+          src="https://static.legitscript.com/seals/16927118.js"
+          type="text/jsx"
+        />
       </div>
 
       <footer className={styles.footer}>
@@ -43,7 +48,8 @@ export default function Footer() {
               fluid
               className={styles.image}
             />
-            <Script src="https://static.legitscript.com/seals/16927118.js" />
+            <Script src="http://static.legitscript.com/seals/16927118.js" />
+            {/* <script src="https://static.legitscript.com/seals/16927118.js"></script> */}
           </div>
           <div className={styles.telephone}>
             <p>QUESTIONS?</p>
