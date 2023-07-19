@@ -48,8 +48,6 @@ export default function Footer() {
               fluid
               className={styles.image}
             />
-            <Script src="http://static.legitscript.com/seals/16927118.js" />
-            {/* <script src="https://static.legitscript.com/seals/16927118.js"></script> */}
           </div>
           <div className={styles.telephone}>
             <p>QUESTIONS?</p>
