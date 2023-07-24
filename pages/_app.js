@@ -1,6 +1,7 @@
 import "../styles/globals.scss";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Head from "next/head";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import React, { useState, useEffect, useContext } from "react";
@@ -34,6 +35,9 @@ function MyApp({ Component, pageProps }) {
     if (isLogedIn) {
       return (
         <AuthContextProvider>
+          <Head>
+            <title>TryPure Blue</title>
+          </Head>
           <Header logout={logoutHandler} header={isLogedIn} />
           <Component isLoggedIn={loginHandler} {...pageProps} />
           <Footer />
@@ -47,6 +51,9 @@ function MyApp({ Component, pageProps }) {
     ) {
       return (
         <AuthContextProvider>
+          <Head>
+            <title>TryPure Blue</title>
+          </Head>
           <Header logout={loginHandler} header={isLogedIn} />
           {/* <Login isLoggedIn={loginHandler} /> */}
           <Login isLoggedIn={loginHandler} />
@@ -57,6 +64,9 @@ function MyApp({ Component, pageProps }) {
     } else {
       return (
         <AuthContextProvider>
+          <Head>
+            <title>TryPure Blue</title>
+          </Head>
           <Header logout={loginHandler} header={isLogedIn} />
           <Component isLoggedIn={loginHandler} {...pageProps} />
           <Footer />

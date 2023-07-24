@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./styles.module.scss";
+import { useEffect } from "react";
 
 import {
   Col,
@@ -14,6 +15,30 @@ import {
   Row,
 } from "react-bootstrap";
 import Script from "next/script";
+const ScriptWrapper = ({ src }) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = false; // Set to true if you want to load it asynchronously
+
+    const scriptLoadHandler = () => {
+      // The script has been loaded and executed
+      // Any code that depends on this script can go here
+    };
+
+    script.addEventListener("load", scriptLoadHandler);
+
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up the script when the component is unmounted
+      script.removeEventListener("load", scriptLoadHandler);
+      document.body.removeChild(script);
+    };
+  }, [src]);
+
+  return null;
+};
 
 export default function Footer() {
   return (
@@ -32,15 +57,23 @@ export default function Footer() {
           is not an insurance provider or Medicaid/Medicare prescription drug
           plan. Users must pay the price presented during the checkout process.
         </main>
-        <script
-          src="https://static.legitscript.com/seals/16927118.js"
-          type="text/jsx"
-        />
       </div>
 
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.imageContainer}>
+            <div>
+              Ovde Negde
+              <Script
+                __dangerouslydisablesanitizers={["Script"]}
+                type="text/javascript"
+                src="https://static.legitscript.com/seals/16927118.js"
+                crossOrigin="true"
+                strategy="beforeInteractive"
+                defer={false}
+              />
+            </div>
+
             <Image
               src="/assets/homepage/logo-footer.png"
               height={45}
