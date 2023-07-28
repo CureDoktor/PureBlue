@@ -55,9 +55,9 @@ function MyApp({ Component, pageProps }) {
             <title>TryPure Blue</title>
           </Head>
           <Header logout={loginHandler} header={isLogedIn} />
-          {/* <Login isLoggedIn={loginHandler} /> */}
+
           <Login isLoggedIn={loginHandler} />
-          {/* <Component isLoggedIn={loginHandler} {...pageProps} /> */}
+
           <Footer />
         </AuthContextProvider>
       );
