@@ -1,0 +1,34 @@
+.endAdornment {
+  &.info {
+    font-weight: normal;
+  }
+
+  &.chip {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0.4643em 0.7143em;
+    border-radius: 0.357em;
+
+    &.lightBlue {
+      background-color: #87bff8;
+    }
+
+    &.blue {
+      background-color: #4494e5;
+    }
+
+    &.green {
+      background-color: #39cb64;
+    }
+
+    &.orange {
+      background-color: #ff8a00;
+    }
+
+    &.red {
+      background-color: #cf1c31;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 1.11em 1.667em;
+  background-color: white;
+  border-radius: 0.28em;
+  border: 1px solid #ccc;
+  cursor: pointer;
+
+  transition: background-color ease-in-out 300ms, color ease-in-out 300ms,
+    border-color ease-in-out 300ms;
+
+  input[type="radio"] {
+    display: grid;
+    place-content: center;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    width: 1.15em;
+    height: 1.15em;
+    min-width: 22px;
+    min-height: 22px;
+    border-radius: 50%;
+
+    transition: background-color ease-in-out 300ms, color ease-in-out 300ms,
+      border ease-in-out 300ms;
+  }
+
+  input[type="radio"]:focus {
+    box-shadow: none;
+  }
+
+  input[type="radio"]::before {
+    display: block;
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 300ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+  &.default {
+    border: none;
+    background-color: transparent;
+    padding: 0 1.667em;
+
+    input[type="radio"] {
+      background-color: #fff;
+      color: #ccc;
+      border: 0.11em solid #ccc;
+    }
+
+    input[type="radio"]:checked {
+      background-color: #fff;
+      border-color: #0077f0;
+    }
+
+    input[type="radio"]:checked::before {
+      background-color: #0077f0;
+    }
+
+    &.checked {
+      //   color: white;
+    }
+  }
+
+  .contained {
+    input[type="radio"] {
+      background-color: #fff;
+      color: #ccc;
+      border: 0.11em solid #ccc;
+    }
+
+    input[type="radio"]:checked {
+      background-color: #0077f0;
+      border-color: #fff;
+    }
+
+    input[type="radio"]:checked::before {
+      background-color: #fff;
+    }
+
+    &.checked {
+      background-color: #0077f0;
+      border-color: #0077f0;
+      color: white;
+    }
+  }
+
+  .outlined {
+    input[type="radio"] {
+      background-color: #fff;
+      color: #ccc;
+      border: 0.11em solid #ccc;
+    }
+
+    input[type="radio"]:checked {
+      border-color: #0077f0;
+    }
+
+    input[type="radio"]:checked::before {
+      background-color: #0077f0;
+    }
+
+    &.checked {
+      border-color: #0077f0;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.833em;
+}
