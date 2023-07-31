@@ -1,3 +1,1 @@
-import { Form as FormV2 } from "./Form";
-
-export default FormV2;
+export { default as Form } from "./Form";

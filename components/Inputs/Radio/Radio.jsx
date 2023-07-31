@@ -1,8 +1,8 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import styles from "./RadioInput.styles.module.scss";
+import styles from "./Radio.styles.module.scss";
 
-export const RadioInput = ({
+export const Radio = ({
   label,
   name,
   value,
