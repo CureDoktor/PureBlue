@@ -29,6 +29,8 @@
     top: calc(100% + 0.5em);
     left: 0;
     right: 0;
+    max-height: 350px;
+    overflow-y: auto;
     visibility: hidden;
     opacity: 0;
     background-color: white;
