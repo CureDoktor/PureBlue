@@ -4,12 +4,16 @@
   }
 
   &.chip {
-    font-size: 14px;
+    font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
     padding: 0.4643em 0.7143em;
     border-radius: 0.357em;
+
+    @media (min-width: 1004px) {
+      font-size: 14px;
+    }
 
     &.lightBlue {
       background-color: #87bff8;

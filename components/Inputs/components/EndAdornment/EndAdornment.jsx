@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./EndAdornment.styles.module.scss";
 
-export const EndAdornment = ({ text, variant = "info", color }) => {
+export const EndAdornment = ({
+  text,
+  variant = "info",
+  color,
+  size = "medium",
+}) => {
   const variantMap = {
     info: styles.info,
     chip: styles.chip,

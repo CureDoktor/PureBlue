@@ -1,0 +1,40 @@
+.order {
+  background-color: #f3f3f3;
+  padding: 60px 24px;
+
+  & .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: dashed 2px #aaa;
+
+    & h1 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      &:last-of-type {
+        color: #0077f0;
+      }
+    }
+  }
+
+  & .images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 60px;
+
+    & .madeInUsa {
+      position: relative;
+      width: 214px;
+      height: 96px;
+    }
+
+    & .fdaApproved {
+      position: relative;
+      width: 95px;
+      height: 95px;
+    }
+  }
+}

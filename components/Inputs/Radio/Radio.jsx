@@ -7,34 +7,27 @@ export const Radio = ({
   name,
   value,
   variant = "default",
-  checked,
-  onChange,
   options,
   endAdornment,
-  className,
   style,
 }) => {
-  const { register } = useFormContext();
-  const isChecked = checked ? styles.checked : "";
+  const { register, watch } = useFormContext();
+  const checkedValue = watch(name);
+  const isChecked = checkedValue === value ? styles.checked : "";
 
   const variantMap = {
     default: styles.default,
     contained: styles.contained,
     outlined: styles.outlined,
   };
+
   return (
     <label
       style={style}
-      className={`${styles.container} ${variantMap[variant]} ${isChecked} ${className}`}
+      className={`${styles.container} ${variantMap[variant]} ${isChecked}`}
     >
       <div className={styles.wrapper}>
-        <input
-          {...register(name, options)}
-          type="radio"
-          value={value}
-          checked={checked}
-          onChange={onChange}
-        />
+        <input {...register(name, options)} type="radio" value={value} />
         {label}
       </div>
       {endAdornment && (

@@ -8,7 +8,7 @@ const Select = ({ name, options, items }) => {
   const { register, watch, setValue, getValues } = useFormContext();
   const selectedValue = watch(name);
   const parsedSelectedValue = useMemo(
-    () => items.find((item) => item.value === selectedValue),
+    () => items?.find((item) => item.value === selectedValue),
     [selectedValue]
   );
 
@@ -24,7 +24,7 @@ const Select = ({ name, options, items }) => {
   return (
     <div className={styles.container} onClick={handleContainerClick}>
       <select {...register(name, options)}>
-        {items.map((item, i) => (
+        {items?.map((item, i) => (
           <option key={`${item.value}-${i}`} value={item.value} disabled>
             {item.label}
           </option>
@@ -33,7 +33,7 @@ const Select = ({ name, options, items }) => {
       <div className={styles.selectedValue}>
         <span>{parsedSelectedValue?.label || "Select option"}</span>
       </div>
-      <div>
+      <div className={styles.chip}>
         {parsedSelectedValue?.endAdornment && parsedSelectedValue.endAdornment}
         {open ? (
           <ChevronUp style={{ marginLeft: "1em" }} />
@@ -42,7 +42,7 @@ const Select = ({ name, options, items }) => {
         )}
       </div>
       <div className={`${styles.dropdown} ${open && styles.open}`}>
-        {items.map((item, i) => (
+        {items?.map((item, i) => (
           <div
             key={`${item.value}-${i}`}
             data-value={item.value}

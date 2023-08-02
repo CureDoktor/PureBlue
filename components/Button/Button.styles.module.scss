@@ -1,0 +1,15 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25em 3.2em;
+  border-radius: 1.95em;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &.contained {
+    background-color: #ff8a00;
+    color: #fff;
+  }
+}
