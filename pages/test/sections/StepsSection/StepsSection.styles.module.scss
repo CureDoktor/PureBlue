@@ -3,6 +3,10 @@
   background-color: #04315e;
 
   @media (min-width: 992px) {
+    background-color: none;
+    background-image: url("../../../../public/assets/test/section-4-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 100px 0;
   }
 
