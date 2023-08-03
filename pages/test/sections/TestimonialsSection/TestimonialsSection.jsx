@@ -68,15 +68,12 @@ const TestimonialsSection = () => {
         </Row>
         <Row className={styles.row}>
           {mockTestimonials.map((testimonial, i) => (
-            <Col xs={12} md={4}>
-              <Testimonial
-                key={`${testimonial.author}-${testimonial.title}-${i}`}
-                author={testimonial.author}
-                title={testimonial.title}
-                description={testimonial.description}
-                rating={testimonial.rating}
-                verified={testimonial.verified}
-              />
+            <Col
+              key={`${testimonial.author}-${testimonial.title}-${i}`}
+              xs={12}
+              md={4}
+            >
+              <Testimonial {...testimonial} />
             </Col>
           ))}
         </Row>

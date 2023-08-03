@@ -7,6 +7,7 @@ import LandingSection from "./sections/LandingSection";
 import ListSection from "./sections/ListSection";
 import OrderSection from "./sections/OrderSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
+import StepsSection from "./sections/StepsSection";
 
 const mockData = [
   {
@@ -78,6 +79,7 @@ const Test = () => {
         <ListSection />
         <OrderSection />
         <TestimonialsSection />
+        <StepsSection />
       </main>
     </div>
   );
