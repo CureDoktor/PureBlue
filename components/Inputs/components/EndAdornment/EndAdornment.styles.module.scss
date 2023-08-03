@@ -1,9 +1,15 @@
 .endAdornment {
   &.info {
+    font-size: 14px;
     font-weight: normal;
+
+    @media (min-width: 992px) {
+      font-size: 18px;
+    }
   }
 
   &.chip {
+    display: none;
     font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
@@ -11,7 +17,11 @@
     padding: 0.4643em 0.7143em;
     border-radius: 0.357em;
 
-    @media (min-width: 1004px) {
+    @media (min-width: 414px) {
+      display: block;
+    }
+
+    @media (min-width: 992px) {
       font-size: 14px;
     }
 

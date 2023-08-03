@@ -1,15 +1,12 @@
 import React from "react";
 import EndAdornment from "../../components/Inputs/components/EndAdornment";
 import Head from "next/head";
-import { CheckCircleFill } from "react-bootstrap-icons";
-import { Col, Container, Row } from "react-bootstrap";
 import styles from "./Test.styles.module.scss";
-import Image from "next/image";
 
-import fdaImageSrc from "../../public/assets/test/fda-approved.png";
 import LandingSection from "./sections/LandingSection";
 import ListSection from "./sections/ListSection";
 import OrderSection from "./sections/OrderSection";
+import TestimonialsSection from "./sections/TestimonialsSection";
 
 const mockData = [
   {
@@ -80,6 +77,7 @@ const Test = () => {
         <LandingSection />
         <ListSection />
         <OrderSection />
+        <TestimonialsSection />
       </main>
     </div>
   );

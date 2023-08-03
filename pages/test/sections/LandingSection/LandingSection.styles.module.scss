@@ -33,6 +33,10 @@
   & .heading {
     font-size: 32px;
     font-weight: bold;
+
+    @media (min-width: 992px) {
+      font-size: 55px;
+    }
   }
 
   & .subheading {
@@ -62,12 +66,12 @@
   }
 
   & button {
+    width: 100%;
     text-transform: uppercase;
-    font-size: 16px;
     margin-top: 40px;
 
-    @media (min-width: 414px) {
-      font-size: 20px;
+    @media (min-width: 768px) {
+      width: unset;
     }
   }
 
