@@ -82,6 +82,7 @@ const Test = () => {
         <TestimonialsSection />
         <StepsSection />
         <FAQSection />
+        <LandingSection variant="secondary" />
       </main>
     </div>
   );

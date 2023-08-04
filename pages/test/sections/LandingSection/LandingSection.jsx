@@ -1,18 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { StarFill } from "react-bootstrap-icons";
 import Button from "../../../../components/Button";
+import LegitScriptCertificate from "../../../../components/LegitScriptCertificate";
 
 import styles from "./LandingSection.styles.module.scss";
 
 import productImageSrc from "../../../../public/assets/test/product-image.png";
 import fdaImageSrc from "../../../../public/assets/test/fda-approved.png";
 
-const LandingSection = () => {
+const LandingSection = ({ variant }) => {
+  const variantMap = {
+    secondary: styles.secondary,
+  };
   return (
-    <section className={styles.landingSection}>
+    <section className={`${styles.landingSection} ${variantMap[variant]}`}>
       <Container className={styles.container}>
         <Row>
           <Col lg="6" className={styles.left}>
@@ -48,6 +52,20 @@ const LandingSection = () => {
             >
               Get started now
             </Button>
+            <div className={`${styles.certifications} ${variantMap[variant]}`}>
+              <div className={styles.certificate}>
+                <LegitScriptCertificate />
+              </div>
+              <div className={styles.certificate}>
+                <Image
+                  objectFit="contain"
+                  layout="fill"
+                  placeholder="blur"
+                  src={fdaImageSrc}
+                  alt="Pure Blue Sildenafil product image"
+                />
+              </div>
+            </div>
           </Col>
           <Col lg="6" className={styles.right}>
             <div className={styles.product}>
@@ -61,13 +79,7 @@ const LandingSection = () => {
             </div>
             <div className={styles.certifications}>
               <div className={styles.certificate}>
-                <Image
-                  objectFit="contain"
-                  layout="fill"
-                  placeholder="blur"
-                  src={fdaImageSrc}
-                  alt="Pure Blue Sildenafil product image"
-                />
+                <LegitScriptCertificate />
               </div>
               <div className={styles.certificate}>
                 <Image

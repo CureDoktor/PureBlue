@@ -495,7 +495,7 @@ const FAQSection = () => {
           </Col>
         </Row>
         <Row className={styles.row}>
-          <Col xs={12} lg={8} style={{ margin: "auto" }}>
+          <Col xs={12} lg={9} style={{ margin: "auto" }}>
             <Accordion items={mockAccordions} />
           </Col>
         </Row>
