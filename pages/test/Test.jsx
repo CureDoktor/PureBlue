@@ -9,6 +9,8 @@ import OrderSection from "./sections/OrderSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
 import StepsSection from "./sections/StepsSection";
 import FAQSection from "./sections/FAQSection";
+import Form from "../../components/Form";
+import TextInput from "../../components/Inputs/TextInput";
 
 const mockData = [
   {
@@ -83,6 +85,9 @@ const Test = () => {
         <StepsSection />
         <FAQSection />
         <LandingSection variant="secondary" />
+        <Form defaultValues={{ test1: "" }}>
+          <TextInput name="test1" type="date" />
+        </Form>
       </main>
     </div>
   );

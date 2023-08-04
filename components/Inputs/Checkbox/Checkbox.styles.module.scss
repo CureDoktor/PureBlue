@@ -1,10 +1,9 @@
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 16px;
-  font-weight: bold;
-  height: 3.7888em;
+  font-weight: 600;
   padding: 20px;
   background-color: white;
   border-radius: 0.28em;
@@ -19,42 +18,45 @@
     padding: 1.11em 1.667em;
   }
 
-  input[type="radio"] {
-    display: grid;
+  input[type="checkbox"] {
+    display: none;
     place-content: center;
     -webkit-appearance: none;
     appearance: none;
     margin: 0;
     font: inherit;
-    width: 25px;
-    height: 25px;
-    min-width: 25px;
-    min-height: 25px;
-    border-radius: 50%;
 
     transition: background-color ease-in-out 300ms, color ease-in-out 300ms,
       border ease-in-out 300ms;
   }
 
-  input[type="radio"]:focus {
+  input[type="checkbox"]:focus {
     box-shadow: none;
   }
 
-  input[type="radio"]::before {
-    display: block;
-    content: "";
-    width: 15px;
-    height: 15px;
-    min-width: 15px;
-    min-height: 15px;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 300ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
   }
 
-  input[type="radio"]:checked::before {
-    transform: scale(1);
+  & .checkmark {
+    min-width: 25px;
+    min-height: 25px;
+    font-size: 25px;
+    color: #ccc;
+
+    & path:last-of-type {
+      display: none;
+    }
+  }
+
+  &.checked {
+    & .checkmark {
+      color: #fff;
+
+      & path {
+        display: unset;
+      }
+    }
   }
 
   &.default {
@@ -62,36 +64,28 @@
     background-color: transparent;
     padding: 0 1.667em;
 
-    input[type="radio"] {
+    input[type="checkbox"] {
       background-color: #fff;
       color: #ccc;
       border: 0.11em solid #ccc;
     }
 
-    input[type="radio"]:checked {
+    input[type="checkbox"]:checked {
       background-color: #fff;
       border-color: #0077f0;
-    }
-
-    input[type="radio"]:checked::before {
-      background-color: #0077f0;
     }
   }
 
   &.contained {
-    input[type="radio"] {
+    input[type="checkbox"] {
       background-color: #fff;
       color: #ccc;
       border: 0.11em solid #ccc;
     }
 
-    input[type="radio"]:checked {
+    input[type="checkbox"]:checked {
       background-color: #0077f0;
       border-color: #fff;
-    }
-
-    input[type="radio"]:checked::before {
-      background-color: #fff;
     }
 
     &.checked {
@@ -102,18 +96,14 @@
   }
 
   &.outlined {
-    input[type="radio"] {
+    input[type="checkbox"] {
       background-color: #fff;
       color: #ccc;
       border: 0.11em solid #ccc;
     }
 
-    input[type="radio"]:checked {
+    input[type="checkbox"]:checked {
       border-color: #0077f0;
-    }
-
-    input[type="radio"]:checked::before {
-      background-color: #0077f0;
     }
 
     &.checked {
@@ -124,6 +114,6 @@
 
 .wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.833em;
 }
