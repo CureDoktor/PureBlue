@@ -1,0 +1,12 @@
+.container {
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  .row {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: center;
+  }
+}

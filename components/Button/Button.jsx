@@ -7,6 +7,7 @@ const Button = ({
   endAdornment,
   className,
   style,
+  ...rest
 }) => {
   const variantMap = {
     contained: styles.contained,
@@ -16,6 +17,7 @@ const Button = ({
     <button
       className={`${styles.button} ${variantMap[variant]} ${className}`}
       style={style}
+      {...rest}
     >
       {children}
       {endAdornment && endAdornment}

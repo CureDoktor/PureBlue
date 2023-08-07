@@ -85,9 +85,6 @@ const Test = () => {
         <StepsSection />
         <FAQSection />
         <LandingSection variant="secondary" />
-        <Form defaultValues={{ test1: "" }}>
-          <TextInput name="test1" type="date" />
-        </Form>
       </main>
     </div>
   );

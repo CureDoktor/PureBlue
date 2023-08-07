@@ -1,0 +1,62 @@
+.container {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #00000029;
+
+  & .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background-color: #0077f0;
+    color: white;
+
+    &.notFirst {
+      justify-content: space-between;
+    }
+
+    & .questionNumber {
+      font-size: 14px;
+      font-weight: 600;
+
+      @media (min-width: 992px) {
+        font-size: 18px;
+      }
+    }
+
+    & .backLink {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+
+      @media (min-width: 992px) {
+        font-size: 18px;
+        gap: 10px;
+      }
+
+      & svg {
+        width: 20px;
+        height: 20px;
+        transform: rotate(180deg);
+
+        @media (min-width: 992px) {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+
+  & .questionWrapper {
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
