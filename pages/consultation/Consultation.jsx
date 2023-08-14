@@ -7,6 +7,9 @@ import Button from "../../components/Button";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useConsultationContext } from "../../store/consultation-context";
+import QuestionParser from "../../components/Consultation/QuestionParser";
+import Form from "../../components/Form";
+import { useForm } from "react-hook-form";
 
 const mockQuestions = [
   {
@@ -951,7 +954,13 @@ const newMockQuestions = [
 
 const Consultation = () => {
   const router = useRouter();
-  const { setQuestions } = useConsultationContext() || {};
+  const { reset } = useForm();
+  const { query } = router;
+  const { setQuestions, questions, setFormValues, data } =
+    useConsultationContext() || {};
+  const { total: totalQuestions } = questions;
+  const question = query?.question ? parseInt(query?.question) : 0;
+  const notLastQuestion = question !== totalQuestions;
 
   useEffect(() => {
     const questions = newMockQuestions.filter((q) => q.visibility === 1);
@@ -959,14 +968,23 @@ const Consultation = () => {
       (q) => q.visibility !== 1
     );
 
-    console.log(questions, followUpQuestions);
+    const questionMap = {};
+
+    followUpQuestions.forEach((question) => {
+      questionMap[question.id] = question;
+    });
 
     setQuestions({
       main: questions,
-      follow: followUpQuestions,
+      questionMap,
       total: questions.length,
     });
   }, []);
+
+  const handleSubmit = (values) => {
+    console.log(values);
+    setFormValues(values);
+  };
 
   return (
     <div className={styles.container}>
@@ -977,40 +995,52 @@ const Consultation = () => {
       </Head>
       <main>
         <Container>
-          <Row className={styles.row}>
-            <Col className={styles.col} xs={12} lg={7}>
-              <Start />
-              <Button
-                type="button"
-                onClick={() => router.push(`/consultation/question/1`)}
-                endAdornment={
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                }
-              >
-                Continue
-              </Button>
-              <div className={styles.footer}>
-                <p className={styles.help}>
-                  Need help? <Link href="#">Live chat with us</Link>
-                </p>
-                <p className={styles.disclaimer}>
-                  *If your treatment isn't approved by our medical experts,
-                  we'll cancel your order and you won't be charged.
-                </p>
-              </div>
-            </Col>
-          </Row>
+          <Form defaultValues={data} onSubmit={handleSubmit}>
+            <Row className={styles.row}>
+              <Col className={styles.col} xs={12} lg={7}>
+                {!question ? <Start /> : <QuestionParser />}
+                <Button
+                  type={question ? "submit" : "button"}
+                  onClick={() =>
+                    router.push(
+                      `/consultation?question=${question + 1}`,
+                      undefined,
+                      {
+                        shallow: true,
+                      }
+                    )
+                  }
+                  endAdornment={
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  }
+                >
+                  {notLastQuestion ? "Next question" : "Submit"}
+                </Button>
+                {!query?.question && (
+                  <div className={styles.footer}>
+                    <p className={styles.help}>
+                      Need help? <Link href="#">Live chat with us</Link>
+                    </p>
+                    <p className={styles.disclaimer}>
+                      *If your treatment isn't approved by our medical experts,
+                      we'll cancel your order and you won't be charged.
+                    </p>
+                  </div>
+                )}
+              </Col>
+            </Row>
+          </Form>
         </Container>
       </main>
     </div>

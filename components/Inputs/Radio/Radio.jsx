@@ -13,7 +13,7 @@ export const Radio = ({
 }) => {
   const { register, watch } = useFormContext();
   const checkedValue = watch(name);
-  const isChecked = checkedValue === value ? styles.checked : "";
+  const isChecked = parseInt(checkedValue) === value ? styles.checked : "";
 
   const variantMap = {
     default: styles.default,

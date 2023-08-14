@@ -53,10 +53,26 @@
   }
 
   & .questionWrapper {
-    padding: 60px;
+    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    gap: 20px;
+
+    @media (min-width: 992px) {
+      padding: 60px;
+      gap: 40px;
+    }
+  }
+
+  & .title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }

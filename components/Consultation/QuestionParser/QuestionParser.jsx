@@ -1,73 +1,33 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Radio from "../../Inputs/Radio";
 import styles from "./QuestionParser.styles.module.scss";
 import { useConsultationContext } from "../../../store/consultation-context";
 import Link from "next/link";
-import TextInput from "../../Inputs/TextInput";
-import Checkbox from "../../Inputs/Checkbox";
-import Select from "../../Inputs/Select";
+import { useFormContext } from "react-hook-form";
+import { useQuestionParser } from "./QuestionParser.hooks";
 
-const QuestionParser = ({ question }) => {
+const QuestionParser = () => {
   const { questions } = useConsultationContext() || {};
-  const { total } = questions;
+  const { main, total } = questions;
   const router = useRouter();
-  const questionId = router.query?.id || "";
+  const questionId = parseInt(router.query?.question) || "";
   const questionNumber = `Question ${questionId} of ${total}`;
-  const notFirstQuestion = questionId !== "1";
+  const notFirstQuestion = questionId !== 1;
   const isNotFirstQuestionStyles = notFirstQuestion ? styles.notFirst : "";
+  const previousQuestionLink =
+    parseInt(router.query?.question) === 1
+      ? "/consultation"
+      : `/consultation?question=${questionId - 1}`;
 
-  const parseInputPropsByType = (questionId, type, answer) => {
-    let name, value, label;
-    switch (type) {
-      case "radio":
-        name = `q${questionId}`;
-        value = answer.id;
-        label = answer.title;
-        break;
+  if (!main) return "Loading...";
 
-      default:
-        break;
-    }
-
-    return { name, value, label };
-  };
-
-  const parseQuestionOptions = (type, answers) => {
-    const inputMap = {
-      text: <TextInput />,
-      radio: <Radio />,
-      checkbox: <Checkbox />,
-      select: <Select />,
-    };
-
-    const componentRef = inputMap[type];
-
-    return answers?.map((answer) => {
-      const props = parseInputPropsByType(questionId, type, answer);
-      const Component = React.createElement(componentRef, props);
-
-      return <Component />;
-    });
-  };
-
-  const parseQuesiton = (question) => {
-    const { title, type, questionsAnswers: answers } = question || {};
-    console.log(question);
-    const options = parseQuestionOptions(type, answers);
-    return (
-      <>
-        <h4>{title}</h4>
-        <div>{options}</div>
-      </>
-    );
-  };
+  const { parsedQuestion, parsedFollowUpQuestions } = useQuestionParser();
 
   return (
     <div className={styles.container}>
       <div className={`${styles.header} ${isNotFirstQuestionStyles}`}>
         {notFirstQuestion && (
-          <Link href={`/consultation/question/${Number(questionId) - 1}`}>
+          <Link href={previousQuestionLink}>
             <span className={styles.backLink}>
               <svg
                 width="28"
@@ -87,7 +47,11 @@ const QuestionParser = ({ question }) => {
         )}
         <span className={styles.questionNumber}>{questionNumber}</span>
       </div>
-      <div className={styles.questionWrapper}>{parseQuesiton(question)}</div>
+      <div className={styles.questionWrapper}>
+        <h4 className={styles.title}>{parsedQuestion.title}</h4>
+        <div className={styles.options}>{parsedQuestion.answers}</div>
+        {parsedFollowUpQuestions}
+      </div>
     </div>
   );
 };
