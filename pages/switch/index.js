@@ -73,9 +73,9 @@ export default function Switch() {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           console.log(res.data);
-          if (res.data != null) {
-            router.push("/account");
-          }
+          // if (res.data != null) {
+          //   router.push("/account");
+          // }
         })
         .catch((error) => {
           console.log(error);
@@ -146,7 +146,7 @@ export default function Switch() {
 
   const backToCheckout = async (medicationId) => {
     const route = "/api/case/save-product";
-    var currentProductId = { "product_id": medicationId };
+    var currentProductId = { product_id: medicationId };
     try {
       const rese = await Axios.post(route, {
         Token: authCtx.Token(),

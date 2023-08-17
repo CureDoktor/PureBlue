@@ -45,7 +45,7 @@ export default function VisitForm() {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           if (res.data.case_answers != null) {
-            router.push("/switch");
+            router.push("/order");
           }
         })
         .catch((error) => {
@@ -281,7 +281,7 @@ export default function VisitForm() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), payload })
         .then((res) => {
-          router.push("/switch");
+          router.push("/order");
         })
         .catch((error) => {
           console.log(error.response.data.errors);

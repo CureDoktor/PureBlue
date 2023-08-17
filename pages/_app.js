@@ -7,6 +7,7 @@ import Register from "../pages/register";
 import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { AuthContextProvider } from "../store/auth-context";
+import ConsultationContextProvider from "../store/consultation-context";
 
 function MyApp({ Component, pageProps }) {
   const [isLogedIn, setIsLoggedIn] = useState(false);
@@ -72,7 +73,9 @@ function MyApp({ Component, pageProps }) {
       );
     }
   };
-  return loginChange();
+  return (
+    <ConsultationContextProvider>{loginChange()}</ConsultationContextProvider>
+  );
 }
 
 export default MyApp;
