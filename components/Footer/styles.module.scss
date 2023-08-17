@@ -9,6 +9,8 @@
 .imageContainer {
   display: flex;
   justify-content: center;
+  max-width: 400px;
+  margin: auto;
 }
 .telephone {
   text-align: center;

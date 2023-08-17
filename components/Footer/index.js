@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
-
+import LegitScriptCertificate from "../LegitScriptCertificate";
 import { Container, Image, Row } from "react-bootstrap";
 
 export default function Footer() {
@@ -21,10 +21,10 @@ export default function Footer() {
           plan. Users must pay the price presented during the checkout process.
         </main>
       </div>
-
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.imageContainer}>
+            <LegitScriptCertificate />
             <Image
               src="/assets/homepage/logo-footer.png"
               height={45}

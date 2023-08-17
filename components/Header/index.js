@@ -90,7 +90,6 @@ export default function Header(props) {
               <Link href="/contact" passHref>
                 <Nav.Link className={styles.link}>Contact</Nav.Link>
               </Link>
-
               {props.header ? (
                 <Link href="/account" passHref>
                   <Nav.Link className={styles.link}>Account</Nav.Link>
