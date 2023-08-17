@@ -63,7 +63,6 @@ export default function Footer() {
         <div className="container">
           <div className={styles.imageContainer}>
             <div>
-              Ovde Negde
               <Script
                 __dangerouslydisablesanitizers={["Script"]}
                 type="text/javascript"

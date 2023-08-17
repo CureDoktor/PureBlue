@@ -1025,7 +1025,7 @@ export default function Home() {
                     <Col>
                       <h3>x6</h3>
                       <p className={styles.miligrams}>
-                        <span className={styles.mg}>30 MG</span> <br />{" "}
+                        <span className={styles.mg}>30 MG</span> <br />
                         Sildenafil <br />
                       </p>
                       <Image

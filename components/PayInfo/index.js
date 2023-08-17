@@ -93,7 +93,6 @@ export default function PayInfo(props) {
               Incorrect Expiration Date
             </Form.Control.Feedback>
           </Form.Group>
-
           <Form.Group as={Col} controlId="cvv">
             <Form.Control
               required
