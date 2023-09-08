@@ -86,7 +86,7 @@ export default function Home() {
                 </div>
                 <div className={styles.bgImage}>
                   <Image
-                    src="/assets/homepage/things.png"
+                    src="/assets/homepage/someChecks.png"
                     className={styles.ffImage}
                     height={181}
                     width={435}
@@ -140,7 +140,7 @@ export default function Home() {
         <div className={styles.fieldThreeBlue}>
           <Container>
             <Row className="px-md-5 mx-md-5">
-              <Col xs={6}>
+              <Col xs={6} sm={3}>
                 <Image
                   src="/assets/homepage/integrity.png"
                   height={222}
@@ -148,7 +148,7 @@ export default function Home() {
                 />
                 <p>Integrity</p>
               </Col>
-              <Col xs={6}>
+              <Col xs={6} sm={3}>
                 <Image
                   src="/assets/homepage/convenience.png"
                   height={222}
@@ -156,7 +156,7 @@ export default function Home() {
                 />
                 <p>Convenience</p>
               </Col>
-              <Col xs={6}>
+              <Col xs={6} sm={3}>
                 <Image
                   src="/assets/homepage/affordability.png"
                   height={222}
@@ -164,7 +164,7 @@ export default function Home() {
                 />
                 <p>Affordability</p>
               </Col>
-              <Col xs={6}>
+              <Col xs={6} sm={3}>
                 <Image
                   src="/assets/homepage/confidentiality.png"
                   height={222}
@@ -251,35 +251,6 @@ export default function Home() {
             <h4>About PureBlue</h4>
             <div className={styles.expand}>
               <Accordion defaultActiveKey="0">
-                <Card className={styles.cardHeader}>
-                  <Card.Header className={styles.header}>
-                    <ContextAwareToggle
-                      className={styles.headerOne}
-                      eventKey="0"
-                    >
-                      <Row>
-                        <Col xs={2} sm={1} className={styles.plus}>
-                          <p>+</p>
-                        </Col>
-                        <Col className={styles.textPart} xs={10} sm={11}>
-                          What is PureBlue?
-                        </Col>
-                      </Row>
-                    </ContextAwareToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="0">
-                    <Card.Body>
-                      PureBlue is an online outlet that links potential patients
-                      who need a more convenient way to procure E.D. medication
-                      legally with a doctor’s approval. PureBlue provides a
-                      complete infrastructure that provides potential patients
-                      with convenient options that do not require an in-person
-                      doctor’s visit, but maintains the supervision of medical
-                      doctors for the prescription of erectile dysfunction
-                      medication.
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
                 <Card className={styles.cardHeader}>
                   <Card.Header className={styles.header}>
                     <ContextAwareToggle
