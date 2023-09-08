@@ -55,475 +55,200 @@ export default function Home() {
             <div className={styles.fieldOne}>
               <Col md={{ span: 7, offset: 5 }}>
                 <div className={styles.fieldOneText}>
-                  <div className={styles.callUs}>
+                  <div className={styles.callUs + " d-flex flex-row-reverse"}>
                     <Link href="tel: 1-888-534-8977">
                       <a>
-                        Call Us Anytime:{" "}
-                        <span className={styles.primaryColor}>
-                          1-888-534-8977
+                        <span className={styles.callToll}>
+                          Call toll free to order:
                         </span>
+                        <div className={styles.primaryColor}>
+                          1-888-534-8977
+                        </div>
                       </a>
                     </Link>
+                    <div className="pt-2 pe-2">
+                      <Image
+                        src="/assets/homepage/phone-image.png"
+                        width={40}
+                        height={40}
+                        className={styles.phoneImage}
+                      />
+                    </div>
                   </div>
                   <h2>
-                    Your #1 Source <br className={styles.brMobile} /> for
-                    Branded and
-                    <br className={styles.brMobile} /> Generic E.D. Pills
+                    Your #1 Portal for Convenient, Safe, and Affordable ED
+                    Telehealth Services
                   </h2>
+                  <p className={styles.blueText}>
+                    Consult with our network of US-licensed physicians for your
+                    ED medication needs anytime, anywhere!{" "}
+                  </p>
                 </div>
                 <div className={styles.bgImage}>
                   <Image
-                    src="/assets/homepage/banner-1-desktop.png"
+                    src="/assets/homepage/things.png"
                     className={styles.ffImage}
-                    height={440}
-                    width={800}
+                    height={181}
+                    width={435}
                   />
                 </div>
               </Col>
             </div>
           </Container>
         </div>
-        <div className={styles.fieldTwo}>
-          <Container className={styles.container}>
-            <p className="d-none d-md-block">Pure Quality</p>
-            <p className="d-none d-md-block">•</p>
-            <p className="d-none d-md-block">Safe</p>
-            <p className="d-none d-md-block">•</p>
-            <p className="d-none d-md-block">Regulated</p>
-            <p className="d-none d-md-block">•</p>
-            <p className="d-none d-md-block">Consistent Results</p>
-            <p className="d-block d-md-none">
-              Pure Quality • Safe • <br /> Regulated • Consistent Results
+        <div className={styles.darkBluePart}>
+          <p>
+            PureBlue simplifies your ED needs by bridging the gap between US
+            healthcare providers and affordable medication. Get the help you
+            need with PureBlue Telehealth today!
+          </p>
+        </div>
+        <div className={styles.twoField}>
+          <Container>
+            <h2>What is PureBlue?</h2>
+            <p>
+              PureBlue is a digital Telehealth service for men that connects you
+              to US-licensed physicians for treatment of sexual health, hair
+              loss treatments, and wellness. We created an entire network of
+              US-licensed and US-based providers to access healthcare online and
+              receive prescribed medications discreetly by mail. Supporting our
+              network of providers is a team of highly qualified professionals
+              who have been key contributors in providing solutions for male
+              sexual health and wellness services for decades, across countless
+              distribution channels.
+            </p>
+            <h2>Our Goal</h2>
+            <p>
+              Our primary focus is helping men deal with the barriers to
+              healthcare by connecting them with US-licensed physicians through
+              a hassle-free telehealth visit. Some states also require a phone
+              or video chat with your doctor or nurse practitioner. If you are
+              prescribed medication, a US-licensed pharmacy will deliver genuine
+              medication directly to your doorstep.
+            </p>
+            <h2>Why choose PureBlue?</h2>
+            <p>
+              Our mission is built on Four pillars of trust. Integrity,
+              Convenience, Affordability, and Confidentiality - to provide
+              high-quality healthcare services while maintaining the highest
+              standards. We make it convenient for men who want the take control
+              of their sexual health and well-being by helping them connect with
+              US-licensed physicians from the comfort of their own homes.
             </p>
           </Container>
         </div>
-        <div className={styles.fieldThree}>
+        <div className={styles.fieldThreeBlue}>
           <Container>
-            <Row className="justify-content-center align-items-center">
-              <Col md={5}>
-                <div className="d-flex justify-content-center">
-                  <Image
-                    src="/assets/homepage/pills.png"
-                    width={320}
-                    height={430}
-                  />
-                </div>
+            <Row className="px-md-5 mx-md-5">
+              <Col xs={6}>
+                <Image
+                  src="/assets/homepage/integrity.png"
+                  height={222}
+                  width={232}
+                />
+                <p>Integrity</p>
               </Col>
-              <Col md={7}>
-                <ul>
-                  <li>
-                    <Check className={styles.checkmark} /> Genuine Sildenafil
-                    Formulation from Pfizer
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> PureBlue ED focused
-                    online medical support and consultation*
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> FDA and CGMP
-                    compliant laboratory
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> Convenient and easy
-                    prescription pills
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> Total Privacy Promise
-                  </li>
-                  <li>
-                    <Check className={styles.checkmark} /> Best price
-                    guaranteed!
-                  </li>
-                </ul>
-                <p>
-                  *Prescriptions are provided pending on the online evaluation
-                  of an affiliated PureBlue provider
-                </p>
+              <Col xs={6}>
+                <Image
+                  src="/assets/homepage/convenience.png"
+                  height={222}
+                  width={232}
+                />
+                <p>Convenience</p>
+              </Col>
+              <Col xs={6}>
+                <Image
+                  src="/assets/homepage/affordability.png"
+                  height={222}
+                  width={232}
+                />
+                <p>Affordability</p>
+              </Col>
+              <Col xs={6}>
+                <Image
+                  src="/assets/homepage/confidentiality.png"
+                  height={222}
+                  width={232}
+                />
+                <p>Confidentiality</p>
               </Col>
             </Row>
-            <h2>
-              PureBlue gives you the best quality, price, and performance of
-              generic sildenafil pills without jumping through hoops! Get your
-              E.D. pills fast and easy with PureBlue!
-            </h2>
           </Container>
-          <div className={styles.pillsBg}>
-            <Container>
-              <Col md={{ span: 8, offset: 4 }}>
-                <Image
-                  src="/assets/homepage/chart.png"
-                  height={350}
-                  width={800}
-                />
-              </Col>
-            </Container>
-          </div>
         </div>
         <div className={styles.fieldFour}>
           <Container>
-            <div className="container">
-              <h3>Generic E.D. pills VS Branded E.D. Pills</h3>
-              <p>
-                Pfizer’s exclusive market rights to sildenafil(brand name
-                Viagra) ended after a 20-year domination of the erectile
-                dysfunction(E.D.) market, and now men can get genuine sildenafil
-                pills at a significantly lower price .Generic pills in no way
-                diminish the quality and effectiveness of E.D. pills as other
-                companies can manufacture generic E.D. pills in the same quality
-                and performance as branded pills. <br />
-                <br />
-                Generic sildenafil pills can be just as effective and potent as
-                Viagra, provided that the pills are made by laboratories in the
-                United States that are certified to produce sildenafil pills in
-                the same potency and active ingredients as Viagra.
-              </p>
-              <h3>
-                How Pure<span className={styles.secondaryColor}>Blue</span>
-                Makes it Work
-              </h3>
-              <p>
-                PureBlue gives you the best price on generic sildenafil pills
-                without sacrificing quality, effectiveness, and potency of your
-                E.D. pills. We take pride in operating a lean business that cut
-                out all the unnecessary expenses such as endorsements, TV and
-                radio advertising, and over-the-top marketing schemes and simply
-                let our quality and service do the talking.
-                <br />
-                <br />
-                <b>
-                  Let’s not kid ourselves – celebrities have people who can get
-                  them anything they need, including E.D. pills, and spending
-                  heavily on celebrity endorsements isn’t our style. We care
-                  more about what you need. Safe, reliable, and effective E.D.
-                  pills without breaking the bank.{" "}
-                </b>
-                <br />
-                <br /> We know how important it is to get consistent and
-                dependable results from E.D. pills, and we want our customers to
-                never worry about E.D. again in their lives. PureBlue is all
-                about bringing back the mojo that made life exciting, and we
-                won’t lethigh prices get in the way of making that happen for
-                all of our customers.
-              </p>
-            </div>
-          </Container>
-        </div>
-        <div className={styles.fieldFive}>
-          <div className={styles.boxBg}>
-            <Container>
-              <div className={styles.blueLine}>
-                <Row className="align-items-center">
-                  <Col md={7}>
-                    <h2>
-                      SAFE <br />
-                      <span className={styles.secondaryColor}>DISCREET</span>
-                      <br /> CONVENIENT
-                    </h2>
-                    <h4>
-                      Get Genuine Sildenafil Pills Online the RIGHT Way! The
-                      right way doesn’t have to be inconvenient. <br />
-                      <br />
-                      Pure<span className={styles.primaryColor}>Blue </span>
-                      makes it EASY.
-                    </h4>
-                  </Col>
-                </Row>
-              </div>
-            </Container>
-          </div>
-          <Container>
-            <div className={styles.getRight}>
-              <h3>Get the right E.D. treatment for you – PRONTO.</h3>
-              <p>
-                What’s the point of getting your E.D. pills online if you spend
-                days jumping through hoops just to get the treatment you need?
-                PureBlue made it easy to get the answers, treatments, and
-                prescriptions you need. Our affiliated providers are on standby
-                to evaluate your medical profile to ensure the safety of your
-                health and your medical eligibility to take E.D. medication.{" "}
-                <br />
-                <br />
-                <b>
-                  Instead of waiting for your doctor’s schedule to open up for
-                  an in-person visit, or spending days trying to get an E.D.
-                  prescription online, you can complete the entire process with
-                  PureBlue in 10 minutes or less. No shortcuts, no gray areas.
-                  Everything is done perfectly by the book – the smart way.
-                </b>
-                <br /> <br /> Never sacrifice quality and safety for
-                convenience, and PureBlue is here to ensure that you get exactly
-                what you need, without the hassle. Our order process is
-                optimized to make everything simple, easy, and convenient – just
-                the way you like it.
-              </p>
-              <div className={styles.grayField}>
+            <Row>
+              <Col md={6}>
+                <Image
+                  src="/assets/homepage/rectangle-1.png"
+                  height={312}
+                  width={573}
+                />
+                <h2>Convenient Healthcare</h2>
                 <p>
-                  Important Safety Information <br />
-                  Do not take sildenafil (sildenafil citrate) or tadalafil if
-                  you take medication containing nitrates or guanylate cyclase
-                  stimulators as this could cause an unsafe drop in blood
-                  pressure or if you are allergic to sildenafil, tadalafil or
-                  any ingredients in either medication. Discuss your health with
-                  your doctor to ensure that you are healthy enough for sex. If
-                  you experience chest pain, dizziness, or nausea during sex,
-                  seek immediate medical help. Sildenafil and tadalafil can
-                  cause serious side effects.
+                  With healthcare costs increasing year after year, PureBlue
+                  made access to basic healthcare possible by connecting
+                  individuals with qualified physicians and specialists through
+                  asynchronous telehealth medicine. By partnering with the
+                  widest network of US-licensed physicians, PureBlue helps you
+                  get quality healthcare, fast, easy, and affordable.{" "}
                 </p>
-              </div>
-            </div>
-          </Container>
-        </div>
-        <div className={styles.fieldSix}>
-          <Container>
-            <h2 className="d-none d-md-block">
-              Sildenafil or tadalafil?
-              <br /> Which E.D. treatment suits your lifestyle?
-            </h2>
-            <h2>
-              Can You Get SAFE, Effective, <br className="d-none d-md-block" />
-              and High-Quality E.D. Pills Online? <br />
-              <br />
-              <span className={styles.truth}>The TRUTH will surprise you!</span>
-            </h2>
-            <h4>
-              Learn the dark truth about 90% of E.D. pills online before you
-              decide!
-            </h4>
-          </Container>
-        </div>
-        <div className={styles.fieldSeven}>
-          <Container>
-            <h2>
-              Not all E.D. pills sold online are created equal – and here’s why.
-            </h2>
-            <p>
-              <b>E.D. pills are the most counterfeited pills in the world</b>,
-              and the generics market is full of counterfeit pills that rob you
-              of your hard-earned money – and that’s not even the worst of it.
-              Counterfeit pills are so dangerous that the government has stepped
-              in to try and stop the influx of fake pills in the country – but
-              you can still find these pills almost everywhere you look.
-              <br />
-              <br />
-              Counterfeit pills are made by companies overseas and are shipped
-              to the United States through illegal means, and despite the best
-              efforts to put an end to the trade, more and more pills still get
-              through. <br />
-              <br />
-              Think about it.
-              <br />
-              <br />
-              <b>
-                You don’t know what’s inside these pills – and the worst part
-                is, you don’t know which these pills are.
-              </b>{" "}
-              The companies that made these pills are not bound by the same
-              rules that American companies follow, and there’s no limit to the
-              kind of damage these pills can do to your body.
-            </p>
-            <div className="d-none d-md-block">
-              <Image
-                src="/assets/homepage/images.png"
-                height={970}
-                width={1206}
-              />
-            </div>
-            <div className="d-block d-md-none">
-              <div className={styles.images_div}>
-                <div>
-                  <Image
-                    src="/assets/homepage/news-image-1.png"
-                    height={530}
-                    width={436}
-                  />
-                </div>
-                <div className={styles.images_part}>
-                  <Image
-                    src="/assets/homepage/news-image-2.png"
-                    height={458}
-                    width={404}
-                    layout="responsive"
-                  />
-                </div>
-                <div className={styles.images_part_2}>
-                  <Image
-                    src="/assets/homepage/news-image-3.png"
-                    height={434}
-                    width={465}
-                    layout="responsive"
-                  />
-                </div>
-                <div className={styles.images_part_3}>
-                  <Image
-                    src="/assets/homepage/news-image-4.png"
-                    height={471}
-                    width={401}
-                    layout="responsive"
-                  />
-                </div>
-                <div className={styles.images_part_4}>
-                  <Image
-                    src="/assets/homepage/news-image-5.png"
-                    height={406}
-                    width={322}
-                    layout="responsive"
-                  />
-                </div>
-                <div className={styles.images_part_5}>
-                  <Image
-                    src="/assets/homepage/news-image-6.png"
-                    height={400}
-                    width={350}
-                    layout="responsive"
-                  />
-                </div>
-              </div>
-            </div>
-            <p>
-              <b>
-                If there’s a 9 in 10 chance that you’ll end up with a
-                counterfeit pill, would you still buy these pills?
-              </b>
-              <br />
-              <br /> Getting your much-needed E.D. pill supply online may be
-              convenient, but you sacrifice quality, safety, and effectiveness
-              in the process. Not every pill you buy online matches the potency
-              and quality you expect and worse – you don’t get the product you
-              want. <br />
-              <br />
-              The pills you buy online can contain only trace amounts of the
-              actual E.D. pill you want to buy – and they do this to trick you
-              into buying more and more of their pills. Not only is this unsafe,
-              but it is also a huge waste of your hard-earned money. <br />{" "}
-              <br /> Fake pills take all the fun out of the real benefits of
-              true E.D. pills. If you have sexual health problems, genuine E.D.
-              pills are more than just pills you take to enjoy sex; there is a
-              medical need for you to take real E.D. pills, so you can regain
-              normal sexual function. <br /> <br /> Sexual health is a serious
-              matter, and that means that you should avoid fake pills as much as
-              possible, no matter how affordable, convenient, or persuasive they
-              may be.
-              <br />
-              <br /> There is a better way to get high-quality, genuine E.D.
-              pills that are produced by legitimate pharmaceutical laboratories,
-              based here in the United States.{" "}
-            </p>
-          </Container>
-        </div>
-        <div className={styles.fieldEight}>
-          <Container>
-            <div className={styles.pillPart}>
-              <Row>
-                <Col md={7}>
-                  <h2>Generic E.D. Pill Red Flags</h2>
-                  <h3>
-                    Watch out for these red flags when buying generic E.D.
-                    pills!{" "}
-                  </h3>
-                  <ul>
-                    <li>
-                      <Check className={styles.checkmark} /> Fly-by-night
-                      companies
-                    </li>
-                    <li>
-                      <Check className={styles.checkmark} /> Offshore-based
-                      companies{" "}
-                    </li>
-                    <li>
-                      <Check className={styles.checkmark} /> Manufactured
-                      overseas
-                    </li>
-                    <li>
-                      <Check className={styles.checkmark} /> Non-prescription
-                      E.D. pill (over-the-counter quality pills)
-                    </li>
-                    <li>
-                      <Check className={styles.checkmark} /> Unapproved and/or
-                      unlicensed source
-                    </li>
-                  </ul>
-                </Col>
-                <Col md={5}>
-                  <Image
-                    src="/assets/homepage/fake-pill.png"
-                    height={340}
-                    width={470}
-                    layout="responsive"
-                  />
-                </Col>
-                <h4>
-                  The FDA* has issued a warning to consumers that there are
-                  unapproved E.D. pills circulating online!
-                </h4>
+              </Col>
+              <Col md={6}>
+                <Image
+                  src="/assets/homepage/rectangle-2.png"
+                  height={312}
+                  width={573}
+                />
+                <h2>Affordable Medication</h2>
                 <p>
-                  * FDA warns consumers not to use unapproved erectile
-                  dysfunction products advertised on the radio <br />
-                  https://www.fda.gov/drugs/drug-safety-and-availability/fda-warns-consumers-not-use-unapproved-erectile-dysfunction-products-advertised-radio
+                  Building on our goal to make healthcare convenient, PureBlue’s
+                  telehealth services connect customers to US pharmacies
+                  offering the best prices for ED medication. Our network
+                  bridges healthcare providers with pharmacies to quickly ship
+                  your prescription medication, straight from the pharmacy to
+                  your doorstep.
                 </p>
-              </Row>
-            </div>
-            <h2 className={styles.satisfied}>
-              Pure<span className={styles.primaryColor}>Blue</span> Satisfied
-              Customers
-            </h2>
-            <div className={styles.satisfiedCustomers}>
-              <Row>
-                <Col sm={4}>
-                  <div className={styles.rectangle}>
-                    <p>
-                      “Straightforward, no-nonsense service from start to
-                      finish. I get all the answers I needed, and I get them
-                      fast. No need to wait for weeks to get my doctor’s
-                      appointment just to refill my prescription. Saves a lot of
-                      time and money – and pills work 100% the same as the ones
-                      I got from the pharmacy!”
-                    </p>
-                    <p className={styles.member}>
-                      <span className={styles.secondaryColor}>Pure</span>
-                      <span className={styles.primaryColor}>Blue</span> Member
-                      <PatchCheck className={styles.patchCheck} />
-                    </p>
-                  </div>
-                </Col>
-                <Col sm={4}>
-                  <div className={styles.rectangle}>
-                    <p>
-                      “I’ve put off getting E.D. pills, although I needed them
-                      for years now. PureBlue made everything so easy, I wonder
-                      why I put off getting pills in the first place. Everything
-                      is 100% private and discreet, just the way I prefer it to.
-                      They made it easy for everyone to get the help they need.”
-                    </p>
-                    <p className={styles.member}>
-                      <span className={styles.secondaryColor}>Pure</span>
-                      <span className={styles.primaryColor}>Blue</span> Member
-                      <PatchCheck className={styles.patchCheck} />
-                    </p>
-                  </div>
-                </Col>
-                <Col sm={4}>
-                  <div className={styles.rectangle}>
-                    <p>
-                      “I’ve paid thousands of dollars out of pocket for Viagra
-                      in the last few years, and I just discovered that there’s
-                      an easier way to get it online. PureBlue saved me a lot of
-                      dollars, and the stuff works great. Same outcome, without
-                      spending a fortune.”
-                    </p>
-                    <p className={styles.member}>
-                      <span className={styles.secondaryColor}>Pure</span>
-                      <span className={styles.primaryColor}>Blue</span> Member
-                      <PatchCheck className={styles.patchCheck} />
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-            </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={6}>
+                <Image
+                  src="/assets/homepage/rectangle-3.png"
+                  height={312}
+                  width={573}
+                />
+                <h2>Confidential Consultations</h2>
+                <p>
+                  PureBlue telehealth services has a primary focus on keeping
+                  all aspects of your experience affordable and accessible,
+                  while adhering to the stringent requirements of the Healthcare
+                  Insurance Portability and Accountability Act of 1996 (HIPAA),
+                  to protect your privacy and personal data.
+                </p>
+              </Col>
+              <Col md={6}>
+                <Image
+                  src="/assets/homepage/rectangle-4.png"
+                  height={312}
+                  width={573}
+                />
+                <h2>Straightforward Service</h2>
+                <p>
+                  PureBlue simplifies the entire telehealth process with our
+                  straightforward healthcare costs. Our system makes it possible
+                  to provide FREE ED asynchronous telehealth consultations,
+                  without hidden charges, pharmacy fees, or other add-on charges
+                  to inflate costs.
+                </p>
+              </Col>
+            </Row>
           </Container>
         </div>
         <div className={styles.fieldNine}>
           <Container>
             <h2>Frequently Asked Questions</h2>
+            <h4>About PureBlue</h4>
             <div className={styles.expand}>
               <Accordion defaultActiveKey="0">
                 <Card className={styles.cardHeader}>
@@ -566,19 +291,22 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          Is E.D. normal?
+                          What is PureBlue?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="1">
                     <Card.Body>
-                      ED is one of the most common problems that men in the
-                      United States face. About 52% of American men between the
-                      ages of 40 and 70 years of age experience ED, and PureBlue
-                      provides a convenient and affordable way for men to
-                      experience stronger erections without the risk of taking
-                      low-quality ED pills produced overseas.
+                      PureBlue is a digital telehealth company that connects men
+                      who may be suffering from ED with healthcare providers in
+                      a more convenient and affordable way as opposed to
+                      conventional and uncomfortable in-person doctor visits.
+                      PureBlue provides a complete infrastructure that provides
+                      potential patients with convenient options that do not
+                      require an in-person doctor’s visit, but maintain the
+                      supervision of licensed US physicians through telehealth
+                      services.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -593,20 +321,16 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          Are PureBlue pills FDA approved?
+                          Who is PureBlue for?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="2">
                     <Card.Body>
-                      PureBlue pills contain the active ingredients of
-                      sildenafil and tadalafil, the same active ingredients used
-                      in the branded ED medications Viagra and Cialis. Customers
-                      have the option to buy branded Viagra and Cialis, which
-                      are FDA approved for the treatment of erectile
-                      dysfunction. The ED medications sold through PureBlue are
-                      prescribed by PureBlue-affiliated physicians.
+                      PureBlue is for men who want an easy, convenient, and
+                      affordable way to access quality healthcare online, from
+                      the comfort of their own home.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -621,25 +345,18 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          What is the difference between sildenafil and
-                          tadalafil?
+                          Can I get a prescription with PureBlue?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="3">
                     <Card.Body>
-                      Sildenafil and tadalafil are FDA-approved medications for
-                      the treatment of erectile dysfunction. Both medications
-                      inhibit the phosphodiesterase-5 enzyme (PDE-5), which
-                      results in the dilation of blood vessels in the penile
-                      region, which makes erections easier to achieve. The main
-                      difference between the two medications is that sildenafil
-                      is recommended to be taken 30-60 minutes before sexual
-                      activity and remains active in the body for 4 hours, while
-                      tadalafil is also recommended to be taken 30-60 minutes
-                      before sexual activity and remains active in the body for
-                      36 hours.
+                      PureBlue connects customers with US-licensed physicians to
+                      address their health needs. If medication is required,
+                      your assigned healthcare provider will issue a
+                      prescription that will be fulfilled by a pharmacy within
+                      Pure Blue’s network.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -654,22 +371,17 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          Can I buy PureBlue pills anywhere in the United
-                          States?
+                          Are PureBlue physicians licensed?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="4">
                     <Card.Body>
-                      PureBlue is an online outfit that links potential patients
-                      who need a more convenient way to procure erectile
-                      dysfunction medication legally with a doctor’s approval.
-                      PureBlue provides a complete infrastructure that provides
-                      potential patients with convenient options that do not
-                      require an in-person doctor’s visit, but maintains the
-                      supervision of medical doctors for the prescription of
-                      erectile dysfunction medication.
+                      Yes. All physicians within the PureBlue network are
+                      licensed in the US and are legally permitted to practice
+                      medicine and asynchronous telehealth in states that allow
+                      asynchronous telehealth.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -684,20 +396,17 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          Who is PureBlue for?
+                          Is my personal information safe?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="5">
                     <Card.Body>
-                      PureBlue is for prospective patients who experience the
-                      symptoms of E.D. and want to get high-quality, regulated,
-                      and genuine E.D. medication without having to go through
-                      the process of an in-person visit with their physician.
-                      PureBlue offers the best price on both sildenafil and
-                      tadalafil pills, without sacrificing the quality, potency,
-                      or effectiveness of the product.
+                      Yes. PureBlue adheres to the strict guidelines and
+                      regulations that protect patient health information
+                      according to the Healthcare Insurance Portability and
+                      Affordability Act of 1996 (HIPAA).
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -712,17 +421,14 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          Do I need a prescription to get PureBlue pills?
+                          Is PureBlue available in South Carolina?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="6">
                     <Card.Body>
-                      During the order process, our affiliated providers will
-                      evaluate your medical eligibility to take your chosen E.D.
-                      medication after completing your medical profile and
-                      digital consultation.
+                      No. PureBlue is not available in South Carolina
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -737,19 +443,15 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          What makes PureBlue unique?
+                          Why is TryPureBlue not available in South Carolina?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="7">
                     <Card.Body>
-                      PureBlue utilizes the same active ingredients used by
-                      Viagra and Cialis to ensure high-quality results. PureBlue
-                      only sources sildenafil and tadalafil pills from FDA and
-                      CGMP-compliant facilities in the United States that have a
-                      long-established reputation for providing genuine,
-                      high-quality E.D. medication.
+                      Due to current state laws and regulations, TryPureBlue is
+                      not able to operate in South Carolina at this time.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -764,19 +466,18 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          Is sharing my medical history required to get PureBlue
-                          Pills?
+                          Will TryPureBlue be available in South Carolina in the
+                          future?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
                   <Accordion.Collapse eventKey="8">
                     <Card.Body>
-                      To provide an accurate medical profile to our affiliated
-                      providers, we require prospective customers to complete a
-                      medical profile, which may include certain questions that
-                      address the compatibility of the treatment offered to your
-                      current state of health.
+                      We are always evaluating opportunities to expand our
+                      services to more states. However, at this time, we cannot
+                      confirm when or if TryPureBlue will be available in South
+                      Carolina.
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
@@ -791,85 +492,13 @@ export default function Home() {
                           <p>+</p>
                         </Col>
                         <Col className={styles.textPart} xs={10} sm={11}>
-                          Is TryPureBlue available in South Carolina?
-                        </Col>
-                      </Row>
-                    </ContextAwareToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="9">
-                    <Card.Body>
-                      No, TryPureBlue is currently not available in South
-                      Carolina.
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-                <Card className={styles.cardHeader}>
-                  <Card.Header className={styles.header}>
-                    <ContextAwareToggle
-                      className={styles.headerOne}
-                      eventKey="10"
-                    >
-                      <Row>
-                        <Col xs={2} sm={1} className={styles.plus}>
-                          <p>+</p>
-                        </Col>
-                        <Col className={styles.textPart} xs={10} sm={11}>
-                          Why is TryPureBlue not available in South Carolina?
-                        </Col>
-                      </Row>
-                    </ContextAwareToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="10">
-                    <Card.Body>
-                      Due to certain state laws and regulations, TryPureBlue is
-                      not able to operate in South Carolina at this time.
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-                <Card className={styles.cardHeader}>
-                  <Card.Header className={styles.header}>
-                    <ContextAwareToggle
-                      className={styles.headerOne}
-                      eventKey="11"
-                    >
-                      <Row>
-                        <Col xs={2} sm={1} className={styles.plus}>
-                          <p>+</p>
-                        </Col>
-                        <Col className={styles.textPart} xs={10} sm={11}>
-                          Will TryPureBlue be available in South Carolina in the
-                          future?
-                        </Col>
-                      </Row>
-                    </ContextAwareToggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey="11">
-                    <Card.Body>
-                      We are always evaluating opportunities to expand our
-                      services to more states. However, at this time, we cannot
-                      confirm when or if TryPureBlue will be available in South
-                      Carolina.
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-                <Card className={styles.cardHeader}>
-                  <Card.Header className={styles.header}>
-                    <ContextAwareToggle
-                      className={styles.headerOne}
-                      eventKey="12"
-                    >
-                      <Row>
-                        <Col xs={2} sm={1} className={styles.plus}>
-                          <p>+</p>
-                        </Col>
-                        <Col className={styles.textPart} xs={10} sm={11}>
                           Can I still access TryPureBlue if I am traveling to a
                           different state?
                         </Col>
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="12">
+                  <Accordion.Collapse eventKey="9">
                     <Card.Body>
                       Yes, if you are traveling to a state where TryPureBlue is
                       available, you can access our services as long as you have
@@ -884,7 +513,7 @@ export default function Home() {
                   <Card.Header className={styles.header}>
                     <ContextAwareToggle
                       className={styles.headerOne}
-                      eventKey="13"
+                      eventKey="10"
                     >
                       <Row>
                         <Col xs={2} sm={1} className={styles.plus}>
@@ -897,7 +526,7 @@ export default function Home() {
                       </Row>
                     </ContextAwareToggle>
                   </Card.Header>
-                  <Accordion.Collapse eventKey="13">
+                  <Accordion.Collapse eventKey="10">
                     <Card.Body>
                       We recommend regularly checking our website or contacting
                       our customer support team for the latest updates on our
@@ -906,319 +535,307 @@ export default function Home() {
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
+                <h4>About Asynchronous Telehealth</h4>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="11"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          What is Asynchronous Telehealth?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="11">
+                    <Card.Body>
+                      Asynchronous telehealth in the United States refers to a
+                      method of providing medical or healthcare services
+                      remotely, where the communication between the healthcare
+                      provider and the patient does not occur in real time.
+                      Instead, it involves the exchange of medical information,
+                      such as images, videos, medical records, or messages, at a
+                      time convenient for both the patient and the healthcare
+                      provider, without the need for simultaneous interaction.
+                      PureBlue offers asynchronous telehealth services to make
+                      access to healthcare more convenient and less
+                      time-consuming for both the patient and the healthcare
+                      provider, leading to lower overall healthcare costs for
+                      the patient.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="12"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Is Asynchronous Telehealth allowed in the United
+                          States?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="12">
+                    <Card.Body>
+                      Most states allow asynchronous telehealth in the United
+                      States, and state laws involving telehealth services are
+                      constantly evolving. Our system is constantly updated to
+                      reflect relevant changes in state laws that involve
+                      telehealth services.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="13"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Do I need to be in a live video conference during my
+                          consultation?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="13">
+                    <Card.Body>
+                      Our initial health questionnaire will provide sufficient
+                      information for your assigned healthcare provider to
+                      determine whether or not a synchronous (live) telehealth
+                      consultation is necessary. If your assigned healthcare
+                      provider requires additional information, you will receive
+                      a notification through our system, SMS, and e-mail.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="14"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Are PureBlue telehealth services free?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="14">
+                    <Card.Body>
+                      PureBlue only gets paid when a patient is prescribed
+                      medication after accessing our healthcare network. You are
+                      not responsible for the cost of the doctor visit, the cost
+                      of the medication, or any insurance fees.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <h4>About Payment Methods</h4>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="15"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Does PureBlue require health insurance?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="15">
+                    <Card.Body>
+                      No. PureBlue does not require health insurance. We aim to
+                      provide convenient and affordable telehealth service for
+                      men who need ED consultation.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="16"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Does PureBlue accept health insurance?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="16">
+                    <Card.Body>
+                      Currently, PureBlue does not accept health insurance.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="17"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          What payment methods does PureBlue accept?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="17">
+                    <Card.Body>
+                      Credit card is the preferred method of payment.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <h4>About Erectile Dysfunction</h4>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="18"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Is ED normal?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="18">
+                    <Card.Body>
+                      ED is one of the most common problems that men in the
+                      United States face. About 40%* of American men experience
+                      ED, and PureBlue provides a direct, convenient, and
+                      affordable way for men to experience stronger erections
+                      without the risk of taking low-quality ED pills produced
+                      overseas.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="19"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Can young men get erectile dysfunction?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="19">
+                    <Card.Body>
+                      Erectile dysfunction can affect men of all ages. Certain
+                      health conditions may bring about symptoms of erectile
+                      dysfunction regardless of your age. PureBlue is offered
+                      for men over 18 to help deal with symptoms of ED.
+                      PureBlue’s affiliated licensed physicians can evaluate
+                      your health status and recommend a safe and appropriate
+                      treatment plan to help you deal with erectile dysfunction.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="20"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          What is the difference between Sildenafil and
+                          Tadalafil?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="20">
+                    <Card.Body>
+                      Sildenafil and Tadalafil are FDA-approved medications for
+                      the treatment of erectile dysfunction. Both medications
+                      inhibit the phosphodiesterase-5 enzyme (PDE-5), which
+                      results in the dilation of blood vessels in the penile
+                      region, which makes erections easier to achieve. The main
+                      difference between the two medications is that Sildenafil
+                      is recommended to be taken 30-60 minutes before sexual
+                      activity and stays in the system for 4 hours, while
+                      Tadalafil remains active in the body for 36 hours.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+                <Card className={styles.cardHeader}>
+                  <Card.Header className={styles.header}>
+                    <ContextAwareToggle
+                      className={styles.headerOne}
+                      eventKey="21"
+                    >
+                      <Row>
+                        <Col xs={2} sm={1} className={styles.plus}>
+                          <p>+</p>
+                        </Col>
+                        <Col className={styles.textPart} xs={10} sm={11}>
+                          Are generic branded ED pills as effective as branded
+                          ED pills?
+                        </Col>
+                      </Row>
+                    </ContextAwareToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey="21">
+                    <Card.Body>
+                      Both generic-branded and branded (Viagra and Cialis) pills
+                      contain the same active component. Viagra contains
+                      Sildenafil, while Cialis contains Tadalafil, and all
+                      generic-branded erectile dysfunction pills available on
+                      PureBlue are consistent with the dosage and effectiveness
+                      offered by branded erectile dysfunction pills.
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
               </Accordion>
             </div>
-          </Container>
-        </div>
-        <div className={styles.fieldTen}>
-          <Container>
-            <h2>
-              Pure<span className={styles.blueText}>Blue</span> Makes it Easy
-            </h2>
-            <h3>
-              All you’ll ever pay for is the cost of your E.D. medication. No
-              insurance claims, no co-pays, no pharmacy refills. Even your free
-              shipping is on us!{" "}
-            </h3>
-            <Row>
-              <Col sm={4}>
-                <div className={styles.blueField}>
-                  <h2>With PureBlue</h2>
-                  <p>
-                    Choose a plan based on your lifestyle. <br />
-                    <br /> Provide your drivers license and complete your
-                    medical profile in two easy steps. <br />
-                    <br /> Get your E.D. pills via free 2-day shipping
-                  </p>
-                </div>
-              </Col>
-              <Col sm={4}>
-                <div className={styles.blueField}>
-                  <h2>Other Online E.D. Pills</h2>
-                  <p>
-                    Provide driver’s license for identification.
-                    <br />
-                    <br />
-                    Choose from 25 different options.
-                    <br />
-                    <br />
-                    Wait days for an approval.
-                    <br />
-                    <br />
-                    Pay above market value for the same ED pills.
-                    <br />
-                    <br />
-                    Get ED pills via standard mail.
-                  </p>
-                </div>
-              </Col>
-              <Col sm={4}>
-                <div className={styles.blueField}>
-                  <h2>Traditional Method</h2>
-                  <p>
-                    Look for a doctor affiliated with your insurance.
-                    <br />
-                    <br />
-                    Set an appointment.
-                    <br />
-                    <br />
-                    Take time off for your doctor’s appointment.
-                    <br />
-                    <br />
-                    Consult with the doctor to get a prescription.
-                    <br />
-                    <br />
-                    Travel to the pharmacy to get your medication.
-                  </p>
-                </div>
-              </Col>
-            </Row>
-            <h4 className="d-none d-md-block">
-              Getting the help you need doesn’t have to be more difficult than
-              the problem that you’re having. That’s why we made PureBlue more
-              convenient than any other provider today.
-            </h4>
-          </Container>
-        </div>
-        <div className={styles.fieldEleven}>
-          <Container>
-            <h2>CHOOSE YOUR PLAN</h2>
-            <div className={styles.plan}>
-              <Row>
-                <Col xs={6} md={{ span: 2, offset: 4 }}>
-                  <Button>SILDENAFIL</Button>
-                </Col>
-                <Col xs={6}>
-                  <Button>VIAGRA</Button>
-                </Col>
-              </Row>
-            </div>
-            <Row>
-              <Col sm={4}>
-                <div className={styles.planChange}>
-                  <div className={styles.topPlanChange}>
-                    <h2>Active</h2>
-                    <h1>
-                      $30 <span className={styles.only}>ONLY</span>
-                    </h1>
-                    <br />
-                    <p className={styles.miligrams}>
-                      <span className={styles.mg}>30MG</span> | 45MG
-                    </p>
-                    <Button onClick={() => history.push("/register")}>
-                      CHOOSE THIS PLAN
-                    </Button>
-                  </div>
-                  <Row>
-                    <Col>
-                      <Image
-                        src="/assets/homepage/pureblue-sachet.png"
-                        className={styles.ffImage}
-                        height={179}
-                        width={138}
-                      />
-                    </Col>
-                    <Col>
-                      <h3>x6</h3>
-                      <p className={styles.miligrams}>
-                        <span className={styles.mg}>30 MG</span> <br />
-                        Sildenafil <br />
-                      </p>
-                      <Image
-                        src="/assets/homepage/made-in-usa.png"
-                        className={styles.ffImage}
-                        height={32}
-                        width={70}
-                      />
-                    </Col>
-                  </Row>
-                </div>
-              </Col>
-              <Col sm={4}>
-                <div className={styles.planChange}>
-                  <div className={styles.topPlanChange}>
-                    <h2>Busy</h2>
-                    <h1>
-                      $30 <span className={styles.only}>ONLY</span>
-                    </h1>
-                    <br />
-                    <p className={styles.miligrams}>
-                      <span className={styles.mg}>30MG</span> | 45MG
-                    </p>
-                    <Button onClick={() => history.push("/register")}>
-                      CHOOSE THIS PLAN
-                    </Button>
-                  </div>
-                  <Row>
-                    <Col>
-                      <Image
-                        src="/assets/homepage/pureblue-sachet.png"
-                        className={styles.ffImage}
-                        height={179}
-                        width={138}
-                      />
-                    </Col>
-                    <Col>
-                      <h3>x10</h3>
-                      <p className={styles.miligrams}>
-                        <span className={styles.mg}>30 MG</span> <br />{" "}
-                        Sildenafil <br />
-                      </p>
-                      <Image
-                        src="/assets/homepage/made-in-usa.png"
-                        className={styles.ffImage}
-                        height={32}
-                        width={70}
-                      />
-                    </Col>
-                  </Row>
-                </div>
-              </Col>
-              <Col sm={4}>
-                <div className={styles.planChange}>
-                  <div className={styles.topPlanChange}>
-                    <h2>Popular</h2>
-                    <h1>
-                      $50 <span className={styles.only}>ONLY</span>
-                    </h1>
-                    <br />
-                    <p className={styles.miligrams}>
-                      <span className={styles.mg}>30MG</span> | 45MG
-                    </p>
-                    <Button onClick={() => history.push("/register")}>
-                      CHOOSE THIS PLAN
-                    </Button>
-                  </div>
-                  <Row>
-                    <Col>
-                      <Image
-                        src="/assets/homepage/pureblue-sachet.png"
-                        className={styles.ffImage}
-                        height={179}
-                        width={138}
-                      />
-                    </Col>
-                    <Col>
-                      <h3>x17</h3>
-                      <p className={styles.miligrams}>
-                        <span className={styles.mg}>30 MG</span> <br />{" "}
-                        Sildenafil <br />
-                      </p>
-                      <Image
-                        src="/assets/homepage/made-in-usa.png"
-                        className={styles.ffImage}
-                        height={32}
-                        width={70}
-                      />
-                    </Col>
-                  </Row>
-                </div>
-              </Col>
-              {/* <Col sm={3}>
-                <div className={styles.planChange}>
-                  <div className={styles.topPlanChange}>
-                    <h2>Pro</h2>
-                    <h1>
-                      $90 <span className={styles.only}>ONLY</span>
-                    </h1>
-                    <br />
-                    <p className={styles.miligrams}>
-                      <span className={styles.mg}>30MG</span> | 45MG
-                    </p>
-                    <Button>CHOOSE THIS PLAN</Button>
-                  </div>
-                  <Row>
-                    <Col>
-                      <Image
-                        src="/assets/homepage/pureblue-sachet.png"
-                        className={styles.ffImage}
-                        height={179}
-                        width={138}
-                      />
-                    </Col>
-                    <Col>
-                      <h3>x34</h3>
-                      <p className={styles.miligrams}>
-                        <span className={styles.mg}>30 MG</span> <br />{" "}
-                        Sildenafil <br />
-                      </p>
-                      <Image
-                        src="/assets/homepage/made-in-usa.png"
-                        className={styles.ffImage}
-                        height={32}
-                        width={70}
-                      />
-                    </Col>
-                  </Row>
-                </div>
-              </Col> */}
-            </Row>
-            {/* <div className={styles.containerPlan}>
-              <Row>
-                <Col sm={5}>
-                  <div className={styles.planType}>
-                    <p className={styles.planName}>Sildenafil Elite</p>
-                    <p>6 pills 25mg</p>
-                  </div>
-                  <div className={styles.planType}>
-                    <p className={styles.planName}>Sildenafil Elite Plus</p>
-                    <p>6 pills 50mg</p>
-                  </div>
-                  <div className={styles.planType}>
-                    <p className={styles.planName}>Sildenafil Max</p>
-                    <p>12 pills 25mg</p>
-                  </div>
-                  <div className={styles.planType}>
-                    <p className={styles.planName}>Sildenafil Max Plus</p>
-                    <p> 12pills 50mg</p>
-                  </div>
-                  <h3>*Sildenafil Citrate is the active component in Viagra</h3>
-                </Col>
-                <Col sm={{ span: 6, offset: 1 }}>
-                  <div className={styles.plans}>
-                    <h3>All plans come with:</h3>
-                    <ul>
-                      <li>
-                        Licensed PureBlue Affiliated Medical Providers in the US
-                      </li>
-                      <li>Online consultation for Sildenafil or Tadalafil</li>
-                      <li>No appointment needed online consultation</li>
-                      <li>
-                        Professional customer service hotline & online medical
-                        support
-                      </li>
-                      <li>2-day discret shipping</li>
-                      <li>Total Privacy Promise</li>
-                    </ul>
-                    <Button className={styles.startOrder}>
-                      START YOUR ORDER NOW
-                    </Button>
-                  </div>
-                </Col>
-              </Row>
-            </div> */}
-            <Row className={styles.checkmarkBottom}>
-              <Col md={3}>
-                <Check className={styles.checkmark} />
-                Rx-only tablet
-              </Col>
-              <Col md={3}>
-                <Check className={styles.checkmark} />
-                FREE online consultation
-              </Col>
-              <Col md={3}>
-                <Check className={styles.checkmark} />
-                Discreet shipping
-              </Col>
-              <Col md={3}>
-                <Check className={styles.checkmark} />
-                Monthly refills
-              </Col>
-            </Row>
-            <p className={styles.gray_footer}>
-              *A prescription will only be written if deemed appropriate after
-              the digital consultation by the licensed medical provider
-            </p>
           </Container>
         </div>
       </main>
