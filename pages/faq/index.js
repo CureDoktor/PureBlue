@@ -49,58 +49,34 @@ export default function Faq() {
       <main className={styles.faqPage}>
         <Container>
           <h2>Frequently Asked Questions</h2>
-          <h3>About PureBlue</h3>
+
           <div className={styles.expand}>
+            <h4>About PureBlue</h4>
             <Accordion defaultActiveKey="0">
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle className={styles.headerOne} eventKey="0">
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        What is PureBlue?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="0">
-                  <Card.Body>
-                    PureBlue is a digital telehealth company that services men
-                    who need a direct, more convenient and affordable way to
-                    procure erectile dysfunction medication legally with a
-                    doctor’s approval. PureBlue provides a complete
-                    infrastructure that provides potential patients with
-                    convenient options that do not require an in-person doctor’s
-                    visit but maintain the supervision of licensed US physicians
-                    for the prescription of erectile dysfunction medication.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
               <Card className={styles.cardHeader}>
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="1">
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Who is PureBlue for?
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        What is PureBlue?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="1">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
+                    PureBlue is a digital telehealth company that connects men
+                    who may be suffering from ED with healthcare providers in a
+                    more convenient and affordable way as opposed to
+                    conventional and uncomfortable in-person doctor visits.
                     PureBlue provides a complete infrastructure that provides
                     potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    require an in-person doctor’s visit, but maintain the
+                    supervision of licensed US physicians through telehealth
+                    services.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -108,25 +84,20 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="2">
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Do I need a prescription to get PureBlue pills?
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Who is PureBlue for?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="2">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    PureBlue is for men who want an easy, convenient, and
+                    affordable way to access quality healthcare online, from the
+                    comfort of their own home.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -134,10 +105,10 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="3">
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
+                      <Col className={styles.textPart} xs={10} sm={11}>
                         Can I get a prescription with PureBlue?
                       </Col>
                     </Row>
@@ -145,14 +116,10 @@ export default function Faq() {
                 </Card.Header>
                 <Accordion.Collapse eventKey="3">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    PureBlue connects customers with US-licensed physicians to
+                    address their health needs. If medication is required, your
+                    assigned healthcare provider will issue a prescription that
+                    will be fulfilled by a pharmacy within Pure Blue’s network.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -160,25 +127,21 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="4">
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        What makes PureBlue unique?
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Are PureBlue physicians licensed?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="4">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    Yes. All physicians within the PureBlue network are licensed
+                    in the US and are legally permitted to practice medicine and
+                    asynchronous telehealth in states that allow asynchronous
+                    telehealth.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -186,26 +149,21 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="5">
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Is sharing my medical history required to get PureBlue
-                        Pills?
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Is my personal information safe?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="5">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    Yes. PureBlue adheres to the strict guidelines and
+                    regulations that protect patient health information
+                    according to the Healthcare Insurance Portability and
+                    Affordability Act of 1996 (HIPAA).
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -213,165 +171,24 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="6">
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Can I use my PureBlue prescription at any pharmacy I
-                        choose?
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Is PureBlue available in South Carolina?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="6">
                   <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
+                    No. PureBlue is not available in South Carolina
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
               <Card className={styles.cardHeader}>
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle className={styles.headerOne} eventKey="7">
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Can I get PureBlue in any state?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="7">
-                  <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle className={styles.headerOne} eventKey="8">
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Are PureBlue pills FDA approved?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="8">
-                  <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle className={styles.headerOne} eventKey="9">
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Are PureBlue physicians licensed?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="9">
-                  <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="10"
-                  >
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Is my personal information safe?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="10">
-                  <Card.Body>
-                    PureBlue is an online outfit that links potential patients
-                    who need a more convenient way to procure erectile
-                    dysfunction medication legally with a doctor’s approval.
-                    PureBlue provides a complete infrastructure that provides
-                    potential patients with convenient options that do not
-                    require an in-person doctor’s visit, but maintains the
-                    supervision of medical doctors for the prescription of
-                    erectile dysfunction medication.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="18"
-                  >
-                    <Row>
-                      <Col xs={2} sm={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={10} sm={11}>
-                        Is TryPureBlue available in South Carolina?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="18">
-                  <Card.Body>
-                    No, TryPureBlue is currently not available in South
-                    Carolina.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="19"
-                  >
                     <Row>
                       <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
@@ -382,19 +199,16 @@ export default function Faq() {
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="19">
+                <Accordion.Collapse eventKey="7">
                   <Card.Body>
-                    Due to certain state laws and regulations, TryPureBlue is
+                    Due to current state laws and regulations, TryPureBlue is
                     not able to operate in South Carolina at this time.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
               <Card className={styles.cardHeader}>
                 <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="20"
-                  >
+                  <ContextAwareToggle className={styles.headerOne} eventKey="8">
                     <Row>
                       <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
@@ -406,7 +220,7 @@ export default function Faq() {
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="20">
+                <Accordion.Collapse eventKey="8">
                   <Card.Body>
                     We are always evaluating opportunities to expand our
                     services to more states. However, at this time, we cannot
@@ -417,10 +231,7 @@ export default function Faq() {
               </Card>
               <Card className={styles.cardHeader}>
                 <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="21"
-                  >
+                  <ContextAwareToggle className={styles.headerOne} eventKey="9">
                     <Row>
                       <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
@@ -432,7 +243,7 @@ export default function Faq() {
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="21">
+                <Accordion.Collapse eventKey="9">
                   <Card.Body>
                     Yes, if you are traveling to a state where TryPureBlue is
                     available, you can access our services as long as you have a
@@ -447,7 +258,7 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle
                     className={styles.headerOne}
-                    eventKey="22"
+                    eventKey="10"
                   >
                     <Row>
                       <Col xs={2} sm={1} className={styles.plus}>
@@ -460,7 +271,7 @@ export default function Faq() {
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="22">
+                <Accordion.Collapse eventKey="10">
                   <Card.Body>
                     We recommend regularly checking our website or contacting
                     our customer support team for the latest updates on our
@@ -468,7 +279,7 @@ export default function Faq() {
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
-              <h3>About Erectile Dysfunction</h3>
+              <h4>About Asynchronous Telehealth</h4>
               <Card className={styles.cardHeader}>
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle
@@ -476,22 +287,29 @@ export default function Faq() {
                     eventKey="11"
                   >
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Is ED normal?
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        What is Asynchronous Telehealth?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="11">
                   <Card.Body>
-                    ED is one of the most common problems that men in the United
-                    States face. About 40%* of American men experience ED, and
-                    PureBlue provides a direct, convenient and affordable way
-                    for men to experience stronger erections without the risk of
-                    taking low-quality ED pills produced overseas.
+                    Asynchronous telehealth in the United States refers to a
+                    method of providing medical or healthcare services remotely,
+                    where the communication between the healthcare provider and
+                    the patient does not occur in real time. Instead, it
+                    involves the exchange of medical information, such as
+                    images, videos, medical records, or messages, at a time
+                    convenient for both the patient and the healthcare provider,
+                    without the need for simultaneous interaction. PureBlue
+                    offers asynchronous telehealth services to make access to
+                    healthcare more convenient and less time-consuming for both
+                    the patient and the healthcare provider, leading to lower
+                    overall healthcare costs for the patient.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
@@ -502,16 +320,191 @@ export default function Faq() {
                     eventKey="12"
                   >
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Can young men get erectile dysfunction?
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Is Asynchronous Telehealth allowed in the United States?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="12">
+                  <Card.Body>
+                    Most states allow asynchronous telehealth in the United
+                    States, and state laws involving telehealth services are
+                    constantly evolving. Our system is constantly updated to
+                    reflect relevant changes in state laws that involve
+                    telehealth services.
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card className={styles.cardHeader}>
+                <Card.Header className={styles.header}>
+                  <ContextAwareToggle
+                    className={styles.headerOne}
+                    eventKey="13"
+                  >
+                    <Row>
+                      <Col xs={2} sm={1} className={styles.plus}>
+                        <p>+</p>
+                      </Col>
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Do I need to be in a live video conference during my
+                        consultation?
+                      </Col>
+                    </Row>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="13">
+                  <Card.Body>
+                    Our initial health questionnaire will provide sufficient
+                    information for your assigned healthcare provider to
+                    determine whether or not a synchronous (live) telehealth
+                    consultation is necessary. If your assigned healthcare
+                    provider requires additional information, you will receive a
+                    notification through our system, SMS, and e-mail.
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card className={styles.cardHeader}>
+                <Card.Header className={styles.header}>
+                  <ContextAwareToggle
+                    className={styles.headerOne}
+                    eventKey="14"
+                  >
+                    <Row>
+                      <Col xs={2} sm={1} className={styles.plus}>
+                        <p>+</p>
+                      </Col>
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Are PureBlue telehealth services free?
+                      </Col>
+                    </Row>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="14">
+                  <Card.Body>
+                    PureBlue only gets paid when a patient is prescribed
+                    medication after accessing our healthcare network. You are
+                    not responsible for the cost of the doctor visit, the cost
+                    of the medication, or any insurance fees.
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <h4>About Payment Methods</h4>
+              <Card className={styles.cardHeader}>
+                <Card.Header className={styles.header}>
+                  <ContextAwareToggle
+                    className={styles.headerOne}
+                    eventKey="15"
+                  >
+                    <Row>
+                      <Col xs={2} sm={1} className={styles.plus}>
+                        <p>+</p>
+                      </Col>
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Does PureBlue require health insurance?
+                      </Col>
+                    </Row>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="15">
+                  <Card.Body>
+                    No. PureBlue does not require health insurance. We aim to
+                    provide convenient and affordable telehealth service for men
+                    who need ED consultation.
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card className={styles.cardHeader}>
+                <Card.Header className={styles.header}>
+                  <ContextAwareToggle
+                    className={styles.headerOne}
+                    eventKey="16"
+                  >
+                    <Row>
+                      <Col xs={2} sm={1} className={styles.plus}>
+                        <p>+</p>
+                      </Col>
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Does PureBlue accept health insurance?
+                      </Col>
+                    </Row>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="16">
+                  <Card.Body>
+                    Currently, PureBlue does not accept health insurance.
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card className={styles.cardHeader}>
+                <Card.Header className={styles.header}>
+                  <ContextAwareToggle
+                    className={styles.headerOne}
+                    eventKey="17"
+                  >
+                    <Row>
+                      <Col xs={2} sm={1} className={styles.plus}>
+                        <p>+</p>
+                      </Col>
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        What payment methods does PureBlue accept?
+                      </Col>
+                    </Row>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="17">
+                  <Card.Body>
+                    Credit card is the preferred method of payment.
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <h4>About Erectile Dysfunction</h4>
+              <Card className={styles.cardHeader}>
+                <Card.Header className={styles.header}>
+                  <ContextAwareToggle
+                    className={styles.headerOne}
+                    eventKey="18"
+                  >
+                    <Row>
+                      <Col xs={2} sm={1} className={styles.plus}>
+                        <p>+</p>
+                      </Col>
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Is ED normal?
+                      </Col>
+                    </Row>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="18">
+                  <Card.Body>
+                    ED is one of the most common problems that men in the United
+                    States face. About 40%* of American men experience ED, and
+                    PureBlue provides a direct, convenient, and affordable way
+                    for men to experience stronger erections without the risk of
+                    taking low-quality ED pills produced overseas.
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card className={styles.cardHeader}>
+                <Card.Header className={styles.header}>
+                  <ContextAwareToggle
+                    className={styles.headerOne}
+                    eventKey="19"
+                  >
+                    <Row>
+                      <Col xs={2} sm={1} className={styles.plus}>
+                        <p>+</p>
+                      </Col>
+                      <Col className={styles.textPart} xs={10} sm={11}>
+                        Can young men get erectile dysfunction?
+                      </Col>
+                    </Row>
+                  </ContextAwareToggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="19">
                   <Card.Body>
                     Erectile dysfunction can affect men of all ages. Certain
                     health conditions may bring about symptoms of erectile
@@ -527,19 +520,19 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle
                     className={styles.headerOne}
-                    eventKey="13"
+                    eventKey="20"
                   >
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
+                      <Col className={styles.textPart} xs={10} sm={11}>
                         What is the difference between Sildenafil and Tadalafil?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="13">
+                <Accordion.Collapse eventKey="20">
                   <Card.Body>
                     Sildenafil and Tadalafil are FDA-approved medications for
                     the treatment of erectile dysfunction. Both medications
@@ -557,20 +550,20 @@ export default function Faq() {
                 <Card.Header className={styles.header}>
                   <ContextAwareToggle
                     className={styles.headerOne}
-                    eventKey="14"
+                    eventKey="21"
                   >
                     <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
+                      <Col xs={2} sm={1} className={styles.plus}>
                         <p>+</p>
                       </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
+                      <Col className={styles.textPart} xs={10} sm={11}>
                         Are generic branded ED pills as effective as branded ED
                         pills?
                       </Col>
                     </Row>
                   </ContextAwareToggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="14">
+                <Accordion.Collapse eventKey="21">
                   <Card.Body>
                     Both generic-branded and branded (Viagra and Cialis) pills
                     contain the same active component. Viagra contains
@@ -578,87 +571,6 @@ export default function Faq() {
                     generic-branded erectile dysfunction pills available on
                     PureBlue are consistent with the dosage and effectiveness
                     offered by branded erectile dysfunction pills.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="15"
-                  >
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        What can I do if my purchased PureBlue erectile
-                        dysfunction pills did not work for me?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="15">
-                  <Card.Body>
-                    If you chose Sildenafil or Tadalafil, but it did not work as
-                    you expected, kindly reach out to our PureBlue-affiliated
-                    medical team to review your treatment options and see if
-                    another treatment may be recommended to you. You can reach
-                    out to us through email (info@trypureblue.com) or log into
-                    your PureBlue account, and choose “Switch Plans”. Doing so
-                    will allow the medical team to review your provided
-                    information, and evaluate further for treatments that would
-                    be appropriate and safe for your condition.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="16"
-                  >
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        Does PureBlue have a return & refund policy?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="16">
-                  <Card.Body>
-                    PureBlue does not accept refunds or returns for prescription
-                    treatments. If there is a problem with your purchase, kindly
-                    reach out to us at info@trypureblue.com or reach us through
-                    chat on our website.
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-              <Card className={styles.cardHeader}>
-                <Card.Header className={styles.header}>
-                  <ContextAwareToggle
-                    className={styles.headerOne}
-                    eventKey="17"
-                  >
-                    <Row>
-                      <Col xs={1} md={1} className={styles.plus}>
-                        <p>+</p>
-                      </Col>
-                      <Col className={styles.textPart} xs={11} md={11}>
-                        How much do erectile dysfunction pills cost?
-                      </Col>
-                    </Row>
-                  </ContextAwareToggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey="17">
-                  <Card.Body>
-                    PureBlue offers an array of erectile dysfunction medications
-                    and plans for your lifestyle and budget. PureBlue plans
-                    start at $20 a month, plus shipping and tax. You may view
-                    and compare plans available to you on trypureblue.com/plans.
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
