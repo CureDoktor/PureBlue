@@ -4,7 +4,7 @@ import { useContext, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
-import styles from "../styles/Home.module.scss";
+import styles from "../../styles/Home.module.scss";
 import { Check, PatchCheck } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
