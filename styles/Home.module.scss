@@ -920,75 +920,75 @@ $secondary-color: #003b60;
 }
 
 //new homepage
-.fieldOne {
-  .callToll {
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 0.1px;
-    line-height: 10px;
-  }
-  .phoneImage {
-    margin-top: 20px;
-  }
-  .primaryColor {
-    line-height: 18px;
-  }
-  .blueText {
-    color: #0077f0;
-    font-size: 18px !important;
-    max-width: 550px;
-  }
-  .bgImage {
-    padding: 35px 0px;
-  }
-}
-.darkBluePart {
-  max-width: 1500px;
-  margin: auto;
-  background-color: #003b60;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 19px;
-  text-align: center;
-  p {
-    max-width: 1160px;
-    color: white;
-    font-weight: bold;
-    margin: auto;
-    padding: 5px 0px;
-  }
-}
-.twoField {
-  padding: 40px 0px;
+// .fieldOne {
+//   .callToll {
+//     font-size: 15px;
+//     font-weight: 400;
+//     letter-spacing: 0.1px;
+//     line-height: 10px;
+//   }
+//   .phoneImage {
+//     margin-top: 20px;
+//   }
+//   .primaryColor {
+//     line-height: 18px;
+//   }
+//   .blueText {
+//     color: #0077f0;
+//     font-size: 18px !important;
+//     max-width: 550px;
+//   }
+//   .bgImage {
+//     padding: 35px 0px;
+//   }
+// }
+// .darkBluePart {
+//   max-width: 1500px;
+//   margin: auto;
+//   background-color: #003b60;
+//   padding: 10px 20px;
+//   border-radius: 30px;
+//   font-size: 19px;
+//   text-align: center;
+//   p {
+//     max-width: 1160px;
+//     color: white;
+//     font-weight: bold;
+//     margin: auto;
+//     padding: 5px 0px;
+//   }
+// }
+// .twoField {
+//   padding: 40px 0px;
 
-  h2 {
-    font-size: 30px;
-    font-weight: bold;
-    padding: 20px 0px;
-  }
-}
-.fieldThreeBlue {
-  background-color: $primary-color;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  font-size: 25px;
-  padding: 80px 0px 50px 0px;
-}
-.fieldFour {
-  padding: 80px 0px 120px 0px;
-  h2 {
-    font-size: 30px;
-    font-weight: bold;
-    padding: 20px 0px 10px 0px;
-  }
-  p {
-    font-size: 18px;
-    max-width: 550px;
-    font-weight: 400;
-    padding: 20px 0px 40px 0px;
-  }
-}
+//   h2 {
+//     font-size: 30px;
+//     font-weight: bold;
+//     padding: 20px 0px;
+//   }
+// }
+// .fieldThreeBlue {
+//   background-color: $primary-color;
+//   color: white;
+//   font-weight: bold;
+//   text-align: center;
+//   font-size: 25px;
+//   padding: 80px 0px 50px 0px;
+// }
+// .fieldFour {
+//   padding: 80px 0px 120px 0px;
+//   h2 {
+//     font-size: 30px;
+//     font-weight: bold;
+//     padding: 20px 0px 10px 0px;
+//   }
+//   p {
+//     font-size: 18px;
+//     max-width: 550px;
+//     font-weight: 400;
+//     padding: 20px 0px 40px 0px;
+//   }
+// }
 @media screen and (max-width: 550px) {
   .fieldOne {
     .fieldOneText {
