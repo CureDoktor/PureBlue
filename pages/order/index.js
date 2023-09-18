@@ -553,6 +553,7 @@ export default function Order() {
                     <Form onSubmit={submitPayHandler}>
                       <br />
                       <br />
+
                       <Row className="mb-3">
                         <Form.Group as={Col} controlId="creditCardNumber">
                           <Form.Control
@@ -569,6 +570,27 @@ export default function Order() {
                           </Form.Control.Feedback>
                         </Form.Group>
                       </Row>
+                      <div className="d-flex pb-4">
+                        <Image
+                          src="/assets/amex.jpg"
+                          height={40}
+                          width={70}
+                          className="pe-1"
+                        />
+                        <Image
+                          src="/assets/discover.jpg"
+                          height={40}
+                          width={70}
+                          className="pe-1"
+                        />
+                        <Image
+                          src="/assets/mastercard.jpg"
+                          height={40}
+                          width={70}
+                          className="pe-1"
+                        />
+                        <Image src="/assets/visa.jpg" height={40} width={70} />
+                      </div>
                       <Row className="mb-3">
                         <Form.Group as={Col} controlId="expirationDate">
                           <Form.Control
