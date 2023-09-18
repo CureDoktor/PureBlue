@@ -38,6 +38,30 @@ export default function Footer() {
             <Link href="tel:1-888-534-8977">
               <a className={styles.number}>1-888-534-8977</a>
             </Link>
+            <p>PAYMENT METHODS</p>
+            <div className="m-auto">
+              <div className="pb-4 d-block">
+                <Image
+                  src="/assets/amex.jpg"
+                  height={40}
+                  width={70}
+                  className="pe-1"
+                />
+                <Image
+                  src="/assets/discover.jpg"
+                  height={40}
+                  width={70}
+                  className="pe-1"
+                />
+                <Image
+                  src="/assets/mastercard.jpg"
+                  height={40}
+                  width={70}
+                  className="pe-1"
+                />
+                <Image src="/assets/visa.jpg" height={40} width={70} />
+              </div>
+            </div>
           </div>
           <Container>
             <Row className={styles.footerRow}>
