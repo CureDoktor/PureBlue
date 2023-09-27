@@ -553,7 +553,6 @@ export default function Order() {
                     <Form onSubmit={submitPayHandler}>
                       <br />
                       <br />
-
                       <Row className="mb-3">
                         <Form.Group as={Col} controlId="creditCardNumber">
                           <Form.Control
