@@ -88,9 +88,10 @@ export const parseFollowUpQuestion = (followUpQuestion, index) => {
 export const parseAnswer = ({ context, answer }) => {
   const { name, type, followUpQuestions, questionMap, resetFieldId } = context;
   const props = parseComponentProps(name, type, answer);
+
   const Input = React.cloneElement(inputMap[type], {
-    key: answer?.id,
     ...props,
+    key: answer?.id,
     ...(context.resetFieldId && { resetFieldId: context.resetFieldId }),
   });
 
@@ -106,10 +107,7 @@ export const parseAnswer = ({ context, answer }) => {
     );
   }
 
-  return React.cloneElement(Input, {
-    ...props,
-    resetFieldId,
-  });
+  return Input;
 };
 
 export const parseQuestion = ({
@@ -141,7 +139,9 @@ export const parseQuestion = ({
       parsedQuestion.answers.push(parseAnswer({ context, answer, afterField }))
     );
   } else
-    parsedQuestion.answers.push(parseAnswer({ context, question, afterField }));
+    parsedQuestion.answers.push(
+      parseAnswer({ context, answer: question, afterField })
+    );
 
   return parsedQuestion;
 };
