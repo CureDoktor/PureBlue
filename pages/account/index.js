@@ -7,19 +7,19 @@ import Orders from "../../components/Orders";
 import Membership from "../../components/Membership";
 import Profile from "../../components/Profile";
 import Case from "../../components/Case";
-export default function Account() {
+export default function Account(props) {
   const [checked, setChecked] = useState(false);
   const [content, setContent] = useState(<Membership />);
 
   const handleSelect = (link) => {
     if (link === "Membership") {
-      setContent(<Membership />);
+      setContent(<Membership handleShow={props.handleShow} />);
     } else if (link === "Orders") {
-      setContent(<Orders />);
+      setContent(<Orders handleShow={props.handleShow} />);
     } else if (link === "Profile") {
-      setContent(<Profile />);
+      setContent(<Profile handleShow={props.handleShow} />);
     } else if (link === "Case") {
-      setContent(<Case />);
+      setContent(<Case handleShow={props.handleShow} />);
     }
   };
 

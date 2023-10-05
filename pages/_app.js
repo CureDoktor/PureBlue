@@ -8,6 +8,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { AuthContextProvider } from "../store/auth-context";
 import ConsultationContextProvider from "../store/consultation-context";
+import ModalDisplay from "../components/Modal";
 
 function MyApp({ Component, pageProps }) {
   const [isLogedIn, setIsLoggedIn] = useState(false);
@@ -18,6 +19,17 @@ function MyApp({ Component, pageProps }) {
       setIsLoggedIn(true);
     }
   }, []);
+
+  const [show, setShow] = useState(false);
+  const [showMessage, setShowMessage] = useState("");
+
+  const handleShow = (value) => {
+    setShow(true);
+    setShowMessage(value);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
 
   const loginHandler = (email, password) => {
     // We should of course check email and password
@@ -39,8 +51,17 @@ function MyApp({ Component, pageProps }) {
           <Head>
             <title>TryPure Blue</title>
           </Head>
+          <ModalDisplay
+            show={show}
+            showMessage={showMessage}
+            handleClose={handleClose}
+          />
           <Header logout={logoutHandler} header={isLogedIn} />
-          <Component isLoggedIn={loginHandler} {...pageProps} />
+          <Component
+            handleShow={handleShow}
+            isLoggedIn={loginHandler}
+            {...pageProps}
+          />
           <Footer />
         </AuthContextProvider>
       );
@@ -55,8 +76,13 @@ function MyApp({ Component, pageProps }) {
           <Head>
             <title>TryPure Blue</title>
           </Head>
+          <ModalDisplay
+            show={show}
+            showMessage={showMessage}
+            handleClose={handleClose}
+          />
           <Header logout={loginHandler} header={isLogedIn} />
-          <Login isLoggedIn={loginHandler} />
+          <Login handleShow={handleShow} isLoggedIn={loginHandler} />
           <Footer />
         </AuthContextProvider>
       );
@@ -66,8 +92,17 @@ function MyApp({ Component, pageProps }) {
           <Head>
             <title>TryPure Blue</title>
           </Head>
+          <ModalDisplay
+            show={show}
+            showMessage={showMessage}
+            handleClose={handleClose}
+          />
           <Header logout={loginHandler} header={isLogedIn} />
-          <Component isLoggedIn={loginHandler} {...pageProps} />
+          <Component
+            handleShow={handleShow}
+            isLoggedIn={loginHandler}
+            {...pageProps}
+          />
           <Footer />
         </AuthContextProvider>
       );

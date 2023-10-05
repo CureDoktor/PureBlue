@@ -23,7 +23,7 @@ import {
 } from "react-bootstrap";
 import styles from "./styles.module.scss";
 
-export default function Profile() {
+export default function Profile(props) {
   const authCtx = useContext(AuthContext);
   const gettingUserInfo = async () => {
     const route = "/api/user/getUserInfo";
@@ -34,8 +34,7 @@ export default function Profile() {
           setUserInfo(res.data);
         })
         .catch((error) => {
-          console.log(error);
-          alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
@@ -156,13 +155,25 @@ export default function Profile() {
           </div>
         </Col>
         <Col md={6}>
-          <ShipInfo reloadInfo={gettingUserInfo} info={userInfo} />
+          <ShipInfo
+            handleShow={props.handleShow}
+            reloadInfo={gettingUserInfo}
+            info={userInfo}
+          />
           <br />
           <br />
-          <BillInfo reloadInfo={gettingUserInfo} info={userInfo} />
+          <BillInfo
+            handleShow={props.handleShow}
+            reloadInfo={gettingUserInfo}
+            info={userInfo}
+          />
           <br />
           <br />
-          <PayInfo reloadInfo={gettingUserInfo} info={userInfo} />
+          <PayInfo
+            handleShow={props.handleShow}
+            reloadInfo={gettingUserInfo}
+            info={userInfo}
+          />
         </Col>
       </Row>
     </div>

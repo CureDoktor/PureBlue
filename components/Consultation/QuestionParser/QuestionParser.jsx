@@ -22,7 +22,7 @@ const QuestionParser = () => {
   if (!main) return "Loading...";
 
   const { parsedQuestion, parsedFollowUpQuestions } = useQuestionParser();
-
+  console.log(parsedQuestion);
   return (
     <div className={styles.container}>
       <div className={`${styles.header} ${isNotFirstQuestionStyles}`}>

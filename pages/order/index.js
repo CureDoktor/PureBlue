@@ -17,7 +17,7 @@ import Router, { useRouter } from "next/router";
 import ShipInfo from "../../components/ShipInfo";
 import Modals from "../../components/Modals";
 
-export default function Order() {
+export default function Order(props) {
   const [wrongStateHolder, setWrongStateHolder] = useState(false);
   const [wrongStateHolderBilling, setWrongStateHolderBilling] = useState(false);
   const [product, setProduct] = useState({
@@ -77,8 +77,7 @@ export default function Order() {
       const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {})
         .catch((error) => {
-          console.log(error);
-          return alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);
@@ -93,8 +92,7 @@ export default function Order() {
           setProduct(res.data);
         })
         .catch((error) => {
-          console.log(error);
-          return alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);
@@ -130,9 +128,7 @@ export default function Order() {
           router.push("/account");
         })
         .catch((error) => {
-          return alert(
-            error.response.data.name + " " + error.response.data.message
-          );
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);
@@ -152,8 +148,7 @@ export default function Order() {
           orderWithUserProfile();
         })
         .catch((error) => {
-          console.log(error);
-          return alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);
@@ -197,8 +192,7 @@ export default function Order() {
       })
         .then((res) => {})
         .catch((error) => {
-          console.log(error);
-          return alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);

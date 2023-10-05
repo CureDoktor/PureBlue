@@ -61,7 +61,7 @@ export default function BillInfo(props) {
           props.reloadInfo();
         })
         .catch((error) => {
-          return alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);

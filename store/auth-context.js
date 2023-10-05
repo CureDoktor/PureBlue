@@ -1,5 +1,6 @@
 import React from "react";
-
+import ModalDisplay from "../components/Modal";
+import { useState } from "react";
 const AuthContext = React.createContext({
   Token: () => {},
   settingToken: (value) => {},

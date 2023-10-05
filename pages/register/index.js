@@ -45,18 +45,13 @@ export default function Register(props) {
       try {
         const rese = await Axios.post(route, payload)
           .then((res) => {
+            console.log(res);
             props.isLoggedIn();
-            authCtx.settingToken(res.data.access_token);
+            authCtx.settingToken(res.data.data.access_token);
             router.push("/visit-form");
           })
           .catch((error) => {
-            const cure = error.response.data.errors;
-            const rest = Object.values(cure);
-            var values = "";
-            rest.map((element) => {
-              values = values + element + " ";
-            });
-            alert(values);
+            props.handleShow(error.response.data);
           });
       } catch (err) {
         alert("Username or password are not good!" + err);

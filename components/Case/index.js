@@ -18,7 +18,7 @@ import styles from "./styles.module.scss";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 
-export default function Case() {
+export default function Case(props) {
   const [CaseAnswers, setCaseAnswers] = useState("");
   const authCtx = useContext(AuthContext);
   const getCase = async () => {
@@ -29,7 +29,7 @@ export default function Case() {
           setCaseAnswers(res.data.case_answers);
         })
         .catch((error) => {
-          console.log(error);
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       console.log(err);

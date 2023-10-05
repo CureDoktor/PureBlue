@@ -1,8 +1,8 @@
 import Axios from "axios";
-
+import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
   Axios.post(
-    "https://api.trypureblue.com/user/shipping-info",
+    "https://staging-api.trypureblue.com/user/shipping-info",
     req.body.formData,
     {
       headers: {
@@ -16,6 +16,7 @@ export default function handler(req, res) {
       return res.status(200).json(respond.data);
     })
     .catch(function (error) {
-      return res.status(400).json(error);
+      let response = ApiError(error.response.data);
+      res.status(400).json(response);
     });
 }
