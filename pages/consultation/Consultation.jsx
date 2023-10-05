@@ -69,7 +69,6 @@ const Consultation = (props) => {
   };
 
   useEffect(() => {
-    console.log(StartingQuestions);
     const questions = StartingQuestions.filter((q) => q.visibility === 1);
     const followUpQuestions = StartingQuestions.filter(
       (q) => q.visibility !== 1
