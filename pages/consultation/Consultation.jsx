@@ -101,7 +101,6 @@ const Consultation = (props) => {
   }, []);
 
   const handleSubmit = (values) => {
-    console.log(values);
     setFormValues(values);
   };
 
