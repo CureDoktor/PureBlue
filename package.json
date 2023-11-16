@@ -20,12 +20,12 @@
     "react-dom": "18.1.0",
     "react-google-recaptcha": "^2.1.0",
     "react-helmet": "^6.1.0",
-    "react-hook-form": "^7.45.2",
+    "react-hook-form": "^7.47.0",
     "sass": "^1.52.0"
   },
   "devDependencies": {
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6"
   },
-  "proxy": "https://api.trypureblue.com"
+  "proxy": "https://staging-api.trypureblue.com"
 }

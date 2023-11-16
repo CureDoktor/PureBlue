@@ -18,7 +18,7 @@ import Axios from "axios";
 import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 
-export default function Membership() {
+export default function Membership(props) {
   const [UserInfo, setUserInfo] = useState("");
   const [Case, setCase] = useState({
     status: "",
@@ -34,7 +34,7 @@ export default function Membership() {
           setUserInfo(res.data);
         })
         .catch((error) => {
-          alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
@@ -53,7 +53,7 @@ export default function Membership() {
           });
         })
         .catch((error) => {
-          console.log(error);
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       console.log(err);

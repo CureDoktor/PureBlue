@@ -8,7 +8,7 @@ import { AccordionContext, Form } from "react-bootstrap";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
-export default function Switch() {
+export default function Switch(props) {
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const [medications, setMedications] = useState([{}]);
@@ -54,8 +54,7 @@ export default function Switch() {
           setMedications(res.data);
         })
         .catch((error) => {
-          console.log(error);
-          alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
@@ -78,8 +77,7 @@ export default function Switch() {
           // }
         })
         .catch((error) => {
-          console.log(error);
-          alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
@@ -156,8 +154,7 @@ export default function Switch() {
           router.push("/order");
         })
         .catch((error) => {
-          console.log(error);
-          alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);

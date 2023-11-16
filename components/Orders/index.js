@@ -18,7 +18,7 @@ import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../../store/auth-context";
 import Axios from "axios";
 
-export default function Orders() {
+export default function Orders(props) {
   const authCtx = useContext(AuthContext);
   const [Orders, setOrders] = useState([
     {
@@ -41,8 +41,7 @@ export default function Orders() {
           setOrders(res.data);
         })
         .catch((error) => {
-          console.log(error);
-          alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);

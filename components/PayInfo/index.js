@@ -48,8 +48,7 @@ export default function PayInfo(props) {
           props.reloadInfo();
         })
         .catch((error) => {
-          console.log(error);
-          return alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);

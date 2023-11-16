@@ -14,7 +14,7 @@ import { AccordionContext, Form } from "react-bootstrap";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
-export default function VisitForm() {
+export default function VisitForm(props) {
   const [questions, setQuestions] = useState({});
   const [showQuestions, setShowQuestions] = useState(false);
   const [checkedState, setCheckedState] = useState(false);
@@ -28,11 +28,11 @@ export default function VisitForm() {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          setQuestions(res.data);
+          console.log(res);
+          setQuestions(res.data.data.questions);
         })
         .catch((error) => {
-          console.log(error);
-          alert("Not Good!");
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
@@ -49,7 +49,7 @@ export default function VisitForm() {
           }
         })
         .catch((error) => {
-          console.log(error);
+          props.handleShow(error.response.data);
         });
     } catch (err) {}
   };
@@ -213,7 +213,7 @@ export default function VisitForm() {
           setShowQuestions(true);
         })
         .catch((error) => {
-          alert(error.response.data.errors);
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Username or password are not good! 22" + err);
@@ -284,14 +284,7 @@ export default function VisitForm() {
           router.push("/order");
         })
         .catch((error) => {
-          console.log(error.response.data.errors);
-          const cure = error.response.data.errors;
-          const rest = Object.entries(cure);
-          var values = "";
-          rest.map(([question, answer]) => {
-            values = values + question + " : " + answer + "  ";
-          });
-          alert(values);
+          props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Username or password are not good! 22" + err);

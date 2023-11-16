@@ -21,7 +21,9 @@ const QuestionParser = () => {
 
   if (!main) return "Loading...";
 
-  const { parsedQuestion, parsedFollowUpQuestions } = useQuestionParser();
+  const { parsedQuestion, parsedFollowUpQuestions } = useQuestionParser({
+    questions,
+  });
 
   return (
     <div className={styles.container}>
