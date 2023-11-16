@@ -43,7 +43,7 @@ export default function Document() {
             src="https://www.googletagmanager.com/ns.html?id=GTM-5DJCDL26"
             height="0"
             width="0"
-            style="display:none;visibility:hidden"
+            style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
