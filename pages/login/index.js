@@ -144,6 +144,7 @@ export default function Login(props) {
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="password">
                       <Form.Label className={styles.label}>Password</Form.Label>
+                      qweqwe
                       <Form.Control
                         required
                         name="password"
