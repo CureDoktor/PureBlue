@@ -1,0 +1,162 @@
+.section {
+  padding: 70px 0 210px;
+
+  & .title {
+    font-size: 25px;
+    font-weight: 600;
+    font-style: italic;
+    color: #0077f0;
+    text-align: center;
+  }
+
+  & .description {
+    font-size: 15px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  & .list {
+    margin-top: 60px;
+    position: relative;
+    height: 1140px;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 50;
+      left: 0;
+      width: 35%;
+      height: 100%;
+      background-image: url("../../public/assets/list-circles-long.svg");
+      background-size: 35% 100%;
+      background-repeat: no-repeat;
+    }
+
+    & .item {
+      position: absolute;
+      left: 6%;
+      right: 0;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 3px solid;
+      border-radius: 0px 20px 20px 0px;
+      padding: 15px 45px;
+
+      & h4 {
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      & h6 {
+        font-size: 15px;
+        font-weight: 700;
+        color: black;
+        text-transform: uppercase;
+      }
+
+      & p {
+        font-size: 15px;
+        color: black;
+      }
+
+      &:nth-of-type(1) {
+        top: 0;
+        border-color: #0077f0;
+
+        & h4 {
+          color: #0077f0;
+        }
+      }
+      &:nth-of-type(2) {
+        top: 277px;
+        border-color: #079e00;
+
+        & h4 {
+          color: #079e00;
+        }
+      }
+      &:nth-of-type(3) {
+        top: 550px;
+        border-color: #ffba00;
+
+        & h4 {
+          color: #ffba00;
+        }
+      }
+      &:nth-of-type(4) {
+        top: 825px;
+        border-color: #ff8a00;
+
+        & h4 {
+          color: #ff8a00;
+        }
+      }
+      &:nth-of-type(5) {
+        top: 1100px;
+        border-color: #ff0000;
+        border-radius: 0px 20px 20px 20px;
+
+        & h4 {
+          color: #ff0000;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 125px;
+    & .title {
+      font-size: 50px;
+      text-align: start;
+    }
+
+    & .description {
+      font-size: 30px;
+      margin-top: 0;
+      text-align: start;
+    }
+    & .list {
+      position: relative;
+      max-width: 1050px;
+      margin: 100px auto 0;
+      &::before {
+        background-image: url("../../public/assets/list-circles-long-desktop.svg");
+      }
+
+      & .item {
+        border: 5px solid;
+        padding: 20px 65px 20px 80px;
+
+        & h4 {
+          font-size: 30px;
+          gap: 20px;
+        }
+
+        & h6 {
+          font-size: 20px;
+        }
+
+        & p {
+          font-size: 20px;
+        }
+
+        &:nth-of-type(1) {
+          top: 0;
+        }
+        &:nth-of-type(2) {
+          top: 267px;
+        }
+        &:nth-of-type(3) {
+          top: 532px;
+        }
+        &:nth-of-type(4) {
+          top: 798px;
+        }
+        &:nth-of-type(5) {
+          top: 1063px;
+        }
+      }
+    }
+  }
+}
