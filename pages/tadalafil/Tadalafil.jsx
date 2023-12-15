@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import styles from "./Sildenafil.styles.module.scss";
+import styles from "./Tadalafil.styles.module.scss";
 import ProductLandingSection from "../../components/ProductLandingSection/ProductLandingSection";
 
-import SildenafilPillsAndPackagingSrc from "../../public/assets/sildenafil/sildenafil-landing.png";
+import TadalafilPillsAndPackagingSrc from "../../public/assets/tadalafil/tadalafil-landing.png";
 import { Container, Row, Col } from "react-bootstrap";
 import DiscountSection from "../../components/DiscountSection/DiscountSection";
 import Carousel from "../../components/Carousel/Carousel";
@@ -14,14 +14,14 @@ import item2Icon from "../../public/assets/arrow-green.png";
 import item3Icon from "../../public/assets/arrow-yellow.png";
 import item4Icon from "../../public/assets/arrow-orange.png";
 import item5Icon from "../../public/assets/arrow-red.png";
-import viagraSrc from "../../public/assets/sildenafil/viagra-4tablets.png";
+import tadalafilTablets from "../../public/assets/tadalafil/tadalafil-tablets.png";
 import WhyChoosePureBlue from "../../components/WhyChoosePureBlue/WhyChoosePureBlue";
 import CustomAccordion from "../../components/CustomAccordion/CustomAccordion";
 import StepsToOrder from "../../components/StepsToOrder/StepsToOrder";
 import FAQ from "../../components/FAQ/FAQ";
 import GetStartedSection from "../../components/GetStartedSection/GetStartedSection";
 
-const Sildenafil = () => {
+const Tadalafil = () => {
   const [swiper, setSwiperInstance] = useState(null);
   const didYouKnowItems = [
     {
@@ -58,10 +58,10 @@ const Sildenafil = () => {
   const customAccordionItems = [
     {
       id: 0,
-      header: "Can I get Genuine Viagra Online?",
+      header: "Can I get Genuine Cialis Online?",
       body: (
         <>
-          Plenty of counterfeit Viagra pills are sold online, especially through
+          Plenty of counterfeit Cialis pills are sold online, especially through
           sites that do not provide any form of medical screening or review.
           With <span>PureBlue</span>, you can be confident that you have access
           to FDA-approved and US-made ED medication, dispensed by a US-based
@@ -71,10 +71,10 @@ const Sildenafil = () => {
     },
     {
       id: 1,
-      header: "Is Real Viagra expensive?",
+      header: "Is Real Cialis expensive?",
       body: (
         <>
-          Plenty of counterfeit Viagra pills are sold online, especially through
+          Plenty of counterfeit Cialis pills are sold online, especially through
           sites that do not provide any form of medical screening or review.
           With <span>PureBlue</span>, you can be confident that you have access
           to FDA-approved and US-made ED medication, dispensed by a US-based
@@ -87,7 +87,7 @@ const Sildenafil = () => {
       header: "Does PureBlue require insurance?",
       body: (
         <>
-          Plenty of counterfeit Viagra pills are sold online, especially through
+          Plenty of counterfeit Cialis pills are sold online, especially through
           sites that do not provide any form of medical screening or review.
           With <span>PureBlue</span>, you can be confident that you have access
           to FDA-approved and US-made ED medication, dispensed by a US-based
@@ -97,10 +97,10 @@ const Sildenafil = () => {
     },
     {
       id: 3,
-      header: "IS SILDENAFIL the same as VIAGRA?",
+      header: "IS TADALAFIL the same as CIALIS?",
       body: (
         <>
-          Plenty of counterfeit Viagra pills are sold online, especially through
+          Plenty of counterfeit Cialis pills are sold online, especially through
           sites that do not provide any form of medical screening or review.
           With <span>PureBlue</span>, you can be confident that you have access
           to FDA-approved and US-made ED medication, dispensed by a US-based
@@ -113,10 +113,10 @@ const Sildenafil = () => {
     <div>
       <div className={styles.landing}>
         <ProductLandingSection
-          heading="Generic Viagra"
-          subheading="(Sildenafil Citrate)"
-          size="100mg"
-          doses="4"
+          heading="Generic Cialis"
+          subheading="(Tadalafil)"
+          size="10mg"
+          doses="12"
           about={[
             "FDA-approved ED treatment",
             "100% Online - No Appointment Needed",
@@ -124,7 +124,7 @@ const Sildenafil = () => {
             "Overnight Shipping - Discreet Packaging",
             "FREE Online Evaluation - U.S. Licensed Doctors",
           ]}
-          src={SildenafilPillsAndPackagingSrc}
+          src={TadalafilPillsAndPackagingSrc}
         />
         <Container>
           <Row>
@@ -160,26 +160,26 @@ const Sildenafil = () => {
                 items={[
                   {
                     rating: 5,
-                    title: "Best decision I ever made!",
+                    title: "Shockingly good!",
                     description:
-                      "It’s not just the savings I get from PureBlue, it’s the confidence knowing that whenever I need the stuff, I know that it will work!",
-                    author: "Jeff R.",
+                      "These Generic Cialis pills are just as effective as the ones I used to buy, but these cost a lot less!",
+                    author: "Rick W.",
                     isVerified: true,
                   },
                   {
                     rating: 5,
-                    title: "Exactly like what I expected",
+                    title: "Effective and long-lasting!",
                     description:
-                      "I’ve used brand-name ED pills for years, and it cost me thousands. With PureBlue, I get the same effect, at a fraction of the cost!",
-                    author: "Mike L.",
+                      "I just take my Tadalafil pills on the day I expect action, and I’m set for the rest of the day!",
+                    author: "Terry F.",
                     isVerified: true,
                   },
                   {
                     rating: 5,
-                    title: "Convenient and affordable",
+                    title: "Accessible and affordable",
                     description:
-                      "Everything is 100% online. I never had to drive anywhere just to get my pills – and it’s way cheaper than what I had before!",
-                    author: "Peter T.",
+                      "It’s 10 miles each way to get to the pharmacy. With PureBlue, I can get the meds I need even when I’m in the middle of nowhere!",
+                    author: "Jack B.",
                     isVerified: true,
                   },
                   {
@@ -211,7 +211,7 @@ const Sildenafil = () => {
         </Container>
       </div>
       <DidYouKnowSection items={didYouKnowItems} />
-      <WhyChoosePureBlue image={viagraSrc} />
+      <WhyChoosePureBlue image={tadalafilTablets} />
       <CustomAccordion items={customAccordionItems} />
       <StepsToOrder />
       <FAQ />
@@ -220,4 +220,4 @@ const Sildenafil = () => {
   );
 };
 
-export default Sildenafil;
+export default Tadalafil;

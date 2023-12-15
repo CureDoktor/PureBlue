@@ -3,8 +3,6 @@ import { Col, Row, Container } from "react-bootstrap";
 import styles from "./DidYouKnowSection.styles.module.scss";
 import Image from "next/image";
 
-import arrowSrc from "../../public/assets/arrow-blue.png";
-
 const DidYouKnowSection = ({ items }) => {
   return (
     <div className={styles.section}>

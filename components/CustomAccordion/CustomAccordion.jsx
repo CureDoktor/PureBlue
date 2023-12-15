@@ -11,8 +11,12 @@ const CustomAccordion = ({ items }) => {
         <Row className={styles.row}>
           <Col xs={12} lg={6} className={styles.col}>
             <Accordion defaultActiveKey="0">
-              {items?.map((item, i) => (
-                <Accordion.Item key={i} className={styles.item} eventKey={i}>
+              {items?.map((item) => (
+                <Accordion.Item
+                  key={item.id}
+                  className={styles.item}
+                  eventKey={item.id}
+                >
                   <Accordion.Header className={styles.header}>
                     {item.header}
                   </Accordion.Header>
