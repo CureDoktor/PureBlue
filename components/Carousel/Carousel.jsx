@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Carousel.styles.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import Image from "next/image";
 import starsImage from "../../public/assets/stars.png";
 import verifiedSrc from "../../public/assets/verified.png";
