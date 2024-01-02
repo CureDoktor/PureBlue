@@ -1,0 +1,104 @@
+.section {
+  padding: 90px 0 140px;
+  background-color: #ecf6ff;
+
+  & h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+
+    & span {
+      color: #0077f0;
+    }
+  }
+
+  & .col {
+    &:nth-of-type(1) {
+      order: 0;
+    }
+    &:nth-of-type(2) {
+      order: 2;
+    }
+    &:nth-of-type(3) {
+      order: 1;
+    }
+    & .card {
+      position: relative;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      box-shadow: 0px 0px 20px #03203d0d;
+      border: 3px solid #0077f0;
+      border-radius: 20px;
+      padding: 25px 25px 25px 50px;
+      margin: 80px 15px 0;
+
+      & h6 {
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: 600;
+        color: #04315e;
+      }
+
+      & .check {
+        top: -20px;
+        left: 25px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0077f0;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+      }
+    }
+
+    & .image {
+      width: 100%;
+      height: 600px;
+      position: relative;
+
+      & .rect {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        border-radius: 100%;
+        width: 362px;
+        height: 362px;
+        background: #ff8a00 0% 0% no-repeat padding-box;
+      }
+
+      & img {
+        z-index: 2;
+        object-fit: contain;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 90px 0 100px;
+
+    & h1 {
+      font-size: 50px;
+    }
+
+    & .col {
+      &:nth-of-type(1) {
+        order: 0;
+      }
+      &:nth-of-type(2) {
+        order: 1;
+      }
+      &:nth-of-type(3) {
+        order: 2;
+      }
+      & .card {
+        & h6 {
+          max-width: 80%;
+        }
+      }
+    }
+  }
+}

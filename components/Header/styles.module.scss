@@ -1,0 +1,108 @@
+@import "../../styles/variables.scss";
+
+.container {
+  background-color: white;
+  padding: 10px 40px;
+  border-bottom: solid 1px $gray-1;
+  color: black;
+
+  @media (max-width: 992px) {
+    padding: unset;
+  }
+
+  @media (max-width: 550px) {
+    padding: 15px;
+    .collapse {
+      padding-top: 20px;
+    }
+  }
+}
+
+.collapse {
+  justify-content: end;
+}
+
+.desktop {
+  display: block;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.tablet {
+  display: none;
+  @media (max-width: 992px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.link {
+  margin: 0 15px;
+  a {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.dropdownLink {
+  &:hover,
+  &:focus {
+    background-color: $primary-background;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    align-items: flex-start;
+  }
+}
+
+.logo {
+  width: 170px;
+  object-fit: contain;
+
+  @media (max-width: 992px) {
+    width: 130px;
+  }
+}
+
+.toggle {
+  border-color: #ced4da !important;
+
+  &:focus {
+    border-color: $primary-color !important;
+    box-shadow: 0 0 0 0.25rem $primary-box-shadow !important;
+  }
+
+  @media (max-width: 992px) {
+    padding: 0.1166rem 0.75rem !important;
+    span {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.select {
+  text-transform: uppercase;
+  width: unset;
+  font-size: 14px;
+
+  @media (max-width: 992px) {
+    font-size: 12px !important;
+    padding: 0.25rem 2rem 0.25rem 0.5rem !important;
+  }
+}
+
+.navbar {
+  padding: 10px 0px;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 600;
+}

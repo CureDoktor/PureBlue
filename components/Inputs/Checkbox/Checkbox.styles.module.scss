@@ -1,0 +1,119 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px;
+  background-color: white;
+  border-radius: 0.28em;
+  border: 1px solid #ccc;
+  cursor: pointer;
+
+  transition: background-color ease-in-out 300ms, color ease-in-out 300ms,
+    border-color ease-in-out 300ms;
+
+  @media (min-width: 1004px) {
+    font-size: 18px;
+    padding: 1.11em 1.667em;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+    place-content: center;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+
+    transition: background-color ease-in-out 300ms, color ease-in-out 300ms,
+      border ease-in-out 300ms;
+  }
+
+  input[type="checkbox"]:focus {
+    box-shadow: none;
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+  & .checkmark {
+    min-width: 25px;
+    min-height: 25px;
+    font-size: 25px;
+    color: #ccc;
+
+    & path:last-of-type {
+      display: none;
+    }
+  }
+
+  &.checked {
+    & .checkmark {
+      color: #fff;
+
+      & path {
+        display: unset;
+      }
+    }
+  }
+
+  &.default {
+    border: none;
+    background-color: transparent;
+    padding: 0 1.667em;
+
+    input[type="checkbox"] {
+      background-color: #fff;
+      color: #ccc;
+      border: 0.11em solid #ccc;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #fff;
+      border-color: #0077f0;
+    }
+  }
+
+  &.contained {
+    input[type="checkbox"] {
+      background-color: #fff;
+      color: #ccc;
+      border: 0.11em solid #ccc;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: #0077f0;
+      border-color: #fff;
+    }
+
+    &.checked {
+      background-color: #0077f0;
+      border-color: #0077f0;
+      color: white;
+    }
+  }
+
+  &.outlined {
+    input[type="checkbox"] {
+      background-color: #fff;
+      color: #ccc;
+      border: 0.11em solid #ccc;
+    }
+
+    input[type="checkbox"]:checked {
+      border-color: #0077f0;
+    }
+
+    &.checked {
+      border-color: #0077f0;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.833em;
+}

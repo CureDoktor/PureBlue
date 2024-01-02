@@ -1,0 +1,90 @@
+.order {
+  background-color: #f3f3f3;
+  padding: 60px 24px;
+
+  & .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 992px) {
+      padding-right: 68px;
+    }
+  }
+
+  & .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: dashed 2px #aaa;
+
+    & h1 {
+      font-size: 28px;
+      font-weight: bold;
+      &:last-of-type {
+        color: #0077f0;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 45px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+    }
+  }
+
+  & .images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 60px;
+
+    & .madeInUsa {
+      position: relative;
+      width: 214px;
+      height: 96px;
+    }
+
+    & .fdaApproved {
+      position: relative;
+      width: 95px;
+      height: 95px;
+    }
+
+    @media (min-width: 992px) {
+      justify-content: flex-start;
+      gap: 40px;
+
+      & .madeInUsa {
+        width: 270px;
+        height: 120px;
+      }
+
+      & .fdaApproved {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+  & .deliveryTime {
+    text-align: center;
+    margin-top: 30px;
+
+    & p {
+      font-size: 16px;
+      font-weight: 400;
+      color: #999999;
+      margin: 0;
+
+      & span {
+        font-size: 16px;
+        font-weight: 600;
+        color: #0077f0;
+      }
+    }
+  }
+}
