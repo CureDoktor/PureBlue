@@ -1,0 +1,35 @@
+.buttonSection {
+
+   display: flex;
+   justify-content: space-between;
+    margin: 40px 0px;
+  }
+  
+  .buttonCol {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .featureButton {
+    display:in-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border: none;
+    background: #0062C6;
+    width: 245px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+  
+  .buttonText {
+    display: inline-block;
+    // margin-left: 0.5rem;
+    font-size: 13px;
+  }
+  

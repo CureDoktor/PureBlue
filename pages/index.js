@@ -10,6 +10,9 @@ import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext } from "react-bootstrap";
 import { useRouter } from "next/router";
+import CardSection from "../components/CardSection";
+import ButtonSection from "../components/ButtonSection";
+import CardSectionTwo from "../components/CardSectionTwo";
 
 export default function Home() {
   const history = useRouter();
@@ -50,7 +53,45 @@ export default function Home() {
         <link rel="icon" href="/faviconn.ico" />
       </Head>
       <main>
-        <div className={styles.fieldOneBg}>
+        {/*---------------- section one------------ */}
+        <Container className={styles.container}>
+          <div className="my-5">
+            <h1>
+              Your #1 Source for
+              <span className=" mx-2 text-primary">
+                Branded and Generic Medication
+              </span>
+            </h1>
+            <p className="text-secondary mt-3 fw-medium">
+              Your free online visit starts here. Tell us what we can help you
+              with.
+            </p>
+
+            <Button className="bg-primary mt-4 fs-6">
+              <i className="bi bi-search"></i> Find my treatment
+            </Button>
+          </div>
+        </Container>
+        <div
+          className="bg-primary position-relative"
+          style={{
+            height: "229px",
+            margin: "200px 0px",
+            display: "flex",
+            alignItems: "end",
+          }}
+        >
+          <Container className={styles.container}>
+            <CardSection />
+            <ButtonSection />
+          </Container>
+        </div>
+
+        <Container className={styles.container}>
+          <CardSectionTwo />
+        </Container>
+
+        {/* <div className={styles.fieldOneBg}>
           <Container className={styles.container}>
             <div className={styles.fieldOne}>
               <Col md={{ span: 7, offset: 5 }}>
@@ -82,7 +123,7 @@ export default function Home() {
               </Col>
             </div>
           </Container>
-        </div>
+        </div> */}
         <div className={styles.fieldTwo}>
           <Container className={styles.container}>
             <p className="d-none d-md-block">Pure Quality</p>
