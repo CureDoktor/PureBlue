@@ -1,3 +1,4 @@
+'use-client'
 import React, { useRef, useState } from "react";
 import styles from "./Sildenafil.styles.module.scss";
 import ProductLandingSection from "../../components/ProductLandingSection/ProductLandingSection";

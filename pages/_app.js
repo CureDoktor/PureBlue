@@ -9,6 +9,7 @@ import Axios from "axios";
 import { AuthContextProvider } from "../store/auth-context";
 import ConsultationContextProvider from "../store/consultation-context";
 import ModalDisplay from "../components/Modal";
+import OrderHeader from "../components/order-flow/OrderHeader";
 
 function MyApp({ Component, pageProps }) {
   const [isLogedIn, setIsLoggedIn] = useState(false);
@@ -97,7 +98,9 @@ function MyApp({ Component, pageProps }) {
             showMessage={showMessage}
             handleClose={handleClose}
           />
-          <Header logout={loginHandler} header={isLogedIn} />
+          {/* <Header logout={loginHandler} header={isLogedIn} /> */}
+                    <OrderHeader logout={logoutHandler} header={isLogedIn} ></OrderHeader>
+
           <Component
             handleShow={handleShow}
             isLoggedIn={loginHandler}
