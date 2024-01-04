@@ -1,25 +1,26 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import styles from "./CardSectionTwo.styles.module.scss";
+import Image from "next/image";
 const cardData = [
   {
     title: "Erectile Dysfunction",
-    imageUrl: "https://via.placeholder.com/150?text=Erectile+Dysfunction",
+    imageUrl: "/assets/homepage/card2/card1.png",
     text: "Get premium, FDA-approved, US-made E.D. medication from the comfort of your home! Save up to 90% with Pure Blue Generic Viagra and Cialis that feature the same potency and effectiveness vs their brand-name counterparts.",
   },
   {
     title: "Men’s Hair Loss",
-    imageUrl: "https://via.placeholder.com/150?text=Erectile+Dysfunction",
+    imageUrl: "/assets/homepage/card2/card2.png",
     text: "Get premium at-home treatment medication for men’s hair loss! Pure Blue offers advanced FDA-approved treatments that target the root cause of men’s hair loss.",
   },
   {
     title: "Testosterone",
-    imageUrl: "https://via.placeholder.com/150?text=Erectile+Dysfunction",
+    imageUrl: "/assets/homepage/card2/card3.png",
     text: "Revitalize your testosterone levels safely with Pure Blue’s advanced testosterone treatments! Pure Blue offers treatments to naturally boost your testosterone levels, without the common side effects of anabolic steroids.",
   },
   {
     title: "Custom Treatments",
-    imageUrl: "https://via.placeholder.com/150?text=Erectile+Dysfunction",
+    imageUrl: "/assets/homepage/card2/card4.png",
     text: "Pure Blue offers advanced Fixed-Dose Combination (FDC) medications, developed exclusively for Pure Blue customers, to target multiple pathways, yielding superior performance and results.",
   },
 ];
@@ -31,12 +32,11 @@ const CardSectionTwo = () => {
         <Col>
           <h1>
             <span className="text-primary">PureBlue </span>
-            makes men's health simpler, <br />
-            more convenient, and affordable.
+            makes men's health simpler, more convenient, and affordable.
           </h1>
           <Button size="lg" className={styles.exploreButton}>
-            -{"> "}
-            Explore treatments
+            <Image src="/assets/icons/searchIcon.png" width={13} height={13} />
+            <span>Explore treatments</span>
           </Button>
         </Col>
       </Row>
@@ -47,7 +47,7 @@ const CardSectionTwo = () => {
             <Col key={index} sm={12} md={6} className={styles.productCol}>
               <Card className={styles.productCard}>
                 <Card.Img variant="top" src={card.imageUrl} alt={card.title} />
-                <Card.Body>
+                <Card.Body className={styles.cardBody}>
                   <Card.Title className={styles.cardTitle}>
                     {card.title}
                   </Card.Title>

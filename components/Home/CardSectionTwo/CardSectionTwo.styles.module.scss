@@ -1,0 +1,71 @@
+.mainContainer {
+  background-color: white;
+  border-radius: 12px;
+  max-width: 70rem;
+  padding: 10px 15px;
+  h1 {
+    font-size: 3rem;
+    color: #000;
+    margin: 1rem 0px;
+
+    @media (max-width: 576px) {
+      font-size: 26px;
+    }
+    @media (max-width: 375px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.exploreButton {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  &:hover {
+    background-color: darken(black, 10%);
+    color: #ddd;
+  }
+  span {
+    margin-left: 10px;
+  }
+}
+.productCol {
+  margin-bottom: 2rem;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: #f6f6f6;
+  border-bottom: 3px solid #0077f0;
+  img {
+    border-radius: 14px;
+  }
+  .cardTitle {
+    color: #000;
+    font-size: 1.2rem !important;
+  }
+  .cardText {
+    color: #808080;
+    font-size: 14px;
+  }
+
+  .cardBody {
+  }
+}
+
+@media (max-width: 320px) {
+  .productCard {
+    flex-direction: column;
+    img {
+      width: auto;
+    }
+  }
+}

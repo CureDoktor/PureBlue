@@ -1,0 +1,36 @@
+.mainContainer {
+  background-color: white;
+  border-radius: 12px;
+  max-width: 70rem;
+  padding: 10px 15px;
+  margin-bottom: 3rem;
+  .card {
+    background: #f7f7f7;
+    border-radius: 20px;
+    border: none;
+    width: 100%;
+    p {
+      color: black;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    color: #000;
+    margin: 1rem 0px;
+  }
+  h6 {
+    font-size: 13px;
+  }
+}
+
+.btnBox {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+  .btn {
+    padding: 10px 10px;
+    border-radius: 20px;
+  }
+}
