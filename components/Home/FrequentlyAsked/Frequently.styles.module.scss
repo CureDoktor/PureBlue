@@ -16,25 +16,31 @@ $secondary-color: #003b60;
     border: 0px;
     padding: 15px 0px;
     margin-bottom: 30px;
-    // border-bottom: 1px solid #003b60;
   }
-  //   .header {
-  //     // background-color: $primary-color;
-  //     border: 0px;
-  //     padding: 10px 0px;
-  //   }
+
   h2 {
     font-size: 41px;
     font-weight: 700;
-    // padding-bottom: 20px;
+
+    @media (max-width: 576px) {
+      font-size: 28px;
+    }
+    @media (max-width: 375px) {
+      font-size: 24px;
+    }
   }
   h3 {
     color: #0059f4;
     font-size: 41px;
-    // line-height: 51px;
-    // color: #ffffff;
     font-weight: 700;
     padding-bottom: 20px;
+
+    @media (max-width: 576px) {
+      font-size: 28px;
+    }
+    @media (max-width: 375px) {
+      font-size: 24px;
+    }
   }
   h4 {
     color: white;
@@ -49,7 +55,7 @@ $secondary-color: #003b60;
     text-align: center;
     width: 34px;
     height: 34px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     padding-top: 6px;
   }
@@ -57,5 +63,13 @@ $secondary-color: #003b60;
     font-size: 1.5rem;
     font-weight: 600;
     padding-top: 6px;
+
+    @media (max-width: 576px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 0.9rem;
+    }
   }
 }

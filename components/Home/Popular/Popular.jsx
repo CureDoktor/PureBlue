@@ -52,9 +52,9 @@ const Popular = () => {
           320: { slidesPerView: 1, spaceBetween: 5 },
           425: { slidesPerView: 1, spaceBetween: 5 },
           500: { slidesPerView: 1, spaceBetween: 5 },
-          640: { slidesPerView: 2, spaceBetween: 20 }, // 2 cards for medium and large mobile screens
-          768: { slidesPerView: 2, spaceBetween: 30 }, // 3 cards for small desktops and tablets
-          1200: { slidesPerView: 3, spaceBetween: 40 }, // 4 cards for larger desktops
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 30 },
+          1200: { slidesPerView: 3, spaceBetween: 40 },
         }}
       >
         {products.map((product, idx) => (

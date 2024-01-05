@@ -29,22 +29,65 @@
   }
 }
 
+.cardSectionTwo {
+  background: #e3e3e3;
+  position: relative;
+  height: 800px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 950px;
+  }
+  @media (max-width: 576px) {
+    height: 850px;
+  }
+  @media (max-width: 320px) {
+    // height: 1600px;
+    height: 860px;
+  }
+}
+
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 430px;
 
-  .image {
-    position: absolute;
-    top: 0;
-    left: 0;
+  @media (max-width: 768px) {
+    height: 230px;
+  }
+  @media (max-width: 500px) {
+    height: 120px;
+  }
+  @media (max-width: 320px) {
+    height: 90px;
+  }
+  img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-position: center;
   }
 }
 
 .service {
   background: #e3e3e3 0% 0% no-repeat padding-box;
+}
+
+.lastSection {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-size: 42px;
+    @media (max-width: 768px) {
+      font-size: 30px;
+    }
+    @media (max-width: 500px) {
+      font-size: 25px;
+    }
+    @media (max-width: 375px) {
+      font-size: 20px;
+    }
+  }
+  button {
+    margin-right: auto;
+  }
 }

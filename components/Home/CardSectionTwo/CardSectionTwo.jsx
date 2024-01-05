@@ -44,7 +44,14 @@ const CardSectionTwo = () => {
       <Container>
         <Row className="mt-5">
           {cardData.map((card, index) => (
-            <Col key={index} sm={12} md={6} className={styles.productCol}>
+            <Col
+              key={index}
+              sm={12}
+              md={12}
+              lg={6}
+              xs={12}
+              className={styles.productCol}
+            >
               <Card className={styles.productCard}>
                 <Card.Img variant="top" src={card.imageUrl} alt={card.title} />
                 <Card.Body className={styles.cardBody}>

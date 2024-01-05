@@ -16,16 +16,9 @@ const Service = () => {
       <Row>
         {serviceArr.map((service, index) => {
           return (
-            <Col
-              key={index}
-              xs={6}
-              lg={3}
-              className="d-flex align-items-center gap-2"
-            >
-              <Image
+            <Col key={index} xs={6} lg={3} className={styles.serviceCol}>
+              <img
                 src={service.imageUrl}
-                width={20}
-                height={20}
                 className={styles.check}
                 alt={service.name}
               />

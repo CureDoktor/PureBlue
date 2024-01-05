@@ -13,7 +13,6 @@ import Service from "./Service";
 const HomePage = () => {
   return (
     <div>
-      {/*---------------- section one------------ */}
       <Container className={styles.container}>
         <div className="my-5">
           <h1>
@@ -48,14 +47,9 @@ const HomePage = () => {
         </Container>
       </div>
       <div className={styles.imageContainer}>
-        <Image
-          src="/assets/homepage/sections/section1.png"
-          layout="fill"
-          objectFit="cover"
-          alt="Background"
-        />
+        <img src="/assets/homepage/sections/section1.png" alt="Background" />
       </div>
-      <div style={{ background: "#E3E3E3", position: "relative" }}>
+      <div className={styles.cardSectionTwo}>
         <CardSectionTwo />
       </div>
 
@@ -75,6 +69,19 @@ const HomePage = () => {
       <div style={{ background: "#F7F7F7" }}>
         <Frequently />
       </div>
+
+      <Container className={styles.container}>
+        <div className={`my-5 ${styles.lastSection}`}>
+          <h1>
+            <span className="text-primary">PureBlue </span>
+            makes men’s health simpler, more convenient, and affordable.
+          </h1>
+          <Button className={`bg-dark mt-4 fs-6 ${styles.btn}`}>
+            <Image src="/assets/icons/searchIcon.png" width={13} height={13} />
+            <span>Explore treatments</span>
+          </Button>
+        </div>
+      </Container>
     </div>
   );
 };
