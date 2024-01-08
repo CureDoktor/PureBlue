@@ -1,40 +1,36 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
-import {  Card, ListGroup, Image } from 'react-bootstrap';
+import { Container, Row, Col } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
 import styles from "./styles.module.scss";
+import Image from "next/image";
+import img from "../../../public/assets/order/orderHeroImg.png";
+import bg from "../../../public/assets/order/bg.png";
 export default function OrderHero(props) {
+  console.log("dffvvdv", img);
   return (
-    <div>
-     <Container>
-      {/* Heading at the top right */}
-      <h2 className="text-right">Your Heading</h2>
-
-      {/* Card with image on the right and list on the left */}
-      <Card style={{ backgroundImage: 'url("https://source.unsplash.com/800x600/?nature")', backgroundSize: 'cover' }}>
-        <Card.Body>
-          <Card.Title>Your Card Title</Card.Title>
-          <div className="d-flex">
-            {/* List on the left */}
-            <div>
-              <Card.Text>Your List:</Card.Text>
-              <ListGroup>
-                <ListGroup.Item>List Item 1</ListGroup.Item>
-                <ListGroup.Item>List Item 2</ListGroup.Item>
-                <ListGroup.Item>List Item 3</ListGroup.Item>
-              </ListGroup>
-            </div>
-
-            {/* Image on the right */}
-            <Image
-              src="https://placekitten.com/200/150" // Replace with your actual image source
-              alt="Card Image"
-              className="ml-3"
-              style={{ maxWidth: '100px', maxHeight: '75px' }}
-            />
+    <div className={styles.container}>
+      <div className={styles.sec1}>
+        <div>
+          <h1 className={styles.mainHeading}>COMPLETE YOUR ORDER</h1>
+        </div>
+        <div className={styles.imgContainer}>
+         
+          <div>
+            <h1>Get Genuine ED Pills Now</h1>
+            <ul className={styles.ul}>
+              <li>✓ 100% Online Service</li>
+              <li>✓ No Appointment Needed</li>
+              <li>✓ No Doctor’s fees – No Hidden Charges</li>
+              <li>✓ Free 2-day Rushed Shipping</li>
+              <li></li>
+            </ul>
           </div>
-        </Card.Body>
-      </Card>
-    </Container>
+          {/* <div>
+            <Image className={styles.heroImg} src={img}></Image>
+          </div> */}
+        </div>
+      </div>
+      <div className={styles.sec2}>rdgtrhh</div>
     </div>
   );
 }

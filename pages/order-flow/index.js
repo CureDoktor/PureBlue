@@ -16,11 +16,18 @@ import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 import ShipInfo from "../../components/ShipInfo";
 import OrderHero from "../../components/order-flow/OrderHero";
+import OnlineTreatment from "../../components/order-flow/OnlineTreatment";
+import Choice from "../../components/order-flow/Choice";
+import { OrderForm } from "../../components/order-flow/OrderForm";
+
 
 export default function OrderFlow(props) {
  return(
   <div>
     <OrderHero></OrderHero>
+    <OnlineTreatment></OnlineTreatment>
+    <Choice></Choice>
+    <OrderForm></OrderForm>
   
   </div>
  )

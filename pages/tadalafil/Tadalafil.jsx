@@ -156,7 +156,7 @@ const Tadalafil = () => {
                   />
                 </div>
               </div>
-              {/* <Carousel
+              <Carousel
                 setSwiperInstance={setSwiperInstance}
                 items={[
                   {
@@ -200,7 +200,7 @@ const Tadalafil = () => {
                     isVerified: true,
                   },
                 ]}
-              /> */}
+              />
               <div className={styles.mobileNavigation}>
                 <Navigation
                   handleSlideNext={() => swiper?.slideNext()}
