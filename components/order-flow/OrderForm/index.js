@@ -16,7 +16,7 @@ export const OrderForm = () => {
                 <input type="text" placeholder="Last Name (As it appears on your ID)" />
             </div>
             <div>
-                <input type="text" placeholder="Email" />
+                <input type="text" placeholder="Emaill"  />
                 <input type="text" placeholder="Phone" />
             </div>
           </div>
