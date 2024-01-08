@@ -10,7 +10,6 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext } from "react-bootstrap";
 import { useRouter } from "next/router";
 import HomePage from "../components/Home";
-import HomeRemain from "../components/HomeRemain";
 
 export default function Home() {
   const history = useRouter();
@@ -52,7 +51,6 @@ export default function Home() {
       </Head>
       <main>
         <HomePage />
-        <HomeRemain />
 
         {/* <div className={styles.fieldOneBg}>
           <Container className={styles.container}>
