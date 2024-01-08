@@ -1,0 +1,94 @@
+.mainContainer {
+  margin: 5rem 0px;
+  position: absolute;
+  top: -30rem;
+
+  @media (max-width: 768px) {
+    position: relative;
+    top: 0;
+  }
+}
+.mainBox {
+  background: transparent
+    linear-gradient(
+      180deg,
+      hsla(210, 100%, 97%, 1) 0%,
+      hsla(0, 0%, 100%, 1) 55%,
+      hsla(209, 100%, 91%, 1) 87%,
+      hsla(210, 100%, 70%, 1) 100%
+    )
+    0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+  max-width: 70rem;
+  margin: auto;
+  display: flex;
+  padding-top: 3rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding: 0px 40px;
+    border-radius: 0px;
+  }
+  @media (max-width: 500px) {
+    padding: 0px 15px;
+  }
+  @media (max-width: 350px) {
+    padding: 0px 10px;
+  }
+
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 0.7rem;
+      @media (max-width: 1024px) {
+        gap: 20px;
+      }
+      @media (max-width: 500px) {
+        gap: 15px;
+        margin-bottom: 0rem;
+      }
+      span {
+        font-size: 15px;
+        font-weight: 600;
+
+        @media (max-width: 500px) {
+          font-size: 13px;
+        }
+        @media (max-width: 350px) {
+          font-size: 10px;
+        }
+      }
+      .featureIcon {
+        display: flex;
+        padding: 10px;
+        img {
+          width: 21px;
+          height: 21px;
+          @media (max-width: 500px) {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .imgBox {
+    display: flex;
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

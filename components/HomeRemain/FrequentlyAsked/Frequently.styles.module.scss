@@ -1,0 +1,129 @@
+$primary-color: #0077f0;
+$secondary-color: #003b60;
+.fieldNine {
+  max-width: 70rem;
+  margin-bottom: 3rem;
+  margin: auto;
+  //   background-color: $primary-color;
+  padding: 120px 0px 80px 0px;
+  .expand {
+    // margin: auto;
+    color: #ffffff;
+    // max-width: 900px;
+  }
+  .container {
+    h2 {
+      text-align: center;
+      font: normal normal medium 35px/70px Futura Md BT;
+      letter-spacing: -0.7px;
+      opacity: 1;
+    }
+  }
+  .cardHeader {
+    background-color: #f7f7f7;
+    border: 0px;
+    padding: 40px 0px;
+
+    border-radius: 0px;
+    border-bottom: 1px solid black;
+  }
+
+  h2 {
+    font-size: 41px;
+    font-weight: 700;
+
+    @media (max-width: 576px) {
+      font-size: 28px;
+    }
+    @media (max-width: 375px) {
+      font-size: 24px;
+    }
+  }
+  h3 {
+    color: #0059f4;
+    font-size: 41px;
+    font-weight: 700;
+    padding-bottom: 20px;
+
+    @media (max-width: 576px) {
+      font-size: 28px;
+    }
+    @media (max-width: 375px) {
+      font-size: 24px;
+    }
+  }
+  h4 {
+    color: white;
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 0px 20px 0px;
+  }
+  .plus {
+    color: white;
+    background-color: rgba(0, 119, 240, 1);
+    border-radius: 5px;
+    width: auto;
+    height: 40px;
+
+    p {
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+  .textPart {
+    background-color: #f7f7f7;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 6px;
+
+    @media (max-width: 576px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .alert {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    margin: 5rem 1rem;
+    padding: 20px 40px;
+
+    @media (max-width: 576px) {
+      padding: 20px 20px;
+    }
+    h2 {
+      font-size: 27px;
+
+      color: rgba(206, 0, 0, 1);
+
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+    p {
+      margin-top: 20px;
+      font-size: 17px;
+
+      @media (max-width: 576px) {
+        font-size: 11px;
+      }
+    }
+
+    .alertBox {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    span {
+      text-decoration: underline;
+      font: italic normal normal 17px/25px Poppins;
+      cursor: pointer;
+      @media (max-width: 576px) {
+        font: italic normal normal 11px/18px Poppins;
+      }
+    }
+  }
+}
