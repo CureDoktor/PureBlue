@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import {
   Col,
   Container,
@@ -17,6 +17,7 @@ import styles from "./styles.module.scss";
 import Router, { useRouter } from "next/router";
 export default function Header(props) {
   const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const sentToLogin = () => {
     props.logout();
   };
@@ -40,44 +41,9 @@ export default function Header(props) {
               className={styles.toggle}
             />
           </div>
+
           <Navbar.Collapse id="basic-navbar-nav" className={styles.collapse}>
             <Nav className={styles.nav}>
-              {/* <NavDropdown
-              title={
-                <>
-                  Test one
-                  <CaretDownFill style={{ fontSize: 12, marginLeft: 5 }} />
-                </>
-              }
-              id="basic-nav-dropdown"
-              className={styles.link}
-            >
-              <Link href="/car-insurance" passHref>
-                <NavDropdown.Item className={styles.dropdownLink}>
-                  Test one
-                </NavDropdown.Item>
-              </Link>
-              <Link href="/company-insurance" passHref>
-                <NavDropdown.Item className={styles.dropdownLink}>
-                  Test one
-                </NavDropdown.Item>
-              </Link>
-              <Link href="/household-insurance" passHref>
-                <NavDropdown.Item className={styles.dropdownLink}>
-                  Test one
-                </NavDropdown.Item> 
-              </Link>
-              <Link href="/legal-expenses-insurance" passHref>
-                <NavDropdown.Item className={styles.dropdownLink}>
-                  Test one
-                </NavDropdown.Item>
-              </Link>
-              <Link href="/life-insurance" passHref>
-                <NavDropdown.Item className={styles.dropdownLink}>
-                  Test one  
-                </NavDropdown.Item>
-              </Link>
-            </NavDropdown> */}
               <Link href="/" passHref>
                 <Nav.Link className={styles.link}>Home</Nav.Link>
               </Link>
@@ -90,12 +56,10 @@ export default function Header(props) {
               <Link href="/contact" passHref>
                 <Nav.Link className={styles.link}>Contact</Nav.Link>
               </Link>
-              {props.header ? (
+              {props.header && (
                 <Link href="/account" passHref>
                   <Nav.Link className={styles.link}>Account</Nav.Link>
                 </Link>
-              ) : (
-                ""
               )}
               {props.header ? (
                 <Button onClick={sentToLogin}>
@@ -110,14 +74,84 @@ export default function Header(props) {
                   LOGIN
                 </Button>
               )}
-
-              {/* {props.header ? (
-                <Button onClick={sentToLogin}>LOGOUT</Button>
-              ) : (
-                ""
-              )} */}
             </Nav>
           </Navbar.Collapse>
+
+          {/* --------------custom header----------  */}
+          {/* <section className={styles.headLinks}>
+            <img src="/assets/header/account.png" />
+            <img src="/assets/header/cart.png" />
+            <img
+              src="/assets/header/hamburger.png"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={styles.hamburger}
+            />
+            {isMenuOpen && (
+              <div className={isMenuOpen ? styles.menuActive : styles.menu}>
+                <Link href="/" passHref>
+                  <a
+                    className={styles.menuItem}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Home
+                  </a>
+                </Link>
+                <Link href="/about" passHref>
+                  <a
+                    className={styles.menuItem}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About Us
+                  </a>
+                </Link>
+                <Link href="/faq" passHref>
+                  <a
+                    className={styles.menuItem}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    FAQs
+                  </a>
+                </Link>
+                <Link href="/contact" passHref>
+                  <a
+                    className={styles.menuItem}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact
+                  </a>
+                </Link>
+                {props.header && (
+                  <Link href="/account" passHref>
+                    <a
+                      className={styles.menuItem}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Account
+                    </a>
+                  </Link>
+                )}
+                {props.header ? (
+                  <Button
+                    onClick={() => {
+                      sentToLogin();
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    LOGOUT
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => {
+                      router.push("/login");
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    LOGIN
+                  </Button>
+                )}
+              </div>
+            )}
+          </section> */}
         </Container>
       </Navbar>
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import CardSection from "./CardSection";
 import ButtonSection from "./ButtonSection";
@@ -10,7 +10,9 @@ import CardSectionThree from "./CardSectionThree";
 import Health from "./health";
 import Popular from "./Popular";
 import Service from "./Service";
+import ModalBox from "./ModalBox";
 const HomePage = () => {
+  const [showModal, setShowModel] = useState(false);
   return (
     <div>
       <Container className={styles.container}>
@@ -76,12 +78,20 @@ const HomePage = () => {
             <span className="text-primary">PureBlue </span>
             makes men’s health simpler, more convenient, and affordable.
           </h1>
-          <Button className={`bg-dark mt-4 fs-6 ${styles.btn}`}>
+          <Button
+            className={`bg-dark mt-4 fs-6 ${styles.btn}`}
+            onClick={() => setShowModel(!showModal)}
+          >
             <Image src="/assets/icons/searchIcon.png" width={13} height={13} />
             <span>Explore treatments</span>
           </Button>
         </div>
       </Container>
+      {/* {showModal && (
+        <div>
+          <ModalBox />
+        </div>
+      )} */}
     </div>
   );
 };
