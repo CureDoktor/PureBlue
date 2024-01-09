@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import ForwardIcon from "../../../public/assets/forward.png";
+import Button from "../../Button";
+import Image from "next/image";
 export const OrderForm = () => {
   return (
     <div className={styles.main}>
@@ -10,17 +13,56 @@ export const OrderForm = () => {
           <h1 className={styles.title}>SHIPPING DETAILS</h1>
         </div>
         <div>
-          <div>
-            <div>
-                <input type="text" placeholder="First Name (As it appears on your ID)" />
-                <input type="text" placeholder="Last Name (As it appears on your ID)" />
+          <div className={styles.group}>
+            <div className={styles.inputContainer}>
+              <input
+                type="text"
+                placeholder="First Name (As it appears on your ID)"
+              />
+              <input
+                type="text"
+                placeholder="Last Name (As it appears on your ID)"
+              />
             </div>
-            <div>
-                <input type="text" placeholder="Emaill"  />
-                <input type="text" placeholder="Phone" />
+            <div className={styles.inputContainer}>
+              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Phone" />
+            </div>
+            <div className={styles.inputContainer}>
+              <input
+                type="text"
+                placeholder="Street Address (Including APT #)"
+              />
+              <input type="text" placeholder="Street Address 2" />
+            </div>
+            <div className={styles.combinedContainer}>
+              <input
+                className={styles.customInput}
+                type="text"
+                placeholder="Street Address (Including APT #)"
+              />
+              <div className={styles.customInput2}>
+                <select name="shipping" id="cars">
+                  <option selected disabled>
+                    zipcode
+                  </option>
+                  <option value="volvo">Canada</option>
+                  <option value="saab">Turkey</option>
+                  <option value="opel">australia</option>
+                  <option value="audi">italy</option>
+                </select>
+                <input type="text" placeholder="address" />
+              </div>
             </div>
           </div>
-          <div></div>
+          <div className={styles.btn}>
+            <Button variant="gradient">
+              CONTINUE TO STEP 2
+              <span className={styles.buttonIcon}>
+                <Image src={ForwardIcon} alt="Forward icon" layout="fill" />
+              </span>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

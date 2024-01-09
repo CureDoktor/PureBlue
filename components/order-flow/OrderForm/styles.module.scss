@@ -13,13 +13,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 800px;
+  @media only screen and (max-width: 767px) {
+    
+    height: 900px;
+  }
 }
 
 .form {
   width: 75%;
   border: 2px solid #0077f0;
-  height: 700px;
+  height: 600px;
   border-radius: 20px;
+  @media only screen and (max-width: 767px) {
+    width: 85%;
+    height: 750px;
+  }
+  
 }
 .formHead {
   background-color: #ecf6ff;
@@ -33,6 +43,11 @@
   gap: 3rem;
   margin: 0px;
   padding: 0px;
+  @media only screen and (max-width: 767px) {
+    height: 60px;
+    gap: 0rem;
+
+  }
 }
 .title {
   // background-color:#0077F0 ;
@@ -44,6 +59,11 @@
   align-items: center;
   font-weight: 600;
   padding-left: 20px;
+  @media only screen and (max-width: 767px) {
+    padding-left: 10px;
+    font-size: 20px;
+
+  }
 }
 
 .stepNo {
@@ -58,4 +78,123 @@
   align-items: center;
   color: white;
   min-width: 260px;
+  @media only screen and (max-width: 767px) {
+    min-width: 160px;
+
+  }
+
+  
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  @media only screen and (max-width: 767px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  & .inputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    width: 85%;
+    & input {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #707070;
+      border-radius: 10px;
+      outline: none;
+      width: 400px;
+      height: 50px;
+      padding-left: 20px;
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.combinedContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  & .customInput {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    outline: none;
+    width: 400px;
+    height: 50px;
+    padding-left: 20px;
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  & .customInput2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    outline: none;
+    width: 400px;
+    height: 50px;
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+    & input {
+      width: 45%;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #707070;
+      border-radius: 10px;
+      outline: none;
+      padding-left: 20px;
+    }
+    & select {
+      width: 45%;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #707070;
+      border-radius: 10px;
+      outline: none;
+      padding-left: 20px;
+    }
+  }
+}
+
+.buttonIcon {
+  width: 30px;
+  height: 30px;
+  margin-left: 23px;
+  position: relative;
+  @media only screen and (max-width: 767px) {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+  }
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

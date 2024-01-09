@@ -19,15 +19,18 @@ import OrderHero from "../../components/order-flow/OrderHero";
 import OnlineTreatment from "../../components/order-flow/OnlineTreatment";
 import Choice from "../../components/order-flow/Choice";
 import { OrderForm } from "../../components/order-flow/OrderForm";
+import Chart from "../../components/order-flow/Chart";
 
 
 export default function OrderFlow(props) {
  return(
   <div>
     <OrderHero></OrderHero>
+    <Chart></Chart>
     <OnlineTreatment></OnlineTreatment>
     <Choice></Choice>
     <OrderForm></OrderForm>
+   
   
   </div>
  )

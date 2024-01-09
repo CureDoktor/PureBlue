@@ -61,6 +61,7 @@ const Choice = () => {
                   type="radio"
                   name="med"
                   id="medi2"
+                
                   onChange={() => setselected(2)}
                 />
                 <label for="medi2">25mg $3.75/per dose </label>
@@ -150,48 +151,45 @@ const Choice = () => {
         </div>
       </div>
 
-   <div className={Styles.summarySec}>
-   <div className={Styles.summaryDesc}>
-   Based on your selections, here is the summary of your Order:
-   </div>
-   <div className={Styles.summary}>
+      <div className={Styles.summarySec}>
+        <div className={Styles.summaryDesc}>
+          Based on your selections, here is the summary of your Order:
+        </div>
+        <div className={Styles.summary}>
+          <div className={Styles.summaryHead}>Order Summary</div>
+          <div className={Styles.bulletDiv}>
+            <ul>
+              <span className={Styles.topBlock}>sw</span>
 
-<div className={Styles.summaryHead}>
-Order Summary
-</div>
-<div className={Styles.bulletDiv}>
-<ul >
-  <span className={Styles.topBlock}>sw</span>
+              <li className={Styles.lii}>
+                12 pills/ monthly (cancel or pause anytime){" "}
+              </li>
+              <li className={Styles.lii}>$5.75/ per dose (pill) </li>
+              <li className={Styles.lii}>
+                {" "}
+                VIP 25% discount has been applied (Normally $92.00){" "}
+              </li>
+              <li className={Styles.lii}>VIP Rushed Shipping </li>
 
-  <li className={Styles.lii}>
-    12 pills/ monthly (cancel or pause anytime){" "}
-  </li>
-  <li className={Styles.lii}>$5.75/ per dose (pill) </li>
-  <li className={Styles.lii}>
-    {" "}
-    VIP 25% discount has been applied (Normally $92.00){" "}
-  </li>
-  <li className={Styles.lii}>VIP Rushed Shipping </li>
+              <li className={Styles.lii}>Total $69.00 today</li>
 
-  <li className={Styles.lii}>Total $69.00 today</li>
+              <li className={Styles.lii}>
+                Rebills Monthly for $69.00 every 30 days. (cancel or pause
+                anytime)
+              </li>
+              <li className={Styles.lii}>
+                Easily change dosage by simply calling us or through your online
+                login – you will create after checkout{" "}
+              </li>
+              <li className={Styles.lii}>
+                VIP Phone Number – 1-888-534-8977 for any assistance{" "}
+              </li>
 
-  <li className={Styles.lii}>
-    Rebills Monthly for $69.00 every 30 days. (cancel or pause anytime)
-  </li>
-  <li className={Styles.lii}>
-    Easily change dosage by simply calling us or through your online
-    login – you will create after checkout{" "}
-  </li>
-  <li className={Styles.lii}>
-    VIP Phone Number – 1-888-534-8977 for any assistance{" "}
-  </li>
-
-  <span className={Styles.block}>sfffw</span>
-  
-</ul>
-</div>
-</div>
-   </div>
+              <span className={Styles.block}>sfffw</span>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
