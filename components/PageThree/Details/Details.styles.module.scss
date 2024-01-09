@@ -1,0 +1,112 @@
+.mainContainer {
+  max-width: 70rem;
+  margin: auto;
+}
+
+.optOutText {
+  text-align: center;
+  p {
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.49px;
+    color: #000000;
+    @media (max-width: 500px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.para {
+  p {
+    font-size: 21px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #000000;
+    @media (max-width: 500px) {
+      font-size: 16px;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.service {
+  margin: auto;
+  max-width: 1000px;
+  height: 100px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 13px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  @media (max-width: 500px) {
+    max-width: 300px;
+    height: 155px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .serviceBox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    img {
+      width: 27px;
+      height: 25px;
+
+      @media (max-width: 500px) {
+        width: 21px;
+        height: 19px;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      @media (max-width: 500px) {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.packageAd {
+  margin: 7rem 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  img {
+    max-width: 376px;
+    height: 251px;
+
+    @media (max-width: 500px) {
+      max-width: 310px;
+      height: 207px;
+    }
+  }
+  p {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #000000;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+    @media (max-width: 500px) {
+      font-size: 15px;
+    }
+  }
+  .pColor {
+    color: #0077f0;
+  }
+}
