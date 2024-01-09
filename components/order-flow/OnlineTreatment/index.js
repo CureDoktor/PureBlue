@@ -10,7 +10,7 @@ export default function OnlineTreatment(props) {
   return (
     <div className={styles.mainSection}>
       <div className={styles.secA}>
-        <Image src={modelPic}></Image>
+        <Image src={modelPic} className={styles.modelImg}></Image>
       </div>
       <div className={styles.secB}>
         <div className={styles.imageContainer}>

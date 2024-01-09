@@ -11,15 +11,24 @@
 .heading {
   display: flex;
   flex-direction: row;
+  @media only screen and (max-width: 767px) {
+    font-size: 10px;
+  }
 }
 .whitee {
   color: black;
   font-weight: bold;
+  @media only screen and (max-width: 767px) {
+    font-size: 22px;
+  }
 }
 
 .bluee {
   color: #0077f0;
   font-weight: bold;
+  @media only screen and (max-width: 767px) {
+    font-size: 23px;
+  }
 }
 
 .subHeading {
@@ -29,7 +38,7 @@
   margin-top: 20px;
   @media only screen and (max-width: 767px) {
     max-width: 550px;
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .stepDiv {
