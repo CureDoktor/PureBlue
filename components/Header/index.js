@@ -34,7 +34,7 @@ export default function Header(props) {
               />
             </a>
           </Link>
-          <div className={styles.tablet}>
+          {/* <div className={styles.tablet}>
             <Navbar.Toggle
               aria-controls="basic-navbar-nav"
               style={{ marginLeft: 20, borderRadius: 15 }}
@@ -75,10 +75,10 @@ export default function Header(props) {
                 </Button>
               )}
             </Nav>
-          </Navbar.Collapse>
+          </Navbar.Collapse> */}
 
           {/* --------------custom header----------  */}
-          {/* <section className={styles.headLinks}>
+          <section className={styles.headLinks}>
             <img src="/assets/header/account.png" />
             <img src="/assets/header/cart.png" />
             <img
@@ -86,7 +86,7 @@ export default function Header(props) {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={styles.hamburger}
             />
-            {isMenuOpen && (
+            {/* {isMenuOpen && (
               <div className={isMenuOpen ? styles.menuActive : styles.menu}>
                 <Link href="/" passHref>
                   <a
@@ -150,8 +150,8 @@ export default function Header(props) {
                   </Button>
                 )}
               </div>
-            )}
-          </section> */}
+            )} */}
+          </section>
         </Container>
       </Navbar>
     </>

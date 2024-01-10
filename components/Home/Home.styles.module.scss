@@ -1,5 +1,5 @@
 .container {
-  max-width: 1082px;
+  max-width: 70rem;
   display: flex;
   p {
     font-size: 20px;
@@ -14,7 +14,7 @@
     font-size: 40px;
 
     @media (max-width: 576px) {
-      font-size: 25px;
+      font-size: 26px;
     }
   }
 }
@@ -38,14 +38,10 @@
   justify-content: center;
 
   @media (max-width: 768px) {
-    height: 950px;
+    height: 1150px;
   }
   @media (max-width: 576px) {
-    height: 850px;
-  }
-  @media (max-width: 320px) {
-    // height: 1600px;
-    height: 860px;
+    height: 950px;
   }
 }
 

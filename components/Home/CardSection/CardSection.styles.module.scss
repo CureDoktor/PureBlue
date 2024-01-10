@@ -1,6 +1,8 @@
 .container {
   position: absolute;
   top: -180px;
+  max-width: 70rem;
+  margin: auto;
 
   @media (max-width: 576px) {
     top: -200px;
@@ -20,14 +22,14 @@
 }
 
 .card {
-  width: 100%;
+  max-width: 227px;
   height: 250px;
   border-radius: 10%;
 
-  @media (max-width: 375px) {
-    width: 80%;
-    height: 250px;
-  }
+  // @media (max-width: 375px) {
+  //   width: 80%;
+  //   height: 250px;
+  // }
 }
 
 .cardImg {
@@ -53,4 +55,10 @@
 .cardTitle {
   // flex-grow: 1;
   font-size: 0.9rem;
+}
+
+.slide {
+  @media (max-width: 375px) {
+    width: 180px !important;
+  }
 }

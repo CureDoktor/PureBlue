@@ -10,7 +10,6 @@ import CardSectionThree from "./CardSectionThree";
 import Health from "./health";
 import Popular from "./Popular";
 import Service from "./Service";
-import ModalBox from "./ModalBox";
 const HomePage = () => {
   const [showModal, setShowModel] = useState(false);
   return (
@@ -87,11 +86,6 @@ const HomePage = () => {
           </Button>
         </div>
       </Container>
-      {/* {showModal && (
-        <div>
-          <ModalBox />
-        </div>
-      )} */}
     </div>
   );
 };

@@ -9,26 +9,11 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 const CardSection = () => {
   const cardInfo = [
-    {
-      title: "Erectile Dysfunction",
-      imageUrl: "/assets/homepage/card/card1.png",
-    },
-    {
-      title: "Custom Medication",
-      imageUrl: "/assets/homepage/card/card2.png",
-    },
-    {
-      title: "Men's Hair Loss",
-      imageUrl: "/assets/homepage/card/card3.png",
-    },
-    {
-      title: "Testosterone",
-      imageUrl: "/assets/homepage/card/card4.png",
-    },
-    {
-      title: "Weight Loss",
-      imageUrl: "/assets/homepage/card/card5.png",
-    },
+    { title: "Erectile Dysfunction", img: "/assets/homepage/card/card1.png" },
+    { title: "Custom Medication", img: "/assets/homepage/card/card2.png" },
+    { title: "Men's Hair Loss", img: "/assets/homepage/card/card3.png" },
+    { title: "Testosterone", img: "/assets/homepage/card/card4.png" },
+    { title: "Weight Loss", img: "/assets/homepage/card/card5.png" },
   ];
   return (
     <Container className={styles.container}>
@@ -41,9 +26,10 @@ const CardSection = () => {
           320: { slidesPerView: 1, spaceBetween: 5 },
           425: { slidesPerView: 2, spaceBetween: 5 },
           500: { slidesPerView: 2, spaceBetween: 5 },
-          640: { slidesPerView: 2, spaceBetween: 20 }, // 2 cards for medium and large mobile screens
-          768: { slidesPerView: 3, spaceBetween: 30 }, // 3 cards for small desktops and tablets
-          1200: { slidesPerView: 4, spaceBetween: 40 }, // 4 cards for larger desktops
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          768: { slidesPerView: 3, spaceBetween: 30 },
+          1024: { slidesPerView: 4, spaceBetween: 10 },
+          1200: { slidesPerView: 5, spaceBetween: 10 },
         }}
       >
         {cardInfo.map((card, index) => (
@@ -51,7 +37,7 @@ const CardSection = () => {
             <Card className={styles.card}>
               <Card.Img
                 variant="top"
-                src={card.imageUrl}
+                src={card.img}
                 height={"170px"}
                 className={styles.cardImg}
               />

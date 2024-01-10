@@ -7,9 +7,11 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1024px) {
+      padding: 0px 20px;
+    }
     @media (max-width: 575px) {
       flex-direction: column;
-      padding: 0px 20px;
     }
   }
 }

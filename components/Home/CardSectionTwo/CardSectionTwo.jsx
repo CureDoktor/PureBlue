@@ -28,7 +28,7 @@ const cardData = [
 const CardSectionTwo = () => {
   return (
     <Container className={styles.mainContainer}>
-      <Row className="justify-content-md-center ">
+      <Row className="justify-content-md-center">
         <Col>
           <h1>
             <span className="text-primary">PureBlue </span>
@@ -59,6 +59,7 @@ const CardSectionTwo = () => {
                     {card.title}
                   </Card.Title>
                   <Card.Text className={styles.cardText}>{card.text}</Card.Text>
+                  <div className={styles.line}></div>
                 </Card.Body>
               </Card>
             </Col>

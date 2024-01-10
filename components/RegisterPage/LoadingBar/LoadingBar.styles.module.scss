@@ -1,0 +1,28 @@
+.mainContainer {
+  max-width: 70rem;
+  //   min-height: 25vh;
+  margin: auto;
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+  p {
+    margin: 2rem 0rem;
+    text-align: center;
+    font-weight: 400;
+    color: gray;
+  }
+}
+.progress {
+  width: 50%;
+  margin: auto;
+  height: 15px;
+  border-radius: 20px;
+  background: repeating-linear-gradient(135deg, #0077f0 0 10px, #56a9fd 0 20px)
+      0/0% no-repeat,
+    repeating-linear-gradient(135deg, #ddd 0 10px, #eee 0 20px) 0/100%;
+  animation: p3 2s infinite;
+}
+@keyframes p3 {
+  100% {
+    background-size: 100%;
+  }
+}
