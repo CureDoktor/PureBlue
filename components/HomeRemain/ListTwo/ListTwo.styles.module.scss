@@ -1,7 +1,8 @@
 .mainContainer {
-  margin: 5rem 0px;
+  margin-top: 5rem;
   position: absolute;
   top: -30rem;
+  width: 100%;
 
   @media (max-width: 768px) {
     position: relative;
@@ -9,6 +10,11 @@
   }
 }
 .mainBox {
+  max-width: 70rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 98%;
   background: transparent
     linear-gradient(
       180deg,
@@ -20,16 +26,16 @@
     0% 0% no-repeat padding-box;
   border-radius: 12px;
   opacity: 1;
-  max-width: 70rem;
-  margin: auto;
-  display: flex;
-  padding-top: 3rem;
-  justify-content: center;
 
+  padding-top: 3rem;
+  @media (max-width: 1024px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   @media (max-width: 768px) {
     flex-direction: column-reverse;
     gap: 20px;
-    padding: 0px 40px;
+    padding: 0px 30px;
     border-radius: 0px;
   }
   @media (max-width: 500px) {

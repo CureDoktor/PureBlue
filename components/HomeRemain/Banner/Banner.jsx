@@ -21,6 +21,10 @@ const Banner = () => {
         <p className={styles.subtitle}>
           Get FDA-approved ED medication FAST and EASY!
         </p>
+
+        <div className={styles.imgContainer}>
+          <img src={"/assets/homeRemain/Banner/banner.png"} />
+        </div>
         <ul className={styles.featuresList}>
           {featureList.map((feature, index) => (
             <li key={index}>
@@ -59,9 +63,9 @@ const Banner = () => {
         </div>
       </div>
       {/* second container  */}
-      <div className={styles.imgContainer}>
+      {/* <div className={styles.imgContainer}>
         <img src={"/assets/homeRemain/Banner/banner.png"} />
-      </div>
+      </div> */}
     </div>
   );
 };

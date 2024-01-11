@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AccordionContext, Card, Col, Container, Row } from "react-bootstrap";
 import styles from "./Frequently.styles.module.scss";
 import { useContext } from "react";
@@ -40,12 +40,13 @@ const cardData = [
 ];
 
 const Frequently = () => {
+  const [expandedItems, setExpandedItems] = useState([]);
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionButton(
-      eventKey,
-      () => callback && callback(eventKey)
-    );
+    const decoratedOnClick = useAccordionButton(eventKey, () => {
+      callback && callback(eventKey);
+      toggleItem(eventKey);
+    });
 
     const isCurrentEventKey = activeEventKey === eventKey;
 
@@ -54,10 +55,8 @@ const Frequently = () => {
         type="button"
         className="headerOne"
         style={{
-          // backgroundColor: isCurrentEventKey ? "#0077f0" : "#0077f0",
           backgroundColor: "#f7f7f7",
           border: "0px",
-          //   color: "white",
           padding: "0px 12px 0px 12px",
           width: "100%",
           textAlign: "left",
@@ -68,6 +67,14 @@ const Frequently = () => {
       </button>
     );
   }
+
+  const toggleItem = (eventKey) => {
+    setExpandedItems((prevItems) =>
+      prevItems.includes(eventKey)
+        ? prevItems.filter((item) => item !== eventKey)
+        : [...prevItems, eventKey]
+    );
+  };
 
   return (
     <div className={styles.fieldNine}>
@@ -84,7 +91,9 @@ const Frequently = () => {
                 >
                   <Row className="align-items-center">
                     <Col xs={2} sm={1} className={styles.plus}>
-                      <p>+</p>
+                      <p>
+                        {expandedItems.includes(index.toString()) ? "-" : "+"}
+                      </p>
                     </Col>
                     <Col className={styles.textPart} xs={10} sm={11}>
                       {card.question}

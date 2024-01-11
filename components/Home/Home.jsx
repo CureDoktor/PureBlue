@@ -3,7 +3,7 @@ import CardSection from "./CardSection";
 import ButtonSection from "./ButtonSection";
 import styles from "./Home.styles.module.scss";
 import Frequently from "./FrequentlyAsked";
-import Health from "./health";
+import Health from "./Health";
 import Popular from "./Popular";
 import Service from "./Service";
 import Treatment from "./Treatment";

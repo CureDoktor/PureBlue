@@ -12,9 +12,13 @@
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: #ffffff;
   border-radius: 12px;
 
+  @media (max-width: 1024px) {
+    padding: 0px 10px;
+  }
   @media (max-width: 768px) {
     flex-direction: column-reverse;
     padding: 0px 40px;
@@ -71,12 +75,14 @@
   }
 
   .imgBox {
-    display: flex;
+    // display: flex;
+
     @media (max-width: 768px) {
       justify-content: center;
     }
     img {
-      width: 100%;
+      max-width: 420px;
+      height: 350px;
     }
   }
 }
