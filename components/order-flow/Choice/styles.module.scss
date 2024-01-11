@@ -19,7 +19,9 @@
   color: black;
   font-weight: bold;
   @media only screen and (max-width: 767px) {
-    font-size: 22px;
+    font-size: 19px;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -27,7 +29,7 @@
   color: #0077f0;
   font-weight: bold;
   @media only screen and (max-width: 767px) {
-    font-size: 23px;
+    font-size: 19px;
   }
 }
 
@@ -38,7 +40,8 @@
   margin-top: 20px;
   @media only screen and (max-width: 767px) {
     max-width: 550px;
-    font-size: 17px;
+    font-size: 15px;
+    
   }
 }
 .stepDiv {
@@ -79,6 +82,9 @@
     font-weight: bold;
     font-size: 1.7rem;
     margin-bottom: 4px;
+    @media only screen and (max-width: 767px) {
+      font-size: 1.4rem;
+    }
   }
 }
 .opts {
@@ -165,11 +171,11 @@
 .block {
   position: relative !important;
   top: -18px !important;
-  background-color: #ECF6FF;
-  color: #ECF6FF !important;
+  background-color: #ecf6ff;
+  color: #ecf6ff !important;
   height: 100px;
   @media only screen and (max-width: 767px) {
-    top: -66px !important;    
+    top: -66px !important;
     height: 100px !important;
     padding-bottom: 45px;
   }
@@ -178,19 +184,18 @@
 .summary {
   margin-top: 30px;
   border: 3px solid #0077f0;
-  border-radius: 20px ;
-  background-color: #ECF6FF;
+  border-radius: 20px;
+  background-color: #ecf6ff;
   @media only screen and (max-width: 767px) {
-    width: 356px;
-    
+    width: 100%;
   }
 }
 
 .topBlock {
   position: relative !important;
   top: 3px !important;
-  background-color: #ECF6FF;
-  color: #ECF6FF !important;
+  background-color: #ecf6ff;
+  color: #ecf6ff !important;
   height: 100px;
   z-index: 999;
 }
@@ -200,7 +205,7 @@
   border-radius: 15px 15px 0px 0px;
   border: 2px solid #0077f0;
   height: 60px;
-  color:white;
+  color: white;
   font-weight: bold;
   font-size: 25px;
   padding-left: 35px;
@@ -208,32 +213,29 @@
   padding-top: 10px;
   @media only screen and (max-width: 767px) {
     width: 352px;
-    
   }
-
 }
 
-.summarySec{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+.summarySec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
 
-.summaryDesc{
-    font-weight: bold;
-    font-size: 17px;
-    @media only screen and (max-width: 767px) {
-        width: 352px;
-        text-align: center;
-        
-      }
+.summaryDesc {
+  font-weight: bold;
+  font-size: 17px;
+  @media only screen and (max-width: 767px) {
+    width: 352px;
+    text-align: center;
+  }
 }
 
-.bulletDiv{
-    background-color: #ECF6FF;
-    @media only screen and (max-width: 767px) {
-        max-width: 300px;
-    }
+.bulletDiv {
+  background-color: #ecf6ff;
+  @media only screen and (max-width: 767px) {
+    max-width: 300px;
+  }
 }

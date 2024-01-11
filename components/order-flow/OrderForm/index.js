@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./styles.module.scss";
 import ForwardIcon from "../../../public/assets/forward.png";
 import Button from "../../Button";
+import Popup from "../PopupPage";
 import Image from "next/image";
+import { useState } from "react";
 export const OrderForm = () => {
+  const [modal, setmodal] = useState(false)
   return (
     <div className={styles.main}>
       <h1 className={styles.heading}>START YOUR ORDER</h1>
@@ -65,6 +68,11 @@ export const OrderForm = () => {
           </div>
         </div>
       </div>
+      <div onClick={()=>setmodal(true)}>
+Modal
+      </div>
+      <Popup isOpen={modal}  onClose={()=>setmodal(false)}></Popup>
+
     </div>
   );
 };

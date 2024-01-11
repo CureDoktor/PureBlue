@@ -19,6 +19,16 @@ padding-left: 50px;
 padding-right: 50px;
 height: auto;
 width: 1400px;
+.modelImg{
+  min-height: 1000px;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1400px) {
+padding-left: 15%;
+height: auto;
+
+}
 @media only screen and (max-width: 767px) {
   padding-left: 50px;
   padding-right: 50px;
@@ -107,6 +117,8 @@ width: 1400px;
 }
 .tiksDiv{
   margin-bottom: 40px;
+  @media only screen and (max-width: 767px) {
+  }
 }
 .imgDivv{
   width: 50px;
@@ -132,4 +144,10 @@ font-size: 14px;
 max-height: 60px;
 margin-left: 30px;
   max-width: 330px;
+  @media only screen and (max-width: 767px) {
+    margin-left: 20px;
+    border-radius: 10px;
+
+    
+  }
 }
