@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import styles from "./CardSectionTwo.styles.module.scss";
-import Image from "next/image";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import styles from "./Explore.styles.module.scss";
+import SearchButton from "../SearchButton";
 const cardData = [
   {
     title: "Erectile Dysfunction",
@@ -25,7 +25,7 @@ const cardData = [
   },
 ];
 
-const CardSectionTwo = () => {
+const Explore = () => {
   return (
     <Container className={styles.mainContainer}>
       <Row className="justify-content-md-center">
@@ -34,10 +34,11 @@ const CardSectionTwo = () => {
             <span className="text-primary">PureBlue </span>
             makes men's health simpler, more convenient, and affordable.
           </h1>
-          <Button size="lg" className={styles.exploreButton}>
+          {/* <Button size="lg" className={styles.exploreButton}>
             <Image src="/assets/icons/searchIcon.png" width={13} height={13} />
             <span>Explore treatments</span>
-          </Button>
+          </Button> */}
+          <SearchButton className="bg-dark" span="Explore treatments" />
         </Col>
       </Row>
       {/* Card Items */}
@@ -70,4 +71,4 @@ const CardSectionTwo = () => {
   );
 };
 
-export default CardSectionTwo;
+export default Explore;

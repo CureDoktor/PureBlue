@@ -13,10 +13,6 @@
   margin: 0 auto;
 }
 
-.cardBody {
-  // border-radius: 50%;
-}
-
 .cardColumn {
   padding: 0.5rem;
 }
@@ -25,11 +21,6 @@
   max-width: 227px;
   height: 250px;
   border-radius: 10%;
-
-  // @media (max-width: 375px) {
-  //   width: 80%;
-  //   height: 250px;
-  // }
 }
 
 .cardImg {
@@ -53,7 +44,6 @@
 }
 
 .cardTitle {
-  // flex-grow: 1;
   font-size: 0.9rem;
 }
 

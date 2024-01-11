@@ -86,7 +86,7 @@ export default function Header(props) {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={styles.hamburger}
             />
-            {/* {isMenuOpen && (
+            {isMenuOpen && (
               <div className={isMenuOpen ? styles.menuActive : styles.menu}>
                 <Link href="/" passHref>
                   <a
@@ -132,6 +132,7 @@ export default function Header(props) {
                 )}
                 {props.header ? (
                   <Button
+                    className="my-2"
                     onClick={() => {
                       sentToLogin();
                       setIsMenuOpen(false);
@@ -141,6 +142,7 @@ export default function Header(props) {
                   </Button>
                 ) : (
                   <Button
+                    className="my-2"
                     onClick={() => {
                       router.push("/login");
                       setIsMenuOpen(false);
@@ -150,7 +152,7 @@ export default function Header(props) {
                   </Button>
                 )}
               </div>
-            )} */}
+            )}
           </section>
         </Container>
       </Navbar>

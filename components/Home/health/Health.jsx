@@ -35,59 +35,51 @@ const Health = () => {
   ];
   return (
     <Container className={styles.mainContainer}>
-      <h1 className="mb-5">
+      <h1>
         Real Solutions Made Simple
         <br />
-        <span className="text-primary">
-          Your Prescription Needs, now 100% Online
-        </span>
+        <span>Your Prescription Needs, now 100% Online</span>
       </h1>
-      <Row className="align-items-center">
-        <Col md={6} className={styles.imageColumn}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/assets/homepage/health/card.png"
-              alt="Hand holding pills"
-              width={300}
-              height={400}
-              layout="responsive"
-            />
+
+      <section className={styles.content}>
+        <div className={styles.imageWrapper}>
+          <img
+            src="/assets/homepage/health/card.png"
+            alt="Hand holding pills"
+          />
+        </div>
+        <div className={styles.textContent}>
+          <h2>
+            Pure Blue makes men’s health simple, convenient, and affordable.
+          </h2>
+          <h3>
+            The world’s most ingenious healthcare system is now at your
+            fingertips.
+          </h3>
+          <ul className={styles.featuresList}>
+            {featureList.map((feature, index) => (
+              <li key={index}>
+                <Image
+                  src={feature.icon}
+                  alt="icon"
+                  width={24}
+                  height={24}
+                  className={styles.featureIcon}
+                />
+                <span> {feature.text}</span>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.btnBox}>
+            <Button variant="dark" size="sm" className={styles.btn}>
+              Find my treatment
+            </Button>
+            <Button variant="outline-dark" size="sm" className={styles.btn}>
+              Learn more
+            </Button>
           </div>
-        </Col>
-        <Col md={6} className={styles.textColumn}>
-          <div className={styles.textContent}>
-            <h2 className={`text-primary`}>
-              Pure Blue makes men’s health simple, convenient, and affordable.
-            </h2>
-            <h3>
-              The world’s most ingenious healthcare system is now at your
-              fingertips.
-            </h3>
-            <ul className={styles.featuresList}>
-              {featureList.map((feature, index) => (
-                <li key={index}>
-                  <Image
-                    src={feature.icon}
-                    alt=""
-                    width={24}
-                    height={24}
-                    className={styles.featureIcon}
-                  />
-                  <span> {feature.text}</span>
-                </li>
-              ))}
-            </ul>
-            <div className={styles.btnBox}>
-              <Button variant="dark" size="sm" className={styles.btn}>
-                Find my treatment
-              </Button>
-              <Button variant="outline-dark" size="sm" className={styles.btn}>
-                Learn more
-              </Button>
-            </div>
-          </div>
-        </Col>
-      </Row>
+        </div>
+      </section>
     </Container>
   );
 };

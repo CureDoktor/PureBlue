@@ -2,8 +2,9 @@
   background-color: white;
   border-radius: 12px;
   max-width: 70rem;
-  padding: 10px 15px;
-  margin-bottom: 3rem;
+  margin: auto;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
   .card {
     background: #f7f7f7;
     border-radius: 20px;
@@ -18,7 +19,11 @@
   h1 {
     font-size: 3rem;
     color: #000;
-    margin: 1rem 0px;
+    margin: 0.8rem 0px;
+    letter-spacing: -1.57px;
+    @media (max-width: 425px) {
+      font-size: 2.3rem;
+    }
   }
   h6 {
     font-size: 13px;
@@ -33,5 +38,14 @@
   .btn {
     padding: 10px 10px;
     border-radius: 20px;
+  }
+}
+
+.slide {
+  @media (max-width: 768px) {
+    width: 331px !important;
+  }
+  @media (max-width: 350px) {
+    width: 300px !important;
   }
 }

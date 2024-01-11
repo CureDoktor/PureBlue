@@ -1,6 +1,5 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import styles from "./Service.styles.module.scss";
-import Image from "next/image";
 
 const Service = () => {
   let imageUrl = "/assets/homepage/Service/check.png";
@@ -16,7 +15,7 @@ const Service = () => {
       <Row>
         {serviceArr.map((service, index) => {
           return (
-            <Col key={index} xs={6} lg={3} className={styles.serviceCol}>
+            <Col key={index} xs={6} md={6} lg={3} className={styles.serviceCol}>
               <img
                 src={service.imageUrl}
                 className={styles.check}

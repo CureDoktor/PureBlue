@@ -1,12 +1,11 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import styles from "./CardSectionThree.styles.module.scss";
-import Image from "next/image";
+import { Button, Card, Container } from "react-bootstrap";
+import styles from "./Treatment.styles.module.scss";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-const CardSectionThree = () => {
+const Treatment = () => {
   const cardInfo = [
     {
       title: "Erectile dysfunction",
@@ -62,9 +61,17 @@ const CardSectionThree = () => {
           425: { slidesPerView: 1, spaceBetween: 5 },
           500: { slidesPerView: 1, spaceBetween: 5 },
           640: { slidesPerView: 2, spaceBetween: 20 },
-          768: { slidesPerView: 2, spaceBetween: 30 },
-          1200: { slidesPerView: 3, spaceBetween: 40 },
+          768: { slidesPerView: 2, spaceBetween: 12 },
+          1024: { slidesPerView: 3, spaceBetween: 12 },
+          1200: { slidesPerView: 3, spaceBetween: 12 },
         }}
+        // 320: { slidesPerView: 1, spaceBetween: 5 },
+        // 425: { slidesPerView: 2, spaceBetween: 5 },
+        // 500: { slidesPerView: 2, spaceBetween: 5 },
+        // 640: { slidesPerView: 2, spaceBetween: 20 },
+        // 768: { slidesPerView: 3, spaceBetween: 30 },
+        // 1024: { slidesPerView: 4, spaceBetween: 10 },
+        // 1200: { slidesPerView: 5, spaceBetween: 10 },
       >
         {cardInfo.map((card, index) => (
           <SwiperSlide key={index} className={styles.slide}>
@@ -73,11 +80,9 @@ const CardSectionThree = () => {
                 className={styles.cardBody}
                 style={{ backgroundImage: `url(${card.imgSrc})` }}
               >
-                <div className="w-50">
-                  <Card.Title className={styles.cardTitle}>
-                    {card.title}
-                  </Card.Title>
-                </div>
+                <Card.Title className={styles.cardTitle}>
+                  {card.title}
+                </Card.Title>
                 <div>
                   <Card.Text className={styles.cardText}>{card.text}</Card.Text>
                   <Button className={`bg-primary ${styles.cardBtn}`}>
@@ -93,4 +98,4 @@ const CardSectionThree = () => {
   );
 };
 
-export default CardSectionThree;
+export default Treatment;

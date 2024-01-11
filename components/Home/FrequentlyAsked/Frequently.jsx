@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { AccordionContext, Card, Col, Container, Row } from "react-bootstrap";
 import styles from "./Frequently.styles.module.scss";
 import { useContext } from "react";
@@ -32,14 +32,15 @@ const cardData = [
       "PureBlue is an online outfit that links potential patients who need a more convenient way to procure erectile dysfunction medication legally with a doctor’s approval. PureBlue provides a complete infrastructure that provides potential patients with convenient options that do not require an in-person doctor’s visit, but maintains the supervision of medical doctors for the prescription of erectile dysfunction medication.",
   },
 ];
-
 const Frequently = () => {
+  const [expandedItems, setExpandedItems] = useState([]);
+
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionButton(
-      eventKey,
-      () => callback && callback(eventKey)
-    );
+    const decoratedOnClick = useAccordionButton(eventKey, () => {
+      callback && callback(eventKey);
+      toggleItem(eventKey);
+    });
 
     const isCurrentEventKey = activeEventKey === eventKey;
 
@@ -48,10 +49,8 @@ const Frequently = () => {
         type="button"
         className="headerOne"
         style={{
-          // backgroundColor: isCurrentEventKey ? "#0077f0" : "#0077f0",
           backgroundColor: "#e9e9e9",
           border: "0px",
-          //   color: "white",
           padding: "0px 12px 0px 12px",
           width: "100%",
           textAlign: "left",
@@ -62,6 +61,14 @@ const Frequently = () => {
       </button>
     );
   }
+
+  const toggleItem = (eventKey) => {
+    setExpandedItems((prevItems) =>
+      prevItems.includes(eventKey)
+        ? prevItems.filter((item) => item !== eventKey)
+        : [...prevItems, eventKey]
+    );
+  };
 
   return (
     <div className={styles.fieldNine}>
@@ -76,12 +83,14 @@ const Frequently = () => {
                   className={styles.headerOne}
                   eventKey={index.toString()}
                 >
-                  <Row>
+                  <Row className={styles.rowCard}>
                     <Col className={styles.textPart} xs={10} sm={11}>
                       {card.question}
                     </Col>
                     <Col xs={2} sm={1} className={styles.plus}>
-                      <p>+</p>
+                      <p>
+                        {expandedItems.includes(index.toString()) ? "-" : "+"}
+                      </p>
                     </Col>
                   </Row>
                 </ContextAwareToggle>

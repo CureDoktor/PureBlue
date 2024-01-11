@@ -1,6 +1,12 @@
 .container {
   max-width: 70rem;
+  margin: auto;
   display: flex;
+  .heading {
+    span {
+      color: #0077f0;
+    }
+  }
   p {
     font-size: 20px;
     color: #ffffff;
@@ -22,14 +28,20 @@
 .btn {
   display: flex;
   align-items: center;
-
+  padding: 0.5rem 1rem;
   span {
     font-size: 13px;
+    letter-spacing: -0.59px;
+    font-weight: 500;
     margin-left: 6px;
+  }
+  &:hover {
+    box-shadow: none;
+    color: white;
   }
 }
 
-.cardSectionTwo {
+.explore {
   background: #e3e3e3;
   position: relative;
   height: 800px;
@@ -45,22 +57,26 @@
   }
 }
 
+.cardSection {
+  position: relative;
+  background: #0077f0;
+  height: 229px;
+  margin-top: 200px;
+  display: flex;
+  align-items: end;
+}
 .imageContainer {
   position: relative;
   width: 100%;
   height: 430px;
+  background-image: url("/assets/homepage/sections/section1.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  @media (max-width: 768px) {
-    height: 230px;
-  }
   @media (max-width: 500px) {
-    height: 120px;
-  }
-  @media (max-width: 320px) {
-    height: 90px;
-  }
-  img {
-    width: 100%;
+    background-image: url("/assets/homepage/sections/section2.png");
+    height: 230px;
   }
 }
 
@@ -73,17 +89,27 @@
   flex-direction: column;
   h1 {
     font-size: 42px;
+    font-weight: 600;
+    span {
+      color: #0077f0;
+    }
     @media (max-width: 768px) {
       font-size: 30px;
     }
     @media (max-width: 500px) {
-      font-size: 25px;
+      font-size: 24px;
     }
-    @media (max-width: 375px) {
-      font-size: 20px;
+    @media (max-width: 320px) {
+      font-size: 21px;
     }
   }
   button {
     margin-right: auto;
+    @media (max-width: 500px) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
