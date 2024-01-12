@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 import Rectangle from "../Rectangle";
-export function Thankyou() {
+export const Thankyou=() =>{
   const icon = "/assets/thankyou/check.png";
   const checkArr = [
     {
@@ -21,6 +21,7 @@ export function Thankyou() {
   }));
 
   return (
+    <>
     <div className={styles.mainContainer}>
       <div>
         <h2 className={styles.text}>
@@ -36,7 +37,7 @@ export function Thankyou() {
         <span className={styles.color}>
           <b>24 hours</b>
         </span>
-        , one of our dedicated doctors will thoroughly review the details of
+        , one of our dedicated doctors will throughly review the details of
         your order, ensuring that it meets all the necessary requirements.
       </p>
       <p className={styles.para}>
@@ -47,11 +48,11 @@ export function Thankyou() {
         If there are any questions or concerns, the doctor will reach out to you
         immediately through text or email. Should you need any assistance or
         have any inquiries, please feel free to contact our customer support
-        team at{" "}
+        team at
         <span className={styles.color}>
           <b>info@trypureblue.com</b>
-        </span>{" "}
-        or{" "}
+        </span>
+        or
         <span className={styles.color}>
           <b>call us at 1-888-534-8977</b>
         </span>
@@ -59,22 +60,25 @@ export function Thankyou() {
       </p>
 
       <div className={styles.para2}>
-        <p>Check your email or text inbox for:</p>
+        <p className={styles.email}>Check your email or text inbox for:</p>
 
         <ul>
           {data.map((item, ind) => (
             <div key={ind} className={styles.li}>
-              <span>
+              {/* <span>
+              </span> */}
                 <img src={item.icon} />
-              </span>
               <li>{item.para}</li>
             </div>
           ))}
         </ul>
       </div>
 
-      <Rectangle />
     </div>
+    <div>
+      <Rectangle />
+      </div>
+    </>
   );
 }
 
