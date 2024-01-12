@@ -7,8 +7,9 @@
   p {
     margin: 2rem 0rem;
     text-align: center;
-    font-weight: 400;
-    color: gray;
+    font-weight: 500;
+    font-size: 16px;
+    color: #989898;
   }
 }
 .progress {
@@ -16,13 +17,27 @@
   margin: auto;
   height: 15px;
   border-radius: 20px;
-  background: repeating-linear-gradient(135deg, #0077f0 0 10px, #56a9fd 0 20px)
-      0/0% no-repeat,
-    repeating-linear-gradient(135deg, #ddd 0 10px, #eee 0 20px) 0/100%;
+  background: #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(135deg, #0077f0 0 10px, #56a9fd 0 20px);
   animation: p3 2s infinite;
 }
+
 @keyframes p3 {
+  0% {
+    width: 0;
+  }
   100% {
-    background-size: 100%;
+    width: 100%;
   }
 }

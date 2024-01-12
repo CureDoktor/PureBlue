@@ -33,7 +33,10 @@ const SecureForm = () => {
         </div>
 
         <div className={styles.btnContainer}>
-          <button>Continue my visit</button>
+          <button>
+            <span>Continue my visit</span>
+            <img src="/assets/registerPage/share.png" alt="icon" />
+          </button>
         </div>
       </div>
     </div>
