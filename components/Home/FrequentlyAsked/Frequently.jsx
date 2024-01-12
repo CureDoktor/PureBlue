@@ -51,9 +51,10 @@ const Frequently = () => {
         style={{
           backgroundColor: "#e9e9e9",
           border: "0px",
-          padding: "0px 12px 0px 12px",
-          width: "100%",
+          padding: "0px",
+          width: "93%",
           textAlign: "left",
+          margin: "auto",
         }}
         onClick={decoratedOnClick}
       >
@@ -94,7 +95,10 @@ const Frequently = () => {
                     </Col>
                   </Row>
                 </ContextAwareToggle>
-                <Accordion.Collapse eventKey={index.toString()}>
+                <Accordion.Collapse
+                  eventKey={index.toString()}
+                  className={styles.collapse}
+                >
                   <Card.Body>{card.answer}</Card.Body>
                 </Accordion.Collapse>
               </Card>

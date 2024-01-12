@@ -21,6 +21,14 @@
   max-width: 227px;
   height: 250px;
   border-radius: 10%;
+
+  @media (max-width: 320px) {
+    // width: 100% !important;
+    // max-width: 212px !important;
+
+    margin: 0px !important;
+    padding: 0px !important ;
+  }
 }
 
 .cardImg {
@@ -30,25 +38,41 @@
 }
 
 .cardButton {
-  background: #0d6efd;
+  background: #0077f0;
   color: white;
-  padding: 2px 5px;
-  padding-top: 5px;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+  padding: 3.5px 5px;
+  // width: 38px;
+  // height: auto;
+  img {
+    width: 19px;
+    height: auto;
+  }
 }
 
 .cardContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  padding: 0rem 0.5rem;
 }
 
 .cardTitle {
-  font-size: 0.9rem;
+  max-width: 118px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.63px;
 }
 
 .slide {
-  @media (max-width: 375px) {
-    width: 180px !important;
+  @media (max-width: 320px) {
+    // width: 80% !important;
+    // max-width: 257px !important;
+
+    // margin: 0px !important;
+    // padding: 0px !important ;
   }
 }

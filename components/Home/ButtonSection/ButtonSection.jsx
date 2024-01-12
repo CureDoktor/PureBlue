@@ -16,15 +16,10 @@ const ButtonSection = () => {
       <Row>
         {buttonsInfo.map((button, index) => (
           <Col key={index} xs={6} md={3} className={styles.buttonCol}>
-            <Button variant="outline-light" className={styles.featureButton}>
-              <Image
-                src={button.icon}
-                width={20}
-                height={20}
-                alt={button.text}
-              />
+            <div className={styles.featureButton}>
+              <img src={button.icon} alt={button.text} />
               <span>{button.text}</span>
-            </Button>
+            </div>
           </Col>
         ))}
       </Row>

@@ -19,15 +19,16 @@ const CardSection = () => {
     <Container className={styles.container}>
       <Swiper
         slidesPerView={1}
-        spaceBetween={10}
+        spaceBetween={5}
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 5 },
+          320: { slidesPerView: 1, spaceBetween: 2 },
+          375: { slidesPerView: 2, spaceBetween: 5 },
           425: { slidesPerView: 2, spaceBetween: 5 },
           500: { slidesPerView: 2, spaceBetween: 5 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
-          768: { slidesPerView: 3, spaceBetween: 30 },
+          600: { slidesPerView: 3, spaceBetween: 10 },
+          768: { slidesPerView: 4, spaceBetween: 10 },
           1024: { slidesPerView: 4, spaceBetween: 10 },
           1200: { slidesPerView: 5, spaceBetween: 10 },
         }}
@@ -45,14 +46,9 @@ const CardSection = () => {
                 <Card.Title className={styles.cardTitle}>
                   {card.title}
                 </Card.Title>
-                <Button className={styles.cardButton}>
-                  <Image
-                    src="/assets/homepage/card/arrow.png"
-                    width={20}
-                    height={20}
-                    alt="arrow"
-                  />
-                </Button>
+                <div className={styles.cardButton}>
+                  <img src="/assets/homepage/card/arrow.png" alt="arrow" />
+                </div>
               </Card.Body>
             </Card>
           </SwiperSlide>

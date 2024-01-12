@@ -44,26 +44,19 @@ const Popular = () => {
     <Container className={styles.mainContainer}>
       <h1>Popular</h1>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={2}
         spaceBetween={10}
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 5 },
-          425: { slidesPerView: 1, spaceBetween: 5 },
+          // 425: { slidesPerView: 1, spaceBetween: 5 },
           500: { slidesPerView: 1, spaceBetween: 5 },
-          640: { slidesPerView: 2, spaceBetween: 20 },
+          // 640: { slidesPerView: 2, spaceBetween: 20 },
           // 768: { slidesPerView: 3, spaceBetween: 10 },
-          800: { slidesPerView: 3, spaceBetween: 10 },
+          768: { slidesPerView: 3, spaceBetween: 10 },
           1024: { slidesPerView: 3, spaceBetween: 10 },
           1200: { slidesPerView: 4, spaceBetween: 10 },
-          // 320: { slidesPerView: 1, spaceBetween: 5 },
-          // 425: { slidesPerView: 2, spaceBetween: 5 },
-          // 500: { slidesPerView: 2, spaceBetween: 5 },
-          // 640: { slidesPerView: 2, spaceBetween: 20 },
-          // 768: { slidesPerView: 3, spaceBetween: 30 },
-          // 1024: { slidesPerView: 4, spaceBetween: 10 },
-          // 1200: { slidesPerView: 5, spaceBetween: 10 },
         }}
       >
         {products.map((product, idx) => (

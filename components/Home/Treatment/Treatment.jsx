@@ -49,7 +49,7 @@ const Treatment = () => {
       <h1 className="mb-5">
         Personalized treatment plans from
         <br />
-        <span className="text-primary">board-certified physicians</span>
+        <span> board-certified physicians</span>
       </h1>
       <Swiper
         slidesPerView={1}
@@ -65,13 +65,6 @@ const Treatment = () => {
           1024: { slidesPerView: 3, spaceBetween: 12 },
           1200: { slidesPerView: 3, spaceBetween: 12 },
         }}
-        // 320: { slidesPerView: 1, spaceBetween: 5 },
-        // 425: { slidesPerView: 2, spaceBetween: 5 },
-        // 500: { slidesPerView: 2, spaceBetween: 5 },
-        // 640: { slidesPerView: 2, spaceBetween: 20 },
-        // 768: { slidesPerView: 3, spaceBetween: 30 },
-        // 1024: { slidesPerView: 4, spaceBetween: 10 },
-        // 1200: { slidesPerView: 5, spaceBetween: 10 },
       >
         {cardInfo.map((card, index) => (
           <SwiperSlide key={index} className={styles.slide}>

@@ -5,9 +5,12 @@
 .buttonCol {
   display: flex;
   justify-content: center;
-  // align-items: center;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  // margin-bottom: 0.5rem;
   // width: auto;
+  @media (max-width: 576px) {
+    margin-top: 1rem;
+  }
 }
 
 .featureButton {
@@ -18,16 +21,29 @@
   color: white;
   border: none;
   background: #0062c6;
-  width: 100%;
+  width: 286px;
+  height: 48px;
+  border-radius: 23px;
+  gap: 15px;
 
-  // padding: 0.4rem 4rem;
-  border-radius: 20px;
-  span {
-    margin-left: 0.5rem;
-    font-size: 15px;
+  @media (max-width: 576px) {
+    gap: 5px;
+    width: 184px;
+  }
+  img {
+    width: 24px;
+    height: auto;
 
     @media (max-width: 576px) {
-      font-size: 13px;
+      width: 15px;
+    }
+  }
+
+  span {
+    font-size: 20px;
+
+    @media (max-width: 576px) {
+      font-size: 12px;
     }
   }
 }

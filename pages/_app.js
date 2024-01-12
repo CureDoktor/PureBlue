@@ -10,9 +10,12 @@ import { AuthContextProvider } from "../store/auth-context";
 import ConsultationContextProvider from "../store/consultation-context";
 import ModalDisplay from "../components/Modal";
 import OrderHeader from "../components/order-flow/OrderHeader";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
   const [isLogedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+  const currentPathname = router.asPath;
 
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
@@ -98,8 +101,11 @@ function MyApp({ Component, pageProps }) {
             showMessage={showMessage}
             handleClose={handleClose}
           />
-          {/* <Header logout={loginHandler} header={isLogedIn} /> */}
-                    <OrderHeader logout={logoutHandler} header={isLogedIn} ></OrderHeader>
+          {currentPathname == "/order-flow/" ? (
+            <OrderHeader logout={logoutHandler} header={isLogedIn} />
+          ) : (
+            <Header logout={loginHandler} header={isLogedIn} />
+          )}
 
           <Component
             handleShow={handleShow}

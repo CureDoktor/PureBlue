@@ -4,21 +4,19 @@
   max-width: 70rem;
   margin: auto;
   padding: 4rem 0rem;
-  margin-bottom: 3rem;
 
-  // @media (max-width: 576px) {
-  //   padding: 4rem 0.5rem;
-  // }
   h1 {
-    font-size: 3rem;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -1.23px;
     color: #000;
     margin: 1rem 0px;
-  }
-
-  @media (max-width: 576px) {
-    h1 {
-      font-size: 1.8rem;
+    @media (max-width: 576px) {
+      font-size: 30px;
       padding: 0rem 0.7rem;
+    }
+    span {
+      color: #0077f0;
     }
   }
 }
@@ -31,7 +29,9 @@
 @media (max-width: 576px) {
   .card {
     margin-bottom: 10px;
-    // padding: 0rem 0.7rem;
+    height: 400px;
+    max-width: 340px;
+    margin-left: 10px;
   }
 }
 .cardBody {
@@ -75,9 +75,10 @@
   }
 }
 
-.slide {
-  @media (max-width: 500px) {
-    width: 327px !important;
-    margin-left: 10px;
-  }
-}
+// .slide {
+//   @media (max-width: 500px) {
+//     width: 100%;
+//     max-width: 310px !important;
+//     margin-left: 10px !important;
+//   }
+// }
