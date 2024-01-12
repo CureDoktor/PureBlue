@@ -5,6 +5,7 @@ import Button from "../../Button";
 import Popup from "../PopupPage";
 import Image from "next/image";
 import { useState } from "react";
+import Slider from "../slider";
 export const OrderForm = () => {
   const [modal, setmodal] = useState(false)
   return (

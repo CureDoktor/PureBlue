@@ -265,5 +265,80 @@ $secondary-color: #003b60;
 }
 
 
+.testimonials {
+  background-color: #ecf6ff;
+  padding: 93px 0;
 
+  & .heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    & h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: black;
+      &:nth-of-type(2) {
+        color: #0077f0;
+      }
+    }
+  }
+
+  & .desktopNavigation {
+    display: none;
+  }
+
+  & .mobileNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 125px 0;
+
+    & .headingWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & .heading {
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        & h1 {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+
+      & .desktopNavigation {
+        display: block;
+        font-size: 20px;
+
+        & button {
+          &:not(:last-of-type) {
+            & svg {
+              margin-right: 3px;
+            }
+          }
+
+          &:last-of-type {
+            & svg {
+              margin-left: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    & .mobileNavigation {
+      display: none;
+    }
+  }
+}
 

@@ -6,6 +6,7 @@ import Image from "next/image";
 import img from "../../../public/assets/order/orderHeroImg.png";
 import bg from "../../../public/assets/order/bg.png";
 import chart from '../../../public/assets/order/chart.png'
+import Slider from "../slider";
 export default function OrderHero(props) {
   console.log("dffvvdv", img);
   return (
@@ -31,19 +32,7 @@ export default function OrderHero(props) {
           </div>
         </div>
       </div>
-      {/* <div className={styles.sec2}>
-        <h1>
-        Dare to Compare
-        </h1>
-        <h3>
-        See why PureBlue is the #1 Choice for Online ED Treatments in the US!
-        </h3>
-        <div className={styles.chatDiv}>
-          <Image src={chart}>
-
-          </Image>
-        </div>
-      </div> */}
+      
     </div>
   );
 }
