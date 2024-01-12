@@ -1,7 +1,9 @@
-import React from "react";
-import { Container, Form, Button, Col } from "react-bootstrap";
+import { useState } from "react";
 import styles from "./SecureForm.styles.module.scss";
+import DiscountModal from "../DiscountModal";
 const SecureForm = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className={styles.secureInfoForm}>
       <h2>Welcome</h2>
@@ -32,13 +34,15 @@ const SecureForm = () => {
           </label>
         </div>
 
-        <div className={styles.btnContainer}>
+        <div className={styles.btnContainer} onClick={() => setIsOpen(true)}>
           <button>
             <span>Continue my visit</span>
             <img src="/assets/registerPage/share.png" alt="icon" />
           </button>
         </div>
       </div>
+
+      {isOpen && <DiscountModal setIsOpen={setIsOpen} />}
     </div>
   );
 };
