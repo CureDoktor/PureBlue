@@ -14,9 +14,11 @@ import {
 } from "react-bootstrap";
 import { CaretDownFill, List } from "react-bootstrap-icons";
 import styles from "./styles.module.scss";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 export default function Header(props) {
   const router = useRouter();
+  const currentPathname = router.asPath;
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const sentToLogin = () => {
     props.logout();
@@ -78,6 +80,7 @@ export default function Header(props) {
           </Navbar.Collapse> */}
 
           {/* --------------custom header----------  */}
+
           <section className={styles.headLinks}>
             <img src="/assets/header/account.png" />
             <img src="/assets/header/cart.png" />
@@ -156,6 +159,38 @@ export default function Header(props) {
           </section>
         </Container>
       </Navbar>
+
+      {/* {currentPathname === "/page2/" && (
+        <section className={styles.newHeader}>
+          <div className={styles.heading}>
+            <h5>
+              *Limited Time Special Offer - Get 90% off ED Pills Plus Free
+              Shipping*
+            </h5>
+          </div>
+          <Navbar
+            sticky="top"
+            expand="lg"
+            className={`${styles.container} ${styles.navBg}`}
+          >
+            <Container className={styles.navbar}>
+              <Link href="/">
+                <a>
+                  <Image
+                    src="/assets/homepage/logo.png"
+                    alt="Proselect logo"
+                    className={styles.logo}
+                  />
+                </a>
+              </Link>
+
+              <div className={styles.getStarted}>
+                <button>Get Started</button>
+              </div>
+            </Container>
+          </Navbar>
+        </section>
+      )} */}
     </>
   );
 }
