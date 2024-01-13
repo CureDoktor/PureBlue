@@ -3,7 +3,7 @@ import { useState } from "react";
 import Styles from "./styles.module.scss";
 import arrow from "../../../public/assets/order/Group 5 (1).png";
 import Image from "next/image";
-const Choice = () => {
+const Choice = ({ text }) => {
   const [selected, setselected] = useState(1);
   const [selected2, setselected2] = useState(1);
 
@@ -27,7 +27,7 @@ const Choice = () => {
         <div className={Styles.steps}>
           <div className={Styles.medName}>
             <h3>Generic Viagra</h3>
-            <h4>Sildenafil</h4>
+            <h4>{text}</h4>
           </div>
           <div className={Styles.opts}>
             <div
@@ -61,7 +61,6 @@ const Choice = () => {
                   type="radio"
                   name="med"
                   id="medi2"
-                
                   onChange={() => setselected(2)}
                 />
                 <label for="medi2">25mg $3.75/per dose </label>

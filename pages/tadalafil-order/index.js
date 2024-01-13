@@ -105,7 +105,7 @@ export default function OrderFlow(props) {
       </div>
       <Chart />
       <OnlineTreatment />
-      <Choice text="Sildenafil" />
+      <Choice text="Tadalafil" />
       <OrderForm />
     </div>
   );

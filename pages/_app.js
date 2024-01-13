@@ -101,7 +101,8 @@ function MyApp({ Component, pageProps }) {
             showMessage={showMessage}
             handleClose={handleClose}
           />
-          {currentPathname == "/order-flow/" ? (
+          {currentPathname == "/order-flow/" ||
+          currentPathname == "/tadalafil-order/" ? (
             <OrderHeader logout={logoutHandler} header={isLogedIn} />
           ) : (
             <Header logout={loginHandler} header={isLogedIn} />

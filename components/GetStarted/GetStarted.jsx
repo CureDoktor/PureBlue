@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./HomeRemain.styles.module.scss";
+import styles from "./GetStarted.styles.module.scss";
 import Banner from "./Banner";
 import { Container } from "react-bootstrap";
 import Mark from "./Mark";
@@ -11,7 +11,7 @@ import BannerThree from "./BannerThree";
 import Work from "./Work";
 import Frequently from "./FrequentlyAsked";
 
-const HomeRemain = () => {
+const GetStarted = () => {
   return (
     <div>
       <Banner />
@@ -30,4 +30,4 @@ const HomeRemain = () => {
   );
 };
 
-export default HomeRemain;
+export default GetStarted;
