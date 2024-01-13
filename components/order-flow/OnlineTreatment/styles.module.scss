@@ -15,8 +15,7 @@
 }
 
 .secA{
-padding-left: 50px;
-padding-right: 50px;
+
 height: auto;
 width: 1400px;
 .modelImg{
@@ -58,8 +57,10 @@ height: auto;
 // }
 
 .secB{
+
   @media only screen and (max-width: 767px) {
     padding: 20px;
+    
   }
 }
 
@@ -82,6 +83,7 @@ height: auto;
   font-weight: bold;
   margin-bottom: 20px;
   max-width: 60%;
+  font-size: 25px;
   @media only screen and (max-width: 767px) {
     max-width: 100%;
     font-size: 22px;
@@ -99,7 +101,7 @@ height: auto;
 
 .desc{
   color: #000000;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 450;
   max-width: 60%;
   @media only screen and (max-width: 767px) {

@@ -7,6 +7,9 @@
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
+  padding-left: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 9999;
@@ -15,10 +18,13 @@
   height: 70%;
   min-width: 550px;
   min-height: 80vh;
+  max-width: 1800px;
   @media only screen and (max-width: 767px) {
     min-width: 350px;
     min-height: 80vh;
     max-height: 70vh;
+    padding-left: 10px;
+    
   }
 }
 
@@ -59,14 +65,15 @@
   gap: 10px;
   height: 100%;
   width: 100%;
-  background-image: url("../../../public/assets//order/IMAGE.png");
+  // background-image: url("../../../public/assets//order/IMAGE.png");
   background-repeat: no-repeat;
   background-size: cover;
   @media only screen and (max-width: 767px) {
     background-image: url("");
   }
   @media only screen and (max-width: 767px) {
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
   }
   & h3 {
     font-weight: bold;
@@ -110,7 +117,12 @@
   gap: 10px;
   height: 100%;
   width: 100%;
-  background-image: url("../../../public/assets//order/IMAGE2.png");
+  @media only screen and (max-width: 767px) {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  // background-image: url("../../../public/assets//order/IMAGE2.png");
   background-repeat: no-repeat;
   background-size: 1200px;
   background-position: left;
@@ -176,12 +188,14 @@
   gap: 10px;
   height: 100%;
   width: 100%;
-  background-image: url("../../../public/assets//order/IMAGE3.png");
+  // background-image: url("../../../public/assets//order/IMAGE3.png");
   background-repeat: no-repeat;
   background-size: 1200px;
   background-position: left;
   @media only screen and (max-width: 767px) {
-    background-image: url("");
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
   }
   & h5 {
     font-weight: bold;
@@ -239,7 +253,8 @@
   gap: 10px;
   height: 100%;
   width: 100%;
-  background-image: url("../../../public/assets//order/IMAGE4.png");
+  padding: 20px;
+  // background-image: url("../../../public/assets//order/IMAGE4.png");
   background-repeat: no-repeat;
   background-size: 900px;
   background-position: left;
@@ -328,4 +343,16 @@
   & div {
     margin-top: 5px;
   }
+}
+
+.modalImg {
+  position: absolute;
+  bottom: -1.75%;
+  left:0;
+  z-index: -999;
+ 
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+  
 }

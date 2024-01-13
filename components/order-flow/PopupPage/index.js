@@ -5,6 +5,10 @@ import fwd from "../../../public/assets/order/down-arrow.png";
 import DisabledFwd from "../../../public/assets/order/down-arrow (4).png";
 import disabledbackArrow from "../../../public/assets/order/down-arrow (3).png";
 import BackArrow from "../../../public/assets/order/down-arrow (2).png";
+import bg4 from "../../../public/assets//order/IMAGE4.png"
+import bg3 from "../../../public/assets//order/IMAGE3.png"
+import bg2 from "../../../public/assets//order/IMAGE2.png"
+import bg1 from "../../../public/assets//order/IMAGE.png"
 
 import { Button } from "react-bootstrap";
 import Image from "next/image";
@@ -62,6 +66,11 @@ const Modal = ({ isOpen, onClose }) => {
             {/* Modal content goes here */}
             {stepNo === 1 && (
               <div className={styles.mainBox1}>
+              <div className={styles.modalImg} >
+                <Image src={bg1} >
+
+                </Image>
+              </div>
                 <h3>Find your Treatment </h3>
                 <p>
                   Let’s help you find the correct treatment to hit your goals{" "}
@@ -80,6 +89,11 @@ const Modal = ({ isOpen, onClose }) => {
 
             {stepNo === 2 && (
               <div className={styles.mainBox2}>
+              <div className={styles.modalImg} >
+                <Image src={bg2}>
+
+                </Image>
+              </div>
                 <div>
                   <h5>What’s your email address?</h5>
                   <p>
@@ -94,6 +108,11 @@ const Modal = ({ isOpen, onClose }) => {
             )}
             {stepNo === 3 && (
               <div className={styles.mainBox3}>
+              <div className={styles.modalImg} >
+                <Image src={bg3}>
+
+                </Image>
+              </div>
                 <div>
                   <h5>What’s your first name and last name?</h5>
 
@@ -109,6 +128,11 @@ const Modal = ({ isOpen, onClose }) => {
             )}
             {stepNo === 4 && (
               <div className={styles.mainBox4}>
+              <div className={styles.modalImg} >
+                <Image src={bg4}>
+
+                </Image>
+              </div>
                 <div>
                   <h5>What would you like help with?</h5>
                   <p>
