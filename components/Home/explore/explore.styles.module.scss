@@ -1,0 +1,152 @@
+.mainContainer {
+  background-color: white;
+  border-radius: 12px;
+  max-width: 70rem;
+  padding: 1.5rem 2.5rem;
+  position: absolute;
+  top: -6rem;
+
+  @media (max-width: 768px) {
+    // padding: 20px;
+    padding: 1rem 1.5rem;
+    max-width: 45rem;
+    top: -4rem;
+  }
+  @media (max-width: 500px) {
+    max-width: 25rem;
+    top: -2rem;
+  }
+  @media (max-width: 500px) {
+    max-width: 25rem;
+    top: -2rem;
+  }
+  @media (max-width: 400px) {
+    padding: 1rem 1rem;
+    max-width: 22rem;
+    top: -2rem;
+  }
+  @media (max-width: 350px) {
+    padding: 0.5rem 1rem;
+    max-width: 19rem;
+    top: -1rem;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #000;
+    margin: 1rem 0px;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 576px) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 350px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.exploreButton {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  &:hover {
+    background-color: darken(black, 10%);
+    color: #ddd;
+  }
+  span {
+    margin-left: 10px;
+  }
+}
+.productCol {
+  margin-bottom: 2rem;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  background: #f6f6f6;
+
+  img {
+    border-radius: 14px;
+    width: 200px;
+
+    @media (max-width: 768px) {
+      width: 130px;
+    }
+
+    @media (max-width: 576px) {
+      width: 100px;
+    }
+
+    @media (max-width: 320px) {
+      width: 80px;
+    }
+  }
+  .cardTitle {
+    color: #000;
+    font-size: 1.2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 0.9rem;
+    }
+    @media (max-width: 340px) {
+      font-size: 0.8rem;
+    }
+  }
+  .cardText {
+    color: #808080;
+    font-size: 14px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 9px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 8px;
+    }
+  }
+
+  .cardBody {
+    position: relative;
+    padding-bottom: 0px;
+
+    p {
+      min-height: 13vh;
+
+      @media (max-width: 576px) {
+        min-height: auto;
+      }
+    }
+    .line {
+      position: relative;
+      border-bottom: 3px solid #0077f0;
+      // bottom: -15px;
+    }
+  }
+}
+
+// @media (max-width: 320px) {
+//   .productCard {
+//     flex-direction: column;
+//     img {
+//       width: auto;
+//     }
+//   }
+// }
