@@ -1,13 +1,13 @@
-import React from "react";
-import styles from "./styles.module.scss";
-import ForwardIcon from "../../../public/assets/forward.png";
+import { useState } from "react";
+import Image from "next/image";
+
 import Button from "../../Button";
 import Popup from "../PopupPage";
-import Image from "next/image";
-import { useState } from "react";
-import Slider from "../slider";
+
+import styles from "./styles.module.scss";
+
 export const OrderForm = () => {
-  const [modal, setmodal] = useState(false)
+  const [modal, setmodal] = useState(false);
   return (
     <div className={styles.main}>
       <h1 className={styles.heading}>START YOUR ORDER</h1>
@@ -63,17 +63,18 @@ export const OrderForm = () => {
             <Button variant="gradient">
               CONTINUE TO STEP 2
               <span className={styles.buttonIcon}>
-                <Image src={ForwardIcon} alt="Forward icon" layout="fill" />
+                <Image
+                  src="/assets/forward.png"
+                  alt="Forward icon"
+                  layout="fill"
+                />
               </span>
             </Button>
           </div>
         </div>
       </div>
-      <div onClick={()=>setmodal(true)}>
-Modal
-      </div>
-      <Popup isOpen={modal}  onClose={()=>setmodal(false)}></Popup>
-
+      <div onClick={() => setmodal(true)}>Modal</div>
+      <Popup isOpen={modal} onClose={() => setmodal(false)}></Popup>
     </div>
   );
 };
