@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import styles from "./Explore.styles.module.scss";
-import SearchButton from "../SearchButton";
+import SearchButton from "../searchButton";
 const cardData = [
   {
     title: "Erectile Dysfunction",

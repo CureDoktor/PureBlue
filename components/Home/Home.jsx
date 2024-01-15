@@ -1,14 +1,15 @@
 import { Container } from "react-bootstrap";
-import CardSection from "./CardSection";
-import ButtonSection from "./ButtonSection";
+import CardSection from "./cardSection";
+import ButtonSection from "./buttonSection";
 import styles from "./Home.styles.module.scss";
-import Frequently from "./FrequentlyAsked";
-import Health from "./Health";
-import Popular from "./Popular";
-import Service from "./Service";
-import Treatment from "./Treatment";
-import Explore from "./Explore";
-import SearchButton from "./SearchButton";
+import Frequently from "./frequentlyAsked";
+import Health from "./health";
+import Popular from "./popular";
+import Service from "./service";
+import Treatment from "./treatment";
+import Explore from "./explore";
+import SearchButton from "./searchButton";
+
 const HomePage = () => {
   return (
     <div>
