@@ -1,14 +1,8 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { Card, ListGroup } from "react-bootstrap";
-import styles from "./styles.module.scss";
 import Image from "next/image";
-import img from "../../../public/assets/order/orderHeroImg.png";
-import bg from "../../../public/assets/order/bg.png";
-import chart from '../../../public/assets/order/chart.png'
-import Slider from "../slider";
+
+import styles from "./styles.module.scss";
+
 export default function OrderHero(props) {
-  console.log("dffvvdv", img);
   return (
     <div className={styles.container}>
       <div className={styles.sec1}>
@@ -16,8 +10,7 @@ export default function OrderHero(props) {
           <h1 className={styles.mainHeading}>COMPLETE YOUR ORDER</h1>
         </div>
         <div className={styles.imgContainer}>
-         
-          <div >
+          <div>
             <h1>Get Genuine ED Pills Now</h1>
             <ul className={styles.ul}>
               <li>✓ 100% Online Service</li>
@@ -28,11 +21,13 @@ export default function OrderHero(props) {
             </ul>
           </div>
           <div className={styles.imgDiv}>
-            <Image className={styles.heroImg} src={img}></Image>
+            <Image
+              className={styles.heroImg}
+              src="/assets/order/orderHeroImg.png"
+            ></Image>
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
