@@ -6,7 +6,7 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import styles from "./CardSection.styles.module.scss";
+import styles from "./cardSection.styles.module.scss";
 
 const cardInfo = [
   { title: "Erectile Dysfunction", img: "/assets/homepage/card/card1.png" },

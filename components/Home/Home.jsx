@@ -10,7 +10,7 @@ import Treatment from "./treatment";
 import Explore from "./explore";
 import SearchButton from "./searchButton";
 
-import styles from "./Home.styles.module.scss";
+import styles from "./home.styles.module.scss";
 
 const HomePage = () => {
   return (

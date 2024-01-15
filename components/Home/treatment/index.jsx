@@ -5,7 +5,7 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import styles from "./Treatment.styles.module.scss";
+import styles from "./treatment.styles.module.scss";
 
 const cardInfo = [
   {

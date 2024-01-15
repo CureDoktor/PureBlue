@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "react-bootstrap";
 
-import styles from "./SearchButton.styles.module.scss";
+import styles from "./searchButton.styles.module.scss";
 
 const SearchButton = ({ className, span }) => {
   return (

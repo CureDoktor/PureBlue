@@ -10,7 +10,7 @@ import {
 
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 
-import styles from "./Frequently.styles.module.scss";
+import styles from "./frequently.styles.module.scss";
 
 const cardData = [
   {

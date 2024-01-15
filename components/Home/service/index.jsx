@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 
-import styles from "./Service.styles.module.scss";
+import styles from "./service.styles.module.scss";
 
 const imageUrl = "/assets/homepage/service/check.png";
 const serviceArr = [

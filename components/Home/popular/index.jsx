@@ -7,7 +7,7 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import styles from "./Popular.styles.module.scss";
+import styles from "./popular.styles.module.scss";
 
 const products = [
   {

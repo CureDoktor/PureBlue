@@ -2,7 +2,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 
 import SearchButton from "../searchButton";
 
-import styles from "./Explore.styles.module.scss";
+import styles from "./explore.styles.module.scss";
 
 const cardData = [
   {

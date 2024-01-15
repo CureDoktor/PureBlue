@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button, Container } from "react-bootstrap";
 
-import styles from "./Health.styles.module.scss";
+import styles from "./health.styles.module.scss";
 
 const featureList = [
   {
