@@ -13,10 +13,6 @@
 
   /* Mobile Styles */
 
-  @media only screen and (min-width: 1400px) {
-    max-width: 1320px;
-
-  }
   @media only screen and (max-width: 767px) {
     height: 1000px;
     flex-direction: column !important;
@@ -53,6 +49,7 @@
 }
 .sec1 {
   width: 80%;
+  max-width: 1320px;
   @media only screen and (max-width: 767px) {
     display: flex;
     width: 100%;

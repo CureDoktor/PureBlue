@@ -24,6 +24,8 @@ export default function OrderHero(props) {
             <Image
               className={styles.heroImg}
               src="/assets/order/orderHeroImg.png"
+              height="640px"
+              width="640px"
             ></Image>
           </div>
         </div>
