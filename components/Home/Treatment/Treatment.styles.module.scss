@@ -4,16 +4,21 @@
   max-width: 70rem;
   margin: auto;
   padding: 4rem 0rem;
-
+  @media (max-width: 800px) {
+    padding: 4rem 0.7rem;
+  }
   h1 {
     font-size: 40px;
     font-weight: 600;
     letter-spacing: -1.23px;
     color: #000;
     margin: 1rem 0px;
+    @media (max-width: 800px) {
+      font-size: 35px;
+    }
     @media (max-width: 576px) {
       font-size: 30px;
-      padding: 0rem 0.7rem;
+      // padding: 0rem 0.7rem;
     }
     span {
       color: #0077f0;
@@ -74,11 +79,3 @@
     color: white;
   }
 }
-
-// .slide {
-//   @media (max-width: 500px) {
-//     width: 100%;
-//     max-width: 310px !important;
-//     margin-left: 10px !important;
-//   }
-// }

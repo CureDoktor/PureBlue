@@ -18,13 +18,12 @@ const CardSection = () => {
   return (
     <Container className={styles.container}>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={1.4}
         spaceBetween={5}
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 2 },
-          375: { slidesPerView: 2, spaceBetween: 5 },
+          375: { slidesPerView: 1.4, spaceBetween: 5 },
           425: { slidesPerView: 2, spaceBetween: 5 },
           500: { slidesPerView: 2, spaceBetween: 5 },
           600: { slidesPerView: 3, spaceBetween: 10 },

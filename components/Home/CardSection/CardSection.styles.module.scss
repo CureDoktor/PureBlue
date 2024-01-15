@@ -21,14 +21,6 @@
   max-width: 227px;
   height: 250px;
   border-radius: 10%;
-
-  @media (max-width: 320px) {
-    // width: 100% !important;
-    // max-width: 212px !important;
-
-    margin: 0px !important;
-    padding: 0px !important ;
-  }
 }
 
 .cardImg {
@@ -65,14 +57,4 @@
   font-weight: 600;
   font-size: 18px;
   letter-spacing: -0.63px;
-}
-
-.slide {
-  @media (max-width: 320px) {
-    // width: 80% !important;
-    // max-width: 257px !important;
-
-    // margin: 0px !important;
-    // padding: 0px !important ;
-  }
 }

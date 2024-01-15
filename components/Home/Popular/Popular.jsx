@@ -44,16 +44,14 @@ const Popular = () => {
     <Container className={styles.mainContainer}>
       <h1>Popular</h1>
       <Swiper
-        slidesPerView={2}
-        spaceBetween={10}
+        slidesPerView={1.3}
+        spaceBetween={5}
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 5 },
-          // 425: { slidesPerView: 1, spaceBetween: 5 },
-          500: { slidesPerView: 1, spaceBetween: 5 },
-          // 640: { slidesPerView: 2, spaceBetween: 20 },
-          // 768: { slidesPerView: 3, spaceBetween: 10 },
+          375: { slidesPerView: 1.3, spaceBetween: 5 },
+          425: { slidesPerView: 1.5, spaceBetween: 5 },
+          600: { slidesPerView: 2, spaceBetween: 5 },
           768: { slidesPerView: 3, spaceBetween: 10 },
           1024: { slidesPerView: 3, spaceBetween: 10 },
           1200: { slidesPerView: 4, spaceBetween: 10 },
