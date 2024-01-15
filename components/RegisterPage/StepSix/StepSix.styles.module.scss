@@ -1,0 +1,99 @@
+.h1 {
+  letter-spacing: -1.4px;
+  font-size: 37px;
+  color: #ffffff;
+  margin: 1rem 0rem;
+
+  @media (max-width: 590px) {
+    text-align: center;
+    font-size: 25px !important;
+  }
+  @media (max-width: 375px) {
+    font-size: 23px !important;
+  }
+  @media (max-width: 330px) {
+    font-size: 21px !important;
+  }
+}
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 1.5rem 0rem;
+
+  input {
+    width: 380px;
+    height: 54px;
+    background: #ffffff;
+    border-radius: 27px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: #bbbbbb;
+    font-weight: light;
+    letter-spacing: -0.7px;
+    padding: 0rem 2rem;
+
+    @media (max-width: 590px) {
+      max-width: 260px;
+      padding: 0rem 1.5rem;
+      font-size: 15px;
+      height: 40px;
+    }
+    @media (max-width: 375px) {
+      max-width: 240px;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 30px;
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 12px;
+    @media (max-width: 590px) {
+      right: 80px;
+    }
+
+    // @media (max-width: 375px) {
+    //   max-width: 240px;
+    // }
+  }
+}
+
+.checkboxContainer {
+  max-width: 380px;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+
+  @media (max-width: 590px) {
+    max-width: 250px;
+    gap: 8px;
+  }
+  @media (max-width: 330px) {
+    max-width: 230px;
+    gap: 8px;
+  }
+  input {
+    margin: 5px 0px;
+    padding: 0;
+  }
+  label {
+    font-size: 14px;
+    color: white;
+
+    @media (max-width: 590px) {
+      font-size: 11px;
+    }
+    @media (max-width: 330px) {
+      font-size: 10px;
+    }
+  }
+}

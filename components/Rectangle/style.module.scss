@@ -1,0 +1,55 @@
+.Rectangle {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #f7f5f5;
+  padding: 30px;
+  text-align: center;
+  margin-top: 80px;
+
+  @media screen and (max-width: 676px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.line {
+  top: 1308px;
+  left: 690px;
+  width: 76px;
+  height: 0px;
+  border: 3px solid #000000;
+  opacity: 1;
+  margin-top: 60px;
+  @media screen and (max-width: 676px) {
+    display: flex;
+    flex-direction: column;
+    top: 1308px;
+  left: 690px;
+  width: 1px;
+  height: 76px;
+  border: 3px solid #000000;
+  opacity: 1;
+  margin-top: 60px;
+  color: #000000;
+    
+  }
+}
+
+.len {
+  width: 210px;
+}
+
+.color {
+  color: #0077f0;
+}
+
+.color1 {
+  color: #0077f0;
+  width: 2px;
+}
+
+.len2 {
+  width: 150px;
+}

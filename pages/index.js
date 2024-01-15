@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useContext, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
@@ -10,6 +9,7 @@ import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext } from "react-bootstrap";
 import { useRouter } from "next/router";
+import HomePage from "../components/Home";
 
 export default function Home() {
   const history = useRouter();
@@ -50,7 +50,9 @@ export default function Home() {
         <link rel="icon" href="/faviconn.ico" />
       </Head>
       <main>
-        <div className={styles.fieldOneBg}>
+        <HomePage />
+
+        {/* <div className={styles.fieldOneBg}>
           <Container className={styles.container}>
             <div className={styles.fieldOne}>
               <Col md={{ span: 7, offset: 5 }}>
@@ -96,8 +98,8 @@ export default function Home() {
               Pure Quality • Safe • <br /> Regulated • Consistent Results
             </p>
           </Container>
-        </div>
-        <div className={styles.fieldThree}>
+        </div> */}
+        {/* <div className={styles.fieldThree}>
           <Container>
             <Row className="justify-content-center align-items-center">
               <Col md={5}>
@@ -158,8 +160,8 @@ export default function Home() {
               </Col>
             </Container>
           </div>
-        </div>
-        <div className={styles.fieldFour}>
+        </div> */}
+        {/* <div className={styles.fieldFour}>
           <Container>
             <div className="container">
               <h3>Generic E.D. pills VS Branded E.D. Pills</h3>
@@ -207,8 +209,8 @@ export default function Home() {
               </p>
             </div>
           </Container>
-        </div>
-        <div className={styles.fieldFive}>
+        </div> */}
+        {/* <div className={styles.fieldFive}>
           <div className={styles.boxBg}>
             <Container>
               <div className={styles.blueLine}>
@@ -272,8 +274,8 @@ export default function Home() {
               </div>
             </div>
           </Container>
-        </div>
-        <div className={styles.fieldSix}>
+        </div> */}
+        {/* <div className={styles.fieldSix}>
           <Container>
             <h2 className="d-none d-md-block">
               Sildenafil or tadalafil?
@@ -290,8 +292,8 @@ export default function Home() {
               decide!
             </h4>
           </Container>
-        </div>
-        <div className={styles.fieldSeven}>
+        </div> */}
+        {/* <div className={styles.fieldSeven}>
           <Container>
             <h2>
               Not all E.D. pills sold online are created equal – and here’s why.
@@ -409,8 +411,8 @@ export default function Home() {
               based here in the United States.{" "}
             </p>
           </Container>
-        </div>
-        <div className={styles.fieldEight}>
+        </div> */}
+        {/* <div className={styles.fieldEight}>
           <Container>
             <div className={styles.pillPart}>
               <Row>
@@ -520,8 +522,8 @@ export default function Home() {
               </Row>
             </div>
           </Container>
-        </div>
-        <div className={styles.fieldNine}>
+        </div> */}
+        {/* <div className={styles.fieldNine}>
           <Container>
             <h2>Frequently Asked Questions</h2>
             <div className={styles.expand}>
@@ -909,8 +911,8 @@ export default function Home() {
               </Accordion>
             </div>
           </Container>
-        </div>
-        <div className={styles.fieldTen}>
+        </div> */}
+        {/* <div className={styles.fieldTen}>
           <Container>
             <h2>
               Pure<span className={styles.blueText}>Blue</span> Makes it Easy
@@ -979,8 +981,8 @@ export default function Home() {
               convenient than any other provider today.
             </h4>
           </Container>
-        </div>
-        <div className={styles.fieldEleven}>
+        </div> */}
+        {/* <div className={styles.fieldEleven}>
           <Container>
             <h2>CHOOSE YOUR PLAN</h2>
             <div className={styles.plan}>
@@ -1115,7 +1117,7 @@ export default function Home() {
                   </Row>
                 </div>
               </Col>
-              {/* <Col sm={3}>
+              <Col sm={3}>
                 <div className={styles.planChange}>
                   <div className={styles.topPlanChange}>
                     <h2>Pro</h2>
@@ -1152,9 +1154,9 @@ export default function Home() {
                     </Col>
                   </Row>
                 </div>
-              </Col> */}
+              </Col>
             </Row>
-            {/* <div className={styles.containerPlan}>
+            <div className={styles.containerPlan}>
               <Row>
                 <Col sm={5}>
                   <div className={styles.planType}>
@@ -1197,7 +1199,7 @@ export default function Home() {
                   </div>
                 </Col>
               </Row>
-            </div> */}
+            </div>
             <Row className={styles.checkmarkBottom}>
               <Col md={3}>
                 <Check className={styles.checkmark} />
@@ -1221,7 +1223,7 @@ export default function Home() {
               the digital consultation by the licensed medical provider
             </p>
           </Container>
-        </div>
+        </div> */}
       </main>
     </div>
   );
