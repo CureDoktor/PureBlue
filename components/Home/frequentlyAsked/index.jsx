@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { AccordionContext, Card, Col, Container, Row } from "react-bootstrap";
-import styles from "./Frequently.styles.module.scss";
-import { useContext } from "react";
-import Accordion from "react-bootstrap/Accordion";
+import { useState, useContext } from "react";
+import {
+  AccordionContext,
+  Card,
+  Col,
+  Container,
+  Row,
+  Accordion,
+} from "react-bootstrap";
+
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
+
+import styles from "./Frequently.styles.module.scss";
 
 const cardData = [
   {
@@ -32,6 +39,7 @@ const cardData = [
       "PureBlue is an online outfit that links potential patients who need a more convenient way to procure erectile dysfunction medication legally with a doctor’s approval. PureBlue provides a complete infrastructure that provides potential patients with convenient options that do not require an in-person doctor’s visit, but maintains the supervision of medical doctors for the prescription of erectile dysfunction medication.",
   },
 ];
+
 const Frequently = () => {
   const [expandedItems, setExpandedItems] = useState([]);
 

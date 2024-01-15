@@ -1,45 +1,48 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import styles from "./Popular.styles.module.scss";
 import Image from "next/image";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-const Popular = () => {
-  const products = [
-    {
-      name: "Generic Viagra",
-      description: "(Sildenafil Citrate)",
-      rating: "/assets/homepage/popular/stars.png",
-      imageUrl: "/assets/homepage/popular/popular.png",
-    },
-    {
-      name: "Generic Cialis",
-      description: "(Tadalafil)",
-      rating: "/assets/homepage/popular/stars.png",
-      imageUrl: "/assets/homepage/popular/popular.png",
-    },
-    {
-      name: "Alpha Protocol",
-      description: "Testosterone Enhancement",
-      rating: "/assets/homepage/popular/stars.png",
-      imageUrl: "/assets/homepage/popular/popular.png",
-    },
-    {
-      name: "Alpha Protocol",
-      description: "Testosterone Enhancement",
-      rating: "/assets/homepage/popular/stars.png",
-      imageUrl: "/assets/homepage/popular/popular.png",
-    },
-    {
-      name: "Alpha Protocol",
-      description: "Testosterone Enhancement",
-      rating: "/assets/homepage/popular/stars.png",
-      imageUrl: "/assets/homepage/popular/popular.png",
-    },
-  ];
 
+import styles from "./Popular.styles.module.scss";
+
+const products = [
+  {
+    name: "Generic Viagra",
+    description: "(Sildenafil Citrate)",
+    rating: "/assets/homepage/popular/stars.png",
+    imageUrl: "/assets/homepage/popular/popular.png",
+  },
+  {
+    name: "Generic Cialis",
+    description: "(Tadalafil)",
+    rating: "/assets/homepage/popular/stars.png",
+    imageUrl: "/assets/homepage/popular/popular.png",
+  },
+  {
+    name: "Alpha Protocol",
+    description: "Testosterone Enhancement",
+    rating: "/assets/homepage/popular/stars.png",
+    imageUrl: "/assets/homepage/popular/popular.png",
+  },
+  {
+    name: "Alpha Protocol",
+    description: "Testosterone Enhancement",
+    rating: "/assets/homepage/popular/stars.png",
+    imageUrl: "/assets/homepage/popular/popular.png",
+  },
+  {
+    name: "Alpha Protocol",
+    description: "Testosterone Enhancement",
+    rating: "/assets/homepage/popular/stars.png",
+    imageUrl: "/assets/homepage/popular/popular.png",
+  },
+];
+
+const Popular = () => {
   return (
     <Container className={styles.mainContainer}>
       <h1>Popular</h1>
