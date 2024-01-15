@@ -11,32 +11,32 @@ const Popular = () => {
     {
       name: "Generic Viagra",
       description: "(Sildenafil Citrate)",
-      rating: "/assets/homepage/Popular/stars.png",
-      imageUrl: "/assets/homepage/Popular/popular.png",
+      rating: "/assets/homepage/popular/stars.png",
+      imageUrl: "/assets/homepage/popular/popular.png",
     },
     {
       name: "Generic Cialis",
       description: "(Tadalafil)",
-      rating: "/assets/homepage/Popular/stars.png",
-      imageUrl: "/assets/homepage/Popular/popular.png",
+      rating: "/assets/homepage/popular/stars.png",
+      imageUrl: "/assets/homepage/popular/popular.png",
     },
     {
       name: "Alpha Protocol",
       description: "Testosterone Enhancement",
-      rating: "/assets/homepage/Popular/stars.png",
-      imageUrl: "/assets/homepage/Popular/popular.png",
+      rating: "/assets/homepage/popular/stars.png",
+      imageUrl: "/assets/homepage/popular/popular.png",
     },
     {
       name: "Alpha Protocol",
       description: "Testosterone Enhancement",
-      rating: "/assets/homepage/Popular/stars.png",
-      imageUrl: "/assets/homepage/Popular/popular.png",
+      rating: "/assets/homepage/popular/stars.png",
+      imageUrl: "/assets/homepage/popular/popular.png",
     },
     {
       name: "Alpha Protocol",
       description: "Testosterone Enhancement",
-      rating: "/assets/homepage/Popular/stars.png",
-      imageUrl: "/assets/homepage/Popular/popular.png",
+      rating: "/assets/homepage/popular/stars.png",
+      imageUrl: "/assets/homepage/popular/popular.png",
     },
   ];
 
