@@ -1,6 +1,6 @@
 @import "../../../styles/variables.scss";
 .container {
-  background-color: #ecf6ff;
+  // background-color: #ecf6ff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,23 +9,22 @@
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -50px;
-
+  padding-top: 30px;
+  // margin-top: -50px;
   /* Mobile Styles */
 
   @media only screen and (min-width: 1400px) {
     max-width: 1320px;
-
   }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     height: 1000px;
     flex-direction: column !important;
   }
 
   /* Desktop Styles */
-  @media only screen and (min-width: 768px) {
-    height: 700px;
-  }
+  // @media only screen and (min-width: 800px) {
+  //   height: 700px;
+  // }
 }
 
 .mainHeading {
@@ -35,7 +34,7 @@
   margin-left: 45px;
   width: 574px;
   height: 63px;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     font: normal normal bold 25px Poppins;
     margin-left: 45px;
     width: 300px;
@@ -53,7 +52,7 @@
 }
 .sec1 {
   width: 80%;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -72,8 +71,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 1rem;
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     width: 350px !important;
     height: 798px !important;
     max-height: 798px;
@@ -89,7 +89,7 @@
 
     width: 574px;
     height: 63px;
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 800px) {
       font-size: 23px;
       display: flex;
       width: 300px;
@@ -116,7 +116,7 @@
   flex-direction: column;
   height: 250px;
   justify-content: space-between;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     font-size: 20px;
     height: 180px;
     width: 350px;
@@ -131,7 +131,7 @@
     font-weight: 500;
     color: black;
     cursor: pointer;
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 800px) {
       font-size: 15px;
     }
   }
@@ -141,7 +141,7 @@
 //   max-height: 1200px;
 //   width: 1000px;
 //   height: 1200px;
-//   @media only screen and (max-width: 767px) {
+//   @media only screen and (max-width: 800px) {
 //     display: none;
 // }
 
@@ -168,7 +168,7 @@
     opacity: 1;
   }
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     margin-top: 20px;
     margin-bottom: 0px;
     margin-left: auto;
@@ -183,7 +183,7 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 800px) {
 }
 
 .imgDiv {
@@ -201,10 +201,9 @@
     width: 800px;
     height: 800px;
   }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 800px) {
     display: none;
   }
- 
 
   @media only screen and (min-width: 1400px) {
     position: absolute;

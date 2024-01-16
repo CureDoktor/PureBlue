@@ -160,7 +160,7 @@ export default function Header(props) {
         </Container>
       </Navbar>
 
-      {/* {currentPathname === "/page2/" && (
+      {/* {currentPathname === "/get-started/" && (
         <section className={styles.newHeader}>
           <div className={styles.heading}>
             <h5>

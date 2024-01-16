@@ -36,11 +36,7 @@ const Banner = () => {
         <div className={styles.buttonContainer}>
           <p>
             <span>Start Now</span>
-            <img
-              //   width={87}
-              //   height={44}
-              src="/assets/homeRemain/Banner/arrow.png"
-            />
+            <img src="/assets/homeRemain/Banner/arrow.png" />
           </p>
         </div>
         <div className={styles.medication}>
@@ -48,17 +44,9 @@ const Banner = () => {
             Step 1:
             <span> Select your medication</span>
           </p>
-          <div className="d-flex gap-2">
-            <Image
-              width={200}
-              height={100}
-              src="/assets/homeRemain/Banner/tablet1.png"
-            />
-            <Image
-              width={200}
-              height={100}
-              src="/assets/homeRemain/Banner/tablet2.png"
-            />
+          <div className={styles.tablets}>
+            <img src="/assets/homeRemain/Banner/tablet1.png" />
+            <img src="/assets/homeRemain/Banner/tablet2.png" />
           </div>
         </div>
       </div>

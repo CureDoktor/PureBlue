@@ -1,8 +1,9 @@
 import Image from "next/image";
-
 import styles from "./styles.module.scss";
-
+import Image from "next/image";
+import img from "../../../public/assets/order/orderHeroImg.png";
 export default function OrderHero(props) {
+  // console.log("dffvvdv", img);
   return (
     <div className={styles.container}>
       <div className={styles.sec1}>

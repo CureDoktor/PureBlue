@@ -51,10 +51,7 @@ const Work = () => {
                       />
                       <p>{items.step}</p>
                     </div>
-                    <Card.Img
-                      variant="top"
-                      src="/assets/homeRemain/Work/step1.png"
-                    />
+                    <Card.Img variant="top" src={items.imgUrl} />
                     <Card.Body className={styles.cardBody}>
                       <Card.Title className={styles.cardTitle}>
                         {items.title}

@@ -1,41 +1,51 @@
 import React from "react";
-import style from "./style.module.scss";
+import styles from "./style.module.scss";
+
+const steps = [
+  {
+    imgSrc: "/assets/rectangle/pen.png",
+    text: "Submitted Medical Profile",
+  },
+  {
+    imgSrc: "/assets/rectangle/id.png",
+    text: "Verified Identity",
+  },
+  {
+    imgSrc: "/assets/rectangle/time.png",
+    text: "Prescription Approved or Modified by Physician",
+    duration: "24-48 hours",
+  },
+  {
+    imgSrc: "/assets/rectangle/truck.png",
+    text: "Order Shipped !",
+    duration: "5-7 days after approval!",
+  },
+];
+
 const Rectangle = () => {
   return (
-    <div className={style.Rectangle}>
-      <div>
-        <img src="/assets/rectangle/pen.png" alt="image" />
-        <p>
-          <b>Submitted Medical Profile</b>
-        </p>
-      </div>
-      <div className={style.line}></div>
-      <div>
-        <img src="/assets/rectangle/id.png" alt="image" />
-        <p>
-          <b>Verified Identity</b>
-        </p>
-      </div>
-      <div className={style.line}></div>
-      <div>
-        <img src="/assets/rectangle/time.png" alt="image" />
-        <p className={style.len}>
-          <b>
-            Prescription Approved or Modified by Physician
-            <span className={style.color}> 24-48 hours</span>
-          </b>
-        </p>
-      </div>
-      <div className={style.line}></div>
-      <div>
-        <img src="/assets/rectangle/truck.png" alt="image" />
-        <p className={style.len2}>
-          <b>
-            Order Shipped !{" "}
-            <span className={style.color1}>5-7 days after approval!</span>
-          </b>
-        </p>
-      </div>
+    <div className={styles.Rectangle}>
+      {steps.map((step, index) => (
+        <React.Fragment key={index}>
+          <div className={styles.box}>
+            <img src={step.imgSrc} alt="image" />
+            <p className={step.duration ? styles.len : styles.len2}>
+              {step.text}
+              {step.duration && (
+                <>
+                  <br />
+                  <span
+                    className={step.duration ? styles.color : styles.color1}
+                  >
+                    {step.duration}
+                  </span>
+                </>
+              )}
+            </p>
+          </div>
+          {index < steps.length - 1 && <div className={styles.line}></div>}
+        </React.Fragment>
+      ))}
     </div>
   );
 };

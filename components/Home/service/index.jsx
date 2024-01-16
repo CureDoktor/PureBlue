@@ -1,16 +1,14 @@
 import { Col, Container, Row } from "react-bootstrap";
-
 import styles from "./service.styles.module.scss";
-
-const imageUrl = "/assets/homepage/service/check.png";
-const serviceArr = [
-  { name: "Rx-only tablet", imageUrl },
-  { name: "FREE online consultation", imageUrl },
-  { name: "Discreet shipping", imageUrl },
-  { name: "Monthly refills", imageUrl },
-];
-
 const Service = () => {
+  let imageUrl = "/assets/homepage/service/check.png";
+  const serviceArr = [
+    { name: "Rx-only tablet", imageUrl },
+    { name: "FREE online consultation", imageUrl },
+    { name: "Discreet shipping", imageUrl },
+    { name: "Monthly refills", imageUrl },
+  ];
+
   return (
     <Container className={styles.mainContainer}>
       <Row>

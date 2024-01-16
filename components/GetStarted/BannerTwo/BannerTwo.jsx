@@ -22,17 +22,9 @@ const BannerTwo = () => {
               Step 1:
               <span> Select your medication</span>
             </p>
-            <div className="d-flex gap-2">
-              <Image
-                width={200}
-                height={100}
-                src="/assets/homeRemain/Banner/tablet1.png"
-              />
-              <Image
-                width={200}
-                height={100}
-                src="/assets/homeRemain/Banner/tablet2.png"
-              />
+            <div className={styles.tablets}>
+              <img src="/assets/homeRemain/Banner/tablet1.png" />
+              <img src="/assets/homeRemain/Banner/tablet2.png" />
             </div>
           </div>
           <ul className={styles.featuresList}>
@@ -42,12 +34,11 @@ const BannerTwo = () => {
                 <span> {feature.text}</span>
               </li>
             ))}
+            <small>
+              For important safety information, please click
+              <span>here.</span>
+            </small>
           </ul>
-
-          <small>
-            For important safety information, please click
-            <span>here.</span>
-          </small>
         </div>
         {/* second container  */}
         <div className={styles.imgContainer}>

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./BannerThree.styles.module.scss";
+import styles from "./Started.styles.module.scss";
 import Image from "next/image";
-const BannerThree = () => {
+const Started = () => {
   let icon = "/assets/homeRemain/BannerThree/check.png";
   const featureList = [
     { text: " No in-person visits to the doctor", icon },
@@ -36,17 +36,9 @@ const BannerThree = () => {
           </div>
           <div className={styles.medication}>
             <p>First, choose a medication that works for you.</p>
-            <div className="d-flex gap-2">
-              <Image
-                width={200}
-                height={100}
-                src="/assets/homeRemain/Banner/tablet1.png"
-              />
-              <Image
-                width={200}
-                height={100}
-                src="/assets/homeRemain/Banner/tablet2.png"
-              />
+            <div className={styles.tablets}>
+              <img src="/assets/homeRemain/Banner/tablet1.png" />
+              <img src="/assets/homeRemain/Banner/tablet2.png" />
             </div>
           </div>
         </div>
@@ -55,4 +47,4 @@ const BannerThree = () => {
   );
 };
 
-export default BannerThree;
+export default Started;

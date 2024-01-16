@@ -15,7 +15,9 @@ export default function OrderFlow(props) {
 
   return (
     <div>
-      <OrderHero />
+      <div style={{ background: "#ecf6ff" }}>
+        <OrderHero />
+      </div>
       <div className={styles.testimonials}>
         <Container>
           <Row>
