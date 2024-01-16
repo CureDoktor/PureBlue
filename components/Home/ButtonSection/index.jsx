@@ -3,10 +3,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import styles from "./buttonSection.styles.module.scss";
 
 const buttonsInfo = [
-  { icon: "/assets/homepage/btnIcons/icon1.png", text: "Pure Quality" },
-  { icon: "/assets/homepage/btnIcons/icon2.png", text: "Safe" },
-  { icon: "/assets/homepage/btnIcons/icon3.png", text: "Regulated" },
-  { icon: "/assets/homepage/btnIcons/icon4.png", text: "Consistent Results" },
+  { icon: "/assets/homepage/icons/icon1.png", text: "Pure Quality" },
+  { icon: "/assets/homepage/icons/icon2.png", text: "Safe" },
+  { icon: "/assets/homepage/icons/icon3.png", text: "Regulated" },
+  { icon: "/assets/homepage/icons/icon4.png", text: "Consistent Results" },
 ];
 
 const ButtonSection = () => {
