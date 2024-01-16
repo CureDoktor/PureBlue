@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Container, Row, Col } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import styles from "./CardSection.styles.module.scss";
 import "swiper/css";
 import "swiper/css/autoplay";

@@ -1,12 +1,7 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { Card, ListGroup } from "react-bootstrap";
+import Image from "next/image";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import img from "../../../public/assets/order/orderHeroImg.png";
-import bg from "../../../public/assets/order/bg.png";
-import chart from "../../../public/assets/order/chart.png";
-import Slider from "../slider";
 export default function OrderHero(props) {
   // console.log("dffvvdv", img);
   return (
@@ -27,7 +22,10 @@ export default function OrderHero(props) {
             </ul>
           </div>
           <div className={styles.imgDiv}>
-            <Image className={styles.heroImg} src={img}></Image>
+            <Image
+              className={styles.heroImg}
+              src="/assets/order/orderHeroImg.png"
+            ></Image>
           </div>
         </div>
       </div>

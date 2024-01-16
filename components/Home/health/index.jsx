@@ -1,38 +1,40 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import styles from "./Health.styles.module.scss";
 import Image from "next/image";
+import { Button, Container } from "react-bootstrap";
+
+import styles from "./health.styles.module.scss";
+
+const featureList = [
+  {
+    text: "100% Online Healthcare System",
+    icon: "/assets/homepage/health/icon1.png",
+  },
+  {
+    text: "US-licensed healthcare professionals",
+    icon: "/assets/homepage/health/icon2.png",
+  },
+  {
+    text: "FDA-approved treatments and medication",
+    icon: "/assets/homepage/health/icon3.png",
+  },
+  {
+    text: "US-based pharmacy",
+    icon: "/assets/homepage/health/icon4.png",
+  },
+  {
+    text: "FREE Online Consultations – Get Results FAST!",
+    icon: "/assets/homepage/health/icon5.png",
+  },
+  {
+    text: "Free Rushed Shipping – Discreet Packages",
+    icon: "/assets/homepage/health/icon6.png",
+  },
+  {
+    text: "12-month ongoing care",
+    icon: "/assets/homepage/health/icon7.png",
+  },
+];
 
 const Health = () => {
-  const featureList = [
-    {
-      text: "100% Online Healthcare System",
-      icon: "/assets/homepage/health/icon1.png",
-    },
-    {
-      text: "US-licensed healthcare professionals",
-      icon: "/assets/homepage/health/icon2.png",
-    },
-    {
-      text: "FDA-approved treatments and medication",
-      icon: "/assets/homepage/health/icon3.png",
-    },
-    {
-      text: "US-based pharmacy",
-      icon: "/assets/homepage/health/icon4.png",
-    },
-    {
-      text: "FREE Online Consultations – Get Results FAST!",
-      icon: "/assets/homepage/health/icon5.png",
-    },
-    {
-      text: "Free Rushed Shipping – Discreet Packages",
-      icon: "/assets/homepage/health/icon6.png",
-    },
-    {
-      text: "12-month ongoing care",
-      icon: "/assets/homepage/health/icon7.png",
-    },
-  ];
   return (
     <Container className={styles.mainContainer}>
       <h1>

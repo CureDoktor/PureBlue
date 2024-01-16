@@ -1,49 +1,51 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Button, Card, Container } from "react-bootstrap";
-import styles from "./Treatment.styles.module.scss";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-const Treatment = () => {
-  const cardInfo = [
-    {
-      title: "Erectile dysfunction",
-      text: `Trouble getting hard?`,
-      buttonText: "Get Started",
-      imgSrc: "/assets/homepage/card3/card1.png",
-      imgAlt: "Erectile dysfunction",
-    },
-    {
-      title: "Custom Medication",
-      text: `Need more powerful customized treatment?`,
-      buttonText: "Get Started",
-      imgSrc: "/assets/homepage/card3/card2.png",
-      imgAlt: "Custom Medication",
-    },
-    {
-      title: "Men's Hair Loss",
-      text: `Losing or thinning hair?`,
-      buttonText: "Get Started",
-      imgSrc: "/assets/homepage/card3/card3.png",
-      imgAlt: "Men's Hair Loss",
-    },
-    {
-      title: "Men's Hair Loss",
-      text: `Losing or thinning hair?`,
-      buttonText: "Get Started",
-      imgSrc: "/assets/homepage/card3/card3.png",
-      imgAlt: "Men's Hair Loss",
-    },
-    {
-      title: "Men's Hair Loss",
-      text: `Losing or thinning hair?`,
-      buttonText: "Get Started",
-      imgSrc: "/assets/homepage/card3/card3.png",
-      imgAlt: "Men's Hair Loss",
-    },
-  ];
 
+import styles from "./treatment.styles.module.scss";
+
+const cardInfo = [
+  {
+    title: "Erectile dysfunction",
+    text: `Trouble getting hard?`,
+    buttonText: "Get Started",
+    imgSrc: "/assets/homepage/card3/card1.png",
+    imgAlt: "Erectile dysfunction",
+  },
+  {
+    title: "Custom Medication",
+    text: `Need more powerful customized treatment?`,
+    buttonText: "Get Started",
+    imgSrc: "/assets/homepage/card3/card2.png",
+    imgAlt: "Custom Medication",
+  },
+  {
+    title: "Men's Hair Loss",
+    text: `Losing or thinning hair?`,
+    buttonText: "Get Started",
+    imgSrc: "/assets/homepage/card3/card3.png",
+    imgAlt: "Men's Hair Loss",
+  },
+  {
+    title: "Men's Hair Loss",
+    text: `Losing or thinning hair?`,
+    buttonText: "Get Started",
+    imgSrc: "/assets/homepage/card3/card3.png",
+    imgAlt: "Men's Hair Loss",
+  },
+  {
+    title: "Men's Hair Loss",
+    text: `Losing or thinning hair?`,
+    buttonText: "Get Started",
+    imgSrc: "/assets/homepage/card3/card3.png",
+    imgAlt: "Men's Hair Loss",
+  },
+];
+
+const Treatment = () => {
   return (
     <Container className={styles.mainContainer}>
       <h1 className="mb-5">

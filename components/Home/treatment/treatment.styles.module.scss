@@ -1,0 +1,81 @@
+.mainContainer {
+  background-color: white;
+  border-radius: 12px;
+  max-width: 70rem;
+  margin: auto;
+  padding: 4rem 0rem;
+  @media (max-width: 800px) {
+    padding: 4rem 0.7rem;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -1.23px;
+    color: #000;
+    margin: 1rem 0px;
+    @media (max-width: 800px) {
+      font-size: 35px;
+    }
+    @media (max-width: 576px) {
+      font-size: 30px;
+      // padding: 0rem 0.7rem;
+    }
+    span {
+      color: #0077f0;
+    }
+  }
+}
+
+.card {
+  max-width: 509px;
+  height: 500px;
+  border: none;
+}
+@media (max-width: 576px) {
+  .card {
+    margin-bottom: 10px;
+    height: 400px;
+    max-width: 340px;
+    margin-left: 10px;
+  }
+}
+.cardBody {
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cardTitle {
+  max-width: 145px;
+  background-color: gray;
+  font-size: 14px;
+  border-radius: 15px;
+  color: white;
+  padding: 2px 5px;
+  font-weight: 400;
+  letter-spacing: -0.67px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.cardText {
+  max-width: 261px;
+  font-size: 19px;
+  color: white;
+  // word-break: break-all;
+}
+.cardBtn {
+  padding: 10px 30px;
+  font-weight: 200;
+  font-size: 13px;
+
+  &:hover {
+    box-shadow: none;
+    color: white;
+  }
+}

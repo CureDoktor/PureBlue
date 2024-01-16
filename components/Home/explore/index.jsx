@@ -1,7 +1,9 @@
-import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import styles from "./Explore.styles.module.scss";
-import SearchButton from "../SearchButton";
+
+import SearchButton from "../searchButton";
+
+import styles from "./explore.styles.module.scss";
+
 const cardData = [
   {
     title: "Erectile Dysfunction",
@@ -34,10 +36,6 @@ const Explore = () => {
             <span className="text-primary">PureBlue </span>
             makes men's health simpler, more convenient, and affordable.
           </h1>
-          {/* <Button size="lg" className={styles.exploreButton}>
-            <Image src="/assets/icons/searchIcon.png" width={13} height={13} />
-            <span>Explore treatments</span>
-          </Button> */}
           <SearchButton className="bg-dark" span="Explore treatments" />
         </Col>
       </Row>
