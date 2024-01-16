@@ -1,14 +1,14 @@
 import { Container } from "react-bootstrap";
 
-import CardSection from "./cardSection";
-import ButtonSection from "./buttonSection";
-import Frequently from "./frequentlyAsked";
-import Health from "./health";
-import Popular from "./popular";
-import Service from "./service";
-import Treatment from "./treatment";
-import Explore from "./explore";
-import SearchButton from "./searchButton";
+import CardSection from "./CardSection";
+import ButtonSection from "./ButtonSection";
+import Frequently from "./FrequentlyAsked";
+import Health from "./Health";
+import Popular from "./Popular";
+import Service from "./Service";
+import Treatment from "./Treatment";
+import Explore from "./Explore";
+import SearchButton from "./SearchBtn";
 
 import styles from "./home.styles.module.scss";
 

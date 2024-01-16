@@ -1,6 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 
-import SearchButton from "../searchButton";
+import SearchButton from "../SearchBtn";
 
 import styles from "./explore.styles.module.scss";
 
