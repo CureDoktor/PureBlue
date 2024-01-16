@@ -10,7 +10,6 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext } from "react-bootstrap";
 import { useRouter } from "next/router";
 import HomePage from "../components/Home";
-
 export default function Home() {
   const history = useRouter();
 
