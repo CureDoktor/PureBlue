@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import Image from "next/image";
-import img from "../../../public/assets/order/orderHeroImg.png";
+
 export default function OrderHero(props) {
   // console.log("dffvvdv", img);
   return (
@@ -22,10 +21,10 @@ export default function OrderHero(props) {
             </ul>
           </div>
           <div className={styles.imgDiv}>
-            <Image
+            <img
               className={styles.heroImg}
               src="/assets/order/orderHeroImg.png"
-            ></Image>
+            ></img>
           </div>
         </div>
       </div>
