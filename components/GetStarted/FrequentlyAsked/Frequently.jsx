@@ -82,14 +82,14 @@ const Frequently = () => {
         <h2>FREQUENTLY ASKED QUESTIONS</h2>
 
         <div className={styles.expand}>
-          <Accordion defaultActiveKey="0">
+          <Accordion defaultActiveKey={null}>
             {cardData.map((card, index) => (
               <Card className={styles.cardHeader} key={index}>
                 <ContextAwareToggle
                   className={styles.headerOne}
                   eventKey={index.toString()}
                 >
-                  <Row className="align-items-center">
+                  <Row className={styles.rowCard}>
                     <Col xs={2} sm={1} className={styles.plus}>
                       <p>
                         {expandedItems.includes(index.toString()) ? "-" : "+"}
@@ -101,7 +101,9 @@ const Frequently = () => {
                   </Row>
                 </ContextAwareToggle>
                 <Accordion.Collapse eventKey={index.toString()}>
-                  <Card.Body>{card.answer}</Card.Body>
+                  <Card.Body className={styles.dragTxt}>
+                    {card.answer}
+                  </Card.Body>
                 </Accordion.Collapse>
               </Card>
             ))}

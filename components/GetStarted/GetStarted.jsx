@@ -1,15 +1,12 @@
-import React from "react";
-
 import styles from "./GetStarted.styles.module.scss";
 import Banner from "./Banner";
-import { Container } from "react-bootstrap";
 import Mark from "./Mark";
 import Lists from "./Lists";
 import ListTwo from "./ListTwo";
 import BannerTwo from "./BannerTwo";
-import BannerThree from "./BannerThree";
 import Work from "./Work";
 import Frequently from "./FrequentlyAsked";
+import Started from "./Started";
 
 const GetStarted = () => {
   return (
@@ -25,7 +22,8 @@ const GetStarted = () => {
       <div style={{ background: "#F7F7F7" }}>
         <Frequently />
       </div>
-      <BannerThree />
+
+      <Started />
     </div>
   );
 };

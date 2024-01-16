@@ -6,11 +6,20 @@
   margin: auto;
 
   h1 {
-    margin-bottom: 2rem;
+    margin: 6rem 0rem;
     text-align: center;
-    font: normal normal medium 35px/70px Futura Md BT;
+    font-size: 35px;
     letter-spacing: -0.7px;
     color: #000000;
+
+    @media (max-width: 500px) {
+      margin: 4rem 0rem;
+      font-size: 25px;
+      letter-spacing: -0.5px;
+    }
+    @media (max-width: 350px) {
+      font-size: 20px;
+    }
   }
 
   .cardSection {
@@ -40,7 +49,7 @@
 
     .stepBox {
       position: absolute;
-      top: 0px;
+      top: -8px;
       display: flex;
       justify-content: center;
       img {

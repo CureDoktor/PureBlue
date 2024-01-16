@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import styles from "./CardSection.styles.module.scss";
-import Image from "next/image";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";

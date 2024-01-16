@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import styles from "./Service.styles.module.scss";
 
 const Service = () => {
-  let imageUrl = "/assets/homepage/Service/check.png";
+  let imageUrl = "/assets/homepage/service/check.png";
   const serviceArr = [
     { name: "Rx-only tablet", imageUrl },
     { name: "FREE online consultation", imageUrl },

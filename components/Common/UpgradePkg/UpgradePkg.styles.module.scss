@@ -1,11 +1,8 @@
 .upgradeSection {
   max-width: 57rem;
   margin: auto;
-  padding: 20px;
   text-align: center;
-  @media (max-width: 500px) {
-    padding: 0px;
-  }
+
   h2 {
     font: normal normal bold 39px/61px Poppins;
     letter-spacing: -1.36px;

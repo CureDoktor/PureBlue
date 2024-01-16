@@ -24,7 +24,6 @@
     min-height: 80vh;
     max-height: 70vh;
     padding-left: 10px;
-    
   }
 }
 
@@ -347,12 +346,11 @@
 
 .modalImg {
   position: absolute;
-  bottom: -1.75%;
-  left:0;
+  bottom: -0.78%;
+  left: 0;
   z-index: -999;
- 
+
   @media only screen and (max-width: 767px) {
     display: none;
   }
-  
 }

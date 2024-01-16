@@ -1,14 +1,13 @@
 import React from "react";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import styles from "./ButtonSection.styles.module.scss";
-import Image from "next/image";
 
 const ButtonSection = () => {
   const buttonsInfo = [
-    { icon: "/assets/homepage/btnIcons/icon1.png", text: "Pure Quality" },
-    { icon: "/assets/homepage/btnIcons/icon2.png", text: "Safe" },
-    { icon: "/assets/homepage/btnIcons/icon3.png", text: "Regulated" },
-    { icon: "/assets/homepage/btnIcons/icon4.png", text: "Consistent Results" },
+    { icon: "/assets/homepage/icons/icon1.png", text: "Pure Quality" },
+    { icon: "/assets/homepage/icons/icon2.png", text: "Safe" },
+    { icon: "/assets/homepage/icons/icon3.png", text: "Regulated" },
+    { icon: "/assets/homepage/icons/icon4.png", text: "Consistent Results" },
   ];
 
   return (

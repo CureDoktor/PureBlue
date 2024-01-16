@@ -1,13 +1,8 @@
+import PackageAd from "../../Common/PackageAd";
+import ServiceBox from "../../Common/ServiceBox";
 import UpgradePkg from "../../Common/UpgradePkg/UpgradePkg";
 import styles from "./Details.styles.module.scss";
 const Details = () => {
-  let icon = "/assets/pageThree/details/check.png";
-  const serviceArr = [
-    { name: "Safe and Effective", icon },
-    { name: "Superior Confidence", icon },
-    { name: "U.S.-made Medication", icon },
-  ];
-
   const upgradeArray = [
     {
       id: 1,
@@ -56,30 +51,9 @@ const Details = () => {
         </p>
       </div>
 
-      <section className={styles.service}>
-        {serviceArr.map((items, index) => (
-          <div key={index} className={styles.serviceBox}>
-            <img src={items.icon} alt="icon" />
-            <p>{items.name}</p>
-          </div>
-        ))}
-      </section>
+      <ServiceBox />
 
-      <section className={styles.packageAd}>
-        <div>
-          <img src="/assets/pageThree/details/money.png" alt="ad" />
-        </div>
-        <div>
-          <p className={styles.pColor}>
-            Get the BEST VALUE for your money and upgrade now to a BIGGER
-            package!
-          </p>
-          <p>
-            PureBlue’s upgraded packages ensure that you are READY for action,
-            anytime – anywhere!
-          </p>
-        </div>
-      </section>
+      <PackageAd />
     </div>
   );
 };

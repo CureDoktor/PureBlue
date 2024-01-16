@@ -77,7 +77,7 @@ const Frequently = () => {
         <h2>Frequently asked questions</h2>
         <h3>Get instant answers</h3>
         <div className={styles.expand}>
-          <Accordion defaultActiveKey="0">
+          <Accordion defaultActiveKey={null}>
             {cardData.map((card, index) => (
               <Card className={styles.cardHeader} key={index}>
                 <ContextAwareToggle
