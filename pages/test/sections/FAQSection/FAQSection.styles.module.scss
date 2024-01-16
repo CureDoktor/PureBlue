@@ -1,0 +1,23 @@
+.faqSection {
+  padding: 60px 0;
+
+  @media (min-width: 992px) {
+    padding: 60px 0 100px;
+  }
+
+  & .row {
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @media (min-width: 992px) {
+      padding: 0;
+    }
+  }
+
+  & .title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}

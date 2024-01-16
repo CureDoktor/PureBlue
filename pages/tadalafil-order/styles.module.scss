@@ -1,0 +1,341 @@
+$primary-color: #0077f0;
+$secondary-color: #003b60;
+
+.orderPage {
+  .fieldOne {
+    .formField {
+      .radioButton {
+        display: block;
+        padding: 18px 40px;
+        background-color: white;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        label {
+          padding-top: 0px;
+          font-size: 15px;
+          line-height: 20px;
+          color: #767f84;
+          font-weight: 400;
+        }
+        input {
+          border: 1px solid gray;
+        }
+      }
+    }
+  }
+  ul {
+    padding: 20px 0px;
+    padding-left: 0px;
+    .checkmark {
+      color: $primary-color;
+      font-size: 22px;
+    }
+    li {
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 400;
+      font-family: "Poppins";
+      font-size: 14px;
+      letter-spacing: 0px;
+      line-height: 26px;
+      color: #21293c;
+      font-weight: 400;
+      &::marker {
+        content: none;
+      }
+    }
+  }
+  .switch {
+    border-radius: 8px;
+    background-color: #09a5e3;
+    max-width: 120px;
+    padding: 15px 30px;
+    margin-top: 5px;
+  }
+  .button {
+    background-color: #09a5e3;
+    border-radius: 8px;
+    padding: 15px 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .formField {
+    .formHeader {
+      background-color: #767f84;
+      padding: 20px 50px;
+      p {
+        margin-bottom: 0px;
+        font-size: 24px;
+        line-height: 22px;
+        color: #fefefe;
+        font-weight: 700;
+      }
+    }
+    .formBody {
+      padding: 30px 50px;
+      background-color: #f4f4f4;
+    }
+    .grayText {
+      font-size: 12px;
+      letter-spacing: 0px;
+      line-height: 24px;
+      color: #767f84;
+      font-weight: 400;
+      padding-top: 30px;
+    }
+  }
+  .valid {
+    font-size: 12px;
+    letter-spacing: 0px;
+    line-height: 26px;
+    color: #767f84;
+    font-weight: 400;
+    padding-left: 20px;
+    &::before {
+      content: url("/assets/order/warning.png");
+      position: relative;
+      bottom: -4px;
+      left: -10px;
+    }
+  }
+  .totalPrice {
+    padding: 10px;
+    .row {
+      border-top: 2px solid #f4f4f4;
+      font-size: 14px;
+      letter-spacing: 0px;
+      line-height: 18px;
+      color: #21293c;
+      font-weight: 700;
+      padding: 15px 0px;
+    }
+  }
+  .fieldOne {
+    padding: 0px 0px 60px 0px;
+    .callUs {
+      text-align: right;
+      font-size: 21px;
+      letter-spacing: -1px;
+      line-height: 30px;
+      color: #2d2d2d;
+      font-weight: 800;
+      padding-bottom: 30px;
+    }
+    .formField {
+      font-weight: bold;
+      padding-bottom: 30px;
+      label {
+        padding-top: 20px;
+      }
+    }
+    .checkbox {
+      label {
+        padding-top: 2px;
+      }
+      .form-check-input:checked {
+        background-color: $primary-color !important;
+        border-color: $primary-color !important;
+      }
+      input {
+        border-color: #ced4da;
+        font-size: 26px;
+        margin-top: -2px;
+      }
+    }
+    input:checked {
+      background-color: $primary-color !important;
+      border-color: $primary-color !important;
+    }
+  }
+  padding: 50px 0px 40px 0px;
+  h2 {
+    padding: 30px 0px 30px 20px;
+    font-size: 54px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 42px;
+    font-weight: 800;
+    padding-bottom: 10px;
+  }
+  .grayText {
+    color: #999;
+    font-size: 20px;
+    line-height: 32px;
+    max-width: 900px;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+  .formControl {
+    border-radius: 5px;
+    height: 50px;
+  }
+  .member {
+    padding-bottom: 80px;
+  }
+  .blueText {
+    color: $primary-color;
+    font-weight: 600;
+    padding-top: 10px;
+    margin-bottom: 0px;
+  }
+  .blueLine {
+    height: 5px;
+    width: 100%;
+    background-color: $primary-color;
+    margin-top: 60px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 32px;
+  }
+  .formInput {
+    border-radius: 5px;
+    height: 200px;
+  }
+  .formInputTwo {
+    border-radius: 5px;
+    height: 50px;
+  }
+  .submitBtn {
+    width: 100%;
+    background-color: $primary-color;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  .grayLine {
+    width: 2px;
+    height: 100%;
+    background-color: #999999;
+    margin: auto;
+  }
+  .buttons {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    margin: 10px 30px 10px 0px;
+    padding: 15px 5px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+    box-shadow: 0px 3px 6px #00000029;
+  }
+  .continueWithGoogle {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 5px;
+    color: black;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    &::before {
+      content: url("/assets/register/google-logo.png");
+      position: relative;
+      bottom: -10px;
+      left: -10px;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .registerPage {
+    padding: 50px 0px 90px 0px;
+    h2 {
+      padding: 30px 0px 30px 20px;
+      font-size: 54px;
+      font-weight: bold;
+    }
+    .blueLine {
+      height: 5px;
+      width: 100%;
+      background-color: $primary-color;
+      margin-top: 0px;
+      margin-bottom: 40px;
+    }
+    p {
+      padding-top: 20px;
+    }
+  }
+}
+
+.container {
+  background-color: #ecf6ff;
+}
+
+.testimonials {
+  background-color: #ecf6ff;
+  padding: 93px 0;
+
+  & .heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    & h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: black;
+      &:nth-of-type(2) {
+        color: #0077f0;
+      }
+    }
+  }
+
+  & .desktopNavigation {
+    display: none;
+  }
+
+  & .mobileNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 125px 0;
+
+    & .headingWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & .heading {
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        & h1 {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+
+      & .desktopNavigation {
+        display: block;
+        font-size: 20px;
+
+        & button {
+          &:not(:last-of-type) {
+            & svg {
+              margin-right: 3px;
+            }
+          }
+
+          &:last-of-type {
+            & svg {
+              margin-left: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    & .mobileNavigation {
+      display: none;
+    }
+  }
+}

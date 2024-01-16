@@ -1,0 +1,197 @@
+.container {
+  background: transparent
+    linear-gradient(
+      180deg,
+      hsla(210, 100%, 47%, 1) 0%,
+      hsla(210, 100%, 33%, 1) 100%
+    )
+    0% 0% no-repeat padding-box;
+}
+.mainContainer {
+  max-width: 80rem;
+  margin: auto;
+  display: flex;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    max-width: 25rem;
+  }
+  @media (max-width: 375px) {
+    padding: 0px 10px;
+  }
+}
+
+.textContent {
+  padding: 30px 0px;
+  margin: auto;
+
+  p {
+    color: #0077f0;
+
+    @media (max-width: 425px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.buttonContainer {
+  p {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    letter-spacing: -2.98px;
+    gap: 5px;
+    text-align: left;
+    font-weight: 500;
+    color: #b1d8ff;
+    opacity: 1;
+
+    @media (max-width: 500px) {
+      font-size: 45px;
+      letter-spacing: -2px;
+    }
+    @media (max-width: 345px) {
+      font-size: 40px;
+    }
+  }
+}
+.box {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  @media (max-width: 500px) {
+    gap: 4rem;
+  }
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 0.7rem;
+
+      @media (max-width: 800px) {
+        padding: 0rem 0.5rem;
+      }
+
+      @media (max-width: 500px) {
+        gap: 10px;
+      }
+      span {
+        color: #b1d8ff;
+        font-size: 18px;
+        letter-spacing: -0.84px;
+        font-weight: 500;
+        @media (max-width: 1024px) {
+          font-size: 15px;
+        }
+        @media (max-width: 800px) {
+          font-size: 13px;
+        }
+        @media (max-width: 500px) {
+          font-size: 12px;
+        }
+        @media (max-width: 350px) {
+          font-size: 11px;
+        }
+      }
+
+      .featureIcon {
+        width: 20px;
+        height: 20px;
+
+        @media (max-width: 800px) {
+          width: 16px;
+          height: 16px;
+        }
+        @media (max-width: 500px) {
+          width: 13px;
+          height: 13px;
+        }
+        @media (max-width: 350px) {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 67px;
+    height: 168px;
+
+    @media (max-width: 550px) {
+      width: 45px;
+      height: 114px;
+    }
+  }
+}
+
+.medication {
+  margin-top: 20px;
+  @media (max-width: 550px) {
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    letter-spacing: -0.88px;
+    color: #b1d8ff;
+    opacity: 1;
+
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 345px) {
+      font-size: 12.5px;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  .tablets {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    @media (max-width: 600px) {
+      margin: 1rem 0rem;
+    }
+    img {
+      width: 250px;
+      height: 123px;
+
+      @media (max-width: 800px) {
+        width: 185px;
+        height: 83px;
+      }
+      @media (max-width: 600px) {
+        width: 185px;
+        height: 83px;
+      }
+      @media (max-width: 400px) {
+        width: 165px;
+        height: 73px;
+      }
+      @media (max-width: 370px) {
+        width: 140px;
+      }
+    }
+  }
+}
+
+.imgContainer {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}

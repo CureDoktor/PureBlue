@@ -1,0 +1,48 @@
+.endAdornment {
+  &.info {
+    font-size: 14px;
+    font-weight: normal;
+
+    @media (min-width: 992px) {
+      font-size: 18px;
+    }
+  }
+
+  &.chip {
+    display: none;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0.4643em 0.7143em;
+    border-radius: 0.357em;
+
+    @media (min-width: 414px) {
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 14px;
+    }
+
+    &.lightBlue {
+      background-color: #87bff8;
+    }
+
+    &.blue {
+      background-color: #4494e5;
+    }
+
+    &.green {
+      background-color: #39cb64;
+    }
+
+    &.orange {
+      background-color: #ff8a00;
+    }
+
+    &.red {
+      background-color: #cf1c31;
+    }
+  }
+}

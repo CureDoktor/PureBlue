@@ -1,0 +1,128 @@
+.footer {
+  background-color: #181818;
+  padding-top: 50px;
+
+  .footerContent {
+    max-width: 70rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1024px) {
+      padding: 0px 20px;
+    }
+    @media (max-width: 575px) {
+      flex-direction: column;
+    }
+  }
+}
+.image {
+  display: block;
+  // margin: auto;
+}
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: #9e9e9e;
+    font-size: 13px;
+    margin-top: 18px;
+  }
+}
+.telephone {
+  display: flex;
+  gap: 50px;
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+  p {
+    font-size: 13px;
+    line-height: 27px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Poppins";
+
+    margin-bottom: 0px;
+  }
+  a {
+    font-size: 22px;
+    line-height: 27px;
+    color: #0077f0;
+    font-weight: 700;
+    font-family: "Poppins";
+
+    @media (max-width: 575px) {
+      font-size: 15px;
+    }
+  }
+}
+.linkContainer {
+  @media (max-width: 575px) {
+    display: flex;
+  }
+}
+
+.certificate {
+  @media (max-width: 575px) {
+    align-items: flex-end;
+  }
+}
+
+.links {
+  h5 {
+    color: white;
+  }
+  a {
+    padding: 3px 0px;
+    font-size: 13px;
+    color: #9e9e9e;
+    font-weight: 400;
+    font-family: "Poppins";
+  }
+}
+
+.copyright {
+  max-width: 70rem;
+  margin: auto;
+  border-top: 1px solid #4d4d4d;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 27px;
+  color: #9e9e9e;
+  font-weight: 400;
+  font-family: "Poppins";
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+}
+@media screen and (max-width: 550px) {
+  .link {
+    display: block;
+  }
+  .links a {
+    display: block;
+    padding: 5px;
+    width: 45%;
+    float: left;
+  }
+}
+
+// .links {
+//   text-align: center;
+//   a {
+//     padding: 25px;
+//     font-size: 13px;
+//     line-height: 27px;
+//     color: #9e9e9e;
+//     font-weight: 400;
+//     font-family: "Poppins";
+//   }
+// }
+
+.footerRow {
+  padding: 0px 10px 20px 10px;
+  // border-bottom: 1px solid #4d4d4d;
+  // margin-bottom: 20px;
+}

@@ -1,0 +1,63 @@
+.accordion {
+  & .card {
+    background-color: transparent;
+    border: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid #bbbbbb;
+    border-radius: 0;
+  }
+
+  & .header {
+    background-color: transparent;
+    border: 0px;
+    padding: 10px 0px;
+  }
+
+  & .plus {
+    display: block;
+    color: #fff;
+    background-color: #0077f0;
+    text-align: center;
+    min-width: 34px;
+    min-height: 34px;
+    padding-top: 4px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  & .title {
+    margin: 6px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+  }
+
+  & .body {
+    font-size: 16px;
+    margin: 10px 0 20px;
+    padding: 0;
+
+    @media (min-width: 992px) {
+      padding-left: 49px;
+    }
+
+    & ul {
+      list-style: none; /* Remove default bullets */
+    }
+
+    & ul li {
+      position: relative;
+    }
+
+    & ul li::before {
+      position: absolute;
+      top: -0.23em;
+      left: -1em;
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: #0077f0; /* Change the color */
+      font-size: 24px;
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+    }
+  }
+}
