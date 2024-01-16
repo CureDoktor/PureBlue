@@ -1,14 +1,14 @@
 import { useState, React } from "react";
+import "swiper/css";
+import "swiper/css/pagination";
 import { Col, Container, Row } from "react-bootstrap";
-
+import styles from "./styles.module.scss";
 import OrderHero from "../../components/order-flow/OrderHero";
 import OnlineTreatment from "../../components/order-flow/OnlineTreatment";
 import Choice from "../../components/order-flow/Choice";
 import { OrderForm } from "../../components/order-flow/OrderForm";
 import Chart from "../../components/order-flow/Chart";
 import Carousel from "../../components/Carousel/Carousel";
-
-import styles from "./styles.module.scss";
 
 export default function OrderFlow(props) {
   const [swiper, setSwiperInstance] = useState(null);
@@ -27,12 +27,6 @@ export default function OrderFlow(props) {
                   <h1>Safe, Effective, and Affordable ED Treatments with</h1>
                   <h1>PureBlue</h1>
                 </div>
-                {/* <div className={styles.desktopNavigation}>
-                  <Navigation
-                    handleSlideNext={() => swiper?.slideNext()}
-                    handleSlidePrev={() => swiper?.slidePrev()}
-                  />
-                </div> */}
               </div>
               <Carousel
                 setSwiperInstance={setSwiperInstance}
@@ -79,12 +73,6 @@ export default function OrderFlow(props) {
                   },
                 ]}
               />
-              {/* <div className={styles.mobileNavigation}>
-                <Navigation
-                  handleSlideNext={() => swiper?.slideNext()}
-                  handleSlidePrev={() => swiper?.slidePrev()}
-                />
-              </div> */}
             </Col>
           </Row>
         </Container>
