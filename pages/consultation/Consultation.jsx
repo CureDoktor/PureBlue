@@ -100,8 +100,24 @@ const Consultation = (props) => {
     gettingQuestions();
   }, []);
 
-  const handleSubmit = (values) => {
-    setFormValues(values);
+  const handleSubmit = async (formData) => {
+    const route = "/api/questions/save-questions";
+
+    try {
+      const rese = await Axios.post(route, {
+        Token: authCtx.Token(),
+        formData,
+      })
+        .then((res) => {
+          setFormValues(formData);
+          router.push("/switch");
+        })
+        .catch((error) => {
+          props.handleShow(error.response.data);
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
   };
 
   return (
@@ -118,16 +134,18 @@ const Consultation = (props) => {
               <Col className={styles.col} xs={12} lg={7}>
                 {!question ? <Start /> : <QuestionParser />}
                 <Button
-                  type={question ? "submit" : "button"}
-                  onClick={() =>
-                    router.push(
-                      `/consultation?question=${question + 1}`,
-                      undefined,
-                      {
-                        shallow: true,
-                      }
-                    )
-                  }
+                  type={!notLastQuestion ? "submit" : "button"}
+                  onClick={() => {
+                    if (notLastQuestion) {
+                      router.push(
+                        `/consultation?question=${question + 1}/`,
+                        undefined,
+                        {
+                          shallow: true,
+                        }
+                      );
+                    }
+                  }}
                   endAdornment={
                     <svg
                       width="24"

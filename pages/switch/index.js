@@ -12,6 +12,7 @@ export default function Switch(props) {
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const [medications, setMedications] = useState([{}]);
+  const [caseId, setCaseId] = useState(null);
   const [chosenMed, setChosenMed] = useState({
     id: 1,
     product_title: "Viagra 25 mg, 4 day supply",
@@ -51,7 +52,7 @@ export default function Switch(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          setMedications(res.data);
+          setMedications(res.data.data);
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -67,11 +68,12 @@ export default function Switch(props) {
   }, []);
 
   const gettingOrderInfo = async () => {
-    const route = "/api/order/get-orders";
+    const route = "/api/case/get-case";
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
+          console.log(res.data?.data[0].id);
+          setCaseId(res.data?.data[0].id);
           // if (res.data != null) {
           //   router.push("/account");
           // }
@@ -144,7 +146,7 @@ export default function Switch(props) {
 
   const backToCheckout = async (medicationId) => {
     const route = "/api/case/save-product";
-    var currentProductId = { product_id: medicationId };
+    var currentProductId = { product_id: medicationId, caseId: caseId };
     try {
       const rese = await Axios.post(route, {
         Token: authCtx.Token(),
@@ -271,7 +273,7 @@ export default function Switch(props) {
                   <p>Change your answers to discover more pricing options.</p>
                   <Button
                     onClick={() => {
-                      backToCheckout(chosenMed.partner_medication_id);
+                      backToCheckout(chosenMed.id);
                     }}
                     className={styles.backToCheckout}
                   >

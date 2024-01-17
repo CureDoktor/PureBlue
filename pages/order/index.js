@@ -15,7 +15,6 @@ import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 import ShipInfo from "../../components/ShipInfo";
-import Modals from "../../components/Modals";
 
 export default function Order(props) {
   const [wrongStateHolder, setWrongStateHolder] = useState(false);

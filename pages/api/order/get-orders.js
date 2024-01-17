@@ -1,7 +1,7 @@
 import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
-  Axios.get("https://staging-api.trypureblue.com/order", {
+  Axios.get(process.env.NEXT_PUBLIC_API_KEY + "/order", {
     headers: {
       // "Content-Type": "application/json",
       "Site-Token": "123456",

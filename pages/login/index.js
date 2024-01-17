@@ -58,7 +58,9 @@ export default function Login(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const route = "/api/auth/login/";
+    console.log(process.env);
+    const route = "/api/auth/login";
+
     const payload = {
       email: formData.email,
       password: formData.password,

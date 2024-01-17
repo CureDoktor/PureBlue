@@ -1,7 +1,7 @@
 import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
-  Axios.post("https://staging-api.trypureblue.com/auth/register", req.body, {
+  Axios.post(process.env.NEXT_PUBLIC_API_KEY + "/auth/register", req.body, {
     headers: {
       "Content-Type": "application/json",
       "Site-Token": "123456",

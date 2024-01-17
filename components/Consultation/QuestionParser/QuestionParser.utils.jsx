@@ -92,6 +92,7 @@ export const parseAnswer = ({ context, answer }) => {
   const Input = React.cloneElement(inputMap[type], {
     ...props,
     key: answer?.id,
+
     ...(context.resetFieldId && { resetFieldId: context.resetFieldId }),
   });
 

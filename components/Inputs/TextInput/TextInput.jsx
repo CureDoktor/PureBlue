@@ -20,6 +20,7 @@ const TextInput = ({
       <input
         {...register(name, options)}
         style={style}
+        required
         className={`${styles.input} ${typeMap[type]}`}
         type={type}
         placeholder={placeholder}
