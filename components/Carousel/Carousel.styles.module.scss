@@ -2,21 +2,29 @@
   margin-top: 50px;
   margin-bottom: 50px;
   max-width: 750px;
+  // height: 700px;
+
+  @media (max-width: 500px) {
+    max-width: 326px;
+  }
 
   & .item {
     background-color: #ffffff;
     border: 3px solid #0077f0;
-    background-image: url('../../public/assets//order/quote\ \(2\).png');
+    background-image: url("../../public/assets//order/quote\ \(2\).png");
     background-repeat: no-repeat;
     background-position: 120% -60px;
     background-size: 200px;
     border-radius: 20px;
-    // padding: 35px;
-    height: 100%;
     margin-bottom: 60px;
-    max-height: 300px;
-    // min-height: 300px;
-    // max-width: 325px;
+    // height: 100%;
+    // max-height: 300px;
+    // height: 380px;
+
+    @media (max-width: 500px) {
+      max-height: 380px;
+      background-size: 170px;
+    }
 
     & .content {
       display: flex;
@@ -27,13 +35,17 @@
       min-height: 244px;
       margin-left: auto;
       margin-right: auto;
-      // border-bottom: solid 2px #0077f0;
 
       & .rating {
         position: relative;
         width: 146px;
         height: 26px;
         object-fit: contain;
+
+        @media (max-width: 500px) {
+          max-width: 120px;
+          height: 20px;
+        }
       }
 
       & h6 {
@@ -48,7 +60,16 @@
         color: black;
         line-height: 1.9;
         margin-bottom: 25px;
-        font-weight: 600;
+        font-weight: 400;
+
+        @media (max-width: 500px) {
+          padding: 0.9rem 0rem;
+          font-size: 20px;
+          font-weight: 300;
+        }
+        @media (max-width: 320px) {
+          font-size: 18px;
+        }
       }
     }
 

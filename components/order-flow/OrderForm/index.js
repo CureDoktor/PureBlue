@@ -59,7 +59,7 @@ export const OrderForm = () => {
               </div>
             </div>
           </div>
-          <div className={styles.btn}>
+          <div className={styles.btn} onClick={() => setmodal(true)}>
             <Button variant="gradient">
               CONTINUE TO STEP 2
               <span className={styles.buttonIcon}>
@@ -73,7 +73,7 @@ export const OrderForm = () => {
           </div>
         </div>
       </div>
-      <div onClick={() => setmodal(true)}>Modal</div>
+      {/* <div onClick={() => setmodal(true)}>Modal</div> */}
       <Popup isOpen={modal} onClose={() => setmodal(false)}></Popup>
     </div>
   );

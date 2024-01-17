@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import modelPic from "../../../public/assets/order/treatment.png";
 import logo1 from "../../../public/assets/order/100 satisfy.png";
 import logo2 from "../../../public/assets/order/Made in USA.png";
-import blueTick from '../../../public/assets/order/check-mark (2).png'
+import blueTick from "../../../public/assets/order/check-mark (2).png";
 
 import Image from "next/image";
 export default function OnlineTreatment(props) {
@@ -46,27 +46,25 @@ export default function OnlineTreatment(props) {
         </div>
         <div className={styles.tiksDiv}>
           <div className={styles.tiks}>
-          <div className={styles.imgDivv}>
-           <Image src={blueTick} ></Image>
-           </div>
+            <div className={styles.imgDivv}>
+              <Image src={blueTick}></Image>
+            </div>
+            <div className={styles.text}>No Hidden Fees</div>
+          </div>
+          <div className={styles.tiks}>
+            <div className={styles.imgDivv}>
+              <Image src={blueTick}></Image>
+            </div>
             <div className={styles.text}>
-              <>Save up to 90% vs brand-name medication</>
+              Save up to 90% vs brand-name medication
             </div>
           </div>
           <div className={styles.tiks}>
-           <div className={styles.imgDivv}>
-           <Image src={blueTick} ></Image>
-           </div>
-            <div className={styles.text}>
-              <>Save up to 90% vs brand-name medication</>
+            <div className={styles.imgDivv}>
+              <Image src={blueTick}></Image>
             </div>
-          </div>
-          <div className={styles.tiks}>
-          <div className={styles.imgDivv}>
-           <Image src={blueTick} ></Image>
-           </div>
             <div className={styles.text}>
-              <>Save up to 90% vs brand-name medication</>
+              PureGeneric Certified – 100% Generic Viagra and Viagra
             </div>
           </div>
         </div>

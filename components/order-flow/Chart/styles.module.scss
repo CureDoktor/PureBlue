@@ -25,7 +25,7 @@
   & h3 {
     text-align: center;
     font: normal normal bold 40px/50px Poppins;
-  
+
     color: #000000;
     opacity: 1;
     max-width: 1000px;
@@ -36,14 +36,25 @@
     }
   }
 }
-.chart{
-    width: 80%;
-    margin-left: auto !important;
-    margin-right: auto !important;
+.chart {
+  width: 80%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.chartMobile {
+  display: none;
+
+  @media (max-width: 767px) {
     display: flex;
     justify-content: center;
     align-items: center;
-    @media only screen and (max-width: 767px) {
-      width: 95%;
-    }
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
