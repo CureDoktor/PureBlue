@@ -11,6 +11,7 @@ const Button = ({
 }) => {
   const variantMap = {
     contained: styles.contained,
+    gradient: styles.gradient,
   };
 
   return (
