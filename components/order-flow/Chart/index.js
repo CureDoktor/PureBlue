@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import chart from '../../../public/assets/order/chart.png'
+import chart from "../../../public/assets/order/chart.png";
+import chartMobile from "../../../public/assets/order/chartMobile.png";
 const Chart = () => {
   return (
     <div className={styles.main}>
@@ -11,6 +12,9 @@ const Chart = () => {
       </h3>
       <div className={styles.chart}>
         <Image src={chart}></Image>
+      </div>
+      <div className={styles.chartMobile}>
+        <Image src={chartMobile}></Image>
       </div>
     </div>
   );

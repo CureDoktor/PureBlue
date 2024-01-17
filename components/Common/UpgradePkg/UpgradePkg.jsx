@@ -26,7 +26,13 @@ const UpgradePkg = ({ upgradeArray }) => {
               >
                 <div className={styles.stepBox}>
                   <img src={tBox} alt="step" />
-                  <p className={styles.pColor}>{title}</p>
+                  <p
+                    className={`${
+                      id === selectedPackageId ? styles.pColor2 : styles.pColor
+                    }`}
+                  >
+                    {title}
+                  </p>
                 </div>
                 <Card.Body className={styles.cardBody}>
                   {[

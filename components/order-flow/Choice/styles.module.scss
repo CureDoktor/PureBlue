@@ -5,7 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 50px 0px;
+  margin-top: 2rem;
 }
 
 .heading {
@@ -14,34 +15,50 @@
   @media only screen and (max-width: 767px) {
     font-size: 10px;
   }
-}
-.whitee {
-  color: black;
-  font-weight: bold;
-  @media only screen and (max-width: 767px) {
-    font-size: 19px;
-    padding: 0;
-    margin: 0;
-  }
-}
 
-.bluee {
-  color: #0077f0;
-  font-weight: bold;
-  @media only screen and (max-width: 767px) {
-    font-size: 19px;
+  h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+    @media (max-width: 768px) {
+      font-size: 25px;
+      padding: 0;
+      margin: 0;
+    }
+    @media (max-width: 380px) {
+      font-size: 22px;
+    }
+    @media (max-width: 350px) {
+      font-size: 20px;
+    }
+
+    span {
+      color: #0077f0;
+    }
   }
 }
 
 .subHeading {
-  max-width: 1000px;
+  color: #000000;
+  max-width: 950px;
   text-align: center;
   font-size: 25px;
   margin-top: 20px;
-  @media only screen and (max-width: 767px) {
+  @media (max-width: 768px) {
     max-width: 550px;
     font-size: 15px;
-    
+  }
+  @media (max-width: 500px) {
+    max-width: 370px;
+  }
+
+  @media (max-width: 380px) {
+    max-width: 321px;
+    font-size: 14px;
+  }
+  @media (max-width: 350px) {
+    max-width: 280px;
+    font-size: 12px;
   }
 }
 .stepDiv {
@@ -83,7 +100,12 @@
     font-size: 1.7rem;
     margin-bottom: 4px;
     @media only screen and (max-width: 767px) {
-      font-size: 1.4rem;
+      font-size: 15px;
+    }
+  }
+  h4 {
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
     }
   }
 }
@@ -135,12 +157,18 @@
   max-width: 500px;
   padding-bottom: 1em;
   padding-left: 50px;
+  // font-size: 10px;
   // & span{
   //     position: relative !important;
   //     top: -19px !important;
   //     background-color: #f8f9fa;
   //     color: white !important;
   // }
+
+  @media (max-width: 500px) {
+    font-size: 13px;
+    padding-bottom: 0.1em;
+  }
 }
 
 .lii::before {
@@ -212,7 +240,7 @@
   width: 600px;
   padding-top: 10px;
   @media only screen and (max-width: 767px) {
-    width: 352px;
+    max-width: 352px;
   }
 }
 
@@ -222,14 +250,23 @@
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-}
 
-.summaryDesc {
-  font-weight: bold;
-  font-size: 17px;
-  @media only screen and (max-width: 767px) {
-    width: 352px;
-    text-align: center;
+  .summaryDesc {
+    font-weight: bold;
+
+    @media only screen and (max-width: 767px) {
+      max-width: 352px;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #000000;
+      font-weight: bold;
+      text-align: center;
+      @media (max-width: 500px) {
+        font-size: 14.6px;
+      }
+    }
   }
 }
 

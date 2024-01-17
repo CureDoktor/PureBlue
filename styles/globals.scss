@@ -19,3 +19,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.swiper-pagination {
+  .swiper-pagination-bullet {
+    width: 19px !important;
+    height: 19px !important;
+  }
+}

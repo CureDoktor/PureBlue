@@ -7,12 +7,13 @@ const Choice = ({ text }) => {
   const [selected, setselected] = useState(1);
   const [selected2, setselected2] = useState(1);
 
-  console.log("selected", selected);
   return (
     <div className={Styles.main}>
       <div className={Styles.heading}>
-        <h1 className={Styles.whitee}>Your treatment,</h1>
-        <h1 className={Styles.bluee}>your choice.</h1>
+        <h1 className={Styles.whitee}>
+          Your treatment,
+          <span className={Styles.bluee}>your choice.</span>
+        </h1>
       </div>
 
       <p className={Styles.subHeading}>
@@ -152,7 +153,7 @@ const Choice = ({ text }) => {
 
       <div className={Styles.summarySec}>
         <div className={Styles.summaryDesc}>
-          Based on your selections, here is the summary of your Order:
+          <h2>Based on your selections, here is the summary of your Order:</h2>
         </div>
         <div className={Styles.summary}>
           <div className={Styles.summaryHead}>Order Summary</div>
