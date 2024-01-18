@@ -1,15 +1,15 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import styles from "./ButtonSection.styles.module.scss";
+
+import styles from "./buttonSection.styles.module.scss";
+
+const buttonsInfo = [
+  { icon: "/assets/homepage/icons/icon1.png", text: "Pure Quality" },
+  { icon: "/assets/homepage/icons/icon2.png", text: "Safe" },
+  { icon: "/assets/homepage/icons/icon3.png", text: "Regulated" },
+  { icon: "/assets/homepage/icons/icon4.png", text: "Consistent Results" },
+];
 
 const ButtonSection = () => {
-  const buttonsInfo = [
-    { icon: "/assets/homepage/icons/icon1.png", text: "Pure Quality" },
-    { icon: "/assets/homepage/icons/icon2.png", text: "Safe" },
-    { icon: "/assets/homepage/icons/icon3.png", text: "Regulated" },
-    { icon: "/assets/homepage/icons/icon4.png", text: "Consistent Results" },
-  ];
-
   return (
     <Container className={styles.buttonSection}>
       <Row>
