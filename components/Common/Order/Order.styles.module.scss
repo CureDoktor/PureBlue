@@ -13,9 +13,18 @@
     padding: 5px 30px;
 
     @media (max-width: 500px) {
-      font-size: 16px;
+      font-size: 15px;
+      padding: 5px 30px 5px 20px;
       font: normal normal medium 16px/32px Futura Md BT;
       letter-spacing: -0.56px;
+    }
+    @media (max-width: 385px) {
+      font-size: 14px;
+      padding: 5px 20px 5px 20px;
+    }
+    @media (max-width: 350px) {
+      font-size: 12px;
+      padding: 5px 20px 5px 20px;
     }
   }
   h2 {
@@ -26,6 +35,9 @@
 
     @media (max-width: 500px) {
       font: normal normal bold 32px/45px Poppins;
+    }
+    @media (max-width: 350px) {
+      font-size: 27px;
     }
   }
   h3 {
@@ -38,6 +50,13 @@
       font: normal normal medium 19px/25px Poppins;
       letter-spacing: -0.67px;
     }
+
+    @media (max-width: 385px) {
+      font-size: 18px;
+    }
+    @media (max-width: 350px) {
+      font-size: 16px;
+    }
   }
 
   img {
@@ -48,6 +67,22 @@
       max-width: 100%;
       width: 400px;
       height: 399px;
+    }
+    @media (max-width: 400px) {
+      width: 365px;
+      height: 359px;
+    }
+    @media (max-width: 375px) {
+      width: 350px;
+      height: 350px;
+    }
+    @media (max-width: 375px) {
+      width: 350px;
+      height: 350px;
+    }
+    @media (max-width: 350px) {
+      width: 300px;
+      height: 300px;
     }
   }
 }

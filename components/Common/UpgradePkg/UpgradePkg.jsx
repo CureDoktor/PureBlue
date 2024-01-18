@@ -47,9 +47,8 @@ const UpgradePkg = ({ upgradeArray }) => {
                       />
                       <Card.Text
                         className={id === selectedPackageId && styles.cardTxt}
-                      >
-                        {item.text}
-                      </Card.Text>
+                        dangerouslySetInnerHTML={{ __html: item.text }}
+                      />
                     </div>
                   ))}
                   <Button

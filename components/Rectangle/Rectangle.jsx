@@ -2,14 +2,8 @@ import React from "react";
 import styles from "./style.module.scss";
 
 const steps = [
-  {
-    imgSrc: "/assets/rectangle/pen.png",
-    text: "Submitted Medical Profile",
-  },
-  {
-    imgSrc: "/assets/rectangle/id.png",
-    text: "Verified Identity",
-  },
+  { imgSrc: "/assets/rectangle/pen.png", text: "Submitted Medical Profile" },
+  { imgSrc: "/assets/rectangle/id.png", text: "Verified Identity" },
   {
     imgSrc: "/assets/rectangle/time.png",
     text: "Prescription Approved or Modified by Physician",
@@ -18,7 +12,7 @@ const steps = [
   {
     imgSrc: "/assets/rectangle/truck.png",
     text: "Order Shipped !",
-    duration: "5-7 days after approval!",
+    duration: `5-7 days <br/>after approval!`,
   },
 ];
 
@@ -36,9 +30,8 @@ const Rectangle = () => {
                   <br />
                   <span
                     className={step.duration ? styles.color : styles.color1}
-                  >
-                    {step.duration}
-                  </span>
+                    dangerouslySetInnerHTML={{ __html: step.duration }}
+                  />
                 </>
               )}
             </p>

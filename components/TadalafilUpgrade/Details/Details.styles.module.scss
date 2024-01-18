@@ -14,13 +14,21 @@
     @media (max-width: 500px) {
       font-size: 11px;
     }
+    @media (max-width: 385px) {
+      font-size: 10.5px;
+    }
+    @media (max-width: 350px) {
+      font-size: 9px;
+    }
   }
 }
 
 .para {
   max-width: 67rem;
   padding: 0;
-  margin: 4rem 0rem;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   p {
     font-size: 21px;
     text-align: center;
@@ -28,8 +36,15 @@
     letter-spacing: 0px;
     color: #000000;
     @media (max-width: 500px) {
-      font-size: 18px;
+      max-width: 23rem;
+      margin: auto;
+      font-size: 17px;
     }
+    @media (max-width: 350px) {
+      max-width: 21rem;
+      font-size: 15px;
+    }
+
     span {
       font-weight: bold;
     }
