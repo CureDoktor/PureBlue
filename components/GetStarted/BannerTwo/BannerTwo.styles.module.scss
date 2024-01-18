@@ -1,0 +1,206 @@
+.container {
+  background: hsla(0, 0%, 95%, 1) 0% 0% no-repeat padding-box;
+  margin-top: 3rem;
+  @media (max-width: 768px) {
+    margin-top: 0rem;
+    padding: 0 10px;
+  }
+}
+.mainContainer {
+  max-width: 80rem;
+  height: 50rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    height: 35rem;
+  }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    max-width: 25rem;
+    height: 50rem;
+  }
+  @media (max-width: 375px) {
+    padding: 0px 10px;
+  }
+}
+
+.textContent {
+  padding: 30px 0px;
+  margin: auto;
+
+  p {
+    color: #0077f0;
+
+    @media (max-width: 425px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.buttonContainer {
+  p {
+    display: flex;
+    align-items: center;
+    color: #ce0000;
+    letter-spacing: 0px;
+    gap: 5px;
+
+    span {
+      font-size: 41px;
+      font: normal normal normal 41px/41px Segoe Print;
+      @media (max-width: 500px) {
+        font-size: 30px !important;
+      }
+    }
+    img {
+      width: 87px;
+      height: 44px;
+
+      @media (max-width: 500px) {
+        width: 65px;
+        height: 33px;
+      }
+    }
+  }
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 2rem 1rem;
+  @media (max-width: 500px) {
+    padding: 0rem 1rem;
+  }
+
+  li {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 0.7rem;
+    padding: 0rem 1rem;
+    @media (max-width: 800px) {
+      padding: 0rem 0.5rem;
+    }
+
+    @media (max-width: 500px) {
+      gap: 10px;
+    }
+    span {
+      font-size: 18px;
+      font-weight: 600;
+      @media (max-width: 1024px) {
+        font-size: 15px;
+      }
+      @media (max-width: 800px) {
+        font-size: 13px;
+      }
+      @media (max-width: 500px) {
+        font-size: 12px;
+      }
+      @media (max-width: 350px) {
+        font-size: 10px;
+      }
+    }
+
+    .featureIcon {
+      width: 20px;
+      height: 20px;
+
+      @media (max-width: 800px) {
+        width: 16px;
+        height: 16px;
+      }
+      @media (max-width: 500px) {
+        width: 13px;
+        height: 13px;
+      }
+      @media (max-width: 350px) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  small {
+    margin: 1rem 0.6rem;
+    font: italic normal normal 16px/40px Poppins;
+    letter-spacing: -0.56px;
+    font-size: 16px;
+
+    span {
+      color: red;
+      text-decoration: underline;
+      margin-left: 5px;
+    }
+    @media (max-width: 800px) {
+      font-size: 13px;
+    }
+    @media (max-width: 500px) {
+      font-size: 10px;
+    }
+  }
+}
+
+.medication {
+  .tablets {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    @media (max-width: 600px) {
+      margin: 1rem 0rem;
+    }
+
+    img {
+      width: 286px;
+      height: 123px;
+
+      @media (max-width: 800px) {
+        width: 185px;
+        height: 83px;
+      }
+      @media (max-width: 600px) {
+        width: 185px;
+        height: 83px;
+      }
+      @media (max-width: 395px) {
+        width: 175px;
+        height: 73px;
+      }
+      @media (max-width: 380px) {
+        width: 162px;
+      }
+      @media (max-width: 355px) {
+        width: 142px;
+        height: 60px;
+      }
+    }
+  }
+  p {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: -0.88px;
+    @media (max-width: 500px) {
+      font-size: 18px;
+    }
+    span {
+      font-weight: bold;
+      letter-spacing: -0.88px;
+    }
+  }
+}
+
+.imgContainer {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}

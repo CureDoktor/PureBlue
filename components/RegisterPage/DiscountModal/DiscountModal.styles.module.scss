@@ -1,0 +1,132 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal {
+  position: relative;
+  width: 613px;
+  height: auto;
+  padding: 2rem 0rem;
+  background: transparent linear-gradient(180deg, #91c7ff 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+  border: 5px solid #0077f0;
+  border-radius: 31px;
+
+  @media (max-width: 600px) {
+    width: 359px;
+  }
+  @media (max-width: 400px) {
+    width: 330px;
+  }
+
+  @media (max-width: 350px) {
+    max-width: 285px;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  background: none;
+  border: none;
+  @media (max-width: 600px) {
+    top: -20px;
+    right: -25px;
+  }
+  img {
+    width: 67px;
+    height: auto;
+
+    @media (max-width: 600px) {
+      width: 39px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productImg {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 342px;
+    height: auto;
+
+    @media (max-width: 600px) {
+      width: 261px;
+    }
+  }
+}
+
+.discountText {
+  text-align: center;
+  h3 {
+    font-size: 35px;
+    font-weight: bold;
+    @media (max-width: 600px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 350px) {
+      font-size: 22px;
+    }
+    span {
+      color: #0077f0;
+    }
+  }
+
+  p {
+    margin-top: 1.5rem;
+    color: #474747;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+
+    @media (max-width: 600px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.btnContainer {
+  display: flex;
+  background-color: #097cf1;
+  border-radius: 50px;
+  justify-content: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    padding: 20px;
+    font-size: 27px;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 350px) {
+      font-size: 14px;
+    }
+  }
+}
