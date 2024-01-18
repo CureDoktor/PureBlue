@@ -49,18 +49,21 @@
 
     .stepBox {
       position: absolute;
-      top: -8px;
+      top: -9px;
+      left: 5rem;
       display: flex;
       justify-content: center;
       img {
-        width: 50%;
+        width: 145px;
+        height: 68px;
       }
 
       p {
         position: absolute;
         bottom: 0;
         text-align: center;
-        font: normal normal bold 23px/36px Poppins;
+        font-size: 23px;
+        font-weight: 600;
         letter-spacing: -0.81px;
         color: rgba(255, 255, 255, 1);
         opacity: 1;

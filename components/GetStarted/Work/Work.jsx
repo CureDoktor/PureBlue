@@ -46,7 +46,7 @@ const Work = () => {
                   <Card className={styles.card}>
                     <div className={styles.stepBox}>
                       <img
-                        src="/assets/homeRemain/Work/stepBox.svg"
+                        src="/assets/homeRemain/Work/stepBox.png"
                         alt="step"
                       />
                       <p>{items.step}</p>
