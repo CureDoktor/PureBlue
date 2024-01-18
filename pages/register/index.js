@@ -40,6 +40,7 @@ export default function Register(props) {
       email: formData.email,
       password: formData.password,
       password_repeat: formData.password_repeat,
+      category: 1,
     };
     if (formData.password === formData.password_repeat) {
       try {

@@ -14,7 +14,7 @@ export const AuthContextProvider = (props) => {
   };
 
   const removeToken = () => {
-    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("Token");
   };
 
   const setBearerToken = (value) => {
