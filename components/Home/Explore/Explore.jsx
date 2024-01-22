@@ -36,7 +36,7 @@ const Explore = () => {
             <span className="text-primary">PureBlue </span>
             makes men's health simpler, more convenient, and affordable.
           </h1>
-          <SearchButton className="bg-dark" span="Explore treatments" />
+          <SearchButton className="bg-dark" span="Explore treatments" name="explore" />
         </Col>
       </Row>
       {/* Card Items */}

@@ -1,5 +1,8 @@
 .buttonSection {
   margin: 40px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 .buttonCol {
@@ -25,12 +28,18 @@
   height: 48px;
   border-radius: 23px;
   gap: 15px;
+  margin-top: 70px;
 
   @media (max-width: 800px) {
     gap: 5px;
   }
   @media (max-width: 576px) {
-    width: 184px;
+    width: 234px;
+    max-height: 30px;
+    margin-top: 0px;
+
+
+
   }
   img {
     width: 24px;
