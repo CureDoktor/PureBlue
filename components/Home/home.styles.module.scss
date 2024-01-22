@@ -21,6 +21,7 @@
     font-family: "Poppins";
     @media (max-width: 576px) {
       font-size: 15px;
+      max-width: 65%;
     }
   }
   h1 {
@@ -103,6 +104,9 @@
     }
     @media (max-width: 768px) {
       font-size: 30px;
+      line-height: 32px;
+    
+      
     }
     @media (max-width: 500px) {
       font-size: 24px;
