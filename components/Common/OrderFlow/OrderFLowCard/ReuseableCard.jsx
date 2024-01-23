@@ -1,7 +1,16 @@
 import React from "react";
 import styles from "../OrderFLowCard/OrderFlowCard.styles.module.scss";
 
-const ReuseableCard = ({ imageSrc, onlyText, bulkMedicines, bigCard }) => {
+const ReuseableCard = ({ content, onClick }) => {
+  const {
+    title,
+    description,
+    pricePerDose,
+    imageSrc,
+    onlyText,
+    bigCard,
+    bulkMedicines,
+  } = content;
   return (
     <>
       {imageSrc ? (
@@ -54,12 +63,12 @@ const ReuseableCard = ({ imageSrc, onlyText, bulkMedicines, bigCard }) => {
         </>
       ) : (
         <>
-          <div className={styles.mainCard}>
+          <div className={styles.mainCard} onClick={onClick}>
             <div className={styles.headingContainer}>
-              <h4>Take daily</h4>
-              <span>$1.80 per dose</span>
+              <h4>{title}</h4>
+              <span>${pricePerDose} per Dose</span>
             </div>
-            <span>To maintain peak sexual readiness at all times</span>
+            <span>{description}</span>
           </div>
         </>
       )}

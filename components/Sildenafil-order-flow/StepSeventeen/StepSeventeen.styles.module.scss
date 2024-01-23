@@ -1,0 +1,64 @@
+.mainContainer {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  h6 {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+  }
+  .hrr {
+    width: 100%;
+    background-color: #0077f0;
+    height: 4px;
+    margin-top: 15px;
+  }
+  .hrrr {
+    width: 100%;
+    background-color: #0077f0;
+    height: 4px;
+    margin-top: 40px;
+  }
+
+  p {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 15px;
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    width: 100%;
+
+    .selectPhoto {
+      border: none;
+      padding: 7px 0px;
+      font-size: 17px;
+      border-radius: 40px;
+      font-weight: 600;
+      background-color: transparent;
+      border: 2px solid #c8c8c8;
+      width: 48%;
+    }
+    .takePhoto {
+      border: none;
+      padding: 7px 0px;
+      font-size: 17px;
+      border-radius: 40px;
+      font-weight: 500;
+      background-color: black;
+      color: white;
+      width: 48%;
+    }
+  }
+}

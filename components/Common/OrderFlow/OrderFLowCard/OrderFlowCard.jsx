@@ -1,11 +1,19 @@
 import React from "react";
 import ReuseableCard from "./ReuseableCard";
 
-const OrderFlowCard = ({ imageSrc, onlyText, bulkMedicines, bigCard }) => {
+const OrderFlowCard = ({
+  imageSrc,
+  onlyText,
+  bulkMedicines,
+  bigCard,
+  content,
+  onClick,
+}) => {
   return (
     <>
       {imageSrc ? (
-        <ReuseableCard imageSrc={imageSrc} />
+        // <ReuseableCard imageSrc={imageSrc} />
+        <ReuseableCard />
       ) : onlyText ? (
         <>
           <ReuseableCard onlyText={onlyText} />
@@ -20,7 +28,7 @@ const OrderFlowCard = ({ imageSrc, onlyText, bulkMedicines, bigCard }) => {
         </>
       ) : (
         <>
-          <ReuseableCard />
+          <ReuseableCard content={content} onClick={onClick} />
         </>
       )}
     </>

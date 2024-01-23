@@ -1,10 +1,7 @@
 import { useState } from "react";
 import styles from "./SildenafilOrderFlow.styles.module.scss";
-// import StepOne from "../Sildenafil-order-flow/StepOne/StepOne";
-import StepFour from "../RegisterPage/StepFour";
 import StepOne from "../Sildenafil-order-flow/StepOne";
-import StepThree from "../RegisterPage/StepThree";
-import StepTwo from "../RegisterPage/StepTwo";
+import StepSeventeen from "../Sildenafil-order-flow/StepSeventeen";
 
 const SildenafilOrderFlow = () => {
   const [progress, setProgress] = useState(16.67);
@@ -17,12 +14,7 @@ const SildenafilOrderFlow = () => {
       <section className={styles.content}>
         <div className={styles.txtContainer}>
           <StepOne />
-          {/* {progress >= 0 && progress <= 16.67 && <StepOne />} */}
-          {/* {progress > 16.67 && progress <= 33.34 && <StepTwo />}
-          {progress > 33.34 && progress <= 50.01005 && <StepThree />}
-          {progress > 50.01005 && progress <= 66.68 && <StepFour />}
-          {progress > 66.68 && progress <= 83.35001 && <StepFive />}
-          {progress > 83.35001 && <StepSix />} */}
+          {/* <StepSeventeen /> */}
         </div>
       </section>
     </div>
@@ -30,3 +22,14 @@ const SildenafilOrderFlow = () => {
 };
 
 export default SildenafilOrderFlow;
+
+{
+  /* {progress >= 0 && progress <= 16.67 && <StepOne />} */
+}
+{
+  /* {progress > 16.67 && progress <= 33.34 && <StepTwo />}
+{progress > 33.34 && progress <= 50.01005 && <StepThree />}
+{progress > 50.01005 && progress <= 66.68 && <StepFour />}
+{progress > 66.68 && progress <= 83.35001 && <StepFive />}
+{progress > 83.35001 && <StepSix />} */
+}
