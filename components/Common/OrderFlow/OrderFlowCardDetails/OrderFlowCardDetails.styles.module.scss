@@ -1,0 +1,107 @@
+.mainContainer {
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem 2rem;
+  width: 400px;
+
+  h5 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0077f0;
+  }
+}
+.mainCardsContainer {
+  .card {
+    border: 1px solid #c8c8c8;
+    margin: 1rem 0rem;
+    padding: 8px 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+}
+
+.monthlyDetailsCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+
+  .cutPrice {
+    text-decoration: line-through;
+    color: #c8c8c8;
+    padding-right: 2px;
+  }
+}
+.DoctorFee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+
+  .discount {
+    text-decoration: line-through;
+    color: red;
+  }
+  .image {
+    margin-right: 4px;
+  }
+}
+
+.totalMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+
+  .total {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+
+    .totalBlue {
+      color: #0077f0;
+    }
+  }
+
+  .cutPrice {
+    text-decoration: line-through;
+    color: #c8c8c8;
+    padding-right: 2px;
+  }
+}
+.refundMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+
+  .refund {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      background-color: transparent;
+      text-align: left;
+      border: none;
+      color: black;
+      font-weight: 500;
+      font-size: 13px;
+      padding: 0px;
+      text-decoration: underline;
+    }
+  }
+}
