@@ -1,0 +1,33 @@
+.mainContainer {
+  background-color: white;
+  padding: 1rem 2rem;
+
+  .headingContainer {
+    padding: 0rem 3rem;
+
+    h6 {
+      color: #0077f0;
+      font-size: 45px;
+      font-weight: 700;
+    }
+    p {
+      text-align: center;
+      font-size: 23px;
+      font-weight: 500;
+      margin-top: 1rem;
+      color: black;
+    }
+  }
+  .paraDiv {
+    margin-top: 3rem;
+    .para {
+      margin-top: 2rem;
+      font-size: 13px;
+
+      span {
+        color: #0077f0;
+        font-weight: 700;
+      }
+    }
+  }
+}

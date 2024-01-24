@@ -31,10 +31,13 @@ const StepSeventeen = () => {
     <div className={styles.mainContainer}>
       <h6>Identity Verification</h6>
       <div className={styles.hrr}></div>
-      <p>Upload a photo of your ID</p>
+      <p>
+        Upload a photo of
+        <br /> your ID
+      </p>
       <span>
-        By uploading your ID, the physician will be able to verify your identity
-        quicker and get your medication fulfilled faster.
+        By uploading your ID, the physician will be able to verify <br /> your
+        identity quicker and get your medication fulfilled faster.
       </span>
       <div>
         <input
@@ -49,15 +52,16 @@ const StepSeventeen = () => {
             <img
               src={uploadedImage}
               alt="Uploaded ID"
-              style={{ width: "100%", height: "auto" }}
+              style={{ width: "15em", height: "8.9rem" }}
+              className={styles.defaultImage}
             />
           ) : (
-            <Image
-              src="/assets/sildenafilOrderFlow/card/id.png"
+            <img
+              src="/assets/sildenafilOrderFlow/id/id.png"
               alt="Default ID"
-              width={400}
-              height={300}
               layout="responsive"
+              className={styles.defaultImage}
+              //   style={{ width: "100%" }}
             />
           )}
         </div>

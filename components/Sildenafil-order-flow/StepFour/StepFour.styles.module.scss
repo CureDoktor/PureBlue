@@ -1,0 +1,81 @@
+.mainContainer {
+  h6 {
+    font-size: 21px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 12px;
+    max-width: 25rem;
+    margin-top: 2rem;
+    font-weight: 500;
+  }
+  .mainBigCard {
+    border: 1px solid #c8c8c8;
+    border-radius: 20px;
+    margin: 1rem 0rem;
+    margin-top: 2rem;
+
+    .bigCardContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .bigCardTextContainer {
+        //   padding: 30px;
+        background-color: #bb8125;
+        width: 100%;
+        color: white;
+        border-radius: 20px 20px 0px 0px;
+        padding: 2rem 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-left: 40px;
+        //   text-align: left;
+        //   padding-left: 4px;
+        //   justify-content: center;
+        //   align-items: center;
+
+        .tablet {
+          background-color: #0077f0;
+          padding: 0.3rem 0.6rem;
+          width: fit-content;
+          border-radius: 14px;
+          font-size: 12px;
+        }
+
+        .bigCardMainHeading {
+          font-size: 35px;
+          font-weight: 600;
+        }
+
+        .bigCardSubHeading {
+        }
+      }
+
+      .bigCardImage {
+        height: 300px;
+        width: 250px;
+        margin: 45px 0px;
+      }
+    }
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .takePhoto {
+      border: none;
+      padding: 7px 0px;
+      font-size: 14px;
+      border-radius: 40px;
+      font-weight: 500;
+      background-color: black;
+      color: white;
+      width: 100%;
+    }
+  }
+}

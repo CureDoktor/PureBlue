@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import OrderFlowForm from "../../Common/OrderFlow/OrderFlowForm";
 import OrderFlowCardDetails from "../../Common/OrderFlow/OrderFlowCardDetails";
 
-const StepOne = () => {
+const StepOne = ({ onNext }) => {
   const medicationOptions = [
     {
       title: "Take daily",
@@ -21,19 +21,18 @@ const StepOne = () => {
   ];
   return (
     <>
-      {/* <h2 className={styles.h2}>
+      <h2 className={styles.h2}>
         Choose your medication <br /> preference:
-      </h2> */}
-      {/* <div className={styles.mainCardContainer}>
+      </h2>
+      <div className={styles.mainCardContainer}>
         {medicationOptions.map((items) => {
           return (
-            <>
-              <OrderFlowCard content={items} key={items} />
-            </>
+            <div className={styles.card} key={items} onClick={onNext}>
+              <OrderFlowCard content={items} />
+            </div>
           );
         })}
-      </div> */}
-      <OrderFlowCardDetails />
+      </div>
     </>
   );
 };
