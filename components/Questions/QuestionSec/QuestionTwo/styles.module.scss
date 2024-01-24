@@ -1,0 +1,51 @@
+.questionTwo {
+  margin: 4rem 0rem;
+  p {
+    margin: 1.5rem 0rem;
+    font-style: 20px;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  .radioSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .customRadioButton {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #b8b8b8;
+      width: 130px;
+      background: #ececec 0% 0% no-repeat padding-box;
+      border-radius: 9px;
+      opacity: 1;
+      padding: 0.4rem 1rem;
+
+      .radioButton {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #707070;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-color: transparent;
+      }
+
+      .buttonLabel {
+        vertical-align: middle;
+        font-size: 20px;
+        font-weight: normal;
+        @media (max-width: 500px) {
+          font-size: 14px;
+        }
+      }
+
+      &.checked {
+        .radioButton {
+          background-color: #3498db;
+        }
+      }
+    }
+  }
+}

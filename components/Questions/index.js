@@ -7,9 +7,9 @@ import QuestionSec from "./QuestionSec";
 const Question = () => {
   return (
     <div className={styles.container}>
-      <Stepper></Stepper>
-      <ProgressBar></ProgressBar>
-      <QuestionSec></QuestionSec>
+      <Stepper />
+      <ProgressBar />
+      <QuestionSec />
     </div>
   );
 };

@@ -1,10 +1,5 @@
-import React from 'react'
+import React from "react";
 
-import Question from '../../components/Questions/index'
-const Questions = () => {
-  return (
-    <div><Question></Question></div>
-  )
-}
-
-export default Questions
+import Question from "../../components/Questions/index";
+const Questions = () => <Question />;
+export default Questions;

@@ -1,0 +1,20 @@
+.questionOne {
+  margin: 4rem 0rem;
+  p {
+    margin: 1.5rem 0rem;
+    font-style: 20px;
+    color: #000000;
+    span {
+      font-weight: 600;
+    }
+  }
+  input {
+    border: 1px solid #b8b8b8;
+    border-radius: 9px;
+    width: 300px;
+    height: 48px;
+    @media (max-width: 360px) {
+      max-width: 250px;
+    }
+  }
+}
