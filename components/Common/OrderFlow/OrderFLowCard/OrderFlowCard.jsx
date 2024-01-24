@@ -5,7 +5,6 @@ const OrderFlowCard = ({ SingleImage, bulkMedicines, content, onClick }) => {
   return (
     <>
       {SingleImage ? (
-        // <ReuseableCard imageSrc={imageSrc} />
         <ReuseableCard SingleImage content={content} onClick={onClick} />
       ) : bulkMedicines ? (
         <>

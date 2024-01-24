@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import styles from "./StepSeventeen.styles.module.scss";
 import Image from "next/image";
 
-const StepSeventeen = () => {
+const StepSeventeen = ({ onNext }) => {
   const [uploadedImage, setUploadedImage] = useState();
   const fileInputRef = useRef(null);
 
@@ -75,6 +75,7 @@ const StepSeventeen = () => {
         </button>
       </div>
       <div className={styles.hrrr}></div>
+      <button onClick={onNext}>Next Temporary</button>
     </div>
   );
 };

@@ -60,15 +60,12 @@
     }
   }
 }
-.onlyTextContainer {
-  display: flex;
-  font-size: 13px;
-  font-weight: 500;
-}
+
 .bulkMedicinesContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 23rem;
   padding-top: 3px;
   padding-bottom: 3px;
 
@@ -120,9 +117,6 @@
 
       .bigCardMainHeading {
         font-size: 30px;
-      }
-
-      .bigCardSubHeading {
       }
     }
 

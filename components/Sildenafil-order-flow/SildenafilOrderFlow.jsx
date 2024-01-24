@@ -4,7 +4,11 @@ import StepOne from "../Sildenafil-order-flow/StepOne";
 import StepTwo from "../Sildenafil-order-flow/StepTwo";
 import StepFour from "../Sildenafil-order-flow/StepFour";
 import StepFive from "../Sildenafil-order-flow/StepFive";
+import StepSix from "../Sildenafil-order-flow/StepSix";
+import StepSeven from "../Sildenafil-order-flow/StepSeven";
+import StepEight from "../Sildenafil-order-flow/StepEight";
 import StepSeventeen from "../Sildenafil-order-flow/StepSeventeen";
+import Thankyou from "../Thankyou/Thankyou";
 // import StepEighteen from "./StepEighteen";
 
 const SildenafilOrderFlow = () => {
@@ -52,9 +56,17 @@ const SildenafilOrderFlow = () => {
         return <StepFour onNext={goToNextStep} />;
       case 5:
         return <StepFive onNext={goToNextStep} />;
+      case 6:
+        return <StepSix onNext={goToNextStep} />;
+      case 7:
+        return <StepSeven onNext={goToNextStep} />;
+      case 8:
+        return <StepEight onNext={goToNextStep} />;
       // ... add other cases for steps 3, 4, ..., 17
-      case 17:
+      case 9:
         return <StepSeventeen onNext={goToNextStep} />;
+      case 10:
+        return <Thankyou onNext={goToNextStep} />;
       // Add additional cases as needed
       default:
         return <div>Process Completed</div>;
@@ -68,9 +80,14 @@ const SildenafilOrderFlow = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.imageContainer} onClick={goToPreviousStep}>
-        <img src="/assets/sildenafilOrderFlow/Back2/Back2.png" />
-      </div>
+      {currentStep !== 1 && currentStep !== 10 && (
+        <div className={styles.imageContainer} onClick={goToPreviousStep}>
+          <img
+            src="/assets/sildenafilOrderFlow/Back2/Back2.png"
+            alt="Go back"
+          />
+        </div>
+      )}
       <section className={styles.content}>
         <div className={styles.txtContainer}>{renderStep()}</div>
       </section>

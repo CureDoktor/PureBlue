@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./OrderFlowForm.styles.module.scss";
 
-const OrderFlowForm = () => {
+const OrderFlowForm = ({ onNext }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -43,7 +43,7 @@ const OrderFlowForm = () => {
             </div>
           </div>
         </div>
-        <div className={styles.btnContainer} onClick={() => setIsOpen(true)}>
+        <div className={styles.btnContainer} onClick={onNext}>
           <button>
             <span>Save and continue</span>
           </button>
