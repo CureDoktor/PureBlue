@@ -3,26 +3,18 @@
   margin: auto;
   background: #f3f3f3;
   color: black;
-  // margin-top: 5rem;
-  // margin-bottom: 5rem;
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
-  // gap: 1.5rem;
-
-  // @media (max-width: 850px) {
-  //   flex-direction: column;
-  // }
+  padding-top: 3rem;
+  // position: relative;
 
   .imageContainer {
-    max-width: 50%;
     margin: auto;
-    padding-top: 4rem;
     cursor: pointer;
+    width: 80%;
+    max-width: 800px;
   }
 
   .content {
-    max-width: 50rem;
+    max-width: 90%;
     margin: auto;
 
     display: flex;
@@ -31,14 +23,14 @@
     align-items: center;
 
     .txtContainer {
-      margin: 2rem 0rem;
+      margin: 2rem 1rem;
     }
 
     h1 {
       letter-spacing: -1.4px;
-      font-size: 37px;
-      //   color: #ffffff;
+      font-size: 3rem; // Use rem for scalable font size
       margin: 1rem 0rem;
+      text-align: center;
     }
 
     .inputContainer {
@@ -47,16 +39,17 @@
       justify-content: center;
       gap: 15px;
       margin: 1.5rem 0rem;
-      // justify-content: space-between;
+      flex-wrap: wrap; // Wrap inputs for smaller screens
 
       input {
-        width: 271px;
+        width: 80%; // Use percentage for scalable input width
+        max-width: 271px; // Set a max-width if necessary
         height: 54px;
         background: #ffffff;
         border-radius: 27px;
         border: none;
         outline: none;
-        font-size: 20px;
+        font-size: 1.25rem; // Use rem for scalable font size
         color: #bbbbbb;
         font-weight: light;
         letter-spacing: -0.7px;
@@ -68,30 +61,23 @@
       display: flex;
       justify-content: center;
       margin: 5rem 0rem;
+      width: 100%; // Full width to center button on all screen sizes
+
       button {
-        position: relative;
         background: black;
-        width: 350px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+        width: 80%; // Use percentage for scalable button width
+        max-width: 350px; // Set a max-width if necessary
         color: white;
         border-radius: 50px;
         outline: none;
         border: none;
         font-weight: light;
         padding: 10px 20px;
+        text-align: center;
+
         img {
           position: absolute;
           right: 20px;
-        }
-
-        @media (max-width: 375px) {
-          max-width: 320px;
-        }
-        @media (max-width: 330px) {
-          max-width: 300px;
         }
       }
     }

@@ -2,25 +2,31 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 import LegitScriptCertificate from "../LegitScriptCertificate";
 import { Container, Image, Row } from "react-bootstrap";
-
+import { useRouter } from "next/router";
 export default function Footer() {
+  const router = useRouter();
+  const currentPathname = router.asPath;
   return (
     <div style={{ backgroundColor: "none" }}>
-      <div className="container">
-        <main style={{ padding: "20px" }} className={styles.main}>
-          To obtain ED treatments, one must undergo an online consultation with
-          a healthcare provider and receive a prescription. The cost per dose is
-          determined by the product and subscription plan selected. Pure Blue
-          LLC is not affiliated with any manufacturers of the Prescription
-          Medications mentioned, and the trademarks and logos belong to their
-          respective owners. Pure Blue LLC does not provide advice,
-          endorsements, or recommendations for any specific prescription drug,
-          pharmacy, or other information. It is advised to seek medical advice
-          before making any changes to medication or prescription. Pure Blue LLC
-          is not an insurance provider or Medicaid/Medicare prescription drug
-          plan. Users must pay the price presented during the checkout process.
-        </main>
-      </div>
+      {currentPathname != "/sildenafil-order-flow/" &&
+        currentPathname != "/questions/" && (
+          <div className="container">
+            <main style={{ padding: "20px" }} className={styles.main}>
+              To obtain ED treatments, one must undergo an online consultation
+              with a healthcare provider and receive a prescription. The cost
+              per dose is determined by the product and subscription plan
+              selected. Pure Blue LLC is not affiliated with any manufacturers
+              of the Prescription Medications mentioned, and the trademarks and
+              logos belong to their respective owners. Pure Blue LLC does not
+              provide advice, endorsements, or recommendations for any specific
+              prescription drug, pharmacy, or other information. It is advised
+              to seek medical advice before making any changes to medication or
+              prescription. Pure Blue LLC is not an insurance provider or
+              Medicaid/Medicare prescription drug plan. Users must pay the price
+              presented during the checkout process.
+            </main>
+          </div>
+        )}
       <footer className={styles.footer}>
         <div className="container">
           <div className={styles.imageContainer}>

@@ -44,14 +44,26 @@
           width: fit-content;
           border-radius: 14px;
           font-size: 12px;
+          @media (max-width: "520px") {
+            font-size: 10px;
+          }
         }
 
         .bigCardMainHeading {
           font-size: 35px;
           font-weight: 600;
+
+          @media (max-width: "520px") {
+            font-size: 20px;
+          }
         }
 
         .bigCardSubHeading {
+          font-size: 17px;
+
+          @media (max-width: "520px") {
+            font-size: 14px;
+          }
         }
       }
 
@@ -59,6 +71,10 @@
         height: 300px;
         width: 250px;
         margin: 45px 0px;
+        @media (max-width: "520px") {
+          height: 250px;
+          width: 200px;
+        }
       }
     }
   }

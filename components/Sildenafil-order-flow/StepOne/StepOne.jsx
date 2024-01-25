@@ -16,7 +16,7 @@ const StepOne = ({ onNext }) => {
     {
       title: "Take before sex",
       description: "Quick activating medication when you want it",
-      pricePerDose: "4.00",
+      pricePerDose: "4.0",
     },
   ];
   return (

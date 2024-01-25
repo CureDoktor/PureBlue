@@ -19,10 +19,10 @@ const SildenafilOrderFlow = () => {
     }
     return 1;
   });
-  const [hasMounted, setHasMounted] = useState(false); // New state to track mounting
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    setHasMounted(true); // Set to true once component mounts
+    setHasMounted(true);
     if (typeof window !== "undefined") {
       const savedStep = localStorage.getItem("currentStep");
       if (savedStep) {
@@ -62,18 +62,15 @@ const SildenafilOrderFlow = () => {
         return <StepSeven onNext={goToNextStep} />;
       case 8:
         return <StepEight onNext={goToNextStep} />;
-      // ... add other cases for steps 3, 4, ..., 17
       case 9:
         return <StepSeventeen onNext={goToNextStep} />;
       case 10:
         return <Thankyou onNext={goToNextStep} />;
-      // Add additional cases as needed
       default:
         return <div>Process Completed</div>;
     }
   };
 
-  // Only render the component once it has mounted to ensure client-side execution
   if (!hasMounted) {
     return null;
   }
@@ -85,6 +82,7 @@ const SildenafilOrderFlow = () => {
           <img
             src="/assets/sildenafilOrderFlow/Back2/Back2.png"
             alt="Go back"
+            width={40}
           />
         </div>
       )}
@@ -96,20 +94,3 @@ const SildenafilOrderFlow = () => {
 };
 
 export default SildenafilOrderFlow;
-
-{
-  /* <StepSeventeen /> */
-}
-{
-  /* <StepEighteen /> */
-}
-{
-  /* {progress >= 0 && progress <= 16.67 && <StepOne />} */
-}
-{
-  /* {progress > 16.67 && progress <= 33.34 && <StepTwo />}
-{progress > 33.34 && progress <= 50.01005 && <StepThree />}
-{progress > 50.01005 && progress <= 66.68 && <StepFour />}
-{progress > 66.68 && progress <= 83.35001 && <StepFive />}
-{progress > 83.35001 && <StepSix />} */
-}

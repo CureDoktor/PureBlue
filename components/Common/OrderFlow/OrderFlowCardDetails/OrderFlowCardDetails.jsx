@@ -2,6 +2,12 @@ import React from "react";
 import styles from "./OrderFlowCardDetails.styles.module.scss";
 
 const OrderFlowCardDetails = () => {
+  const planOptions = [
+    { id: 1, period: "Monthly", cost: "$76/mo" },
+    { id: 2, period: "3 Months", cost: "$85" },
+    { id: 3, period: "6 months", cost: "$76/mo" },
+    { id: 4, period: "12 months", cost: "$54/mo" },
+  ];
   return (
     <>
       <div className={styles.mainContainer}>
@@ -9,22 +15,12 @@ const OrderFlowCardDetails = () => {
         <hr />
         <p>Choose shipping frequency</p>
         <div className={styles.mainCardsContainer}>
-          <div className={styles.card}>
-            <span>Monthly</span>
-            <span>$76/mo</span>
-          </div>
-          <div className={styles.card}>
-            <span>3 Months</span>
-            <span>$85</span>
-          </div>
-          <div className={styles.card}>
-            <span>6 months</span>
-            <span>$76/mo</span>
-          </div>
-          <div className={styles.card}>
-            <span>12 months</span>
-            <span>$54/mo</span>
-          </div>
+          {planOptions.map((plan) => (
+            <div key={plan.id} className={styles.card}>
+              <span>{plan.period}</span>
+              <span>{plan.cost}</span>
+            </div>
+          ))}
         </div>
         <hr />
         <div className={styles.monthlyDetailsCard}>

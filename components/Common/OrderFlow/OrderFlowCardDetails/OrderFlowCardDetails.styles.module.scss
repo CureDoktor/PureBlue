@@ -1,12 +1,14 @@
 .mainContainer {
   background-color: white;
   border-radius: 20px;
-  padding: 2rem 2rem;
-  width: 400px;
+  padding: 2rem;
+  // width: 100%; // Use 100% for mobile and set a max-width for larger screens
+  // width: 400px; // Maximum width for larger screens
 
   h5 {
     font-size: 24px;
     font-weight: 600;
+    padding-right: 5rem;
   }
 
   p {
@@ -34,6 +36,14 @@
   align-items: center;
   font-weight: 600;
   font-size: 14px;
+  flex-wrap: wrap;
+
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
 
   .cutPrice {
     text-decoration: line-through;
@@ -47,6 +57,13 @@
   align-items: center;
   font-weight: 600;
   font-size: 14px;
+  flex-wrap: wrap;
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
 
   .discount {
     text-decoration: line-through;
@@ -64,6 +81,13 @@
   font-weight: 600;
   font-size: 14px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
 
   .total {
     display: flex;
@@ -88,6 +112,13 @@
   font-weight: 600;
   font-size: 14px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
 
   .refund {
     display: flex;
