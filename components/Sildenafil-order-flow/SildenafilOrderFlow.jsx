@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./SildenafilOrderFlow.styles.module.scss";
 import StepOne from "../Sildenafil-order-flow/StepOne";
 import StepTwo from "../Sildenafil-order-flow/StepTwo";
+import StepThree from "../Sildenafil-order-flow/StepThree";
 import StepFour from "../Sildenafil-order-flow/StepFour";
 import StepFive from "../Sildenafil-order-flow/StepFive";
 import StepSix from "../Sildenafil-order-flow/StepSix";
@@ -51,7 +52,7 @@ const SildenafilOrderFlow = () => {
       case 2:
         return <StepTwo onNext={goToNextStep} />;
       case 3:
-        return <div onClick={goToNextStep}>Loading</div>;
+        return <StepThree onNext={goToNextStep} />;
       case 4:
         return <StepFour onNext={goToNextStep} />;
       case 5:
