@@ -1,7 +1,6 @@
 import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
-  console.log(req.body);
   Axios.get(process.env.NEXT_PUBLIC_API_KEY + "/questionnaire/get?id=1", {
     headers: {
       "Content-Type": "application/json",

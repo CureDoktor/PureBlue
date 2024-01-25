@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const LegitScriptCertificate = () => {
   return (
     <div>
-      <a
+      <Link
         href="https://legitscript.com"
         target="_blank"
         title="Verify LegitScript Approval"
@@ -15,7 +16,7 @@ const LegitScriptCertificate = () => {
           src="https://static.legitscript.com/seals/16927118.png"
           alt="LegitScript approved"
         />
-      </a>
+      </Link>
     </div>
   );
 };

@@ -35,8 +35,8 @@ export default function Footer() {
           </div>
           <div className={styles.telephone}>
             <p>QUESTIONS?</p>
-            <Link href="tel:1-888-534-8977">
-              <a className={styles.number}>1-888-534-8977</a>
+            <Link className={styles.number} href="tel:1-888-534-8977">
+              1-888-534-8977
             </Link>
             <p>PAYMENT METHODS</p>
             <div className="m-auto">
@@ -67,28 +67,28 @@ export default function Footer() {
             <Row className={styles.footerRow}>
               <div className={styles.links}>
                 <Link className={styles.link} href="/">
-                  <a>Home</a>
+                  Home
                 </Link>
                 <Link className={styles.link} href="/about">
-                  <a>About Us</a>
+                  About Us
                 </Link>
                 <Link className={styles.link} href="/faq">
-                  <a>FAQs</a>
+                  FAQs
                 </Link>
                 <Link className={styles.link} href="/contact">
-                  <a>Contact Us</a>
+                  Contact Us
                 </Link>
                 <Link className={styles.link} href="/login">
-                  <a>LOGIN</a>
+                  LOGIN
                 </Link>
                 <Link className={styles.link} href="/telehealth">
-                  <a>Telehealth</a>
+                  Telehealth
                 </Link>
                 <Link className={styles.link} href="/terms">
-                  <a>Terms of Use</a>
+                  Terms of Use
                 </Link>
                 <Link className={styles.link} href="/privacy">
-                  <a>Privacy Policy</a>
+                  Privacy Policy
                 </Link>
               </div>
             </Row>

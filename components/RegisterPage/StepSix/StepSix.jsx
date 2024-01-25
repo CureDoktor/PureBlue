@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import styles from "./StepSix.styles.module.scss";
+import { Form } from "react-bootstrap";
 
-const StepSix = () => {
+const StepSix = ({ handleChange, formData }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [termsChecked, setTermsChecked] = useState(false);
 
-  const togglePasswordVisibility = () => {
+  const togglePasswordVisibility = (e) => {
+    e.preventDefault();
     setPasswordVisible((prev) => !prev);
   };
 
@@ -17,20 +19,40 @@ const StepSix = () => {
     <>
       <h1 className={styles.h1}>Create your password</h1>
       <div className={styles.inputContainer}>
-        <input
-          type={passwordVisible ? "text" : "password"}
-          placeholder="Password"
-        />
+        <Form.Group controlId="password" className={styles.group}>
+          <Form.Control
+            required
+            name="password"
+            type={passwordVisible ? "text" : "password"}
+            onChange={handleChange}
+            value={formData.password}
+            placeholder="password"
+            className={styles.formControl}
+          />
+          <Form.Control.Feedback type="invalid">
+            Incorrect Password
+          </Form.Control.Feedback>
+        </Form.Group>
         <button onClick={togglePasswordVisibility}>
           {passwordVisible ? "HIDE" : "SHOW"}
         </button>
       </div>
       <h1 className={styles.h1}>Repeat your password</h1>
       <div className={styles.inputContainer}>
-        <input
-          type={passwordVisible ? "text" : "password"}
-          placeholder="Password"
-        />
+        <Form.Group controlId="Password-retype" className={styles.group}>
+          <Form.Control
+            required
+            name="password_repeat"
+            placeholder="password repeat"
+            type={passwordVisible ? "text" : "password"}
+            onChange={handleChange}
+            value={formData.password_repeat}
+            className={styles.formControl}
+          />
+          <Form.Control.Feedback type="invalid">
+            Incorrect Password Retype
+          </Form.Control.Feedback>
+        </Form.Group>
         <button onClick={togglePasswordVisibility}>
           {passwordVisible ? "HIDE" : "SHOW"}
         </button>
@@ -41,6 +63,7 @@ const StepSix = () => {
           type="checkbox"
           id="termsCheckbox"
           checked={termsChecked}
+          required
           onChange={handleTermsChange}
         />
         <label htmlFor="termsCheckbox">

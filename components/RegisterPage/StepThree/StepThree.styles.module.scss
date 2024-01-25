@@ -23,6 +23,7 @@
   justify-content: center;
   gap: 15px;
   margin: 1.5rem 0rem;
+  padding-bottom: 20px;
 
   input {
     width: 388px;
@@ -52,6 +53,26 @@
     @media (max-width: 590px) {
       right: 50px;
     }
+  }
+}
+
+.formControl {
+  width: 388px;
+  height: 54px;
+  background: #ffffff;
+  border-radius: 27px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  letter-spacing: -0.7px;
+  padding: 0rem 2rem;
+
+  @media (max-width: 590px) {
+    max-width: 260px;
+    height: 40px;
+  }
+  @media (max-width: 375px) {
+    max-width: 240px;
   }
 }
 

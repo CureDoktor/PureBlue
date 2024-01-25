@@ -56,7 +56,7 @@ export default function Membership(props) {
           props.handleShow(error.response.data);
         });
     } catch (err) {
-      console.log(err);
+      props.handleShow(err);
     }
   };
 

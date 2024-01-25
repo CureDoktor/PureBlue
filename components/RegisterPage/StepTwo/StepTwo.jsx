@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./StepTwo.styles.module.scss";
-const StepTwo = () => {
+const StepTwo = ({ handleChange, formData }) => {
   return (
     <>
       <h1 className={styles.h1}>Which state do you live in?</h1>

@@ -140,7 +140,7 @@ export default function Contact() {
               <p>
                 Visit our{" "}
                 <Link href="/faq">
-                  <a className={styles.blueText}>FAQ</a>
+                  <span className={styles.blueText}>FAQ</span>
                 </Link>{" "}
                 page
               </p>
