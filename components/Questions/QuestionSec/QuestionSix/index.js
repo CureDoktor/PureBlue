@@ -1,39 +1,104 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
-const QuestionSix = ({ para, btnArray }) => {
-  const [isChecked, setIsChecked] = useState(false);
 
-  const handleButtonClick = () => {
-    setIsChecked(!isChecked);
+const QuestionSix = ({ para, btnArray, type }) => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleButtonClick = (index) => {
+    if (type === "textAreaTwo") {
+      // Toggle the selected options for textAreaTwo section
+      const updatedOptions = [...selectedOptions];
+
+      if (updatedOptions.includes(index)) {
+        // If the option is already selected, deselect it
+        updatedOptions.splice(updatedOptions.indexOf(index), 1);
+      } else {
+        // If the option is not selected, select it
+        updatedOptions.push(index);
+      }
+
+      setSelectedOptions(updatedOptions);
+    } else {
+      // Toggle the selected option for other sections
+      const updatedOptions = selectedOptions.includes(index)
+        ? [] // Deselect if already selected
+        : [index]; // Select if not selected
+
+      setSelectedOptions(updatedOptions);
+    }
   };
+
   return (
     <div className={styles.questionSix}>
       <p>{para}</p>
-      <div className={styles.radioSection}>
-        {btnArray.map(({ id, btn }) => (
+      {type === "textArea" ? (
+        <div className={styles.textArea}>
           <div
-            key={id}
-            className={`${styles.customRadioButton} ${
-              isChecked ? styles.checked : ""
+            className={`${styles.questionSec} ${
+              selectedOptions.includes(0) && styles.checked
             }`}
-            onClick={handleButtonClick}
+            onClick={() => handleButtonClick(0)}
           >
-            <span className={styles.radioButton}></span>
-            <span
-              className={styles.buttonLabel}
-              style={{
-                fontWeight:
-                  (btn == "None of the above" ||
-                    btn == "None" ||
-                    btn == "I have NOT had any of the above") &&
-                  "bold",
-              }}
-            >
-              {btn}
+            <span className={styles.radio}></span>
+            <span className={styles.option}>If none, click here</span>
+          </div>
+
+          <textarea></textarea>
+        </div>
+      ) : type === "textAreaTwo" ? (
+        <div className={styles.textArea}>
+          <div
+            className={`${styles.questionSec} ${
+              selectedOptions.includes(0) && styles.checked
+            }`}
+            onClick={() => handleButtonClick(0)}
+          >
+            <span className={styles.radio}></span>
+            <span className={styles.option}>If none, click here</span>
+          </div>
+
+          <textarea></textarea>
+
+          <div
+            className={`${styles.questionSec} ${
+              selectedOptions.includes(1) && styles.checked
+            }`}
+            onClick={() => handleButtonClick(1)}
+          >
+            <span className={styles.radio}></span>
+            <span className={styles.option}>
+              I agree to the <span>Terms & Conditions</span>,
+              <span>Privacy</span>, and I consent to a Telehealth visit.
             </span>
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className={styles.radioSection}>
+          {btnArray.map(({ id, btn }, index) => (
+            <div
+              key={id}
+              className={`${styles.customRadioButton} ${
+                selectedOptions.includes(index) && styles.checked
+              }`}
+              onClick={() => handleButtonClick(index)}
+            >
+              <span className={styles.radioButton}></span>
+              <span
+                className={styles.buttonLabel}
+                style={{
+                  fontWeight:
+                    (btn === "None of the above" ||
+                      btn === "None" ||
+                      btn === "I have NOT had any of the above") &&
+                    "bold",
+                }}
+              >
+                {btn}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

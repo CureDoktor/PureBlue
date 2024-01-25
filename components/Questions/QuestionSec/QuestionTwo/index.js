@@ -1,29 +1,35 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
-const QuestionTwo = ({ para }) => {
-  const [isChecked, setIsChecked] = useState(false);
 
-  const handleButtonClick = () => {
-    setIsChecked(!isChecked);
+const QuestionTwo = ({ para }) => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleButtonClick = (index) => {
+    if (index === selectedOption) {
+      setSelectedOption(null);
+    } else {
+      setSelectedOption(index);
+    }
   };
+
   return (
     <div className={styles.questionTwo}>
       <p>{para}</p>
       <div className={styles.radioSection}>
         <div
           className={`${styles.customRadioButton} ${
-            isChecked ? styles.checked : ""
+            selectedOption === 0 ? styles.checked : ""
           }`}
-          onClick={handleButtonClick}
+          onClick={() => handleButtonClick(0)}
         >
           <span className={styles.radioButton}></span>
           <span className={styles.buttonLabel}>Yes</span>
         </div>
         <div
           className={`${styles.customRadioButton} ${
-            isChecked ? styles.checked : ""
+            selectedOption === 1 ? styles.checked : ""
           }`}
-          onClick={handleButtonClick}
+          onClick={() => handleButtonClick(1)}
         >
           <span className={styles.radioButton}></span>
           <span className={styles.buttonLabel}>No</span>

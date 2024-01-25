@@ -3,6 +3,11 @@
   margin: auto;
 
   .btnContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 80%;
+
     button {
       width: 150px;
       //   height: 65px;
@@ -25,5 +30,13 @@
         height: 18px;
       }
     }
+
+    .nextBtn {
+      background: #00468e 0% 0% no-repeat padding-box;
+    }
+  }
+  .submitBtn {
+    display: flex;
+    justify-content: center;
   }
 }

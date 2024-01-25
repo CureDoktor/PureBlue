@@ -1,12 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import styles from "./styles.module.scss";
-const ProgressBar = () => {
-  const [progress, setProgress] = useState(20);
-  const handleProgress = () => {
-    const newProgress = progress + 16.67;
-    setProgress(Math.min(newProgress, 100));
-  };
+
+const ProgressBar = ({ currentStep, totalSteps, progress }) => {
   return (
     <div className={styles.container}>
       <h1>Please Complete your Medical Profile</h1>
@@ -15,10 +10,9 @@ const ProgressBar = () => {
           className={`${styles.progressBar} ${
             progress === 100 && styles.completed
           }`}
-          style={{ width: `${progress}%` }}
+          style={{ width: `${progress}%`, fontSize: "11px" }}
         >
-          {" "}
-          {progress} %{" "}
+          {currentStep} of {totalSteps}
         </div>
       </div>
     </div>

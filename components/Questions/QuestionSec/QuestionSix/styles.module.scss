@@ -10,7 +10,7 @@
   .radioSection {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
+
     gap: 13px;
     .customRadioButton {
       display: flex;
@@ -48,6 +48,45 @@
           background-color: #3498db;
         }
       }
+    }
+  }
+
+  .textArea {
+    .questionSec {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin: 10px 0px;
+      .radio {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        border: 1px solid #707070;
+        border-radius: 4px;
+        background-color: transparent;
+      }
+      .option {
+        font-size: 17px;
+        color: #000000;
+        span {
+          color: #0077f0;
+        }
+      }
+    }
+    .checked {
+      .radio {
+        background-color: #3498db;
+      }
+    }
+
+    textarea {
+      max-width: 600px;
+      width: 100%;
+      height: 161px;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #b8b8b8;
+      border-radius: 9px;
+      opacity: 1;
     }
   }
 }
