@@ -14,8 +14,8 @@ export default function handler(req, res) {
 
   form.parse(req, (err, fields, files) => {
     var cure2 = new FormData();
-    console.log(fields);
     cure2.append("file", fields);
+
     // const fileObject = formDataArray.find((item) => item.name === "file");
     // const fileValue = fileObject ? fileObject.value : undefined;
 

@@ -19,11 +19,14 @@ const Upload = ({ name }) => {
   const handleUploadFiles = async () => {
     const formData = new FormData();
 
+    console.log(value?.[0]);
+
     formData.append("file", value?.[0]);
     const file = { formData };
     const route = "/api/case/upload-file";
+    console.log(formData);
     try {
-      const rese = await Axios.post(route, file.formData, {
+      const rese = await Axios.post(route, value?.[0], {
         headers: {
           "Content-type": "multipart/form-data",
           "Access-Control-Allow-Origin": "*",
@@ -38,6 +41,10 @@ const Upload = ({ name }) => {
     } catch (err) {
       alert("Something went wrong!" + err);
     }
+  };
+
+  const funkcijaNeka = (event) => {
+    console.log(event?.target?.value);
   };
 
   return (
@@ -59,7 +66,7 @@ const Upload = ({ name }) => {
           }}
           multiple
           type="file"
-          {...register(name)}
+          {...register(name, { onChange: funkcijaNeka })}
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"

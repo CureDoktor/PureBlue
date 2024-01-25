@@ -129,11 +129,7 @@ const Consultation = (props) => {
       </Head>
       <main>
         <Container>
-          <Form
-            enctype="multipart/form-data"
-            defaultValues={data}
-            onSubmit={handleSubmit}
-          >
+          <Form defaultValues={data} onSubmit={handleSubmit}>
             <Row className={styles.row}>
               <Col className={styles.col} xs={12} lg={7}>
                 {!question ? <Start /> : <QuestionParser />}

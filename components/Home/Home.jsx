@@ -21,11 +21,11 @@ const HomePage = () => {
             Your #1 Source for
             <span className="mx-2">Branded and Generic Medication</span>
           </h1>
-          <p className="text-secondary mt-3 fw-medium">
+          <p className="text-secondary mt-3 fw-medium ">
             Your free online visit starts here. Tell us what we can help you
             with.
           </p>
-          <SearchButton className="bg-primary" span="Find my treatment" />
+          <SearchButton className="bg-primary" span="Find my treatment"  />
         </div>
       </Container>
       <section className={styles.cardSection}>
@@ -64,7 +64,7 @@ const HomePage = () => {
             makes men’s health simpler, more convenient, and affordable.
           </h1>
 
-          <SearchButton className="bg-dark" span="Explore treatments" />
+          <SearchButton className="bg-dark" span="Explore treatments" name="not-explore" />
         </div>
       </Container>
     </div>

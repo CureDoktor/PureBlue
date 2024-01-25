@@ -8,7 +8,11 @@ const Form = ({ defaultValues, onSubmit, children }) => {
   });
   return (
     <FormProvider {...methods}>
-      <form noValidate onSubmit={methods.handleSubmit(onSubmit)}>
+      <form
+        enctype="multipart/form-data"
+        noValidate
+        onSubmit={methods.handleSubmit(onSubmit)}
+      >
         {children}
       </form>
     </FormProvider>
