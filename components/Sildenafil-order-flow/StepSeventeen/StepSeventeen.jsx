@@ -70,12 +70,11 @@ const StepSeventeen = ({ onNext }) => {
         <button className={styles.selectPhoto} onClick={handleSelectPhotoClick}>
           Select photo
         </button>
-        <button className={styles.takePhoto} onClick={handleTakePhotoClick}>
+        <button className={styles.takePhoto} onClick={onNext}>
           Take photo
         </button>
       </div>
       <div className={styles.hrrr}></div>
-      <button onClick={onNext}>Next Temporary</button>
     </div>
   );
 };

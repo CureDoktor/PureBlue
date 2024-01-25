@@ -4,7 +4,7 @@ import OrderFlowCardDetails from "../../Common/OrderFlow/OrderFlowCardDetails";
 const StepEight = ({ onNext }) => {
   return (
     <div>
-      <OrderFlowCardDetails />
+      <OrderFlowCardDetails onNext={onNext} />
     </div>
   );
 };
