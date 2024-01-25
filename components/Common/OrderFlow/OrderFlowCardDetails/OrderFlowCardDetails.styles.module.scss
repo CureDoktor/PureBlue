@@ -16,6 +16,12 @@
     font-weight: 600;
     color: #0077f0;
   }
+  .footerText {
+    margin-top: 2rem;
+    color: black;
+    font-size: 12px;
+    width: 40%;
+  }
 }
 .mainCardsContainer {
   .card {
@@ -134,5 +140,27 @@
       padding: 0px;
       text-decoration: underline;
     }
+  }
+}
+
+.btnContainer {
+  display: flex;
+  background-color: black;
+  border-radius: 50px;
+  justify-content: center;
+  margin-top: 3rem;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 14px;
   }
 }

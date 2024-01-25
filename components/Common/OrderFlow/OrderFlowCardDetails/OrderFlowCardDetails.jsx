@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./OrderFlowCardDetails.styles.module.scss";
 
-const OrderFlowCardDetails = () => {
+const OrderFlowCardDetails = ({ onNext }) => {
   const planOptions = [
     { id: 1, period: "Monthly", cost: "$76/mo" },
     { id: 2, period: "3 Months", cost: "$85" },
@@ -54,6 +54,11 @@ const OrderFlowCardDetails = () => {
             <button>Details</button>
           </div>
           <span>$228</span>
+        </div>
+        <div className={styles.btnContainer} onClick={onNext}>
+          <button>
+            <span>Submit Order</span>
+          </button>
         </div>
       </div>
     </>

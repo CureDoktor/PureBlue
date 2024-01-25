@@ -5,7 +5,6 @@ const StepEight = ({ onNext }) => {
   return (
     <div>
       <OrderFlowCardDetails />
-      <button onClick={onNext}>Next Temporary</button>
     </div>
   );
 };
