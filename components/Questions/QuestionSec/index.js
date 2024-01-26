@@ -20,6 +20,8 @@ const QuestionSec = ({
   currentStep,
   setCurrentStep,
 }) => {
+  const [value, setValue] = useState("");
+  const [isEmpty, setIsEmpty] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("currentStep", currentStep);
@@ -32,6 +34,11 @@ const QuestionSec = ({
   }, [currentStep, totalSteps]);
 
   const handleNext = () => {
+    if (value.length == "") {
+      setIsEmpty(true);
+      return;
+    }
+
     if (currentStep === totalSteps - 1) {
       setCurrentStep(0);
       if (typeof window !== "undefined") {
@@ -41,14 +48,20 @@ const QuestionSec = ({
       setCurrentStep((prevStep) => prevStep + 1);
     }
   };
-
   const handleBack = () => {
     setCurrentStep((prevStep) => prevStep - 1);
   };
   const renderQuestion = () => {
     switch (currentStep) {
       case 0:
-        return <QuestionOne />;
+        return (
+          <QuestionOne
+            value={value}
+            setValue={setValue}
+            setIsEmpty={setIsEmpty}
+            isEmpty={isEmpty}
+          />
+        );
       case 1:
         return (
           <QuestionTwo para="Are you seeking treatment to help obtain or maintain an erection?" />
