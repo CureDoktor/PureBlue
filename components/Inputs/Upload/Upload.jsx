@@ -1,5 +1,5 @@
 import React from "react";
-import { useFormContext } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import styles from "./Upload.styles.module.scss";
 import { Button } from "react-bootstrap";
 import Axios from "axios";
@@ -14,21 +14,19 @@ export const config = {
 
 const Upload = ({ name }) => {
   const authCtx = useContext(AuthContext);
-  const { register, watch } = useFormContext();
+  const { register, watch, formState, control } = useFormContext();
+
   const value = watch(name);
   const handleUploadFiles = async () => {
     const formData = new FormData();
+    formData.append("file", value?.[0], value?.[0].name);
+    formData.append("token", authCtx.Token());
 
-    console.log(value?.[0]);
-
-    formData.append("file", value?.[0]);
-    const file = { formData };
     const route = "/api/case/upload-file";
-    console.log(formData);
     try {
-      const rese = await Axios.post(route, value?.[0], {
+      const rese = await Axios.post(route, formData, {
         headers: {
-          "Content-type": "multipart/form-data",
+          "Content-Type": "multipart/form-data",
           "Access-Control-Allow-Origin": "*",
         },
       })
@@ -43,17 +41,39 @@ const Upload = ({ name }) => {
     }
   };
 
-  const funkcijaNeka = (event) => {
-    console.log(event?.target?.value);
-  };
-
   return (
     <div>
       <label
         style={{ cursor: "pointer", position: "relative" }}
         className={styles.container}
       >
-        <input
+        <Controller
+          control={control}
+          name={name}
+          render={({ field: { value, onChange, ...field } }) => {
+            return (
+              <input
+                {...field}
+                value={value?.fileName}
+                onChange={(event) => {
+                  onChange(event.target.files);
+                }}
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  opacity: "0",
+                  width: "100%",
+                  height: "100%",
+                  display: "block",
+                  cursor: "pointer",
+                }}
+                type="file"
+              />
+            );
+          }}
+        />
+        {/* <input
           style={{
             position: "absolute",
             top: "0",
@@ -66,8 +86,8 @@ const Upload = ({ name }) => {
           }}
           multiple
           type="file"
-          {...register(name, { onChange: funkcijaNeka })}
-        />
+          // {...register(name)}
+        /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"

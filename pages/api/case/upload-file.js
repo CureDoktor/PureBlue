@@ -1,7 +1,5 @@
-import Axios from "axios";
-import ApiError from "../../../components/Apifunction";
-import { Formidable } from "formidable";
-import { useContext } from "react";
+import axios from "axios";
+import multer from "multer";
 
 export const config = {
   api: {
@@ -9,44 +7,49 @@ export const config = {
   },
 };
 
-export default function handler(req, res) {
-  const form = new Formidable();
+const upload = multer();
 
-  form.parse(req, (err, fields, files) => {
-    var cure2 = new FormData();
-    cure2.append("file", fields);
+const cure = (formData, res) => {
+  axios
+    .post(process.env.NEXT_PUBLIC_API_KEY + "/case/upload-file", formData, {
+      headers: {
+        "Site-Token": "123456",
+        "Content-Type": "multipart/form-data",
+        Accept: "*/*",
+        Authorization: "Bearer " + formData.get("token"),
+      },
+    })
+    .then((respond) => {
+      console.log("RESPOND ->", respond);
+      return res.status(200).json(respond.data);
+    })
+    .catch(function (error) {
+      console.log("ERROR ->", error.response?.data);
+      return res.status(400).json(error.response?.data);
+    });
+};
 
-    // const fileObject = formDataArray.find((item) => item.name === "file");
-    // const fileValue = fileObject ? fileObject.value : undefined;
+export default async function handler(req, res) {
+  upload.any()(req, res, (err) => {
+    if (err) {
+      console.error("Error uploading file:", err);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
 
-    // console.log(fileValue);
-    // console.log(files.file);
-    cure(cure2);
-    // console.log(fields);
-    // console.log(files.file);
+    const file = req.files[0];
+
+    const formData = new FormData();
+
+    const blobData = new Blob([file.buffer], { type: file.mimetype });
+
+    formData.append(
+      "FileForm[imageFile]",
+      blobData,
+      `filename.${file.originalname.split(".").pop()}`
+    );
+    formData.append("token", req.body.token);
+
+    // Call the cure function to send the FormData to the server
+    cure(formData, res);
   });
-  const cure = (something) => {
-    console.log(something);
-    Axios.post(
-      process.env.NEXT_PUBLIC_API_KEY + "/case/upload-file",
-      something,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          "Site-Token": "123456",
-          "Authorization":
-            "Bearer " +
-            "cVWiiUgpKrNWvqBu-Cbc5gnv-NQ6VTYOBL5_CiJvmrxR1_i67em0qsGJEWR82-hI_KmFhgEFmRVXW6Cbrhh1YrDAGwbGwWfO2_R0khchCNF65kEsaD6_F_ATaSZXYayXnWF2UMqNRny5nKDCkpqrb6hDXLl8WGyEaO6q2HYSkzPyS58CnxewyATQ96Y3zVR1ZsjxJu0v",
-        },
-      }
-    )
-      .then((respond) => {
-        return res.status(200).json(respond.data);
-      })
-      .catch(function (error) {
-        // let response = ApiError(error.response);
-        // res.status(400).json(response);
-        // console.log(error);
-      });
-  };
 }
