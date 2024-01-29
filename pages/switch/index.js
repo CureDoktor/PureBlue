@@ -73,9 +73,6 @@ export default function Switch(props) {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           setCaseId(res.data?.data[0].id);
-          // if (res.data != null) {
-          //   router.push("/account");
-          // }
         })
         .catch((error) => {
           props.handleShow(error.response.data);

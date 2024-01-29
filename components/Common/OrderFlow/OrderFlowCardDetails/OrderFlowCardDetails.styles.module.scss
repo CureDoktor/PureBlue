@@ -1,0 +1,166 @@
+.mainContainer {
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  // width: 100%; // Use 100% for mobile and set a max-width for larger screens
+  // width: 400px; // Maximum width for larger screens
+
+  h5 {
+    font-size: 24px;
+    font-weight: 600;
+    padding-right: 5rem;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0077f0;
+  }
+  .footerText {
+    margin-top: 2rem;
+    color: black;
+    font-size: 12px;
+    width: 40%;
+  }
+}
+.mainCardsContainer {
+  .card {
+    border: 1px solid #c8c8c8;
+    margin: 1rem 0rem;
+    padding: 8px 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+}
+
+.monthlyDetailsCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-wrap: wrap;
+
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
+
+  .cutPrice {
+    text-decoration: line-through;
+    color: #c8c8c8;
+    padding-right: 2px;
+  }
+}
+.DoctorFee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-wrap: wrap;
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
+
+  .discount {
+    text-decoration: line-through;
+    color: red;
+  }
+  .image {
+    margin-right: 4px;
+  }
+}
+
+.totalMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
+
+  .total {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+
+    .totalBlue {
+      color: #0077f0;
+    }
+  }
+
+  .cutPrice {
+    text-decoration: line-through;
+    color: #c8c8c8;
+    padding-right: 2px;
+  }
+}
+.refundMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  @media (max-width: "400px") {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
+
+  .refund {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      background-color: transparent;
+      text-align: left;
+      border: none;
+      color: black;
+      font-weight: 500;
+      font-size: 13px;
+      padding: 0px;
+      text-decoration: underline;
+    }
+  }
+}
+
+.btnContainer {
+  display: flex;
+  background-color: black;
+  border-radius: 50px;
+  justify-content: center;
+  margin-top: 3rem;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+}
