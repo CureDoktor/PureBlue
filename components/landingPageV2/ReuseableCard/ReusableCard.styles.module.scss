@@ -5,7 +5,6 @@
   border-radius: 50px;
   padding-top: 7rem;
   padding-bottom: 7rem;
-  //   margin: 0px 10px 0px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,12 +41,12 @@
   }
   .triangleContainerDown {
     display: flex;
-    justify-content: center; /* Center the triangle */
+    justify-content: center;
     position: absolute;
-    bottom: -60px; /* Adjust this value as needed */
+    bottom: -60px;
     left: 50%;
-    transform: translateX(-50%); /* Center the container horizontally */
-    height: 100px; /* Height of the triangle */
+    transform: translateX(-50%);
+    height: 100px;
     z-index: 7;
 
     .triangleDown {
@@ -60,12 +59,12 @@
   }
   .triangleContainerUp {
     display: flex;
-    justify-content: center; /* Center the triangle */
+    justify-content: center;
     position: absolute;
-    top: -85px; /* Adjust this value as needed */
+    top: -85px;
     left: 50%;
-    transform: translateX(-50%); /* Center the container horizontally */
-    height: 100px; /* Height of the triangle */
+    transform: translateX(-50%);
+    height: 100px;
 
     .triangleUp {
       width: 0;
@@ -77,7 +76,6 @@
 }
 
 .imageContainer {
-  //   margin: 0px 10px;
   width: 46%;
   padding-top: 9rem;
   padding-bottom: 9rem;
@@ -85,12 +83,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  //   background-image: url("/assets/landingPageV2/cardImage1/cardImage1.png");
   background-size: cover;
   background-position: center;
   object-fit: contain;
   border-radius: 50px;
-  height: 420px; /* Set a fixed height */
+  height: 420px;
   border: none;
 
   @media (max-width: 770px) {

@@ -73,14 +73,9 @@ const CardCarousel = () => {
         spaceBetween={5}
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
-        // modules={[Navigation, Autoplay]}
         onInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        // navigation={{
-        //   prevEl: swiperRef.current?.params.navigation.prevEl,
-        //   nextEl: swiperRef.current?.params.navigation.nextEl,
-        // }}
         breakpoints={{
           375: { slidesPerView: 1, spaceBetween: 5 },
           425: { slidesPerView: 1, spaceBetween: 5 },
@@ -106,7 +101,6 @@ const CardCarousel = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <p onClick={() => swiperRef.current?.slideNext()}>asd</p> */}
       <img
         onClick={() => swiperRef.current?.slideNext()}
         src="/assets/landingPageV2/rightArrow/right.png"

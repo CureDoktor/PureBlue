@@ -147,7 +147,6 @@ const index = () => {
           <ReusableCard
             key={index}
             className={`${index[2] ? "mb-2" : ""}`}
-            // className={`${styles[`card-${index}`]}`} // Apply the class based on the index
             topTriangle={card.topTriangle}
             bottomTriangle={card.bottomTriangle}
             cardHeading={card.cardHeading}
@@ -162,21 +161,6 @@ const index = () => {
           <CardCarousel />
         </div>
       </div>
-      {/* <div className={styles.carouselContainer}>
-        {reviews.map((items, index) => {
-          const { reviewText, reviewerName, star, date, isVerified } = items;
-          return (
-            <ReviewCard
-              key={index}
-              reviewText={reviewText}
-              reviewerName={reviewerName}
-              star={star}
-              date={date}
-              isVerified={isVerified}
-            />
-          );
-        })}
-      </div> */}
       <div className={styles.blackContainer}>
         <div className={styles.greyContainer}>
           <div className={styles.textContainer}>

@@ -90,7 +90,6 @@
       }
     }
     .details {
-      // margin-top: 1rem;
       margin-left: 1rem;
       font-size: 16px;
       font-weight: 500;
@@ -223,16 +222,8 @@
   border: 2px solid black;
   width: auto;
   display: flex;
-  //   margin-top: 8rem;
   margin-bottom: 3rem;
   justify-content: center;
-  //   //   border: 2px solid black;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   flex-wrap: wrap;
-
-  //   padding: 20px;
 }
 
 .blackContainer {
@@ -334,7 +325,6 @@
   .greyContainer {
     width: 50%;
     height: auto;
-    // background-color: #2e2e2e;
     padding: 8rem 0rem;
     display: flex;
     justify-content: space-between;
@@ -347,24 +337,10 @@
     }
   }
   .textContainer {
-    // width: 60%;
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
-    // align-items: flex-start;
-    // margin-left: 10rem;
-
-    // @media (max-width: "2240px") {
-    //   //   justify-content: flex-start;
-    //   width: 80%;
-    // }
-    // @media (max-width: "1765px") {
-    //   //   justify-content: flex-start;
-    //   width: 100%;
-    // }
 
     .greatNews {
-      //   text-align: left;
       font-size: 45px;
       font-weight: 600;
       margin-top: 1.8rem;
@@ -380,8 +356,6 @@
     font-size: 20px;
     color: black;
     .details {
-      // margin-top: 1rem;
-      //   margin-left: 1rem;
       font-size: 20px;
 
       img {
@@ -392,7 +366,6 @@
       span {
         font-size: 20px;
         margin-left: 1.5rem;
-        // font-weight: 100;
       }
     }
     button {
