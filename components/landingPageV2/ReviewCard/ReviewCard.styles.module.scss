@@ -38,33 +38,11 @@
 // }
 
 .mainContainer {
-  margin: 10px;
-  box-shadow: 14px 14px 14px rgba(0, 0, 0, 0.1);
-  width: 24%;
+  // margin: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  // width: 24%;
   border-radius: 25px;
 
-  @media (max-width: 1200px) {
-    width: 24%; // Adjust the width on larger tablet screens
-  }
-
-  @media (max-width: 992px) {
-    width: 24%; // Adjust the width on landscape phones and smaller tablet screens
-  }
-
-  @media (max-width: 768px) {
-    width: 60%; // Adjust the width on portrait tablets
-  }
-
-  @media (max-width: 576px) {
-    width: 80%; // Adjust the width on most phones
-    margin: 20px auto; // Center the card on small screens
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.1); // Optional: reduce shadow size
-  }
-
-  @media (max-width: 400px) {
-    width: 90%; // Adjust the width on very small screens
-    // You might want to adjust padding, font-sizes, and other properties for small screens
-  }
   //   padding: 10px;
   .headerContainer {
     display: flex;

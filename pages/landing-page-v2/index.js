@@ -6,6 +6,9 @@ import ReviewCard from "../../components/landingPageV2/ReviewCard/ReviewCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import GetStarted from "../../components/GetStarted";
+import Frequently from "../../components/GetStarted/FrequentlyAsked";
+import CardCarousel from "../../components/landingPageV2/CardCarousel";
 
 const index = () => {
   const reviews = [
@@ -35,9 +38,8 @@ const index = () => {
         "I'm a very happy user. It took a little while to understand when and how to take the medication but once I did I found it to be very effective.",
       reviewerName: "Mark V.",
       isVerified: true,
-      star: 3,
+      star: 2,
     },
-    // ... more reviews
   ];
   const headerDescription = [
     "FDA-approved medication",
@@ -144,6 +146,8 @@ const index = () => {
         {cardData2.map((card, index) => (
           <ReusableCard
             key={index}
+            className={`${index[2] ? "mb-2" : ""}`}
+            // className={`${styles[`card-${index}`]}`} // Apply the class based on the index
             topTriangle={card.topTriangle}
             bottomTriangle={card.bottomTriangle}
             cardHeading={card.cardHeading}
@@ -152,7 +156,13 @@ const index = () => {
           />
         ))}
       </div>
-      <div className={styles.carouselContainer}>
+      <div className={styles.cardCarousel}>
+        <div className={styles.cards}>
+          <p>Sildenafil Reviews</p>
+          <CardCarousel />
+        </div>
+      </div>
+      {/* <div className={styles.carouselContainer}>
         {reviews.map((items, index) => {
           const { reviewText, reviewerName, star, date, isVerified } = items;
           return (
@@ -166,8 +176,60 @@ const index = () => {
             />
           );
         })}
+      </div> */}
+      <div className={styles.blackContainer}>
+        <div className={styles.greyContainer}>
+          <div className={styles.textContainer}>
+            <div>
+              <p className={styles.greatNews}>Great news!</p>
+              <p className={styles.covered}>We’ve got you covered.</p>
+            </div>
+            <div className={styles.points2}>
+              {headerDescription.map((items) => {
+                return (
+                  <p className={styles.details}>
+                    <img src="/assets/landingPageV2/tickWhite/tickWhite.png" />
+                    <span>{items}</span>
+                  </p>
+                );
+              })}
+              <button>Find my treatment</button>
+              <p>
+                *Products needing a prescription require a short consultation
+                with an online physician
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      {/* <ElasticCarousel /> */}
+      <div className={styles.frequently}>
+        <Frequently />
+      </div>
+      <div className={styles.whiteContainer}>
+        <div className={styles.greyContainer}>
+          <div className={styles.textContainer}>
+            <div>
+              <p className={styles.greatNews}>Great news!</p>
+              <p className={styles.covered}>We’ve got you covered.</p>
+            </div>
+          </div>
+          <div className={styles.points2}>
+            {headerDescription.map((items) => {
+              return (
+                <p className={styles.details}>
+                  <img src="/assets/landingPageV2/tick/tick.png" />
+                  <span>{items}</span>
+                </p>
+              );
+            })}
+            <button>Find my treatment</button>
+            <p>
+              *Products needing a prescription require a short consultation with
+              an online physician
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
