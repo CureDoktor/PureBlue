@@ -212,10 +212,8 @@ export default function Order(props) {
             <Col md={{ span: 7, offset: 5 }}>
               <div className={styles.callUs}>
                 <Link href="tel: 1-888-534-8977">
-                  <a>
-                    Call toll free to order:{" "}
-                    <span className={styles.blueText}>1-888-534-8977</span>
-                  </a>
+                  Call toll free to order:{" "}
+                  <span className={styles.blueText}>1-888-534-8977</span>
                 </Link>
               </div>
             </Col>

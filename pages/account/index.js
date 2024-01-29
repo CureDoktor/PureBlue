@@ -20,6 +20,8 @@ export default function Account(props) {
       setContent(<Profile handleShow={props.handleShow} />);
     } else if (link === "Case") {
       setContent(<Case handleShow={props.handleShow} />);
+    } else if (link === "Verification") {
+      <Verification handleShow={props.handleShow} />;
     }
   };
 

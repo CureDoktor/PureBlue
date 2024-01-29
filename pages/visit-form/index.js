@@ -29,7 +29,6 @@ export default function VisitForm(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res);
           setQuestions(res.data.data.questions);
         })
         .catch((error) => {
@@ -303,10 +302,8 @@ export default function VisitForm(props) {
             <Col md={{ span: 7, offset: 5 }}>
               <div className={styles.callUs}>
                 <Link href="tel: 1-888-534-8977">
-                  <a>
-                    Call toll free to order:{" "}
-                    <span className={styles.blueText}>1-888-534-8977</span>
-                  </a>
+                  Call toll free to order:{" "}
+                  <span className={styles.blueText}>1-888-534-8977</span>
                 </Link>
               </div>
             </Col>
@@ -322,7 +319,7 @@ export default function VisitForm(props) {
               <div className={styles.formField}>
                 {!showQuestions && (
                   <Form onSubmit={handleSubmit}>
-                    <Row className="mb-3">
+                    {/* <Row className="mb-3">
                       <Form.Group as={Col} controlId="firstName">
                         <Form.Label>
                           Patient First Name *{" "}
@@ -362,7 +359,7 @@ export default function VisitForm(props) {
                           Incorrect Last name
                         </Form.Control.Feedback>
                       </Form.Group>
-                    </Row>
+                    </Row> */}
                     <Row className="mb-3">
                       <Form.Group as={Col} controlId="dob">
                         <Form.Label>Birthday</Form.Label>

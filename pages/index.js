@@ -4,12 +4,14 @@ import { useContext, React } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
+import { useFormContext } from "react-hook-form";
 import styles from "../styles/Home.module.scss";
 import { Check, PatchCheck } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext } from "react-bootstrap";
 import { useRouter } from "next/router";
+import Upload from "../components/Inputs/Upload";
 export default function Home() {
   const history = useRouter();
 
@@ -56,12 +58,10 @@ export default function Home() {
                 <div className={styles.fieldOneText}>
                   <div className={styles.callUs}>
                     <Link href="tel: 1-888-534-8977">
-                      <a>
-                        Call Us Anytime:{" "}
-                        <span className={styles.primaryColor}>
-                          1-888-534-8977
-                        </span>
-                      </a>
+                      Call Us Anytime:{" "}
+                      <span className={styles.primaryColor}>
+                        1-888-534-8977
+                      </span>
                     </Link>
                   </div>
                   <h2>

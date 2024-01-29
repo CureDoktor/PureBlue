@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 export default function OrderHero(props) {
-  // console.log("dffvvdv", img);
   return (
     <div className={styles.container}>
       <div className={styles.sec1}>

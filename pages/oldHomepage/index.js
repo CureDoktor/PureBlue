@@ -57,14 +57,10 @@ export default function Home() {
                 <div className={styles.fieldOneText}>
                   <div className={styles.callUs + " d-flex flex-row-reverse"}>
                     <Link href="tel: 1-888-534-8977">
-                      <a>
-                        <span className={styles.callToll}>
-                          Call toll free to order:
-                        </span>
-                        <div className={styles.primaryColor}>
-                          1-888-534-8977
-                        </div>
-                      </a>
+                      <span className={styles.callToll}>
+                        Call toll free to order:
+                      </span>
+                      <div className={styles.primaryColor}>1-888-534-8977</div>
                     </Link>
                     <div className="pt-2 pe-2">
                       <Image

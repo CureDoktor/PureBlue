@@ -25,13 +25,11 @@ export default function Header(props) {
       <Navbar sticky="top" expand="lg" className={styles.container}>
         <Container className={styles.navbar}>
           <Link href="/">
-            <a>
-              <Image
-                src="/assets/homepage/logo.png"
-                alt="Proselect logo"
-                className={styles.logo}
-              />
-            </a>
+            <Image
+              src="/assets/homepage/logo.png"
+              alt="Proselect logo"
+              className={styles.logo}
+            />
           </Link>
           <div className={styles.tablet}>
             <Navbar.Toggle
@@ -78,21 +76,21 @@ export default function Header(props) {
                 </NavDropdown.Item>
               </Link>
             </NavDropdown> */}
-              <Link href="/" passHref>
-                <Nav.Link className={styles.link}>Home</Nav.Link>
+              <Link className={styles.link} href="/" passHref>
+                Home
               </Link>
-              <Link href="/about" passHref>
-                <Nav.Link className={styles.link}>About Us</Nav.Link>
+              <Link className={styles.link} href="/about" passHref>
+                About Us
               </Link>
-              <Link href="/faq" passHref>
-                <Nav.Link className={styles.link}>FAQs</Nav.Link>
+              <Link className={styles.link} href="/faq" passHref>
+                FAQs
               </Link>
-              <Link href="/contact" passHref>
-                <Nav.Link className={styles.link}>Contact</Nav.Link>
+              <Link className={styles.link} href="/contact" passHref>
+                Contact
               </Link>
               {props.header ? (
-                <Link href="/account" passHref>
-                  <Nav.Link className={styles.link}>Account</Nav.Link>
+                <Link className={styles.link} href="/account" passHref>
+                  Account
                 </Link>
               ) : (
                 ""
