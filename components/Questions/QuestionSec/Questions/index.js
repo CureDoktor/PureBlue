@@ -68,18 +68,26 @@ const Questions = ({
     setIsFocus(true);
   };
 
-  const RadioButton = ({ selected, handleNext, option }) => (
+  const RadioButton = ({
+    selected,
+    handleButtonClick,
+    handleNext,
+    option,
+    index,
+  }) => (
     <div
       className={`${styles.customRadioButton} ${
-        selected === 0 && styles.checked
+        selected === index && styles.checked
       }`}
-      onClick={handleNext}
+      onClick={() => {
+        handleButtonClick(index);
+        handleNext();
+      }}
     >
       <span className={styles.radioButton}></span>
       <span className={styles.buttonLabel}>{option}</span>
     </div>
   );
-
   return (
     <>
       <div className={styles.mainContainer}>
@@ -91,8 +99,10 @@ const Questions = ({
                 <RadioButton
                   key={index}
                   selected={selectedOption}
+                  handleButtonClick={handleButtonClick}
                   handleNext={handleNext}
                   option={option.option}
+                  index={index}
                 />
               ))}
             </div>
@@ -106,8 +116,10 @@ const Questions = ({
                 <RadioButton
                   key={index}
                   selected={selectedOption}
+                  handleButtonClick={handleButtonClick}
                   handleNext={handleNext}
                   option={option.option}
+                  index={index}
                 />
               ))}
             </div>
@@ -174,7 +186,10 @@ const Questions = ({
                   className={`${styles.customRadioButton} ${
                     selectedOptions.includes(index) && styles.checked
                   }`}
-                  onClick={() => handleNext()}
+                  onClick={() => {
+                    handleButtonClick2(index);
+                    handleNext();
+                  }}
                 >
                   <span className={styles.radioButton}></span>
                   <span

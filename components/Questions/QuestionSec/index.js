@@ -8,13 +8,20 @@ const QuestionSec = ({
   currentStep,
   setCurrentStep,
 }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(() => {
+    if (typeof window !== "undefined") {
+      const savedValue = localStorage.getItem("value");
+      return savedValue || "";
+    }
+    return "";
+  });
   const [isEmpty, setIsEmpty] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("currentStep", currentStep);
+      localStorage.setItem("value", value);
     }
-  }, [currentStep]);
+  }, [currentStep, value]);
 
   useEffect(() => {
     const calculatedProgress = (currentStep / totalSteps) * 100;
