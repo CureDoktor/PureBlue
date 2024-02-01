@@ -1,0 +1,193 @@
+.mainContainer {
+  margin: 4rem 0rem;
+
+  p {
+    margin: 1.5rem 0rem;
+    font-style: 20px;
+    color: #000000;
+    font-weight: 600;
+  }
+
+  .radioButton {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #707070;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: transparent;
+  }
+
+  .checked {
+    .radioButton {
+      background-color: #3498db;
+    }
+  }
+}
+.questionTwo {
+  .radioSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .customRadioButton {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #b8b8b8;
+      width: 130px;
+      background: #ececec 0% 0% no-repeat padding-box;
+      border-radius: 9px;
+      opacity: 1;
+      padding: 0.4rem 1rem;
+
+      .buttonLabel {
+        vertical-align: middle;
+        font-size: 20px;
+        font-weight: normal;
+        @media (max-width: 500px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.questionThree {
+  .radioSection {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    .customRadioButton {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #b8b8b8;
+      max-width: 314px;
+      background: #ececec 0% 0% no-repeat padding-box;
+      border-radius: 9px;
+      opacity: 1;
+      padding: 0.4rem 1rem;
+
+      .buttonLabel {
+        vertical-align: middle;
+        font-size: 20px;
+        font-weight: normal;
+
+        @media (max-width: 500px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.questionSix {
+  .radioSection {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+    .customRadioButton {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 1px solid #b8b8b8;
+      max-width: 600px;
+      background: #ececec 0% 0% no-repeat padding-box;
+      border-radius: 9px;
+      opacity: 1;
+      padding: 0.4rem 1rem;
+      gap: 15px;
+
+      .radioButton {
+        margin-right: 0px;
+      }
+
+      .buttonLabel {
+        vertical-align: middle;
+        font-size: 17px;
+        font-weight: normal;
+
+        @media (max-width: 500px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .textArea {
+    .questionSec {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin: 10px 0px;
+      .radio {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        border: 1px solid #707070;
+        border-radius: 4px;
+        background-color: transparent;
+      }
+      .option {
+        font-size: 17px;
+        color: #000000;
+        span {
+          color: #0077f0;
+        }
+      }
+    }
+
+    textarea {
+      max-width: 600px;
+      width: 100%;
+      height: 161px;
+      background: #ffffff 0% 0% no-repeat padding-box;
+      border: 1px solid #b8b8b8;
+      border-radius: 9px;
+      opacity: 1;
+    }
+  }
+}
+.questionOne {
+  p {
+    font-weight: normal;
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .inputContainer {
+    border: 1px solid #b8b8b8;
+    color: #b8b8b8;
+    border-radius: 9px;
+    width: 300px;
+    // height: 48px;
+    padding: 0rem 0.5rem;
+    @media (max-width: 360px) {
+      max-width: 250px;
+    }
+
+    .visibleLabel {
+      font-size: 16px;
+      transition: font-size 0.3s ease-in-out;
+    }
+
+    .smallVisibleLabel {
+      font-size: 13px;
+      transition: font-size 0.3s ease-in-out;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+      // height: 48px;
+      // padding: 0rem 0.5rem;
+      // @media (max-width: 360px) {
+      //   max-width: 250px;
+      // }
+    }
+  }
+}

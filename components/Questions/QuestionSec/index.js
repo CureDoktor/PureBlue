@@ -1,19 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import QuestionOne from "./QuestionOne";
-import QuestionTwo from "./QuestionTwo";
-import QuestionThree from "./QuestionThree";
-import QuestionSix from "./QuestionSix";
-import {
-  btnSixArr,
-  btnSixArr2,
-  btnSixArr3,
-  btnSixArr4,
-  btnSixArr5,
-  btnSixArr6,
-  btnSixArr7,
-  btnSixArr8,
-} from "./questionArrays";
+import Questions from "./Questions";
+import { questions } from "./mockdata/questionsArray";
 const QuestionSec = ({
   totalSteps,
   setProgress,
@@ -51,160 +39,31 @@ const QuestionSec = ({
   const handleBack = () => {
     setCurrentStep((prevStep) => prevStep - 1);
   };
+
   const renderQuestion = () => {
-    switch (currentStep) {
-      case 0:
+    const currentQuestion = questions.find((q) => q.id === currentStep);
+    if (currentQuestion) {
+      if (currentQuestion.question) {
         return (
-          <QuestionOne
+          <Questions
+            question={currentQuestion.question.question}
+            options={currentQuestion.question.options}
+            handleNext={handleNext}
+            type={currentQuestion.question.type}
+            title={currentQuestion.question.title}
+            alert={currentQuestion.question.alert}
+            label={currentQuestion.question.label}
             value={value}
             setValue={setValue}
             setIsEmpty={setIsEmpty}
             isEmpty={isEmpty}
           />
         );
-      case 1:
-        return (
-          <QuestionTwo
-            para="Are you seeking treatment to help obtain or maintain an erection?"
-            handleNext={handleNext}
-          />
-        );
-      case 2:
-        return (
-          <QuestionThree
-            para="How concerned are you about this problem?"
-            btn1="Very"
-            btn2="Somewhat"
-            btn3="Not at all"
-            handleNext={handleNext}
-          />
-        );
-      case 3:
-        return (
-          <QuestionThree
-            para="How concerned are you about this problem?"
-            btn1="0-6 months"
-            btn2="6-12 months"
-            btn3="More than 1 year"
-            handleNext={handleNext}
-          />
-        );
-      case 4:
-        return (
-          <QuestionTwo
-            para="Have you had your vitals tested by a medical practitioner in the past 3 years? This includes weight, 
-        blood pressure, and heart rate."
-            handleNext={handleNext}
-          />
-        );
-      case 5:
-        return (
-          <QuestionSix
-            para="Do you have any of the following HIGH RISK criteria:"
-            btnArray={btnSixArr}
-            handleNext={handleNext}
-          />
-        );
-      case 6:
-        return (
-          <QuestionSix
-            para="How concerned are you about this problem?"
-            btnArray={btnSixArr2}
-            handleNext={handleNext}
-          />
-        );
-      case 7:
-        return (
-          <QuestionSix
-            para="Do you have any of the following HIGH RISK criteria:"
-            btnArray={btnSixArr3}
-            handleNext={handleNext}
-          />
-        );
-      case 8:
-        return (
-          <QuestionSix
-            para="What is your blood pressure on an average day (even when taking medication)?"
-            btnArray={btnSixArr4}
-            handleNext={handleNext}
-          />
-        );
-      case 9:
-        return (
-          <QuestionTwo
-            para="Within the past 6 months, have you had a heart attack or cardiac surgery?"
-            handleNext={handleNext}
-          />
-        );
-      case 10:
-        return (
-          <QuestionSix
-            para="Have you ever had any physical abnormalities with your genitals?"
-            btnArray={btnSixArr5}
-            handleNext={handleNext}
-          />
-        );
-      case 11:
-        return (
-          <QuestionSix
-            para="Do you have any of the following?"
-            btnArray={btnSixArr6}
-            handleNext={handleNext}
-          />
-        );
-      case 12:
-        return (
-          <QuestionSix
-            para="Have you done any of the following recreational drugs in the past 3 months? Please note: death can result if ED meds are used in conjunction with recreational drugs."
-            btnArray={btnSixArr7}
-            handleNext={handleNext}
-          />
-        );
-      case 13:
-        return (
-          <QuestionSix
-            para={`Do you take any of the following medications?
-           Please note: death can result if ED medications are used in conjunction with nitrates (often prescribed for chest pain/angina) or other medications. Please be accurate.`}
-            btnArray={btnSixArr8}
-            handleNext={handleNext}
-          />
-        );
-      case 14:
-        return (
-          <QuestionSix
-            para={`Please list ALL prescription medications you are taking or are currently prescribed. Include all over the counter medications, vitamins, minerals, or supplements:`}
-            type="textArea"
-            handleNext={handleNext}
-          />
-        );
-      case 15:
-        return (
-          <QuestionSix
-            para={`Please list all allergies to medications, dyes, or anything else. If none, write “NONE”`}
-            type="textArea"
-            handleNext={handleNext}
-          />
-        );
-      case 16:
-        return (
-          <QuestionTwo
-            para="Are you seeking treatment to help obtain or maintain an erection?"
-            handleNext={handleNext}
-          />
-        );
-      case 17:
-        return (
-          <QuestionSix
-            para={`Is there anything else you would like us to know? Please include any questions, comments, or concerns.`}
-            type="textAreaTwo"
-            handleNext={handleNext}
-          />
-        );
-
-      default:
-        return null;
+      }
     }
+    return null;
   };
+
   return (
     <div className={styles.mainContainer}>
       {renderQuestion()}
