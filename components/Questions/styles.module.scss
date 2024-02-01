@@ -3,4 +3,27 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
+  margin-top: 7rem;
+}
+
+.headingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  flex-direction: column;
+  p {
+    font-size: 18px;
+    font-weight: 600;
+
+    span {
+      font-size: 18px;
+      font-weight: 900;
+    }
+  }
+  h5 {
+    font-size: 22px;
+    margin-top: 10px;
+    font-weight: 900;
+  }
 }

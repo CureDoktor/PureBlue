@@ -10,7 +10,7 @@ const ProgressBar = ({ currentStep, totalSteps, progress }) => {
           className={`${styles.progressBar} ${
             progress === 100 && styles.completed
           }`}
-          style={{ width: `${progress}%`, fontSize: "11px" }}
+          style={{ width: `${progress}%`, fontSize: "12px", paddingTop: "2px" }}
         >
           {currentStep} of {totalSteps}
         </div>

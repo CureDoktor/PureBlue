@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
 
-const QuestionSix = ({ para, btnArray, type }) => {
+const QuestionSix = ({ para, btnArray, type, handleNext }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleButtonClick = (index) => {
@@ -37,7 +37,7 @@ const QuestionSix = ({ para, btnArray, type }) => {
             className={`${styles.questionSec} ${
               selectedOptions.includes(0) && styles.checked
             }`}
-            onClick={() => handleButtonClick(0)}
+            onClick={() => handleNext()}
           >
             <span className={styles.radio}></span>
             <span className={styles.option}>If none, click here</span>
@@ -51,7 +51,7 @@ const QuestionSix = ({ para, btnArray, type }) => {
             className={`${styles.questionSec} ${
               selectedOptions.includes(0) && styles.checked
             }`}
-            onClick={() => handleButtonClick(0)}
+            onClick={() => handleNext()}
           >
             <span className={styles.radio}></span>
             <span className={styles.option}>If none, click here</span>
@@ -63,7 +63,7 @@ const QuestionSix = ({ para, btnArray, type }) => {
             className={`${styles.questionSec} ${
               selectedOptions.includes(1) && styles.checked
             }`}
-            onClick={() => handleButtonClick(1)}
+            onClick={() => handleNext()}
           >
             <span className={styles.radio}></span>
             <span className={styles.option}>
@@ -80,7 +80,7 @@ const QuestionSix = ({ para, btnArray, type }) => {
               className={`${styles.customRadioButton} ${
                 selectedOptions.includes(index) && styles.checked
               }`}
-              onClick={() => handleButtonClick(index)}
+              onClick={() => handleNext()}
             >
               <span className={styles.radioButton}></span>
               <span

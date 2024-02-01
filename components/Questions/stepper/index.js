@@ -44,8 +44,8 @@ const Stepper = ({ completedSteps }) => {
                 <Image
                   src="/assets/questions/completedGreenTick.svg"
                   layout="fill"
-                  width={10}
-                  height={10}
+                  // width={40}
+                  // height={40}
                 />
               ) : (
                 index + 1

@@ -22,9 +22,9 @@
 .stepperItem::before {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #ccc;
+  border-bottom: 3px solid #ccc;
   width: 100%;
-  top: 20px;
+  top: 14px;
   left: -50%;
   z-index: 2;
 }
@@ -32,9 +32,9 @@
 .stepperItem::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #ccc;
+  border-bottom: 3px solid #ccc;
   width: 100%;
-  top: 20px;
+  top: 14px;
   left: 50%;
   z-index: 2;
 }
@@ -45,15 +45,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 70%;
   background: #ccc;
   margin-bottom: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
 }
 
 .stepperItem.active {
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 .stepperItem.completed .stepCounter {
@@ -63,9 +66,9 @@
 .stepperItem.completed::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #0077f0;
+  border-bottom: 3px solid #0077f0;
   width: 100%;
-  top: 20px;
+  top: 14px;
   left: 50%;
   z-index: 3;
 }

@@ -1,5 +1,5 @@
 .container {
-  margin-top: 7rem;
+  margin-top: 5rem;
   margin-right: auto;
   margin-left: auto;
   & h1 {
@@ -8,7 +8,7 @@
     font-size: 25px;
   }
   & ProgressBar {
-    height: 100px;
+    height: 10px;
   }
 }
 
@@ -21,7 +21,7 @@
 
   border-radius: 50px;
   .progressBar {
-    height: 20px;
+    height: 24px;
     border-radius: 50px 0px 0px 50px;
     background-color: #0077f0;
     width: 0%;

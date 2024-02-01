@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
 
-const QuestionTwo = ({ para }) => {
+const QuestionTwo = ({ para, handleNext }) => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleButtonClick = (index) => {
@@ -20,7 +20,7 @@ const QuestionTwo = ({ para }) => {
           className={`${styles.customRadioButton} ${
             selectedOption === 0 ? styles.checked : ""
           }`}
-          onClick={() => handleButtonClick(0)}
+          onClick={() => handleNext()}
         >
           <span className={styles.radioButton}></span>
           <span className={styles.buttonLabel}>Yes</span>
@@ -29,7 +29,7 @@ const QuestionTwo = ({ para }) => {
           className={`${styles.customRadioButton} ${
             selectedOption === 1 ? styles.checked : ""
           }`}
-          onClick={() => handleButtonClick(1)}
+          onClick={() => handleNext()}
         >
           <span className={styles.radioButton}></span>
           <span className={styles.buttonLabel}>No</span>

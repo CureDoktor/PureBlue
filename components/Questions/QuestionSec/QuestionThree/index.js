@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
 
-const QuestionThree = ({ para, btn1, btn2, btn3 }) => {
+const QuestionThree = ({ para, btn1, btn2, btn3, handleNext }) => {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleButtonClick = (index) => {
@@ -22,7 +22,7 @@ const QuestionThree = ({ para, btn1, btn2, btn3 }) => {
           className={`${styles.customRadioButton} ${
             selectedOption === 0 ? styles.checked : ""
           }`}
-          onClick={() => handleButtonClick(0)}
+          onClick={() => handleNext()}
         >
           <span className={styles.radioButton}></span>
           <span className={styles.buttonLabel}>{btn1}</span>
@@ -31,7 +31,7 @@ const QuestionThree = ({ para, btn1, btn2, btn3 }) => {
           className={`${styles.customRadioButton} ${
             selectedOption === 1 ? styles.checked : ""
           }`}
-          onClick={() => handleButtonClick(1)}
+          onClick={() => handleNext()}
         >
           <span className={styles.radioButton}></span>
           <span className={styles.buttonLabel}>{btn2}</span>
@@ -40,7 +40,7 @@ const QuestionThree = ({ para, btn1, btn2, btn3 }) => {
           className={`${styles.customRadioButton} ${
             selectedOption === 2 ? styles.checked : ""
           }`}
-          onClick={() => handleButtonClick(2)}
+          onClick={() => handleNext()}
         >
           <span className={styles.radioButton}></span>
           <span className={styles.buttonLabel}>{btn3}</span>

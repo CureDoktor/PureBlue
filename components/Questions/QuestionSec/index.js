@@ -64,7 +64,10 @@ const QuestionSec = ({
         );
       case 1:
         return (
-          <QuestionTwo para="Are you seeking treatment to help obtain or maintain an erection?" />
+          <QuestionTwo
+            para="Are you seeking treatment to help obtain or maintain an erection?"
+            handleNext={handleNext}
+          />
         );
       case 2:
         return (
@@ -73,6 +76,7 @@ const QuestionSec = ({
             btn1="Very"
             btn2="Somewhat"
             btn3="Not at all"
+            handleNext={handleNext}
           />
         );
       case 3:
@@ -82,6 +86,7 @@ const QuestionSec = ({
             btn1="0-6 months"
             btn2="6-12 months"
             btn3="More than 1 year"
+            handleNext={handleNext}
           />
         );
       case 4:
@@ -89,6 +94,7 @@ const QuestionSec = ({
           <QuestionTwo
             para="Have you had your vitals tested by a medical practitioner in the past 3 years? This includes weight, 
         blood pressure, and heart rate."
+            handleNext={handleNext}
           />
         );
       case 5:
@@ -96,6 +102,7 @@ const QuestionSec = ({
           <QuestionSix
             para="Do you have any of the following HIGH RISK criteria:"
             btnArray={btnSixArr}
+            handleNext={handleNext}
           />
         );
       case 6:
@@ -103,6 +110,7 @@ const QuestionSec = ({
           <QuestionSix
             para="How concerned are you about this problem?"
             btnArray={btnSixArr2}
+            handleNext={handleNext}
           />
         );
       case 7:
@@ -110,6 +118,7 @@ const QuestionSec = ({
           <QuestionSix
             para="Do you have any of the following HIGH RISK criteria:"
             btnArray={btnSixArr3}
+            handleNext={handleNext}
           />
         );
       case 8:
@@ -117,17 +126,22 @@ const QuestionSec = ({
           <QuestionSix
             para="What is your blood pressure on an average day (even when taking medication)?"
             btnArray={btnSixArr4}
+            handleNext={handleNext}
           />
         );
       case 9:
         return (
-          <QuestionTwo para="Within the past 6 months, have you had a heart attack or cardiac surgery?" />
+          <QuestionTwo
+            para="Within the past 6 months, have you had a heart attack or cardiac surgery?"
+            handleNext={handleNext}
+          />
         );
       case 10:
         return (
           <QuestionSix
             para="Have you ever had any physical abnormalities with your genitals?"
             btnArray={btnSixArr5}
+            handleNext={handleNext}
           />
         );
       case 11:
@@ -135,6 +149,7 @@ const QuestionSec = ({
           <QuestionSix
             para="Do you have any of the following?"
             btnArray={btnSixArr6}
+            handleNext={handleNext}
           />
         );
       case 12:
@@ -142,6 +157,7 @@ const QuestionSec = ({
           <QuestionSix
             para="Have you done any of the following recreational drugs in the past 3 months? Please note: death can result if ED meds are used in conjunction with recreational drugs."
             btnArray={btnSixArr7}
+            handleNext={handleNext}
           />
         );
       case 13:
@@ -150,6 +166,7 @@ const QuestionSec = ({
             para={`Do you take any of the following medications?
            Please note: death can result if ED medications are used in conjunction with nitrates (often prescribed for chest pain/angina) or other medications. Please be accurate.`}
             btnArray={btnSixArr8}
+            handleNext={handleNext}
           />
         );
       case 14:
@@ -157,6 +174,7 @@ const QuestionSec = ({
           <QuestionSix
             para={`Please list ALL prescription medications you are taking or are currently prescribed. Include all over the counter medications, vitamins, minerals, or supplements:`}
             type="textArea"
+            handleNext={handleNext}
           />
         );
       case 15:
@@ -164,17 +182,22 @@ const QuestionSec = ({
           <QuestionSix
             para={`Please list all allergies to medications, dyes, or anything else. If none, write “NONE”`}
             type="textArea"
+            handleNext={handleNext}
           />
         );
       case 16:
         return (
-          <QuestionTwo para="Are you seeking treatment to help obtain or maintain an erection?" />
+          <QuestionTwo
+            para="Are you seeking treatment to help obtain or maintain an erection?"
+            handleNext={handleNext}
+          />
         );
       case 17:
         return (
           <QuestionSix
             para={`Is there anything else you would like us to know? Please include any questions, comments, or concerns.`}
             type="textAreaTwo"
+            handleNext={handleNext}
           />
         );
 
@@ -197,18 +220,19 @@ const QuestionSec = ({
             <span>Back</span>
           </button>
         )}
-        {currentStep < totalSteps - 1 && (
+        {(currentStep == 0 || currentStep == 14 || currentStep == 15) && (
           <button className={styles.nextBtn} onClick={handleNext}>
             <span>Next</span>
             <img src="/assets/questions/forwardArrow.png" alt="next" />
           </button>
         )}
-
-        {currentStep === totalSteps - 1 && (
-          <button className={styles.submitBtn} onClick={handleNext}>
-            <span>Submit</span>
-          </button>
-        )}
+        <div style={{ margin: "auto" }}>
+          {currentStep === totalSteps - 1 && (
+            <button className={styles.submitBtn} onClick={handleNext}>
+              <span>Submit</span>
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
