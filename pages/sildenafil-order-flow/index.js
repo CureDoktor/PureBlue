@@ -1,5 +1,5 @@
 import React from "react";
-import SildenafilOrderFlow from "../../components/sildenafil-order-flow";
+import SildenafilOrderFlow from "../../components/Sildenafil-order-flow";
 
 const index = () => <SildenafilOrderFlow />;
 
