@@ -1,4 +1,3 @@
-'use-client'
 import React, { useRef, useState } from "react";
 import styles from "./Sildenafil.styles.module.scss";
 import ProductLandingSection from "../../components/ProductLandingSection/ProductLandingSection";
@@ -156,7 +155,7 @@ const Sildenafil = () => {
                   />
                 </div>
               </div>
-              {/* <Carousel
+              <Carousel
                 setSwiperInstance={setSwiperInstance}
                 items={[
                   {
@@ -200,7 +199,7 @@ const Sildenafil = () => {
                     isVerified: true,
                   },
                 ]}
-              /> */}
+              />
               <div className={styles.mobileNavigation}>
                 <Navigation
                   handleSlideNext={() => swiper?.slideNext()}

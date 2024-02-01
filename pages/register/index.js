@@ -40,12 +40,12 @@ export default function Register(props) {
       email: formData.email,
       password: formData.password,
       password_repeat: formData.password_repeat,
+      category: 1,
     };
     if (formData.password === formData.password_repeat) {
       try {
         const rese = await Axios.post(route, payload)
           .then((res) => {
-            console.log(res);
             props.isLoggedIn();
             authCtx.settingToken(res.data.data.access_token);
             router.push("/visit-form");
@@ -81,10 +81,8 @@ export default function Register(props) {
             <Col md={{ span: 7, offset: 5 }}>
               <div className={styles.callUs}>
                 <Link href="tel: 1-888-534-8977">
-                  <a>
-                    Call toll free to order:{" "}
-                    <span className={styles.blueText}>1-888-534-8977</span>
-                  </a>
+                  Call toll free to order:{" "}
+                  <span className={styles.blueText}>1-888-534-8977</span>
                 </Link>
               </div>
             </Col>
@@ -98,9 +96,7 @@ export default function Register(props) {
               <p className={styles.member}>
                 Already a member?{" "}
                 <Link href="/login">
-                  <a>
-                    <span className={styles.blueText}>Log in</span>
-                  </a>
+                  <span className={styles.blueText}>Log in</span>
                 </Link>
               </p>
             </div>

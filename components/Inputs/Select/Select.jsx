@@ -23,7 +23,7 @@ const Select = ({ name, options, items }) => {
 
   return (
     <div className={styles.container} onClick={handleContainerClick}>
-      <select {...register(name, options)}>
+      <select required {...register(name, options)}>
         {items?.map((item, i) => (
           <option key={`${item.value}-${i}`} value={item.value} disabled>
             {item.label}

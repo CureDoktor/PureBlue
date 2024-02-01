@@ -25,13 +25,11 @@ export default function OrderHeader(props) {
       <Navbar sticky="top" expand="lg" className={styles.container}>
         <Container className={styles.navbar}>
           <Link href="/">
-            <a>
-              <Image
-                src="/assets/order/WhiteLogo.png"
-                alt="Proselect logo"
-                className={styles.logo}
-              />
-            </a>
+            <Image
+              src="/assets/order/WhiteLogo.png"
+              alt="Proselect logo"
+              className={styles.logo}
+            />
           </Link>
           <div className={styles.tablet}>
             <Navbar.Toggle

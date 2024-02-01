@@ -14,7 +14,6 @@ export const Radio = ({
   const { register, watch } = useFormContext();
   const checkedValue = watch(name);
   const isChecked = parseInt(checkedValue) === value ? styles.checked : "";
-
   const variantMap = {
     default: styles.default,
     contained: styles.contained,
@@ -27,7 +26,12 @@ export const Radio = ({
       className={`${styles.container} ${variantMap[variant]} ${isChecked}`}
     >
       <div className={styles.wrapper}>
-        <input {...register(name, options)} type="radio" value={value} />
+        <input
+          required={true}
+          {...register(name, options)}
+          type="radio"
+          value={value}
+        />
         {label}
       </div>
       {endAdornment && (

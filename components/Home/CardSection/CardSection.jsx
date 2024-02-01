@@ -22,7 +22,7 @@ const CardSection = () => {
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         breakpoints={{
-          375: { slidesPerView: 1.4, spaceBetween: 5 },
+          375: { slidesPerView: 1.6, spaceBetween: 1 },
           425: { slidesPerView: 2, spaceBetween: 5 },
           500: { slidesPerView: 2, spaceBetween: 5 },
           600: { slidesPerView: 3, spaceBetween: 10 },

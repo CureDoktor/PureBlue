@@ -591,9 +591,7 @@ export default function LP1() {
               not take Sildenafil (sildenafil citrate) or Tadalafil. To ensure
               that you are healthy enough to engage in sexual activity, you
               should discuss your health with your doctor -{" "}
-              <Link href="/about">
-                <a>Learn more</a>
-              </Link>
+              <Link href="/about">Learn more</Link>
             </p>
           </Container>
         </div>

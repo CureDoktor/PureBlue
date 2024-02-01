@@ -26,13 +26,13 @@ export default function Case(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          setCaseAnswers(res.data.case_answers);
+          setCaseAnswers(res.data.data.case_answers);
         })
         .catch((error) => {
           props.handleShow(error.response.data);
         });
     } catch (err) {
-      console.log(err);
+      props.handleShow(err);
     }
   };
 

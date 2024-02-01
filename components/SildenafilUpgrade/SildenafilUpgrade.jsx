@@ -3,6 +3,7 @@ import styles from "./SildenafilUpgrade.styles.module.scss";
 import Order from "../Common/Order";
 import UpgradePkg from "../Common/UpgradePkg/UpgradePkg";
 import Details from "./Details";
+import Home  from '../Home'
 const SildenafilUpgrade = () => {
   const upgradeArray = [
     {
@@ -32,6 +33,7 @@ const SildenafilUpgrade = () => {
   ];
   return (
     <>
+    <Home></Home>
       <div className={styles.mainContainer}>
         <Order />
       </div>

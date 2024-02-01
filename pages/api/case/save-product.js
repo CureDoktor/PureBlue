@@ -2,7 +2,7 @@ import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
   Axios.post(
-    "https://staging-api.trypureblue.com/case/product",
+    process.env.NEXT_PUBLIC_API_KEY + "/case/" + req.body.caseId + "/products",
     req.body.payload,
     {
       headers: {

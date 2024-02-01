@@ -20,7 +20,6 @@ import CustomAccordion from "../../components/CustomAccordion/CustomAccordion";
 import StepsToOrder from "../../components/StepsToOrder/StepsToOrder";
 import FAQ from "../../components/FAQ/FAQ";
 import GetStartedSection from "../../components/GetStartedSection/GetStartedSection";
-import StepsSection from "../test/sections/StepsSection";
 
 const Tadalafil = () => {
   const [swiper, setSwiperInstance] = useState(null);
@@ -156,7 +155,7 @@ const Tadalafil = () => {
                   />
                 </div>
               </div>
-              {/* <Carousel
+              <Carousel
                 setSwiperInstance={setSwiperInstance}
                 items={[
                   {
@@ -200,7 +199,7 @@ const Tadalafil = () => {
                     isVerified: true,
                   },
                 ]}
-              /> */}
+              />
               <div className={styles.mobileNavigation}>
                 <Navigation
                   handleSlideNext={() => swiper?.slideNext()}
@@ -217,7 +216,6 @@ const Tadalafil = () => {
       <StepsToOrder />
       <FAQ />
       <GetStartedSection />
-      <StepsSection />
     </div>
   );
 };

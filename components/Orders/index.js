@@ -37,8 +37,7 @@ export default function Orders(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data);
-          setOrders(res.data);
+          setOrders(res.data.data);
         })
         .catch((error) => {
           props.handleShow(error.response.data);

@@ -1,0 +1,85 @@
+.mainContainer {
+  max-width: 100%;
+  margin: auto;
+  background: #f3f3f3;
+  color: black;
+  padding-top: 3rem;
+  // position: relative;
+
+  .imageContainer {
+    margin: auto;
+    cursor: pointer;
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .content {
+    max-width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .txtContainer {
+      margin: 2rem 1rem;
+    }
+
+    h1 {
+      letter-spacing: -1.4px;
+      font-size: 3rem; // Use rem for scalable font size
+      margin: 1rem 0rem;
+      text-align: center;
+    }
+
+    .inputContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 1.5rem 0rem;
+      flex-wrap: wrap; // Wrap inputs for smaller screens
+
+      input {
+        width: 80%; // Use percentage for scalable input width
+        max-width: 271px; // Set a max-width if necessary
+        height: 54px;
+        background: #ffffff;
+        border-radius: 27px;
+        border: none;
+        outline: none;
+        font-size: 1.25rem; // Use rem for scalable font size
+        color: #bbbbbb;
+        font-weight: light;
+        letter-spacing: -0.7px;
+        padding: 0rem 2rem;
+      }
+    }
+
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+      margin: 5rem 0rem;
+      width: 100%; // Full width to center button on all screen sizes
+
+      button {
+        background: black;
+        width: 80%; // Use percentage for scalable button width
+        max-width: 350px; // Set a max-width if necessary
+        color: white;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        font-weight: light;
+        padding: 10px 20px;
+        text-align: center;
+
+        img {
+          position: absolute;
+          right: 20px;
+        }
+      }
+    }
+  }
+}

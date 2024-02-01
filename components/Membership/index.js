@@ -31,7 +31,7 @@ export default function Membership(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          setUserInfo(res.data);
+          setUserInfo(res.data.data);
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -48,15 +48,15 @@ export default function Membership(props) {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           setCase({
-            status: res.data.status,
-            created_at: res.data.created_at,
+            status: res.data.data.status,
+            created_at: res.data.data.created_at,
           });
         })
         .catch((error) => {
           props.handleShow(error.response.data);
         });
     } catch (err) {
-      console.log(err);
+      props.handleShow(err);
     }
   };
 

@@ -6,6 +6,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { Check, PatchCheck, ArrowRight } from "react-bootstrap-icons";
+import Consultation from "../consultation/Consultation";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -28,7 +29,6 @@ export default function VisitForm(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res);
           setQuestions(res.data.data.questions);
         })
         .catch((error) => {
@@ -170,11 +170,9 @@ export default function VisitForm(props) {
       Object.entries(obj).map(([key, value]) => {
         if (event.target.value === key) {
           const element = document.getElementById(value[0]);
-
           element.style.display = "block";
         } else {
           const element = document.getElementById(value[0]);
-
           element.style.display = "none";
         }
       });
@@ -304,10 +302,8 @@ export default function VisitForm(props) {
             <Col md={{ span: 7, offset: 5 }}>
               <div className={styles.callUs}>
                 <Link href="tel: 1-888-534-8977">
-                  <a>
-                    Call toll free to order:{" "}
-                    <span className={styles.blueText}>1-888-534-8977</span>
-                  </a>
+                  Call toll free to order:{" "}
+                  <span className={styles.blueText}>1-888-534-8977</span>
                 </Link>
               </div>
             </Col>
@@ -323,7 +319,7 @@ export default function VisitForm(props) {
               <div className={styles.formField}>
                 {!showQuestions && (
                   <Form onSubmit={handleSubmit}>
-                    <Row className="mb-3">
+                    {/* <Row className="mb-3">
                       <Form.Group as={Col} controlId="firstName">
                         <Form.Label>
                           Patient First Name *{" "}
@@ -363,7 +359,7 @@ export default function VisitForm(props) {
                           Incorrect Last name
                         </Form.Control.Feedback>
                       </Form.Group>
-                    </Row>
+                    </Row> */}
                     <Row className="mb-3">
                       <Form.Group as={Col} controlId="dob">
                         <Form.Label>Birthday</Form.Label>
@@ -388,149 +384,9 @@ export default function VisitForm(props) {
                 )}
                 <br />
                 <br />
-                <Form onSubmit={handleQuestionsSubmit}>
-                  {showQuestions &&
-                    Object.entries(questions).map(([name, question]) => {
-                      question_i++;
-                      if (question.type === "radio") {
-                        var labela = <div>{question.label}</div>;
-                        if (question.validation != null) {
-                          if (question.validation.message != null) {
-                            var error_message = (
-                              <div>{question.validation.message}</div>
-                            );
-                          } else {
-                            error_message = "";
-                          }
-                        }
-                        var options = Object.entries(question.answers).map(
-                          ([key, value]) => {
-                            var yesNo = "";
-                            if (value === "YES" || value === "NO") {
-                              yesNo = "col-md-3";
-                            }
-                            var validations = {
-                              regex: null,
-                              required_value: null,
-                              message: null,
-                            };
-                            if (question.validation != null) {
-                              validations = question.validation;
-                            }
-
-                            return (
-                              <div key={value.label + key} className={yesNo}>
-                                <Form.Check>
-                                  <Form.Check.Input
-                                    required
-                                    type="radio"
-                                    className="btn-check"
-                                    data-regex={validations.regex}
-                                    data-required_value={
-                                      validations.required_value
-                                    }
-                                    data-error_message={validations.message}
-                                    data-showmore={JSON.stringify(
-                                      question.show_more
-                                    )}
-                                    name={name}
-                                    id={name + key}
-                                    onChange={handleQuestions}
-                                    value={key}
-                                  />
-                                  <Form.Check.Label
-                                    htmlFor={name + key}
-                                    className={
-                                      styles.buttons + " btn" + " btn-primary"
-                                    }
-                                  >
-                                    {value}
-                                  </Form.Check.Label>
-                                  <Form.Control.Feedback type="invalid">
-                                    Please choose .
-                                  </Form.Control.Feedback>
-                                </Form.Check>
-                              </div>
-                            );
-                          }
-                        );
-                        return (
-                          <div id={name} key={question.label}>
-                            {labela}
-                            <br /> <Row>{options}</Row>
-                            <div className={styles.error_message}>
-                              {error_message}
-                            </div>
-                            <br /> <br /> <br /> <br />
-                          </div>
-                        );
-                      } else if (question.type === "checkbox") {
-                        var labela = <div>{question.label}</div>;
-                        var options = Object.entries(question.answers).map(
-                          ([key, value], index) => {
-                            return (
-                              <div key={value.label + key} className="col-12">
-                                <Form.Check>
-                                  <Form.Check.Input
-                                    type="checkbox"
-                                    className="btn-check"
-                                    name={name}
-                                    id={name + index}
-                                    onChange={checkboxChange}
-                                    value={key}
-                                    checked={checkedState[index]}
-                                  />
-                                  <Form.Check.Label
-                                    htmlFor={name + index}
-                                    className={
-                                      styles.buttons + " btn" + " btn-primary"
-                                    }
-                                  >
-                                    {value}
-                                  </Form.Check.Label>
-                                </Form.Check>
-                              </div>
-                            );
-                          }
-                        );
-                        return (
-                          <div id={name} key={question.label}>
-                            {labela} <Row>{options}</Row>
-                            <br /> <br /> <br /> <br />
-                          </div>
-                        );
-                      } else if (question.type === "textarea") {
-                        var textarea = (
-                          <div>
-                            <Form.Group
-                              className="mb-3"
-                              controlId="exampleForm.ControlTextarea1"
-                            >
-                              <Form.Label>{question.label}</Form.Label>
-                              <Form.Control
-                                onChange={handleTextArea}
-                                name={name}
-                                as="textarea"
-                                rows={3}
-                              />
-                            </Form.Group>
-                          </div>
-                        );
-                        return (
-                          <div id={name} key={question.label}>
-                            <div>{textarea}</div>
-                            <br />
-                            <br />
-                          </div>
-                        );
-                      }
-                    })}
-                  {showQuestions && (
-                    <Button type="submit">Submit Questions</Button>
-                  )}
-                </Form>
               </div>
             </Col>
+            {showQuestions && <Consultation />}
           </div>
         </Container>
       </main>

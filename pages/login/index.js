@@ -58,7 +58,9 @@ export default function Login(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const route = "/api/auth/login/";
+
+    const route = "/api/auth/login";
+
     const payload = {
       email: formData.email,
       password: formData.password,
@@ -100,10 +102,8 @@ export default function Login(props) {
             <Col md={{ span: 7, offset: 5 }}>
               <div className={styles.callUs}>
                 <Link href="tel: 1-888-534-8977">
-                  <a>
-                    Call toll free to order:{" "}
-                    <span className={styles.blueText}>1-888-534-8977</span>
-                  </a>
+                  Call toll free to order:{" "}
+                  <span className={styles.blueText}>1-888-534-8977</span>
                 </Link>
               </div>
             </Col>
@@ -114,10 +114,8 @@ export default function Login(props) {
               </p>
               <br />
               <Link href="/register">
-                <a>
-                  You don't have account?
-                  <span className={styles.blueText}> Register Now</span>
-                </a>
+                You don't have account?
+                <span className={styles.blueText}> Register Now</span>
               </Link>
               <br />
               <br />

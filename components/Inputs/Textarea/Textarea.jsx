@@ -4,7 +4,7 @@ import styles from "./Textarea.styles.module.scss";
 
 const Textarea = ({ name }) => {
   const { register } = useFormContext();
-  return <textarea className={styles.textarea} {...register(name)} />;
+  return <textarea required className={styles.textarea} {...register(name)} />;
 };
 
 export default Textarea;

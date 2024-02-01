@@ -3,22 +3,20 @@ import styles from "./Carousel.styles.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import starsImage from "../../public/assets/stars.png";
-import verifiedSrc from "../../public/assets/verify (1).png";
-import { Pagination } from "swiper/modules";
+import verifiedSrc from "../../public/assets/verified.png";
 
 const Carousel = ({ items, setSwiperInstance }) => {
   return (
     <Swiper
-      pagination={{ clickable: true }}
-      modules={[Pagination]}
       className={styles.carousel}
       onSwiper={setSwiperInstance}
       loop
       slidesPerView={1}
       spaceBetween={30}
       breakpoints={{
-        1024: { slidesPerView: 2 },
-        768: { slidesPerView: 2 },
+        1024: {
+          slidesPerView: 3,
+        },
       }}
     >
       {items.map((item, i) => (
@@ -28,9 +26,11 @@ const Carousel = ({ items, setSwiperInstance }) => {
               <div className={styles.rating}>
                 <Image src={starsImage} alt="stars" layout="fill" />
               </div>
-              <p>"{item.description}"</p>
+              <h6>{item.title}</h6>
+              <p>{item.description}</p>
             </div>
             <div className={styles.footer}>
+              <p>{item.author}</p>{" "}
               {item.isVerified && (
                 <div className={styles.verified}>
                   <Image
