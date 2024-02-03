@@ -14,3 +14,9 @@ export const thirteenQuestionDropDown = [
   { name: "Australia" },
   { name: "America" },
 ];
+export const buttonNames = [
+  "Looking for help?",
+  "We have treatments!",
+  "Get your medication quick and easy",
+  "Let's get started",
+];

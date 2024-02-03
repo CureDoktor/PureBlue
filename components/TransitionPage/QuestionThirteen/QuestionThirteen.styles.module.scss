@@ -5,6 +5,10 @@
   flex-direction: column;
   margin: auto;
 
+  .ErrorMessage {
+    color: red;
+    font-size: 13px;
+  }
   button {
     width: 100%;
     background-color: #0077f0;

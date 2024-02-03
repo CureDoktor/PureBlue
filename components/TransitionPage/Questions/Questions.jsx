@@ -9,7 +9,6 @@ import QuestionThirteen from "../QuestionThirteen/QuestionThirteen";
 import QuestionFourteen from "../QuestionFourteen/QuestionFourteen";
 import QuestionFifteen from "../QuestionFifteen";
 import QuestionSixteen from "../QuestionSixteen";
-import StepSeventeen from "../../Sildenafil-order-flow/StepSeventeen";
 
 const Questions = () => {
   const [currentStep, setCurrentStep] = useState(() => {
@@ -72,20 +71,7 @@ const Questions = () => {
   if (!hasMounted) {
     return null;
   }
-  return (
-    <div className={styles.mainContainer}>
-      {renderStep()}
-      {/* <QuestionEight /> */}
-      {/* <QuestionNine /> */}
-      {/* <QuestionTen /> */}
-      {/* <QuestionEleven /> */}
-      {/* <QuestionTwelve /> */}
-      {/* <QuestionThirteen /> */}
-      {/* <QuestionFourteen /> */}
-      {/* <QuestionFifteen /> */}
-      {/* <QuestionSixteen /> */}
-    </div>
-  );
+  return <div className={styles.mainContainer}>{renderStep()}</div>;
 };
 
 export default Questions;

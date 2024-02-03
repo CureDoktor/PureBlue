@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./QuestionFifteen.styles.module.scss";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 const QuestionFifteen = ({ onNext }) => {
+  const validationSchema = Yup.object({
+    email: Yup.string().email("Invalid email address").required("Required"),
+  });
+
   return (
     <div className={styles.container}>
       <h6>Time to celebrate!</h6>
@@ -13,14 +19,28 @@ const QuestionFifteen = ({ onNext }) => {
       <p className={styles.promise}>
         (We promise - It’s seriously only 3 minutes)
       </p>
-      <input
-        type="email"
-        className={styles.email}
-        placeholder="Email Address"
-      />
-      <button className={styles.continue} onClick={onNext}>
-        Continue
-      </button>
+      <Formik
+        initialValues={{ email: "" }}
+        validationSchema={validationSchema}
+        onSubmit={onNext}
+      >
+        {({ isSubmitting }) => (
+          <Form style={{ width: "100%" }}>
+            <Field
+              type="email"
+              name="email"
+              className={styles.email}
+              placeholder="Email Address"
+            />
+            <span name="email" className={styles.ErrorMessage}>
+              <ErrorMessage name="email" />
+            </span>
+            <button className={styles.continue} type="submit">
+              Continue
+            </button>
+          </Form>
+        )}
+      </Formik>
       <p className={styles.signIn}>
         Already have an account? <span>Sign In</span>
       </p>

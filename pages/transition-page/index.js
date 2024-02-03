@@ -2,15 +2,9 @@ import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import Button from "../../components/TransitionPage/Button";
 import Questions from "../../components/TransitionPage/Questions/Questions";
+import { buttonNames } from "../../components/TransitionPage/data";
 
 const Index = () => {
-  const buttonNames = [
-    "Looking for help?",
-    "We have treatments!",
-    "Get your medication quick and easy",
-    "Let's get started",
-  ];
-
   const [buttons, setButtons] = useState([buttonNames[0]]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isButtonClicked, setIsButtonClicked] = useState(true);
