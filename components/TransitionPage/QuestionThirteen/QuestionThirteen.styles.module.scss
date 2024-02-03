@@ -39,16 +39,19 @@
   }
 
   .checkBox {
-    margin-top: 0.7rem;
     margin-right: auto;
     display: flex;
+    justify-content: start;
+    align-items: center;
     p {
-      font-size: 9px;
+      font-size: 13px;
       padding-left: 10px;
+      padding-top: 15px;
     }
   }
   .continue {
     background-color: black;
+    margin-top: 1rem;
     border-radius: 21px;
     padding: 9px 0rem;
     font-size: 16px;
@@ -58,6 +61,7 @@
     font-size: 13px;
     margin: auto;
     margin-top: 1rem;
+    text-align: center;
 
     span {
       font-weight: 900;
