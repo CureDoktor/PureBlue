@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+
+  button {
+    width: 100%;
+    background-color: #0077f0;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 15px;
+  }
+
+  h6 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: auto;
+    margin-top: 2rem;
+  }
+
+  p {
+    font-size: 35px;
+    font-weight: 600;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+
+  select {
+    border: 1px solid #c8c8c8;
+    border-radius: 21px;
+    color: black;
+  }
+
+  .checkBox {
+    margin-top: 0.7rem;
+    margin-right: auto;
+    display: flex;
+    p {
+      font-size: 9px;
+      padding-left: 10px;
+    }
+  }
+  .continue {
+    background-color: black;
+    border-radius: 21px;
+    padding: 9px 0rem;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .signIn {
+    font-size: 13px;
+    margin: auto;
+    margin-top: 1rem;
+
+    span {
+      font-weight: 900;
+      cursor: pointer;
+    }
+  }
+}

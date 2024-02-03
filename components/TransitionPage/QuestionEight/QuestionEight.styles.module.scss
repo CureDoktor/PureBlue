@@ -1,0 +1,19 @@
+.mainContainer {
+  p {
+    font-size: 31px;
+    font-weight: 600;
+  }
+  .list {
+    margin-top: 2rem;
+  }
+  .signIn {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 2rem;
+
+    span {
+      font-weight: 900;
+      cursor: pointer;
+    }
+  }
+}
