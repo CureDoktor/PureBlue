@@ -15,6 +15,7 @@ export const thirteenQuestionDropDown = [
   { name: "America" },
 ];
 export const buttonNames = [
+  "Hey guys",
   "Looking for help?",
   "We have treatments!",
   "Get your medication quick and easy",

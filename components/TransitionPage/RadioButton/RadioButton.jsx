@@ -12,7 +12,7 @@ const RadioButton = ({ label, onNext }) => {
           value="huey"
           onClick={onNext}
         />
-        {label}
+        <span>{label}</span>
       </label>
     </div>
   );

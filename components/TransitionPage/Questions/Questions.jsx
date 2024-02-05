@@ -39,9 +39,6 @@ const Questions = () => {
   const goToNextStep = () => {
     setCurrentStep((prevStep) => prevStep + 1);
   };
-  const goToPreviousStep = () => {
-    setCurrentStep((prevStep) => prevStep - 1);
-  };
 
   const renderStep = () => {
     switch (currentStep) {
@@ -68,9 +65,9 @@ const Questions = () => {
     }
   };
 
-  if (!hasMounted) {
-    return null;
-  }
+  // if (!hasMounted) {
+  //   return null;
+  // }
   return <div className={styles.mainContainer}>{renderStep()}</div>;
 };
 

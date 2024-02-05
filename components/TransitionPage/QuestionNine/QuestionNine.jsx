@@ -5,7 +5,9 @@ const QuestionNine = ({ onNext }) => {
   return (
     <div className={styles.container}>
       <p>You're not alone</p>
-      <h4>40% of men experience Symptoms like this by age 40</h4>
+      <p className={styles.heading}>
+        40% of men experience <br /> Symptoms like this by age 40
+      </p>
       <img
         src="/assets/transitionPage/tablet.svg"
         className={styles.image}

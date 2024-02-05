@@ -7,6 +7,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 const QuestionThirteen = ({ onNext }) => {
   const validationSchema = Yup.object().shape({
     state: Yup.string().required("Please select a state"),
+    checkbox: Yup.bool().oneOf([true], "Please select a check box"),
   });
 
   const Continue = (values) => {
@@ -17,16 +18,18 @@ const QuestionThirteen = ({ onNext }) => {
   return (
     <div className={styles.container}>
       <button>Your $30 off promo code has been applied!</button>
-      <h6>Let’s make sure telehealth treatments are allowed in your state</h6>
-      <p>Select your state</p>
+      <p className={styles.heading}>
+        Let’s make sure telehealth treatments are <br /> allowed in your state
+      </p>
+      <p className={styles.subHeading}>Select your state</p>
       <Formik
-        initialValues={{ state: "" }}
+        initialValues={{ state: "", checkbox: false }}
         validationSchema={validationSchema}
         onSubmit={Continue}
       >
         {({ errors, touched }) => (
-          <Form style={{ width: "100%" }}>
-            <Field as="select" name="state">
+          <Form>
+            <Field as="select" name="state" className={styles.select}>
               {thirteenQuestionDropDown.map((items) => {
                 const { name } = items;
                 return <option key={name}>{name}</option>;
@@ -36,17 +39,17 @@ const QuestionThirteen = ({ onNext }) => {
               <ErrorMessage name="state" />
             </span>
             <div className={styles.checkBox}>
-              <input
-                type="checkbox"
-                id="vehicle1"
-                name="vehicle1"
-                value="Bike"
-              />
-              <p htmlFor="vehicle1">
-                I acknowledge the Terms and Conditions, Privacy Policy, and
-                Telehealth Consent.
-              </p>
+              <label>
+                <Field type="checkbox" name="checkbox" />
+                <span>
+                  I acknowledge the Terms and Conditions, Privacy Policy, and
+                  Telehealth Consent.
+                </span>
+              </label>
             </div>
+            <span name="checkbox" className={styles.ErrorMessage}>
+              <ErrorMessage name="checkbox" />
+            </span>
             <button className={styles.continue} type="submit">
               Continue
             </button>

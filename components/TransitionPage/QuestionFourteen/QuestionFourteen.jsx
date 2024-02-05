@@ -10,8 +10,13 @@ const QuestionFourteen = ({ onNext }) => {
 
   return (
     <div className={styles.container}>
-      <h6>Great news! Telehealth treatment is available in (your state)!</h6>
-      <p>Let’s confirm your date of birth</p>
+      <h6>
+        Great news! Telehealth treatment is available <br />
+        in (your state)!
+      </h6>
+      <p>
+        Let’s confirm your <br /> date of birth
+      </p>
       <Formik
         initialValues={{ dob: "" }}
         validationSchema={validationSchema}

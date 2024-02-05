@@ -5,7 +5,7 @@ import * as Yup from "yup";
 const PasswordSchema = Yup.object().shape({
   password: Yup.string()
     .min(8, "Password must be at least 8 characters")
-    .required("Required"),
+    .required("Password is Required"),
 });
 
 const QuestionSixteen = ({ onNext }) => {
@@ -29,15 +29,16 @@ const QuestionSixteen = ({ onNext }) => {
             <ErrorMessage name="password" />
           </span>
           <p className={styles.account}>
-            Creating an account allows you to keep track of your orders, payment
-            information, and medical profile (or if you need to make changes in
-            the future).
+            Creating an account allows you to keep track of your orders, <br />
+            payment information, and medical profile (or if you need to make{" "}
+            <br />
+            changes in the future).
           </p>
           <button type="submit" className={styles.continue}>
             Continue
           </button>
           <p className={styles.signIn}>
-            Already have an account? <span>Sign In</span>
+            Already have an account? <span>Log In</span>
           </p>
         </Form>
       )}

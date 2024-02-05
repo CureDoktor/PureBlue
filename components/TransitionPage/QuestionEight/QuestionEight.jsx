@@ -7,7 +7,8 @@ const QuestionEight = ({ onNext }) => {
   return (
     <div className={styles.mainContainer}>
       <p>
-        How often do you have trouble getting or keeping an erection during sex?
+        How often do you <br /> have trouble getting <br />
+        or keeping an <br /> erection during sex?
       </p>
       <div className={styles.list}>
         {eightQuestionLabels.map((items) => {

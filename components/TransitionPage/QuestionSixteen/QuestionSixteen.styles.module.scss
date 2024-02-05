@@ -5,6 +5,11 @@
   flex-direction: column;
   margin: auto;
 
+  @media (max-width: "400px") {
+    width: 90%;
+    margin: auto;
+  }
+
   button {
     width: 100%;
     background-color: #0077f0;
@@ -23,7 +28,7 @@
     font-size: 14px;
   }
   h6 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     margin-right: auto;
     margin-top: 1rem;
@@ -33,6 +38,8 @@
     color: red;
     font-size: 13px;
     margin-right: auto;
+    margin-left: 15px;
+    margin-top: 5px;
   }
 
   p {
@@ -58,7 +65,7 @@
     padding: 9px 0rem;
     font-size: 16px;
     font-weight: 600;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .account {
     font-size: 12px;
@@ -92,12 +99,15 @@
     margin-top: 1rem;
   }
   .signIn {
-    font-size: 13px;
+    font-size: 12px;
     margin: auto;
-    margin-top: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 500;
 
     span {
-      font-weight: 900;
+      font-size: 12px;
+      font-weight: 600;
       cursor: pointer;
     }
   }

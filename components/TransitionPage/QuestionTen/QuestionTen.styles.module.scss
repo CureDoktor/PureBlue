@@ -6,6 +6,10 @@
   margin-top: 3rem;
   gap: 10px;
   flex-wrap: wrap;
+  @media (max-width: "400px") {
+    width: 90%;
+    margin: auto;
+  }
 
   p {
     font-size: 22px;
