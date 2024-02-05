@@ -65,9 +65,9 @@ const Questions = () => {
     }
   };
 
-  // if (!hasMounted) {
-  //   return null;
-  // }
+  if (!hasMounted) {
+    return null;
+  }
   return <div className={styles.mainContainer}>{renderStep()}</div>;
 };
 
