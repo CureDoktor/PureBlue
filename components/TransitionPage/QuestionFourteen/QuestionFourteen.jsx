@@ -25,9 +25,9 @@ const QuestionFourteen = ({ onNext }) => {
         {({ errors, touched }) => (
           <Form style={{ width: "100%" }}>
             <Field type="date" name="dob" className={styles.date} />
-            <span name="dob" className={styles.ErrorMessage}>
+            <div name="dob" className={styles.ErrorMessage}>
               <ErrorMessage name="dob" />
-            </span>
+            </div>
             <button className={styles.continue} type="submit">
               Continue
             </button>

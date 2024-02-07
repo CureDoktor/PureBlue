@@ -36,9 +36,9 @@ const QuestionFifteen = ({ onNext }) => {
               className={styles.email}
               placeholder="Email Address"
             />
-            <span name="email" className={styles.ErrorMessage}>
+            <div name="email" className={styles.ErrorMessage}>
               <ErrorMessage name="email" />
-            </span>
+            </div>
             <button className={styles.continue} type="submit">
               Continue
             </button>

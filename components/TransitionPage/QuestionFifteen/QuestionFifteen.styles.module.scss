@@ -9,7 +9,13 @@
     width: 90%;
     margin: auto;
   }
-
+  .ErrorMessage {
+    color: red;
+    font-size: 13px;
+    margin-right: auto;
+    margin-left: 15px;
+    margin-top: 5px;
+  }
   button {
     width: 100%;
     background-color: #0077f0;
@@ -50,14 +56,6 @@
     font-size: 14px;
     font-weight: 500;
     margin-right: auto;
-  }
-
-  .ErrorMessage {
-    color: red;
-    font-size: 13px;
-    margin-right: auto;
-    margin-left: 15px;
-    margin-top: 5px;
   }
 
   .continue {

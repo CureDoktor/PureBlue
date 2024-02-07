@@ -10,7 +10,7 @@ export const elevenQuestionLabels = [
   { label: "All of the above" },
 ];
 export const thirteenQuestionDropDown = [
-  { name: "Select State" },
+  { name: "Germany" },
   { name: "Australia" },
   { name: "America" },
 ];

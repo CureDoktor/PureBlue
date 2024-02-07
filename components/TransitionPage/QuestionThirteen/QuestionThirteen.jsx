@@ -7,7 +7,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 const QuestionThirteen = ({ onNext }) => {
   const validationSchema = Yup.object().shape({
     state: Yup.string().required("Please select a state"),
-    checkbox: Yup.bool().oneOf([true], "Please select a check box"),
+    checkbox: Yup.bool().oneOf(
+      [true],
+      "You must acknowledge the Terms and Conditions"
+    ),
   });
 
   const Continue = (values) => {
@@ -29,15 +32,21 @@ const QuestionThirteen = ({ onNext }) => {
       >
         {({ errors, touched }) => (
           <Form>
-            <Field as="select" name="state" className={styles.select}>
-              {thirteenQuestionDropDown.map((items) => {
-                const { name } = items;
-                return <option key={name}>{name}</option>;
-              })}
-            </Field>
-            <span name="state" className={styles.ErrorMessage}>
-              <ErrorMessage name="state" />
-            </span>
+            <div className={styles.selectContainer}>
+              <Field as="select" name="state" className={styles.select}>
+                <option value="" disabled selected>
+                  Select a state
+                </option>
+                {thirteenQuestionDropDown.map((items) => {
+                  const { name } = items;
+                  return <option key={name}>{name}</option>;
+                })}
+              </Field>
+
+              <span name="state" className={styles.ErrorMessage}>
+                <ErrorMessage name="state" />
+              </span>
+            </div>
             <div className={styles.checkBox}>
               <label>
                 <Field type="checkbox" name="checkbox" />
@@ -46,10 +55,10 @@ const QuestionThirteen = ({ onNext }) => {
                   Telehealth Consent.
                 </span>
               </label>
+              <span name="checkbox" className={styles.ErrorMessage}>
+                <ErrorMessage name="checkbox" />
+              </span>
             </div>
-            <span name="checkbox" className={styles.ErrorMessage}>
-              <ErrorMessage name="checkbox" />
-            </span>
             <button className={styles.continue} type="submit">
               Continue
             </button>
