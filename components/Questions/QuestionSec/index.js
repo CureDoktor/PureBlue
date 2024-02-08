@@ -54,6 +54,7 @@ const QuestionSec = ({
         return (
           <Questions
             question={currentQuestion.question.question}
+            questionId={currentQuestion.id}
             options={currentQuestion.question.options}
             handleNext={handleNext}
             type={currentQuestion.question.type}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.scss";
 import InputMask from "react-input-mask";
 const Questions = ({
+  questionId,
   question,
   options,
   handleNext,
@@ -14,37 +15,37 @@ const Questions = ({
   alert,
   label,
 }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  let obj = {};
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
-  const handleButtonClick = (index) => {
-    if (index === selectedOption) {
-      setSelectedOption(null);
-    } else {
-      setSelectedOption(index);
+
+  if (options) {
+    for (const i of options) {
+      obj = { ...obj, [i]: "" };
     }
+  }
+  const [formData, setFormData] = useState(obj);
+
+  const handleBtn = (key, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
   };
 
   const handleButtonClick2 = (index) => {
     if (type === "textAreaTwo") {
-      // Toggle the selected options for textAreaTwo section
       const updatedOptions = [...selectedOptions];
-
       if (updatedOptions.includes(index)) {
-        // If the option is already selected, deselect it
         updatedOptions.splice(updatedOptions.indexOf(index), 1);
       } else {
-        // If the option is not selected, select it
         updatedOptions.push(index);
       }
 
       setSelectedOptions(updatedOptions);
     } else {
-      // Toggle the selected option for other sections
-      const updatedOptions = selectedOptions.includes(index)
-        ? [] // Deselect if already selected
-        : [index]; // Select if not selected
-
+      const updatedOptions = selectedOptions.includes(index) ? [] : [index];
       setSelectedOptions(updatedOptions);
     }
   };
@@ -68,26 +69,25 @@ const Questions = ({
     setIsFocus(true);
   };
 
-  const RadioButton = ({
-    selected,
-    handleButtonClick,
-    handleNext,
-    option,
-    index,
-  }) => (
-    <div
-      className={`${styles.customRadioButton} ${
-        selected === index && styles.checked
-      }`}
-      onClick={() => {
-        handleButtonClick(index);
-        handleNext();
-      }}
-    >
-      <span className={styles.radioButton}></span>
-      <span className={styles.buttonLabel}>{option}</span>
-    </div>
-  );
+  // selected,
+  // handleButtonClick,
+  const RadioButton = ({ handleNext, option: o, index }) => {
+    return (
+      <div
+        className={`${styles.customRadioButton} ${
+          formData[o] && styles.checked
+        }`}
+        onClick={() => {
+          handleBtn(o, index);
+          handleNext();
+        }}
+      >
+        <span className={styles.radioButton}></span>
+        <span className={styles.buttonLabel}>{o}</span>
+      </div>
+    );
+  };
+
   return (
     <>
       <div className={styles.mainContainer}>
@@ -99,7 +99,7 @@ const Questions = ({
                 <RadioButton
                   key={index}
                   selected={selectedOption}
-                  handleButtonClick={handleButtonClick}
+                  handleButtonClick={handleBtn}
                   handleNext={handleNext}
                   option={option.option}
                   index={index}
@@ -116,7 +116,7 @@ const Questions = ({
                 <RadioButton
                   key={index}
                   selected={selectedOption}
-                  handleButtonClick={handleButtonClick}
+                  handleButtonClick={handleBtn}
                   handleNext={handleNext}
                   option={option.option}
                   index={index}
@@ -147,12 +147,16 @@ const Questions = ({
         {type === "textAreaTwo" && (
           <div className={styles.questionSix}>
             <p>{question}</p>
+
             <div className={styles.textArea}>
               <div
                 className={`${styles.questionSec} ${
                   selectedOptions.includes(0) && styles.checked
                 }`}
-                onClick={() => handleNext()}
+                onClick={() => {
+                  handleNext();
+                  handleButtonClick2();
+                }}
               >
                 <span className={styles.radio}></span>
                 <span className={styles.option}>If none, click here</span>
@@ -184,10 +188,11 @@ const Questions = ({
                 <div
                   key={id}
                   className={`${styles.customRadioButton} ${
-                    selectedOptions.includes(index) && styles.checked
+                    formData[option] && styles.checked
                   }`}
                   onClick={() => {
-                    handleButtonClick2(index);
+                    // handleButtonClick2(index);
+                    handleBtn(option, id);
                     handleNext();
                   }}
                 >
