@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import Questions from "./Questions";
 import { questions } from "./mockdata/questionsArray";
+import { useRouter } from "next/navigation";
 const QuestionSec = ({
   totalSteps,
   setProgress,
   currentStep,
   setCurrentStep,
 }) => {
+  const router = useRouter();
   const [value, setValue] = useState(() => {
     if (typeof window !== "undefined") {
       const savedValue = localStorage.getItem("value");
@@ -45,6 +47,14 @@ const QuestionSec = ({
   };
   const handleBack = () => {
     setCurrentStep((prevStep) => prevStep - 1);
+  };
+  const handleClose = () => {
+    router.push("/");
+    setCurrentStep(0);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("currentStep", 0);
+      localStorage.setItem("value", "");
+    }
   };
 
   const renderQuestion = () => {
@@ -87,7 +97,7 @@ const QuestionSec = ({
             <span>Back</span>
           </button>
         )}
-        {(currentStep == 0 || currentStep == 14 || currentStep == 15) && (
+        {currentStep < totalSteps - 1 && (
           <button className={styles.nextBtn} onClick={handleNext}>
             <span>Next</span>
             <img src="/assets/questions/forwardArrow.png" alt="next" />
@@ -95,7 +105,7 @@ const QuestionSec = ({
         )}
         <div style={{ margin: "auto" }}>
           {currentStep === totalSteps - 1 && (
-            <button className={styles.submitBtn} onClick={handleNext}>
+            <button className={styles.submitBtn} onClick={handleClose}>
               <span>Submit</span>
             </button>
           )}

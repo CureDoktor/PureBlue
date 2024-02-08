@@ -45,9 +45,9 @@ const Questions = ({
 
       setSelectedOptions(updatedOptions);
     } else {
-      const updatedOptions = selectedOptions.includes(index) ? [] : [index];
-      setSelectedOptions(updatedOptions);
     }
+    const updatedOptions = selectedOptions.includes(index) ? [] : [index];
+    setSelectedOptions(updatedOptions);
   };
 
   const handleInput = (event) => {
@@ -69,17 +69,26 @@ const Questions = ({
     setIsFocus(true);
   };
 
-  // selected,
-  // handleButtonClick,
-  const RadioButton = ({ handleNext, option: o, index }) => {
+  const RadioButton = ({ option: o, index }) => {
     return (
       <div
         className={`${styles.customRadioButton} ${
-          formData[o] && styles.checked
+          (selectedOption === index ||
+            (selectedOption === null && formData[o] === 1)) &&
+          styles.checked
         }`}
         onClick={() => {
-          handleBtn(o, index);
-          handleNext();
+          if (
+            selectedOption === index ||
+            (selectedOption === null && formData[o] === 1)
+          ) {
+            handleBtn(o, null);
+            setSelectedOption(null);
+          } else {
+            const newValue = formData[o] === 1 ? 0 : 1;
+            handleBtn(o, newValue);
+            setSelectedOption(index);
+          }
         }}
       >
         <span className={styles.radioButton}></span>
@@ -87,7 +96,6 @@ const Questions = ({
       </div>
     );
   };
-
   return (
     <>
       <div className={styles.mainContainer}>
@@ -132,9 +140,11 @@ const Questions = ({
             <div className={styles.textArea}>
               <div
                 className={`${styles.questionSec} ${
-                  selectedOptions.includes(0) && styles.checked
+                  selectedOptions.includes(1) && styles.checked
                 }`}
-                onClick={() => handleNext()}
+                onClick={() => {
+                  handleButtonClick2(1);
+                }}
               >
                 <span className={styles.radioButton}></span>
                 <span className={styles.option}>If none, click here</span>
@@ -154,8 +164,7 @@ const Questions = ({
                   selectedOptions.includes(0) && styles.checked
                 }`}
                 onClick={() => {
-                  handleNext();
-                  handleButtonClick2();
+                  handleButtonClick2(0);
                 }}
               >
                 <span className={styles.radio}></span>
@@ -168,7 +177,9 @@ const Questions = ({
                 className={`${styles.questionSec} ${
                   selectedOptions.includes(1) && styles.checked
                 }`}
-                onClick={() => handleNext()}
+                onClick={() => {
+                  handleButtonClick2(1);
+                }}
               >
                 <span className={styles.radio}></span>
                 <span className={styles.option}>
@@ -191,9 +202,7 @@ const Questions = ({
                     formData[option] && styles.checked
                   }`}
                   onClick={() => {
-                    // handleButtonClick2(index);
                     handleBtn(option, id);
-                    handleNext();
                   }}
                 >
                   <span className={styles.radioButton}></span>
