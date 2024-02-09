@@ -18,6 +18,9 @@ const QuestionSec = ({
     return "";
   });
   const [isEmpty, setIsEmpty] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+  const [isNextDisabled, setIsNextDisabled] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("currentStep", currentStep);
@@ -29,22 +32,99 @@ const QuestionSec = ({
     const calculatedProgress = (currentStep / totalSteps) * 100;
     setProgress(calculatedProgress);
   }, [currentStep, totalSteps]);
+  const [formData, setFormData] = useState(() => {
+    const obj = {};
+    for (let i = 0; i < questions.length; i++) {
+      const key = `q${i + 1}`;
+      if (questions[i].question.type === "multiple") {
+        obj[key] = [];
+      } else {
+        obj[key] = "";
+      }
+    }
+    return obj;
+  });
+
+  const handleFormData = (key, value) => {
+    setFormData((prev) => {
+      if (Array.isArray(prev[key])) {
+        const updatedValue = Array.isArray(value)
+          ? value.filter((item) => Object.keys(item).length > 0)
+          : value;
+        const newFormData = { ...prev, [key]: updatedValue };
+
+        const isDisabled =
+          newFormData[key] === "" ||
+          (Array.isArray(newFormData[key]) && newFormData[key].length === 0);
+
+        setIsNextDisabled(isDisabled);
+
+        return newFormData;
+      } else {
+        const newFormData = { ...prev, [key]: [value] };
+
+        const isDisabled = newFormData[key] === "";
+
+        setIsNextDisabled(isDisabled);
+
+        return newFormData;
+      }
+    });
+  };
 
   const handleNext = () => {
-    if (value.length == "") {
+    const currentDate = new Date();
+    const inputDate = new Date(value);
+
+    if (value.length === "") {
       setIsEmpty(true);
+      return;
+    } else if (
+      inputDate.toString() === "Invalid Date" ||
+      inputDate > currentDate
+    ) {
+      setIsValid(true);
+      return;
+    }
+    setIsValid(false);
+
+    const formDataForCurrentQuestion = formData[`q${currentStep + 1}`];
+    if (
+      formDataForCurrentQuestion === "" ||
+      (Array.isArray(formDataForCurrentQuestion) &&
+        formDataForCurrentQuestion.length === 0)
+    ) {
+      setIsNextDisabled(true);
       return;
     }
 
-    if (currentStep === totalSteps - 1) {
-      setCurrentStep(0);
-      if (typeof window !== "undefined") {
-        localStorage.setItem("currentStep", 0);
+    if (!isNextDisabled) {
+      if (currentStep === totalSteps - 1) {
+        setCurrentStep(0);
+        if (typeof window !== "undefined") {
+          localStorage.setItem("currentStep", 0);
+        }
+      } else {
+        const currentQuestion = questions.find((q) => q.id === currentStep);
+        if (currentQuestion && currentQuestion.question) {
+          const { type } = currentQuestion.question;
+          if (type !== "multiple" && type !== "input") {
+            setCurrentStep((prevStep) => prevStep + 1);
+            return;
+          }
+        }
+
+        setCurrentStep((prevStep) => prevStep + 1);
       }
-    } else {
-      setCurrentStep((prevStep) => prevStep + 1);
     }
   };
+
+  useEffect(() => {
+    if (!isNextDisabled) {
+      handleNext();
+    }
+  }, [isNextDisabled]);
+
   const handleBack = () => {
     setCurrentStep((prevStep) => prevStep - 1);
   };
@@ -56,6 +136,25 @@ const QuestionSec = ({
       localStorage.setItem("value", "");
     }
   };
+  const renderNextButton = () => {
+    const currentQuestion = questions.find((q) => q.id === currentStep);
+    if (currentQuestion && currentQuestion.question) {
+      const { type } = currentQuestion.question;
+      if (type == "multiple" || type === "input") {
+        return (
+          <button
+            className={styles.nextBtn}
+            onClick={handleNext}
+            disabled={isNextDisabled}
+          >
+            <span>Next</span>
+            <img src="/assets/questions/forwardArrow.png" alt="next" />
+          </button>
+        );
+      }
+    }
+    return null;
+  };
 
   const renderQuestion = () => {
     const currentQuestion = questions.find((q) => q.id === currentStep);
@@ -63,18 +162,18 @@ const QuestionSec = ({
       if (currentQuestion.question) {
         return (
           <Questions
-            question={currentQuestion.question.question}
+            currentQuestion={currentQuestion.question}
             questionId={currentQuestion.id}
-            options={currentQuestion.question.options}
             handleNext={handleNext}
-            type={currentQuestion.question.type}
-            title={currentQuestion.question.title}
-            alert={currentQuestion.question.alert}
-            label={currentQuestion.question.label}
             value={value}
             setValue={setValue}
             setIsEmpty={setIsEmpty}
+            handleFormData={handleFormData}
+            formData={formData}
             isEmpty={isEmpty}
+            setIsValid={setIsValid}
+            isValid={isValid}
+            setIsNextDisabled={setIsNextDisabled}
           />
         );
       }
@@ -97,12 +196,7 @@ const QuestionSec = ({
             <span>Back</span>
           </button>
         )}
-        {currentStep < totalSteps - 1 && (
-          <button className={styles.nextBtn} onClick={handleNext}>
-            <span>Next</span>
-            <img src="/assets/questions/forwardArrow.png" alt="next" />
-          </button>
-        )}
+        {renderNextButton()}
         <div style={{ margin: "auto" }}>
           {currentStep === totalSteps - 1 && (
             <button className={styles.submitBtn} onClick={handleClose}>
@@ -111,6 +205,11 @@ const QuestionSec = ({
           )}
         </div>
       </div>
+      {currentStep < totalSteps - 1 && isNextDisabled && (
+        <p style={{ color: "red" }} className="my-5">
+          Please make a selection before proceeding
+        </p>
+      )}
     </div>
   );
 };

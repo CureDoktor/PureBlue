@@ -28,7 +28,6 @@ const Question = () => {
   if (!hasMounted) {
     return null;
   }
-  console.log(currentStep);
 
   return (
     <div className={styles.container}>

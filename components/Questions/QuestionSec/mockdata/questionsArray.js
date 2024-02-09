@@ -139,6 +139,7 @@ export const questions = [
     question: {
       question:
         "Please list ALL prescription medications you are taking or are currently prescribed. Include all over the counter medications, vitamins, minerals, or supplements:",
+      options: [{ id: 1, option: "If none, click here" }],
       type: "textArea",
     },
   },
@@ -147,6 +148,7 @@ export const questions = [
     question: {
       question:
         "Please list all allergies to medications, dyes, or anything else. If none, write “NONE”",
+      options: [{ id: 1, option: "If none, click here" }],
       type: "textArea",
     },
   },
@@ -156,7 +158,6 @@ export const questions = [
       question:
         "Are you seeking treatment to help obtain or maintain an erection?",
       options: optionsArr3,
-
       type: "row",
     },
   },
@@ -165,6 +166,7 @@ export const questions = [
     question: {
       question:
         "Is there anything else you would like us to know? Please include any questions, comments, or concerns.",
+      options: [{ id: 1, option: "If none, click here" }],
       type: "textAreaTwo",
     },
   },
