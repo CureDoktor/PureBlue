@@ -45,8 +45,15 @@ const Questions = ({
 
     handleFormData(`q${questionId + 1}`, val);
   };
+
   const handleBlur = () => setIsFocus(false);
   const handleFocus = () => setIsFocus(true);
+
+  useEffect(() => {
+    if (!value) {
+      setIsValid(false);
+    }
+  }, [isValid]);
 
   const RadioButton = ({ option: o }) => {
     return (

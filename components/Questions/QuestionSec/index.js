@@ -88,14 +88,19 @@ const QuestionSec = ({
     }
     setIsValid(false);
 
-    const formDataForCurrentQuestion = formData[`q${currentStep + 1}`];
-    if (
-      formDataForCurrentQuestion === "" ||
-      (Array.isArray(formDataForCurrentQuestion) &&
-        formDataForCurrentQuestion.length === 0)
-    ) {
-      setIsNextDisabled(true);
-      return;
+    const currentQuestion = questions.find((q) => q.id === currentStep);
+    const { type } = currentQuestion.question;
+
+    if (type === "multiple" || type === "input") {
+      const formDataForCurrentQuestion = formData[`q${currentStep + 1}`];
+      if (
+        formDataForCurrentQuestion === "" ||
+        (Array.isArray(formDataForCurrentQuestion) &&
+          formDataForCurrentQuestion.length === 0)
+      ) {
+        setIsNextDisabled(true);
+        return;
+      }
     }
 
     if (!isNextDisabled) {
@@ -105,15 +110,6 @@ const QuestionSec = ({
           localStorage.setItem("currentStep", 0);
         }
       } else {
-        const currentQuestion = questions.find((q) => q.id === currentStep);
-        if (currentQuestion && currentQuestion.question) {
-          const { type } = currentQuestion.question;
-          if (type !== "multiple" && type !== "input") {
-            setCurrentStep((prevStep) => prevStep + 1);
-            return;
-          }
-        }
-
         setCurrentStep((prevStep) => prevStep + 1);
       }
     }
