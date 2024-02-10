@@ -13,7 +13,6 @@ const Questions = ({
   formData,
   currentQuestion,
   handleNext,
-  setIsNextDisabled,
 }) => {
   const { question, options, type, title, alert, label } = currentQuestion;
 
@@ -26,23 +25,23 @@ const Questions = ({
         : [...prevOptions, index]
     );
   };
+
   const handleInput = (event) => {
     let val = event.target.value;
-    if (val.length === 2 || val.length === 5) {
-      val += "-";
-    }
+    if (/^\d{2}-\d{2}-\d{4}$/.test(val)) {
+      const currentDate = new Date();
+      const inputDate = new Date(val);
 
-    const currentDate = new Date();
-    const inputDate = new Date(val);
-
-    if (inputDate.toString() === "Invalid Date" || inputDate > currentDate) {
-      setIsValid(true);
+      if (inputDate.toString() === "Invalid Date" || inputDate > currentDate) {
+        setIsValid(true);
+      } else {
+        setIsValid(false);
+      }
     } else {
       setIsValid(false);
     }
     setValue(val);
     setIsEmpty(!val);
-
     handleFormData(`q${questionId + 1}`, val);
   };
 
@@ -56,16 +55,20 @@ const Questions = ({
   }, [isValid]);
 
   const RadioButton = ({ option: o }) => {
+    const isSelected =
+      formData[`q${questionId + 1}`] &&
+      formData[`q${questionId + 1}`].id === o.id;
+
     return (
       <div
         className={`${styles.customRadioButton} ${
-          Array.isArray(formData[`q${questionId + 1}`]) &&
-          formData[`q${questionId + 1}`].some((opt) => opt.id === o.id) &&
-          styles.checked
+          isSelected && styles.checked
         }`}
         onClick={() => {
-          handleFormData(`q${questionId + 1}`, o);
-          handleNext();
+          handleFormData(`q${questionId + 1}`, isSelected ? {} : o);
+          if (!isSelected) {
+            handleNext();
+          }
         }}
       >
         <span className={styles.radioButton}></span>
@@ -73,6 +76,7 @@ const Questions = ({
       </div>
     );
   };
+
   return (
     <>
       <div className={styles.mainContainer}>
@@ -102,19 +106,24 @@ const Questions = ({
             <p>{question}</p>
             <div className={styles.textArea}>
               {options.map((option) => {
+                const isSelected =
+                  formData[`q${questionId + 1}`] &&
+                  formData[`q${questionId + 1}`].id === option.id;
+
                 return (
                   <div>
                     <div
                       className={`${styles.questionSec} ${
-                        Array.isArray(formData[`q${questionId + 1}`]) &&
-                        formData[`q${questionId + 1}`].some(
-                          (o) => o.id === option.id
-                        ) &&
-                        styles.checked
+                        isSelected && styles.checked
                       }`}
                       onClick={() => {
-                        handleFormData(`q${questionId + 1}`, option);
-                        handleNext();
+                        handleFormData(
+                          `q${questionId + 1}`,
+                          isSelected ? {} : option
+                        );
+                        if (!isSelected) {
+                          handleNext();
+                        }
                       }}
                     >
                       <span className={styles.radioButton}></span>
@@ -134,18 +143,21 @@ const Questions = ({
 
             <div className={styles.textArea}>
               {options.map((option) => {
+                const isSelected =
+                  formData[`q${questionId + 1}`] &&
+                  formData[`q${questionId + 1}`].id === option.id;
+
                 return (
                   <div>
                     <div
                       className={`${styles.questionSec} ${
-                        Array.isArray(formData[`q${questionId + 1}`]) &&
-                        formData[`q${questionId + 1}`].some(
-                          (o) => o.id === option.id
-                        ) &&
-                        styles.checked
+                        isSelected && styles.checked
                       }`}
                       onClick={() => {
-                        handleFormData(`q${questionId + 1}`, option);
+                        handleFormData(
+                          `q${questionId + 1}`,
+                          isSelected ? {} : option
+                        );
                       }}
                     >
                       <span className={styles.radio}></span>
