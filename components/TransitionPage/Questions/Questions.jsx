@@ -27,13 +27,12 @@ const Questions = (props) => {
     try {
       let updatedForm = { ...form }; // Create a copy of the current form state
       for (const property in values) {
-        console.log(property + values[property]);
         updatedForm = {
           ...updatedForm,
           [property]: values[property],
         };
       }
-      handleRegistration(updatedForm);
+      handleRegistration(updatedForm).then(setForm(updatedForm));
     } catch (error) {
       console.log(error);
     }
@@ -53,15 +52,14 @@ const Questions = (props) => {
         const rese = await Axios.post(route, formData, { headers })
           .then((res) => {
             props.props.isLoggedIn();
-            // console.log(res.data);
-            // authCtx.settingToken(res.data.access_token);
-            // router.push("/consultation");
+            console.log(res);
+            authCtx.settingToken(res.data.access_token);
+            //router.push("/consultation");
           })
           .catch((error) => {
             console.log(error);
             props.props.handleShow(error.response.data);
           });
-        console.log("Cureee");
       } catch (err) {
         props.props.handleShow("Username or password are not good!" + err);
       }

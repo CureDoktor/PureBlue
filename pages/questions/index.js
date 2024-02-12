@@ -1,4 +1,6 @@
-import Question from "../../components/Questions/index";
+import React, { useEffect } from "react";
+import styles from "./styles.module.scss";
+import Questions from "../../components/TransitionPage/Questions/Questions";
 
 const index = (props) => {
   return (
@@ -10,4 +12,4 @@ const index = (props) => {
   );
 };
 
-export default Questions;
+export default index;
