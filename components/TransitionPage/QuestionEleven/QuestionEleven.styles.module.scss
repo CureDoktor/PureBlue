@@ -1,0 +1,26 @@
+.mainContainer {
+  @media (max-width: "400px") {
+    width: 90%;
+    margin: auto;
+  }
+  p {
+    font-size: 31px;
+    font-weight: 600;
+  }
+  .list {
+    margin-top: 2rem;
+  }
+  .signIn {
+    font-size: 12px;
+    margin: auto;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 500;
+
+    span {
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
