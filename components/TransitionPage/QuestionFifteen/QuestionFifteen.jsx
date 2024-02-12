@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./QuestionFifteen.styles.module.scss";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import Link from "next/link";
 import * as Yup from "yup";
 
-const QuestionFifteen = ({ onNext }) => {
+const QuestionFifteen = ({ onNext, handleChange }) => {
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email address")
@@ -46,7 +47,10 @@ const QuestionFifteen = ({ onNext }) => {
         )}
       </Formik>
       <p className={styles.signIn}>
-        Already have an account? <span>Log In</span>
+        Already have an account?{" "}
+        <Link href="/login" style={{ color: "blue" }}>
+          Sign In
+        </Link>
       </p>
       <p className={styles.privacy}>
         We take your privacy very seriously.

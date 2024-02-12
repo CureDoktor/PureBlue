@@ -128,7 +128,10 @@ export default function PayInfo(props) {
             <Image src="/assets/order/cc.png" width={180} height={20} />
           </Col>
           <Col>
-            <Button className={styles.edit} onClick={() => setPayInfo(true)}>
+            <Button
+              className={styles.edit}
+              onClick={() => setPayInfo(!payInfo)}
+            >
               <PencilFill /> EDIT
             </Button>
           </Col>

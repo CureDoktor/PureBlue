@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }) {
         </AuthContextProvider>
       );
     } else if (
-      Component.name == "Account" ||
+      // Component.name == "Account" ||
       Component.name == "VisitForm" ||
       Component.name == "Switch" ||
       Component.name == "Order"

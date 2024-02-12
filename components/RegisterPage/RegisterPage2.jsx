@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+import { useSearchParams } from "next/navigation";
 import styles from "./RegisterPage2.styles.module.scss";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
@@ -10,27 +11,76 @@ import StepSix from "./StepSix";
 import { Form } from "react-bootstrap";
 import AuthContext from "../../store/auth-context";
 import { useRouter } from "next/router";
+import MagicModal from "../MagicModal";
 
 const RegisterPage2 = (props) => {
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category");
   const authCtx = useContext(AuthContext);
   const router = useRouter();
-
-  const [progress, setProgress] = useState(16.67);
-  const handleProgress = (e) => {
-    e.preventDefault();
-    const newProgress = progress + 16.67;
-    setProgress(Math.min(newProgress, 100));
-  };
+  const [modalState, setModalState] = useState(false);
+  const [progress, setProgress] = useState(20);
   const [states, setStates] = useState("");
+  const [errorData, setErrorData] = useState("");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     phone: "",
     email: "",
+    state: "",
     password: "",
     password_repeat: "",
-    category: 1,
+    category: category ? category : 1,
   });
+  const handleProgress = (e) => {
+    e.preventDefault();
+    if (progress === 20) {
+      if (
+        formData.firstName &&
+        formData.firstName !== "" &&
+        formData.lastName &&
+        formData.lastName !== ""
+      ) {
+        const newProgress = progress + 20;
+        setProgress(Math.min(newProgress, 100));
+      } else {
+        alert("Please fill out all required fields.");
+      }
+    } else if (progress === 40) {
+      if (formData.state && formData.state !== "") {
+        const newProgress = progress + 20;
+        setProgress(Math.min(newProgress, 100));
+      } else {
+        alert("Please fill out all required fields.");
+      }
+    } else if (progress === 60) {
+      if (formData.email && formData.email !== "") {
+        const newProgress = progress + 20;
+        setProgress(Math.min(newProgress, 100));
+      } else {
+        alert("Please fill out all required fields.");
+      }
+    } else if (progress === 80) {
+      if (formData.phone && formData.phone !== "") {
+        const newProgress = progress + 20;
+        setProgress(Math.min(newProgress, 100));
+      } else {
+        alert("Please fill out all required fields.");
+      }
+    } else if (progress == 100) {
+      if (
+        formData.password &&
+        formData.password != "" &&
+        formData.password_repeat &&
+        formData.password_repeat != ""
+      ) {
+        const newProgress = progress + 16.67;
+        setProgress(Math.min(newProgress, 100));
+      } else {
+        alert("Please fill out all required fields.");
+      }
+    }
+  };
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -41,6 +91,7 @@ const RegisterPage2 = (props) => {
   };
 
   const handleSubmit = async (event) => {
+    setModalState(false);
     event.preventDefault();
     const route = "/api/auth/register";
     const payload = {
@@ -57,12 +108,13 @@ const RegisterPage2 = (props) => {
         const rese = await Axios.post(route, payload)
           .then((res) => {
             props.props.isLoggedIn();
-            console.log(res.data);
             authCtx.settingToken(res.data.data.access_token);
-            router.push("/visit-form");
+            router.push("/consultation");
           })
           .catch((error) => {
-            props.props.handleShow(error.response.data);
+            console.log(error.response.data.errors);
+            setErrorData(error.response.data.errors);
+            setModalState(true);
           });
       } catch (err) {
         props.props.handleShow("Username or password are not good!" + err);
@@ -94,7 +146,7 @@ const RegisterPage2 = (props) => {
 
   return (
     <div className={styles.mainContainer}>
-      <section className={styles.content}>
+      <div className={styles.content}>
         <div className={styles.progressBarContainer}>
           <div
             className={`${styles.progressBar} ${
@@ -105,30 +157,27 @@ const RegisterPage2 = (props) => {
         </div>
         <Form onSubmit={handleSubmit}>
           <div className={styles.txtContainer}>
-            {progress >= 0 && progress <= 16.67 && (
+            {progress == 20 && (
               <StepOne formData={formData} handleChange={handleChange} />
             )}
-            {progress > 16.67 && progress <= 33.34 && (
-              <StepTwo formData={formData} handleChange={handleChange} />
-            )}
-            {progress > 33.34 && progress <= 50.01005 && (
+            {progress == 40 && (
               <StepThree
                 states={states}
                 formData={formData}
                 handleChange={handleChange}
               />
             )}
-            {progress > 50.01005 && progress <= 66.68 && (
+            {progress == 60 && (
               <StepFour formData={formData} handleChange={handleChange} />
             )}
-            {progress > 66.68 && progress <= 83.35001 && (
+            {progress == 80 && (
               <StepFive formData={formData} handleChange={handleChange} />
             )}
-            {progress > 83.35001 && (
+            {progress == 100 && (
               <StepSix formData={formData} handleChange={handleChange} />
             )}
 
-            {progress > 83.35001 ? (
+            {progress == 100 ? (
               <div className={styles.btnContainer}>
                 <button onClick={handleSubmit}>
                   Submit
@@ -144,8 +193,16 @@ const RegisterPage2 = (props) => {
               </div>
             )}
           </div>
+          <MagicModal
+            formData={formData}
+            modalState={modalState}
+            handleChange={handleChange}
+            setModalState={setModalState}
+            handleSubmit={handleSubmit}
+            errorData={errorData}
+          />
         </Form>
-      </section>
+      </div>
     </div>
   );
 };

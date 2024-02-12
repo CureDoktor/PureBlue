@@ -1,3 +1,3 @@
 import Questions from "../Questions";
 
-export default Questions;
+export default Questions(props);

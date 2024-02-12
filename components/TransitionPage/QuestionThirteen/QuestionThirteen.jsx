@@ -1,12 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./QuestionThirteen.styles.module.scss";
 import { thirteenQuestionDropDown } from "../data";
 import * as Yup from "yup";
+import Axios from "axios";
+import Link from "next/link";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const QuestionThirteen = ({ onNext }) => {
+  const [states, setStates] = useState([
+    {
+      "abbreviation": "NE",
+      "name": "Nebraska",
+      "state_id": "782679a1-8679-4ac9-a0e4-92226b4a2f67",
+      "message": "",
+      "is_active": 1,
+    },
+  ]);
+
+  const getStates = async () => {
+    const route = "/api/states";
+    try {
+      const rese = await Axios.post(route)
+        .then((res) => {
+          console.log(res.data.data);
+          setStates(res.data.data);
+        })
+        .catch((error) => {
+          props.handleShow(error.response.data);
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
+  };
+
+  useEffect(() => {
+    getStates();
+  }, []);
+
   const validationSchema = Yup.object().shape({
-    state: Yup.string().required("Please select a state"),
+    state: Yup.string()
+      .required("Please select a state")
+      .notOneOf(["AS", "SC"], "Your treatment is not allowed in this country"),
     checkbox: Yup.bool().oneOf(
       [true],
       "You must acknowledge the Terms and Conditions"
@@ -14,7 +48,6 @@ const QuestionThirteen = ({ onNext }) => {
   });
 
   const Continue = (values) => {
-    console.log("Validated successfully");
     onNext();
   };
 
@@ -33,13 +66,21 @@ const QuestionThirteen = ({ onNext }) => {
         {({ errors, touched }) => (
           <Form>
             <div className={styles.selectContainer}>
-              <Field as="select" name="state" className={styles.select}>
-                <option value="" disabled selected>
+              <Field
+                as="select"
+                name="state"
+                defaultValue=""
+                className={styles.select}
+              >
+                <option value="" disabled>
                   Select a state
                 </option>
-                {thirteenQuestionDropDown.map((items) => {
-                  const { name } = items;
-                  return <option key={name}>{name}</option>;
+                {states.map((state) => {
+                  return (
+                    <option value={`${state.abbreviation}`}>
+                      {state.name}
+                    </option>
+                  );
                 })}
               </Field>
 
@@ -63,7 +104,10 @@ const QuestionThirteen = ({ onNext }) => {
               Continue
             </button>
             <p className={styles.signIn}>
-              Already have an account? <span>Sign In</span>
+              Already have an account?{" "}
+              <Link href="/login" style={{ color: "blue" }}>
+                Sign In
+              </Link>
             </p>
           </Form>
         )}

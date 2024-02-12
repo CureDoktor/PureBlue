@@ -107,7 +107,7 @@ export default function ShipInfo(props) {
           <Form.Control
             required
             name="phone"
-            type="text"
+            type="number"
             onChange={handleChange}
             placeholder="Enter Phone Number"
             value={formData.email}
@@ -202,6 +202,7 @@ export default function ShipInfo(props) {
         <Col md={9}>
           <b>SHIPPING INFO</b>
           <br />
+          <br />
           <p className={styles.highlight}>
             {props.info.firstName} {props.info.lastName}
           </p>
@@ -213,7 +214,10 @@ export default function ShipInfo(props) {
           </p>
         </Col>
         <Col>
-          <Button className={styles.edit} onClick={() => setShipInfo(true)}>
+          <Button
+            className={styles.edit}
+            onClick={() => setShipInfo(!shipInfo)}
+          >
             <PencilFill /> EDIT
           </Button>
         </Col>

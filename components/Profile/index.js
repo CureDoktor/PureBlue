@@ -11,19 +11,11 @@ import PayInfo from "../PayInfo";
 import BillInfo from "../BillInfo";
 import Form from "react-bootstrap/Form";
 
-import {
-  Col,
-  Container,
-  FormSelect,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Button,
-  Row,
-} from "react-bootstrap";
+import { Col, Button, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 
 export default function Profile(props) {
+  console.log(props);
   const authCtx = useContext(AuthContext);
   const gettingUserInfo = async () => {
     const route = "/api/user/getUserInfo";
@@ -34,7 +26,7 @@ export default function Profile(props) {
           setUserInfo(res.data.data);
         })
         .catch((error) => {
-          props.handleShow(error.response.data);
+          props.handleShow.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);

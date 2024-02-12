@@ -52,7 +52,7 @@ export default function Verification() {
       </Head>
       <main className={styles.aboutPage}>
         <Container>
-          <input type="file" onChange={handleUploadFiles} />
+          <input type="file" multiple onChange={handleUploadFiles} />
         </Container>
       </main>
     </div>

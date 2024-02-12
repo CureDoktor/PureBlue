@@ -192,7 +192,10 @@ export default function BillInfo(props) {
             </p>
           </Col>
           <Col>
-            <Button className={styles.edit} onClick={() => setBillInfo(true)}>
+            <Button
+              className={styles.edit}
+              onClick={() => setBillInfo(!billInfo)}
+            >
               <PencilFill /> EDIT
             </Button>
           </Col>

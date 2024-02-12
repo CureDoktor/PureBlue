@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./QuestionFourteen.styles.module.scss";
 import { Formik, Field, ErrorMessage, Form } from "formik";
+import Link from "next/link";
 import * as Yup from "yup";
 
-const QuestionFourteen = ({ onNext }) => {
+const QuestionFourteen = ({ onNext, handleChange }) => {
   const validationSchema = Yup.object().shape({
-    dob: Yup.date().required("Date of Birth is required"),
+    date_of_birth: Yup.date().required("Date of Birth is required"),
   });
 
   return (
@@ -18,15 +19,15 @@ const QuestionFourteen = ({ onNext }) => {
         Let’s confirm your <br /> date of birth
       </p>
       <Formik
-        initialValues={{ dob: "" }}
+        initialValues={{ date_of_birth: "" }}
         validationSchema={validationSchema}
         onSubmit={onNext}
       >
         {({ errors, touched }) => (
           <Form style={{ width: "100%" }}>
-            <Field type="date" name="dob" className={styles.date} />
-            <div name="dob" className={styles.ErrorMessage}>
-              <ErrorMessage name="dob" />
+            <Field type="date" name="date_of_birth" className={styles.date} />
+            <div name="date_of_birth" className={styles.ErrorMessage}>
+              <ErrorMessage name="date_of_birth" />
             </div>
             <button className={styles.continue} type="submit">
               Continue
@@ -35,7 +36,10 @@ const QuestionFourteen = ({ onNext }) => {
         )}
       </Formik>
       <p className={styles.signIn}>
-        Already have an account? <span>Sign In</span>
+        Already have an account?{" "}
+        <Link href="/login" style={{ color: "blue" }}>
+          Sign In
+        </Link>
       </p>
     </div>
   );

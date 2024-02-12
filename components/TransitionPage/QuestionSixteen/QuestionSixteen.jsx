@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./QuestionSixteen.styles.module.scss";
+import Link from "next/link";
 import * as Yup from "yup";
 
 const PasswordSchema = Yup.object().shape({
@@ -8,12 +9,12 @@ const PasswordSchema = Yup.object().shape({
     .required("Password is Required"),
 });
 
-const QuestionSixteen = ({ onNext }) => {
+const QuestionSixteen = ({ onNext, submitForm }) => {
   return (
     <Formik
-      initialValues={{ password: "" }}
+      initialValues={{ password: "", password_repeat: "" }}
       validationSchema={PasswordSchema}
-      onSubmit={onNext}
+      onSubmit={submitForm}
     >
       {({ isSubmitting }) => (
         <Form className={styles.container}>
@@ -28,6 +29,15 @@ const QuestionSixteen = ({ onNext }) => {
           <span name="password" className={styles.ErrorMessage}>
             <ErrorMessage name="password" />
           </span>
+          <Field
+            type="password"
+            name="password_repeat"
+            className={styles.password}
+            placeholder="Password Repeat"
+          />
+          <span name="password_repeat" className={styles.ErrorMessage}>
+            <ErrorMessage name="password_repeat" />
+          </span>
           <p className={styles.account}>
             Creating an account allows you to keep track of your orders, <br />
             payment information, and medical profile (or if you need to make{" "}
@@ -38,7 +48,10 @@ const QuestionSixteen = ({ onNext }) => {
             Continue
           </button>
           <p className={styles.signIn}>
-            Already have an account? <span>Log In</span>
+            Already have an account?{" "}
+            <Link href="/login" style={{ color: "blue" }}>
+              Sign In
+            </Link>
           </p>
         </Form>
       )}

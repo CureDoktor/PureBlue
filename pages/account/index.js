@@ -8,7 +8,6 @@ import Membership from "../../components/Membership";
 import Profile from "../../components/Profile";
 import Case from "../../components/Case";
 export default function Account(props) {
-  const [checked, setChecked] = useState(false);
   const [content, setContent] = useState(<Membership />);
 
   const handleSelect = (link) => {

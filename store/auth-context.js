@@ -9,7 +9,12 @@ const AuthContext = React.createContext({
 
 export const AuthContextProvider = (props) => {
   const Token = () => {
-    var bearerToken = localStorage.getItem("Token");
+    //Live
+    // var bearerToken = localStorage.getItem("Token");
+
+    //Testing
+    var bearerToken =
+      "cwForraUjGkzQ47MEXBWaZh3T1hA7hhfSSpYKhnF5I0ixDeGll3UEQHQmCzys-g5bA6i6_ZM96tlFFdOArtL-NXBP46Jl4YG9jV3qOJLBEe-chL2UG-YR99jrOEOdFGISxVIkhokUBTMsGipygpZX1iYJtQOnHEjlTOHLK-83FiZyKNfthmSXWIImi--FnV25uyAFidF";
     return bearerToken;
   };
 
