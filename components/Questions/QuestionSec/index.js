@@ -20,18 +20,10 @@ const QuestionSec = ({
   const [isEmpty, setIsEmpty] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const [isNextDisabled, setIsNextDisabled] = useState(false);
+  const [terms, setTerms] = useState(false);
+  const [termError, setTermsError] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("currentStep", currentStep);
-      localStorage.setItem("value", value);
-    }
-  }, [currentStep, value]);
-
-  useEffect(() => {
-    const calculatedProgress = (currentStep / totalSteps) * 100;
-    setProgress(calculatedProgress);
-  }, [currentStep, totalSteps]);
   const [formData, setFormData] = useState(() => {
     const obj = {};
     for (let i = 0; i < questions.length; i++) {
@@ -44,34 +36,36 @@ const QuestionSec = ({
     }
     return obj;
   });
-
+  const handleToggle = () => {
+    setSelectedOptions((prevSelectedOptions) => !prevSelectedOptions);
+  };
+  useEffect(() => {
+    if (selectedOptions) {
+      setTerms(true);
+      setTermsError(false);
+    }
+  }, [selectedOptions]);
   const handleFormData = (key, value) => {
     setFormData((prev) => {
-      if (Array.isArray(prev[key])) {
-        const updatedValue = Array.isArray(value)
+      const isArray = Array.isArray(prev[key]);
+      const updatedValue = isArray
+        ? Array.isArray(value)
           ? value.filter((item) => Object.keys(item).length > 0)
-          : value;
-        const newFormData = { ...prev, [key]: updatedValue };
+          : value
+        : value;
 
-        const isDisabled =
-          newFormData[key] === "" ||
-          (Array.isArray(newFormData[key]) && newFormData[key].length === 0);
+      const newFormData = { ...prev, [key]: updatedValue };
+      const isDisabled =
+        newFormData[key] === "" || (isArray && newFormData[key].length === 0);
 
-        setIsNextDisabled(isDisabled);
+      setIsNextDisabled(isDisabled);
 
-        return newFormData;
-      } else {
-        if (prev[key] === value) {
-          const newFormData = { ...prev, [key]: "" };
-          setIsNextDisabled(true);
-          return newFormData;
-        }
-
-        const newFormData = { ...prev, [key]: value };
-        setIsNextDisabled(false);
-
-        return newFormData;
+      if (!isArray && prev[key] === value) {
+        setIsNextDisabled(true);
+        newFormData[key] = "";
       }
+
+      return newFormData;
     });
   };
 
@@ -103,7 +97,11 @@ const QuestionSec = ({
           localStorage.setItem("currentStep", 0);
         }
       } else {
+        localStorage.setItem("currentStep", currentStep + 1);
+        localStorage.setItem("value", value);
         setCurrentStep((prevStep) => prevStep + 1);
+        const calculatedProgress = (currentStep / totalSteps) * 100;
+        setProgress(calculatedProgress);
       }
     }
   };
@@ -111,12 +109,16 @@ const QuestionSec = ({
   const handleBack = () => {
     setCurrentStep((prevStep) => prevStep - 1);
   };
+
   const handleClose = () => {
-    router.push("/");
-    setCurrentStep(0);
-    if (typeof window !== "undefined") {
+    if (!terms) {
+      setTermsError(true);
+    } else {
+      setTermsError(false);
+      setCurrentStep(0);
       localStorage.setItem("currentStep", 0);
       localStorage.setItem("value", "");
+      router.push("/");
     }
   };
 
@@ -156,6 +158,8 @@ const QuestionSec = ({
             setIsValid={setIsValid}
             isValid={isValid}
             setIsNextDisabled={setIsNextDisabled}
+            setTerms={setTerms}
+            setTermsError={setTermsError}
           />
         );
       }
@@ -167,9 +171,9 @@ const QuestionSec = ({
     <div className={styles.mainContainer}>
       {renderQuestion()}
       <div
-        className={`
-          ${styles.btnContainer}
-          ${currentStep === totalSteps - 1 && styles.submitBtn}
+        className={`${styles.btnContainer} ${
+          currentStep === totalSteps - 1 && styles.submitBtn
+        }
         `}
       >
         {currentStep > 0 && currentStep !== totalSteps - 1 && (
@@ -179,6 +183,25 @@ const QuestionSec = ({
           </button>
         )}
         {renderNextButton()}
+        {currentStep === totalSteps - 1 && (
+          <div className="">
+            <div
+              className={`${styles.terms} ${selectedOptions && styles.checked}`}
+              onClick={handleToggle}
+            >
+              <span className={styles.radio}></span>
+              <span className={styles.option}>
+                I agree to the <span>Terms & Conditions</span>,
+                <span>Privacy</span>, and I consent to a Telehealth visit.
+              </span>
+            </div>
+            {currentStep === totalSteps - 1 && termError && (
+              <p className={`${styles.red} my-2`}>
+                Kindly accept our Terms and Conditions before proceeding.
+              </p>
+            )}
+          </div>
+        )}
         <div style={{ margin: "auto" }}>
           {currentStep === totalSteps - 1 && (
             <button className={styles.submitBtn} onClick={handleClose}>
@@ -192,10 +215,16 @@ const QuestionSec = ({
         currentQuestion &&
         currentQuestion.question &&
         currentQuestion.question.type === "multiple" && (
-          <p style={{ color: "red" }} className="my-5">
+          <p className={`${styles.red} my-5`}>
             Please make a selection before proceeding
           </p>
         )}
+
+      {/* {currentStep === totalSteps - 1 && termError && (
+        <p className={styles.red}>
+          Kindly accept our Terms and Conditions before proceeding.
+        </p>
+      )} */}
     </div>
   );
 };

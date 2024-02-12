@@ -141,6 +141,7 @@ export const questions = [
         "Please list ALL prescription medications you are taking or are currently prescribed. Include all over the counter medications, vitamins, minerals, or supplements:",
       options: [{ id: 1, option: "If none, click here" }],
       type: "textArea",
+      value: "",
     },
   },
   {
@@ -148,7 +149,7 @@ export const questions = [
     question: {
       question:
         "Please list all allergies to medications, dyes, or anything else. If none, write “NONE”",
-      options: [{ id: 1, option: "If none, click here" }],
+      options: [{ id: 1, option: "If none, click here", value: "" }],
       type: "textArea",
     },
   },
@@ -166,7 +167,7 @@ export const questions = [
     question: {
       question:
         "Is there anything else you would like us to know? Please include any questions, comments, or concerns.",
-      options: [{ id: 1, option: "If none, click here" }],
+      options: [{ id: 1, option: "If none, click here", value: "" }],
       type: "textAreaTwo",
     },
   },

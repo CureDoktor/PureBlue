@@ -39,6 +39,38 @@
   }
   .submitBtn {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
   }
+}
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  .radio {
+    display: inline-block;
+    max-width: 19px;
+    width: 100%;
+    height: 19px;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    background-color: transparent;
+  }
+  .option {
+    font-size: 17px;
+    color: #000000;
+    span {
+      color: #0077f0;
+    }
+  }
+}
+.checked {
+  .radio {
+    background-color: #3498db;
+  }
+}
+.red {
+  color: red;
 }

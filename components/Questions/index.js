@@ -3,9 +3,10 @@ import styles from "./styles.module.scss";
 import Stepper from "./stepper";
 import ProgressBar from "./ProgressBar";
 import QuestionSec from "./QuestionSec";
+import { questions } from "./QuestionSec/mockdata/questionsArray";
 
 const Question = () => {
-  const totalSteps = 18;
+  const totalSteps = questions.length;
   const [progress, setProgress] = useState(0);
   const [currentStep, setCurrentStep] = useState(() => {
     if (typeof window !== "undefined") {

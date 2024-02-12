@@ -16,15 +16,7 @@ const Questions = ({
 }) => {
   const { question, options, type, title, alert, label } = currentQuestion;
 
-  const [selectedOptions, setSelectedOptions] = useState([]);
   const [isFocus, setIsFocus] = useState(false);
-  const handleToggle = (index) => {
-    setSelectedOptions((prevOptions) =>
-      prevOptions.includes(index)
-        ? prevOptions.filter((item) => item !== index)
-        : [...prevOptions, index]
-    );
-  };
 
   const handleInput = (event) => {
     let val = event.target.value;
@@ -109,9 +101,8 @@ const Questions = ({
                 const isSelected =
                   formData[`q${questionId + 1}`] &&
                   formData[`q${questionId + 1}`].id === option.id;
-
                 return (
-                  <div>
+                  <div key={option.id}>
                     <div
                       className={`${styles.questionSec} ${
                         isSelected && styles.checked
@@ -130,7 +121,11 @@ const Questions = ({
                       <span className={styles.option}>{option.option}</span>
                     </div>
 
-                    <textarea></textarea>
+                    <textarea
+                      onChange={(e) => (option.value = e.target.value)}
+                      disabled={isSelected ? true : false}
+                      value={option.value}
+                    ></textarea>
                   </div>
                 );
               })}
@@ -140,7 +135,6 @@ const Questions = ({
         {type === "textAreaTwo" && (
           <div className={styles.questionSix}>
             <p>{question}</p>
-
             <div className={styles.textArea}>
               {options.map((option) => {
                 const isSelected =
@@ -148,7 +142,7 @@ const Questions = ({
                   formData[`q${questionId + 1}`].id === option.id;
 
                 return (
-                  <div>
+                  <div key={option.id}>
                     <div
                       className={`${styles.questionSec} ${
                         isSelected && styles.checked
@@ -164,21 +158,11 @@ const Questions = ({
                       <span className={styles.option}>{option.option}</span>
                     </div>
 
-                    <textarea></textarea>
-
-                    <div
-                      className={`${styles.questionSec} ${
-                        selectedOptions.includes(1) && styles.checked
-                      }`}
-                      onClick={() => handleToggle(1)}
-                    >
-                      <span className={styles.radio}></span>
-                      <span className={styles.option}>
-                        I agree to the <span>Terms & Conditions</span>,
-                        <span>Privacy</span>, and I consent to a Telehealth
-                        visit.
-                      </span>
-                    </div>
+                    <textarea
+                      onChange={(e) => (option.value = e.target.value)}
+                      value={option.value}
+                      disabled={isSelected ? true : false}
+                    ></textarea>
                   </div>
                 );
               })}
@@ -268,7 +252,9 @@ const Questions = ({
               </InputMask>
             </div>
             {isEmpty && <p style={{ color: "red" }}>Please fill the date</p>}
-            {isValid && <p style={{ color: "red" }}>Invalid Date</p>}
+            {isValid && (
+              <p style={{ color: "red" }}>Please enter a valid date</p>
+            )}
           </div>
         )}
       </div>
