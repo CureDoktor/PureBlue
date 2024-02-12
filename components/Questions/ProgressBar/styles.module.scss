@@ -1,0 +1,40 @@
+.container {
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-left: auto;
+  & h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+  }
+  & ProgressBar {
+    height: 10px;
+  }
+}
+
+.progressBarContainer {
+  margin: 1.5rem 0rem;
+  width: 85%;
+  background-color: #f0f0f0;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 50px;
+  .progressBar {
+    height: 24px;
+    border-radius: 50px 0px 0px 50px;
+    background-color: #0077f0;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    &.completed {
+      width: 100%;
+      border-radius: 50px;
+    }
+  }
+}
