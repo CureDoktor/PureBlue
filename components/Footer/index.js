@@ -3,9 +3,11 @@ import styles from "./styles.module.scss";
 import LegitScriptCertificate from "../LegitScriptCertificate";
 import { Container, Image, Row } from "react-bootstrap";
 import { useRouter } from "next/router";
+
 export default function Footer() {
   const router = useRouter();
   const currentPathname = router.asPath;
+
   return (
     <div style={{ backgroundColor: "none" }}>
       {currentPathname != "/sildenafil-order-flow/" &&
