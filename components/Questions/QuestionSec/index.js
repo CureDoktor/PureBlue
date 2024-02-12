@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import styles from "./styles.module.scss";
+import { useRouter } from "next/navigation";
+
 import Questions from "./Questions";
 import { questions } from "./mockdata/questionsArray";
-import { useRouter } from "next/navigation";
+
+import styles from "./styles.module.scss";
+
 const QuestionSec = ({
   totalSteps,
   setProgress,
@@ -10,6 +13,7 @@ const QuestionSec = ({
   setCurrentStep,
 }) => {
   const router = useRouter();
+
   const [value, setValue] = useState(() => {
     if (typeof window !== "undefined") {
       const savedValue = localStorage.getItem("value");
@@ -36,15 +40,18 @@ const QuestionSec = ({
     }
     return obj;
   });
-  const handleToggle = () => {
-    setSelectedOptions((prevSelectedOptions) => !prevSelectedOptions);
-  };
+
   useEffect(() => {
     if (selectedOptions) {
       setTerms(true);
       setTermsError(false);
     }
   }, [selectedOptions]);
+
+  const handleToggle = () => {
+    setSelectedOptions((prevSelectedOptions) => !prevSelectedOptions);
+  };
+
   const handleFormData = (key, value) => {
     setFormData((prev) => {
       const isArray = Array.isArray(prev[key]);
@@ -68,8 +75,6 @@ const QuestionSec = ({
       return newFormData;
     });
   };
-
-  const currentQuestion = questions.find((q) => q.id === currentStep);
 
   const handleNext = () => {
     if (!/^\d{2}-\d{2}-\d{4}$/.test(value)) {
@@ -167,9 +172,20 @@ const QuestionSec = ({
     return null;
   };
 
+  const currentQuestion = questions.find((q) => q.id === currentStep);
+
   return (
     <div className={styles.mainContainer}>
       {renderQuestion()}
+      {currentStep < totalSteps - 1 &&
+        isNextDisabled &&
+        currentQuestion &&
+        currentQuestion.question &&
+        currentQuestion.question.type === "multiple" && (
+          <p className={`${styles.red} my-5`}>
+            Please make a selection before proceeding
+          </p>
+        )}
       <div
         className={`${styles.btnContainer} ${
           currentStep === totalSteps - 1 && styles.submitBtn
@@ -210,21 +226,6 @@ const QuestionSec = ({
           )}
         </div>
       </div>
-      {currentStep < totalSteps - 1 &&
-        isNextDisabled &&
-        currentQuestion &&
-        currentQuestion.question &&
-        currentQuestion.question.type === "multiple" && (
-          <p className={`${styles.red} my-5`}>
-            Please make a selection before proceeding
-          </p>
-        )}
-
-      {/* {currentStep === totalSteps - 1 && termError && (
-        <p className={styles.red}>
-          Kindly accept our Terms and Conditions before proceeding.
-        </p>
-      )} */}
     </div>
   );
 };

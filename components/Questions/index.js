@@ -1,34 +1,24 @@
 import React, { useEffect, useState } from "react";
-import styles from "./styles.module.scss";
+
 import Stepper from "./stepper";
 import ProgressBar from "./ProgressBar";
 import QuestionSec from "./QuestionSec";
 import { questions } from "./QuestionSec/mockdata/questionsArray";
 
+import styles from "./styles.module.scss";
+
 const Question = () => {
   const totalSteps = questions.length;
+
   const [progress, setProgress] = useState(0);
-  const [currentStep, setCurrentStep] = useState(() => {
-    if (typeof window !== "undefined") {
-      const savedStep = localStorage.getItem("currentStep");
-      return savedStep ? parseInt(savedStep, 10) : 0;
-    }
-    return 1;
-  });
-  const [hasMounted, setHasMounted] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+
   useEffect(() => {
-    setHasMounted(true);
-    if (typeof window !== "undefined") {
-      const savedStep = localStorage.getItem("currentStep");
-      if (savedStep) {
-        setCurrentStep(parseInt(savedStep, 10));
-      }
+    const savedStep = localStorage.getItem("currentStep");
+    if (savedStep) {
+      setCurrentStep(parseInt(savedStep, 10));
     }
   }, []);
-
-  if (!hasMounted) {
-    return null;
-  }
 
   return (
     <div className={styles.container}>
@@ -43,7 +33,6 @@ const Question = () => {
           </h5>
         </div>
       )}
-
       <ProgressBar
         totalSteps={totalSteps}
         currentStep={currentStep}
