@@ -51,7 +51,7 @@ const QuestionSec = ({
   const handleToggle = () => {
     setSelectedOptions((prevSelectedOptions) => !prevSelectedOptions);
   };
-
+  const currentQuestion = questions.find((q) => q.id === currentStep);
   const handleFormData = (key, value) => {
     setFormData((prev) => {
       const isArray = Array.isArray(prev[key]);
@@ -97,12 +97,12 @@ const QuestionSec = ({
     }
     if (!isNextDisabled && value !== "") {
       if (currentStep === totalSteps - 1) {
-        setCurrentStep(0);
+        // setCurrentStep(0);
         if (typeof window !== "undefined") {
-          localStorage.setItem("currentStep", 0);
+          localStorage.setItem("currentStepTwo", 0);
         }
       } else {
-        localStorage.setItem("currentStep", currentStep + 1);
+        localStorage.setItem("currentStepTwo", currentStep + 1);
         localStorage.setItem("value", value);
         setCurrentStep((prevStep) => prevStep + 1);
         const calculatedProgress = (currentStep / totalSteps) * 100;
@@ -121,7 +121,7 @@ const QuestionSec = ({
     } else {
       setTermsError(false);
       setCurrentStep(0);
-      localStorage.setItem("currentStep", 0);
+      localStorage.setItem("currentStepTwo", 0);
       localStorage.setItem("value", "");
       router.push("/");
     }
@@ -171,8 +171,6 @@ const QuestionSec = ({
     }
     return null;
   };
-
-  const currentQuestion = questions.find((q) => q.id === currentStep);
 
   return (
     <div className={styles.mainContainer}>

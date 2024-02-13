@@ -11,10 +11,10 @@ const MedicalProfileQuestion = () => {
   const totalSteps = questions.length;
 
   const [progress, setProgress] = useState(0);
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
 
   useEffect(() => {
-    const savedStep = localStorage.getItem("currentStep");
+    const savedStep = localStorage.getItem("currentStepTwo");
     if (savedStep) {
       setCurrentStep(parseInt(savedStep, 10));
     }
