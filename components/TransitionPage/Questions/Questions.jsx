@@ -11,10 +11,12 @@ import QuestionFourteen from "../QuestionFourteen/QuestionFourteen";
 import QuestionFifteen from "../QuestionFifteen";
 import QuestionSixteen from "../QuestionSixteen";
 import AuthContext from "../../../store/auth-context";
+import { useRouter } from "next/navigation";
 
 const Questions = (props) => {
   const authCtx = useContext(AuthContext);
   const [modalState, setModalState] = useState(false);
+  const router = useRouter();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -44,7 +46,7 @@ const Questions = (props) => {
     const route = "/api/auth/register";
     const headers = {
       "Content-Type": "application/json",
-      "scenario": "?scenario=dob", // Custom header with data
+      scenario: "?scenario=dob", // Custom header with data
     };
 
     if (formData.password === formData.password_repeat) {
@@ -54,7 +56,7 @@ const Questions = (props) => {
             props.props.isLoggedIn();
             console.log(res);
             authCtx.settingToken(res.data.access_token);
-            //router.push("/consultation");
+            router.push("/medical-profile-questions");
           })
           .catch((error) => {
             console.log(error);

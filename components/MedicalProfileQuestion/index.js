@@ -7,7 +7,7 @@ import { questions } from "./QuestionSec/mockdata/questionsArray";
 
 import styles from "./styles.module.scss";
 
-const Question = () => {
+const MedicalProfileQuestion = () => {
   const totalSteps = questions.length;
 
   const [progress, setProgress] = useState(0);
@@ -48,4 +48,4 @@ const Question = () => {
   );
 };
 
-export default Question;
+export default MedicalProfileQuestion;
