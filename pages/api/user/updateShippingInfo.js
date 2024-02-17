@@ -1,8 +1,10 @@
 import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
+  const scenario = req.headers["scenario"] ? req.headers["scenario"] : "";
+
   Axios.post(
-    process.env.NEXT_PUBLIC_API_KEY + "/user/user-profile?scenario=shipping",
+    process.env.NEXT_PUBLIC_API_KEY + "/user/user-profile" + scenario,
     req.body.formData,
     {
       headers: {

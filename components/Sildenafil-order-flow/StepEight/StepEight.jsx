@@ -1,10 +1,10 @@
 import React from "react";
 import OrderFlowCardDetails from "../../Common/OrderFlow/OrderFlowCardDetails";
 
-const StepEight = ({ onNext }) => {
+const StepEight = ({ onNext, props, product }) => {
   return (
     <div>
-      <OrderFlowCardDetails onNext={onNext} />
+      <OrderFlowCardDetails props={props} product={product} onNext={onNext} />
     </div>
   );
 };

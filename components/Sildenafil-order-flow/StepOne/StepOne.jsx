@@ -6,7 +6,14 @@ import { useRouter } from "next/router";
 import OrderFlowForm from "../../Common/OrderFlow/OrderFlowForm";
 import OrderFlowCardDetails from "../../Common/OrderFlow/OrderFlowCardDetails";
 
-const StepOne = ({ onNext }) => {
+const StepOne = ({ onNext, setProduct, product }) => {
+  const setProductTime = (value) => {
+        setProduct({
+      ...product,
+      daily: value,
+    });
+  }
+
   const medicationOptions = [
     {
       title: "Take daily",
@@ -26,8 +33,13 @@ const StepOne = ({ onNext }) => {
       </h2>
       <div className={styles.mainCardContainer}>
         {medicationOptions.map((items) => {
+          if(items.title == "Take daily"){
+            var changeFunction = true;
+          } else{
+             var changeFunction = false;
+          }
           return (
-            <div className={styles.card} key={items} onClick={onNext}>
+            <div className={styles.card} key={items.title} onClick={() => { setProductTime(changeFunction)}} >
               <OrderFlowCard content={items} />
             </div>
           );

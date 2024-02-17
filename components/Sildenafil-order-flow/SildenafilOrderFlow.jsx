@@ -12,7 +12,12 @@ import StepSeventeen from "../Sildenafil-order-flow/StepSeventeen";
 import Thankyou from "../Thankyou/Thankyou";
 // import StepEighteen from "./StepEighteen";
 
-const SildenafilOrderFlow = () => {
+const SildenafilOrderFlow = (props) => {
+  const [product, setProduct] = useState({
+    daily: false,
+    viagra: false,
+    times_per_month: 4,
+  });
   const [currentStep, setCurrentStep] = useState(() => {
     if (typeof window !== "undefined") {
       const savedStep = localStorage.getItem("currentStep");
@@ -38,8 +43,13 @@ const SildenafilOrderFlow = () => {
     }
   }, [currentStep]);
 
+  useEffect(() => {
+    goToNextStep();
+  }, [product]);
+
   const goToNextStep = () => {
     setCurrentStep((prevStep) => prevStep + 1);
+    console.log(product);
   };
   const goToPreviousStep = () => {
     setCurrentStep((prevStep) => prevStep - 1);
@@ -48,24 +58,34 @@ const SildenafilOrderFlow = () => {
   const renderStep = () => {
     switch (currentStep) {
       case 1:
-        return <StepOne onNext={goToNextStep} />;
+        return <StepOne product={product} setProduct={setProduct} />;
       case 2:
-        return <StepTwo onNext={goToNextStep} />;
+        return (
+          <StepTwo
+            product={product}
+            setProduct={setProduct}
+            onNext={goToNextStep}
+          />
+        );
       case 3:
         return <StepThree onNext={goToNextStep} />;
       case 4:
-        return <StepFour onNext={goToNextStep} />;
+        return <StepFour product={product} onNext={goToNextStep} />;
       case 5:
-        return <StepFive onNext={goToNextStep} />;
+        if (product.viagra == true) {
+          return <StepFive product={product} setProduct={setProduct} />;
+        } else {
+          return <StepSix product={product} setProduct={setProduct} />;
+        }
       case 6:
-        return <StepSix onNext={goToNextStep} />;
+        return <StepSeven props={props} onNext={goToNextStep} />;
       case 7:
-        return <StepSeven onNext={goToNextStep} />;
+        return (
+          <StepEight props={props} product={product} onNext={goToNextStep} />
+        );
       case 8:
-        return <StepEight onNext={goToNextStep} />;
-      case 9:
         return <StepSeventeen onNext={goToNextStep} />;
-      case 10:
+      case 9:
         return <Thankyou onNext={goToNextStep} />;
       default:
         return <div>Process Completed</div>;

@@ -1,8 +1,9 @@
 import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
+  const caseId = req.headers["case"] ? req.headers["case"] : "";
   Axios.post(
-    process.env.NEXT_PUBLIC_API_KEY + "/questionnaire/save?case_id=1",
+    process.env.NEXT_PUBLIC_API_KEY + "/questionnaire/save?case_id=" + caseId,
     req.body.formData,
     {
       headers: {
@@ -13,6 +14,7 @@ export default function handler(req, res) {
     }
   )
     .then((respond) => {
+      console.log(respond);
       return res.status(200).json(respond.data);
     })
     .catch(function (error) {

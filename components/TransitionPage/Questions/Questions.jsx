@@ -54,7 +54,7 @@ const Questions = (props) => {
         const rese = await Axios.post(route, formData, { headers })
           .then((res) => {
             props.props.isLoggedIn();
-            console.log(res);
+            authCtx.setCaseId(res.data.lastCase.case_id);
             authCtx.settingToken(res.data.access_token);
             router.push("/medical-profile-questions");
           })

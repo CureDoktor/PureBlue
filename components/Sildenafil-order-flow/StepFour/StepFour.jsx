@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./StepFour.styles.module.scss";
 
-const StepFour = ({ onNext }) => {
+const StepFour = ({ onNext, product }) => {
   return (
     <div className={styles.mainContainer}>
       <h6>
-        Based on your selection, a daily tadalafil <br />
+        Based on your selection, a daily {!product.viagra ? "tadalafil" : "sildenafil"} <br />
         treatment sounds like the most
         <br /> appropriate option for you:
       </h6>
@@ -13,11 +13,11 @@ const StepFour = ({ onNext }) => {
         <div className={styles.bigCardContainer}>
           <div className={styles.bigCardTextContainer}>
             <span className={styles.tablet}>Tablet</span>
-            <span className={styles.bigCardMainHeading}>Generic Cialis®</span>
-            <span className={styles.bigCardSubHeading}>Tadalafil</span>
+            <span className={styles.bigCardMainHeading}>{!product.viagra ? "Generic Cialis®" : "Generic Viagra"}</span>
+            <span className={styles.bigCardSubHeading}>{!product.viagra ? "Tadalafil" : "Sildenafil"}</span>
           </div>
           <img
-            src="/assets/sildenafilOrderFlow/Group289/Group289.png"
+            src={!product.viagra ? "/assets/sildenafilOrderFlow/Group289/Group289.png" : "/assets/sildenafilOrderFlow/PureBlue1.png"}
             alt="groupImage"
             className={styles.bigCardImage}
           />

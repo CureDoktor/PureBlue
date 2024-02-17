@@ -59,6 +59,7 @@ const Consultation = (props) => {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           setStartingQuestions(res.data.data.questions);
+          props.setTotalSteps(res.data.data.questions.length);
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -102,15 +103,18 @@ const Consultation = (props) => {
 
   const handleSubmit = async (formData) => {
     const route = "/api/questions/save-questions";
-
+    const headers = {
+      "Content-Type": "application/json",
+      case: authCtx.Case(),
+    };
     try {
-      const rese = await Axios.post(route, {
-        Token: authCtx.Token(),
-        formData,
-      })
+      const rese = await Axios.post(
+        route,
+        { Token: authCtx.Token(), formData },
+        { headers }
+      )
         .then((res) => {
-          setFormValues(formData);
-          router.push("/switch");
+          router.push("/sildenafil-order-flow");
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -138,11 +142,15 @@ const Consultation = (props) => {
                   onClick={() => {
                     if (notLastQuestion) {
                       router.push(
-                        `/consultation?question=${question + 1}/`,
+                        `/medical-profile-questions?question=${question + 1}/`,
                         undefined,
                         {
                           shallow: true,
                         }
+                      );
+                      props.setCurrentStep(question + 1);
+                      props.setProgress(
+                        (props.currentStep / props.totalSteps) * 100
                       );
                     }
                   }}

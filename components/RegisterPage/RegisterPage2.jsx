@@ -107,6 +107,7 @@ const RegisterPage2 = (props) => {
       try {
         const rese = await Axios.post(route, payload)
           .then((res) => {
+            console.log(res.data);
             props.props.isLoggedIn();
             authCtx.settingToken(res.data.data.access_token);
             router.push("/consultation");

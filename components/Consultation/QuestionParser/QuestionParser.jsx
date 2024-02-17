@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useFormContext } from "react-hook-form";
 import { useQuestionParser } from "./QuestionParser.hooks";
 
-const QuestionParser = () => {
+const QuestionParser = (props) => {
   const { questions } = useConsultationContext() || {};
   const { main, total } = questions;
   const router = useRouter();
@@ -16,8 +16,8 @@ const QuestionParser = () => {
   const isNotFirstQuestionStyles = notFirstQuestion ? styles.notFirst : "";
   const previousQuestionLink =
     parseInt(router.query?.question) === 1
-      ? "/consultation"
-      : `/consultation?question=${questionId - 1}`;
+      ? "/medical-profile-questions"
+      : `/medical-profile-questions?question=${questionId - 1}`;
 
   if (!main) return "Loading...";
 

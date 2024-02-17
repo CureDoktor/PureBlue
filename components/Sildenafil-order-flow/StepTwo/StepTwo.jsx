@@ -1,8 +1,17 @@
 import React from "react";
 import styles from "./StepTwo.styles.module.scss";
+import {useEffect} from "react"
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
-const StepTwo = ({ onNext }) => {
+const StepTwo = ({ onNext,setProduct, product}) => {
+
+    const setProductName = (value) => {
+          setProduct({
+        ...product,
+        viagra: value,
+      });
+    }
+
   const medicationOptions = [
     {
       title: "Viagra",
@@ -30,11 +39,34 @@ const StepTwo = ({ onNext }) => {
         </p>
         <div className={styles.mainCardContainer}>
           {medicationOptions.map((items) => {
-            return (
-              <div className={styles.card} key={items} onClick={onNext}>
+            if(product.daily === true){
+              if(items.title === "Viagra"){
+               return <div></div>; 
+              }else{
+                  return (
+              <div className={styles.card} key={items.title} onClick={onNext}>
                 <OrderFlowCard content={items} SingleImage />
               </div>
             );
+              }
+              
+            } else{
+               if(items.title === "Viagra"){
+                  return (
+                    <div className={styles.card} key={items.title} onClick={()=> {setProductName(true)}}>
+                      <OrderFlowCard content={items} SingleImage />
+                    </div>
+                  );
+               }else {
+                  return (
+                    <div className={styles.card} key={items.title} onClick={()=> {setProductName(false)}}>
+                      <OrderFlowCard content={items} SingleImage />
+                    </div>
+                  );
+               }
+          
+            }
+
           })}
         </div>
         <div className={styles.mainCard}>
