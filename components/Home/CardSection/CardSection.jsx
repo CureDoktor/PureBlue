@@ -1,10 +1,8 @@
 import React from "react";
 import { Card, Container } from "react-bootstrap";
 import styles from "./CardSection.styles.module.scss";
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 const CardSection = () => {
   const cardInfo = [

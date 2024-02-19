@@ -1,6 +1,6 @@
 import { useState, React } from "react";
-import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import OrderHero from "../../components/order-flow/OrderHero";

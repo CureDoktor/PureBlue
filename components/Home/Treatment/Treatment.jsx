@@ -1,9 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button, Card, Container } from "react-bootstrap";
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 
 import styles from "./treatment.styles.module.scss";
 
