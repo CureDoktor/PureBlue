@@ -34,6 +34,17 @@
     border-radius: 10px;
     font-weight: 600;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    background-color: #0077f0;
+  }
+}
+.mainCardsContainer input[type="radio"]:checked + label .card {
+  background-color: #0077f0;
+  color: white;
 }
 
 .monthlyDetailsCard {

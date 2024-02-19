@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import styles from "./QuestionParser.styles.module.scss";
 import { useConsultationContext } from "../../../store/consultation-context";
 import Link from "next/link";
@@ -24,6 +25,14 @@ const QuestionParser = (props) => {
   const { parsedQuestion, parsedFollowUpQuestions } = useQuestionParser({
     questions,
   });
+
+  useEffect(() => {
+    props.setTotalSteps(total);
+  }, []);
+
+  useEffect(() => {
+    props.setProgress(((questionId - 1) / total) * 100);
+  }, [questionId]);
 
   return (
     <div className={styles.container}>

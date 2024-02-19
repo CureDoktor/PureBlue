@@ -8,9 +8,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import GetStarted from "../../components/GetStarted";
 import Frequently from "../../components/GetStarted/FrequentlyAsked";
+import { useRouter } from "next/navigation";
 import CardCarousel from "../../components/landingPageV2/CardCarousel";
 
 const index = () => {
+  const router = useRouter();
+  const getMyTreatment = () => {
+    router.push("/transition-page");
+  };
   const reviews = [
     {
       id: 1,
@@ -117,7 +122,9 @@ const index = () => {
             <span className={styles.month}>One month price</span>
             <span className={styles.price}>$22</span>
           </div>
-          <button className={styles.shopNow}>Shop Now</button>
+          <button onClick={getMyTreatment} className={styles.shopNow}>
+            Shop Now
+          </button>
           <p className={styles.productNeed}>
             *products needing a prescription require a short consultation with
             an online physician.
@@ -177,7 +184,7 @@ const index = () => {
                   </p>
                 );
               })}
-              <button>Find my treatment</button>
+              <button onClick={getMyTreatment}>Find my treatment</button>
               <p>
                 *Products needing a prescription require a short consultation
                 with an online physician
@@ -206,7 +213,7 @@ const index = () => {
                 </p>
               );
             })}
-            <button>Find my treatment</button>
+            <button onClick={getMyTreatment}>Find my treatment</button>
             <p>
               *Products needing a prescription require a short consultation with
               an online physician

@@ -18,7 +18,9 @@ export default function handler(req, res) {
       res.status(200).json(respond.data.data);
     })
     .catch(function (error) {
-      let response = ApiError(error.response.data);
+      console.log(error.response.data);
+      let response = error.response.data.errors;
+      //let response = ApiError(error.response.data);
       res.status(400).json(response);
     });
 }

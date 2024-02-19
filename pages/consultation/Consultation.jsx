@@ -59,7 +59,6 @@ const Consultation = (props) => {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           setStartingQuestions(res.data.data.questions);
-          props.setTotalSteps(res.data.data.questions.length);
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -117,7 +116,8 @@ const Consultation = (props) => {
           router.push("/sildenafil-order-flow");
         })
         .catch((error) => {
-          props.handleShow(error.response.data);
+          console.log(props);
+          props.props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
@@ -136,7 +136,15 @@ const Consultation = (props) => {
           <Form defaultValues={data} onSubmit={handleSubmit}>
             <Row className={styles.row}>
               <Col className={styles.col} xs={12} lg={7}>
-                {!question ? <Start /> : <QuestionParser />}
+                {!question ? (
+                  <Start />
+                ) : (
+                  <QuestionParser
+                    setCurrentStep={props.setCurrentStep}
+                    setTotalSteps={props.setTotalSteps}
+                    setProgress={props.setProgress}
+                  />
+                )}
                 <Button
                   type={!notLastQuestion ? "submit" : "button"}
                   onClick={() => {
@@ -150,8 +158,9 @@ const Consultation = (props) => {
                       );
                       props.setCurrentStep(question + 1);
                       props.setProgress(
-                        (props.currentStep / props.totalSteps) * 100
+                        ((props.currentStep + 1) / props.totalSteps) * 100
                       );
+                      console.log(props.progress);
                     }
                   }}
                   endAdornment={

@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { useConsultationContext } from "../../store/consultation-context";
 import styles from "./styles.module.scss";
 
-const MedicalProfileQuestion = () => {
+const MedicalProfileQuestion = (props) => {
   const { questions } = useConsultationContext() || {};
   const { main, total } = questions;
   const router = useRouter();
@@ -51,6 +51,7 @@ const MedicalProfileQuestion = () => {
         /> */}
       </div>
       <Consultation
+        props={props}
         setTotalSteps={setTotalSteps}
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}

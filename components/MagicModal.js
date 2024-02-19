@@ -45,7 +45,12 @@ export default function MagicModal({
         <Button variant="secondary" onClick={() => setModalState(false)}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleSubmit}>
+        <Button
+          variant="primary"
+          onClick={() => {
+            handleSubmit(formData);
+          }}
+        >
           Save Changes
         </Button>
       </Modal.Footer>

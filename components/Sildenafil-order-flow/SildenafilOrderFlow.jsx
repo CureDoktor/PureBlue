@@ -13,6 +13,7 @@ import Thankyou from "../Thankyou/Thankyou";
 // import StepEighteen from "./StepEighteen";
 
 const SildenafilOrderFlow = (props) => {
+  const [initialRender, setInitialRender] = useState(true);
   const [product, setProduct] = useState({
     daily: false,
     viagra: false,
@@ -44,6 +45,10 @@ const SildenafilOrderFlow = (props) => {
   }, [currentStep]);
 
   useEffect(() => {
+    if (initialRender) {
+      setInitialRender(false);
+      return; // Skip the effect on initial render
+    }
     goToNextStep();
   }, [product]);
 

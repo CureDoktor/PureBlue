@@ -27,9 +27,18 @@ export default function Membership(props) {
   const authCtx = useContext(AuthContext);
   const gettingUserInfo = async () => {
     const route = "/api/user/getUserInfo";
+    var caseId = authCtx.Case();
+    const headers = {
+      "Content-Type": "application/json",
+      case: "?case_id=" + caseId,
+    };
 
     try {
-      const rese = await Axios.post(route, { Token: authCtx.Token() })
+      const rese = await Axios.post(
+        route,
+        { Token: authCtx.Token() },
+        { headers }
+      )
         .then((res) => {
           setUserInfo(res.data.data);
         })

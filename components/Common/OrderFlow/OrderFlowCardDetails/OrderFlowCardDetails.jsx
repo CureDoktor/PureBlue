@@ -18,9 +18,45 @@ import {
 } from "react-bootstrap";
 
 const OrderFlowCardDetails = ({ onNext, props, product }) => {
+  const [initialRender, setInitialRender] = useState(true);
   const [InitialProduct, setInitialProduct] = useState("");
-  const [chosingProduct, setChosingProduct] = useState([{}]);
-  const [chosenProduct, setChosenProduct] = useState([{}]);
+  const [selectedProductId, setSelectedProductId] = useState();
+  const [chosingProduct, setChosingProduct] = useState([
+    {
+      id: 37,
+      product_type: 1,
+      pharmacy: "GENRX",
+      product_title: "Tadalafil 20mg - 48 tablets every 12 months",
+      product_tag: "Tadalafil",
+      product_category: 1,
+      partner_medication_id: "6d8a53e9-1121-4dce-8c57-04d57a43cb1f",
+      product_dosage_tag: "Advanced",
+      product_dosage_mg: "20.0",
+      product_dosages_per_month: 4,
+      product_qty: 48,
+      days_supply: 365,
+      refills: 0,
+      one_time_charge: 0,
+      initial_product_price: null,
+      product_price: "468.00",
+      product_image: "",
+      metadata: [
+        {
+          name: "Monthly",
+          value: "39",
+        },
+        {
+          name: "Retail Price",
+          value: "540",
+        },
+        {
+          name: "% Saving",
+          value: "13%",
+        },
+      ],
+      is_active: 0,
+    },
+  ]);
   const [medications, setMedications] = useState([
     {
       id: 37,
@@ -57,9 +93,73 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
       is_active: 0,
     },
   ]);
-  const [chosenMed, setChosenMed] = useState({});
+  const [chosenMed, setChosenMed] = useState({
+    monthly: "",
+    retail_price: "",
+    saving: "",
+    plan_name: "",
+    actial_pricee: 0,
+    id: 0,
+  });
 
-  const handleProductChange 
+  const authCtx = useContext(AuthContext);
+
+  const handleProductChange = (event) => {
+    setSelectedProductId(event.target.value);
+
+    const { value, name } = event.target;
+    medications.map((element) => {
+      if (element.id == value) {
+        var monthlyy = 0;
+        var retail_pricee = 0;
+        var savingg = 0;
+        var actual_pricee = element.product_price;
+        var elementId = element.id;
+        element.metadata.map((param) => {
+          if (param.name === "Monthly") {
+            monthlyy = param.value;
+          } else if (param.name === "Retail Price") {
+            retail_pricee = param.value;
+          } else if (param.name === "% Saving") {
+            savingg = param.value;
+          }
+        });
+
+        element.product_price;
+
+        var plan_namee = "";
+        if (element.product_qty / element.product_dosages_per_month == 1) {
+          plan_namee = "1 Month";
+        } else if (
+          element.product_qty / element.product_dosages_per_month ==
+          3
+        ) {
+          plan_namee = "3 Months";
+        } else if (
+          element.product_qty / element.product_dosages_per_month ==
+          6
+        ) {
+          plan_namee = "6 Months";
+        } else if (
+          element.product_qty / element.product_dosages_per_month ==
+          12
+        ) {
+          plan_namee = "12 Months";
+        }
+
+        var cure = {
+          id: elementId,
+          monthly: monthlyy,
+          actual_price: actual_pricee,
+          retail_price: retail_pricee,
+          saving: savingg,
+          plan_name: plan_namee,
+        };
+
+        setChosenMed(cure);
+      }
+    });
+  };
 
   const gettingMedications = async () => {
     const route = "/api/get-products";
@@ -79,7 +179,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
           setInitialProduct(name);
         })
         .catch((error) => {
-          props.handleShow(error.response.data);
+          props.props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
@@ -130,10 +230,24 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
   const [payInfo, setPayInfo] = useState(false);
   const handleChange = (event) => {
     const { value, name } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    if (name == "expirationDate") {
+      const numericValue = value.replace(/\D/g, "");
+      // Check if the value is longer than 4 characters, if so, trim it
+      const trimmedValue = numericValue.slice(0, 4);
+      // Insert "/" after the first 2 characters
+      const formattedValue = trimmedValue.replace(/(\d{2})/, "$1/");
+      // Update the state with the formatted value
+
+      setFormData({
+        ...formData,
+        [name]: formattedValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const [formData, setFormData] = useState({
@@ -143,7 +257,22 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
     cvv: "",
   });
 
-  const authCtx = useContext(AuthContext);
+  useEffect(() => {
+    if (chosingProduct.length > 0) {
+      // Create a synthetic event object
+      const syntheticEvent = {
+        target: {
+          name: "product_tag",
+          value: chosingProduct[0].id, // Assuming you want to select the first product
+        },
+      };
+
+      // Trigger handleProductChange with the synthetic event
+      handleProductChange(syntheticEvent);
+      setSelectedProductId(chosingProduct[0].id);
+    }
+  }, [chosingProduct]);
+
   const route = "/api/user/getUserInfo";
 
   async function submitHandler(event) {
@@ -152,22 +281,35 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), formData })
         .then((res) => {
-          setPayInfo(false);
-          props.reloadInfo();
+          handleOrderFromProfile();
         })
         .catch((error) => {
-          props.handleShow(error.response.data);
+          props.props.handleShow(error.response.data);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);
     }
   }
-  const planOptions = [
-    { id: 1, period: "Monthly", cost: "$76/mo" },
-    { id: 2, period: "3 Months", cost: "$85" },
-    { id: 3, period: "6 months", cost: "$76/mo" },
-    { id: 4, period: "12 months", cost: "$54/mo" },
-  ];
+
+  async function handleOrderFromProfile() {
+    const route = "/api/order/order-from-profile";
+    const data = {
+      product_id: chosenMed.id,
+      case_id: parseInt(authCtx.Case()),
+    };
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token(), data })
+        .then((res) => {
+          onNext();
+        })
+        .catch((error) => {
+          props.props.handleShow(error.response.data);
+        });
+    } catch (err) {
+      return alert("Something went wrong!" + err);
+    }
+  }
+
   return (
     <>
       <div className={styles.mainContainer}>
@@ -179,37 +321,71 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
             <Form.Label>
               First decide your preferred medication, select one:
             </Form.Label>
-            {chosingProduct.map((radio, idx) => (
-              <Col md={12} key={idx}>
-                <ToggleButton
-                  key={idx}
-                  id={`radios-${idx}`}
-                  type="radio"
-                  name="product_tag"
-                  className={styles.buttons}
-                  value={radio.value}
-                  checked={chosenMed.product_tag === radio.value}
-                  onChange={handleChange}
-                >
-                  {radio.name}
-                </ToggleButton>
-              </Col>
-            ))}
+            {chosingProduct.map((element, index) => {
+              var monthlyCost = 0;
+
+              element.metadata.map((metadata) => {
+                if (metadata.name === "Monthly") {
+                  monthlyCost = metadata.value;
+                }
+              });
+              var plan_name = "";
+              if (
+                element.product_qty / element.product_dosages_per_month ==
+                1
+              ) {
+                plan_name = "1 Month";
+              } else if (
+                element.product_qty / element.product_dosages_per_month ==
+                3
+              ) {
+                plan_name = "3 Months";
+              } else if (
+                element.product_qty / element.product_dosages_per_month ==
+                6
+              ) {
+                plan_name = "6 Months";
+              } else if (
+                element.product_qty / element.product_dosages_per_month ==
+                12
+              ) {
+                plan_name = "12 Months";
+              }
+
+              return (
+                <Col md={12} key={element.id}>
+                  <input
+                    key={element.id}
+                    id={`radios-${element.id}`}
+                    type="radio"
+                    name="product_tag"
+                    value={element.id}
+                    style={{ display: "none" }}
+                    checked={selectedProductId == element.id}
+                    onChange={handleProductChange}
+                  />
+
+                  <label
+                    htmlFor={`radios-${element.id}`}
+                    className={styles.mainCardsContainer}
+                    style={{ width: "100%" }}
+                  >
+                    <div key={element.id} className={styles.card}>
+                      <span>{plan_name}</span>
+                      <span>${monthlyCost}/mo</span>
+                    </div>
+                  </label>
+                </Col>
+              );
+            })}
           </Form.Group>
         </div>
-        <div className={styles.mainCardsContainer}>
-          {planOptions.map((plan) => (
-            <div key={plan.id} className={styles.card}>
-              <span>{plan.period}</span>
-              <span>{plan.cost}</span>
-            </div>
-          ))}
-        </div>
-        <hr />
+        <br />
         <div className={styles.monthlyDetailsCard}>
-          <span>3 months supply</span>
+          <span>{chosenMed.plan_name} supply</span>
           <span>
-            <span className={styles.cutPrice}>$255</span> $228
+            <span className={styles.cutPrice}>${chosenMed.retail_price}</span> $
+            {chosenMed.actual_price}
           </span>
         </div>
         <div className={styles.DoctorFee}>
@@ -219,16 +395,19 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
               src="../assets/sildenafilOrderFlow/Image157/Image157.png"
               className={styles.image}
             />
-            -$30
+            -${chosenMed.retail_price - chosenMed.actual_price}
           </span>
         </div>
         <div className={styles.totalMain}>
           <div className={styles.total}>
             <span>Total</span>
-            <span className={styles.totalBlue}>You're saving 11%</span>
+            <span className={styles.totalBlue}>
+              You're saving {chosenMed.saving}
+            </span>
           </div>
           <span>
-            <span className={styles.cutPrice}>$255</span> $228
+            <span className={styles.cutPrice}>${chosenMed.retail_price}</span> $
+            {chosenMed.actual_price}
           </span>
         </div>
         <div className={styles.refundMain}>
@@ -236,7 +415,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
             <span>Full refund if not prescribed</span>
             <button>Details</button>
           </div>
-          <span>$228</span>
+          <span>${chosenMed.actual_price}</span>
         </div>
         <Form onSubmit={submitHandler}>
           <br />
@@ -246,10 +425,11 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
               <Form.Control
                 required
                 name="creditCardNumber"
-                type="number"
+                type="text"
+                maxLength="16"
                 onChange={handleChange}
                 placeholder="Enter Credit Card Number"
-                value={formData.email}
+                value={formData.creditCardNumber}
                 className={styles.formControl}
               />
               <Form.Control.Feedback type="invalid">
@@ -264,8 +444,8 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
                 name="expirationDate"
                 type="text"
                 onChange={handleChange}
-                placeholder="exp. MM/DD"
-                value={formData.email}
+                placeholder="exp. MM/YY"
+                value={formData.expirationDate}
                 className={styles.formControl}
               />
               <Form.Control.Feedback type="invalid">
@@ -276,12 +456,11 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
               <Form.Control
                 required
                 name="cvv"
-                type="number"
-                htmlSize="4"
-                autoComplete="on"
+                type="text"
+                maxLength="4"
                 onChange={handleChange}
                 placeholder="Enter CVV"
-                value={formData.email}
+                value={formData.cvv}
                 className={styles.formControl}
               />
               <Form.Control.Feedback type="invalid">
