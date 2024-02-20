@@ -18,13 +18,15 @@ const inputMap = {
 };
 
 export const parseComponentProps = (name, type, answer) => {
-  let props = { name: "", value: "", label: "", variant: "" };
+  console.log(answer);
+  let props = { name: "", value: "", label: "", variant: "", critical: false };
   switch (type) {
     case "radio":
       props = {
         name,
         value: answer?.id,
         label: answer?.title,
+        critical: answer?.is_critical,
         variant: "contained",
       };
       break;

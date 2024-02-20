@@ -9,6 +9,7 @@ export const Radio = ({
   variant = "default",
   options,
   endAdornment,
+  critical,
   style,
 }) => {
   const { register, watch } = useFormContext();
@@ -31,6 +32,14 @@ export const Radio = ({
           {...register(name, options)}
           type="radio"
           value={value}
+          onChange={(e) => {
+            console.log(critical);
+            if (critical == 1) {
+              return;
+            } else {
+              // setValue(name, e.target.value);
+            }
+          }}
         />
         {label}
       </div>
