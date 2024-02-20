@@ -17,7 +17,7 @@ export default function MagicModal({
     const message = answer;
     const inputField = (
       <input
-        type="text"
+        type={question === "password" }
         placeholder={`${question}`}
         onChange={handleChange}
         name={question}

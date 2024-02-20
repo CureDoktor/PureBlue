@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import styles from "./CardCarousel.styles.module.scss";
 import { Card, Container } from "react-bootstrap";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ReviewCard from "../ReviewCard/ReviewCard";
 import { Navigation, Autoplay } from "swiper";

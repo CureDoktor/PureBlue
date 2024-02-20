@@ -25,7 +25,7 @@ const HomePage = () => {
             Your free online visit starts here. Tell us what we can help you
             with.
           </p>
-          <SearchButton className="bg-primary" span="Find my treatment"  />
+          <SearchButton className="bg-primary" span="Find my treatment" />
         </div>
       </Container>
       <section className={styles.cardSection}>
@@ -64,7 +64,11 @@ const HomePage = () => {
             makes men’s health simpler, more convenient, and affordable.
           </h1>
 
-          <SearchButton className="bg-dark" span="Explore treatments" name="not-explore" />
+          <SearchButton
+            className="bg-dark"
+            span="Explore treatments"
+            name="not-explore"
+          />
         </div>
       </Container>
     </div>
