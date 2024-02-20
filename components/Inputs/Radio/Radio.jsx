@@ -12,7 +12,7 @@ export const Radio = ({
   critical,
   style,
 }) => {
-  const { register, watch } = useFormContext();
+  const { register, watch, setValue } = useFormContext();
   const checkedValue = watch(name);
   const isChecked = parseInt(checkedValue) === value ? styles.checked : "";
   const variantMap = {
@@ -33,11 +33,12 @@ export const Radio = ({
           type="radio"
           value={value}
           onChange={(e) => {
-            console.log(critical);
             if (critical == 1) {
+              alert("critical");
+              setValue(name, checkedValue);
               return;
             } else {
-              // setValue(name, e.target.value);
+              setValue(name, e.target.value);
             }
           }}
         />
