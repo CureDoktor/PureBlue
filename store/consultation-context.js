@@ -5,6 +5,8 @@ export const ConsultationContext = createContext();
 export default function ConsultationContextProvider({ children }) {
   const [data, setData] = useState({});
   const [questions, setQuestions] = useState({});
+  const [productChanged, isProductChanged] = useState(0);
+  const [showNextQuestion, setNextQuestion] = useState(false);
   const setFormValues = (values) => {
     setData((prevValues) => ({
       ...prevValues,
@@ -14,7 +16,16 @@ export default function ConsultationContextProvider({ children }) {
 
   return (
     <ConsultationContext.Provider
-      value={{ data, setFormValues, questions, setQuestions }}
+      value={{
+        data,
+        setFormValues,
+        questions,
+        setQuestions,
+        showNextQuestion,
+        setNextQuestion,
+        productChanged,
+        isProductChanged,
+      }}
     >
       {children}
     </ConsultationContext.Provider>

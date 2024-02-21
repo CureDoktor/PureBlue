@@ -1,6 +1,8 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./Radio.styles.module.scss";
+import { useConsultationContext } from "../../../store/consultation-context";
+import { useEffect } from "react";
 
 export const Radio = ({
   label,
@@ -10,9 +12,21 @@ export const Radio = ({
   options,
   endAdornment,
   critical,
+  critical_message,
   style,
+  forbidden,
+  forbidden_message,
+  followUp,
 }) => {
   const { register, watch, setValue } = useFormContext();
+  const { setNextQuestion, isProductChanged, productChanged } =
+    useConsultationContext();
+  useEffect(() => {
+    if (!followUp) {
+      setNextQuestion(false);
+    }
+  }, []);
+  console.log(followUp);
   const checkedValue = watch(name);
   const isChecked = parseInt(checkedValue) === value ? styles.checked : "";
   const variantMap = {
@@ -34,12 +48,21 @@ export const Radio = ({
           type="radio"
           value={value}
           onChange={(e) => {
-            if (critical == 1) {
-              alert("critical");
-              setValue(name, checkedValue);
-              return;
+            if (forbidden == 1) {
+              alert(forbidden_message);
             } else {
-              setValue(name, e.target.value);
+              if (critical == 1) {
+                if (confirm(critical_message) == true) {
+                  setValue(name, e.target.value);
+                  isProductChanged(productChanged + 1);
+                }
+                return;
+              } else {
+                setValue(name, e.target.value);
+                if (!followUp) {
+                  isProductChanged(productChanged + 1);
+                }
+              }
             }
           }}
         />

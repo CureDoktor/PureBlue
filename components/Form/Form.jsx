@@ -10,7 +10,6 @@ const Form = ({ defaultValues, onSubmit, children }) => {
     <FormProvider {...methods}>
       <form
         encType="multipart/form-data"
-        noValidate
         onSubmit={methods.handleSubmit(onSubmit)}
       >
         {children}

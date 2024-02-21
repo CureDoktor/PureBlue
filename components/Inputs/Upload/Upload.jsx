@@ -3,7 +3,8 @@ import { Controller, useFormContext } from "react-hook-form";
 import styles from "./Upload.styles.module.scss";
 import { Button } from "react-bootstrap";
 import Axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useConsultationContext } from "../../../store/consultation-context";
 import AuthContext from "../../../store/auth-context";
 
 export const config = {
@@ -13,6 +14,10 @@ export const config = {
 };
 
 const Upload = ({ name }) => {
+  const { setNextQuestion } = useConsultationContext();
+  useEffect(() => {
+    setNextQuestion(true);
+  }, []);
   const authCtx = useContext(AuthContext);
   const { register, watch, formState, control } = useFormContext();
 

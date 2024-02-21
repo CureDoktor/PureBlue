@@ -34,7 +34,12 @@ export const parseComponentProps = (name, type, answer) => {
         value: answer?.id,
         label: answer?.title,
         critical: answer?.is_critical,
+        critical_message: answer?.critical_message,
         variant: "contained",
+        forbidden: answer?.is_forbidden,
+        forbidden_message: answer?.forbidden_message,
+        followUp:
+          answer?.follow_up_question && answer?.follow_up_question !== null,
       };
       break;
     case "checkbox":

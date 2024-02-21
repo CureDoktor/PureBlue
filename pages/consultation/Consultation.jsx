@@ -15,7 +15,8 @@ import AuthContext from "../../store/auth-context";
 import { useRef } from "react";
 
 const Consultation = (props) => {
-  const [ShowButton, setShowButton] = useState(true);
+  const { showNextQuestion, productChanged } = useConsultationContext();
+  const [initialRender, setInitialRender] = useState(true);
   const buttonRef = useRef(null);
   const [StartingQuestions, setStartingQuestions] = useState([
     {
@@ -53,9 +54,13 @@ const Consultation = (props) => {
     },
   ]);
 
-  const handleClick = () => {
-    buttonRef.current.click();
-  };
+  useEffect(() => {
+    if (initialRender) {
+      setInitialRender(false);
+      return; // Skip the effect on initial render
+    }
+    goNextQuestion();
+  }, [productChanged]);
 
   const authCtx = useContext(AuthContext);
 
@@ -131,6 +136,20 @@ const Consultation = (props) => {
     }
   };
 
+  const goNextQuestion = () => {
+    if (notLastQuestion) {
+      router.push(
+        `/medical-profile-questions?question=${question + 1}/`,
+        undefined,
+        {
+          shallow: true,
+        }
+      );
+      props.setCurrentStep(question + 1);
+      props.setProgress(((props.currentStep + 1) / props.totalSteps) * 100);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -150,28 +169,13 @@ const Consultation = (props) => {
                     setCurrentStep={props.setCurrentStep}
                     setTotalSteps={props.setTotalSteps}
                     setProgress={props.setProgress}
-                    handleClick={handleClick}
                   />
                 )}
                 <Button
-                  style={{ display: ShowButton ? "block" : "none" }}
+                  style={{ display: showNextQuestion ? "block" : "none" }}
                   ref={buttonRef}
                   type={!notLastQuestion ? "submit" : "button"}
-                  onClick={() => {
-                    if (notLastQuestion) {
-                      router.push(
-                        `/medical-profile-questions?question=${question + 1}/`,
-                        undefined,
-                        {
-                          shallow: true,
-                        }
-                      );
-                      props.setCurrentStep(question + 1);
-                      props.setProgress(
-                        ((props.currentStep + 1) / props.totalSteps) * 100
-                      );
-                    }
-                  }}
+                  onClick={goNextQuestion}
                   endAdornment={
                     <svg
                       width="24"

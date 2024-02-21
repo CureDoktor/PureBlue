@@ -2,8 +2,14 @@ import React, { memo, useMemo, useState } from "react";
 import styles from "./Select.styles.module.scss";
 import { useFormContext } from "react-hook-form";
 import { ChevronDown, ChevronUp } from "react-bootstrap-icons";
+import { useEffect } from "react";
+import { useConsultationContext } from "../../../store/consultation-context";
 
 const Select = ({ name, options, items }) => {
+  const { setNextQuestion } = useConsultationContext();
+  useEffect(() => {
+    setNextQuestion(true);
+  }, []);
   const [open, setOpen] = useState(false);
   const { register, watch, setValue, getValues } = useFormContext();
   const selectedValue = watch(name);

@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./Start.styles.module.scss";
+import { useEffect } from "react";
+import { useConsultationContext } from "../../../store/consultation-context";
 
 const Start = () => {
+  const { setNextQuestion } = useConsultationContext();
+  useEffect(() => {
+    setNextQuestion(true);
+  }, []);
   return (
     <div className={styles.container}>
       <h1>Start your consultation</h1>

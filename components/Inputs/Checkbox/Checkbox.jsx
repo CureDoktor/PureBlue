@@ -1,5 +1,6 @@
 import React, { memo, useMemo } from "react";
-
+import { useEffect } from "react";
+import { useConsultationContext } from "../../../store/consultation-context";
 import styles from "./Checkbox.styles.module.scss";
 import { useFormContext, useWatch } from "react-hook-form";
 import { CheckSquare, CheckSquareFill } from "react-bootstrap-icons";
@@ -16,6 +17,10 @@ const Checkbox = ({
   resetFieldId,
 }) => {
   const { register, setValue } = useFormContext();
+  const { setNextQuestion } = useConsultationContext();
+  useEffect(() => {
+    setNextQuestion(true);
+  }, []);
   const checkedValues = useWatch(name)[name] || [];
   const checked = useMemo(
     () =>
