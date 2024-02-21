@@ -24,6 +24,13 @@ const MedicalProfileQuestion = (props) => {
     }
   }, []);
 
+  useEffect(() => {
+    const headerElement = document.getElementById("questions");
+    if (headerElement) {
+      headerElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [progress]);
+
   return (
     <div>
       <div className={styles.container}>
@@ -50,15 +57,17 @@ const MedicalProfileQuestion = (props) => {
           setProgress={setProgress}
         /> */}
       </div>
-      <Consultation
-        props={props}
-        setTotalSteps={setTotalSteps}
-        currentStep={currentStep}
-        setCurrentStep={setCurrentStep}
-        totalSteps={totalSteps}
-        setProgress={setProgress}
-        progress={progress}
-      />
+      <div id="questions">
+        <Consultation
+          props={props}
+          setTotalSteps={setTotalSteps}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          totalSteps={totalSteps}
+          setProgress={setProgress}
+          progress={progress}
+        />
+      </div>
     </div>
   );
 };

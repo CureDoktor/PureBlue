@@ -68,6 +68,7 @@ const Checkbox = ({
         <input
           {...register(name, options)}
           type="checkbox"
+          required
           onChange={handleChange}
           value={value}
         />

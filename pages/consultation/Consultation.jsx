@@ -12,8 +12,11 @@ import Form from "../../components/Form";
 import { useForm } from "react-hook-form";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
+import { useRef } from "react";
 
 const Consultation = (props) => {
+  const [ShowButton, setShowButton] = useState(true);
+  const buttonRef = useRef(null);
   const [StartingQuestions, setStartingQuestions] = useState([
     {
       id: 1,
@@ -49,6 +52,10 @@ const Consultation = (props) => {
       ],
     },
   ]);
+
+  const handleClick = () => {
+    buttonRef.current.click();
+  };
 
   const authCtx = useContext(AuthContext);
 
@@ -143,9 +150,12 @@ const Consultation = (props) => {
                     setCurrentStep={props.setCurrentStep}
                     setTotalSteps={props.setTotalSteps}
                     setProgress={props.setProgress}
+                    handleClick={handleClick}
                   />
                 )}
                 <Button
+                  style={{ display: ShowButton ? "block" : "none" }}
+                  ref={buttonRef}
                   type={!notLastQuestion ? "submit" : "button"}
                   onClick={() => {
                     if (notLastQuestion) {
@@ -160,7 +170,6 @@ const Consultation = (props) => {
                       props.setProgress(
                         ((props.currentStep + 1) / props.totalSteps) * 100
                       );
-                      console.log(props.progress);
                     }
                   }}
                   endAdornment={

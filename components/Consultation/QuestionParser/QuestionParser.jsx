@@ -36,7 +36,10 @@ const QuestionParser = (props) => {
 
   return (
     <div className={styles.container}>
-      <div className={`${styles.header} ${isNotFirstQuestionStyles}`}>
+      <div
+        id="header"
+        className={`${styles.header} ${isNotFirstQuestionStyles}`}
+      >
         {notFirstQuestion && (
           <Link href={previousQuestionLink}>
             <span className={styles.backLink}>

@@ -5,7 +5,6 @@ export const ConsultationContext = createContext();
 export default function ConsultationContextProvider({ children }) {
   const [data, setData] = useState({});
   const [questions, setQuestions] = useState({});
-
   const setFormValues = (values) => {
     setData((prevValues) => ({
       ...prevValues,

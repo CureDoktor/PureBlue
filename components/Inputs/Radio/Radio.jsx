@@ -24,6 +24,7 @@ export const Radio = ({
   return (
     <label
       style={style}
+      required
       className={`${styles.container} ${variantMap[variant]} ${isChecked}`}
     >
       <div className={styles.wrapper}>

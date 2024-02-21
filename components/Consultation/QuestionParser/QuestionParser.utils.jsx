@@ -19,7 +19,14 @@ const inputMap = {
 
 export const parseComponentProps = (name, type, answer) => {
   console.log(answer);
-  let props = { name: "", value: "", label: "", variant: "", critical: false };
+  let props = {
+    name: "",
+    value: "",
+    label: "",
+    variant: "",
+    critical: false,
+    visibility: false,
+  };
   switch (type) {
     case "radio":
       props = {
@@ -41,6 +48,7 @@ export const parseComponentProps = (name, type, answer) => {
     case "textarea":
       props = {
         name,
+        visibility: answer?.visibility == 1,
       };
       break;
     case "upload":
@@ -144,6 +152,5 @@ export const parseQuestion = ({
     parsedQuestion.answers.push(
       parseAnswer({ context, answer: question, afterField })
     );
-
   return parsedQuestion;
 };
