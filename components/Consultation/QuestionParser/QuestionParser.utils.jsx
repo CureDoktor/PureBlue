@@ -47,6 +47,7 @@ export const parseComponentProps = (name, type, answer) => {
         name,
         value: answer?.id,
         label: answer?.title,
+        reset: answer?.reset_others,
         variant: "contained",
       };
       break;

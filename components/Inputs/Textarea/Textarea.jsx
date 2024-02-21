@@ -5,7 +5,8 @@ import { useEffect } from "react";
 import { useConsultationContext } from "../../../store/consultation-context";
 const Textarea = ({ name, visibility }) => {
   const { register, setValue } = useFormContext();
-  const { setNextQuestion } = useConsultationContext();
+  const { setNextQuestion, isProductChanged, productChanged } =
+    useConsultationContext();
   useEffect(() => {
     setNextQuestion(true);
   }, []);
@@ -17,6 +18,7 @@ const Textarea = ({ name, visibility }) => {
             type="checkbox"
             onClick={() => {
               setValue(name, "NONE");
+              isProductChanged(productChanged + 1);
             }}
             id="none"
           />

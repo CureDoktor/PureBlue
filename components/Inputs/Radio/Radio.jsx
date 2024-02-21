@@ -52,7 +52,13 @@ export const Radio = ({
               alert(forbidden_message);
             } else {
               if (critical == 1) {
-                if (confirm(critical_message) == true) {
+                if (
+                  confirm(
+                    critical_message !== ""
+                      ? critical_message
+                      : "Unfortunately, based on your selection, you are likely to be denied treatment"
+                  ) == true
+                ) {
                   setValue(name, e.target.value);
                   isProductChanged(productChanged + 1);
                 }

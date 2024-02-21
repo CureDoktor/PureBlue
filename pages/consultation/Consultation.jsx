@@ -70,6 +70,7 @@ const Consultation = (props) => {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
+          console.log(res.data.data.questions);
           setStartingQuestions(res.data.data.questions);
         })
         .catch((error) => {
@@ -125,11 +126,13 @@ const Consultation = (props) => {
         { headers }
       )
         .then((res) => {
+          localStorage.setItem("currentStep", 1);
           router.push("/sildenafil-order-flow");
         })
         .catch((error) => {
+          console.log(error.response);
           console.log(props);
-          props.props.handleShow(error.response.data);
+          props.props.props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
