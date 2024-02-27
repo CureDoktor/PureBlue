@@ -83,7 +83,7 @@ const Frequently = () => {
 
         <div className={styles.expand}>
           <Accordion defaultActiveKey={null}>
-            {cardData.map((card, index) => (
+            {cardData?.map((card, index) => (
               <Card className={styles.cardHeader} key={index}>
                 <ContextAwareToggle
                   className={styles.headerOne}
@@ -124,7 +124,7 @@ const Frequently = () => {
             stimulators, or if you have an allergic reaction to sildenafil,
             tadalafil, or any ingredients in either medication. You should speak
             with your doctor about your health so that you are healthy enough to
-            have sex. - <span>Read more.</span>
+            have sex. - <span style={{fontWeight:"500px"}}>Read more.</span>
           </p>
         </div>
       </section>
