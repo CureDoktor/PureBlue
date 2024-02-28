@@ -11,6 +11,12 @@
   justify-content: center;
   max-width: 400px;
   margin: auto;
+  align-items: center;
+  @media (max-width: "380px") {
+    flex-direction: column;
+    gap: 20px;
+ }
+ flex-direction: row;
 }
 .telephone {
   text-align: center;

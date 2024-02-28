@@ -2,6 +2,10 @@
   margin-top: 3rem;
   display: flex;
   align-items: center;
+  @media (max-width: "380px") {
+    margin-top: 0rem;
+ }
+
   .leftArrow {
     margin-right: 2rem;
     width: 20px;

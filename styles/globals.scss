@@ -19,3 +19,10 @@ a {
 * {
   box-sizing: border-box;
 }
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  border: none !important;
+  outline: none !important; /* Remove outline on focus */
+  box-shadow: none !important;
+}
