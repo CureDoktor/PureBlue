@@ -59,7 +59,9 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
   ]);
   const [chosenMed, setChosenMed] = useState({});
 
-  const handleProductChange 
+  const handleProductChange = () => {
+    
+  }
 
   const gettingMedications = async () => {
     const route = "/api/get-products";
