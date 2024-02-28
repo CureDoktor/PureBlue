@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./Loader.styles.module.scss";
+import { useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 
 const Loader = () => {
+
   return (
     <div className={styles.mainContainer}>
       <p className={styles.loading}>Loading...</p>
