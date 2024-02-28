@@ -17,7 +17,7 @@ const QuestionTwelve = ({ onNext }) => {
       <img
         src="/assets/transitionPage/Treatment/Treatment.png"
         className={styles.image}
-        onClick={onNext}
+     
       />
     </div>
   );
