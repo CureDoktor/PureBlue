@@ -12,8 +12,12 @@ import Form from "../../components/Form";
 import { useForm } from "react-hook-form";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
+import { useRef } from "react";
 
 const Consultation = (props) => {
+  const { showNextQuestion, productChanged } = useConsultationContext();
+  const [initialRender, setInitialRender] = useState(true);
+  const buttonRef = useRef(null);
   const [StartingQuestions, setStartingQuestions] = useState([
     {
       id: 1,
@@ -50,6 +54,14 @@ const Consultation = (props) => {
     },
   ]);
 
+  useEffect(() => {
+    if (initialRender) {
+      setInitialRender(false);
+      return; // Skip the effect on initial render
+    }
+    goNextQuestion();
+  }, [productChanged]);
+
   const authCtx = useContext(AuthContext);
 
   const gettingQuestions = async () => {
@@ -58,8 +70,8 @@ const Consultation = (props) => {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
+          console.log(res.data.data.questions);
           setStartingQuestions(res.data.data.questions);
-          props.setTotalSteps(res.data.data.questions.length);
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -114,13 +126,30 @@ const Consultation = (props) => {
         { headers }
       )
         .then((res) => {
+          localStorage.setItem("currentStep", 1);
           router.push("/sildenafil-order-flow");
         })
         .catch((error) => {
-          props.handleShow(error.response.data);
+          console.log(error.response);
+          console.log(props);
+          props.props.props.handleShow(error.response.data);
         });
     } catch (err) {
       alert("Something went wrong!" + err);
+    }
+  };
+
+  const goNextQuestion = () => {
+    if (notLastQuestion) {
+      router.push(
+        `/medical-profile-questions?question=${question + 1}/`,
+        undefined,
+        {
+          shallow: true,
+        }
+      );
+      props.setCurrentStep(question + 1);
+      props.setProgress(((props.currentStep + 1) / props.totalSteps) * 100);
     }
   };
 
@@ -136,24 +165,20 @@ const Consultation = (props) => {
           <Form defaultValues={data} onSubmit={handleSubmit}>
             <Row className={styles.row}>
               <Col className={styles.col} xs={12} lg={7}>
-                {!question ? <Start /> : <QuestionParser />}
+                {!question ? (
+                  <Start />
+                ) : (
+                  <QuestionParser
+                    setCurrentStep={props.setCurrentStep}
+                    setTotalSteps={props.setTotalSteps}
+                    setProgress={props.setProgress}
+                  />
+                )}
                 <Button
+                  style={{ display: showNextQuestion ? "block" : "none" }}
+                  ref={buttonRef}
                   type={!notLastQuestion ? "submit" : "button"}
-                  onClick={() => {
-                    if (notLastQuestion) {
-                      router.push(
-                        `/medical-profile-questions?question=${question + 1}/`,
-                        undefined,
-                        {
-                          shallow: true,
-                        }
-                      );
-                      props.setCurrentStep(question + 1);
-                      props.setProgress(
-                        (props.currentStep / props.totalSteps) * 100
-                      );
-                    }
-                  }}
+                  onClick={goNextQuestion}
                   endAdornment={
                     <svg
                       width="24"

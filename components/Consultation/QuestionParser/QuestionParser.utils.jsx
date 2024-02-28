@@ -18,14 +18,28 @@ const inputMap = {
 };
 
 export const parseComponentProps = (name, type, answer) => {
-  let props = { name: "", value: "", label: "", variant: "" };
+  console.log(answer);
+  let props = {
+    name: "",
+    value: "",
+    label: "",
+    variant: "",
+    critical: false,
+    visibility: false,
+  };
   switch (type) {
     case "radio":
       props = {
         name,
         value: answer?.id,
         label: answer?.title,
+        critical: answer?.is_critical,
+        critical_message: answer?.critical_message,
         variant: "contained",
+        forbidden: answer?.is_forbidden,
+        forbidden_message: answer?.forbidden_message,
+        followUp:
+          answer?.follow_up_question && answer?.follow_up_question !== null,
       };
       break;
     case "checkbox":
@@ -33,12 +47,14 @@ export const parseComponentProps = (name, type, answer) => {
         name,
         value: answer?.id,
         label: answer?.title,
+        reset: answer?.reset_others,
         variant: "contained",
       };
       break;
     case "textarea":
       props = {
         name,
+        visibility: answer?.visibility == 1,
       };
       break;
     case "upload":
@@ -142,6 +158,5 @@ export const parseQuestion = ({
     parsedQuestion.answers.push(
       parseAnswer({ context, answer: question, afterField })
     );
-
   return parsedQuestion;
 };

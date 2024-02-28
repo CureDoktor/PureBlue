@@ -17,7 +17,7 @@ export default function MagicModal({
     const message = answer;
     const inputField = (
       <input
-        type="text"
+        type={question === "password" }
         placeholder={`${question}`}
         onChange={handleChange}
         name={question}
@@ -45,7 +45,12 @@ export default function MagicModal({
         <Button variant="secondary" onClick={() => setModalState(false)}>
           Close
         </Button>
-        <Button variant="primary" onClick={handleSubmit}>
+        <Button
+          variant="primary"
+          onClick={() => {
+            handleSubmit(formData);
+          }}
+        >
           Save Changes
         </Button>
       </Modal.Footer>

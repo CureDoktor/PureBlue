@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
-
+import { useEffect } from "react";
+import { useConsultationContext } from "../../../store/consultation-context";
 import styles from "./TextInput.styles.module.scss";
 
 const TextInput = ({
@@ -15,6 +16,10 @@ const TextInput = ({
   const typeMap = {
     date: styles.date,
   };
+  const { setNextQuestion } = useConsultationContext();
+  useEffect(() => {
+    setNextQuestion(true);
+  }, []);
   return (
     <div className={styles.container}>
       <input

@@ -8,9 +8,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import GetStarted from "../../components/GetStarted";
 import Frequently from "../../components/GetStarted/FrequentlyAsked";
+import { useRouter } from "next/navigation";
 import CardCarousel from "../../components/landingPageV2/CardCarousel";
 
 const index = () => {
+  const router = useRouter();
+  const getMyTreatment = () => {
+    router.push("/transition-page");
+  };
   const reviews = [
     {
       id: 1,
@@ -43,27 +48,29 @@ const index = () => {
   ];
   const headerDescription = [
     "FDA-approved medication",
-    "Prescribed by board-certified physicians ",
+    "Prescribed by board-certified physicians",
     "Process takes as little as 3 minutes!",
+  ];
+  const newsDescription = [
+    "Medication prescribed by board-certified doctors",
+    "100% online with no in-person doctor visits required",
+    "Fast, discreet shipping right to your door",
   ];
   const cardData = [
     {
       bottomTriangle: true,
-      cardHeading: "It’s modern medicine",
+      cardHeading: "Get harder erections",
       cardPara:
-        "Doctors have been prescribing Viagra for over 20 years, and for one good reason: IT WORKS! It’s never been easier to achieve and maintain harder erections.",
-    },
-    {
-      image: "/assets/landingPageV2/cardImage1/cardImage1.png",
-    },
-    {
-      image: "/assets/landingPageV2/cardImage2/cardImage2.png",
+        "SIldenafil is the active ingredient in Viagra. It helps increase blood flow and allows you to achieve harder erections in as little as 30 minutes from when you take it.",
+        image: "/assets/landingPageV2/cardImage2/cardImage2.png",
     },
     {
       topTriangle: true,
       cardHeading: "Stay harder for longer",
       cardPara:
         "As long as you’re aroused, generic Viagra will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
+
+        image: "/assets/landingPageV2/cardImage1/cardImage1.png",
     },
   ];
   const cardData2 = [
@@ -72,18 +79,14 @@ const index = () => {
       cardHeading: "It’s modern medicine",
       cardPara:
         "Doctors have been prescribing Viagra for over 20 years, and for one good reason: IT WORKS! It’s never been easier to achieve and maintain harder erections.",
-    },
-    {
-      image: "/assets/landingPageV2/pills/pills.png",
-    },
-    {
-      image: "/assets/landingPageV2/imag4/image4.png",
+        image: "/assets/landingPageV2/imag4/image4.png",
     },
     {
       topTriangle: true,
       cardHeading: "Stay harder for longer",
       cardPara:
         "As long as you’re aroused, generic Viagra will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
+        image: "/assets/landingPageV2/pills/pills.png",
     },
   ];
   return (
@@ -104,12 +107,14 @@ const index = () => {
             <img src="/assets/landingPageV2/viagra/viagra.png" />
           </div>
           <div className={styles.points}>
-            {headerDescription.map((items) => {
+            {headerDescription?.map((items) => {
               return (
+                
                 <p className={styles.details}>
                   <img src="/assets/landingPageV2/tick/tick.png" />
                   <span>{items}</span>
                 </p>
+                
               );
             })}
           </div>
@@ -117,7 +122,9 @@ const index = () => {
             <span className={styles.month}>One month price</span>
             <span className={styles.price}>$22</span>
           </div>
-          <button className={styles.shopNow}>Shop Now</button>
+          <button onClick={getMyTreatment} className={styles.shopNow}>
+            Shop Now
+          </button>
           <p className={styles.productNeed}>
             *products needing a prescription require a short consultation with
             an online physician.
@@ -125,7 +132,7 @@ const index = () => {
         </div>
       </div>
       <div className={styles.cardContainer}>
-        {cardData.map((card, index) => (
+        {cardData?.map((card, index) => (
           <ReusableCard
             key={index}
             topTriangle={card.topTriangle}
@@ -133,6 +140,7 @@ const index = () => {
             cardHeading={card.cardHeading}
             cardPara={card.cardPara}
             image={card.image}
+            index={index}
           />
         ))}
       </div>
@@ -140,8 +148,11 @@ const index = () => {
         <img
           src="/assets/landingPageV2/image/image.png"
           className={styles.image}
+          
         />
+        
       </div>
+      
       <div className={styles.cardContainer}>
         {cardData2.map((card, index) => (
           <ReusableCard
@@ -152,12 +163,13 @@ const index = () => {
             cardHeading={card.cardHeading}
             cardPara={card.cardPara}
             image={card.image}
+            index={index}
           />
         ))}
       </div>
       <div className={styles.cardCarousel}>
         <div className={styles.cards}>
-          <p>Sildenafil Reviews</p>
+          <p className="sildenafil-reviews" style={{textAlign:"center", marginTop:"40px"}}>Sildenafil Reviews</p>
           <CardCarousel />
         </div>
       </div>
@@ -169,7 +181,7 @@ const index = () => {
               <p className={styles.covered}>We’ve got you covered.</p>
             </div>
             <div className={styles.points2}>
-              {headerDescription.map((items) => {
+              {newsDescription?.map((items) => {
                 return (
                   <p className={styles.details}>
                     <img src="/assets/landingPageV2/tickWhite/tickWhite.png" />
@@ -177,8 +189,8 @@ const index = () => {
                   </p>
                 );
               })}
-              <button>Find my treatment</button>
-              <p>
+              <button onClick={getMyTreatment}>Find my treatment</button>
+              <p className="pointsPara" style={{marginTop:"25px"}}>
                 *Products needing a prescription require a short consultation
                 with an online physician
               </p>
@@ -198,7 +210,7 @@ const index = () => {
             </div>
           </div>
           <div className={styles.points2}>
-            {headerDescription.map((items) => {
+            {newsDescription?.map((items) => {
               return (
                 <p className={styles.details}>
                   <img src="/assets/landingPageV2/tick/tick.png" />
@@ -206,14 +218,15 @@ const index = () => {
                 </p>
               );
             })}
-            <button>Find my treatment</button>
-            <p>
+            <button onClick={getMyTreatment}>Find my treatment</button>
+            <p style={{marginTop:"25px"}}>
               *Products needing a prescription require a short consultation with
               an online physician
             </p>
           </div>
         </div>
       </div>
+      
     </>
   );
 };

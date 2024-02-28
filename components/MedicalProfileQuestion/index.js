@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import { useConsultationContext } from "../../store/consultation-context";
 import styles from "./styles.module.scss";
 
-const MedicalProfileQuestion = () => {
+const MedicalProfileQuestion = (props) => {
   const { questions } = useConsultationContext() || {};
   const { main, total } = questions;
   const router = useRouter();
@@ -23,6 +23,13 @@ const MedicalProfileQuestion = () => {
       setCurrentStep(parseInt(savedStep, 10));
     }
   }, []);
+
+  useEffect(() => {
+    const headerElement = document.getElementById("questions");
+    if (headerElement) {
+      headerElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [progress]);
 
   return (
     <div>
@@ -50,14 +57,17 @@ const MedicalProfileQuestion = () => {
           setProgress={setProgress}
         /> */}
       </div>
-      <Consultation
-        setTotalSteps={setTotalSteps}
-        currentStep={currentStep}
-        setCurrentStep={setCurrentStep}
-        totalSteps={totalSteps}
-        setProgress={setProgress}
-        progress={progress}
-      />
+      <div id="questions">
+        <Consultation
+          props={props}
+          setTotalSteps={setTotalSteps}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          totalSteps={totalSteps}
+          setProgress={setProgress}
+          progress={progress}
+        />
+      </div>
     </div>
   );
 };

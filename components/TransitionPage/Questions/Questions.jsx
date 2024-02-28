@@ -11,11 +11,13 @@ import QuestionFourteen from "../QuestionFourteen/QuestionFourteen";
 import QuestionFifteen from "../QuestionFifteen";
 import QuestionSixteen from "../QuestionSixteen";
 import AuthContext from "../../../store/auth-context";
+import MagicModal from "../../MagicModal";
 import { useRouter } from "next/navigation";
 
 const Questions = (props) => {
   const authCtx = useContext(AuthContext);
   const [modalState, setModalState] = useState(false);
+  const [errorData, setErrorData] = useState("");
   const router = useRouter();
   const [form, setForm] = useState({
     email: "",
@@ -24,6 +26,14 @@ const Questions = (props) => {
     product_id: 1,
     date_of_birth: "",
   });
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
 
   const submitForm = (values) => {
     try {
@@ -38,7 +48,6 @@ const Questions = (props) => {
     } catch (error) {
       console.log(error);
     }
-
     //setCurrentStep((prevStep) => prevStep + 1);
   };
 
@@ -59,8 +68,9 @@ const Questions = (props) => {
             router.push("/medical-profile-questions");
           })
           .catch((error) => {
+            setErrorData(error.response.data);
+            setModalState(true);
             console.log(error);
-            props.props.handleShow(error.response.data);
           });
       } catch (err) {
         props.props.handleShow("Username or password are not good!" + err);
@@ -174,7 +184,19 @@ const Questions = (props) => {
   if (!hasMounted) {
     return null;
   }
-  return <div className={styles.mainContainer}>{renderStep()}</div>;
+  return (
+    <div className={styles.mainContainer}>
+      {renderStep()}
+      <MagicModal
+        formData={form}
+        modalState={modalState}
+        handleChange={handleChange}
+        setModalState={setModalState}
+        handleSubmit={handleRegistration}
+        errorData={errorData}
+      />
+    </div>
+  );
 };
 
 export default Questions;

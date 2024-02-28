@@ -1,5 +1,7 @@
 import { useState, React } from "react";
 import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
