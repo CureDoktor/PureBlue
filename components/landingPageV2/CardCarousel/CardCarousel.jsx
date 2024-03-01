@@ -77,7 +77,7 @@ const CardCarousel = () => {
           swiperRef.current = swiper;
         }}
         breakpoints={{
-          375: { slidesPerView: 1, spaceBetween: 5 },
+          320: { slidesPerView: 1, spaceBetween: 5 },
           425: { slidesPerView: 1, spaceBetween: 5 },
           500: { slidesPerView: 1, spaceBetween: 5 },
           600: { slidesPerView: 1, spaceBetween: 5 },

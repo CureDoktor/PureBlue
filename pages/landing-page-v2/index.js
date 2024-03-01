@@ -106,6 +106,9 @@ const index = () => {
           <div className={styles.headerImageContainerSmallScreen}>
             <img src="/assets/landingPageV2/viagra/viagra.png" />
           </div>
+          <div className={styles.smallScreen}>
+            <img src="/assets/pure-blue.png" />
+          </div>
           <div className={styles.points}>
             {headerDescription?.map((items) => {
               return (
@@ -145,10 +148,15 @@ const index = () => {
         ))}
       </div>
       <div className={styles.ImageContainer2}>
-        <img
+      <img
           src="/assets/landingPageV2/image/image.png"
-          className={styles.image}
-          
+          className={styles.lgImage}
+
+        />
+        <img
+          src="/assets/landing-image.png"
+          className={styles.mobileImage}
+
         />
         
       </div>

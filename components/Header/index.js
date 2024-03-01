@@ -32,11 +32,14 @@ export default function Header(props) {
             />
           </Link>
           <div className={styles.tablet}>
-            <Navbar.Toggle
-              aria-controls="basic-navbar-nav"
-              style={{ marginLeft: 20, borderRadius: 15 }}
-              className={styles.toggle}
-            />
+          <Navbar.Toggle>
+              <img
+                aria-controls="basic-navbar-nav"
+                src="/assets/moreOptionsIcon.png"
+                alt="Proselect logo"
+                className={styles.toggle}
+              />
+            </Navbar.Toggle>
           </div>
           <Navbar.Collapse id="basic-navbar-nav" className={styles.collapse}>
             <Nav className={styles.nav}>

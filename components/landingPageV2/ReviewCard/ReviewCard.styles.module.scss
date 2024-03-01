@@ -39,6 +39,9 @@
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     border-top-left-radius: 25px;
+    @media (max-width: "380px") {
+      padding: 10px;
+   }
 
     .para {
       font-size: 18px;
