@@ -13,19 +13,19 @@ const StepSeventeen = ({ onNext }) => {
   const fileInputRef = useRef(null);
   const router = useRouter();
   const handleImageChange = (e) => {
-    const formData = new FormData();
+   
+   
     const file = e.target.files[0];
     const reader = new FileReader();
-
+   
     reader.onloadend = () => {
       setUploadedImage(reader.result);
     };
 
     if (file) {
       reader.readAsDataURL(file);
-      formData.append("file", file);
-      formData.append("token", authCtx.Token());
-      setImageForUpload(formData);
+    
+      setImageForUpload(e.target.files);
     } else {
       setUploadedImage(null);
     }
@@ -34,29 +34,41 @@ const StepSeventeen = ({ onNext }) => {
   const authCtx = useContext(AuthContext);
 
   const handleUploadFiles = async () => {
-    const route = "/api/case/upload-file";
-    try {
-      const rese = await Axios.post(route, imageForUpload, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-        .then((res) => {
-          router.push("/account");
+    var counter = 0;
+    for(let i=0; i<imageForUpload.length; i++){
+      const formData = new FormData();
+      if (imageForUpload && imageForUpload[i]) {
+        const ih = imageForUpload[i];
+        formData.append("file", ih);
+        formData.append("token", authCtx.Token());
+      }
+  
+      const route = "/api/case/upload-file";
+      try {
+        const rese = await Axios.post(route, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         })
-        .catch((error) => {
-          alert(error);
-        });
-    } catch (err) {
-      alert("Something went wrong!" + err);
+          .then((res) => {
+            console.log(res);
+            counter++;
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      } catch (err) {
+        alert("Something went wrong!" + err);
+      }
+    }
+    if(counter == imageForUpload.length){
+      router.push("/account");
     }
   };
 
   const handleSelectPhotoClick = () => {
     fileInputRef.current.click();
   };
-
-  const handleTakePhotoClick = () => {};
 
   return (
     <div className={styles.mainContainer}>
@@ -77,6 +89,7 @@ const StepSeventeen = ({ onNext }) => {
           accept="image/*"
           style={{ display: "none" }}
           ref={fileInputRef}
+          multiple
         />
         <div className={styles.imagePreview}>
           {uploadedImage ? (

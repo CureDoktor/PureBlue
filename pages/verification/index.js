@@ -17,30 +17,36 @@ export default function Verification() {
   const authCtx = useContext(AuthContext);
 
   const handleUploadFiles = async (event) => {
-    const formData = new FormData();
 
-    if (event.target.files && event.target.files[0]) {
-      const i = event.target.files[0];
-      formData.append("file", i);
-      formData.append("token", authCtx.Token());
-    }
+   
+    for(let i=0; i<event.target.files.length; i++){
+     
+      const formData = new FormData();
 
-    const route = "/api/case/upload-file";
-    try {
-      const rese = await Axios.post(route, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-        .then((res) => {
-          console.log(res);
+      if (event.target.files && event.target.files[i]) {
+        const ih = event.target.files[i];
+        formData.append("file", ih);
+        formData.append("token", authCtx.Token());
+      }
+  
+      const route = "/api/case/upload-file";
+      try {
+        const rese = await Axios.post(route, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         })
-        .catch((error) => {
-          alert(error);
-        });
-    } catch (err) {
-      alert("Something went wrong!" + err);
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      } catch (err) {
+        alert("Something went wrong!" + err);
+      }
     }
+
   };
 
   return (

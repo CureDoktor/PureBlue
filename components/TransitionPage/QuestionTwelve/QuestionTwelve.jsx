@@ -9,7 +9,7 @@ const QuestionTwelve = ({ onNext }) => {
   }, []);
   return (
     <div className={styles.container}>
-      <Spinner animation="border" variant="primary" /> 
+      <Spinner animation="border" variant="primary" />
       <p>We're on it</p>
       <h4>
         Let's help you find the right <br /> treatment
@@ -17,7 +17,6 @@ const QuestionTwelve = ({ onNext }) => {
       <img
         src="/assets/transitionPage/Treatment/Treatment.png"
         className={styles.image}
-     
       />
     </div>
   );

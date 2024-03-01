@@ -9,8 +9,10 @@ import Axios from "axios";
 import { AuthContextProvider } from "../store/auth-context";
 import ConsultationContextProvider from "../store/consultation-context";
 import ModalDisplay from "../components/Modal";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   const [isLogedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ function MyApp({ Component, pageProps }) {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("Token");
     setIsLoggedIn(false);
+    router.push("/landing-page-v2");
   };
 
   const loginChange = () => {

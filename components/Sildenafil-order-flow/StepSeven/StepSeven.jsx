@@ -3,15 +3,57 @@ import OrderFlowForm from "../../Common/OrderFlow/OrderFlowForm";
 import styles from "./StepSeven.styles.module.scss";
 import { Form, Row, Container, Col, Button } from "react-bootstrap";
 import ShipInfo from "../../ShipInfo";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import AuthContext from "../../../store/auth-context";
 import Axios from "axios";
 
 const StepSeven = ({ onNext, props }) => {
-  console.log(props.props);
+  const [country, setCountry] = useState(true);
+  const [enableButton, setEnableButton] = useState(true);
+  const checkCountry = (event) => {
+    const { value, name } = event.target;
+    if (value === "AS" || value === "SC") {
+      console.log("ovde ne radi");
+      setEnableButton(false);
+      setCountry(false);
+      handleChange(event);
+    } else {
+      setCountry(true);
+      setEnableButton(true);
+      handleChange(event);
+    }
+  };
+
   const [shipInfo, setShipInfo] = useState(false);
   const [wrongStateHolder, setWrongStateHolder] = useState(false);
+  const [states, setStates] = useState([
+    {
+      "abbreviation": "NE",
+      "name": "Nebraska",
+      "state_id": "782679a1-8679-4ac9-a0e4-92226b4a2f67",
+      "message": "",
+      "is_active": 1,
+    },
+  ]);
 
+  const getStates = async () => {
+    const route = "/api/states";
+    try {
+      const rese = await Axios.post(route)
+        .then((res) => {
+          setStates(res.data.data);
+        })
+        .catch((error) => {
+          props.handleShow(error.response.data);
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
+  };
+
+  useEffect(() => {
+    getStates();
+  }, []);
   const handleChange = (event) => {
     const { value, name } = event.target;
 
@@ -47,7 +89,7 @@ const StepSeven = ({ onNext, props }) => {
     const route = "/api/user/updateShippingInfo";
     const headers = {
       "Content-Type": "application/json",
-      scenario: "?scenario=step-one", // Custom header with data
+      scenario: "?scenario=step-one",
     };
     try {
       const rese = await Axios.post(
@@ -156,27 +198,33 @@ const StepSeven = ({ onNext, props }) => {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="shippingState">
-            <Form.Control
-              required
-              name="shippingState"
-              type="text"
-              onChange={handleChange}
-              placeholder="Enter State"
-              value={formData.email}
-              className={styles.formControl}
-            />
-            <Form.Control.Feedback type="invalid">
-              Incorrect State
-            </Form.Control.Feedback>
-            {wrongStateHolder && (
-              <small style={{ color: "red" }}>
-                Unfortunately our services are not offered in this state. We
-                hope to change that in the near future.
-              </small>
-            )}
-          </Form.Group>
+        <Form.Group>
+          <div>
+          <Form.Select
+            className={styles.formControl}
+            value={formData.shippingState}
+            name="shippingState"
+            onChange={checkCountry}
+          >
+            {states.map((state) => {
+              return (
+                <option value={`${state.abbreviation}`}>{state.name}</option>
+              );
+            })}
+          
+          </Form.Select>
+       
+          {!country && <small style={{ color: "red" }}>
+              Unfortunately our services are not offered in this state. We hope
+              to change that in the near future.
+            </small>}
+           
+         
+            </div>
+        </Form.Group>
+       
         </Row>
+      
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridFirstname">
             <Form.Group as={Col} controlId="shippingZip">
@@ -195,7 +243,7 @@ const StepSeven = ({ onNext, props }) => {
             </Form.Group>
           </Form.Group>
         </Row>
-        <Button type="submit" className={styles.button}>
+        <Button type="submit" disabled={!enableButton} className={styles.button}>
           SAVE AND CONTINUE
         </Button>
       </Form>
