@@ -9,12 +9,13 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
-
+import { useRouter } from "next/navigation";
 
 export default function Case(props) {
   const [CaseAnswers, setCaseAnswers] = useState("");
-  const [date, setDate] = useState("")
+  const [date, setDate] = useState("");
   const authCtx = useContext(AuthContext);
+  const router = useRouter();
   const getCase = async () => {
     const route = "/api/case/get-case";
     try {
@@ -34,8 +35,6 @@ export default function Case(props) {
   useEffect(() => {
     getCase();
   }, []);
-
-
 
   return (
     <div>
@@ -58,18 +57,112 @@ export default function Case(props) {
                   <Row>
                     <Col className={styles.switchPlan} md={4}>
                       <div>
-                      {(value.last_order.product_title.includes("Sildenafil") || value.last_order.product_title.includes("sildenafil")) ? <Image src="/assets/sildenafil-bottle.png" width={150} height={240}/> : <Image src="/assets/tadalafil-bottle.png" width={150} height={240}/>}
-                      </div><br/>{value.medications[0].product_title}
-                      {value.actions?.switch && <Button>Switch Plan</Button>}
-                      <Button>Hassle Free Reneval Date<br/> {value.subscription?.next_iteration_date}</Button>
+                        {value.last_order.product_title.includes(
+                          "Sildenafil"
+                        ) ||
+                        value.last_order.product_title.includes(
+                          "sildenafil"
+                        ) ? (
+                          <Image
+                            src="/assets/sildenafil-bottle.png"
+                            width={150}
+                            height={240}
+                          />
+                        ) : (
+                          <Image
+                            src="/assets/tadalafil-bottle.png"
+                            width={150}
+                            height={240}
+                          />
+                        )}
+                      </div>
+                      <br />
+                      {value.medications[0].product_title}
+                      {value.actions?.switch && (
+                        <Button
+                          onClick={() => {
+                            router.push(`/switch&case_id=${value.id}`);
+                          }}
+                        >
+                          Switch Plan
+                        </Button>
+                      )}
+                      <Button>
+                        Hassle Free Reneval Date
+                        <br /> {value.subscription?.next_iteration_date}
+                      </Button>
                     </Col>
                     <Col md={7}>
-                      <Row><Col md={4}><div className={styles.field}>Order Status <br/> {value.last_order.status}</div></Col><Col md={4}> <div className={styles.field}>Medical Status <br/>{value.status}</div></Col><Col md={4}> <div className={styles.field}>Created On <br/> {value.created_at}</div></Col></Row>
-                      <Row><Col md={4}><div className={styles.field}>Shipping Status <br/> {value.last_order_shipping[0].order_status}</div></Col><Col md={4}> <div className={styles.field}>Tracking Number <br/>{value.last_order_shipping[0].tracking_number}</div></Col><Col md={4}> <div className={styles.field}>Case Details <br/> (answers)</div></Col></Row>
-                      <Row><Col md={4}><div className={styles.field}>Subscription Status <br/>{value.subscription?.status}</div></Col><Col md={4}> <div className={styles.field}>Delivery <br/> {value.subscription?.interval}</div></Col> {value.actions.subscription?.delay ? <Col md={4}> <div className={styles.field}><div>Pause for 30 days <br/><br/> <Button >Pause</Button></div></div></Col> : ""}</Row>
+                      <Row>
+                        <Col md={4}>
+                          <div className={styles.field}>
+                            Order Status <br /> {value.last_order.status}
+                          </div>
+                        </Col>
+                        <Col md={4}>
+                          {" "}
+                          <div className={styles.field}>
+                            Medical Status <br />
+                            {value.status}
+                          </div>
+                        </Col>
+                        <Col md={4}>
+                          {" "}
+                          <div className={styles.field}>
+                            Created On <br /> {value.created_at}
+                          </div>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col md={4}>
+                          <div className={styles.field}>
+                            Shipping Status <br />{" "}
+                            {value.last_order_shipping[0].order_status}
+                          </div>
+                        </Col>
+                        <Col md={4}>
+                          {" "}
+                          <div className={styles.field}>
+                            Tracking Number <br />
+                            {value.last_order_shipping[0].tracking_number}
+                          </div>
+                        </Col>
+                        <Col md={4}>
+                          {" "}
+                          <div className={styles.field}>
+                            Case Details <br /> (answers)
+                          </div>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col md={4}>
+                          <div className={styles.field}>
+                            Subscription Status <br />
+                            {value.subscription?.status}
+                          </div>
+                        </Col>
+                        <Col md={4}>
+                          {" "}
+                          <div className={styles.field}>
+                            Delivery <br /> {value.subscription?.interval}
+                          </div>
+                        </Col>{" "}
+                        {value.actions.subscription?.delay ? (
+                          <Col md={4}>
+                            {" "}
+                            <div className={styles.field}>
+                              <div>
+                                Pause for 30 days <br />
+                                <br /> <Button>Pause</Button>
+                              </div>
+                            </div>
+                          </Col>
+                        ) : (
+                          ""
+                        )}
+                      </Row>
                     </Col>
                   </Row>
-
                 </Accordion.Body>
               </Accordion.Item>
             </div>

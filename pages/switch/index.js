@@ -6,14 +6,15 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
 import Axios from "axios";
+import { useSearchParams } from "next/navigation";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 export default function Switch(props) {
   const authCtx = useContext(AuthContext);
+  const searchParams = useSearchParams();
   const router = useRouter();
   const [medications, setMedications] = useState([{}]);
   const [initialRender, setInitialRender] = useState(true);
-  const [caseId, setCaseId] = useState(null);
   const [chosenMed, setChosenMed] = useState({
     id: 1,
     product_title: "Viagra 25 mg, 4 day supply",
@@ -44,8 +45,7 @@ export default function Switch(props) {
     { name: "Viagra", value: "Viagra" },
     { name: "Tadalafil (generic Cialis)", value: "Tadalafil" },
     { name: "Cialis", value: "Cialis" },
-  ])
-
+  ]);
 
   const returnObject = (value) => {
     let obj = {
@@ -62,7 +62,6 @@ export default function Switch(props) {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           setMedications(res.data.data);
-      
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -82,7 +81,7 @@ export default function Switch(props) {
       setInitialRender(false);
       return; // Skip the effect on initial render
     }
- 
+
     let unique_product_tag = [];
     let unique_product_object = [];
     medications.map((element) => {
@@ -90,26 +89,10 @@ export default function Switch(props) {
         unique_product_tag.push(element.product_tag);
         unique_product_object.push(returnObject(element.product_tag));
       }
-
-    })
+    });
     console.log(unique_product_object);
     setMedication(unique_product_object);
   }, [medications]);
-
-  const gettingOrderInfo = async () => {
-    const route = "/api/case/get-case";
-    try {
-      const rese = await Axios.post(route, { Token: authCtx.Token() })
-        .then((res) => {
-          setCaseId(res.data?.data[0].id);
-        })
-        .catch((error) => {
-          props.handleShow(error.response.data);
-        });
-    } catch (err) {
-      alert("Something went wrong!" + err);
-    }
-  };
 
   useEffect(() => {
     findRightOne();
@@ -171,15 +154,23 @@ export default function Switch(props) {
   }
 
   const backToCheckout = async (medicationId) => {
-    const route = "/api/case/save-product";
-    var currentProductId = { product_id: medicationId, caseId: caseId };
+    const route = "/api/order/cancel-create-case";
+    var caseId = searchParams.get("case_id");
+    const headers = {
+      "Content-Type": "application/json",
+      case: caseId,
+    };
     try {
-      const rese = await Axios.post(route, {
-        Token: authCtx.Token(),
-        payload: currentProductId,
-      })
+      const rese = await Axios.post(
+        route,
+        {
+          Token: authCtx.Token(),
+          payload: { product_id: medicationId },
+        },
+        { headers }
+      )
         .then((res) => {
-          router.push("/order");
+          router.push("/account");
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -188,8 +179,6 @@ export default function Switch(props) {
       alert("Something went wrong!" + err);
     }
   };
-
-
 
   return (
     <div className={styles.container}>
@@ -210,7 +199,6 @@ export default function Switch(props) {
                         First decide your preferred medication, select one:
                       </Form.Label>
                       {medication.map((radio, idx) => (
-                        
                         <Col md={12} key={idx}>
                           <ToggleButton
                             key={idx}

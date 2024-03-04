@@ -41,6 +41,11 @@ export default function Document() {
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <Main />
         <NextScript />
+        <script
+          type="text/javascript"
+          async=""
+          src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=ULEj5E"
+        ></script>
       </body>
     </Html>
   );

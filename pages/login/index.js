@@ -70,7 +70,7 @@ export default function Login(props) {
         .then((res) => {
           authCtx.settingToken(res.data.data.access_token);
           props.isLoggedIn();
-          router.push("/visit-form");
+          router.push("/account");
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -166,7 +166,22 @@ export default function Login(props) {
                       feedbackType="invalid"
                     />
                   </Form.Group>
+                  <div className="text-center pt-4">
+                    Forgot password?&nbsp;
+                    <Link
+                      className={
+                        styles.blueText +
+                        " fw-bold" +
+                        " " +
+                        styles.cursorPointer
+                      }
+                      href="/password-reset"
+                    >
+                      Click here!
+                    </Link>
+                  </div>
                   <br />
+
                   <br />
                   <Button
                     variant="primary"
