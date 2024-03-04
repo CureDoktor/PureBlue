@@ -301,11 +301,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
       const rese = await Axios.post(route, { Token: authCtx.Token(), data })
         .then((res) => {
           window._learnq = window.learnq || [];
-          window._learnq.push([
-            "track",
-            "Ordered From Profile",
-            chosenMed.plan_name,
-          ]);
+          window._learnq.push(["track", "Ordered From Profile", chosenMed]);
           onNext();
         })
         .catch((error) => {
