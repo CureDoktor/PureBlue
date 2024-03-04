@@ -78,10 +78,10 @@ export default function Case(props) {
                       </div>
                       <br />
                       {value.medications[0].product_title}
-                      {value.actions?.switch && (
+                      {value.actions?.switch_product && (
                         <Button
                           onClick={() => {
-                            router.push(`/switch&case_id=${value.id}`);
+                            router.push(`/switch?case_id=${value.id}`);
                           }}
                         >
                           Switch Plan

@@ -13,18 +13,16 @@ const StepSeventeen = ({ onNext }) => {
   const fileInputRef = useRef(null);
   const router = useRouter();
   const handleImageChange = (e) => {
-   
-   
     const file = e.target.files[0];
     const reader = new FileReader();
-   
+
     reader.onloadend = () => {
       setUploadedImage(reader.result);
     };
 
     if (file) {
       reader.readAsDataURL(file);
-    
+
       setImageForUpload(e.target.files);
     } else {
       setUploadedImage(null);
@@ -34,15 +32,19 @@ const StepSeventeen = ({ onNext }) => {
   const authCtx = useContext(AuthContext);
 
   const handleUploadFiles = async () => {
+    // if (imageForUpload?.length) {
+    // } else {
+    //   return;
+    // }
     var counter = 0;
-    for(let i=0; i<imageForUpload.length; i++){
+    for (let i = 0; i < imageForUpload?.length; i++) {
       const formData = new FormData();
       if (imageForUpload && imageForUpload[i]) {
         const ih = imageForUpload[i];
         formData.append("file", ih);
         formData.append("token", authCtx.Token());
       }
-  
+
       const route = "/api/case/upload-file";
       try {
         const rese = await Axios.post(route, formData, {
@@ -61,7 +63,7 @@ const StepSeventeen = ({ onNext }) => {
         alert("Something went wrong!" + err);
       }
     }
-    if(counter == imageForUpload.length){
+    if (counter == imageForUpload?.length) {
       router.push("/account");
     }
   };

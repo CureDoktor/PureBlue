@@ -73,7 +73,6 @@ export default function Switch(props) {
 
   useEffect(() => {
     gettingMedications();
-    gettingOrderInfo();
   }, []);
 
   useEffect(() => {
@@ -156,6 +155,7 @@ export default function Switch(props) {
   const backToCheckout = async (medicationId) => {
     const route = "/api/order/cancel-create-case";
     var caseId = searchParams.get("case_id");
+    console.log(caseId);
     const headers = {
       "Content-Type": "application/json",
       case: caseId,
@@ -287,7 +287,7 @@ export default function Switch(props) {
                     }}
                     className={styles.backToCheckout}
                   >
-                    BACK TO CHECKOUT
+                    CHANGE PRODUCT
                   </Button>
                   <br />
                 </div>

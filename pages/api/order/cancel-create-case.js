@@ -2,6 +2,7 @@ import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
   const caseId = req.headers["case"] ? req.headers["case"] : "";
+  console.log(caseId);
   Axios.post(
     process.env.NEXT_PUBLIC_API_KEY +
       "/order/cancel-create-case?case_id=" +
