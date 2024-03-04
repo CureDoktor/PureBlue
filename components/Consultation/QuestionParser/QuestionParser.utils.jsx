@@ -18,7 +18,7 @@ const inputMap = {
 };
 
 export const parseComponentProps = (name, type, answer) => {
-  console.log(answer);
+
   let props = {
     name: "",
     value: "",

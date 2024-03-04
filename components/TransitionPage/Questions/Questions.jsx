@@ -70,7 +70,6 @@ const Questions = (props) => {
           .catch((error) => {
             setErrorData(error.response.data);
             setModalState(true);
-            console.log(error);
           });
       } catch (err) {
         props.props.handleShow("Username or password are not good!" + err);
@@ -107,8 +106,6 @@ const Questions = (props) => {
 
   const goToNextStep = (values) => {
     for (const property in values) {
-      console.log(property + values[property]);
-
       setForm({
         ...form,
         [property]: values[property],

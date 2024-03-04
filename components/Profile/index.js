@@ -15,7 +15,7 @@ import { Col, Button, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 
 export default function Profile(props) {
-  console.log(props);
+ 
   const authCtx = useContext(AuthContext);
   const gettingUserInfo = async () => {
     const route = "/api/user/getUserInfo";
@@ -110,9 +110,9 @@ export default function Profile(props) {
                 {userInfo.firstName} {userInfo.lastName}
               </b>
             </h1>
-            <p>
+            {/* <p>
               <b>Email:</b> Irwinachas@gmail.com
-            </p>
+            </p> */}
             <p>
               <b>Phone Number:</b> {userInfo.phone}
             </p>

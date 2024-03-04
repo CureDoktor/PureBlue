@@ -14,11 +14,11 @@ export default function handler(req, res) {
     }
   )
     .then((respond) => {
-      console.log(respond.data);
+    
       res.status(200).json(respond.data.data);
     })
     .catch(function (error) {
-      console.log(error.response.data);
+    
       let response = error.response.data.errors;
       //let response = ApiError(error.response.data);
       res.status(400).json(response);

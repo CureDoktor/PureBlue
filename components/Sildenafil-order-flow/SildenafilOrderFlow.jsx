@@ -54,7 +54,6 @@ const SildenafilOrderFlow = (props) => {
 
   const goToNextStep = () => {
     setCurrentStep((prevStep) => prevStep + 1);
-    console.log(product);
   };
   const goToPreviousStep = () => {
     setCurrentStep((prevStep) => prevStep - 1);

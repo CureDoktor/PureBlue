@@ -10,7 +10,6 @@ export default function MagicModal({
   formData,
   errorData,
 }) {
-  //console.log(errorData);
   const rest = Object.entries(errorData);
   var values = "";
   const returnValue = rest.map(([question, answer]) => {

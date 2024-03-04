@@ -13,7 +13,6 @@ const StepSeven = ({ onNext, props }) => {
   const checkCountry = (event) => {
     const { value, name } = event.target;
     if (value === "AS" || value === "SC") {
-      console.log("ovde ne radi");
       setEnableButton(false);
       setCountry(false);
       handleChange(event);

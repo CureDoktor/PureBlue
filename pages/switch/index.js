@@ -12,6 +12,7 @@ export default function Switch(props) {
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const [medications, setMedications] = useState([{}]);
+  const [initialRender, setInitialRender] = useState(true);
   const [caseId, setCaseId] = useState(null);
   const [chosenMed, setChosenMed] = useState({
     id: 1,
@@ -38,6 +39,14 @@ export default function Switch(props) {
     { name: "12", value: 12 },
   ]);
 
+  const [medication, setMedication] = useState([
+    { name: "Sildenafil (generic Viagra)", value: "Sildenafil" },
+    { name: "Viagra", value: "Viagra" },
+    { name: "Tadalafil (generic Cialis)", value: "Tadalafil" },
+    { name: "Cialis", value: "Cialis" },
+  ])
+
+
   const returnObject = (value) => {
     let obj = {
       name: value,
@@ -53,6 +62,7 @@ export default function Switch(props) {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           setMedications(res.data.data);
+      
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -66,6 +76,25 @@ export default function Switch(props) {
     gettingMedications();
     gettingOrderInfo();
   }, []);
+
+  useEffect(() => {
+    if (initialRender) {
+      setInitialRender(false);
+      return; // Skip the effect on initial render
+    }
+ 
+    let unique_product_tag = [];
+    let unique_product_object = [];
+    medications.map((element) => {
+      if (!unique_product_tag.includes(element.product_tag)) {
+        unique_product_tag.push(element.product_tag);
+        unique_product_object.push(returnObject(element.product_tag));
+      }
+
+    })
+    console.log(unique_product_object);
+    setMedication(unique_product_object);
+  }, [medications]);
 
   const gettingOrderInfo = async () => {
     const route = "/api/case/get-case";
@@ -111,6 +140,7 @@ export default function Switch(props) {
         if (element.product_dosage_tag === chosenMed.product_dosage_tag) {
           if (!similarDosage.includes(element.product_dosages_per_month)) {
             similarDosage.push(element.product_dosages_per_month);
+            console.log(element.product_dosages_per_month);
           }
           if (
             element.product_dosages_per_month ==
@@ -159,12 +189,7 @@ export default function Switch(props) {
     }
   };
 
-  const medication = [
-    { name: "Sildenafil (generic Viagra)", value: "Sildenafil" },
-    { name: "Viagra", value: "Viagra" },
-    { name: "Tadalafil (generic Cialis)", value: "Tadalafil" },
-    { name: "Cialis", value: "Cialis" },
-  ];
+
 
   return (
     <div className={styles.container}>
@@ -185,6 +210,7 @@ export default function Switch(props) {
                         First decide your preferred medication, select one:
                       </Form.Label>
                       {medication.map((radio, idx) => (
+                        
                         <Col md={12} key={idx}>
                           <ToggleButton
                             key={idx}
@@ -196,7 +222,7 @@ export default function Switch(props) {
                             checked={chosenMed.product_tag === radio.value}
                             onChange={handleChange}
                           >
-                            {radio.name}
+                            {radio.value}
                           </ToggleButton>
                         </Col>
                       ))}

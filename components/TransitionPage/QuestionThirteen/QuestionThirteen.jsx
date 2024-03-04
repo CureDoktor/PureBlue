@@ -22,7 +22,6 @@ const QuestionThirteen = ({ onNext }) => {
     try {
       const rese = await Axios.post(route)
         .then((res) => {
-          console.log(res.data.data);
           setStates(
             res.data.data.sort(function (a, b) {
               if (a.name < b.name) {

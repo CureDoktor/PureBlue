@@ -20,11 +20,9 @@ const cure = (formData, res) => {
       },
     })
     .then((respond) => {
-      console.log("RESPOND ->", respond);
       return res.status(200).json(respond.data);
     })
     .catch(function (error) {
-      console.log("ERROR ->", error.response?.data);
       return res.status(400).json(error.response?.data);
     });
 };

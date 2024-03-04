@@ -1,7 +1,6 @@
 import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
-  console.log(req.data);
   Axios.post(
     process.env.NEXT_PUBLIC_API_KEY + "/order/order-from-profile",
     req.body.data,

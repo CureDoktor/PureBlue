@@ -8,11 +8,11 @@ import Membership from "../../components/Membership";
 import Profile from "../../components/Profile";
 import Case from "../../components/Case";
 export default function Account(props) {
-  const [content, setContent] = useState(<div><Case handleShow={props.handleShow} /><br/><br/><Membership handleShow={props.handleShow} /></div>);
+  const [content, setContent] = useState(<div><Case handleShow={props.handleShow} /></div>);
 
   const handleSelect = (link) => {
     if (link === "Membership") {
-      setContent(<div><Case handleShow={props.handleShow} /><br/><br/><Membership handleShow={props.handleShow} /></div>);
+      setContent(<div><Case handleShow={props.handleShow} /></div>);
     } else if (link === "Orders") {
       setContent(<Orders handleShow={props.handleShow} />);
     } else if (link === "Profile") {

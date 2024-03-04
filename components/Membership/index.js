@@ -20,7 +20,7 @@ import AuthContext from "../../store/auth-context";
 import {Case} from "../Case";
 
 export default function Membership(props) {
-  console.log(props)
+ 
   const [UserInfo, setUserInfo] = useState("");
   const [Case, setCase] = useState({
     status: "",
@@ -78,7 +78,6 @@ export default function Membership(props) {
 
   return (
     <div className={styles.membership}>
-     
       <Row>
         <Col md={6}>
           <div className={styles.rectangle}>

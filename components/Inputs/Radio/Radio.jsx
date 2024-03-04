@@ -26,7 +26,6 @@ export const Radio = ({
       setNextQuestion(false);
     }
   }, []);
-  console.log(followUp);
   const checkedValue = watch(name);
   const isChecked = parseInt(checkedValue) === value ? styles.checked : "";
   const variantMap = {
