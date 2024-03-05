@@ -10,7 +10,7 @@ import GetStarted from "../../components/GetStarted";
 import Frequently from "../../components/GetStarted/FrequentlyAsked";
 import { useRouter } from "next/navigation";
 import CardCarousel from "../../components/landingPageV2/CardCarousel";
-
+import Image from "next/image";
 const index = () => {
   const router = useRouter();
   const getMyTreatment = () => {
@@ -62,7 +62,7 @@ const index = () => {
       cardHeading: "Get harder erections",
       cardPara:
         "SIldenafil is the active ingredient in Viagra. It helps increase blood flow and allows you to achieve harder erections in as little as 30 minutes from when you take it.",
-        image: "/assets/landingPageV2/cardImage2/cardImage2.png",
+      image: "/assets/landingPageV2/cardImage2/cardImage2.png",
     },
     {
       topTriangle: true,
@@ -70,7 +70,7 @@ const index = () => {
       cardPara:
         "As long as you’re aroused, generic Viagra will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
 
-        image: "/assets/landingPageV2/cardImage1/cardImage1.png",
+      image: "/assets/landingPageV2/cardImage1/cardImage1.png",
     },
   ];
   const cardData2 = [
@@ -79,21 +79,26 @@ const index = () => {
       cardHeading: "It’s modern medicine",
       cardPara:
         "Doctors have been prescribing Viagra for over 20 years, and for one good reason: IT WORKS! It’s never been easier to achieve and maintain harder erections.",
-        image: "/assets/landingPageV2/imag4/image4.png",
+      image: "/assets/landingPageV2/imag4/image4.png",
     },
     {
       topTriangle: true,
       cardHeading: "Stay harder for longer",
       cardPara:
         "As long as you’re aroused, generic Viagra will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
-        image: "/assets/landingPageV2/pills/pills.png",
+      image: "/assets/landingPageV2/pills/pills.png",
     },
   ];
   return (
     <>
       <div className={styles.headerContainer}>
         <div className={styles.headerImageContainer}>
-          <img src="/assets/landingPageV2/viagra/viagra.png" />
+          <Image
+            wid
+            src="/assets/landingPageV2/viagra/viagra.png"
+            height={519}
+            width={543}
+          />
         </div>
         <div className={styles.headerTextContainer}>
           <p className={styles.mainHeading}>Generic Viagra®</p>
@@ -112,12 +117,14 @@ const index = () => {
           <div className={styles.points}>
             {headerDescription?.map((items) => {
               return (
-                
                 <p className={styles.details}>
-                  <img src="/assets/landingPageV2/tick/tick.png" />
+                  <Image
+                    src="/assets/landingPageV2/tick/tick.png"
+                    width={16}
+                    height={17}
+                  />
                   <span>{items}</span>
                 </p>
-                
               );
             })}
           </div>
@@ -148,19 +155,13 @@ const index = () => {
         ))}
       </div>
       <div className={styles.ImageContainer2}>
-      <img
+        <img
           src="/assets/landingPageV2/image/image.png"
           className={styles.lgImage}
-
         />
-        <img
-          src="/assets/landing-image.png"
-          className={styles.mobileImage}
-
-        />
-        
+        <img src="/assets/landing-image.png" className={styles.mobileImage} />
       </div>
-      
+
       <div className={styles.cardContainer}>
         {cardData2.map((card, index) => (
           <ReusableCard
@@ -177,7 +178,12 @@ const index = () => {
       </div>
       <div className={styles.cardCarousel}>
         <div className={styles.cards}>
-          <p className="sildenafil-reviews" style={{textAlign:"center", marginTop:"40px"}}>Sildenafil Reviews</p>
+          <p
+            className="sildenafil-reviews"
+            style={{ textAlign: "center", marginTop: "40px" }}
+          >
+            Sildenafil Reviews
+          </p>
           <CardCarousel />
         </div>
       </div>
@@ -198,7 +204,7 @@ const index = () => {
                 );
               })}
               <button onClick={getMyTreatment}>Find my treatment</button>
-              <p className="pointsPara" style={{marginTop:"25px"}}>
+              <p className="pointsPara" style={{ marginTop: "25px" }}>
                 *Products needing a prescription require a short consultation
                 with an online physician
               </p>
@@ -227,14 +233,13 @@ const index = () => {
               );
             })}
             <button onClick={getMyTreatment}>Find my treatment</button>
-            <p style={{marginTop:"25px"}}>
+            <p style={{ marginTop: "25px" }}>
               *Products needing a prescription require a short consultation with
               an online physician
             </p>
           </div>
         </div>
       </div>
-      
     </>
   );
 };
