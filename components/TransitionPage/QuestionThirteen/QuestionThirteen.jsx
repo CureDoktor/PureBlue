@@ -56,10 +56,6 @@ const QuestionThirteen = ({ onNext }) => {
     ),
   });
 
-  const Continue = (values) => {
-    onNext();
-  };
-
   return (
     <div className={styles.container}>
       <button>Your $30 off promo code has been applied!</button>
@@ -70,7 +66,7 @@ const QuestionThirteen = ({ onNext }) => {
       <Formik
         initialValues={{ state: "", checkbox: false }}
         validationSchema={validationSchema}
-        onSubmit={Continue}
+        onSubmit={onNext}
       >
         {({ errors, touched }) => (
           <Form>

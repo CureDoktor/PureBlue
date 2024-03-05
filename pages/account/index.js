@@ -7,6 +7,7 @@ import Orders from "../../components/Orders";
 import Membership from "../../components/Membership";
 import Profile from "../../components/Profile";
 import Case from "../../components/Case";
+import Verification from "../../components/Verification";
 export default function Account(props) {
   const [content, setContent] = useState(
     <div>
@@ -29,8 +30,8 @@ export default function Account(props) {
     // else if (link === "Case") {
     //   setContent(<Case handleShow={props.handleShow} />);
     // }
-    else if (link === "Verification") {
-      <Verification handleShow={props.handleShow} />;
+    else if (link === "IdVerification") {
+      setContent(<Verification handleShow={props.handleShow} />);
     }
   };
 
@@ -61,9 +62,9 @@ export default function Account(props) {
             {/* <Nav.Item>
               <Nav.Link eventKey="Case">Case</Nav.Link>
             </Nav.Item> */}
-            {/* <Nav.Item>
-              <Nav.Link eventKey="ID Verification">ID Verification</Nav.Link>
-            </Nav.Item> */}
+            <Nav.Item>
+              <Nav.Link eventKey="IdVerification">ID Verification</Nav.Link>
+            </Nav.Item>
           </Nav>
           <br />
           <br />

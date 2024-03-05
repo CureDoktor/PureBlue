@@ -23,7 +23,6 @@ const StepSeven = ({ onNext, props }) => {
     }
   };
 
-  const [shipInfo, setShipInfo] = useState(false);
   const [wrongStateHolder, setWrongStateHolder] = useState(false);
   const [states, setStates] = useState([
     {
@@ -40,7 +39,17 @@ const StepSeven = ({ onNext, props }) => {
     try {
       const rese = await Axios.post(route)
         .then((res) => {
-          setStates(res.data.data);
+          setStates(
+            res.data.data.sort(function (a, b) {
+              if (a.name < b.name) {
+                return -1;
+              }
+              if (a.name > b.name) {
+                return 1;
+              }
+              return 0;
+            })
+          );
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -97,7 +106,6 @@ const StepSeven = ({ onNext, props }) => {
         { headers }
       )
         .then((res) => {
-          setShipInfo(false);
           onNext();
         })
         .catch((error) => {
@@ -197,33 +205,33 @@ const StepSeven = ({ onNext, props }) => {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-        <Form.Group>
-          <div>
-          <Form.Select
-            className={styles.formControl}
-            value={formData.shippingState}
-            name="shippingState"
-            onChange={checkCountry}
-          >
-            {states.map((state) => {
-              return (
-                <option value={`${state.abbreviation}`}>{state.name}</option>
-              );
-            })}
-          
-          </Form.Select>
-       
-          {!country && <small style={{ color: "red" }}>
-              Unfortunately our services are not offered in this state. We hope
-              to change that in the near future.
-            </small>}
-           
-         
+          <Form.Group>
+            <div>
+              <Form.Select
+                className={styles.formControl}
+                value={formData.shippingState}
+                name="shippingState"
+                onChange={checkCountry}
+              >
+                {states.map((state) => {
+                  return (
+                    <option value={`${state.abbreviation}`}>
+                      {state.name}
+                    </option>
+                  );
+                })}
+              </Form.Select>
+
+              {!country && (
+                <small style={{ color: "red" }}>
+                  Unfortunately our services are not offered in this state. We
+                  hope to change that in the near future.
+                </small>
+              )}
             </div>
-        </Form.Group>
-       
+          </Form.Group>
         </Row>
-      
+
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridFirstname">
             <Form.Group as={Col} controlId="shippingZip">
@@ -242,7 +250,11 @@ const StepSeven = ({ onNext, props }) => {
             </Form.Group>
           </Form.Group>
         </Row>
-        <Button type="submit" disabled={!enableButton} className={styles.button}>
+        <Button
+          type="submit"
+          disabled={!enableButton}
+          className={styles.button}
+        >
           SAVE AND CONTINUE
         </Button>
       </Form>

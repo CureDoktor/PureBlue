@@ -3,12 +3,12 @@ import styles from "./StepSix.styles.module.scss";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
 const StepSix = ({ onNext, setProduct, product }) => {
-        const setProductTimesPerMonth = (value) => {
-            setProduct({
-          ...product,
-          times_per_month: value,
-        });
-      }
+  const setProductTimesPerMonth = (value) => {
+    setProduct({
+      ...product,
+      times_per_month: value,
+    });
+  };
   const medicationOptions = [
     {
       times: 4,
@@ -39,7 +39,13 @@ const StepSix = ({ onNext, setProduct, product }) => {
       <div className={styles.mainCardContainer}>
         {medicationOptions.map((items) => {
           return (
-            <div className={styles.card} key={items} onClick={() => {setProductTimesPerMonth(items.times)}}>
+            <div
+              className={styles.card}
+              key={items.times}
+              onClick={() => {
+                setProductTimesPerMonth(items.times);
+              }}
+            >
               <OrderFlowCard content={items} bulkMedicines />
             </div>
           );

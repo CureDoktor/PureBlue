@@ -155,7 +155,10 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
           saving: savingg,
           plan_name: plan_namee,
         };
-        klaviyo.push(["track", "Product Changed", cure]);
+        try {
+          klaviyo.push(["track", "Product Changed", cure]);
+        } catch {}
+
         setChosenMed(cure);
       }
     });
@@ -227,7 +230,6 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
     gettingMedications();
   }, []);
 
-  const [payInfo, setPayInfo] = useState(false);
   const handleChange = (event) => {
     const { value, name } = event.target;
     if (name == "expirationDate") {
@@ -273,8 +275,6 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
     }
   }, [chosingProduct]);
 
-  const route = "/api/user/getUserInfo";
-
   async function submitHandler(event) {
     event.preventDefault();
     const route = "/api/user/updatePaymentInfo";
@@ -300,7 +300,10 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), data })
         .then((res) => {
-          klaviyo.push(["track", "Completed Order Form", chosenMed]);
+          try {
+            klaviyo.push(["track", "Completed Order Form", chosenMed]);
+          } catch {}
+
           onNext();
         })
         .catch((error) => {
@@ -365,7 +368,6 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
                     checked={selectedProductId == element.id}
                     onChange={handleProductChange}
                   />
-
                   <label
                     htmlFor={`radios-${element.id}`}
                     className={styles.mainCardsContainer}
