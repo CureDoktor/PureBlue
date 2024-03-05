@@ -155,7 +155,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
           saving: savingg,
           plan_name: plan_namee,
         };
-
+        klaviyo.push(["track", "Product Changed", cure]);
         setChosenMed(cure);
       }
     });
@@ -300,8 +300,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), data })
         .then((res) => {
-          console.log("klaviyo push");
-          klaviyo.push(["track", "Ordered From Profile", chosenMed]);
+          klaviyo.push(["track", "Completed Order Form", chosenMed]);
           onNext();
         })
         .catch((error) => {
