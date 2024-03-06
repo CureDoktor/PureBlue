@@ -474,6 +474,8 @@
 }
 
 .whiteContainer {
+  margin: auto;
+  max-width: 1200px;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -486,7 +488,7 @@
   }
 
   .greyContainer {
-    width: 50%;
+    width: 100%;
     height: auto;
     padding: 8rem 0rem;
     display: flex;

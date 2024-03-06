@@ -10,19 +10,25 @@ import ShipInfo from "../ShipInfo";
 import PayInfo from "../PayInfo";
 import BillInfo from "../BillInfo";
 import Form from "react-bootstrap/Form";
-
+import UploadVerification from "../UploadVerification";
 import { Col, Button, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
 export default function Verification(props) {
   const authCtx = useContext(AuthContext);
   const gettingUserInfo = async () => {
     const route = "/api/user/getUserInfo";
-
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           setUserInfo(res.data.data);
+          console.log(res.data.data);
         })
         .catch((error) => {
           props.handleShow.handleShow(error.response.data);
@@ -35,6 +41,8 @@ export default function Verification(props) {
   useEffect(() => {
     gettingUserInfo();
   }, []);
+
+  const content = <UploadVerification />;
 
   const [userInfo, setUserInfo] = useState({
     auth_customer_payment_id: null,
@@ -71,5 +79,9 @@ export default function Verification(props) {
     verification_token: null,
   });
 
-  return <div className={styles.profile}>User Verification</div>;
+  return (
+    <div className={styles.profile}>
+      {userInfo.varification_status == null ? content : "Status not null"}
+    </div>
+  );
 }

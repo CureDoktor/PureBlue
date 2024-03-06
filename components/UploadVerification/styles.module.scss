@@ -1,0 +1,51 @@
+$primary-color: #0077f0;
+$secondary-color: #003b60;
+
+.aboutPage {
+  padding: 0px 0px 90px 0px;
+  text-align: center;
+  Button {
+    margin-top: 80px;
+  }
+  h1 {
+    font-size: 54px;
+    line-height: 81px;
+  }
+  h3 {
+    padding: 30px 0px 50px 20px;
+    font-size: 44px;
+    font-weight: bold;
+  }
+  .blueLine {
+    height: 5px;
+    width: 100%;
+    background-color: $primary-color;
+    margin-top: 60px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .aboutPage {
+    padding: 50px 0px 90px 0px;
+
+    h2 {
+      padding: 30px 0px 30px 20px;
+      font-size: 54px;
+      font-weight: bold;
+    }
+    .blueLine {
+      height: 5px;
+      width: 100%;
+      background-color: $primary-color;
+      margin-top: 0px;
+      margin-bottom: 40px;
+    }
+    p {
+      padding-top: 20px;
+    }
+  }
+}

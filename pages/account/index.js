@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useContext, useState, React } from "react";
+import { useContext, useState, React, useEffect } from "react";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import styles from "./styles.module.scss";
@@ -9,11 +9,11 @@ import Profile from "../../components/Profile";
 import Case from "../../components/Case";
 import Verification from "../../components/Verification";
 export default function Account(props) {
-  const [content, setContent] = useState(
-    <div>
-      <Case handleShow={props.handleShow} />
-    </div>
-  );
+  const [content, setContent] = useState(<div></div>);
+
+  useEffect(() => {
+    handleSelect("Membership");
+  }, []);
 
   const handleSelect = (link) => {
     if (link === "Membership") {
@@ -47,7 +47,7 @@ export default function Account(props) {
           <Nav
             variant="tabs"
             className={styles.navbar}
-            defaultActiveKey="/home"
+            defaultActiveKey="Membership"
             onSelect={handleSelect}
           >
             <Nav.Item>
