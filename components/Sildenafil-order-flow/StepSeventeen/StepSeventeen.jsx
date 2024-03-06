@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import styles from "./StepSeventeen.styles.module.scss";
-import Verification from "../../../pages/verification";
 import { useContext } from "react";
 import AuthContext from "../../../store/auth-context";
 import Axios from "axios";
