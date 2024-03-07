@@ -17,6 +17,7 @@ import { useRouter } from "next/navigation";
 const Questions = (props) => {
   const authCtx = useContext(AuthContext);
   const [modalState, setModalState] = useState(false);
+  const [preferredState, setPreferredState] = useState("your state");
   const [errorData, setErrorData] = useState("");
   const router = useRouter();
   const [form, setForm] = useState({
@@ -112,7 +113,7 @@ const Questions = (props) => {
       });
     }
 
-    setCurrentStep((prevStep) => prevStep + 1);
+    setCurrentStep(currentStep + 1);
   };
 
   const renderStep = () => {
@@ -121,7 +122,7 @@ const Questions = (props) => {
         return (
           <QuestionEight
             onNext={() => {
-              setCurrentStep((prevStep) => prevStep + 1);
+              setCurrentStep(currentStep + 1);
             }}
           />
         );
@@ -129,7 +130,7 @@ const Questions = (props) => {
         return (
           <QuestionNine
             onNext={() => {
-              setCurrentStep((prevStep) => prevStep + 1);
+              setCurrentStep(currentStep + 1);
             }}
           />
         );
@@ -137,7 +138,7 @@ const Questions = (props) => {
         return (
           <QuestionTen
             onNext={() => {
-              setCurrentStep((prevStep) => prevStep + 1);
+              setCurrentStep(currentStep + 1);
             }}
           />
         );
@@ -145,7 +146,7 @@ const Questions = (props) => {
         return (
           <QuestionEleven
             onNext={() => {
-              setCurrentStep((prevStep) => prevStep + 1);
+              setCurrentStep(currentStep + 1);
             }}
           />
         );
@@ -153,20 +154,27 @@ const Questions = (props) => {
         return (
           <QuestionTwelve
             onNext={() => {
-              setCurrentStep((prevStep) => prevStep + 1);
+              setCurrentStep(currentStep + 1);
             }}
           />
         );
       case 6:
         return (
           <QuestionThirteen
+            preferredState={preferredState}
+            setPreferredState={setPreferredState}
             onNext={() => {
-              setCurrentStep((prevStep) => prevStep + 1);
+              setCurrentStep(currentStep + 1);
             }}
           />
         );
       case 7:
-        return <QuestionFourteen onNext={goToNextStep} />;
+        return (
+          <QuestionFourteen
+            preferredState={preferredState}
+            onNext={goToNextStep}
+          />
+        );
       case 8:
         return <QuestionFifteen onNext={goToNextStep} />;
       case 9:

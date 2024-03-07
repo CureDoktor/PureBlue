@@ -4,7 +4,7 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import Link from "next/link";
 import * as Yup from "yup";
 
-const QuestionFourteen = ({ onNext, handleChange }) => {
+const QuestionFourteen = ({ onNext, handleChange, preferredState }) => {
   const validationSchema = Yup.object().shape({
     date_of_birth: Yup.date().required("Date of Birth is required"),
   });
@@ -13,7 +13,7 @@ const QuestionFourteen = ({ onNext, handleChange }) => {
     <div className={styles.container}>
       <h6>
         Great news! Telehealth treatment is available <br />
-        in (your state)!
+        in {preferredState}!
       </h6>
       <p>
         Let’s confirm your <br /> date of birth

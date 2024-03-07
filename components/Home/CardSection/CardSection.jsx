@@ -6,7 +6,10 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/navigation";
+import { useResolvedPath } from "react-router";
 const CardSection = () => {
+  const router = useRouter();
   const cardInfo = [
     { title: "Erectile Dysfunction", img: "/assets/homepage/card/card1.png" },
     { title: "Custom Medication", img: "/assets/homepage/card/card2.png" },
@@ -44,7 +47,12 @@ const CardSection = () => {
                 <Card.Title className={styles.cardTitle}>
                   {card.title}
                 </Card.Title>
-                <div className={styles.cardButton}>
+                <div
+                  onClick={() => {
+                    router.push("/transition-page");
+                  }}
+                  className={styles.cardButton}
+                >
                   <img src="/assets/homepage/card/arrow.png" alt="arrow" />
                 </div>
               </Card.Body>

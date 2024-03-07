@@ -319,12 +319,17 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
       <div className={styles.mainContainer}>
         <h5>{InitialProduct}</h5>
         <hr />
-        <p>Choose shipping frequency</p>
+        {chosingProduct && chosingProduct.length > 0 && (
+          <p>Choose shipping frequency</p>
+        )}
         <div className={styles.mainCardsContainer}>
           <Form.Group as={Col} controlId="formGridSexualActivity">
-            <Form.Label>
-              First decide your preferred medication, select one:
-            </Form.Label>
+            {/* {chosingProduct && chosingProduct.length > 0 && (
+              <Form.Label>
+                First decide your preferred medication, select one:
+              </Form.Label>
+            )} */}
+
             {chosingProduct.map((element, index) => {
               var monthlyCost = 0;
 

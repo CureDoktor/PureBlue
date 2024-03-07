@@ -6,21 +6,37 @@ import { useRouter } from "next/navigation";
 
 const Index = () => {
   const [buttons, setButtons] = useState([buttonNames[0]]);
+  const [initialLoad, setInitialLoad] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isButtonClicked, setIsButtonClicked] = useState(true);
+  const [loadButton, setLoadButton] = useState(0);
   const router = useRouter();
 
   const addButton = () => {
     if (currentIndex < buttonNames.length - 1) {
       setButtons([...buttons, buttonNames[currentIndex + 1]]);
       setCurrentIndex(currentIndex + 1);
+      setTimeout(() => {
+        setLoadButton(loadButton + 1);
+      }, 3000);
     } else {
       router.push("/questions");
     }
   };
   useEffect(() => {
     localStorage.clear();
+    setTimeout(() => {
+      setLoadButton(loadButton + 1);
+    }, 3000);
   }, []);
+
+  useEffect(() => {
+    if (initialLoad) {
+      setInitialLoad(false);
+    } else {
+      addButton();
+    }
+  }, [loadButton]);
 
   return (
     <div className={styles.mainContainer}>
@@ -30,7 +46,7 @@ const Index = () => {
             <Button
               key={index}
               name={buttonName}
-              onClick={addButton}
+              // onClick={addButton}
               disabled={index !== buttons.length - 1}
               icon={index === buttonNames.length - 1}
             />

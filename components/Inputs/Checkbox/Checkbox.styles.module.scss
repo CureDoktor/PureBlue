@@ -117,3 +117,11 @@
   align-items: flex-start;
   gap: 0.833em;
 }
+
+.borderBold {
+  border: 2px solid black;
+  svg {
+    border: 2px solid black;
+    border-radius: 8px;
+  }
+}

@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import { useRouter } from "next/navigation";
 import styles from "./treatment.styles.module.scss";
 
 const cardInfo = [
@@ -46,6 +46,7 @@ const cardInfo = [
 ];
 
 const Treatment = () => {
+  const router = useRouter();
   return (
     <Container className={styles.mainContainer}>
       <h1 className="mb-5">
@@ -79,7 +80,12 @@ const Treatment = () => {
                 </Card.Title>
                 <div>
                   <Card.Text className={styles.cardText}>{card.text}</Card.Text>
-                  <Button className={`bg-primary ${styles.cardBtn}`}>
+                  <Button
+                    onClick={() => {
+                      router.push("/transition-page");
+                    }}
+                    className={`bg-primary ${styles.cardBtn}`}
+                  >
                     {card.buttonText}
                   </Button>
                 </div>

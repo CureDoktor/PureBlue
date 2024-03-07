@@ -6,7 +6,7 @@ import Axios from "axios";
 import Link from "next/link";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-const QuestionThirteen = ({ onNext }) => {
+const QuestionThirteen = ({ onNext, setPreferredState, preferredState }) => {
   const [states, setStates] = useState([
     {
       "abbreviation": "NE",
@@ -66,23 +66,25 @@ const QuestionThirteen = ({ onNext }) => {
       <Formik
         initialValues={{ state: "", checkbox: false }}
         validationSchema={validationSchema}
-        onSubmit={onNext}
+        onSubmit={(values, actions) => {
+          console.log(preferredState);
+          setPreferredState(values.state);
+          onNext();
+        }}
       >
         {({ errors, touched }) => (
           <Form>
             <div className={styles.selectContainer}>
-              <Field
-                as="select"
-                name="state"
-                defaultValue=""
-                className={styles.select}
-              >
+              <Field as="select" name="state" className={styles.select}>
                 <option value="" disabled>
                   Select a state
                 </option>
                 {states.map((state) => {
                   return (
-                    <option value={`${state.abbreviation}`}>
+                    <option
+                      key={state.abbreviation}
+                      value={`${state.abbreviation}`}
+                    >
                       {state.name}
                     </option>
                   );

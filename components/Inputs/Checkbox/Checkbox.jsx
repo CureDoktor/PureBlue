@@ -67,7 +67,9 @@ const Checkbox = ({
   return (
     <label
       style={style}
-      className={`${styles.container} ${variantMap[variant]}  ${checkedStyles} `}
+      className={`${styles.container} ${
+        variantMap[variant]
+      }  ${checkedStyles}  ${reset == 1 ? styles.borderBold : ""}`}
     >
       <div className={styles.wrapper}>
         {checked ? (

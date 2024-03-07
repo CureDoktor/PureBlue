@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button, Container } from "react-bootstrap";
-
+import { useRouter } from "next/navigation";
 import styles from "./health.styles.module.scss";
 
 const featureList = [
@@ -35,6 +35,7 @@ const featureList = [
 ];
 
 const Health = () => {
+  const router = useRouter();
   return (
     <Container className={styles.mainContainer}>
       <h1>
@@ -73,10 +74,24 @@ const Health = () => {
             ))}
           </ul>
           <div className={styles.btnBox}>
-            <Button variant="dark" size="sm" className={styles.btn}>
+            <Button
+              variant="dark"
+              size="sm"
+              onClick={() => {
+                router.push("/transition-page");
+              }}
+              className={styles.btn}
+            >
               Find my treatment
             </Button>
-            <Button variant="outline-dark" size="sm" className={styles.btn}>
+            <Button
+              variant="outline-dark"
+              onClick={() => {
+                router.push("/transition-page");
+              }}
+              size="sm"
+              className={styles.btn}
+            >
               Learn more
             </Button>
           </div>

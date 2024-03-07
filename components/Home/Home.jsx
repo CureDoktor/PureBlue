@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-
+import { useRouter } from "next/navigation";
 import CardSection from "./CardSection";
 import ButtonSection from "./ButtonSection";
 import Frequently from "./FrequentlyAsked";
@@ -13,6 +13,7 @@ import SearchButton from "./SearchBtn";
 import styles from "./home.styles.module.scss";
 
 const HomePage = () => {
+  const router = useRouter();
   return (
     <div>
       <Container className={styles.container}>

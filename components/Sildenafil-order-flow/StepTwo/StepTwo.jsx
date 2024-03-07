@@ -1,16 +1,15 @@
 import React from "react";
 import styles from "./StepTwo.styles.module.scss";
-import {useEffect} from "react"
+import { useEffect } from "react";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
-const StepTwo = ({ onNext,setProduct, product}) => {
-
-    const setProductName = (value) => {
-          setProduct({
-        ...product,
-        viagra: value,
-      });
-    }
+const StepTwo = ({ onNext, setProduct, product }) => {
+  const setProductName = (value) => {
+    setProduct({
+      ...product,
+      viagra: value,
+    });
+  };
 
   const medicationOptions = [
     {
@@ -39,41 +38,54 @@ const StepTwo = ({ onNext,setProduct, product}) => {
         </p>
         <div className={styles.mainCardContainer}>
           {medicationOptions.map((items) => {
-            if(product.daily === true){
-              if(items.title === "Viagra"){
-               return <div></div>; 
-              }else{
-                  return (
-              <div className={styles.card} key={items.title} onClick={onNext}>
-                <OrderFlowCard content={items} SingleImage />
-              </div>
-            );
+            if (product.daily === true) {
+              if (items.title === "Viagra") {
+                return <div></div>;
+              } else {
+                return (
+                  <div
+                    className={styles.card}
+                    key={items.title}
+                    onClick={onNext}
+                  >
+                    <OrderFlowCard content={items} SingleImage />
+                  </div>
+                );
               }
-              
-            } else{
-               if(items.title === "Viagra"){
-                  return (
-                    <div className={styles.card} key={items.title} onClick={()=> {setProductName(true)}}>
-                      <OrderFlowCard content={items} SingleImage />
-                    </div>
-                  );
-               }else {
-                  return (
-                    <div className={styles.card} key={items.title} onClick={()=> {setProductName(false)}}>
-                      <OrderFlowCard content={items} SingleImage />
-                    </div>
-                  );
-               }
-          
+            } else {
+              if (items.title === "Viagra") {
+                return (
+                  <div
+                    className={styles.card}
+                    key={items.title}
+                    onClick={() => {
+                      setProductName(true);
+                    }}
+                  >
+                    <OrderFlowCard content={items} SingleImage />
+                  </div>
+                );
+              } else {
+                return (
+                  <div
+                    className={styles.card}
+                    key={items.title}
+                    onClick={() => {
+                      setProductName(false);
+                    }}
+                  >
+                    <OrderFlowCard content={items} SingleImage />
+                  </div>
+                );
+              }
             }
-
           })}
         </div>
-        <div className={styles.mainCard}>
+        {/* <div className={styles.mainCard}>
           <div className={styles.onlyTextContainer}>
             Please choose for me based on my health questionnaire
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
