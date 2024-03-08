@@ -155,6 +155,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
           saving: savingg,
           plan_name: plan_namee,
         };
+
         try {
           klaviyo.push(["track", "Product Changed", cure]);
         } catch {}

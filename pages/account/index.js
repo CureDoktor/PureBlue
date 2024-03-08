@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useContext, useState, React, useEffect } from "react";
+
 import { Col, Container, Button, Row } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import styles from "./styles.module.scss";
@@ -8,12 +9,36 @@ import Membership from "../../components/Membership";
 import Profile from "../../components/Profile";
 import Case from "../../components/Case";
 import Verification from "../../components/Verification";
+import AuthContext from "../../store/auth-context";
+import Axios from "axios";
 export default function Account(props) {
   const [content, setContent] = useState(<div></div>);
+  const authCtx = useContext(AuthContext);
+
+  const getCase = async () => {
+    const route = "/api/case/get-case";
+
+    try {
+      const rese = await Axios.post(route, { Token: authCtx.Token() })
+        .then((res) => {
+          console.log(res.data.data);
+          //setCaseAnswers(res.data.data);
+        })
+        .catch((error) => {
+          props.handleShow(error.response.data);
+        });
+    } catch (err) {
+      props.handleShow(err);
+    }
+  };
 
   useEffect(() => {
-    handleSelect("Membership");
+    getCase();
   }, []);
+
+  // useEffect(() => {
+  //   handleSelect("Membership");
+  // }, []);
 
   const handleSelect = (link) => {
     if (link === "Membership") {
