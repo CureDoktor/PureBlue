@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./StepOne.styles.module.scss";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 import { useRouter } from "next/router";
-
 import OrderFlowForm from "../../Common/OrderFlow/OrderFlowForm";
 import OrderFlowCardDetails from "../../Common/OrderFlow/OrderFlowCardDetails";
 
@@ -14,32 +13,34 @@ const StepOne = ({ onNext, setProduct, product }) => {
     });
   }
 
+  const ProceedToTheNextStep = (daily) => {
+    localStorage.setItem("daily", daily); 
+    onNext();
+  }
+
   const medicationOptions = [
     {
       title: "Take daily",
       description: "To maintain peak sexual readiness at all times",
       pricePerDose: "1.80",
+      daily: true,
     },
     {
       title: "Take before sex",
       description: "Quick activating medication when you want it",
       pricePerDose: "4.0",
+      daily: false,
     },
   ];
   return (
     <>
       <h2 className={styles.h2}>
-        Choose your medication <br /> preference:
+        Choose your medication <br /> preference: 
       </h2>
       <div className={styles.mainCardContainer}>
         {medicationOptions.map((items) => {
-          if(items.title == "Take daily"){
-            var changeFunction = true;
-          } else{
-             var changeFunction = false;
-          }
           return (
-            <div className={styles.card} key={items.title} onClick={() => { setProductTime(changeFunction)}} >
+            <div className={styles.card} key={items.title} onClick={() => {ProceedToTheNextStep(items.daily)}}>
               <OrderFlowCard content={items} />
             </div>
           );

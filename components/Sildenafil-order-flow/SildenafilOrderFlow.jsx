@@ -62,7 +62,7 @@ const SildenafilOrderFlow = (props) => {
   const renderStep = () => {
     switch (currentStep) {
       case 1:
-        return <StepOne product={product} setProduct={setProduct} />;
+        return <StepOne product={product} onNext={goToNextStep} setProduct={setProduct} />;
       case 2:
         return (
           <StepTwo

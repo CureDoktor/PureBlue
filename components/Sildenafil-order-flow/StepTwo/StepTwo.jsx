@@ -31,14 +31,13 @@ const StepTwo = ({ onNext, setProduct, product }) => {
         <h2 className={styles.heading}>
           Which treatment option best fits your needs?
         </h2>
-
         <p className={styles.subHeading}>
           Your preference will be shared with a provider who will <br />
           determine the best treatment for you.
         </p>
         <div className={styles.mainCardContainer}>
           {medicationOptions.map((items) => {
-            if (product.daily === true) {
+            if (localStorage.getItem("daily") === true) {
               if (items.title === "Viagra") {
                 return <div></div>;
               } else {
@@ -46,7 +45,10 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                   <div
                     className={styles.card}
                     key={items.title}
-                    onClick={onNext}
+                    onClick={() => {
+                      localStorage.setItem("viagra", false);
+                      console.log("Ima li koga");
+                    }}
                   >
                     <OrderFlowCard content={items} SingleImage />
                   </div>
@@ -59,7 +61,7 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                     className={styles.card}
                     key={items.title}
                     onClick={() => {
-                      setProductName(true);
+                      localStorage.setItem("viagra", true);
                     }}
                   >
                     <OrderFlowCard content={items} SingleImage />
@@ -71,7 +73,7 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                     className={styles.card}
                     key={items.title}
                     onClick={() => {
-                      setProductName(false);
+                      localStorage.setItem("viagra", false);
                     }}
                   >
                     <OrderFlowCard content={items} SingleImage />

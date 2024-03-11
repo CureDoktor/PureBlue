@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./StepSix.styles.module.scss";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
+
 
 const StepSix = ({ onNext, setProduct, product }) => {
   const setProductTimesPerMonth = (value) => {
@@ -9,6 +10,14 @@ const StepSix = ({ onNext, setProduct, product }) => {
       times_per_month: value,
     });
   };
+  useEffect(() => {
+    console.log("STAS DESAVA");
+    console.log(product);
+    if(product.daily == true){
+      setProductTimesPerMonth(30);
+      onNext;
+    }
+  }, []);
   const medicationOptions = [
     {
       times: 4,

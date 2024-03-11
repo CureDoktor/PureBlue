@@ -5,7 +5,13 @@ import { useEffect } from "react";
 
 const StepThree = ({ onNext }) => {
   useEffect(() => {
-    setTimeout(onNext,3000);
+    const timeoutId = setTimeout(onNext, 3000);
+    
+    return () => {
+      // Clear the timeout when the component unmounts or when it's no longer shown
+      clearTimeout(timeoutId);
+    };
+
   }, []);
   return (
     

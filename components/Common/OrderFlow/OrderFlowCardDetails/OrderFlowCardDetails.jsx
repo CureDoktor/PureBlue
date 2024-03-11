@@ -115,7 +115,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
         var savingg = 0;
         var actual_pricee = element.product_price;
         var elementId = element.id;
-        element.metadata.map((param) => {
+        element?.metadata.map((param) => {
           if (param.name === "Monthly") {
             monthlyy = param.value;
           } else if (param.name === "Retail Price") {
@@ -334,7 +334,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
             {chosingProduct.map((element, index) => {
               var monthlyCost = 0;
 
-              element.metadata.map((metadata) => {
+              element?.metadata.map((metadata) => {
                 if (metadata.name === "Monthly") {
                   monthlyCost = metadata.value;
                 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./StepFive.styles.module.scss";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
@@ -9,6 +9,8 @@ const StepFive = ({ onNext, setProduct, product }) => {
           times_per_month: value,
         });
       }
+
+
   const medicationOptions = [
     {
       times: 4,
@@ -38,6 +40,7 @@ const StepFive = ({ onNext, setProduct, product }) => {
       </h2>
       <div className={styles.mainCardContainer}>
         {medicationOptions.map((items) => {
+        
           return (
             <div className={styles.card} key={items.times} onClick={() => {setProductTimesPerMonth(items.times)}}>
               <OrderFlowCard content={items} bulkMedicines />
