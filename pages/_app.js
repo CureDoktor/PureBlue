@@ -14,10 +14,21 @@ import { useRouter } from "next/router";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [isLogedIn, setIsLoggedIn] = useState(false);
+  const [footerEnable, setFooterEnable] = useState(true);
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
     if (storedUserLoggedInInformation === "1") {
       setIsLoggedIn(true);
+    }
+    if (
+      Component.name == "SildenafilOrder" ||
+      Component.name == "MedicalProfile" ||
+      Component.name == "TransitionPage" ||
+      Component.name == "QuestionsPage"
+    ) {
+      setFooterEnable(false);
+    } else {
+      setFooterEnable(true);
     }
   }, []);
 
@@ -64,7 +75,7 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          {Component.name !== "SildenafilOrder" && <Footer />}
+          {footerEnable && <Footer />}
         </AuthContextProvider>
       );
     } else if (
@@ -85,7 +96,7 @@ function MyApp({ Component, pageProps }) {
           />
           <Header logout={loginHandler} header={isLogedIn} />
           <Login handleShow={handleShow} isLoggedIn={loginHandler} />
-          {Component.name !== "SildenafilOrder" && <Footer />}
+          {footerEnable && <Footer />}
         </AuthContextProvider>
       );
     } else {
@@ -105,7 +116,7 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          {Component.name !== "SildenafilOrder" && <Footer />}
+          {footerEnable && <Footer />}
         </AuthContextProvider>
       );
     }

@@ -4,7 +4,7 @@ import Button from "../../components/TransitionPage/Button";
 import { buttonNames } from "../../components/TransitionPage/data";
 import { useRouter } from "next/navigation";
 
-const Index = () => {
+const TransitionPage = () => {
   const [buttons, setButtons] = useState([buttonNames[0]]);
   const [initialLoad, setInitialLoad] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,4 +56,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default TransitionPage;

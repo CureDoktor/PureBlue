@@ -1,8 +1,8 @@
 import React from "react";
 import MedicalProfileQuestion from "../../components/MedicalProfileQuestion";
 
-const index = (props) => {
+const MedicalProfile = (props) => {
   return <MedicalProfileQuestion props={props} />;
 };
 
-export default index;
+export default MedicalProfile;
