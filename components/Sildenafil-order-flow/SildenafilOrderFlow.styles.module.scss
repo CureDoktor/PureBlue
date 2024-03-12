@@ -8,10 +8,14 @@
   // position: relative;
 
   .imageContainer {
-    margin: auto;
+    margin-right: auto;
     cursor: pointer;
-    width: 80%;
-    max-width: 800px;
+    width: 50px;
+    max-width: 1000px;
+  }
+  .subMainContainer {
+    max-width: 1000px;
+    margin: auto;
   }
 
   .content {

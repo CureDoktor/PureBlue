@@ -124,18 +124,20 @@ const SildenafilOrderFlow = (props) => {
 
   return (
     <div className={styles.mainContainer}>
-      {currentStep !== 1 && currentStep !== 10 && (
-        <div className={styles.imageContainer} onClick={goToPreviousStep}>
-          <img
-            src="/assets/sildenafilOrderFlow/Back2/Back2.png"
-            alt="Go back"
-            width={40}
-          />
-        </div>
-      )}
-      <section className={styles.content}>
-        <div className={styles.txtContainer}>{renderStep()}</div>
-      </section>
+      <div className={styles.subMainContainer}>
+        {currentStep !== 1 && currentStep !== 10 && (
+          <div className={styles.imageContainer} onClick={goToPreviousStep}>
+            <img
+              src="/assets/sildenafilOrderFlow/Back2/Back2.png"
+              alt="Go back"
+              width={40}
+            />
+          </div>
+        )}
+        <section className={styles.content}>
+          <div className={styles.txtContainer}>{renderStep()}</div>
+        </section>
+      </div>
     </div>
   );
 };

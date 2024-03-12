@@ -346,7 +346,7 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
 
             {chosingProduct.map((element, index) => {
               var monthlyCost = 0;
-              console.log(element.metadata);
+
               if (Array.isArray(element?.metadata)) {
                 element.metadata.map((metadata) => {
                   if (metadata.name === "Monthly") {
