@@ -1,16 +1,13 @@
 import React from "react";
 import styles from "./StepTwo.styles.module.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
 const StepTwo = ({ onNext, setProduct, product }) => {
-  const setProductName = (value) => {
-    setProduct({
-      ...product,
-      viagra: value,
-    });
-  };
-
+  const [daily, setDaily] = useState(false);
+  useEffect(() => {
+    setDaily(localStorage.getItem("daily"));
+  }, []);
   const medicationOptions = [
     {
       title: "Viagra",
@@ -37,20 +34,34 @@ const StepTwo = ({ onNext, setProduct, product }) => {
         </p>
         <div className={styles.mainCardContainer}>
           {medicationOptions.map((items) => {
-            if (localStorage.getItem("daily") === true) {
+            if (daily === "true") {
               if (items.title === "Viagra") {
-                return <div></div>;
+                return <div key={items.title}></div>;
               } else {
                 return (
-                  <div
-                    className={styles.card}
-                    key={items.title}
-                    onClick={() => {
-                      localStorage.setItem("viagra", false);
-                      console.log("Ima li koga");
-                    }}
-                  >
-                    <OrderFlowCard content={items} SingleImage />
+                  <div key={items.title}>
+                    <div
+                      className={styles.card}
+                      onClick={() => {
+                        localStorage.setItem("viagra", false);
+                        localStorage.setItem("times", 30);
+                        onNext();
+                      }}
+                    >
+                      <OrderFlowCard content={items} SingleImage />
+                    </div>
+                    <div
+                      onClick={() => {
+                        localStorage.setItem("viagra", false);
+                        localStorage.setItem("times", 30);
+                        onNext();
+                      }}
+                      className={styles.mainCard}
+                    >
+                      <div className={styles.onlyTextContainer}>
+                        Please choose for me based on my health questionnaire
+                      </div>
+                    </div>
                   </div>
                 );
               }
@@ -62,6 +73,7 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                     key={items.title}
                     onClick={() => {
                       localStorage.setItem("viagra", true);
+                      onNext();
                     }}
                   >
                     <OrderFlowCard content={items} SingleImage />
@@ -74,6 +86,7 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                     key={items.title}
                     onClick={() => {
                       localStorage.setItem("viagra", false);
+                      onNext();
                     }}
                   >
                     <OrderFlowCard content={items} SingleImage />
@@ -83,11 +96,6 @@ const StepTwo = ({ onNext, setProduct, product }) => {
             }
           })}
         </div>
-        {/* <div className={styles.mainCard}>
-          <div className={styles.onlyTextContainer}>
-            Please choose for me based on my health questionnaire
-          </div>
-        </div> */}
       </div>
     </>
   );

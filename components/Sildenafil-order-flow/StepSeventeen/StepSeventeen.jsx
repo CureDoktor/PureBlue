@@ -52,7 +52,6 @@ const StepSeventeen = ({ onNext }) => {
           },
         })
           .then((res) => {
-            console.log(res);
             counter++;
           })
           .catch((error) => {

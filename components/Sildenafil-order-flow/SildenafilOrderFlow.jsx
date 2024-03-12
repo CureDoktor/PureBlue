@@ -56,13 +56,23 @@ const SildenafilOrderFlow = (props) => {
     setCurrentStep((prevStep) => prevStep + 1);
   };
   const goToPreviousStep = () => {
-    setCurrentStep((prevStep) => prevStep - 1);
+    if (currentStep == 6 && localStorage.getItem("daily") == "true") {
+      setCurrentStep((prevStep) => prevStep - 2);
+    } else {
+      setCurrentStep((prevStep) => prevStep - 1);
+    }
   };
 
   const renderStep = () => {
     switch (currentStep) {
       case 1:
-        return <StepOne product={product} onNext={goToNextStep} setProduct={setProduct} />;
+        return (
+          <StepOne
+            product={product}
+            onNext={goToNextStep}
+            setProduct={setProduct}
+          />
+        );
       case 2:
         return (
           <StepTwo
@@ -76,10 +86,22 @@ const SildenafilOrderFlow = (props) => {
       case 4:
         return <StepFour product={product} onNext={goToNextStep} />;
       case 5:
-        if (product.viagra == true) {
-          return <StepFive product={product} setProduct={setProduct} />;
+        if (localStorage.getItem("viagra") == "true") {
+          return (
+            <StepFive
+              onNext={goToNextStep}
+              product={product}
+              setProduct={setProduct}
+            />
+          );
         } else {
-          return <StepSix product={product} setProduct={setProduct} />;
+          return (
+            <StepSix
+              onNext={goToNextStep}
+              product={product}
+              setProduct={setProduct}
+            />
+          );
         }
       case 6:
         return <StepSeven props={props} onNext={goToNextStep} />;

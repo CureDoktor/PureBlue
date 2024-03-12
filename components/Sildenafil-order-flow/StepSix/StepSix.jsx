@@ -1,23 +1,19 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./StepSix.styles.module.scss";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
-
 const StepSix = ({ onNext, setProduct, product }) => {
-  const setProductTimesPerMonth = (value) => {
-    setProduct({
-      ...product,
-      times_per_month: value,
-    });
-  };
+  const [initial, setInitial] = useState(true);
   useEffect(() => {
-    console.log("STAS DESAVA");
-    console.log(product);
-    if(product.daily == true){
-      setProductTimesPerMonth(30);
-      onNext;
+    if (initial) {
+      setInitial(false);
+    } else {
+      if (localStorage.getItem("times") === "30") {
+        onNext();
+      }
     }
-  }, []);
+  }, [initial]);
+
   const medicationOptions = [
     {
       times: 4,
@@ -52,7 +48,8 @@ const StepSix = ({ onNext, setProduct, product }) => {
               className={styles.card}
               key={items.times}
               onClick={() => {
-                setProductTimesPerMonth(items.times);
+                localStorage.setItem("times", items.times);
+                onNext();
               }}
             >
               <OrderFlowCard content={items} bulkMedicines />

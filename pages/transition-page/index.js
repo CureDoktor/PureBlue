@@ -18,7 +18,7 @@ const Index = () => {
       setCurrentIndex(currentIndex + 1);
       setTimeout(() => {
         setLoadButton(loadButton + 1);
-      }, 3000);
+      }, 2000);
     } else {
       router.push("/questions");
     }
@@ -27,7 +27,7 @@ const Index = () => {
     localStorage.clear();
     setTimeout(() => {
       setLoadButton(loadButton + 1);
-    }, 3000);
+    }, 2000);
   }, []);
 
   useEffect(() => {

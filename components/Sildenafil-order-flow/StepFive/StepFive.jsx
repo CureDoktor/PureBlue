@@ -3,13 +3,12 @@ import styles from "./StepFive.styles.module.scss";
 import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
 const StepFive = ({ onNext, setProduct, product }) => {
-      const setProductTimesPerMonth = (value) => {
-            setProduct({
-          ...product,
-          times_per_month: value,
-        });
-      }
-
+  const setProductTimesPerMonth = (value) => {
+    setProduct({
+      ...product,
+      times_per_month: value,
+    });
+  };
 
   const medicationOptions = [
     {
@@ -40,9 +39,15 @@ const StepFive = ({ onNext, setProduct, product }) => {
       </h2>
       <div className={styles.mainCardContainer}>
         {medicationOptions.map((items) => {
-        
           return (
-            <div className={styles.card} key={items.times} onClick={() => {setProductTimesPerMonth(items.times)}}>
+            <div
+              className={styles.card}
+              key={items.times}
+              onClick={() => {
+                localStorage.setItem("times", items.times);
+                onNext();
+              }}
+            >
               <OrderFlowCard content={items} bulkMedicines />
             </div>
           );

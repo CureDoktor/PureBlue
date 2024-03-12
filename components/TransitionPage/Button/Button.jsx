@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Button.styles.module.scss";
+import { Spinner } from "react-bootstrap";
 
 const Button = ({ name, onClick, disabled, icon }) => {
   return (
@@ -13,6 +14,14 @@ const Button = ({ name, onClick, disabled, icon }) => {
         }
         onClick={disabled ? null : onClick}
       >
+        {!disabled && !icon && (
+          <Spinner
+            className={styles.spinner}
+            size="sm"
+            animation="border"
+            variant="primary"
+          />
+        )}
         {icon && (
           <img src="/assets/thankyou/check.png" className={styles.icon} />
         )}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Form } from "react-bootstrap";
 
 export default function MagicModal({
   modalState,
@@ -16,7 +17,8 @@ export default function MagicModal({
     const message = answer;
     const inputField = (
       <input
-        type={question === "password" }
+        className="w-100"
+        type={question === "password"}
         placeholder={`${question}`}
         onChange={handleChange}
         name={question}
@@ -29,16 +31,19 @@ export default function MagicModal({
   return (
     <Modal show={modalState} onHide={() => setModalState(false)}>
       <Modal.Header>
-        <Modal.Title>Magic Modal!</Modal.Title>
+        <Modal.Title>Wrong unput!</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {returnValue.map((element) => {
-          return (
-            <div>
-              {element.message} <br /> {element.inputField}
-            </div>
-          );
-        })}
+        <Form.Group>
+          {returnValue.map((element) => {
+            return (
+              <div>
+                <div className="pb-2">{element.message}</div>
+                <div>{element.inputField}</div>
+              </div>
+            );
+          })}
+        </Form.Group>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={() => setModalState(false)}>

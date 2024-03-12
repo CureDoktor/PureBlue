@@ -8,7 +8,7 @@ const QuestionEleven = ({ onNext }) => {
   return (
     <div className={styles.mainContainer}>
       <p>
-        What resuts are you <br /> looking for?
+        What results are you <br /> looking for?
       </p>
       <div className={styles.list}>
         {elevenQuestionLabels.map((items) => {

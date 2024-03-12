@@ -88,10 +88,12 @@ export default function Order(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
+          console.log(res);
           setProduct(res.data);
         })
         .catch((error) => {
-          props.handleShow(error.response.data);
+          console.log(error);
+          props.handleShow(error.response);
         });
     } catch (err) {
       return alert("Something went wrong!" + err);

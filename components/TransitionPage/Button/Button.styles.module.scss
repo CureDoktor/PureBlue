@@ -1,4 +1,5 @@
 .button {
+  position: relative;
   padding: 1.5rem;
   background-color: white;
   font-size: 18px;
@@ -18,4 +19,9 @@
   .icon {
     padding-right: 8px;
   }
+}
+.spinner {
+  position: absolute;
+  left: 20px;
+  top: 30px;
 }

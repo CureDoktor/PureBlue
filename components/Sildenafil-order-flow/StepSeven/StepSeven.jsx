@@ -215,7 +215,10 @@ const StepSeven = ({ onNext, props }) => {
               >
                 {states.map((state) => {
                   return (
-                    <option value={`${state.abbreviation}`}>
+                    <option
+                      key={state.abbreviation}
+                      value={`${state.abbreviation}`}
+                    >
                       {state.name}
                     </option>
                   );

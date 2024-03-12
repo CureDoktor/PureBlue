@@ -6,17 +6,10 @@ import OrderFlowForm from "../../Common/OrderFlow/OrderFlowForm";
 import OrderFlowCardDetails from "../../Common/OrderFlow/OrderFlowCardDetails";
 
 const StepOne = ({ onNext, setProduct, product }) => {
-  const setProductTime = (value) => {
-        setProduct({
-      ...product,
-      daily: value,
-    });
-  }
-
   const ProceedToTheNextStep = (daily) => {
-    localStorage.setItem("daily", daily); 
+    localStorage.setItem("daily", daily);
     onNext();
-  }
+  };
 
   const medicationOptions = [
     {
@@ -35,12 +28,18 @@ const StepOne = ({ onNext, setProduct, product }) => {
   return (
     <>
       <h2 className={styles.h2}>
-        Choose your medication <br /> preference: 
+        Choose your medication <br /> preference:
       </h2>
       <div className={styles.mainCardContainer}>
         {medicationOptions.map((items) => {
           return (
-            <div className={styles.card} key={items.title} onClick={() => {ProceedToTheNextStep(items.daily)}}>
+            <div
+              className={styles.card}
+              key={items.title}
+              onClick={() => {
+                ProceedToTheNextStep(items.daily);
+              }}
+            >
               <OrderFlowCard content={items} />
             </div>
           );

@@ -1,12 +1,18 @@
 import React from "react";
 import styles from "./StepFour.styles.module.scss";
+import { useState, useEffect } from "react";
 
-const StepFour = ({ onNext, product }) => {
+const StepFour = ({ onNext }) => {
+  const [product, setProduct] = useState({ viagra: false });
+  useEffect(() => {
+    setProduct({ viagra: localStorage.getItem("viagra") });
+  }, []);
+
   return (
     <div className={styles.mainContainer}>
       <h6>
         Based on your selection, a daily{" "}
-        {!product.viagra ? "tadalafil" : "sildenafil"} <br />
+        {product.viagra == false ? "tadalafil" : "sildenafil"} <br />
         treatment sounds like the most
         <br /> appropriate option for you:
       </h6>
@@ -15,15 +21,15 @@ const StepFour = ({ onNext, product }) => {
           <div className={styles.bigCardTextContainer}>
             <span className={styles.tablet}>Tablet</span>
             <span className={styles.bigCardMainHeading}>
-              {!product.viagra ? "Generic Cialis®" : "Generic Viagra"}
+              {product.viagra == "false" ? "Generic Cialis®" : "Generic Viagra"}
             </span>
             <span className={styles.bigCardSubHeading}>
-              {!product.viagra ? "Tadalafil" : "Sildenafil"}
+              {product.viagra == "false" ? "Tadalafil" : "Sildenafil"}
             </span>
           </div>
           <img
             src={
-              !product.viagra
+              product.viagra == "false"
                 ? "/assets/sildenafilOrderFlow/Group289/Group289.png"
                 : "/assets/sildenafilOrderFlow/PureBlue1.png"
             }

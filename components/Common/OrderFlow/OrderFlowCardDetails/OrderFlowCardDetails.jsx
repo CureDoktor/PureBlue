@@ -17,10 +17,11 @@ import {
   Row,
 } from "react-bootstrap";
 
-const OrderFlowCardDetails = ({ onNext, props, product }) => {
+const OrderFlowCardDetails = ({ onNext, props }) => {
   const [initialRender, setInitialRender] = useState(true);
   const [InitialProduct, setInitialProduct] = useState("");
   const [selectedProductId, setSelectedProductId] = useState();
+  const [whichProduct, setWhichProduct] = useState("");
   const [chosingProduct, setChosingProduct] = useState([
     {
       id: 37,
@@ -115,15 +116,17 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
         var savingg = 0;
         var actual_pricee = element.product_price;
         var elementId = element.id;
-        element?.metadata.map((param) => {
-          if (param.name === "Monthly") {
-            monthlyy = param.value;
-          } else if (param.name === "Retail Price") {
-            retail_pricee = param.value;
-          } else if (param.name === "% Saving") {
-            savingg = param.value;
-          }
-        });
+        if (Array.isArray(element?.metadata)) {
+          element.metadata.map((param) => {
+            if (param.name === "Monthly") {
+              monthlyy = param.value;
+            } else if (param.name === "Retail Price") {
+              retail_pricee = param.value;
+            } else if (param.name === "% Saving") {
+              savingg = param.value;
+            }
+          });
+        }
 
         element.product_price;
 
@@ -170,60 +173,70 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          setMedications(res.data.data);
-          if (product.viagra) {
-            var name = "Generic Viagra 100mg";
-          } else {
-            if (product.daily) {
-              var name = "Generic Cialis 5mg";
-            } else {
-              var name = "Generic Cialis 20mg";
-            }
-          }
+          setMedications(res?.data?.data);
           setInitialProduct(name);
         })
         .catch((error) => {
-          props.props.handleShow(error.response.data);
+          props.props.handleShow(error);
         });
     } catch (err) {
-      alert("Something went wrong!" + err);
+      alert("Something went wrongggg!" + err);
     }
   };
 
   useEffect(() => {
+    if (initialRender) {
+      setInitialRender(false);
+      return;
+    }
     var productArray = [];
-    if (product.viagra) {
+    var product = {
+      viagra: localStorage.getItem("viagra"),
+      daily: localStorage.getItem("daily"),
+      times_per_month: localStorage.getItem("times"),
+    };
+
+    if (product.viagra == "true") {
       var viagra = "Sildenafil";
     } else {
       var viagra = "Tadalafil";
     }
-    if (product.daily) {
+    if (product.daily == "true") {
       var times = "Daily";
     } else {
       var times = "Advanced";
     }
-    if (viagra === "Sildenafil") {
-      if (times === "Advanced") {
+    if (viagra == "Sildenafil") {
+      if (times == "Advanced") {
         var dosage = "100.0";
+        setWhichProduct("Generic Viagra 100mg");
       }
     } else {
-      if (times === "Advanced") {
+      if (times == "Advanced") {
         var dosage = "20.0";
+        setWhichProduct("Generic Cialis 20mg");
       } else {
         var dosage = "5.0";
+        setWhichProduct("Generic Cialis 5mg");
       }
     }
+
     medications.map((element) => {
-      if (element.product_dosages_per_month === product.times_per_month) {
-        if (element.product_tag === viagra) {
-          if (element.product_dosage_tag === times) {
-            if (element.product_dosage_mg === dosage) {
+      if (element.product_dosages_per_month == product.times_per_month) {
+        if (element.product_tag == viagra) {
+          if (element.product_dosage_tag == times) {
+            if (times == "Daily") {
               productArray.push(element);
+            } else {
+              if (element.product_dosage_mg == dosage) {
+                productArray.push(element);
+              }
             }
           }
         }
       }
     });
+
     setChosingProduct(productArray);
   }, [medications]);
 
@@ -318,7 +331,7 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
   return (
     <>
       <div className={styles.mainContainer}>
-        <h5>{InitialProduct}</h5>
+        <h5>{whichProduct}</h5>
         <hr />
         {chosingProduct && chosingProduct.length > 0 && (
           <p>Choose shipping frequency</p>
@@ -333,12 +346,14 @@ const OrderFlowCardDetails = ({ onNext, props, product }) => {
 
             {chosingProduct.map((element, index) => {
               var monthlyCost = 0;
-
-              element?.metadata.map((metadata) => {
-                if (metadata.name === "Monthly") {
-                  monthlyCost = metadata.value;
-                }
-              });
+              console.log(element.metadata);
+              if (Array.isArray(element?.metadata)) {
+                element.metadata.map((metadata) => {
+                  if (metadata.name === "Monthly") {
+                    monthlyCost = metadata.value;
+                  }
+                });
+              }
               var plan_name = "";
               if (
                 element.product_qty / element.product_dosages_per_month ==

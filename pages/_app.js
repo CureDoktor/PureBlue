@@ -14,7 +14,6 @@ import { useRouter } from "next/router";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [isLogedIn, setIsLoggedIn] = useState(false);
-
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
     if (storedUserLoggedInInformation === "1") {
@@ -65,7 +64,7 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          <Footer />
+          {Component.name !== "SildenafilOrder" && <Footer />}
         </AuthContextProvider>
       );
     } else if (
@@ -86,7 +85,7 @@ function MyApp({ Component, pageProps }) {
           />
           <Header logout={loginHandler} header={isLogedIn} />
           <Login handleShow={handleShow} isLoggedIn={loginHandler} />
-          <Footer />
+          {Component.name !== "SildenafilOrder" && <Footer />}
         </AuthContextProvider>
       );
     } else {
@@ -106,7 +105,7 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          <Footer />
+          {Component.name !== "SildenafilOrder" && <Footer />}
         </AuthContextProvider>
       );
     }
