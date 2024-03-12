@@ -75,7 +75,10 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          {footerEnable && <Footer />}
+          {Component.name !== "SildenafilOrder" &&
+            Component.name !== "MedicalProfile" &&
+            Component.name !== "TransitionPage" &&
+            Component.name !== "QuestionsPage" && <Footer />}
         </AuthContextProvider>
       );
     } else if (
@@ -96,7 +99,10 @@ function MyApp({ Component, pageProps }) {
           />
           <Header logout={loginHandler} header={isLogedIn} />
           <Login handleShow={handleShow} isLoggedIn={loginHandler} />
-          {footerEnable && <Footer />}
+          {Component.name !== "SildenafilOrder" &&
+            Component.name !== "MedicalProfile" &&
+            Component.name !== "TransitionPage" &&
+            Component.name !== "QuestionsPage" && <Footer />}
         </AuthContextProvider>
       );
     } else {
@@ -116,7 +122,10 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          {footerEnable && <Footer />}
+          {Component.name !== "SildenafilOrder" &&
+            Component.name !== "MedicalProfile" &&
+            Component.name !== "TransitionPage" &&
+            Component.name !== "QuestionsPage" && <Footer />}
         </AuthContextProvider>
       );
     }
