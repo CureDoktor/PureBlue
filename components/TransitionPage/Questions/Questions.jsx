@@ -12,7 +12,8 @@ import QuestionFifteen from "../QuestionFifteen";
 import QuestionSixteen from "../QuestionSixteen";
 import AuthContext from "../../../store/auth-context";
 import MagicModal from "../../MagicModal";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
+
 
 const Questions = (props) => {
   const authCtx = useContext(AuthContext);
@@ -20,6 +21,10 @@ const Questions = (props) => {
   const [preferredState, setPreferredState] = useState("your state");
   const [errorData, setErrorData] = useState("");
   const router = useRouter();
+  const questionId = parseInt(router.query?.question) || 1;
+
+  // console.log(questionId + " /questions/?&question=1");
+
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -82,7 +87,7 @@ const Questions = (props) => {
 
   const [currentStep, setCurrentStep] = useState(() => {
     if (typeof window !== "undefined") {
-      const savedStep = localStorage.getItem("currentStep");
+      const savedStep = parseInt(questionId);
       return savedStep ? parseInt(savedStep, 10) : 1;
     }
     return 1;
@@ -90,18 +95,33 @@ const Questions = (props) => {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    const handleRouteChange = (url) => {
+      const params = new URLSearchParams(url.split('?')[1]);
+      const newQuestionId = parseInt(params.get('question')) || 1;
+      setCurrentStep(newQuestionId);
+    };
+  
+    router.events.on('routeChangeComplete', handleRouteChange);
+  
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
+
+  useEffect(() => {
     setHasMounted(true);
     if (typeof window !== "undefined") {
-      const savedStep = localStorage.getItem("currentStep");
-      if (savedStep) {
-        setCurrentStep(parseInt(savedStep, 10));
-      }
+      console.log(questionId);
+        setCurrentStep(questionId);
+    
+      
     }
+    console.log(questionId)
   }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("currentStep", currentStep);
+      localStorage.setItem("currentStep", questionId);
     }
   }, [currentStep]);
 
@@ -112,8 +132,9 @@ const Questions = (props) => {
         [property]: values[property],
       });
     }
-
+  
     setCurrentStep(currentStep + 1);
+    router.push("/questions/?&question=" + (currentStep + 1));
   };
 
   const renderStep = () => {
@@ -123,6 +144,7 @@ const Questions = (props) => {
           <QuestionEight
             onNext={() => {
               setCurrentStep(currentStep + 1);
+              router.push("/questions/?&question=" + (currentStep + 1));
             }}
           />
         );
@@ -131,6 +153,7 @@ const Questions = (props) => {
           <QuestionNine
             onNext={() => {
               setCurrentStep(currentStep + 1);
+              router.push("/questions/?&question=" + (currentStep + 1));
             }}
           />
         );
@@ -139,6 +162,7 @@ const Questions = (props) => {
           <QuestionTen
             onNext={() => {
               setCurrentStep(currentStep + 1);
+              router.push("/questions/?&question=" + (currentStep + 1));
             }}
           />
         );
@@ -147,6 +171,7 @@ const Questions = (props) => {
           <QuestionEleven
             onNext={() => {
               setCurrentStep(currentStep + 1);
+              router.push("/questions/?&question=" + (currentStep + 1));
             }}
           />
         );
@@ -155,6 +180,7 @@ const Questions = (props) => {
           <QuestionTwelve
             onNext={() => {
               setCurrentStep(currentStep + 1);
+              router.push("/questions/?&question=" + (currentStep + 1));
             }}
           />
         );
@@ -165,6 +191,7 @@ const Questions = (props) => {
             setPreferredState={setPreferredState}
             onNext={() => {
               setCurrentStep(currentStep + 1);
+              router.push("/questions/?&question=" + (currentStep + 1));
             }}
           />
         );
