@@ -23,12 +23,13 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
+    console.log(Component.name);
     if (
-      typeof Component === "function" &&
-      (Component.name === "SildenafilOrder" ||
-        Component.name === "MedicalProfile" ||
-        Component.name === "TransitionPage" ||
-        Component.name === "QuestionsPage")
+      typeof Component == "function" &&
+      (Component.name == "SildenafilOrder" ||
+        Component.name == "MedicalProfile" ||
+        Component.name == "TransitionPage" ||
+        Component.name == "QuestionsPage")
     ) {
       setFooterEnable(false);
     } else {
