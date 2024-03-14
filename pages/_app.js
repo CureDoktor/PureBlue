@@ -23,7 +23,8 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
-    console.log(Component.name);
+    console.log(Component.name + " component name");
+    console.log(Component);
     if (
       typeof Component == "function" &&
       (Component.name == "SildenafilOrder" ||
