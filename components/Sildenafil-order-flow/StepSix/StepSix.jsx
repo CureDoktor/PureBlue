@@ -4,13 +4,6 @@ import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
 const StepSix = ({ onNext, setProduct, product }) => {
   const [initial, setInitial] = useState(true);
-  useEffect(() => {
-    if (initial) {
-      setInitial(false);
-    } else {
-      onNext();
-    }
-  }, [initial]);
 
   const medicationOptions = [
     {

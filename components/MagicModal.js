@@ -52,9 +52,9 @@ export default function MagicModal({
 
   return (
     <Modal show={modalState} onHide={() => setModalState(false)}>
-      <Modal.Header>
+      {/* <Modal.Header>
         <Modal.Title>Wrong unput!</Modal.Title>
-      </Modal.Header>
+      </Modal.Header> */}
       <Modal.Body>
         <Form.Group>
           {returnValue.map((element) => {

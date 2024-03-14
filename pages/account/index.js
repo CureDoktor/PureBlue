@@ -11,18 +11,24 @@ import Case from "../../components/Case";
 import Verification from "../../components/Verification";
 import AuthContext from "../../store/auth-context";
 import Axios from "axios";
+import { useRouter } from "next/router";
 export default function Account(props) {
   const [content, setContent] = useState(<div></div>);
   const authCtx = useContext(AuthContext);
-
+  const router = useRouter();
   const getCase = async () => {
     const route = "/api/case/get-case";
 
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
-          console.log(res.data.data);
-          //setCaseAnswers(res.data.data);
+          if (res.data.data[0].case_answers == null) {
+            router.push("/medical-profile-questions");
+          } else if (res.data.data[0].last_order == null) {
+            router.push("/sildenafil-order-flow");
+          } else {
+            handleSelect("Membership");
+          }
         })
         .catch((error) => {
           props.handleShow(error.response.data);

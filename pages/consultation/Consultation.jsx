@@ -66,9 +66,16 @@ const Consultation = (props) => {
 
   const gettingQuestions = async () => {
     const route = "/api/case/get-questions";
-
+    const headers = {
+      "Content-Type": "application/json",
+      case: authCtx.Case(),
+    };
     try {
-      const rese = await Axios.post(route, { Token: authCtx.Token() })
+      const rese = await Axios.post(
+        route,
+        { Token: authCtx.Token() },
+        { headers }
+      )
         .then((res) => {
           setStartingQuestions(res.data.data.questions);
         })

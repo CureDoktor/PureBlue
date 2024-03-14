@@ -14,7 +14,6 @@ import AuthContext from "../../../store/auth-context";
 import MagicModal from "../../MagicModal";
 import { useRouter } from "next/router";
 
-
 const Questions = (props) => {
   const authCtx = useContext(AuthContext);
   const [modalState, setModalState] = useState(false);
@@ -96,15 +95,15 @@ const Questions = (props) => {
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      const params = new URLSearchParams(url.split('?')[1]);
-      const newQuestionId = parseInt(params.get('question')) || 1;
+      const params = new URLSearchParams(url.split("?")[1]);
+      const newQuestionId = parseInt(params.get("question")) || 1;
       setCurrentStep(newQuestionId);
     };
-  
-    router.events.on('routeChangeComplete', handleRouteChange);
-  
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router]);
 
@@ -112,11 +111,9 @@ const Questions = (props) => {
     setHasMounted(true);
     if (typeof window !== "undefined") {
       console.log(questionId);
-        setCurrentStep(questionId);
-    
-      
+      setCurrentStep(questionId);
     }
-    console.log(questionId)
+    console.log(questionId);
   }, []);
 
   useEffect(() => {
@@ -132,7 +129,7 @@ const Questions = (props) => {
         [property]: values[property],
       });
     }
-  
+
     setCurrentStep(currentStep + 1);
     router.push("/questions/?&question=" + (currentStep + 1));
   };
