@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [isLogedIn, setIsLoggedIn] = useState(false);
   const [footerEnable, setFooterEnable] = useState(true);
+  const [accountEnable, setAccountEnable] = useState(true);
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
     if (storedUserLoggedInInformation === "1") {
@@ -23,20 +24,17 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
-    console.log(Component.name + " component name");
-    console.log(Component);
     if (
-      typeof Component == "function" &&
-      (Component.name == "SildenafilOrder" ||
-        Component.name == "MedicalProfile" ||
-        Component.name == "TransitionPage" ||
-        Component.name == "QuestionsPage")
+      router.pathname.includes("/transition-page") ||
+      router.pathname.includes("/questions") ||
+      router.pathname.includes("/medical-profile-questions") ||
+      router.pathname.includes("/sildenafil-order-flow")
     ) {
       setFooterEnable(false);
     } else {
       setFooterEnable(true);
     }
-  }, [Component]);
+  }, [router]);
 
   const [show, setShow] = useState(false);
   const [showMessage, setShowMessage] = useState("");
@@ -85,7 +83,7 @@ function MyApp({ Component, pageProps }) {
         </AuthContextProvider>
       );
     } else if (
-      // Component.name == "Account" ||
+      Component.name == "Account" ||
       Component.name == "VisitForm" ||
       Component.name == "Switch" ||
       Component.name == "Order"
