@@ -4,17 +4,20 @@ import { useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 const QuestionTen = ({ onNext }) => {
   useEffect(() => {
-    setTimeout(onNext,3000);
+    const timeoutId = setTimeout(onNext, 3000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
   return (
     <div className={styles.container}>
-      <Spinner animation="border" variant="primary" /> 
+      <Spinner animation="border" variant="primary" />
       <p>The good news</p>
       <h4>PureBlue can help</h4>
       <img
         src="/assets/transitionPage/heart/Help.png"
         className={styles.image}
-     
       />
     </div>
   );

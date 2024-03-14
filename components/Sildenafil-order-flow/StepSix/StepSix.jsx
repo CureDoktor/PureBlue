@@ -8,9 +8,7 @@ const StepSix = ({ onNext, setProduct, product }) => {
     if (initial) {
       setInitial(false);
     } else {
-      if (localStorage.getItem("times") === "30") {
-        onNext();
-      }
+      onNext();
     }
   }, [initial]);
 

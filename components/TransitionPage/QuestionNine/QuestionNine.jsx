@@ -4,21 +4,21 @@ import { Spinner } from "react-bootstrap";
 
 const QuestionNine = ({ onNext }) => {
   useEffect(() => {
-    setTimeout(onNext,3000);
+    const timeoutId = setTimeout(onNext, 3000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
     <div className={styles.container}>
-      <Spinner animation="border" variant="primary" /> 
+      <Spinner animation="border" variant="primary" />
       <p>You're not alone</p>
       <p className={styles.heading}>
         40% of men experience <br /> Symptoms like this by age 40
       </p>
-      <img
-        src="/assets/transitionPage/tablet.svg"
-        className={styles.image}
-      
-      />
+      <img src="/assets/transitionPage/tablet.svg" className={styles.image} />
     </div>
   );
 };

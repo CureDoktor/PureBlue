@@ -73,6 +73,7 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                     key={items.title}
                     onClick={() => {
                       localStorage.setItem("viagra", true);
+                      localStorage.setItem("times", 0);
                       onNext();
                     }}
                   >
@@ -86,6 +87,7 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                     key={items.title}
                     onClick={() => {
                       localStorage.setItem("viagra", false);
+                      localStorage.setItem("times", 0);
                       onNext();
                     }}
                   >
