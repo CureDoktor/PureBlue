@@ -15,22 +15,26 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [isLogedIn, setIsLoggedIn] = useState(false);
   const [footerEnable, setFooterEnable] = useState(true);
+  const [accountEnable, setAccountEnable] = useState(true);
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
     if (storedUserLoggedInInformation === "1") {
       setIsLoggedIn(true);
     }
+  }, []);
+
+  useEffect(() => {
     if (
-      Component.name == "SildenafilOrder" ||
-      Component.name == "MedicalProfile" ||
-      Component.name == "TransitionPage" ||
-      Component.name == "QuestionsPage"
+      router.pathname.includes("/transition-page") ||
+      router.pathname.includes("/questions") ||
+      router.pathname.includes("/medical-profile-questions") ||
+      router.pathname.includes("/sildenafil-order-flow")
     ) {
       setFooterEnable(false);
     } else {
       setFooterEnable(true);
     }
-  }, []);
+  }, [router]);
 
   const [show, setShow] = useState(false);
   const [showMessage, setShowMessage] = useState("");
@@ -75,14 +79,11 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          {Component.name !== "SildenafilOrder" &&
-            Component.name !== "MedicalProfile" &&
-            Component.name !== "TransitionPage" &&
-            Component.name !== "QuestionsPage" && <Footer />}
+          {footerEnable && <Footer />}
         </AuthContextProvider>
       );
     } else if (
-      // Component.name == "Account" ||
+      Component.name == "Account" ||
       Component.name == "VisitForm" ||
       Component.name == "Switch" ||
       Component.name == "Order"
@@ -99,10 +100,7 @@ function MyApp({ Component, pageProps }) {
           />
           <Header logout={loginHandler} header={isLogedIn} />
           <Login handleShow={handleShow} isLoggedIn={loginHandler} />
-          {Component.name !== "SildenafilOrder" &&
-            Component.name !== "MedicalProfile" &&
-            Component.name !== "TransitionPage" &&
-            Component.name !== "QuestionsPage" && <Footer />}
+          {footerEnable && <Footer />}
         </AuthContextProvider>
       );
     } else {
@@ -122,10 +120,7 @@ function MyApp({ Component, pageProps }) {
             isLoggedIn={loginHandler}
             {...pageProps}
           />
-          {Component.name !== "SildenafilOrder" &&
-            Component.name !== "MedicalProfile" &&
-            Component.name !== "TransitionPage" &&
-            Component.name !== "QuestionsPage" && <Footer />}
+          {footerEnable && <Footer />}
         </AuthContextProvider>
       );
     }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Form } from "react-bootstrap";
+import Link from "next/link";
 
 export default function MagicModal({
   modalState,
@@ -12,9 +13,30 @@ export default function MagicModal({
   errorData,
 }) {
   const rest = Object.entries(errorData);
-  var values = "";
   const returnValue = rest.map(([question, answer]) => {
-    const message = answer;
+    var message = answer;
+    if (message == "Email Already taken, try to login") {
+      message = (
+        <div>
+          {" "}
+          <p>This email is already connected with an account!</p>
+          <p>
+            Try{" "}
+            <Link style={{ fontWeight: "600", color: "#0077f0" }} href="/login">
+              logging in
+            </Link>{" "}
+            using your password, or click{" "}
+            <Link
+              style={{ fontWeight: "600", color: "#0077f0" }}
+              href="/password-reset"
+            >
+              forgot my password
+            </Link>{" "}
+            if you can't remember
+          </p>
+        </div>
+      );
+    }
     const inputField = (
       <input
         className="w-100"
@@ -30,9 +52,9 @@ export default function MagicModal({
 
   return (
     <Modal show={modalState} onHide={() => setModalState(false)}>
-      <Modal.Header>
+      {/* <Modal.Header>
         <Modal.Title>Wrong unput!</Modal.Title>
-      </Modal.Header>
+      </Modal.Header> */}
       <Modal.Body>
         <Form.Group>
           {returnValue.map((element) => {

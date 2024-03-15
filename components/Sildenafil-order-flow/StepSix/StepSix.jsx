@@ -4,15 +4,6 @@ import OrderFlowCard from "../../Common/OrderFlow/OrderFLowCard";
 
 const StepSix = ({ onNext, setProduct, product }) => {
   const [initial, setInitial] = useState(true);
-  useEffect(() => {
-    if (initial) {
-      setInitial(false);
-    } else {
-      if (localStorage.getItem("times") === "30") {
-        onNext();
-      }
-    }
-  }, [initial]);
 
   const medicationOptions = [
     {

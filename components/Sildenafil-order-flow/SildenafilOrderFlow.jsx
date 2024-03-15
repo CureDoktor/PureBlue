@@ -10,39 +10,53 @@ import StepSeven from "../Sildenafil-order-flow/StepSeven";
 import StepEight from "../Sildenafil-order-flow/StepEight";
 import StepSeventeen from "../Sildenafil-order-flow/StepSeventeen";
 import Thankyou from "../Thankyou/Thankyou";
+import { useRouter } from "next/router";
 // import StepEighteen from "./StepEighteen";
 
 const SildenafilOrderFlow = (props) => {
   const [initialRender, setInitialRender] = useState(true);
+  const router = useRouter();
+  const questionId = parseInt(router.query?.question) || 1;
   const [product, setProduct] = useState({
     daily: false,
     viagra: false,
     times_per_month: 4,
   });
+
   const [currentStep, setCurrentStep] = useState(() => {
     if (typeof window !== "undefined") {
-      const savedStep = localStorage.getItem("currentStep");
-      return savedStep ? parseInt(savedStep, 10) : 1;
+      return questionId;
     }
-    return 1;
   });
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
     if (typeof window !== "undefined") {
-      const savedStep = localStorage.getItem("currentStep");
-      if (savedStep) {
-        setCurrentStep(parseInt(savedStep, 10));
-      }
+      setCurrentStep(questionId);
     }
   }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("currentStep", currentStep);
-    }
-  }, [currentStep]);
+    const handleRouteChange = (url) => {
+      const params = new URLSearchParams(url.split("?")[1]);
+      const newQuestionId = parseInt(params.get("question")) || 1;
+      setCurrentStep(newQuestionId);
+      localStorage.setItem("currentStep", newQuestionId);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+
+  //   }
+  // }, [currentStep]);
 
   useEffect(() => {
     if (initialRender) {
@@ -53,13 +67,21 @@ const SildenafilOrderFlow = (props) => {
   }, [product]);
 
   const goToNextStep = () => {
-    setCurrentStep((prevStep) => prevStep + 1);
+    if (currentStep == 4 && localStorage.getItem("times") === "30") {
+      setCurrentStep(currentStep + 2);
+      router.push("/sildenafil-order-flow/?&question=" + (currentStep + 2));
+    } else {
+      setCurrentStep(currentStep + 1);
+      router.push("/sildenafil-order-flow/?&question=" + (currentStep + 1));
+    }
   };
   const goToPreviousStep = () => {
     if (currentStep == 6 && localStorage.getItem("daily") == "true") {
-      setCurrentStep((prevStep) => prevStep - 2);
+      setCurrentStep(currentStep - 2);
+      router.push("/sildenafil-order-flow/?&question=" + (currentStep - 2));
     } else {
-      setCurrentStep((prevStep) => prevStep - 1);
+      setCurrentStep(currentStep - 1);
+      router.push("/sildenafil-order-flow/?&question=" + (currentStep - 1));
     }
   };
 

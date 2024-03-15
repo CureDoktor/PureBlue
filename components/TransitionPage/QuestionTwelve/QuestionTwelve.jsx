@@ -5,7 +5,11 @@ import { Spinner } from "react-bootstrap";
 
 const QuestionTwelve = ({ onNext }) => {
   useEffect(() => {
-    setTimeout(onNext,3000);
+    const timeoutId = setTimeout(onNext, 3000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
   return (
     <div className={styles.container}>

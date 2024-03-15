@@ -66,9 +66,16 @@ const Consultation = (props) => {
 
   const gettingQuestions = async () => {
     const route = "/api/case/get-questions";
-
+    const headers = {
+      "Content-Type": "application/json",
+      case: authCtx.Case(),
+    };
     try {
-      const rese = await Axios.post(route, { Token: authCtx.Token() })
+      const rese = await Axios.post(
+        route,
+        { Token: authCtx.Token() },
+        { headers }
+      )
         .then((res) => {
           setStartingQuestions(res.data.data.questions);
         })
@@ -111,6 +118,16 @@ const Consultation = (props) => {
   useEffect(() => {
     gettingQuestions();
   }, []);
+
+  const content = () => {
+    if (!query?.question) {
+      return "Let's begin";
+    } else if (notLastQuestion) {
+      return "Next Question";
+    } else {
+      return "Submit";
+    }
+  };
 
   const handleSubmit = async (formData) => {
     const route = "/api/questions/save-questions";
@@ -191,13 +208,13 @@ const Consultation = (props) => {
                     </svg>
                   }
                 >
-                  {notLastQuestion ? "Next question" : "Submit"}
+                  {content()}
                 </Button>
                 {!query?.question && (
                   <div className={styles.footer}>
-                    <p className={styles.help}>
+                    {/* <p className={styles.help}>
                       Need help? <Link href="#">Live chat with us</Link>
-                    </p>
+                    </p> */}
                     <p className={styles.disclaimer}>
                       *If your treatment isn't approved by our medical experts,
                       we'll cancel your order and you won't be charged.

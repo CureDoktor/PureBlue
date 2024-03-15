@@ -34,7 +34,7 @@ const MedicalProfileQuestion = (props) => {
   return (
     <div>
       <div className={styles.container}>
-        <Stepper total={total} completedSteps={questionId} />
+        {/* <Stepper total={total} completedSteps={questionId} /> */}
         {currentStep === total && (
           <div className={styles.headingContainer}>
             <p>
