@@ -60,8 +60,8 @@ const StepTwo = ({ onNext, setProduct, product }) => {
                     >
                       <div className={styles.onlyTextContainer}>
                         Please choose for me based on my health questionnaire
-                      </div>
                     </div>
+                      </div>
                   </div>
                 );
               }
