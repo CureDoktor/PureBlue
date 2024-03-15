@@ -15,15 +15,15 @@ const Start = () => {
       <ul>
         <li>
           <span>1</span>
-          <p>Answer a few quick health questions.</p>
+          <p>Answer a few quick questions about your health.</p>
         </li>
         <li>
           <span>2</span>
-          <p>Choose your treatment and confirm your ID.</p>
+          <p>Choose your treatment</p>
         </li>
         <li>
           <span>3</span>
-          <p>Review and pay for your order.</p>
+          <p>24-hour doctor approval</p>
         </li>
       </ul>
     </div>
