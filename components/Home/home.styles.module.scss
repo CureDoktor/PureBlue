@@ -105,8 +105,6 @@
     @media (max-width: 768px) {
       font-size: 30px;
       line-height: 32px;
-    
-      
     }
     @media (max-width: 500px) {
       font-size: 24px;
@@ -124,4 +122,8 @@
       align-items: center;
     }
   }
+}
+.videoContainer {
+  max-height: 550px;
+  overflow: hidden;
 }

@@ -9,7 +9,7 @@ import Service from "./Service";
 import Treatment from "./Treatment";
 import Explore from "./Explore";
 import SearchButton from "./SearchBtn";
-
+import VideoPlayer from "../VideoPlayer";
 import styles from "./home.styles.module.scss";
 
 const HomePage = () => {
@@ -35,8 +35,9 @@ const HomePage = () => {
           <ButtonSection />
         </Container>
       </section>
-
-      <section className={styles.imageContainer}></section>
+      <div className={styles.videoContainer}>
+        <VideoPlayer src="/assets/home-vid.mp4" />
+      </div>
       <div className={styles.explore}>
         <Explore />
       </div>
