@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("Token");
     setIsLoggedIn(false);
-    router.push("/landing-page-v2");
+    router.push("/");
   };
 
   const loginChange = () => {
