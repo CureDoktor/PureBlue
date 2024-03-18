@@ -4,10 +4,11 @@ import Form from "react-bootstrap/Form";
 import { Col, Container, Button, Row } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState, useEffect, useContext } from "react";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import Axios from "axios";
 import { useRouter } from "next/router";
 import AuthContext from "../../store/auth-context";
+import { Spinner } from "react-bootstrap";
 import Link from "next/link";
 import { Pause } from "react-bootstrap-icons";
 
@@ -20,17 +21,14 @@ export default function OneTimeLogin(props) {
   useEffect(() => {
     setTimeout(function () {
       let getUrl = searchParams.get("redirect_to");
-      setRedirectUrl(getUrl);
-      if(getUrl != null){
+
+      if (getUrl != null) {
         handleSubmit();
       }
-   
-  }, 3000);
-   
+    }, 3000);
   }, [searchParams]);
 
   const handleSubmit = async () => {
-    
     const one_time_login_token = searchParams.get("token");
     const one_time_login_email = searchParams.get("email");
 
@@ -39,13 +37,14 @@ export default function OneTimeLogin(props) {
       token: one_time_login_token,
       email: one_time_login_email,
     };
- 
+
     try {
       const rese = await Axios.post(route, payload)
         .then((res) => {
           authCtx.settingToken(res.data.data.access_token);
           props.isLoggedIn();
-          router.push(redirectUrl);
+
+          router.push("/" + searchParams.get("redirect_to"));
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -58,7 +57,7 @@ export default function OneTimeLogin(props) {
   return (
     <>
       <Container className={styles.container}>
-        <h2 className="text-center">One Time Login</h2>
+        <Spinner animation="border" variant="primary" />
       </Container>
     </>
   );

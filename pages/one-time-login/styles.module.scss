@@ -1,6 +1,9 @@
 .container {
   max-width: 600px;
   padding: 200px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   h2 {
     font-weight: bold;
     padding: 60px 0px 50px 0px;

@@ -189,7 +189,10 @@ const Consultation = (props) => {
                   />
                 )}
                 <Button
-                  style={{ display: showNextQuestion ? "block" : "none" }}
+                  style={{
+                    display: showNextQuestion ? "block" : "none",
+                    textTransform: !query?.question ? "none" : "uppercase",
+                  }}
                   ref={buttonRef}
                   type={!notLastQuestion ? "submit" : "button"}
                   onClick={goNextQuestion}

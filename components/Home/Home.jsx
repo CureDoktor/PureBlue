@@ -41,14 +41,12 @@ const HomePage = () => {
       <div className={styles.explore}>
         <Explore />
       </div>
-
       <div>
         <Treatment />
       </div>
       <div>
         <Health />
       </div>
-
       <div>
         <Popular />
       </div>
