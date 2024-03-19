@@ -10,8 +10,8 @@ const Start = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <h1>Start your consultation</h1>
-      <p>In three simple steps, your order will be on the way.</p>
+      <h1>Let's Begin</h1>
+      {/* <p>In three simple steps, your order will be on the way.</p> */}
       <ul>
         <li>
           <span>1</span>
