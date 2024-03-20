@@ -11,11 +11,31 @@ import { useResolvedPath } from "react-router";
 const CardSection = () => {
   const router = useRouter();
   const cardInfo = [
-    { title: "Erectile Dysfunction", img: "/assets/homepage/card/card1.png" },
-    { title: "Custom Medication", img: "/assets/homepage/card/card2.png" },
-    { title: "Men's Hair Loss", img: "/assets/homepage/card/card3.png" },
-    { title: "Testosterone", img: "/assets/homepage/card/card4.png" },
-    { title: "Weight Loss", img: "/assets/homepage/card/card5.png" },
+    {
+      title: "Erectile Dysfunction",
+      img: "/assets/homepage/card/card1.png",
+      soon: false,
+    },
+    {
+      title: "Custom Medication",
+      img: "/assets/homepage/card/card2.png",
+      soon: true,
+    },
+    {
+      title: "Men's Hair Loss",
+      img: "/assets/homepage/card/card3.png",
+      soon: true,
+    },
+    {
+      title: "Testosterone",
+      img: "/assets/homepage/card/card4.png",
+      soon: true,
+    },
+    {
+      title: "Weight Loss",
+      img: "/assets/homepage/card/card5.png",
+      soon: true,
+    },
   ];
   return (
     <Container className={styles.container}>
@@ -35,7 +55,15 @@ const CardSection = () => {
         }}
       >
         {cardInfo.map((card, index) => (
-          <SwiperSlide key={index} className={styles.slide}>
+          <SwiperSlide
+            key={index}
+            onClick={() => {
+              if (!card.soon) {
+                router.push("/transition-page");
+              }
+            }}
+            className={styles.slide}
+          >
             <Card className={styles.card}>
               <Card.Img
                 variant="top"
@@ -44,16 +72,17 @@ const CardSection = () => {
                 className={styles.cardImg}
               />
               <Card.Body className={styles.cardContent}>
-                <Card.Title className={styles.cardTitle}>
-                  {card.title}
-                </Card.Title>
-                <div
-                  onClick={() => {
-                    router.push("/transition-page");
-                  }}
-                  className={styles.cardButton}
-                >
-                  <img src="/assets/homepage/card/arrow.png" alt="arrow" />
+                <div>
+                  <Card.Title className={styles.cardTitle}>
+                    {card.title}
+                  </Card.Title>
+
+                  <div className={styles.cardButton}>
+                    {card.soon && <span>coming soon</span>}
+                    {!card.soon && (
+                      <img src="/assets/homepage/card/arrow.png" alt="arrow" />
+                    )}
+                  </div>
                 </div>
               </Card.Body>
             </Card>
