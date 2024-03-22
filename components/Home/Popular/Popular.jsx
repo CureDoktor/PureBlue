@@ -103,8 +103,7 @@ const Popular = ({ handleShow }) => {
                     onClick={() => {
                       if (product.redirectUrl == "/tadalafil") {
                         handleShow();
-                      }
-                      {
+                      } else {
                         router.push(product.redirectUrl);
                       }
                     }}
