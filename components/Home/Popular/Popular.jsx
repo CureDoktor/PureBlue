@@ -101,7 +101,12 @@ const Popular = ({ handleShow }) => {
                     variant="outline-dark"
                     disabled={product.comingSoon}
                     onClick={() => {
-                      router.push(product.redirectUrl);
+                      if (product.redirectUrl == "/tadalafil") {
+                        handleShow();
+                      }
+                      {
+                        router.push(product.redirectUrl);
+                      }
                     }}
                     size="sm"
                     className={styles.btn}
