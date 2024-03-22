@@ -15,7 +15,7 @@ const products = [
     rating: "/assets/homepage/popular/stars.png",
     imageUrl: "/assets/Generic Viagra.png",
     comingSoon: false,
-    redirectUrl: "/sildenafil",
+    redirectUrl: "/landing-page-v2",
   },
   {
     name: "Generic Cialis",
@@ -56,8 +56,8 @@ const Popular = ({ handleShow }) => {
       <Swiper
         slidesPerView={1.3}
         spaceBetween={5}
+        autoplay={{ delay: 2000 }}
         loop={true}
-        autoplay={{ delay: 2, disableOnInteraction: false }}
         breakpoints={{
           375: { slidesPerView: 1.3, spaceBetween: 5 },
           425: { slidesPerView: 1.5, spaceBetween: 5 },
