@@ -1,0 +1,52 @@
+.container {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background-image: url("/assets/IMAGE4.png");
+  background-position: 0px 130px;
+  background-size: 1000px 850px;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  label {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.button {
+  margin: auto;
+  display: block;
+  text-align: center;
+}
+.span {
+  font-size: 12px;
+}
+.ClockFill {
+  padding-right: 0px;
+  margin-top: -2px;
+  margin-right: 5px;
+}
+.h3 {
+  font-weight: bold;
+}
+.radioButton {
+  display: block;
+  border: 1px solid orange;
+  padding: 15px 40px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    display: block;
+    background-position: -200px 240px;
+  }
+}

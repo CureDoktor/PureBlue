@@ -3,7 +3,13 @@ import { useFormContext } from "react-hook-form";
 import styles from "./Textarea.styles.module.scss";
 import { useEffect } from "react";
 import { useConsultationContext } from "../../../store/consultation-context";
-const Textarea = ({ name, visibility }) => {
+const Textarea = ({ name, visibility, answer, metadata }) => {
+  var checkboxValue = true;
+  try {
+    var metadatas = JSON.parse(metadata);
+    checkboxValue = metadatas.checkbox;
+  } catch {}
+
   const { register, setValue } = useFormContext();
   const { setNextQuestion, isProductChanged, productChanged } =
     useConsultationContext();
@@ -12,26 +18,27 @@ const Textarea = ({ name, visibility }) => {
   }, []);
   return (
     <div>
-      {visibility ? (
+      {visibility && checkboxValue ? (
         <div>
           <input
             type="checkbox"
             onClick={() => {
-              setValue(name, "NONE");
+              setValue(name, answer ? answer : "NONE");
               isProductChanged(productChanged + 1);
             }}
             id="none"
           />
           <label style={{ paddingLeft: "10px" }} for="none">
             {" "}
-            Click here if the answer is NONE
+            {answer ? answer : "Click here if the answer is NONE"}
           </label>
+          <br />
           <br />
         </div>
       ) : (
         <></>
       )}
-      <br />
+
       <textarea
         required
         style={{ width: "100%" }}

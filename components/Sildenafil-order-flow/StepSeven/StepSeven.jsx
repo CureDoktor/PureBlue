@@ -12,7 +12,8 @@ const StepSeven = ({ onNext, props }) => {
   const [enableButton, setEnableButton] = useState(true);
   const checkCountry = (event) => {
     const { value, name } = event.target;
-    if (value === "AS" || value === "SC") {
+    console.log(value);
+    if (value === "AK" || value === "SC") {
       setEnableButton(false);
       setCountry(false);
       handleChange(event);
@@ -80,8 +81,12 @@ const StepSeven = ({ onNext, props }) => {
   };
 
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstName: localStorage.getItem("firstName")
+      ? localStorage.getItem("firstName")
+      : "",
+    lastName: localStorage.getItem("lastName")
+      ? localStorage.getItem("lastName")
+      : "",
     shippingAddress: "",
     shippingCityName: "",
     shippingState: "",
@@ -134,7 +139,7 @@ const StepSeven = ({ onNext, props }) => {
               type="text"
               onChange={handleChange}
               placeholder="First Name"
-              value={formData.email}
+              value={formData.firstName}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
@@ -148,7 +153,7 @@ const StepSeven = ({ onNext, props }) => {
               type="text"
               onChange={handleChange}
               placeholder="Last Name"
-              value={formData.email}
+              value={formData.lastName}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
@@ -164,7 +169,7 @@ const StepSeven = ({ onNext, props }) => {
               type="number"
               onChange={handleChange}
               placeholder="Enter Phone Number"
-              value={formData.email}
+              value={formData.phone}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
@@ -180,7 +185,7 @@ const StepSeven = ({ onNext, props }) => {
               type="text"
               onChange={handleChange}
               placeholder="Enter Street Address"
-              value={formData.email}
+              value={formData.shippingAddress}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
@@ -196,7 +201,7 @@ const StepSeven = ({ onNext, props }) => {
               type="text"
               onChange={handleChange}
               placeholder="Enter City"
-              value={formData.email}
+              value={formData.shippingCityName}
               className={styles.formControl}
             />
             <Form.Control.Feedback type="invalid">
@@ -244,7 +249,7 @@ const StepSeven = ({ onNext, props }) => {
                 type="text"
                 onChange={handleChange}
                 placeholder="Enter Zipcode"
-                value={formData.email}
+                value={formData.shippingZip}
                 className={styles.formControl}
               />
               <Form.Control.Feedback type="invalid">

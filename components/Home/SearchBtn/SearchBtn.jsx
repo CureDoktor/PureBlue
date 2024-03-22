@@ -7,9 +7,9 @@ const SearchBtn = ({ className, span, name }) => {
   const router = useRouter();
   return (
     <Button
-      onClick={() => {
-        router.push("/transition-page");
-      }}
+      // onClick={() => {
+      //   router.push("/transition-page");
+      // }}
       className={`${className} mt-4 fs-6 ${
         name == "explore"
           ? styles.explore

@@ -15,11 +15,9 @@ import { Col, Button, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 
 export default function Profile(props) {
- 
   const authCtx = useContext(AuthContext);
   const gettingUserInfo = async () => {
     const route = "/api/user/getUserInfo";
-
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {

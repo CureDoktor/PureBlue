@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./QuestionFifteen.styles.module.scss";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import * as Yup from "yup";
 
@@ -25,7 +26,11 @@ const QuestionFifteen = ({ onNext, handleChange }) => {
         (We promise - It’s seriously only 3 minutes)
       </p>
       <Formik
-        initialValues={{ email: "" }}
+        initialValues={{
+          email: localStorage.getItem("email")
+            ? localStorage.getItem("email")
+            : "",
+        }}
         validationSchema={validationSchema}
         onSubmit={onNext}
       >

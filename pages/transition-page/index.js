@@ -24,7 +24,7 @@ const TransitionPage = () => {
     }
   };
   useEffect(() => {
-    localStorage.clear();
+    localStorage.removeItem("currentStep");
     setTimeout(() => {
       setLoadButton(loadButton + 1);
     }, 2000);

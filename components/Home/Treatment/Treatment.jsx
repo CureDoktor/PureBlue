@@ -14,35 +14,38 @@ const cardInfo = [
     buttonText: "Get Started",
     imgSrc: "/assets/homepage/card3/card1.png",
     imgAlt: "Erectile dysfunction",
+    proceed: true,
   },
   {
     title: "Custom Medication",
     text: `Need more powerful customized treatment?`,
-    buttonText: "Get Started",
+    buttonText: "Coming Soon",
     imgSrc: "/assets/homepage/card3/card2.png",
     imgAlt: "Custom Medication",
+    proceed: false,
   },
   {
     title: "Men's Hair Loss",
     text: `Losing or thinning hair?`,
-    buttonText: "Get Started",
+    buttonText: "Coming Soon",
     imgSrc: "/assets/homepage/card3/card3.png",
     imgAlt: "Men's Hair Loss",
+    proceed: false,
   },
-  {
-    title: "Men's Hair Loss",
-    text: `Losing or thinning hair?`,
-    buttonText: "Get Started",
-    imgSrc: "/assets/homepage/card3/card3.png",
-    imgAlt: "Men's Hair Loss",
-  },
-  {
-    title: "Men's Hair Loss",
-    text: `Losing or thinning hair?`,
-    buttonText: "Get Started",
-    imgSrc: "/assets/homepage/card3/card3.png",
-    imgAlt: "Men's Hair Loss",
-  },
+  // {
+  //   title: "Men's Hair Loss",
+  //   text: `Losing or thinning hair?`,
+  //   buttonText: "Get Started",
+  //   imgSrc: "/assets/homepage/card3/card3.png",
+  //   imgAlt: "Men's Hair Loss",
+  // },
+  // {
+  //   title: "Men's Hair Loss",
+  //   text: `Losing or thinning hair?`,
+  //   buttonText: "Get Started",
+  //   imgSrc: "/assets/homepage/card3/card3.png",
+  //   imgAlt: "Men's Hair Loss",
+  // },
 ];
 
 const Treatment = () => {
@@ -82,7 +85,9 @@ const Treatment = () => {
                   <Card.Text className={styles.cardText}>{card.text}</Card.Text>
                   <Button
                     onClick={() => {
-                      router.push("/transition-page");
+                      if (card.proceed) {
+                        router.push("/transition-page");
+                      }
                     }}
                     className={`bg-primary ${styles.cardBtn}`}
                   >

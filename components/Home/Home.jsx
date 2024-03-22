@@ -11,9 +11,34 @@ import Explore from "./Explore";
 import SearchButton from "./SearchBtn";
 import VideoPlayer from "../VideoPlayer";
 import styles from "./home.styles.module.scss";
+import { Button } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import { useState } from "react";
+import Recommended from "../Recommended";
+import FindTreatment from "../FindTreatment";
+import EmailAddress from "../EmailAddress";
+import FirstLastName from "../FirstLastName";
 
-const HomePage = () => {
+const HomePage = (props) => {
   const router = useRouter();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [content, setContent] = useState(0);
+  const chooseContent = () => {
+    if (content == 0) {
+      return <FindTreatment setContent={setContent} />;
+    } else if (content == 1) {
+      return <EmailAddress props={props} setContent={setContent} />;
+    } else if (content == 2) {
+      return <FirstLastName setContent={setContent} />;
+    } else {
+      return <Recommended setContent={setContent} />;
+    }
+  };
   return (
     <div>
       <Container className={styles.container}>
@@ -26,7 +51,9 @@ const HomePage = () => {
             Your free online visit starts here. Tell us what we can help you
             with.
           </p>
-          <SearchButton className="bg-primary" span="Find my treatment" />
+          <div onClick={handleShow}>
+            <SearchButton className="bg-primary" span="Find my treatment" />
+          </div>
         </div>
       </Container>
       <section className={styles.cardSection}>
@@ -45,7 +72,7 @@ const HomePage = () => {
         <Treatment />
       </div>
       <div>
-        <Health />
+        <Health handleShow={handleShow} />
       </div>
       <div>
         <Popular />
@@ -56,21 +83,36 @@ const HomePage = () => {
       <div style={{ background: "#F7F7F7" }}>
         <Frequently />
       </div>
-
       <Container className={styles.container}>
         <div className={`my-5 ${styles.lastSection}`}>
           <h1>
             <span>PureBlue </span>
             makes men’s health simpler, more convenient, and affordable.
           </h1>
-
-          <SearchButton
-            className="bg-dark"
-            span="Explore treatments"
-            name="not-explore"
-          />
+          <div onClick={handleShow}>
+            <SearchButton
+              className="bg-dark"
+              span="Explore treatments"
+              name="not-explore"
+            />
+          </div>
         </div>
       </Container>
+      <>
+        <Modal
+          show={show}
+          dialogClassName={styles.modal}
+          contentClassName={styles.modal}
+          centered={true}
+          onHide={handleClose}
+        >
+          <Modal.Header
+            style={{ borderBottom: "0px" }}
+            closeButton
+          ></Modal.Header>
+          <Modal.Body style={{ padding: "0px" }}>{chooseContent()}</Modal.Body>
+        </Modal>
+      </>
     </div>
   );
 };

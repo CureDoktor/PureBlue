@@ -4,11 +4,12 @@ import Form from "../Form";
 import TextInput from "../Inputs/TextInput";
 import Button from "../Button";
 import styles from "./DiscountSection.styles.module.scss";
-
+import { useRouter } from "next/router";
 import ForwardIcon from "../../public/assets/forward.png";
 import Image from "next/image";
 
 const DiscountSection = () => {
+  const router = useRouter();
   return (
     <section className={styles.section}>
       <Container className={styles.container}>
@@ -31,8 +32,13 @@ const DiscountSection = () => {
                   order
                 </h6>
                 <TextInput name="email" placeholder="Email" />
-                <Button variant="gradient">
-                  Submit{" "}
+                <Button
+                  onClick={() => {
+                    router.push("/transition-page");
+                  }}
+                  variant="gradient"
+                >
+                  SUBMIT{" "}
                   <span className={styles.buttonIcon}>
                     <Image src={ForwardIcon} alt="Forward icon" layout="fill" />
                   </span>

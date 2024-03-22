@@ -18,7 +18,8 @@ const inputMap = {
 };
 
 export const parseComponentProps = (name, type, answer) => {
-
+  console.log(type);
+  console.log(answer);
   let props = {
     name: "",
     value: "",
@@ -55,6 +56,8 @@ export const parseComponentProps = (name, type, answer) => {
       props = {
         name,
         visibility: answer?.visibility == 1,
+        answer: answer?.questionsAnswers[0]?.title,
+        metadata: answer?.metadata,
       };
       break;
     case "upload":
@@ -151,9 +154,17 @@ export const parseQuestion = ({
   };
 
   if (question?.questionsAnswers?.length > 0) {
-    question?.questionsAnswers?.forEach((answer) =>
-      parsedQuestion.answers.push(parseAnswer({ context, answer, afterField }))
-    );
+    if (question?.type == "textarea") {
+      parsedQuestion.answers.push(
+        parseAnswer({ context, answer: question, afterField })
+      );
+    } else {
+      question?.questionsAnswers?.forEach((answer) =>
+        parsedQuestion.answers.push(
+          parseAnswer({ context, answer, afterField })
+        )
+      );
+    }
   } else
     parsedQuestion.answers.push(
       parseAnswer({ context, answer: question, afterField })

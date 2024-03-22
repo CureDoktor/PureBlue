@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import { useRouter } from "next/router";
 import styles from "./popular.styles.module.scss";
 
 const products = [
@@ -13,35 +13,43 @@ const products = [
     name: "Generic Viagra",
     description: "(Sildenafil Citrate)",
     rating: "/assets/homepage/popular/stars.png",
-    imageUrl: "/assets/homepage/popular/popular.png",
+    imageUrl: "/assets/Generic Viagra.png",
+    comingSoon: false,
+    redirectUrl: "/sildenafil",
   },
   {
     name: "Generic Cialis",
     description: "(Tadalafil)",
     rating: "/assets/homepage/popular/stars.png",
-    imageUrl: "/assets/homepage/popular/popular.png",
+    imageUrl: "/assets/Generic Cialis.png",
+    comingSoon: false,
+    redirectUrl: "/tadalafil",
   },
   {
     name: "Alpha Protocol",
     description: "Testosterone Enhancement",
     rating: "/assets/homepage/popular/stars.png",
-    imageUrl: "/assets/homepage/popular/popular.png",
+    imageUrl: "/assets/Alpha Protocol.png",
+    comingSoon: true,
   },
   {
-    name: "Alpha Protocol",
+    name: "Shred Protocol",
     description: "Testosterone Enhancement",
     rating: "/assets/homepage/popular/stars.png",
-    imageUrl: "/assets/homepage/popular/popular.png",
+    imageUrl: "/assets/Shred Protocol.png",
+    comingSoon: true,
   },
   {
-    name: "Alpha Protocol",
+    name: "Finasteride",
     description: "Testosterone Enhancement",
     rating: "/assets/homepage/popular/stars.png",
-    imageUrl: "/assets/homepage/popular/popular.png",
+    imageUrl: "/assets/Finasteride.png",
+    comingSoon: true,
   },
 ];
 
-const Popular = () => {
+const Popular = ({}) => {
+  const router = useRouter();
   return (
     <Container className={styles.mainContainer}>
       <h1>Popular</h1>
@@ -74,17 +82,28 @@ const Popular = () => {
                   <Image
                     src={product.imageUrl}
                     alt={product.name}
-                    width={200}
+                    width={180}
                     height={200}
                   />
                   <h6>Important safety info</h6>
                 </div>
                 <div className={styles.btnBox}>
-                  <Button size="sm" className={`bg-primary ${styles.btn}`}>
+                  <Button
+                    size="sm"
+                    disabled={product.comingSoon}
+                    onClick={() => {
+                      router.push(product.redirectUrl);
+                    }}
+                    className={`bg-primary ${styles.btn}`}
+                  >
                     Get started
                   </Button>
                   <Button
                     variant="outline-dark"
+                    disabled={product.comingSoon}
+                    onClick={() => {
+                      router.push(product.redirectUrl);
+                    }}
                     size="sm"
                     className={styles.btn}
                   >

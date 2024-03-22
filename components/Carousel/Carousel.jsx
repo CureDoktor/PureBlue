@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import starsImage from "../../public/assets/stars.png";
 import verifiedSrc from "../../public/assets/verified.png";
-
+import "swiper/css";
 const Carousel = ({ items, setSwiperInstance }) => {
   return (
     <Swiper

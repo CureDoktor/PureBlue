@@ -77,6 +77,7 @@ const Consultation = (props) => {
         { headers }
       )
         .then((res) => {
+          console.log(res.data.data.questions);
           setStartingQuestions(res.data.data.questions);
         })
         .catch((error) => {

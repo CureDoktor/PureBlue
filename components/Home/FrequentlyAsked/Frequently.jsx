@@ -7,29 +7,31 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 
 const cardData = [
   {
-    question: "What is PureBlue?",
+    question:
+      "What’s the difference between using PureBlue and going to my local pharmacy? ",
     answer:
-      "PureBlue is an online outlet that links potential patients who need a more convenient way to procure E.D. medication legally with a doctor’s approval. PureBlue provides a complete infrastructure that provides potential patients with convenient options that do not require an in-person doctor’s visit, but maintains the supervision of medical doctors for the prescription of erectile dysfunction medication.",
+      "Traditionally, you need to obtain a prescription from a doctor, and you need to take your prescription to a local pharmacy in order to purchase your ED medication. With PureBlue, you have everything you need in one portal to purchase E.D. medication. We provide fast and easy access to a US-licensed physician who will evaluate your health status and treatment plan for FREE, and we ship your ED medication directly and discreetly from a US-based pharmacy, to your doorstep. Our process helps customers save valuable time and money, without compromising the quality and effectiveness of the treatment and medication.",
   },
   {
-    question: "How does PureBlue work?",
+    question: "Is PureBlue safe?",
     answer:
-      "ED is one of the most common problems that men in the United States face. About 52% of American men between the ages of 40 and 70 years of age experience ED, and PureBlue provides a convenient and affordable way for men to experience stronger erections without the risk of taking low-quality ED pills produced overseas.",
+      "Yes. All ED treatments are duly prescribed by US-licensed physicians. Our partner physicians, along with your complete and accurate online health evaluation form, will ensure that all ED treatments are safe, effective, and reliable. Make sure to provide accurate answers in the health evaluation form, including health conditions that you may presently have, to ensure the safety and effectiveness of the treatment/medication.",
   },
   {
-    question: "Who are the providers at PureBlue?",
+    question:
+      "Will I need to have an audio and/or video chat with my physician?",
     answer:
-      "PureBlue pills contain the active ingredients of sildenafil and tadalafil, the same active ingredients used in the branded ED medications Viagra and Cialis. Customers have the option to buy branded Viagra and Cialis, which are FDA approved for the treatment of erectile dysfunction. The ED medications sold through PureBlue are prescribed by PureBlue-affiliated physicians.",
+      "PureBlue’s online health evaluation form provides our US-licensed physician with the information they require to prescribe ED medication without a live audio or video call.",
   },
   {
-    question: "Does PureBlue require insurance?",
+    question: "How long does PureBlue take?",
     answer:
-      "Sildenafil and tadalafil are FDA-approved medications for the treatment of erectile dysfunction. Both medications inhibit the phosphodiesterase-5 enzyme (PDE-5), which results in the dilation of blood vessels in the penile region, which makes erections easier to achieve. The main difference between the two medications is that sildenafil is recommended to be taken 30-60 minutes before sexual activity and remains active in the body for 4 hours, while tadalafil is also recommended to be taken 30-60 minutes before sexual activity and remains active in the body for 36 hours.",
+      "Once you have completed your health evaluation, you may expect to receive feedback within minutes, and up to 24 hours at the latest, considering the availability of US-licensed physicians and business hours on certain time zones. We assure you that once you have completed your health evaluation form, your form will be reviewed by a qualified US-licensed physician the soonest possible time.",
   },
   {
-    question: "What states is PureBlue available in?",
+    question: "How long will my prescription last?",
     answer:
-      "PureBlue is an online outfit that links potential patients who need a more convenient way to procure erectile dysfunction medication legally with a doctor’s approval. PureBlue provides a complete infrastructure that provides potential patients with convenient options that do not require an in-person doctor’s visit, but maintains the supervision of medical doctors for the prescription of erectile dysfunction medication.",
+      "Unless otherwise stated, PureBlue prescriptions typically last for a year. You have the option to renew your prescription through PureBlue once it expires.",
   },
 ];
 

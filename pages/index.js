@@ -3,7 +3,7 @@ import { React } from "react";
 import styles from "../styles/Home.module.scss";
 
 import HomePage from "../components/Home";
-export default function Home() {
+export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/faviconn.ico" />
       </Head>
       <main>
-        <HomePage />
+        <HomePage props={props} />
       </main>
     </div>
   );

@@ -34,7 +34,7 @@ const featureList = [
   },
 ];
 
-const Health = () => {
+const Health = ({ handleShow }) => {
   const router = useRouter();
   return (
     <Container className={styles.mainContainer}>
@@ -77,18 +77,14 @@ const Health = () => {
             <Button
               variant="dark"
               size="sm"
-              onClick={() => {
-                router.push("/transition-page");
-              }}
+              onClick={handleShow}
               className={styles.btn}
             >
               Find my treatment
             </Button>
             <Button
               variant="outline-dark"
-              onClick={() => {
-                router.push("/transition-page");
-              }}
+              onClick={handleShow}
               size="sm"
               className={styles.btn}
             >

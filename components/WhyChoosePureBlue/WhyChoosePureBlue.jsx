@@ -41,7 +41,7 @@ const WhyChoosePureBlue = ({ image }) => {
                       transform="translate(-0.647 19.006)"
                       fill="#fff"
                       stroke="#fff"
-                      stroke-width="1"
+                      strokeWidth="1"
                     />
                   </svg>
                 </div>
@@ -75,7 +75,7 @@ const WhyChoosePureBlue = ({ image }) => {
                       transform="translate(-0.647 19.006)"
                       fill="#fff"
                       stroke="#fff"
-                      stroke-width="1"
+                      strokeWidth="1"
                     />
                   </svg>
                 </div>
