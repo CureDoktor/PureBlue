@@ -48,7 +48,7 @@ const cardInfo = [
   // },
 ];
 
-const Treatment = () => {
+const Treatment = ({ handleShow }) => {
   const router = useRouter();
   return (
     <Container className={styles.mainContainer}>
@@ -86,7 +86,7 @@ const Treatment = () => {
                   <Button
                     onClick={() => {
                       if (card.proceed) {
-                        router.push("/transition-page");
+                        handleShow();
                       }
                     }}
                     className={`bg-primary ${styles.cardBtn}`}

@@ -58,7 +58,7 @@ const HomePage = (props) => {
       </Container>
       <section className={styles.cardSection}>
         <Container className={styles.container}>
-          <CardSection />
+          <CardSection handleShow={handleShow} />
           <ButtonSection />
         </Container>
       </section>
@@ -66,16 +66,16 @@ const HomePage = (props) => {
         <VideoPlayer src="/assets/home-vid.mp4" />
       </div>
       <div className={styles.explore}>
-        <Explore />
+        <Explore handleShow={handleShow} />
       </div>
       <div>
-        <Treatment />
+        <Treatment handleShow={handleShow} />
       </div>
       <div>
         <Health handleShow={handleShow} />
       </div>
       <div>
-        <Popular />
+        <Popular handleShow={handleShow} />
       </div>
       <div className={styles.service}>
         <Service />

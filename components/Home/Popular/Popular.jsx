@@ -48,7 +48,7 @@ const products = [
   },
 ];
 
-const Popular = ({}) => {
+const Popular = ({ handleShow }) => {
   const router = useRouter();
   return (
     <Container className={styles.mainContainer}>
@@ -57,7 +57,7 @@ const Popular = ({}) => {
         slidesPerView={1.3}
         spaceBetween={5}
         loop={true}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 2, disableOnInteraction: false }}
         breakpoints={{
           375: { slidesPerView: 1.3, spaceBetween: 5 },
           425: { slidesPerView: 1.5, spaceBetween: 5 },
@@ -91,12 +91,11 @@ const Popular = ({}) => {
                   <Button
                     size="sm"
                     disabled={product.comingSoon}
-                    onClick={() => {
-                      router.push(product.redirectUrl);
-                    }}
+                    onClick={handleShow}
                     className={`bg-primary ${styles.btn}`}
+                    style={{ fontSize: product.comingSoon ? "10px" : "13px" }}
                   >
-                    Get started
+                    {product.comingSoon ? "Coming Soon" : "Get started"}
                   </Button>
                   <Button
                     variant="outline-dark"
@@ -106,8 +105,9 @@ const Popular = ({}) => {
                     }}
                     size="sm"
                     className={styles.btn}
+                    style={{ fontSize: product.comingSoon ? "10px" : "13px" }}
                   >
-                    Learn more
+                    {product.comingSoon ? "Coming Soon" : "Learn more"}
                   </Button>
                 </div>
               </Card.Body>

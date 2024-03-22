@@ -27,7 +27,7 @@ const cardData = [
   },
 ];
 
-const Explore = () => {
+const Explore = ({ handleShow }) => {
   return (
     <Container className={styles.mainContainer}>
       <Row className="justify-content-md-center">
@@ -36,7 +36,13 @@ const Explore = () => {
             <span className="text-primary">PureBlue </span>
             makes men's health simpler, more convenient, and affordable.
           </h1>
-          <SearchButton className="bg-dark" span="Explore treatments" name="explore" />
+          <div onClick={handleShow}>
+            <SearchButton
+              className="bg-dark"
+              span="Explore treatments"
+              name="explore"
+            />
+          </div>
         </Col>
       </Row>
       {/* Card Items */}

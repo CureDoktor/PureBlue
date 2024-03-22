@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRouter } from "next/navigation";
 import { useResolvedPath } from "react-router";
-const CardSection = () => {
+const CardSection = ({ handleShow }) => {
   const router = useRouter();
   const cardInfo = [
     {
@@ -59,7 +59,7 @@ const CardSection = () => {
             key={index}
             onClick={() => {
               if (!card.soon) {
-                router.push("/transition-page");
+                handleShow();
               }
             }}
             className={styles.slide}

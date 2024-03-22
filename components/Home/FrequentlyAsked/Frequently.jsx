@@ -9,8 +9,20 @@ const cardData = [
   {
     question:
       "What’s the difference between using PureBlue and going to my local pharmacy? ",
-    answer:
-      "Traditionally, you need to obtain a prescription from a doctor, and you need to take your prescription to a local pharmacy in order to purchase your ED medication. With PureBlue, you have everything you need in one portal to purchase E.D. medication. We provide fast and easy access to a US-licensed physician who will evaluate your health status and treatment plan for FREE, and we ship your ED medication directly and discreetly from a US-based pharmacy, to your doorstep. Our process helps customers save valuable time and money, without compromising the quality and effectiveness of the treatment and medication.",
+    answer: (
+      <p>
+        Traditionally, you need to obtain a prescription from a doctor, and you
+        need to take your prescription to a local pharmacy in order to purchase
+        your ED medication. <br />
+        <br /> With PureBlue, you have everything you need in one portal to
+        purchase E.D. medication. We provide fast and easy access to a
+        US-licensed physician who will evaluate your health status and treatment
+        plan for FREE, and we ship your ED medication directly and discreetly
+        from a US-based pharmacy, to your doorstep. Our process helps customers
+        save valuable time and money, without compromising the quality and
+        effectiveness of the treatment and medication.
+      </p>
+    ),
   },
   {
     question: "Is PureBlue safe?",
