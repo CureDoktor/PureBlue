@@ -1,7 +1,7 @@
 .mainContainer {
   background-color: white;
   border-radius: 12px;
-  max-width: 70rem;
+  max-width: 85rem;
   margin: auto;
   margin-top: 6rem;
   margin-bottom: 6rem;
@@ -22,7 +22,7 @@
     margin: 0.8rem 0px;
     letter-spacing: -1.57px;
     font-weight: 600;
-    
+
     @media (max-width: 425px) {
       font-size: 2.3rem;
     }

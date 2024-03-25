@@ -57,14 +57,13 @@ const Popular = ({ handleShow }) => {
         slidesPerView={1.3}
         spaceBetween={5}
         autoplay={{ delay: 2000 }}
-        loop={true}
         breakpoints={{
           375: { slidesPerView: 1.3, spaceBetween: 5 },
           425: { slidesPerView: 1.5, spaceBetween: 5 },
           600: { slidesPerView: 2, spaceBetween: 5 },
           768: { slidesPerView: 3, spaceBetween: 10 },
           1024: { slidesPerView: 3, spaceBetween: 10 },
-          1200: { slidesPerView: 4, spaceBetween: 10 },
+          1200: { slidesPerView: 5, spaceBetween: 10 },
         }}
       >
         {products.map((product, idx) => (
