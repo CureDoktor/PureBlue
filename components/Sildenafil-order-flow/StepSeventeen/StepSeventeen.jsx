@@ -62,7 +62,30 @@ const StepSeventeen = ({ onNext }) => {
       }
     }
     if (counter == imageForUpload?.length) {
-      router.push("/account");
+      SendToMDI();
+    }
+  };
+
+  const SendToMDI = async () => {
+    const route = "/api/case/send-to-mdi";
+    const headers = {
+      "Content-Type": "application/json",
+      case: authCtx.Case(),
+    };
+    try {
+      const rese = await Axios.post(
+        route,
+        { Token: authCtx.Token() },
+        { headers }
+      )
+        .then((res) => {
+          router.push("/account");
+        })
+        .catch((error) => {
+          alert(error.response.data);
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
     }
   };
 

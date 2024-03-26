@@ -6,6 +6,7 @@ const Button = ({
   variant = "contained",
   endAdornment,
   className,
+  disabled,
   style,
   ...rest
 }) => {
@@ -16,6 +17,7 @@ const Button = ({
 
   return (
     <button
+      disabled={disabled}
       className={`${styles.button} ${variantMap[variant]} ${className}`}
       style={style}
       {...rest}

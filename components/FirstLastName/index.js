@@ -28,7 +28,12 @@ export default function FirstLastName({ setContent }) {
 
   const submitForm = (event) => {
     event.preventDefault();
-    if (formData.firstName !== "" && formData.lastName !== "") {
+    if (
+      formData.firstName !== "" &&
+      formData.lastName !== "" &&
+      formData.firstName.trim() !== "" &&
+      formData.lastName.trim() !== ""
+    ) {
       if (
         containsNumbers(formData.firstName) ||
         containsNumbers(formData.lastName)

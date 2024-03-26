@@ -7,6 +7,7 @@ export default function ConsultationContextProvider({ children }) {
   const [questions, setQuestions] = useState({});
   const [productChanged, isProductChanged] = useState(0);
   const [showNextQuestion, setNextQuestion] = useState(false);
+  const [enableButton, setEnableButton] = useState(true);
   const setFormValues = (values) => {
     setData((prevValues) => ({
       ...prevValues,
@@ -25,6 +26,8 @@ export default function ConsultationContextProvider({ children }) {
         setNextQuestion,
         productChanged,
         isProductChanged,
+        setEnableButton,
+        enableButton,
       }}
     >
       {children}

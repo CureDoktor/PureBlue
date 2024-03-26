@@ -110,7 +110,7 @@ const Consultation = (props) => {
   const router = useRouter();
   const { reset } = useForm();
   const { query } = router;
-  const { setQuestions, questions, setFormValues, data } =
+  const { setQuestions, questions, setFormValues, data, enableButton } =
     useConsultationContext() || {};
   const { total: totalQuestions } = questions;
   const question = query?.question ? parseInt(query?.question) : 0;
@@ -193,7 +193,9 @@ const Consultation = (props) => {
                   style={{
                     display: showNextQuestion ? "block" : "none",
                     textTransform: !query?.question ? "none" : "uppercase",
+                    background: !enableButton ? "gray" : "orange",
                   }}
+                  disabled={!enableButton}
                   ref={buttonRef}
                   type={!notLastQuestion ? "submit" : "button"}
                   onClick={goNextQuestion}

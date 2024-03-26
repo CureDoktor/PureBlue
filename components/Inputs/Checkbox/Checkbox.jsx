@@ -18,10 +18,11 @@ const Checkbox = ({
   resetFieldId,
 }) => {
   const { register, setValue } = useFormContext();
-  const { setNextQuestion, isProductChanged, productChanged } =
+  const { setNextQuestion, isProductChanged, productChanged, setEnableButton } =
     useConsultationContext();
   useEffect(() => {
     setNextQuestion(true);
+    setEnableButton(false);
   }, []);
   const checkedValues = useWatch(name)[name] || [];
   const checked = useMemo(
@@ -29,6 +30,7 @@ const Checkbox = ({
       checkedValues
         ? checkedValues?.find((el) => parseInt(el) === value)
         : false,
+
     [checkedValues]
   );
   const checkedStyles = checked ? styles.checked : "";
@@ -37,6 +39,13 @@ const Checkbox = ({
     contained: styles.contained,
     outlined: styles.outlined,
   };
+  useEffect(() => {
+    if (checkedValues.length > 0) {
+      setEnableButton(true);
+    } else {
+      setEnableButton(false);
+    }
+  }, [checkedValues]);
   const handleChange = (e) => {
     if (parseInt(e.target.value) === parseInt(resetFieldId)) {
       if (!e.target.checked) {
