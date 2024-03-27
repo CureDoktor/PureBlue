@@ -89,7 +89,10 @@ const StepSeven = ({ onNext, props }) => {
       : "",
     shippingAddress: "",
     shippingCityName: "",
-    shippingState: "",
+
+    shippingState: localStorage.getItem("state")
+      ? localStorage.getItem("state")
+      : "",
     shippingZip: "",
     phone: "",
   });

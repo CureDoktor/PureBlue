@@ -67,7 +67,8 @@ const QuestionThirteen = ({ onNext, setPreferredState, preferredState }) => {
         initialValues={{ state: "", checkbox: false }}
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
-          console.log(preferredState);
+          console.log(values.state);
+          localStorage.setItem("state", values.state);
           setPreferredState(values.state);
           onNext();
         }}
@@ -90,7 +91,6 @@ const QuestionThirteen = ({ onNext, setPreferredState, preferredState }) => {
                   );
                 })}
               </Field>
-
               <span name="state" className={styles.ErrorMessage}>
                 <ErrorMessage name="state" />
               </span>

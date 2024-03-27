@@ -14,6 +14,7 @@ export const config = {
   },
 };
 export default function UploadVerification() {
+  const [verified, setVerified] = useState(false);
   const authCtx = useContext(AuthContext);
 
   const handleUploadFiles = async (event) => {
@@ -55,11 +56,15 @@ export default function UploadVerification() {
       <main className={styles.aboutPage}>
         <Container>
           <h3>ID Verification</h3>
-          <Form onSubmit={handleUploadFiles}>
-            <input type="file" multiple />
+          {!verified ? (
+            <Form onSubmit={handleUploadFiles}>
+              <input type="file" multiple />
 
-            <Button className="mx-auto">Upload Files</Button>
-          </Form>
+              <Button className="mx-auto">Upload Files</Button>
+            </Form>
+          ) : (
+            <div></div>
+          )}
         </Container>
       </main>
     </div>

@@ -14,11 +14,9 @@ export default function handler(req, res) {
     }
   )
     .then((respond) => {
-    
       res.status(200).json(respond.data.data);
     })
     .catch(function (error) {
-    
       let response = error.response.data.errors;
       //let response = ApiError(error.response.data);
       res.status(400).json(response);
