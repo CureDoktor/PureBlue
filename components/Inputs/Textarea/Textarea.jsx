@@ -13,9 +13,11 @@ const Textarea = ({ name, visibility, answer, metadata }) => {
   }
 
   var checkboxValue = true;
+  var answerIsNone = false;
   try {
     var metadatas = JSON.parse(metadata);
     checkboxValue = metadatas.checkbox;
+    answerIsNone = metadatas.value;
   } catch {}
 
   const { register, setValue } = useFormContext();
@@ -33,7 +35,7 @@ const Textarea = ({ name, visibility, answer, metadata }) => {
           <input
             type="checkbox"
             onClick={() => {
-              setValue(name, answer ? answer : "NONE");
+              setValue(name, answerIsNone ? answerIsNone : "NONE");
               isProductChanged(productChanged + 1);
             }}
             id="none"
