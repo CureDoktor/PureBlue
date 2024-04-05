@@ -7,7 +7,7 @@ export default function handler(req, res) {
     {
       headers: {
         "Content-Type": "application/json",
-        "Site-Token": "123456",
+        "Site-Token": process.env.SITE_TOKEN,
       },
     }
   )

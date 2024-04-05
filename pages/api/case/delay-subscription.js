@@ -2,8 +2,13 @@ import Axios from "axios";
 import ApiError from "../../../components/Apifunction";
 export default function handler(req, res) {
   const caseId = req.headers["case"] ? req.headers["case"] : "";
+  const delayDays = req.headers["delaydays"] ? req.headers["delaydays"] : "";
   Axios.get(
-    process.env.NEXT_PUBLIC_API_KEY + "/case/send-to-mdi?id=" + caseId,
+    process.env.NEXT_PUBLIC_API_KEY +
+      "/case/delay-subscription?case_id=" +
+      caseId +
+      "&delay_days=" +
+      delayDays,
     {
       headers: {
         "Content-Type": "application/json",

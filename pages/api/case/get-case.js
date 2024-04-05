@@ -5,7 +5,7 @@ export default function handler(req, res) {
   Axios.get(process.env.NEXT_PUBLIC_API_KEY + "/case/case" + caseId, {
     headers: {
       // "Content-Type": "application/json",
-      "Site-Token": "123456",
+      "Site-Token": process.env.SITE_TOKEN,
       "Authorization": "Bearer " + req.body.Token,
     },
   })

@@ -40,6 +40,14 @@ export default function Switch(props) {
     { name: "12", value: 12 },
   ]);
 
+  const [months, setMonths] = useState([
+    { name: "4", value: 4 },
+    { name: "8", value: 8 },
+    { name: "12", value: 12 },
+  ]);
+
+  const [monthValue, setMonthValue] = useState(1);
+
   const [medication, setMedication] = useState([
     { name: "Sildenafil (generic Viagra)", value: "Sildenafil" },
     { name: "Viagra", value: "Viagra" },
@@ -70,6 +78,9 @@ export default function Switch(props) {
       alert("Something went wrong!" + err);
     }
   };
+  const changeMonths = (e) => {
+    setMonthValue(e.target.value);
+  };
 
   useEffect(() => {
     gettingMedications();
@@ -89,7 +100,7 @@ export default function Switch(props) {
         unique_product_object.push(returnObject(element.product_tag));
       }
     });
-    console.log(unique_product_object);
+
     setMedication(unique_product_object);
   }, [medications]);
 
@@ -99,6 +110,8 @@ export default function Switch(props) {
     chosenMed.product_tag,
     chosenMed.product_dosages_per_month,
     chosenMed.product_dosage_tag,
+    chosenMed.product_qty,
+    monthValue,
   ]);
 
   const handleChange = (event) => {
@@ -112,6 +125,7 @@ export default function Switch(props) {
   function findRightOne() {
     let similarStrong = [];
     let similarDosage = [];
+    let similarMonths = [];
 
     medications.find((element) => {
       if (element.product_tag === chosenMed.product_tag) {
@@ -120,34 +134,53 @@ export default function Switch(props) {
         }
 
         if (element.product_dosage_tag === chosenMed.product_dosage_tag) {
-          if (!similarDosage.includes(element.product_dosages_per_month)) {
-            similarDosage.push(element.product_dosages_per_month);
-            console.log(element.product_dosages_per_month);
-          }
           if (
-            element.product_dosages_per_month ==
-            chosenMed.product_dosages_per_month
+            !similarMonths.includes(
+              element.product_qty / element.product_dosages_per_month
+            )
           ) {
-            setChosenMed({
-              ...chosenMed,
-              product_price: element.product_price,
-              id: element.id,
-              partner_medication_id: element.partner_medication_id,
-            });
-          } else {
+            similarMonths.push(
+              element.product_qty / element.product_dosages_per_month
+            );
+          }
+
+          if (
+            monthValue ===
+            chosenMed.product_qty / chosenMed.product_dosages_per_month
+          ) {
+            if (!similarDosage.includes(element.product_dosages_per_month)) {
+              similarDosage.push(element.product_dosages_per_month);
+            }
+            if (
+              element.product_dosages_per_month ==
+              chosenMed.product_dosages_per_month
+            ) {
+              setChosenMed({
+                ...chosenMed,
+                product_price: element.product_price,
+                id: element.id,
+                partner_medication_id: element.partner_medication_id,
+              });
+            }
           }
         }
-      } else {
       }
     });
 
     let objectMaking = [];
     let objectMakingTimes = [];
+    let objectMakingMonths = [];
+
+    similarMonths.forEach((object) =>
+      objectMakingMonths.push(returnObject(object))
+    );
+
     similarStrong.forEach((object) => objectMaking.push(returnObject(object)));
     similarDosage.forEach((object) =>
       objectMakingTimes.push(returnObject(object))
     );
 
+    setMonths(objectMakingMonths);
     setStrong1(objectMaking);
     setTimes(objectMakingTimes);
   }
@@ -155,7 +188,6 @@ export default function Switch(props) {
   const backToCheckout = async (medicationId) => {
     const route = "/api/order/cancel-create-case";
     var caseId = searchParams.get("case_id");
-    console.log(caseId);
     const headers = {
       "Content-Type": "application/json",
       case: caseId,
@@ -240,6 +272,31 @@ export default function Switch(props) {
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridSexualActivity">
                       <Form.Label>
+                        How many months you need, select one:
+                      </Form.Label>
+                      {months.map((element) => (
+                        <Col md={12} key={element.name}>
+                          <ToggleButton
+                            key={element.name}
+                            id={`radiod-${element.name}`}
+                            type="radio"
+                            name="months"
+                            className={styles.buttons}
+                            value={element.value}
+                            checked={
+                              chosenMed.product_qty /
+                                chosenMed.product_dosages_per_month ==
+                              monthValue
+                            }
+                            onChange={changeMonths}
+                          >
+                            {element.name}
+                          </ToggleButton>
+                        </Col>
+                      ))}
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridSexualActivity">
+                      <Form.Label>
                         How many times you believe you will take the medication
                         each month, select one:
                       </Form.Label>
@@ -254,7 +311,7 @@ export default function Switch(props) {
                               className={styles.buttons}
                               value={radio.value}
                               checked={
-                                chosenMed.product_dosages_per_month ===
+                                chosenMed.product_dosages_per_month ==
                                 radio.value
                               }
                               onChange={handleChange}

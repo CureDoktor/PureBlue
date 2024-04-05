@@ -13,7 +13,7 @@ const cure = (formData, res) => {
   axios
     .post(process.env.NEXT_PUBLIC_API_KEY + "/case/upload-file", formData, {
       headers: {
-        "Site-Token": "123456",
+        "Site-Token": process.env.SITE_TOKEN,
         "Content-Type": "multipart/form-data",
         Accept: "*/*",
         Authorization: "Bearer " + formData.get("token"),

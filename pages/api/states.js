@@ -4,7 +4,7 @@ export default function handler(req, res) {
   Axios.get(process.env.NEXT_PUBLIC_API_KEY + "/states", {
     headers: {
       "Content-Type": "application/json",
-      "Site-Token": "123456",
+      "Site-Token": process.env.SITE_TOKEN,
     },
   })
     .then((respond) => {

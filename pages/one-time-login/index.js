@@ -43,7 +43,6 @@ export default function OneTimeLogin(props) {
         .then((res) => {
           authCtx.settingToken(res.data.data.access_token);
           props.isLoggedIn();
-
           router.push("/" + searchParams.get("redirect_to"));
         })
         .catch((error) => {

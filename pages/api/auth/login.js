@@ -4,7 +4,7 @@ export default function handler(req, res) {
   Axios.post(process.env.NEXT_PUBLIC_API_KEY + "/auth/login", req.body, {
     headers: {
       "Content-Type": "application/json",
-      "Site-Token": "123456",
+      "Site-Token": process.env.SITE_TOKEN,
     },
   })
     .then((respond) => {

@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 
 export default function Case(props) {
   const [CaseAnswers, setCaseAnswers] = useState("");
-  const [date, setDate] = useState("");
+  const [pause, setPause] = useState(false);
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const getCase = async () => {
@@ -35,6 +35,30 @@ export default function Case(props) {
   useEffect(() => {
     getCase();
   }, []);
+
+  const pauseSubscription = async (case_id, days_delay) => {
+    const route = "/api/case/send-to-mdi";
+    const headers = {
+      "Content-Type": "application/json",
+      case: case_id,
+      delaydays: days_delay,
+    };
+    try {
+      const rese = await Axios.post(
+        route,
+        { Token: authCtx.Token() },
+        { headers }
+      )
+        .then((res) => {
+          setPause(true);
+        })
+        .catch((error) => {
+          alert(error.response.data);
+        });
+    } catch (err) {
+      alert("Something went wrong!" + err);
+    }
+  };
 
   return (
     <div>
@@ -153,7 +177,21 @@ export default function Case(props) {
                             <div className={styles.field}>
                               <div>
                                 Pause for 30 days <br />
-                                <br /> <Button>Pause</Button>
+                                <br />{" "}
+                                {pause ? (
+                                  <Button>&#10003;</Button>
+                                ) : (
+                                  <Button
+                                    onClick={() => {
+                                      pauseSubscription(
+                                        value.id,
+                                        value.subscription.days_delay
+                                      );
+                                    }}
+                                  >
+                                    Pause
+                                  </Button>
+                                )}
                               </div>
                             </div>
                           </Col>
