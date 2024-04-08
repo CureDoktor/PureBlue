@@ -5,7 +5,15 @@ export function searchParamsUrl() {
   }
 
   const queryParams = new URLSearchParams(window.location.search);
-  const requiredParams = ["adgroupid", "matchtype", "keyword", "creative"];
+  const requiredParams = [
+    "adgroupid",
+    "matchtype",
+    "keyword",
+    "creative",
+    "campaignId",
+    "utm_content",
+    "utm_campaign",
+  ];
 
   let stringExport = "?";
   let paramCounter = 0;

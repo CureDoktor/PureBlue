@@ -5,6 +5,7 @@ import PayInfo from "../../../PayInfo";
 import Form from "react-bootstrap/Form";
 import Axios from "axios";
 import AuthContext from "../../../../store/auth-context";
+import { useSearchParams } from "next/navigation";
 import {
   Col,
   Container,
@@ -18,6 +19,7 @@ import {
 } from "react-bootstrap";
 
 const OrderFlowCardDetails = ({ onNext, props }) => {
+  const searchParams = useSearchParams();
   const [initialRender, setInitialRender] = useState(true);
   const [InitialProduct, setInitialProduct] = useState("");
   const [selectedProductId, setSelectedProductId] = useState();
@@ -310,6 +312,19 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
     const data = {
       product_id: chosenMed.id,
       case_id: parseInt(authCtx.Case()),
+      ad_group_id: searchParams.get("adgroupid")
+        ? searchParams.get("adgroupid")
+        : "",
+      keyword: searchParams.get("keyword") ? searchParams.get("keyword") : "",
+      utm_campaign: searchParams.get("utm_campaign")
+        ? searchParams.get("utm_campaign")
+        : "",
+      utm_content: searchParams.get("utm_content")
+        ? searchParams.get("utm_content")
+        : "",
+      campaignId: searchParams.get("campaignId")
+        ? searchParams.get("campaignId")
+        : "",
     };
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), data })
