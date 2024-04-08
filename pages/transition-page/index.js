@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Button from "../../components/TransitionPage/Button";
 import { buttonNames } from "../../components/TransitionPage/data";
 import { useRouter } from "next/navigation";
+import { searchParamsUrl } from "../../components/searchParams";
 
 const TransitionPage = () => {
   const [buttons, setButtons] = useState([buttonNames[0]]);
@@ -20,7 +21,7 @@ const TransitionPage = () => {
         setLoadButton(loadButton + 1);
       }, 2000);
     } else {
-      router.push("/questions");
+      router.push("/questions" + searchParamsUrl());
     }
   };
   useEffect(() => {

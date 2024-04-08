@@ -11,6 +11,7 @@ import AuthContext from "../../store/auth-context";
 import { Spinner } from "react-bootstrap";
 import Link from "next/link";
 import { Pause } from "react-bootstrap-icons";
+import { searchParamsUrl } from "../../components/searchParams";
 
 export default function OneTimeLogin(props) {
   const [redirectUrl, setRedirectUrl] = useState("");
@@ -43,7 +44,9 @@ export default function OneTimeLogin(props) {
         .then((res) => {
           authCtx.settingToken(res.data.data.access_token);
           props.isLoggedIn();
-          router.push("/" + searchParams.get("redirect_to"));
+          router.push(
+            "/" + searchParams.get("redirect_to") + searchParamsUrl()
+          );
         })
         .catch((error) => {
           props.handleShow(error.response.data);

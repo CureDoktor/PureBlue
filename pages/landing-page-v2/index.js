@@ -11,10 +11,11 @@ import Frequently from "../../components/GetStarted/FrequentlyAsked";
 import { useRouter } from "next/navigation";
 import CardCarousel from "../../components/landingPageV2/CardCarousel";
 import Image from "next/image";
+import { searchParamsUrl } from "../../components/searchParams";
 const index = () => {
   const router = useRouter();
   const getMyTreatment = () => {
-    router.push("/transition-page");
+    router.push("/transition-page" + searchParamsUrl());
   };
   const reviews = [
     {

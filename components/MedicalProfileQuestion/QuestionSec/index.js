@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 
 import Questions from "./Questions";
 import { questions } from "./mockdata/questionsArray";
-
+import { searchParamsUrl } from "../../searchParams";
 import styles from "./styles.module.scss";
 
 const QuestionSec = ({
@@ -123,7 +123,7 @@ const QuestionSec = ({
       setCurrentStep(0);
       localStorage.setItem("currentStepTwo", 0);
       localStorage.setItem("value", "");
-      router.push("/");
+      router.push("/" + searchParamsUrl());
     }
   };
 

@@ -15,6 +15,7 @@ import {
 import { CaretDownFill, List } from "react-bootstrap-icons";
 import styles from "./styles.module.scss";
 import Router, { useRouter } from "next/router";
+import { searchParamsUrl } from "../searchParams";
 export default function Header(props) {
   const router = useRouter();
   const sentToLogin = () => {
@@ -24,7 +25,7 @@ export default function Header(props) {
     <>
       <Navbar sticky="top" expand="lg" className={styles.container}>
         <Container className={styles.navbar}>
-          <Link href="/">
+          <Link href={"/" + searchParamsUrl()}>
             <Image
               src="/assets/homepage/logo.png"
               alt="Proselect logo"
@@ -32,7 +33,7 @@ export default function Header(props) {
             />
           </Link>
           <div className={styles.tablet}>
-          <Navbar.Toggle>
+            <Navbar.Toggle>
               <img
                 aria-controls="basic-navbar-nav"
                 src="/assets/moreOptionsIcon.png"
@@ -79,20 +80,40 @@ export default function Header(props) {
                 </NavDropdown.Item>
               </Link>
             </NavDropdown> */}
-              <Link className={styles.link} href="/" passHref>
+              <Link
+                className={styles.link}
+                href={"/" + +searchParamsUrl()}
+                passHref
+              >
                 Home
               </Link>
-              <Link className={styles.link} href="/about" passHref>
+              <Link
+                className={styles.link}
+                href={"/about" + searchParamsUrl()}
+                passHref
+              >
                 About Us
               </Link>
-              <Link className={styles.link} href="/faq" passHref>
+              <Link
+                className={styles.link}
+                href={"/faq" + searchParamsUrl()}
+                passHref
+              >
                 FAQs
               </Link>
-              <Link className={styles.link} href="/contact" passHref>
+              <Link
+                className={styles.link}
+                href={"/contact" + searchParamsUrl()}
+                passHref
+              >
                 Contact
               </Link>
               {props.header ? (
-                <Link className={styles.link} href="/account" passHref>
+                <Link
+                  className={styles.link}
+                  href={"/account" + searchParamsUrl()}
+                  passHref
+                >
                   Account
                 </Link>
               ) : (

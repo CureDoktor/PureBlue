@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useRouter } from "next/router";
 import styles from "./popular.styles.module.scss";
+import { searchParamsUrl } from "../../searchParams";
 
 const products = [
   {
@@ -103,7 +104,7 @@ const Popular = ({ handleShow }) => {
                       if (product.redirectUrl == "/tadalafil") {
                         handleShow();
                       } else {
-                        router.push(product.redirectUrl);
+                        router.push(product.redirectUrl + +searchParamsUrl());
                       }
                     }}
                     size="sm"

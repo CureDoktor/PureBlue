@@ -4,6 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import * as Yup from "yup";
+import { searchParamsUrl } from "../../searchParams";
 
 const QuestionFifteen = ({ onNext, handleChange }) => {
   const validationSchema = Yup.object({
@@ -53,7 +54,7 @@ const QuestionFifteen = ({ onNext, handleChange }) => {
       </Formik>
       <p className={styles.signIn}>
         Already have an account?{" "}
-        <Link href="/login" style={{ color: "blue" }}>
+        <Link href={"/login" + searchParamsUrl()} style={{ color: "blue" }}>
           Sign In
         </Link>
       </p>

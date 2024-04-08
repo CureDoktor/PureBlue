@@ -15,6 +15,7 @@ import { AccordionContext, Form } from "react-bootstrap";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
+import { searchParamsUrl } from "../../components/searchParams";
 export default function VisitForm(props) {
   const [questions, setQuestions] = useState({});
   const [showQuestions, setShowQuestions] = useState(false);
@@ -45,7 +46,7 @@ export default function VisitForm(props) {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           if (res.data.case_answers != null) {
-            router.push("/order");
+            router.push("/order" + searchParamsUrl());
           }
         })
         .catch((error) => {
@@ -279,7 +280,7 @@ export default function VisitForm(props) {
     try {
       const rese = await Axios.post(route, { Token: authCtx.Token(), payload })
         .then((res) => {
-          router.push("/order");
+          router.push("/order" + searchParamsUrl());
         })
         .catch((error) => {
           props.handleShow(error.response.data);

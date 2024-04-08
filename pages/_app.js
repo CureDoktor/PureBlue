@@ -10,6 +10,7 @@ import { AuthContextProvider } from "../store/auth-context";
 import ConsultationContextProvider from "../store/consultation-context";
 import ModalDisplay from "../components/Modal";
 import { useRouter } from "next/router";
+import { searchParams } from "../components/searchParams";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -58,7 +59,7 @@ function MyApp({ Component, pageProps }) {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("Token");
     setIsLoggedIn(false);
-    router.push("/");
+    router.push("/" + searchParamsUrl());
   };
 
   const loginChange = () => {

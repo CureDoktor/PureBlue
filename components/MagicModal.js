@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Form } from "react-bootstrap";
 import Link from "next/link";
+import { searchParamsUrl } from "./searchParams";
 
 export default function MagicModal({
   modalState,
@@ -22,13 +23,16 @@ export default function MagicModal({
           <p>This email is already connected with an account!</p>
           <p>
             Try{" "}
-            <Link style={{ fontWeight: "600", color: "#0077f0" }} href="/login">
+            <Link
+              style={{ fontWeight: "600", color: "#0077f0" }}
+              href={"/login" + +searchParamsUrl()}
+            >
               logging in
             </Link>{" "}
             using your password, or click{" "}
             <Link
               style={{ fontWeight: "600", color: "#0077f0" }}
-              href="/password-reset"
+              href={"/password-reset" + searchParamsUrl()}
             >
               forgot my password
             </Link>{" "}

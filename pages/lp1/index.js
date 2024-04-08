@@ -17,7 +17,7 @@ import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
 import CheckForm from "../../components/CheckForm";
-
+import { searchParamsUrl } from "../../components/searchParams";
 export default function LP1() {
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
@@ -591,7 +591,7 @@ export default function LP1() {
               not take Sildenafil (sildenafil citrate) or Tadalafil. To ensure
               that you are healthy enough to engage in sexual activity, you
               should discuss your health with your doctor -{" "}
-              <Link href="/about">Learn more</Link>
+              <Link href={"/about" + searchParamsUrl()}>Learn more</Link>
             </p>
           </Container>
         </div>

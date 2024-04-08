@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import Axios from "axios";
 import Link from "next/link";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { searchParamsUrl } from "../../searchParams";
 
 const QuestionThirteen = ({ onNext, setPreferredState, preferredState }) => {
   const [states, setStates] = useState([
@@ -112,7 +113,10 @@ const QuestionThirteen = ({ onNext, setPreferredState, preferredState }) => {
             </button>
             <p className={styles.signIn}>
               Already have an account?{" "}
-              <Link href="/login" style={{ color: "blue" }}>
+              <Link
+                href={"/login" + searchParamsUrl()}
+                style={{ color: "blue" }}
+              >
                 Sign In
               </Link>
             </p>

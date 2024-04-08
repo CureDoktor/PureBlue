@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import styles from "./GetStartedSection.styles.module.scss";
 import Button from "../Button";
 import { useState, useEffect } from "react";
+import { searchParamsUrl } from "../searchParams";
 
 const GetStartedSection = () => {
   const router = useRouter();
@@ -88,7 +89,7 @@ const GetStartedSection = () => {
             <div className={styles.cta}>
               <Button
                 onClick={() => {
-                  router.push("/transition-page");
+                  router.push("/transition-page" + searchParamsUrl());
                 }}
                 variant="gradient"
               >

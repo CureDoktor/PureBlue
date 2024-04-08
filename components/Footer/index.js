@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import LegitScriptCertificate from "../LegitScriptCertificate";
 import { Container, Image, Row } from "react-bootstrap";
 import { useRouter } from "next/router";
+import { searchParamsUrl } from "../searchParams";
 
 export default function Footer() {
   const router = useRouter();
@@ -11,7 +12,8 @@ export default function Footer() {
   return (
     <div style={{ backgroundColor: "none" }}>
       {currentPathname != "/sildenafil-order-flow/" &&
-        currentPathname != "/questions/" && currentPathname != "/landing-page-v2/" && (
+        currentPathname != "/questions/" &&
+        currentPathname != "/landing-page-v2/" && (
           <div className="container">
             <main style={{ padding: "20px" }} className={styles.main}>
               To obtain ED treatments, one must undergo an online consultation
@@ -74,28 +76,46 @@ export default function Footer() {
           <Container>
             <Row className={styles.footerRow}>
               <div className={styles.links}>
-                <Link className={styles.link} href="/">
+                <Link className={styles.link} href={"/" + searchParamsUrl()}>
                   Home
                 </Link>
-                <Link className={styles.link} href="/about">
+                <Link
+                  className={styles.link}
+                  href={"/about" + searchParamsUrl()}
+                >
                   About Us
                 </Link>
-                <Link className={styles.link} href="/faq">
+                <Link className={styles.link} href={"/faq" + searchParamsUrl()}>
                   FAQs
                 </Link>
-                <Link className={styles.link} href="/contact">
+                <Link
+                  className={styles.link}
+                  href={"/contact" + searchParamsUrl()}
+                >
                   Contact Us
                 </Link>
-                <Link className={styles.link} href="/login">
+                <Link
+                  className={styles.link}
+                  href={"/login" + searchParamsUrl()}
+                >
                   LOGIN
                 </Link>
-                <Link className={styles.link} href="/telehealth">
+                <Link
+                  className={styles.link}
+                  href={"/telehealth" + searchParamsUrl()}
+                >
                   Telehealth
                 </Link>
-                <Link className={styles.link} href="/terms">
+                <Link
+                  className={styles.link}
+                  href={"/terms" + searchParamsUrl()}
+                >
                   Terms of Use
                 </Link>
-                <Link className={styles.link} href="/privacy">
+                <Link
+                  className={styles.link}
+                  href={"/privacy" + searchParamsUrl()}
+                >
                   Privacy Policy
                 </Link>
               </div>

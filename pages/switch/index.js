@@ -202,7 +202,7 @@ export default function Switch(props) {
         { headers }
       )
         .then((res) => {
-          router.push("/account");
+          router.push("/account" + searchParamsUrl());
         })
         .catch((error) => {
           props.handleShow(error.response.data);

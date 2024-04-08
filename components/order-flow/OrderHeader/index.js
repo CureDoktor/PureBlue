@@ -15,6 +15,7 @@ import {
 import { CaretDownFill, List } from "react-bootstrap-icons";
 import styles from "./styles.module.scss";
 import Router, { useRouter } from "next/router";
+import { searchParamsUrl } from "../../searchParams";
 export default function OrderHeader(props) {
   const router = useRouter();
   const sentToLogin = () => {
@@ -24,7 +25,7 @@ export default function OrderHeader(props) {
     <>
       <Navbar sticky="top" expand="lg" className={styles.container}>
         <Container className={styles.navbar}>
-          <Link href="/">
+          <Link href={"/" + searchParamsUrl()}>
             <Image
               src="/assets/order/WhiteLogo.png"
               alt="Proselect logo"
@@ -76,23 +77,23 @@ export default function OrderHeader(props) {
                 </NavDropdown.Item>
               </Link>
             </NavDropdown> */}
-              <Link href="/" passHref>
+              <Link href={"/" + +searchParamsUrl()} passHref>
                 <Nav.Link className={styles.link}>Home</Nav.Link>
               </Link>
-              <Link href="/about" passHref>
+              <Link href={"/about" + searchParamsUrl()} passHref>
                 <Nav.Link className={styles.link}>About Us</Nav.Link>
               </Link>
-              <Link href="/faq" passHref>
+              <Link href={"/faq" + searchParamsUrl()} passHref>
                 <Nav.Link className={styles.link}>FAQs</Nav.Link>
               </Link>
-              <Link href="/contact" passHref>
+              <Link href={"/contact" + searchParamsUrl()} passHref>
                 <Nav.Link className={styles.link}>Contact</Nav.Link>
               </Link>
-              <Link href="/order-flow" passHref>
+              <Link href={"/order-flow" + searchParamsUrl()} passHref>
                 <Nav.Link className={styles.link}>order</Nav.Link>
               </Link>
               {props.header ? (
-                <Link href="/account" passHref>
+                <Link href={"/account" + searchParamsUrl()} passHref>
                   <Nav.Link className={styles.link}>Account</Nav.Link>
                 </Link>
               ) : (

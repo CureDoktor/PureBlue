@@ -11,6 +11,7 @@ import Case from "../../components/Case";
 import Verification from "../../components/Verification";
 import AuthContext from "../../store/auth-context";
 import Axios from "axios";
+import { searchParamsUrl } from "../../components/searchParams";
 import { useRouter } from "next/router";
 export default function Account(props) {
   const [content, setContent] = useState(<div></div>);
@@ -23,9 +24,9 @@ export default function Account(props) {
       const rese = await Axios.post(route, { Token: authCtx.Token() })
         .then((res) => {
           if (res.data.data[0].case_answers == null) {
-            router.push("/medical-profile-questions");
+            router.push("/medical-profile-questions" + searchParamsUrl());
           } else if (res.data.data[0].last_order == null) {
-            router.push("/sildenafil-order-flow");
+            router.push("/sildenafil-order-flow" + searchParamsUrl());
           } else {
             handleSelect("Membership");
           }

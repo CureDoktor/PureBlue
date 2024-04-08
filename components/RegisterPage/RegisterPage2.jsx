@@ -12,6 +12,7 @@ import { Form } from "react-bootstrap";
 import AuthContext from "../../store/auth-context";
 import { useRouter } from "next/router";
 import MagicModal from "../MagicModal";
+import { searchParamsUrl } from "../searchParams";
 
 const RegisterPage2 = (props) => {
   const searchParams = useSearchParams();
@@ -107,10 +108,9 @@ const RegisterPage2 = (props) => {
       try {
         const rese = await Axios.post(route, payload)
           .then((res) => {
-          
             props.props.isLoggedIn();
             authCtx.settingToken(res.data.data.access_token);
-            router.push("/consultation");
+            router.push("/consultation" + searchParamsUrl());
           })
           .catch((error) => {
             setErrorData(error.response.data.errors);

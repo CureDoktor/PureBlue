@@ -12,6 +12,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { Form } from "react-bootstrap";
 import Axios from "axios";
+import { searchParamsUrl } from "../../components/searchParams";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 
@@ -48,7 +49,7 @@ export default function Register(props) {
           .then((res) => {
             props.isLoggedIn();
             authCtx.settingToken(res.data.data.access_token);
-            router.push("/visit-form");
+            router.push("/visit-form" + searchParamsUrl());
           })
           .catch((error) => {
             props.handleShow(error.response.data);
@@ -95,7 +96,7 @@ export default function Register(props) {
               </p>
               <p className={styles.member}>
                 Already a member?{" "}
-                <Link href="/login">
+                <Link href={"/login" + searchParamsUrl()}>
                   <span className={styles.blueText}>Log in</span>
                 </Link>
               </p>

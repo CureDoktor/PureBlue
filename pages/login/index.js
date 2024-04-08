@@ -12,6 +12,7 @@ import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import { AccordionContext, Form } from "react-bootstrap";
+import { searchParamsUrl } from "../../components/searchParams";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 import ModalDisplay from "../../components/Modal";
@@ -31,7 +32,7 @@ export default function Login(props) {
       Agree to{" "}
       <b
         className={styles.blueText + " fw-bold" + " " + styles.cursorPointer}
-        onClick={() => router.push("/terms")}
+        onClick={() => router.push("/terms" + searchParamsUrl())}
       >
         Terms and Conditions
       </b>
@@ -70,7 +71,7 @@ export default function Login(props) {
         .then((res) => {
           authCtx.settingToken(res.data.data.access_token);
           props.isLoggedIn();
-          router.push("/account");
+          router.push("/account" + searchParamsUrl());
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -113,7 +114,7 @@ export default function Login(props) {
                 Please fill out the following fields to login.
               </p>
               <br />
-              <Link href="/register">
+              <Link href={"/register" + searchParamsUrl()}>
                 You don't have account?
                 <span className={styles.blueText}> Register Now</span>
               </Link>
@@ -175,7 +176,7 @@ export default function Login(props) {
                         " " +
                         styles.cursorPointer
                       }
-                      href="/password-reset"
+                      href={"/password-reset" + searchParamsUrl()}
                     >
                       Click here!
                     </Link>

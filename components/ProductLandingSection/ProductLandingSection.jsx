@@ -6,6 +6,7 @@ import styles from "./ProductLandingSection.styles.module.scss";
 import { useState, useEffect } from "react";
 import ForwardIcon from "../../public/assets/forward.png";
 import { useRouter } from "next/router";
+import { searchParamsUrl } from "../searchParams";
 const ProductLandingSection = ({
   heading,
   subheading,
@@ -90,7 +91,7 @@ const ProductLandingSection = ({
             <div className={styles.cta}>
               <Button
                 onClick={() => {
-                  router.push("/transition-page");
+                  router.push("/transition-page" + searchParamsUrl());
                 }}
                 variant="gradient"
               >

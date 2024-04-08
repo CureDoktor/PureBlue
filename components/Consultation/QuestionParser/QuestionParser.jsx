@@ -6,6 +6,7 @@ import { useConsultationContext } from "../../../store/consultation-context";
 import Link from "next/link";
 import { useFormContext } from "react-hook-form";
 import { useQuestionParser } from "./QuestionParser.hooks";
+import { searchParamsUrl } from "../../searchParams";
 
 const QuestionParser = (props) => {
   const { questions } = useConsultationContext() || {};
@@ -18,7 +19,8 @@ const QuestionParser = (props) => {
   const previousQuestionLink =
     parseInt(router.query?.question) === 1
       ? "/medical-profile-questions"
-      : `/medical-profile-questions?question=${questionId - 1}`;
+      : `/medical-profile-questions?question=${questionId - 1}` +
+        +searchParamsUrl();
 
   if (!main) return "Loading...";
 

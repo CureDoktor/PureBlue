@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import styles from "./QuestionSixteen.styles.module.scss";
 import Link from "next/link";
 import * as Yup from "yup";
+import { searchParamsUrl } from "../../searchParams";
 
 const PasswordSchema = Yup.object().shape({
   password: Yup.string()
@@ -49,7 +50,7 @@ const QuestionSixteen = ({ onNext, submitForm }) => {
           </button>
           <p className={styles.signIn}>
             Already have an account?{" "}
-            <Link href="/login" style={{ color: "blue" }}>
+            <Link href={"/login" + searchParamsUrl()} style={{ color: "blue" }}>
               Sign In
             </Link>
           </p>

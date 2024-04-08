@@ -13,6 +13,7 @@ import QuestionSixteen from "../QuestionSixteen";
 import AuthContext from "../../../store/auth-context";
 import MagicModal from "../../MagicModal";
 import { useRouter } from "next/router";
+import { searchParamsUrl } from "../../searchParams";
 
 const Questions = (props) => {
   const authCtx = useContext(AuthContext);
@@ -70,7 +71,7 @@ const Questions = (props) => {
             props.props.isLoggedIn();
             authCtx.setCaseId(res.data.lastCase.case_id);
             authCtx.settingToken(res.data.access_token);
-            router.push("/medical-profile-questions");
+            router.push("/medical-profile-questions" + searchParamsUrl());
           })
           .catch((error) => {
             setErrorData(error.response.data);
@@ -131,7 +132,9 @@ const Questions = (props) => {
     }
 
     setCurrentStep(currentStep + 1);
-    router.push("/questions/?&question=" + (currentStep + 1));
+    router.push(
+      "/questions/?&question=" + (currentStep + 1) + searchParamsUrl()
+    );
   };
 
   const renderStep = () => {
@@ -141,7 +144,9 @@ const Questions = (props) => {
           <QuestionEight
             onNext={() => {
               setCurrentStep(currentStep + 1);
-              router.push("/questions/?&question=" + (currentStep + 1));
+              router.push(
+                "/questions/?&question=" + (currentStep + 1) + searchParamsUrl()
+              );
             }}
           />
         );
@@ -150,7 +155,9 @@ const Questions = (props) => {
           <QuestionNine
             onNext={() => {
               setCurrentStep(currentStep + 1);
-              router.push("/questions/?&question=" + (currentStep + 1));
+              router.push(
+                "/questions/?&question=" + (currentStep + 1) + searchParamsUrl()
+              );
             }}
           />
         );
@@ -159,7 +166,9 @@ const Questions = (props) => {
           <QuestionTen
             onNext={() => {
               setCurrentStep(currentStep + 1);
-              router.push("/questions/?&question=" + (currentStep + 1));
+              router.push(
+                "/questions/?&question=" + (currentStep + 1) + searchParamsUrl()
+              );
             }}
           />
         );
@@ -168,7 +177,9 @@ const Questions = (props) => {
           <QuestionEleven
             onNext={() => {
               setCurrentStep(currentStep + 1);
-              router.push("/questions/?&question=" + (currentStep + 1));
+              router.push(
+                "/questions/?&question=" + (currentStep + 1) + searchParamsUrl()
+              );
             }}
           />
         );
@@ -177,7 +188,9 @@ const Questions = (props) => {
           <QuestionTwelve
             onNext={() => {
               setCurrentStep(currentStep + 1);
-              router.push("/questions/?&question=" + (currentStep + 1));
+              router.push(
+                "/questions/?&question=" + (currentStep + 1) + searchParamsUrl()
+              );
             }}
           />
         );
@@ -188,7 +201,9 @@ const Questions = (props) => {
             setPreferredState={setPreferredState}
             onNext={() => {
               setCurrentStep(currentStep + 1);
-              router.push("/questions/?&question=" + (currentStep + 1));
+              router.push(
+                "/questions/?&question=" + (currentStep + 1) + searchParamsUrl()
+              );
             }}
           />
         );

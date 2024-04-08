@@ -9,6 +9,7 @@ import Axios from "axios";
 import { useRouter } from "next/router";
 import AuthContext from "../../store/auth-context";
 import Link from "next/link";
+import { searchParamsUrl } from "../../components/searchParams";
 
 export default function PasswordResetProcess(props) {
   const authCtx = useContext(AuthContext);
@@ -46,7 +47,7 @@ export default function PasswordResetProcess(props) {
         .then((res) => {
           authCtx.settingToken(res.data.data.access_token);
           props.isLoggedIn();
-          router.push("/account");
+          router.push("/account" + searchParamsUrl());
         })
         .catch((error) => {
           props.handleShow(error.response.data);
@@ -90,7 +91,7 @@ export default function PasswordResetProcess(props) {
             <Link
               style={{ color: "#0077f0" }}
               className={" fw-bold" + " " + styles.cursorPointer}
-              href="/password-reset"
+              href={"/password-reset" + searchParamsUrl()}
             >
               {" "}
               Try again!

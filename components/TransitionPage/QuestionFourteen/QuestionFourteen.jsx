@@ -3,6 +3,7 @@ import styles from "./QuestionFourteen.styles.module.scss";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import Link from "next/link";
 import * as Yup from "yup";
+import { searchParamsUrl } from "../../searchParams";
 
 const QuestionFourteen = ({ onNext, handleChange, preferredState }) => {
   const validationSchema = Yup.object().shape({
@@ -84,7 +85,7 @@ const QuestionFourteen = ({ onNext, handleChange, preferredState }) => {
       </Formik>
       <p className={styles.signIn}>
         Already have an account?{" "}
-        <Link href="/login" style={{ color: "blue" }}>
+        <Link href={"/login" + searchParamsUrl()} style={{ color: "blue" }}>
           Sign In
         </Link>
       </p>

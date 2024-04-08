@@ -3,6 +3,7 @@ import styles from "./QuestionEight.styles.module.scss";
 import RadioButton from "../RadioButton";
 import { eightQuestionLabels } from "../data";
 import Link from "next/link";
+import { searchParamsUrl } from "../../searchParams";
 
 const QuestionEight = ({ onNext }) => {
   return (
@@ -19,7 +20,7 @@ const QuestionEight = ({ onNext }) => {
       </div>
       <p className={styles.signIn}>
         Already have an account?{" "}
-        <Link href="/login" style={{ color: "blue" }}>
+        <Link href={"/login" + searchParamsUrl()} style={{ color: "blue" }}>
           Sign In
         </Link>
       </p>

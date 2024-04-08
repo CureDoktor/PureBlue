@@ -10,6 +10,7 @@ import styles from "./styles.module.scss";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import { useRouter } from "next/navigation";
+import { searchParamsUrl } from "../searchParams";
 
 export default function Case(props) {
   const [CaseAnswers, setCaseAnswers] = useState("");
@@ -105,7 +106,9 @@ export default function Case(props) {
                       {value.actions?.switch_product && (
                         <Button
                           onClick={() => {
-                            router.push(`/switch?case_id=${value.id}`);
+                            router.push(
+                              `/switch?case_id=${value.id}` + searchParamsUrl()
+                            );
                           }}
                         >
                           Switch Plan

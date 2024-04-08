@@ -3,6 +3,7 @@ import styles from "./QuestionEleven.styles.module.scss";
 import RadioButton from "../RadioButton";
 import { elevenQuestionLabels } from "../data";
 import Link from "next/link";
+import { searchParamsUrl } from "../../searchParams";
 
 const QuestionEleven = ({ onNext }) => {
   return (
@@ -18,7 +19,7 @@ const QuestionEleven = ({ onNext }) => {
       </div>
       <p className={styles.signIn}>
         Already have an account?{" "}
-        <Link href="/login" style={{ color: "blue" }}>
+        <Link href={"/login" + searchParamsUrl()} style={{ color: "blue" }}>
           Sign In
         </Link>
       </p>

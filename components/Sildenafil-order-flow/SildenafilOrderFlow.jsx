@@ -11,6 +11,7 @@ import StepEight from "../Sildenafil-order-flow/StepEight";
 import StepSeventeen from "../Sildenafil-order-flow/StepSeventeen";
 import Thankyou from "../Thankyou/Thankyou";
 import { useRouter } from "next/router";
+import { searchParamsUrl } from "../searchParams";
 // import StepEighteen from "./StepEighteen";
 
 const SildenafilOrderFlow = (props) => {
@@ -69,19 +70,35 @@ const SildenafilOrderFlow = (props) => {
   const goToNextStep = () => {
     if (currentStep == 4 && localStorage.getItem("times") === "30") {
       setCurrentStep(currentStep + 2);
-      router.push("/sildenafil-order-flow/?&question=" + (currentStep + 2));
+      router.push(
+        "/sildenafil-order-flow/?&question=" +
+          (currentStep + 2) +
+          searchParamsUrl()
+      );
     } else {
       setCurrentStep(currentStep + 1);
-      router.push("/sildenafil-order-flow/?&question=" + (currentStep + 1));
+      router.push(
+        "/sildenafil-order-flow/?&question=" +
+          (currentStep + 1) +
+          searchParamsUrl()
+      );
     }
   };
   const goToPreviousStep = () => {
     if (currentStep == 6 && localStorage.getItem("daily") == "true") {
       setCurrentStep(currentStep - 2);
-      router.push("/sildenafil-order-flow/?&question=" + (currentStep - 2));
+      router.push(
+        "/sildenafil-order-flow/?&question=" +
+          (currentStep - 2) +
+          searchParamsUrl()
+      );
     } else {
       setCurrentStep(currentStep - 1);
-      router.push("/sildenafil-order-flow/?&question=" + (currentStep - 1));
+      router.push(
+        "/sildenafil-order-flow/?&question=" +
+          (currentStep - 1) +
+          searchParamsUrl()
+      );
     }
   };
 

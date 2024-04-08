@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import { useRef } from "react";
+import { searchParamsUrl } from "../../components/searchParams";
 
 const Consultation = (props) => {
   const { showNextQuestion, productChanged } = useConsultationContext();
@@ -144,7 +145,7 @@ const Consultation = (props) => {
       )
         .then((res) => {
           localStorage.setItem("currentStep", 1);
-          router.push("/sildenafil-order-flow");
+          router.push("/sildenafil-order-flow" + searchParamsUrl());
         })
         .catch((error) => {
           props.props.props.handleShow(error.response.data);
@@ -157,7 +158,8 @@ const Consultation = (props) => {
   const goNextQuestion = () => {
     if (notLastQuestion) {
       router.push(
-        `/medical-profile-questions?question=${question + 1}/`,
+        `/medical-profile-questions?question=${question + 1}/` +
+          searchParamsUrl(),
         undefined,
         {
           shallow: true,

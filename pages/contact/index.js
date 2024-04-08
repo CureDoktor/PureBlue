@@ -9,6 +9,7 @@ import { Check, PatchCheck } from "react-bootstrap-icons";
 import { Card } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { AccordionContext, Form } from "react-bootstrap";
+import { searchParamsUrl } from "../../components/searchParams";
 export default function Contact() {
   function ContextAwareToggle({ children, eventKey, callback }) {
     const { activeEventKey } = useContext(AccordionContext);
@@ -139,7 +140,7 @@ export default function Contact() {
               <p className={styles.blueText}>For more questions or concerns:</p>
               <p>
                 Visit our{" "}
-                <Link href="/faq">
+                <Link href={"/faq" + searchParamsUrl()}>
                   <span className={styles.blueText}>FAQ</span>
                 </Link>{" "}
                 page

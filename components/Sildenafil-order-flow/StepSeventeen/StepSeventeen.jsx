@@ -5,7 +5,7 @@ import AuthContext from "../../../store/auth-context";
 import Axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
+import { searchParamsUrl } from "../../searchParams";
 const StepSeventeen = ({ onNext }) => {
   const [uploadedImage, setUploadedImage] = useState();
   const [imageForUpload, setImageForUpload] = useState();
@@ -79,7 +79,7 @@ const StepSeventeen = ({ onNext }) => {
         { headers }
       )
         .then((res) => {
-          router.push("/account");
+          router.push("/account" + searchParamsUrl());
         })
         .catch((error) => {
           alert(error.response.data);

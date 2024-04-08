@@ -5,13 +5,14 @@ import { Container, Image, Row, Form, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
 import { ClockFill, Check } from "react-bootstrap-icons";
 import { useState } from "react";
+import { searchParamsUrl } from "../searchParams";
 
 export default function Recommend({ setContent }) {
   const router = useRouter();
   const [enableButton, setEnableButton] = useState(false);
   const onSubmit = (e) => {
     e.preventDefault();
-    router.push("/landing-page-v2");
+    router.push("/landing-page-v2" + searchParamsUrl());
   };
   return (
     <div className={styles.container}>

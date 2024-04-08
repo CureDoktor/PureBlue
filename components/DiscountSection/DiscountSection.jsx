@@ -7,6 +7,7 @@ import styles from "./DiscountSection.styles.module.scss";
 import { useRouter } from "next/router";
 import ForwardIcon from "../../public/assets/forward.png";
 import Image from "next/image";
+import { searchParamsUrl } from "../searchParams";
 
 const DiscountSection = () => {
   const router = useRouter();
@@ -34,7 +35,7 @@ const DiscountSection = () => {
                 <TextInput name="email" placeholder="Email" />
                 <Button
                   onClick={() => {
-                    router.push("/transition-page");
+                    router.push("/transition-page" + +searchParamsUrl());
                   }}
                   variant="gradient"
                 >

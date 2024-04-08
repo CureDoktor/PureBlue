@@ -15,6 +15,7 @@ import Axios from "axios";
 import AuthContext from "../../store/auth-context";
 import Router, { useRouter } from "next/router";
 import ShipInfo from "../../components/ShipInfo";
+import { searchParamsUrl } from "../../components/searchParams";
 
 export default function Order(props) {
   const [wrongStateHolder, setWrongStateHolder] = useState(false);
@@ -40,7 +41,7 @@ export default function Order(props) {
   const authCtx = useContext(AuthContext);
   const router = useRouter();
   const switchProduct = () => {
-    router.push("/switch");
+    router.push("/switch" + searchParamsUrl());
   };
 
   const [formData, setFormData] = useState({
@@ -126,7 +127,7 @@ export default function Order(props) {
         Token: authCtx.Token(),
       })
         .then((res) => {
-          router.push("/account");
+          router.push("/account" + searchParamsUrl());
         })
         .catch((error) => {
           props.handleShow(error.response.data);
