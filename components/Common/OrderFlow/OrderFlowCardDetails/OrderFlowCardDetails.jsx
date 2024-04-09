@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 import Axios from "axios";
 import AuthContext from "../../../../store/auth-context";
 import { useSearchParams } from "next/navigation";
+import { Spinner } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
 import {
   Col,
   Container,
@@ -19,11 +21,14 @@ import {
 } from "react-bootstrap";
 
 const OrderFlowCardDetails = ({ onNext, props }) => {
+  const [showOrderModal, setShowOrderModal] = useState(false);
   const searchParams = useSearchParams();
   const [initialRender, setInitialRender] = useState(true);
   const [InitialProduct, setInitialProduct] = useState("");
   const [selectedProductId, setSelectedProductId] = useState();
   const [whichProduct, setWhichProduct] = useState("");
+  const handleClose = () => setShowOrderModal(false);
+  const handleShow = () => setShowOrderModal(true);
   const [chosingProduct, setChosingProduct] = useState([
     {
       id: 37,
@@ -292,6 +297,7 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
   }, [chosingProduct]);
 
   async function submitHandler(event) {
+    handleShow();
     event.preventDefault();
     const route = "/api/user/updatePaymentInfo";
     try {
@@ -300,9 +306,11 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
           handleOrderFromProfile();
         })
         .catch((error) => {
+          handleClose();
           props.props.handleShow(error.response.data);
         });
     } catch (err) {
+      handleClose();
       return alert("Something went wrong!" + err);
     }
   }
@@ -332,13 +340,15 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
           try {
             klaviyo.push(["track", "Completed Order Form", chosenMed]);
           } catch {}
-
+          handleClose();
           onNext();
         })
         .catch((error) => {
+          handleClose();
           props.props.handleShow(error.response.data);
         });
     } catch (err) {
+      handleClose();
       return alert("Something went wrong!" + err);
     }
   }
@@ -514,6 +524,34 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
           </div>
         </Form>
       </div>
+
+      <Modal
+        show={showOrderModal}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Message</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center">
+          Please Wait, this can take a couple...
+          <br />
+          <div className="mt-4">
+            <Spinner
+              className={styles.spinner}
+              size="lg"
+              animation="border"
+              variant="primary"
+            />
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

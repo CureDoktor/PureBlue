@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }) {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("Token");
     setIsLoggedIn(false);
-    router.push("/" + searchParamsUrl());
+    router.push("/");
   };
 
   const loginChange = () => {
