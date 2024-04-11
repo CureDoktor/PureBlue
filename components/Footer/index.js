@@ -8,7 +8,7 @@ import { searchParamsUrl } from "../searchParams";
 export default function Footer() {
   const router = useRouter();
   const currentPathname = router.asPath;
-
+  const currentYear = new Date().getFullYear();
   return (
     <div style={{ backgroundColor: "none" }}>
       {currentPathname != "/sildenafil-order-flow/" &&
@@ -121,7 +121,7 @@ export default function Footer() {
               </div>
             </Row>
             <p className={styles.copyright}>
-              PureBlue. © 2022. All Rights Reserved
+              PureBlue. © {currentYear}. All Rights Reserved
             </p>
           </Container>
         </div>
