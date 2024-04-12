@@ -11,8 +11,7 @@ const StepFour = ({ onNext }) => {
   return (
     <div className={styles.mainContainer}>
       <h6>
-        Based on your selection, a daily{" "}
-        {product.viagra == false ? "tadalafil" : "sildenafil"} <br />
+        Based on your selection, the following <br />
         treatment sounds like the most
         <br /> appropriate option for you:
       </h6>
@@ -39,13 +38,16 @@ const StepFour = ({ onNext }) => {
         </div>
       </div>
       <p>
-        *Tadalafil is the active ingredient in medications like Cialis, and it
-        works by inhibiting the enzyme phosphodiesterase type 5 (PDE5)
+        {product.viagra == "false" ? "*Tadalafil" : "*Sildenafil"} is the active
+        ingredient in medications like{" "}
+        {product.viagra == "false" ? "Cialis" : "Viagra"}, and it works by
+        inhibiting the enzyme phosphodiesterase type 5 (PDE5)
       </p>
       <p>
-        *Its effects can last for up to 36 hours. This extended duration of
-        action is one of the key features that differentiate tadalafil from some
-        other erectile dysfunction (ED) medications
+        *Its effects can last for 4 to 6 hours. This extended duration of action
+        is one of the key features that differentiate{" "}
+        {product.viagra == "false" ? "tadalafil" : "sildenafil"} from some other
+        erectile dysfunction (ED) medications
       </p>
       <div className={styles.buttonContainer}>
         <button className={styles.takePhoto} onClick={onNext}>
