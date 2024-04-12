@@ -25,14 +25,14 @@ const cardData = [
         serious health problems that need to be addressed immediately, beyond
         stress in a relationship and loss of personal confidence. In order to
         identify any additional health concerns that you may have, your
-        UltraPharmRx physician will discreetly and comprehensively review all
+        TryPureBlue physician will discreetly and comprehensively review all
         your responses to your personal questionnaire.
       </div>
     ),
   },
   {
     question:
-      " What are the benefits of using UltraPharmRx instead of going to my doctor?",
+      " What are the benefits of using TryPureBlue instead of going to my doctor?",
     answer: (
       <div>
         There is nothing worse than waiting around for weeks just to see your
@@ -41,7 +41,7 @@ const cardData = [
         <br />
         <br />
         We offer a convenient, discreet, and easy-to-use online telemedicine
-        service at UltraPharmRx. Our licensed doctors can review the 10-minute
+        service at TryPureBlue. Our licensed doctors can review the 10-minute
         medical intake form that you just filled out on your phone and begin
         your treatment on the same day. Get started now rather than waiting
         weeks.{" "}
@@ -49,7 +49,7 @@ const cardData = [
     ),
   },
   {
-    question: "Are UltraPharmRx’s E.D. Telemedicine services safe to use?",
+    question: "Are TryPureBlue’s E.D. Telemedicine services safe to use?",
     answer: (
       <div>
         All Erectile Disfunction medication is prescribed by a U.S. physician.
@@ -77,9 +77,9 @@ const cardData = [
       "Your medical intake form will be reviewed by a licensed U.S. doctor within two hours during normal business hours, and usually within 24 hours during non-business hours. We understand that now that you've made the decision to begin treating your E.D., you're eager to get started. We will review your prescription as soon as possible and respond accordingly. Upon approval of your prescription by one of our doctors, our pharmacy will ship your medication directly to you via USPS First Class Mail that same day.",
   },
   {
-    question: "When does my UltraPharmRx E.D. prescription expire?",
+    question: "When does my TryPureBlue E.D. prescription expire?",
     answer:
-      "UltraPharmRx's online medical intake form and prescription are good for 12 months once approved by a Doctor. After 12 months, you will need to provide another short medical questionnaire to receive another prescription.",
+      "TryPureBlue's online medical intake form and prescription are good for 12 months once approved by a Doctor. After 12 months, you will need to provide another short medical questionnaire to receive another prescription.",
   },
 ];
 
