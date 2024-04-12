@@ -1,7 +1,7 @@
 export function searchParamsUrl() {
   // Check if window is defined
   if (typeof window === "undefined") {
-    return;
+    return "";
   }
 
   const queryParams = new URLSearchParams(window.location.search);
