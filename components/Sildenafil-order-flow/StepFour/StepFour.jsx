@@ -44,8 +44,9 @@ const StepFour = ({ onNext }) => {
         inhibiting the enzyme phosphodiesterase type 5 (PDE5)
       </p>
       <p>
-        *Its effects can last for 4 to 6 hours. This extended duration of action
-        is one of the key features that differentiate{" "}
+        *Its effects can last for{" "}
+        {product.viagra == "false" ? "36 hours" : "4 to 6 hours"}. This extended
+        duration of action is one of the key features that differentiate{" "}
         {product.viagra == "false" ? "tadalafil" : "sildenafil"} from some other
         erectile dysfunction (ED) medications
       </p>
