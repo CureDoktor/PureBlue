@@ -9,6 +9,7 @@ export default function Footer() {
   const router = useRouter();
   const currentPathname = router.asPath;
   const currentYear = new Date().getFullYear();
+  const url = searchParamsUrl();
   return (
     <div style={{ backgroundColor: "none" }}>
       {currentPathname != "/sildenafil-order-flow/" &&
@@ -76,7 +77,7 @@ export default function Footer() {
           <Container>
             <Row className={styles.footerRow}>
               <div className={styles.links}>
-                <Link className={styles.link} href={"/" + searchParamsUrl()}>
+                <Link className={styles.link} href={"/" + url}>
                   Home
                 </Link>
                 <Link
@@ -85,37 +86,22 @@ export default function Footer() {
                 >
                   About Us
                 </Link>
-                <Link className={styles.link} href={"/faq" + searchParamsUrl()}>
+                <Link className={styles.link} href={"/faq" + url}>
                   FAQs
                 </Link>
-                <Link
-                  className={styles.link}
-                  href={"/contact" + searchParamsUrl()}
-                >
+                <Link className={styles.link} href={"/contact" + url}>
                   Contact Us
                 </Link>
-                <Link
-                  className={styles.link}
-                  href={"/login" + searchParamsUrl()}
-                >
+                <Link className={styles.link} href={"/login" + url}>
                   LOGIN
                 </Link>
-                <Link
-                  className={styles.link}
-                  href={"/telehealth" + searchParamsUrl()}
-                >
+                <Link className={styles.link} href={"/telehealth" + url}>
                   Telehealth
                 </Link>
-                <Link
-                  className={styles.link}
-                  href={"/terms" + searchParamsUrl()}
-                >
+                <Link className={styles.link} href={"/terms" + url}>
                   Terms of Use
                 </Link>
-                <Link
-                  className={styles.link}
-                  href={"/privacy" + searchParamsUrl()}
-                >
+                <Link className={styles.link} href={"/privacy" + url}>
                   Privacy Policy
                 </Link>
               </div>

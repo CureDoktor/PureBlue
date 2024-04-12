@@ -31,5 +31,6 @@ export function searchParamsUrl() {
       }
     }
   });
+
   return stringExport;
 }

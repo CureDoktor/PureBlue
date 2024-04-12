@@ -104,7 +104,7 @@ const Popular = ({ handleShow }) => {
                       if (product.redirectUrl == "/tadalafil") {
                         handleShow();
                       } else {
-                        router.push(product.redirectUrl + +searchParamsUrl());
+                        router.push(product.redirectUrl + searchParamsUrl());
                       }
                     }}
                     size="sm"

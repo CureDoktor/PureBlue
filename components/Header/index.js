@@ -80,11 +80,7 @@ export default function Header(props) {
                 </NavDropdown.Item>
               </Link>
             </NavDropdown> */}
-              <Link
-                className={styles.link}
-                href={"/" + +searchParamsUrl()}
-                passHref
-              >
+              <Link className={styles.link} href={"/" + searchParamsUrl()}>
                 Home
               </Link>
               <Link
