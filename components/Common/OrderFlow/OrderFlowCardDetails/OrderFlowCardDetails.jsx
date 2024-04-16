@@ -22,6 +22,7 @@ import {
 
 const OrderFlowCardDetails = ({ onNext, props }) => {
   const [showOrderModal, setShowOrderModal] = useState(false);
+  const [showOrderModal1, setShowOrderModal1] = useState(false);
   const searchParams = useSearchParams();
   const [initialRender, setInitialRender] = useState(true);
   const [InitialProduct, setInitialProduct] = useState("");
@@ -29,6 +30,8 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
   const [whichProduct, setWhichProduct] = useState("");
   const handleClose = () => setShowOrderModal(false);
   const handleShow = () => setShowOrderModal(true);
+  const handleClose1 = () => setShowOrderModal1(false);
+  const handleShow1 = () => setShowOrderModal1(true);
   const [chosingProduct, setChosingProduct] = useState([
     {
       id: 37,
@@ -462,7 +465,7 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
         <div className={styles.refundMain}>
           <div className={styles.refund}>
             <span>Full refund if not prescribed</span>
-            <button>Details</button>
+            <button onClick={handleShow1}>Details</button>
           </div>
           <span>${chosenMed.actual_price}</span>
         </div>
@@ -548,6 +551,27 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <Modal
+        show={showOrderModal1}
+        onHide={handleClose1}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Message</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center">
+          If your prescription is not approved by our physicians, you will be
+          issued a full refund to your original payment method. No further
+          charges will occur.
+          <br />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose1}>
             Close
           </Button>
         </Modal.Footer>
