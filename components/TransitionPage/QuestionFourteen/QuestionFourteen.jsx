@@ -4,6 +4,7 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import Link from "next/link";
 import * as Yup from "yup";
 import { searchParamsUrl } from "../../searchParams";
+import CustomDatePicker from "../../CustomDatePicker";
 
 const QuestionFourteen = ({ onNext, handleChange, preferredState }) => {
   const validationSchema = Yup.object().shape({
@@ -60,6 +61,7 @@ const QuestionFourteen = ({ onNext, handleChange, preferredState }) => {
       <p>
         Let’s confirm your <br /> date of birth
       </p>
+      {/* <CustomDatePicker /> */}
       <Formik
         initialValues={{ date_of_birth: "" }}
         validationSchema={validationSchema}

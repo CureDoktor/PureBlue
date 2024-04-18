@@ -10,12 +10,13 @@
   }
   .selectContainer {
     // border: 2px solid black;
+    max-width: 540px;
   }
   .ErrorMessage {
     color: red;
     font-size: 13px;
     margin-right: auto;
-    margin-left: 15px;
+    // margin-left: 15px;
     margin-top: 5px;
   }
   button {

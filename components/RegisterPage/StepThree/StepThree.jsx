@@ -8,7 +8,7 @@ const StepThree = ({ handleChange, formData, states }) => {
   const checkCountry = (event) => {
     const { value, name } = event.target;
 
-    if (value === "AK" || value === "SC") {
+    if (value === "AK") {
       setCountry(false);
     } else {
       setCountry(true);

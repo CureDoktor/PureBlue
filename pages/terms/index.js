@@ -826,8 +826,6 @@ export default function Terms() {
                 <p>
                   Alabama Medical License Number: DO.2327 Expires 12/31/2024
                   <br />
-                  Alaska Medical License Number: 160520 Expires 12/31/2024
-                  <br />
                   Arizona Medical License Number: 8699 Expires 12/31/2024
                   <br />
                   Arkansas Medical License Number: E-13340 Expires 10/31/2025
@@ -915,6 +913,9 @@ export default function Terms() {
                   <br />
                   Rhode Island Medical License Number: DO01057 Expires
                   06/30/2024
+                  <br />
+                  South Carolina Medical License Number: DO.82979 Expires
+                  06/30/2025
                   <br />
                   South Dakota Medical License Number: 12999 Expires 03/01/2025
                   <br />

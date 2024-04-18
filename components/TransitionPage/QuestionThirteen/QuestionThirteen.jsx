@@ -50,7 +50,10 @@ const QuestionThirteen = ({ onNext, setPreferredState, preferredState }) => {
   const validationSchema = Yup.object().shape({
     state: Yup.string()
       .required("Please select a state")
-      .notOneOf(["AS", "SC"], "Your treatment is not allowed in this country"),
+      .notOneOf(
+        ["AK"],
+        "Unfortunately our services are not offered in this state. We hope to change that in the near future."
+      ),
     checkbox: Yup.bool().oneOf(
       [true],
       "You must acknowledge the Terms and Conditions"
