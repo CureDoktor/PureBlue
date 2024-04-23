@@ -16,7 +16,7 @@ const products = [
     rating: "/assets/homepage/popular/stars.png",
     imageUrl: "/assets/Generic Viagra.png",
     comingSoon: false,
-    redirectUrl: "/landing-page-v2",
+    redirectUrl: "/sildenafil-s2",
   },
   {
     name: "Generic Cialis",
@@ -24,7 +24,7 @@ const products = [
     rating: "/assets/homepage/popular/stars.png",
     imageUrl: "/assets/Generic Cialis.png",
     comingSoon: false,
-    redirectUrl: "/tadalafil",
+    redirectUrl: "/tadalafil-s2",
   },
   {
     name: "Alpha Protocol",

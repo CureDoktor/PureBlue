@@ -12,7 +12,7 @@ export default function Recommend({ setContent }) {
   const [enableButton, setEnableButton] = useState(false);
   const onSubmit = (e) => {
     e.preventDefault();
-    router.push("/landing-page-v2" + searchParamsUrl());
+    router.push("/sildenafil-s2" + searchParamsUrl());
   };
   return (
     <div className={styles.container}>
