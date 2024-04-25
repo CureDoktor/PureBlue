@@ -60,34 +60,34 @@ const index = () => {
   const cardData = [
     {
       bottomTriangle: true,
-      cardHeading: "Get harder erections",
+      cardHeading: "Advanced Erection Support",
       cardPara:
-        "SIldenafil is the active ingredient in Cialis. It helps increase blood flow and allows you to achieve harder erections in as little as 30 minutes from when you take it.",
-      image: "/assets/landingPageV2/cardImage2/cardImage2.png",
+        "PureBlue’s Generic Cialis contains Tadalafil, the same active ingredient in Tadalafil that helps you gain and maintain firm erections with ease. Generic Cialis works in as fast as 60 minutes, and stays active for up to 48 hours.",
+      image: "/assets/landingPageV2/cardImage1/image1.png",
     },
     {
       topTriangle: true,
-      cardHeading: "Stay harder for longer",
+      cardHeading: "Long-lasting Performance",
       cardPara:
-        "As long as you’re aroused, generic Cialis will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
+        "Generic Cialis (tadalafil) is the only medication that delivers long-lasting support against erectile dysfunction, giving men up to 48 hours effective duration – perfect for those who want to be ready for action, any time.",
 
-      image: "/assets/landingPageV2/cardImage1/cardImage1.png",
+      image: "/assets/landingPageV2/cardImage1/image2.png",
     },
   ];
   const cardData2 = [
     {
       bottomTriangle: true,
-      cardHeading: "It’s modern medicine",
+      cardHeading: "Quality without Compromise",
       cardPara:
-        "Doctors have been prescribing Cialis for over 20 years, and for one good reason: IT WORKS! It’s never been easier to achieve and maintain harder erections.",
-      image: "/assets/landingPageV2/imag4/image4.png",
+        "PureBlue’s Generic Cialis costs up to 85% less, without compromising on quality, allowing you to experience the same exact performance, potency, and duration of its brand-name counterpart, at a much more affordable price.",
+      image: "/assets/landingPageV2/cardImage1/image3.png",
     },
     {
       topTriangle: true,
-      cardHeading: "Stay harder for longer",
+      cardHeading: "No Hidden Fees",
       cardPara:
-        "As long as you’re aroused, generic Cialis will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
-      image: "/assets/landingPageV2/pills/pills.png",
+        "With PureBlue, you only pay for your medication. No doctor’s fees, or pharmacy fees -  not even shipping fees. Save up to $400 every month on treatment costs vs conventional healthcare options and get free rushed shipping with PureBlue!",
+      image: "/assets/landingPageV2/cardImage1/image4.png",
     },
   ];
   return (
@@ -185,7 +185,7 @@ const index = () => {
           >
             Tadalafil Reviews
           </p>
-          <CardCarousel />
+          <CardCarousel product="Tadalafil" />
         </div>
       </div>
       <div className={styles.blackContainer}>

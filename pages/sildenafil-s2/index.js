@@ -20,31 +20,49 @@ const index = () => {
   const reviews = [
     {
       id: 1,
-      date: "12-18-2023",
+      date: "11-10-2023",
       reviewText:
-        "I'm a very happy user. It took a little while to understand when and how to take the medication but once I did I found it to be very effective.",
-      reviewerName: "Mark V.",
+        "I’ve been using the expensive brand for over 5 years now, and PureBlue’s Generic Viagra is exactly the same. It’s like I’m saving hundreds of dollars every month just by switching over to PureBlue!",
+      reviewerName: "Gino P.",
       isVerified: true,
-      star: 1,
+      star: 5,
     },
     {
       id: 4,
       date: "12-18-2023",
       reviewText:
-        "I'm a very happy user. It took a little while to understand when and how to take the medication but once I did I found it to be very effective.",
-      reviewerName: "Mark V.",
+        "I’ve always wanted to try ED pills, but the costs of going to a doctor, and telling a stranger intimate details about my personal life doesn’t appeal to me. It’s a good thing that PureBlue made it possible for guys like me to get Generic Viagra without all that hassle.",
+      reviewerName: "Mitch J.",
       isVerified: true,
-      star: 1,
+      star: 5,
     },
 
     {
       id: 3,
+      date: "12-28-2023",
+      reviewText:
+        "I go through a lot of these pills every month, and the only reason why I can use so many Generic Viagra pills is because Pureblue made it so affordable for guys like me. It’s the only reason why I still have a healthy sex life at 60!",
+      reviewerName: "Dawson M.",
+      isVerified: true,
+      star: 5,
+    },
+    {
+      id: 3,
+      date: "12-18-2024",
+      reviewText:
+        "We live in a small town where everyone knows everyone – even the pharmacist. I couldn’t get myself to buy ED pills from the guy I went to school with, so good thing there’s PureBlue. I get my pills delivered to my doorstep. No hassle, no embarrassment!",
+      reviewerName: "Richard S.",
+      isVerified: true,
+      star: 5,
+    },
+    {
+      id: 3,
       date: "12-18-2023",
       reviewText:
-        "I'm a very happy user. It took a little while to understand when and how to take the medication but once I did I found it to be very effective.",
+        "I remarried last year, and my wife is 20 years younger than I am, and Generic Viagra is the secret to our incredible sex life. My wife and PureBlue are the two reasons why I still feel like I’m in my 20s!",
       reviewerName: "Mark V.",
       isVerified: true,
-      star: 2,
+      star: 5,
     },
   ];
   const headerDescription = [
@@ -67,9 +85,9 @@ const index = () => {
     },
     {
       topTriangle: true,
-      cardHeading: "Stay harder for longer",
+      cardHeading: "Maintain Firmness with Generic Viagra",
       cardPara:
-        "As long as you’re aroused, generic Viagra will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
+        "As long as you're aroused, Generic Viagra goes to work, ensuring sustained peak erection quality with up to 4 hours effective duration.",
 
       image: "/assets/landingPageV2/cardImage1/cardImage1.png",
     },
@@ -185,7 +203,7 @@ const index = () => {
           >
             Sildenafil Reviews
           </p>
-          <CardCarousel />
+          <CardCarousel product="Sildenafil" />
         </div>
       </div>
       <div className={styles.blackContainer}>

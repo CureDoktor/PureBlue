@@ -32,12 +32,12 @@
     // margin-top: 50px;
   }
   @media (max-width: "380px") {
-     padding: 5px;
+    padding: 5px;
   }
 
   .heading {
     font-family: "Poppins";
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 600;
     @media (max-width: "500px") {
       font-size: 26px;
@@ -46,7 +46,7 @@
     }
     @media (max-width: "380px") {
       font-size: 22px;
-   }
+    }
   }
   .bar {
     height: 2px;
@@ -62,7 +62,6 @@
       font-family: "Poppins";
       line-height: 25px;
       font-weight: 500;
-
     }
   }
   .triangleContainerDown {
@@ -101,8 +100,6 @@
   }
 }
 
-
-
 // .parentContainer {
 //   margin-top: 50px;
 // }
@@ -133,4 +130,3 @@
     // margin-top: 50px;
   }
 }
-

@@ -242,7 +242,6 @@ const StepSeven = ({ onNext, props }) => {
             </div>
           </Form.Group>
         </Row>
-
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridFirstname">
             <Form.Group as={Col} controlId="shippingZip">
