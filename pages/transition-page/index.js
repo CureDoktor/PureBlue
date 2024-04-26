@@ -35,6 +35,7 @@ const TransitionPage = () => {
     if (initialLoad) {
       setInitialLoad(false);
     } else {
+      console.log(currentIndex);
       addButton();
     }
   }, [loadButton]);
@@ -47,11 +48,18 @@ const TransitionPage = () => {
             <Button
               key={index}
               name={buttonName}
-              // onClick={addButton}
               disabled={index !== buttons.length - 1}
               icon={index === buttonNames.length - 1}
             />
           ))}
+        <div className={styles.widthContainer}>
+          <div
+            className={styles.blueFill}
+            style={{
+              width: `${currentIndex !== 0 ? currentIndex * 25 - 2 : 10}%`,
+            }}
+          ></div>
+        </div>
       </div>
     </div>
   );

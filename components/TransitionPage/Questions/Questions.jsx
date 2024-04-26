@@ -22,6 +22,8 @@ const Questions = (props) => {
   const [errorData, setErrorData] = useState("");
   const router = useRouter();
   const questionId = parseInt(router.query?.question) || 1;
+  const [showFill, setShowFill] = useState(false);
+  const [fill, setFill] = useState(5);
 
   // console.log(questionId + " /questions/?&question=1");
 
@@ -39,6 +41,21 @@ const Questions = (props) => {
       ...form,
       [name]: value,
     });
+  };
+
+  const calculateFill = () => {
+    if (currentStep == 2) {
+      setShowFill(true);
+      setFill(33);
+    } else if (currentStep == 3) {
+      setShowFill(true);
+      setFill(66);
+    } else if (currentStep == 5) {
+      setShowFill(true);
+      setFill(98);
+    } else {
+      setShowFill(false);
+    }
   };
 
   const submitForm = (values) => {
@@ -121,6 +138,7 @@ const Questions = (props) => {
     if (typeof window !== "undefined") {
       localStorage.setItem("currentStep", questionId);
     }
+    calculateFill();
   }, [currentStep]);
 
   const goToNextStep = (values) => {
@@ -231,6 +249,18 @@ const Questions = (props) => {
   return (
     <div className={styles.mainContainer}>
       {renderStep()}
+
+      <div
+        className={styles.widthContainer}
+        style={showFill ? { opacity: "100" } : { opacity: "0" }}
+      >
+        <div
+          className={styles.blueFill}
+          style={{
+            width: `${fill}%`,
+          }}
+        ></div>
+      </div>
       <MagicModal
         formData={form}
         modalState={modalState}

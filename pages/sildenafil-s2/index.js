@@ -102,9 +102,9 @@ const index = () => {
     },
     {
       topTriangle: true,
-      cardHeading: "Stay harder for longer",
+      cardHeading: "Trusted Confidence and Performance",
       cardPara:
-        "As long as you’re aroused, generic Viagra will get to work, allowing you to maintain peak erection quality for up to 4 hours from when you took your medication.",
+        "Generic Viagra contains Sildenafil, the same active ingredient in Viagra, and has been the #1 erectile dysfunction medication since 1998, with billions of units sold worldwide. ",
       image: "/assets/landingPageV2/pills/pills.png",
     },
   ];

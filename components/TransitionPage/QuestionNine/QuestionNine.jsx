@@ -13,7 +13,7 @@ const QuestionNine = ({ onNext }) => {
 
   return (
     <div className={styles.container}>
-      <Spinner animation="border" variant="primary" />
+      {/* <Spinner animation="border" variant="primary" /> */}
       <p>You're not alone</p>
       <p className={styles.heading}>
         40% of men experience <br /> Symptoms like this by age 40

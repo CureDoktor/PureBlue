@@ -4,30 +4,26 @@ import { Spinner } from "react-bootstrap";
 
 const Button = ({ name, onClick, disabled, icon }) => {
   return (
-    <>
-      <button
-        className={styles.button}
-        style={
-          disabled
-            ? { border: "1px solid #D5D5D5", color: "#D5D5D5" }
-            : { border: "1px solid #0077F0" }
-        }
+    <div
+      className={disabled ? "d-none" : "d-block"}
+      style={{
+        textAlign: "center",
+        paddingTop: "40px",
+        fontSize: "31px",
+        fontWeight: "600",
+      }}
+    >
+      <div
+        className="text-center"
+        style={disabled ? { display: "none" } : {}}
         onClick={disabled ? null : onClick}
       >
-        {!disabled && !icon && (
-          <Spinner
-            className={styles.spinner}
-            size="sm"
-            animation="border"
-            variant="primary"
-          />
-        )}
         {icon && (
           <img src="/assets/thankyou/check.png" className={styles.icon} />
         )}
         {name}
-      </button>
-    </>
+      </div>
+    </div>
   );
 };
 

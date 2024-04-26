@@ -80,7 +80,7 @@ const index = () => {
       cardHeading: "Quality without Compromise",
       cardPara:
         "PureBlue’s Generic Cialis costs up to 85% less, without compromising on quality, allowing you to experience the same exact performance, potency, and duration of its brand-name counterpart, at a much more affordable price.",
-      image: "/assets/landingPageV2/cardImage1/image3.png",
+      image: "/assets/landingPageV2/cardImage1/image5.png",
     },
     {
       topTriangle: true,
@@ -157,7 +157,7 @@ const index = () => {
       </div>
       <div className={styles.ImageContainer2}>
         <img
-          src="/assets/landingPageV2/image/image.png"
+          src="/assets/landingPageV2/cardImage1/image3.png"
           className={styles.lgImage}
         />
         <img src="/assets/landing-image.png" className={styles.mobileImage} />
