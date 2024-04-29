@@ -130,8 +130,16 @@ const index = () => {
             })}
           </div>
           <div className={styles.oneMothPrice}>
-            <span className={styles.month}>One month price</span>
-            <span className={styles.price}>$22</span>
+            <span className={styles.month}>5mg</span>
+            <span className={styles.price}>$2 per dose</span>
+          </div>
+          <div className={styles.oneMothPrice}>
+            <span className={styles.month}>10mg</span>
+            <span className={styles.price}>$3 per dose</span>
+          </div>
+          <div className={styles.oneMothPrice}>
+            <span className={styles.month}>20mg</span>
+            <span className={styles.price}>$4 per dose</span>
           </div>
           <button onClick={getMyTreatment} className={styles.shopNow}>
             Shop Now
