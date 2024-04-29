@@ -103,9 +103,7 @@ const index = () => {
         </div>
         <div className={styles.headerTextContainer}>
           <p className={styles.mainHeading}>Generic Cialis®</p>
-          <p className={styles.mainHeading2}>
-            Generic Cialis® (Tadalafil) 50mg
-          </p>
+          <p className={styles.mainHeading2}>Generic Cialis® (Tadalafil) 5mg</p>
           <p className={styles.description}>
             Tadalafil is the same active ingredient in branded Cialis.
           </p>
