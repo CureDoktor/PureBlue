@@ -1,0 +1,965 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins";
+
+.banner{
+  padding: 50px 0 50px;
+
+  @include md(){
+    padding: 78px 0 64px;
+  }
+
+  h1{
+    font-size: 26px !important;
+    text-align: center;
+
+    @include md(){
+      font-size: 36px !important;
+    }
+
+    @include lg(){
+      font-size: 50px !important;
+    }
+
+    span{
+      color: $blue-color;
+    }
+  }
+
+  .banner-btn{
+    padding: 35px 0 0;
+    max-width: 193px;
+    position: relative;
+
+    @include md(){
+      max-width: 269px;
+      padding: 53px 0  0;
+    }
+
+    a{
+      background: $base-color;
+      border-radius: 50px;
+      color: $white-color;
+      font-size: 15px;
+      padding: 5px 0;
+      text-decoration: none;
+
+      @include md(){
+        font-size: 22px;
+        padding: 8px 0;
+      }
+
+      &:hover{
+        background: $blue-color;
+        color: $white-color;
+      }
+    }
+  }
+
+  .banner-box-row{
+    padding: 40px 0 0;
+    max-width: 278px;
+    position: relative;
+
+    @include lg(){
+      max-width: 100%;
+      padding: 51px 0 0;
+    }
+
+    @include xl(){
+      padding: 51px 26px 0;
+    }
+
+    .banner-box{
+      border: 1px solid #B1B1B1;
+      border-radius: 10px;
+      padding: 10px 0 10px 0;
+      margin: 10px 0 0 0;
+
+      .banner-box-data{
+        padding: 11px 15px 11px 100px;
+        position: relative;
+        height: 100%;
+
+        @include lg(){
+          padding: 11px 15px 11px 100px;
+        }
+
+        @include xl(){
+          padding: 11px 15px 11px 135px;
+        }
+      }
+
+      .banner-box-left{
+        width: 80px !important;
+        height: 100%;
+        background: url("/assets/semaglutide/cirlce-check.svg") no-repeat center;
+        background-size: 28px;
+        border-right: 1px solid #B1B1B1;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        @include lg(){
+          width: 80px !important;
+        }
+
+        @include xl(){
+          width: 109px !important;
+          background-size: auto;
+        }
+
+        &.icon-2{
+          background: url("/assets/semaglutide/box-icon-2.svg") no-repeat center;
+          background-size: 28px;
+
+          @include xl(){
+            background-size: auto;
+          }
+        }
+
+        &.icon-3{
+          background: url("/assets/semaglutide/box-icon-3.svg") no-repeat center;
+          background-size: 32px;
+
+          @include xl(){
+            background-size: auto;
+          }
+        }
+      }
+
+      p{
+        font-size: 12px;
+        line-height: 140%;
+        margin: 0;
+        padding: 0;
+        font-weight: 400 !important;
+        letter-spacing: -0.3px;
+
+        @include lg(){
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  .banner-bottom{
+    position: relative;
+    margin: 50px 0 0 0;
+
+    @include md(){
+      margin: 73px 0 0 0;
+    }
+
+    &:after{
+      width: 100%;
+      height: 1px;
+      background: #919191;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      content: "";
+    }
+
+    .container{
+      position: relative;
+      z-index: 1;
+    }
+
+    img{
+      width: 280px;
+
+      @include md(){
+        width: auto;
+      }
+    }
+  }
+}
+
+.middle-top{
+  background: #EFEFEF;
+  padding: 89px 0 50px;
+  position: relative;
+
+  @include md(){
+    padding: 209px 0 113px;
+  }
+
+  &:after{
+    width: 100%;
+    height: 89px;
+    background: $white-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+
+    @include md(){
+      height: 209px;
+    }
+  }
+
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+
+  .data-img{
+    margin: -89px 0 0 0;
+
+    @include md(){
+      margin: -209px 0 0 0;
+    }
+  }
+
+  .box-row{
+    background: #545454;
+    border-radius: 10px;
+    max-width: 233px;
+    padding: 0 38px;
+    position: relative;
+    margin: -35px 0 0 0;
+    position: relative;
+    z-index: 1;
+
+    @include md(){
+      max-width: 1022px;
+      padding: 43px 0;
+    }
+  }
+
+  .data-box-wrp{
+    border-bottom: 1px solid #CECECE;
+    padding: 44px 0;
+
+    @include md(){
+      border-right: 1px solid #CECECE;
+      border-bottom: 0;
+      padding: 0 15px;
+    }
+
+    &.no-border{
+      border: none;
+    }
+  }
+
+  .data-box{
+    position: relative;
+    max-width: 242px;
+  }
+
+  .box-icon{
+    img{
+      height: 60px;
+
+      @include md(){
+        height: auto;
+      }
+    }
+  }
+
+  p{
+    font-size: 12px;
+    line-height: 125%;
+    text-align: center;
+    color: $white-color;
+    padding: 15px 0 0 0;
+    margin: 0;
+
+    @include md(){
+      font-size: 18px;
+      line-height: 140%;
+      padding: 20px 0 0 0;
+    }
+  }
+
+  .info-text{
+    padding: 40px 15px 0;
+    font-size: 12px;
+    line-height: 190%;
+    max-width: 935px;
+    position: relative;
+    letter-spacing: -0.3px;
+
+    @include md(){
+      font-size: 14px;
+      letter-spacing: -0.4px;
+      line-height: 150%;
+      padding: 40px 0 00;
+    }
+  }
+}
+
+.calc-section{
+  padding: 96px 0;
+
+  .container{
+    max-width: 1000px !important;
+    padding: 0 48px !important;
+
+    @include md(){
+      padding: 0 15px !important;
+    }
+  }
+
+  .calc-left{
+    background: #EFEFEF;
+    border-radius: 20px;
+
+    @include md(){
+      max-width: 50%;
+    }
+
+    @include lg(){
+      max-width: 481px;
+    }
+  }
+
+  .calc-left-top{
+    background: #0077F0;
+    border-radius: 20px 20px 0 0;
+    font-size: 194px;
+    font-family: $second-font;
+    color: $white-color;
+    line-height: 100%;
+    padding: 30px 0 40px;
+
+    @include md(){
+      font-size: 294px;
+      padding: 40px 0 50px;
+    }
+  }
+
+  .calc-left-bottom{
+    padding: 30px;
+
+    @include md(){
+      padding: 50px;
+    }
+  }
+
+  .left-text{
+    padding: 30px 0 0 0;
+    line-height: 160%;
+    font-size: 16px;
+
+    @include md(){
+      font-size: 18px;
+      padding: 40px 0 0 0;
+    }
+  }
+
+  .calc-right{
+    padding: 84px 0 0 0;
+
+    @include md(){
+      max-width: 50%;
+      padding: 0 0 0 30px;
+    }
+
+    @include lg(){
+      max-width: 389px;
+      padding: 0;
+    }
+
+    p{
+      padding: 35px 0 0 0;
+      font-size: 14px;
+      font-weight: 400 !important;
+      line-height: 170%;
+
+      @include md(){
+        padding: 42px 0 0 0;
+      }
+    }
+  }
+
+  .calc-right-top{
+    .title-row-1{
+      padding: 0 163px 0 0;
+      position: relative;
+      font-size: 16px;
+      line-height: 130%;
+
+      @include md(){
+        font-size: 19px;
+      }
+
+      .bold-text{
+        font-size: 43px;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        color: $blue-color;
+
+        @include md(){
+          font-size: 51px;
+        }
+
+        output,
+        span{
+          display: inline-block;
+        }
+      }
+    }
+
+    .range-slider-row{
+      padding: 37px 0 40px;
+    }
+
+    .rangeslider{
+      background: #D8D8D8;
+      height: 17px;
+      border-radius: 50px;
+      border: 1px solid #707070;
+
+      .rangeslider__fill{
+        background: rgb(0,119,240);
+        background: linear-gradient(0deg, rgba(0,119,240,1) 0%, rgba(0,88,177,1) 100%);
+        border-radius: 50px;
+      }
+
+      .rangeslider__handle::after{
+        width: 34px;
+        height: 34px;
+        background: url("/assets/semaglutide/handle.svg") no-repeat center/cover;
+        margin: -2px 0 0 -2px;
+      }
+    }
+
+
+    .rangeslider__handle{
+      width: 34px;
+      height: 34px;
+      background: #fff;
+      border: 2px solid #dee6e9;
+      border-radius: 50%;
+      box-shadow: none;
+      margin: 0;
+    }
+
+  }
+}
+
+.revolutionary-section{
+  background: #EFEFEF;
+  padding: 30px 0 37px;
+  position: relative;
+
+  @include md(){
+    padding: 58px 0 40px;
+  }
+
+  &:after{
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: $blue-color;
+    content: "";
+  }
+
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+
+  .revolutionary-section-top{
+    border-bottom: 1px solid #919191;
+    padding: 0 0 23px;
+
+    @include md(){
+      padding: 0 0 40px;
+    }
+
+    ul{
+      li{
+        font-size: 16px;
+        font-weight: 500;
+        padding: 0 8px;
+
+        @include md(){
+          font-size: 22px;
+          padding: 0 21px;
+        }
+      }
+    }
+  }
+
+  .revolutionary-section-bottom{
+    padding: 35px 0 0;
+
+    @include md(){
+      padding: 59px 0 0;
+    }
+
+    @include lg(){
+      padding: 59px 53px 0;
+    }
+
+    h3{
+      color: $blue-color;
+      font-size: 30px;
+
+      @include lg(){
+        font-size: 40px;
+      }
+    }
+
+    p{
+      padding: 18px 0 36px 0;
+      line-height: 200%;
+      font-size: 12px;
+      font-weight: 400 !important;
+      max-width: 460px !important;
+      letter-spacing: 0.1px;
+
+      @include md(){
+        padding: 25px 0 0 0;
+        line-height: 180%;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .product-box{
+    background: $white-color;
+    border-radius: 10px;
+    padding: 29px 20px 30px;
+
+    @include md(){
+      padding: 29px 27px 30px;
+    }
+
+    .title{
+      font-size: 29px;
+
+      @include md(){
+        font-size: 40px;
+      }
+    }
+
+    .product-img{
+      padding: 35px 0 0 0;
+    }
+
+    .btn-row{
+      padding: 30px 0 0 0 !important;
+
+      @include md(){
+        padding: 45px 0 0 0 !important;
+      }
+    }
+  }
+}
+
+.how-section{
+  .how-section-top{
+    background: url("/assets/semaglutide/how-section-img-mobile.jpg") no-repeat center/cover;
+    height: 425px;
+
+    @include md(){
+      background: url("/assets/semaglutide/how-section-img.jpg") no-repeat center/cover;
+      height: 652px;
+    }
+  }
+
+  .container{
+    max-width: 1036px !important;
+  }
+
+  .how-section-bottom{
+    margin: -63px 0 0 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .data-row{
+    background: #F8F8F8;
+    border-radius: 10px;
+    padding: 38px 20px 70px;
+
+    @include md(){
+      padding: 110px 30px;
+      border-radius: 30px;
+    }
+
+    @include lg(){
+      padding: 110px 86px;
+    }
+  }
+
+  p{
+    padding: 20px 0 0 0;
+    font-weight: 400 !important;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
+
+    @include md(){
+      padding: 40px 0 0 0;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .small-title{
+    padding: 40px 0 0 0;
+    font-size: 18px;
+
+    @include md(){
+      padding: 50px 0 0 0;
+      font-size: 30px;
+    }
+
+    span{
+      color: $blue-color;
+    }
+  }
+
+  .acco-data-row{
+    margin: 15px 0 0 !important;
+
+    @include md(){
+      margin: 25px 0 0 !important;
+    }
+  }
+}
+
+.result-section{
+  padding: 55px 0 62px;
+
+  @include md(){
+    padding: 140px 0 206px;
+  }
+
+  .container{
+    max-width: 1036px !important;
+    padding: 0 57px !important;
+
+    @include md(){
+      padding: 0 15px !important;
+    }
+
+  }
+
+
+  @include xl(){
+    .row{
+      margin: 0 -29px;
+    }
+
+    div[class*='col-']{
+      padding: 0 29px;
+    }
+  }
+
+  img{
+    border-radius: 10px;
+  }
+
+  .title{
+    font-size: 26px;
+    text-align: center;
+    line-height: 110%;
+    border-bottom: 1px solid #707070;
+    padding: 0 0 20px;
+
+    span{
+      color: #0077F0;
+    }
+
+    @include md(){
+      font-size: 32px;
+      text-align: right;
+      padding: 0 0 30px;
+    }
+
+    @include lg(){
+      font-size: 40px;
+    }
+
+    br{
+      display: none;
+
+      @include md(){
+        display: block;
+      }
+
+    }
+  }
+
+  p{
+    padding: 25px 0 56px 0;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    font-style: italic;
+    margin-left: 0;
+    font-weight: 400 !important;
+    width: 100%;
+    letter-spacing: -0.4px;
+
+    @include md(){
+      font-size: 16px;
+      text-align: right;
+      padding: 40px 0 0 0;
+    }
+
+    @include lg(){
+      font-size: 20px;
+    }
+  }
+}
+
+.included-section{
+  background: #F8F8F8;
+  padding: 62px 0 62px;
+
+  @include md(){
+    padding: 87px 0 85px;
+  }
+
+  .container{
+    max-width: 925px !important;
+    padding: 0 50px !important;
+
+    @include md(){
+      padding: 0 15px !important;
+    }
+  }
+
+  h3{
+    text-align: center;
+
+    @include md(){
+      text-align: left;
+    }
+  }
+
+  @include lg(){
+    .row{
+      margin: 0 -50px;
+    }
+
+    div[class*='col-']{
+      padding: 0 50px;
+    }
+  }
+
+  .pen-img{
+    padding: 27px 0 0 0;
+
+    @include md(){
+      padding: 100px 0 0 0;
+    }
+  }
+
+  .included-bullet{
+    padding: 54px 0 0 0;
+
+    @include md(){
+      padding: 0;
+    }
+    ul{
+      li{
+        background: url("/assets/semaglutide/icon-check-circle-2.svg") no-repeat left 3px;
+        background-size: 16px 15px;
+        font-size: 13px;
+        padding: 0 0 0 29px;
+        margin: 20px 0 0 0;
+
+        @include md(){
+          font-size: 20px;
+          background-size: 24px 22px;
+          padding: 0 0 0 43px;
+          margin: 24px 0 0 0;
+        }
+
+        &:first-child{
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .btn-row{
+    padding: 26px 0 0 0 !important;
+  }
+
+  .black-btn,
+  .blue-btn{
+    margin: 17px 0 0 0 !important;
+    height: 43px !important;
+    padding: 10px 0 12px !important;
+    font-size: 15px !important;
+
+    @include md(){
+      margin: 22px 0 0 0 !important;
+      font-size: 18px !important;
+      height: 48px !important;
+    }
+  }
+
+  .small-text{
+    padding: 28px 0 0;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+
+    @include md(){
+      text-align: left;
+      padding: 34px 0 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.gray-box-row{
+  background: #545454;
+  padding: 65px 0 100px;
+
+  @include md(){
+    padding: 70px 0 105px;
+  }
+
+  .container{
+    max-width: 340px !important;
+
+    @include md(){
+      max-width: 1224px !important;
+    }
+  }
+
+  .box-img{
+    padding: 35px 0 0 0;
+    img{
+      border-radius: 10px;
+    }
+  }
+
+  .box-caption{
+    color: $white-color;
+    font-size: 18px;
+    padding: 32px 0 0 0;
+
+    @include lg(){
+      font-size: 22px;
+      padding: 42px 0 0 0;
+    }
+
+    br{
+      @include md(){
+        display: none;
+      }
+
+      @include lg(){
+        display: block;
+      }
+    }
+  }
+}
+
+.faq-section{
+  padding: 56px 0 71px;
+
+  @include md(){
+    padding: 130px 0 176px;
+  }
+
+  .container{
+    max-width: 1036px !important;
+  }
+
+  .faq-container{
+    background: #F8F8F8;
+    border-radius: 30px;
+    padding: 40px 12px;
+
+    @include md(){
+      padding: 40px;
+    }
+
+    @include lg(){
+      padding: 90px;
+    }
+  }
+}
+
+.acco-data-row{
+  margin: 25px 0 0;
+  border-top: 1px solid #707070;
+
+  @include md(){
+    margin: 40px 0 0;
+  }
+
+  .accordion-item{
+    background: none;
+    border: none;
+    border-bottom: 1px solid #707070;
+    border-radius: 0 !important;
+    box-shadow: none;
+    padding: 22px 0;
+
+    @include md(){
+      padding: 36px 0;
+    }
+  }
+
+  .accordion-button{
+    button {
+      background: none;
+      padding: 0 30px 0 0;
+      font-weight: 600;
+      font-size: 12px;
+      color: #212529;
+
+      @include md(){
+        font-size: 20px;
+      }
+
+      &:focus{
+        box-shadow: none;
+      }
+
+      &:after{
+        width: 10px;
+        height: 5px;
+        position: absolute;
+        right: 0;
+        top: 4px;
+        background: url("/assets/enclomiphene/icon-arrow.svg") no-repeat left top/cover;
+        border: none;
+
+        @include md(){
+          width: 16px;
+          height: 8px;
+        }
+      }
+
+      &:not(.collapsed){
+        box-shadow: none;
+
+        &:after{
+          background: url("/assets/enclomiphene/icon-arrow.svg") no-repeat left top/cover;
+        }
+      }
+    }
+  }
+
+  .accordion-body{
+    padding: 0;
+
+    p{
+      padding: 18px 0 0 0;
+      font-size: 12px;
+
+      @include md(){
+        padding: 25px 0 0 0;
+        font-size: 16px;
+      }
+    }
+  }
+}

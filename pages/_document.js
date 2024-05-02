@@ -32,21 +32,21 @@ export default function Document() {
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5DJCDL26"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
+              src="https://www.googletagmanager.com/ns.html?id=GTM-5DJCDL26"
+              height="0"
+              width="0"
+              style={{display: "none", visibility: "hidden"}}
           ></iframe>
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
-        <Main />
-        <NextScript />
+        <Main/>
+        <NextScript/>
         <script
-          type="text/javascript"
-          async=""
-          src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=ULEj5E"
+            type="text/javascript"
+            async=""
+            src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=ULEj5E"
         ></script>
       </body>
     </Html>
-  );
+);
 }
