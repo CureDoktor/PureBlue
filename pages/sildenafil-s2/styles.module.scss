@@ -162,13 +162,12 @@
 
     .oneMothPrice {
       border: 1px solid #c8c8c8;
-      border-radius: 30px;
       width: 58%;
       font-size: 16px;
-      color: #c8c8c8;
+      background-color: #c8c8c8;
       display: flex;
       justify-content: space-between;
-      padding: 5px;
+
       margin-left: 0.6rem;
       margin-top: 1.3rem;
       @media (max-width: "770px") {
@@ -181,12 +180,17 @@
 
       .month {
         margin-left: 8px;
+        padding: 5px;
+        font-weight: bold;
       }
 
       .price {
-        margin-right: 8px;
-        color: #0077f0;
+        background-color: #0077f0;
+        color: white;
         font-weight: 700;
+        width: 30%;
+        padding: 5px;
+        text-align: center;
       }
     }
     .shopNow {
