@@ -1,0 +1,1137 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins";
+
+  .banner{
+    position: relative;
+
+    @include md(){
+      padding: 100px 0 68px;
+    }
+
+    .container{
+      padding: 0 !important;
+
+      @include md(){
+        padding: 0 15px !important;
+      }
+    }
+
+    &:after{
+      width: 50%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background: #E8F3FF;
+      content: "";
+      display: none;
+
+      @include md(){
+        display: block;
+      }
+    }
+
+    .container{
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner-left{
+      padding: 37px 15px 30px;
+
+      @include md(){
+        padding: 0;
+      }
+    }
+
+    .banner-right{
+      background: #E8F3FF;
+      padding: 69px 0 57px;
+
+      @include md(){
+        background: none;
+        padding: 0;
+      }
+
+      img{
+        max-width: 60%;
+
+        @include md(){
+          max-width: 100%;
+        }
+      }
+    }
+
+    h1{
+      font-weight: 600;
+      font-size: 44px;
+
+      @include lg(){
+        font-size: 50px;
+      }
+    }
+
+    .banner-small-title{
+      font-size: 20px;
+      line-height: 120%;
+      padding: 16px 0 0 0;
+
+      @include lg(){
+        font-size: 25px;
+      }
+
+      span{
+        font-size: 22px;
+        color: $blue-color;
+
+        @include lg(){
+          font-size: 24px;
+        }
+      }
+    }
+
+    .banner-bullet{
+      padding: 10px 0 0 36px;
+      font-size: 13px;
+
+      @include lg(){
+        font-size: 15px;
+      }
+
+      ul{
+        li{
+          width: 100%;
+          padding: 0 0 0 27px;
+          margin: 22px 0 0 0;
+          background: url("/assets/enclomiphene/icon-check-circle.svg") no-repeat left 4px;
+
+          @include lg(){
+            background: url("/assets/enclomiphene/icon-check-circle.svg") no-repeat left 6px;
+            margin: 25px 0 0 0;
+          }
+        }
+      }
+    }
+
+    .banner-btn{
+      padding: 50px 0 0 0;
+      max-width: 	307px;
+      position: relative;
+
+      @include md(){
+        max-width: 100%;
+      }
+
+      a{
+        background: $base-color;
+        color: $white-color;
+        font-size: 20px;
+        padding: 10px 90px;
+        text-decoration: none;
+        border: none;
+        border-radius: 60px;
+
+        &:hover{
+          color: $white-color;
+          background: $blue-color;
+        }
+      }
+    }
+  }
+
+  .gray-strip-section{
+    background: #3B3B3B;
+    padding: 20px 0 29px;
+
+    .container{
+      max-width: 880px !important;
+    }
+
+    .strip-box{
+      border: 1px solid #8D8D8D;
+      padding: 16px;
+      color: #E5E5E5;
+      font-size: 13px;
+      margin: 9px 0 0 0;
+      max-width: 263px;
+      position: relative;
+
+      @include md(){
+        max-width: 100%;
+      }
+
+      i{
+        display: inline-block;
+        margin: 0 15px 0 0;
+        vertical-align: middle;
+
+        &.icon-1{
+          background: url("/assets/enclomiphene/icon-truck.svg") no-repeat left top;
+          width: 35px;
+          height: 17px;
+        }
+
+        &.icon-2{
+          background: url("/assets/enclomiphene/icon-lock.svg") no-repeat left top;
+          width: 17px;
+          height: 21px;
+        }
+
+        &.icon-3{
+          background: url("/assets/enclomiphene/icon-doctor.svg") no-repeat left top;
+          width: 19px;
+          height: 21px;
+        }
+      }
+    }
+  }
+
+  .for-you-section{
+    padding: 70px 0 70px;
+
+    @include md(){
+      padding: 102px 0 108px;
+
+    }
+
+    .container{
+      max-width: 970px !important;
+    }
+
+    @include xl(){
+      .row{
+        margin: 0 -58px;
+      }
+
+      div[class*='col-']{
+        padding: 0 58px;
+      }
+    }
+
+    .data-row{
+      padding: 0 25px;
+
+      @include md(){
+        padding: 51px 0 0 0;
+      }
+    }
+
+    .fy-box{
+      padding: 41px 0 0 0;
+    }
+
+    .fy-box-img{
+      img{
+        border-radius: 20px;
+      }
+    }
+
+    .fy-box-title{
+      font-size: 20px;
+      padding: 20px 0 0;
+
+      @include lg(){
+        font-size: 24px;
+        padding: 45px 0 0;
+      }
+    }
+
+    p{
+      line-height: 180%;
+      padding: 10px 0 0 0;
+      font-size: 12px;
+
+      @include lg(){
+        padding: 20px 0 0 0;
+        font-size: $base-size;
+      }
+    }
+  }
+
+  .box-strip-section{
+    background: #E5E5E5;
+    padding: 94px 0;
+
+    .container{
+      padding: 0 65px !important;
+
+      @include md(){
+        padding: 0 15px !important;
+      }
+    }
+
+    .white-box{
+      background: $white-color;
+      border: 1px solid #DFDFDF;
+      border-radius: 12px;
+      padding: 70px 15px 47px;
+      font-size: 16px;
+    }
+
+    .white-box-icon{
+
+    }
+
+    p{
+      padding: 19px 0 0 0;
+      font-weight: 600 !important;
+      font-size: 16px;
+      text-align: center;
+
+      br{
+        @include md(){
+          display: none;
+        }
+
+        @include lg(){
+          display: block;
+        }
+      }
+    }
+  }
+
+  .unleash-section{
+    padding: 85px 0 90px 0;
+
+    @include md(){
+      padding: 139px 0 140px 0;
+    }
+
+    .container{
+      max-width: 700px !important;
+    }
+
+    .unleash-section-top{
+      background: #F8F8F8;
+      padding: 45px 30px;
+      border-radius: 30px;
+
+      @include md(){
+        padding: 70px 44px;
+      }
+
+      p{
+        position: relative;
+        padding: 20px 0 40px;
+        line-height: 175%;
+        font-size: 12px;
+        font-weight: 400 !important;
+
+        @include md(){
+          padding: 30px 0 70px;
+          font-size: 18px;
+        }
+
+        &:after{
+          width: 180px;
+          height: 3px;
+          background: $blue-color;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          content: "";
+          margin: 0 0 0 -90px;
+
+          @include md(){
+            width: 285px;
+            margin: 0 0 0 -142px;
+          }
+        }
+      }
+    }
+
+    .unleash-section-bottom{
+      background: #E8E8E8;
+      border-radius: 30px;
+      padding: 45px 30px 40px;
+
+      @include md(){
+        padding: 70px 43px 40px;
+      }
+
+      .title{
+        font-size: 18px;
+
+        @include md(){
+          font-size: 30px;
+        }
+      }
+
+      p{
+        position: relative;
+        padding: 20px 0 0;
+        line-height: 175%;
+        font-size: 12px;
+        font-weight: 400 !important;
+
+        @include md(){
+          font-size: 18px;
+          padding: 30px 0 0;
+        }
+      }
+
+      .chart-img{
+        padding: 40px 0 0 0;
+
+        @include md(){
+          padding: 70px 0 0 0;
+        }
+
+        img{
+          border-radius: 14px;
+        }
+      }
+    }
+  }
+
+  .enclomiphene-section{
+    padding: 46px 0 112px 0;
+    background: #EFEFEF;
+    position: relative;
+
+    @include md(){
+      padding: 66px 0 112px 0;
+    }
+
+    &:after{
+      width: 100%;
+      height: 118px;
+      position: absolute;
+      background: $blue-color;
+      left: 0;
+      top: 0;
+      content: "";
+      display: block;
+
+      @include md(){
+        height: 306px;
+      }
+    }
+
+    .container{
+      max-width: 660px !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    .enclomiphene-section-top{
+      ul{
+        li{
+          padding: 0 8px;
+          color: $white-color;
+          font-size: 18px;
+
+          @include md(){
+            padding: 0 20px;
+            font-size: 22px;
+          }
+
+          &:first-child{
+            padding-left: 0;
+          }
+
+          &:lat-child{
+            padding-right: 0;
+          }
+
+          a{
+            color: $white-color;
+          }
+        }
+      }
+    }
+
+    .enclomiphene-section-bottom{
+      margin: 104px 0 0 0;
+      border-radius: 30px;
+      background: $white-color;
+      padding: 40px 24px 54px;
+
+      @include md(){
+        margin: 55px 0 0 0;
+        padding: 53px 57px 77px;
+      }
+
+      h3{
+        font-size: 27px !important;
+
+        @include md(){
+          font-size: 40px !important;
+        }
+      }
+
+      .image-row{
+        padding: 50px 0 0 0;
+
+        @include md(){
+          padding: 70px 0 0 0;
+        }
+
+        img{
+          width: 100%;
+          max-width: 221px;
+
+          @include md(){
+            max-width: 329px;
+          }
+        }
+      }
+    }
+  }
+
+  .facts-section{
+    .facts-img{
+      background: url("/assets/enclomiphene/fact-img-mobile.jpg") no-repeat left top/cover;
+      height: 635px;
+
+      @include md(){
+        height: 535px;
+        background: url("/assets/enclomiphene/fact-img.jpg") no-repeat left top/cover;
+      }
+
+      @include lg(){
+        height: 735px;
+      }
+    }
+
+    .facts-bottom{
+      position: relative;
+      z-index: 1;
+      margin: -100px 0 0 0;
+
+      @include md(){
+        margin: -200px 0 0 0;
+      }
+    }
+
+    .container{
+      max-width: 1036px !important;
+    }
+
+    .facts-container{
+      background: #F8F8F8;
+      border-radius: 30px;
+      padding: 35px 25px;
+
+      @include lg(){
+        padding: 67px 47px;
+      }
+    }
+
+    h3{
+      border-bottom: 3px solid #DCDCDC;
+      padding: 0 0 20px !important;
+      text-align: center;
+
+      @include md(){
+        text-align: left;
+        padding: 0 0 24px !important;
+      }
+    }
+
+    .data-row{
+      @include lg(){
+        padding: 35px 0 0 0;
+      }
+    }
+
+    .facts-box{
+      padding: 40px 27px 40px;
+
+      @include lg(){
+        padding: 22px 0 57px;
+      }
+
+      &.center-box{
+        padding: 40px 27px 40px;
+        background: #EEEEEE;
+        border-radius: 20px;
+
+        @include lg(){
+          padding: 22px 27px 57px;
+        }
+      }
+    }
+
+    .facts-box-row{
+      margin: 0 -15px;
+    }
+
+    .facts-col{
+      padding: 0 15px;
+
+      &.first-box{
+        width: 100%;
+
+        @include lg(){
+          width: 30%;
+        }
+      }
+
+      &.center-box{
+        width: 100%;
+
+        @include lg(){
+          width: 40%;
+        }
+      }
+
+      &.last-box{
+        width: 100%;
+
+        @include lg(){
+          width: 30%;
+        }
+      }
+    }
+
+    .title{
+      font-size: 30px;
+    }
+
+    p{
+      padding: 15px 0 0 0;
+      line-height: 180%;
+      font-size: 12px;
+      letter-spacing: -0.25px;
+
+      @include md(){
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: -0.35px;
+      }
+
+      @include lg(){
+        padding: 30px 0 0 0;
+      }
+    }
+  }
+
+  .performance-section{
+    padding: 74px 0;
+
+    @include md(){
+      padding: 150px 0;
+    }
+
+    .container{
+      max-width: 1040px !important;
+      padding: 0 30px !important;
+    }
+
+    h3{
+      font-size: 20px !important;
+      letter-spacing: -0.4px;
+
+      @include md(){
+        font-size: 25px !important;
+      }
+
+      span{
+        font-size: 25px !important;
+        color: $blue-color;
+
+        @include md(){
+          font-size: 45px !important;
+        }
+      }
+    }
+
+    p{
+      padding: 23px 0 0 0;
+      font-size: 12px;
+      line-height: 175%;
+      font-weight: 400 !important;
+      letter-spacing: -0.4px;
+
+      @include md(){
+        padding: 53px 0 0 0;
+        font-size: 14px;
+      }
+    }
+
+    .gray-box{
+      background: #F8F8F8;
+      border: 1px solid #707070;
+      border-radius: 22px;
+      padding: 22px 24px;
+      margin: 48px 0 0 0;
+
+      @include md(){
+        padding: 22px 36px;
+      }
+
+      p{
+        padding: 13px 0 0 0;
+      }
+    }
+
+    .title{
+      font-size: 19px;
+
+      @include md(){
+        font-size: 30px;
+      }
+    }
+  }
+
+  .testimonial-section{
+    background: #EFEFEF;
+    padding: 70px 0 155px;
+
+    @include md(){
+      padding: 135px 0 240px;
+    }
+
+    h3{
+      font-size: 18px !important;
+      text-align: center;
+      position: relative;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      left: 50%;
+      letter-spacing: -0.8px;
+
+      @include md(){
+        font-size: 35px !important;
+        letter-spacing: -1.25px;
+      }
+
+      span{
+        color: $blue-color;
+        font-size: 24px !important;
+
+        @include md(){
+          font-size: 45px !important;
+        }
+      }
+    }
+
+    .container{
+      max-width: 804px !important;
+    }
+
+    .data-row{
+      padding: 0;
+
+      @include md(){
+        padding: 100px 0  0;
+      }
+    }
+
+    .testimonial-box{
+      max-width: 430px;
+      position: relative;
+      background: $white-color;
+      border-radius: 26px;
+      padding: 70px 43px;
+      position: relative;
+      margin: 100px 0 0 0;
+
+      &:after{
+        width: 50px;
+        height: 44px;
+        display: block;
+        background: url("/assets/enclomiphene/icon-quote.svg") no-repeat left top/cover;
+        position: absolute;
+        left: 50%;
+        top: -75px;
+        content: "";
+        margin: 0 0 0 -22px;
+
+        @include md(){
+          left: -113px;
+          top: 0;
+        }
+      }
+
+      .rating{
+        img{
+          width: auto !important;
+        }
+      }
+
+      .testimonial-title{
+        padding: 12px 0 0 0;
+        font-size: 30px;
+
+        @include md(){
+          font-size: 27px;
+        }
+      }
+
+      p{
+        padding: 37px 0 0 0;
+        font-size: 12px;
+        line-height: 160%;
+        letter-spacing: -0.4px;
+
+        @include md(){
+          padding: 37px 0 0 0;
+          font-size: 14px;
+          line-height: 160%;
+        }
+      }
+
+      .customer-name{
+        padding: 25px 0 0 0;
+        font-size: 20px;
+
+        @include md(){
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .customer-section{
+    background: #9C9C9C;
+    padding: 89px 0 94px;
+
+    h3{
+      color: $white-color;
+      text-align: center;
+
+      @include md(){
+        text-align: left;
+      }
+    }
+
+    .data-row{
+      padding: 8px 0 0 0;
+
+      @include md(){
+        padding: 48px 0 0 0;
+      }
+    }
+
+    .customer-box{
+      background: $white-color;
+      border-radius: #EFEFEF;
+      border-radius: 26px;
+      margin: 32px 0 0;
+      max-width: 277px;
+      position: relative;
+
+      @include md(){
+        max-width: 100%;
+      }
+    }
+
+    .customer-box-img{
+      img{
+        border-radius: 26px;
+      }
+    }
+
+    .customer-box-bottom{
+      padding: 36px 90px 36px 29px;
+      position: relative;
+
+      @include lg(){
+        padding: 36px 60px 36px 15px;
+      }
+
+      @include xl(){
+        padding: 36px 90px 36px 29px;
+      }
+    }
+
+    .customer-name{
+      font-size: 22px;
+      margin: 0 0 -4px;
+
+      @include md(){
+        margin: 0;
+      }
+    }
+
+    .bottle-img{
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+
+      @include lg(){
+        right: 2px;
+      }
+
+      @include xl(){
+        right: 28px;
+      }
+    }
+  }
+
+  .chart-bottle-section{
+    padding: 70px 0 77px;
+
+    @include md(){
+      padding: 177px 0 166px;
+    }
+
+    .container{
+      max-width: 760px !important;
+      padding: 0 30px !important;
+    }
+
+    h3{
+      line-height: 100%;
+      span{
+        font-size: 19px !important;
+        font-weight: 400 !important;
+        color: $blue-color;
+
+        @include md(){
+          font-size: 22px !important;
+        }
+      }
+    }
+
+    .chart-img{
+      padding: 35px 0 0 0;
+    }
+  }
+
+  .works-section{
+    padding: 75px 0 120px;
+    background: #2D2D2D;
+
+    @include md(){
+      padding: 130px 0;
+    }
+
+    h3{
+      color: $white-color;
+      text-align: center;
+      font-size: 31px !important;
+
+      @include md(){
+        font-size: 35px !important;
+      }
+
+      @include lg(){
+        font-size: 45px !important;
+      }
+    }
+
+    .data-row{
+      @include lg(){
+        padding: 28px 0 0 0;
+      }
+    }
+
+    .works-img{
+      position: relative;
+      margin: 95px 0 0 0;
+
+      img{
+        border-radius: 10px;
+      }
+
+      .step-number{
+        width: 66px;
+        height: 66px;
+        background: $blue-color;
+        color: $white-color;
+        font-size: 30px;
+        position: absolute;
+        left: 50%;
+        top: -33px;
+        margin: 0 0 0 -33px;
+        border-radius: 50%;
+        padding: 12px 0 0 0;
+      }
+    }
+
+    .works-title{
+      padding: 29px 0 20px 0;
+      color: $white-color;
+      position: relative;
+      font-size: 30px;
+      letter-spacing: -0.5px;
+      line-height: 120%;
+
+      &:after{
+        width: 133px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        background: $blue-color;
+        content: "";
+      }
+    }
+
+    p{
+      padding: 30px 0 0 0;
+      color: $white-color;
+      font-size: 14px;
+      line-height: 170%;
+    }
+  }
+
+  .faq-section{
+    padding: 56px 0 71px;
+
+    @include md(){
+      padding: 130px 0 176px;
+    }
+
+    .container{
+      max-width: 1036px !important;
+    }
+
+    .faq-container{
+      background: #F8F8F8;
+      border-radius: 30px;
+      padding: 40px 12px;
+
+      @include md(){
+        padding: 40px;
+      }
+
+      @include lg(){
+        padding: 90px;
+      }
+    }
+
+    .faq-data-row{
+      margin: 25px 0 0;
+      border-top: 1px solid #707070;
+
+      @include md(){
+        margin: 40px 0 0;
+      }
+    }
+
+    .accordion-item{
+      background: none;
+      border: none;
+      border-bottom: 1px solid #707070;
+      border-radius: 0 !important;
+      box-shadow: none;
+      padding: 22px 0;
+
+      @include md(){
+        padding: 36px 0;
+      }
+    }
+
+    .accordion-button{
+      button {
+        background: none;
+        padding: 0 30px 0 0;
+        font-weight: 600;
+        font-size: 12px;
+        color: #212529;
+
+        @include md(){
+          font-size: 20px;
+        }
+
+        &:focus{
+          box-shadow: none;
+        }
+
+        &:after{
+          width: 10px;
+          height: 5px;
+          position: absolute;
+          right: 0;
+          top: 4px;
+          background: url("/assets/enclomiphene/icon-arrow.svg") no-repeat left top/cover;
+          border: none;
+
+          @include md(){
+            width: 16px;
+            height: 8px;
+          }
+        }
+
+        &:not(.collapsed){
+          box-shadow: none;
+
+          &:after{
+            background: url("/assets/enclomiphene/icon-arrow.svg") no-repeat left top/cover;
+          }
+        }
+      }
+    }
+
+    .accordion-body{
+      padding: 0;
+
+      p{
+        padding: 18px 0 0 0;
+        font-size: 12px;
+
+        @include md(){
+          padding: 25px 0 0 0;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+
+
+  .cta-section{
+    padding: 0 0 140px;
+
+    @include md(){
+      padding: 0 0 233px;
+    }
+
+    .container{
+      max-width: 1100px !important;
+      padding: 0 50px !important;
+    }
+
+
+    h3{
+      line-height: 100%;
+      span{
+        font-size: 19px !important;
+        font-weight: 400 !important;
+
+        @include md(){
+          font-size: 22px !important;
+        }
+      }
+    }
+
+    .cta-img{
+      padding: 50px 0 0 0;
+
+      img{
+        width: 225px;
+
+        @include md(){
+          width: 320px;
+        }
+      }
+    }
+
+    .cta-right{
+      padding: 32px 0 0 0;
+    }
+
+    .cta-bullet{
+      ul{
+        li{
+          background: url("/assets/enclomiphene/icon-check-circle-2.svg") no-repeat left 3px;
+          background-size: 16px 15px;
+          font-size: 13px;
+          padding: 0 0 0 29px;
+          margin: 20px 0 0 0;
+
+          @include md(){
+            font-size: 20px;
+            background-size: 24px 22px;
+            padding: 0 0 0 43px;
+            margin: 24px 0 0 0;
+          }
+        }
+      }
+    }
+  }

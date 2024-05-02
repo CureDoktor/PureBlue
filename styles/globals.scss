@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./input.scss";
 @import "./variables.scss";
+@import "./mixins";
 
 html,
 body {
@@ -25,4 +26,218 @@ a {
   border: none !important;
   outline: none !important; /* Remove outline on focus */
   box-shadow: none !important;
+}
+body.pure-blue{
+  font-family: $base-font;
+  color: $base-color;
+  font-size: $base-size;
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .row-flex,
+  .row-flex > div[class*='col-'],
+  .row-flex > div[class*='col']{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:0 0 auto;
+  }
+  .row-flex-wrap {
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    flex:0;
+  }
+  .row-flex > div[class*='col-'],
+  .container-flex > div[class*='col-'],
+  .row-flex > div[class*='col'],
+  .container-flex > div[class*='col']{
+    margin:-.0px;
+  }
+  .container-flex > div[class*='col-'] div,
+  .row-flex > div[class*='col-'] div,
+  .container-flex > div[class*='col'] div,
+  .row-flex > div[class*='col'] div{
+    width: auto;
+  }
+  .flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+    flex-flow: column nowrap;
+  }
+  .flex-grow {
+    display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+  }
+
+  .horizontal-center{
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .vertical-center{
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    top: 50%;
+  }
+
+
+  .flex-auto{
+    flex: 0 0 auto;
+  }
+
+  .container{
+    max-width: 1224px;
+  }
+
+  .fw-medium{
+    font-weight: 500;
+  }
+
+  .fw-semibold{
+    font-weight: 600;
+  }
+
+  h1,
+  h2,
+  h3{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+  }
+
+
+  h2{
+    font-size: 20px;
+    text-align: center;
+
+    @include md(){
+      font-size: 27px;
+    }
+
+    @include lg(){
+      font-size: 35px;
+    }
+  }
+
+  h3{
+    font-size: 27px;
+
+    @include md(){
+      font-size: 35px;
+    }
+
+    @include lg(){
+      font-size: 45px;
+    }
+
+    span{
+      color: $blue-color;
+    }
+  }
+
+
+  .verified-badge{
+    background: url("/assets/enclomiphene/verified-icon.svg") no-repeat left 5px;
+    padding: 0 0 0 19px;
+    margin: 11px 0 0 0;
+    font-size: 14px;
+  }
+
+  p{
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .backend-link{
+    padding: 17px 0 0 0;
+    font-size: 9px;
+
+    @include md(){
+      font-size: 14px;
+      padding: 25px 0 0 0;
+    }
+
+    a{
+      color: #707070;
+      text-decoration: underline;
+
+      &:hover{
+        color: $base-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .btn-row{
+    padding: 30px 0 0;
+
+    @include md(){
+      padding: 56px 0 0;
+    }
+
+    a{
+      width: 157px;
+      height: 33px;
+      font-size: 12px;
+      padding: 7px 0 8px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin: 10px 12px 0 0;
+
+      @include md(){
+        width: 231px;
+        height: 48px;
+        padding: 10px 0 12px;
+        margin: 10px 18px 0 0;
+        font-size: 18px;
+      }
+
+      &.black-btn{
+        background: $base-color;
+        color: $white-color;
+      }
+
+      &.blue-btn{
+        border: 1px solid $blue-color;
+        color: $blue-color;
+        margin-right: 0;
+      }
+
+      &:hover{
+        background: $blue-color;
+        color: $white-color;
+      }
+    }
+  }
+
+  .back-to-top{
+    width: 57px;
+    height: 41px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: url("/assets/enclomiphene/back-to-top.png") no-repeat left top;
+    cursor: pointer;
+    transition: background-color .3s,
+    opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }

@@ -1,0 +1,136 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins";
+
+.footer{
+  background: $base-color;
+  padding: 40px 0 40px;
+
+  @include md(){
+    padding: 28px 0 40px;
+  }
+
+  .footer-top{
+
+  }
+
+  .footer-top-left{
+    @include lg(){
+      max-width: 445px;
+    }
+  }
+
+  .footer-logo{
+    img{
+      width: 200px;
+
+      @include md(){
+        width: auto;
+      }
+    }
+  }
+
+  p{
+    font-size: 13px;
+    color: #9E9E9E;
+    padding: 28px 0 0 0;
+    max-width: 321px;
+    margin: 0;
+    line-height: 180%;
+  }
+
+  .footer-tel{
+    font-size: 13px;
+    color: $white-color;
+
+    @include lg(){
+      padding: 36px 0 0 0;
+      font-size: 13px;
+    }
+
+    span,
+    a{
+      color: $blue-color;
+      text-decoration: none;
+      font-size: 22px;
+    }
+  }
+
+  .card-box{
+    .title{
+      font-size: 13px;
+      color: $white-color;
+      padding: 24px 0 0 0;
+
+      @include md(){
+        padding: 36px 0 0 0;
+      }
+    }
+
+    .card-img{
+      padding: 5px 0 0 0;
+    }
+  }
+
+  .footer-top-right{
+    padding: 20px 0 0 0;
+    position: relative;
+
+    @include lg(){
+      max-width: 340px;
+      padding: 29px 0 0 0;
+    }
+
+    .title{
+      font-size: 16px;
+      color: $white-color;
+    }
+  }
+
+  .menu-col{
+    width: 100%;
+    padding: 17px 0 0 0;
+
+    @include lg(){
+      width: auto;
+    }
+  }
+
+  .footer-nav{
+    ul{
+      li{
+        padding: 5px 0 0 0;
+        a{
+          color: #9E9E9E;
+          font-size: 13px;
+          text-decoration: none;
+
+          &:hover{
+            color: $white-color;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .cerified-logo{
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+
+    @include lg(){
+      position: relative;
+      left: 0;
+      bottom: 0;
+      margin: -34px 0 0 0;
+    }
+  }
+
+  .footer-bottom{
+    border-top: 1px solid #4D4D4D;
+    padding: 23px 0 0 0;
+    margin: 30px 0 0 0;
+    color: #9E9E9E;
+    font-size: 13px;
+  }
+}

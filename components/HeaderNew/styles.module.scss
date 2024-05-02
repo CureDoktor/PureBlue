@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins";
+
+.header{
+  background: #F8F8F8;
+  padding: 20px 0;
+
+  @include md(){
+    padding: 22px 0;
+  }
+
+  .logo{
+    img{
+      height: 42px;
+
+      @include md(){
+        height: 55px;
+      }
+    }
+  }
+
+  .header-tel{
+    font-size: 12px;
+    line-height: 150%;
+
+    @include md(){
+      font-size: 18px;
+    }
+
+    a,
+    span{
+      font-size: 18px;
+      color: $blue-color;
+      text-decoration: none;
+
+      @include md(){
+        font-size: 25px;
+      }
+
+      &:hover{
+        color: $base-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
