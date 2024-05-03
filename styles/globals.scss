@@ -27,42 +27,42 @@ a {
   outline: none !important; /* Remove outline on focus */
   box-shadow: none !important;
 }
-body.pure-blue{
+body.pure-blue {
   font-family: $base-font;
   color: $base-color;
   font-size: $base-size;
 
-  ul{
+  ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
   .row-flex,
-  .row-flex > div[class*='col-'],
-  .row-flex > div[class*='col']{
+  .row-flex > div[class*="col-"],
+  .row-flex > div[class*="col"] {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    flex:0 0 auto;
+    flex: 0 0 auto;
   }
   .row-flex-wrap {
     -webkit-flex-flow: row wrap;
     align-content: flex-start;
-    flex:0;
+    flex: 0;
   }
-  .row-flex > div[class*='col-'],
-  .container-flex > div[class*='col-'],
-  .row-flex > div[class*='col'],
-  .container-flex > div[class*='col']{
-    margin:-.0px;
+  .row-flex > div[class*="col-"],
+  .container-flex > div[class*="col-"],
+  .row-flex > div[class*="col"],
+  .container-flex > div[class*="col"] {
+    margin: -0px;
   }
-  .container-flex > div[class*='col-'] div,
-  .row-flex > div[class*='col-'] div,
-  .container-flex > div[class*='col'] div,
-  .row-flex > div[class*='col'] div{
+  .container-flex > div[class*="col-"] div,
+  .row-flex > div[class*="col-"] div,
+  .container-flex > div[class*="col"] div,
+  .row-flex > div[class*="col"] div {
     width: auto;
   }
   .flex-col {
@@ -77,116 +77,113 @@ body.pure-blue{
     flex: 2;
   }
 
-  .horizontal-center{
+  .horizontal-center {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     left: 50%;
   }
 
-  .vertical-center{
+  .vertical-center {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     top: 50%;
   }
 
-
-  .flex-auto{
+  .flex-auto {
     flex: 0 0 auto;
   }
 
-  .container{
+  .container {
     max-width: 1224px;
   }
 
-  .fw-medium{
+  .fw-medium {
     font-weight: 500;
   }
 
-  .fw-semibold{
+  .fw-semibold {
     font-weight: 600;
   }
 
   h1,
   h2,
-  h3{
+  h3 {
     margin: 0;
     padding: 0;
     font-weight: 600;
   }
 
-
-  h2{
+  h2 {
     font-size: 20px;
     text-align: center;
 
-    @include md(){
+    @include md() {
       font-size: 27px;
     }
 
-    @include lg(){
+    @include lg() {
       font-size: 35px;
     }
   }
 
-  h3{
+  h3 {
     font-size: 27px;
 
-    @include md(){
+    @include md() {
       font-size: 35px;
     }
 
-    @include lg(){
+    @include lg() {
       font-size: 45px;
     }
 
-    span{
+    span {
       color: $blue-color;
     }
   }
 
-
-  .verified-badge{
+  .verified-badge {
     background: url("/assets/enclomiphene/verified-icon.svg") no-repeat left 5px;
     padding: 0 0 0 19px;
     margin: 11px 0 0 0;
     font-size: 14px;
   }
 
-  p{
+  p {
     font-weight: 500;
     margin: 0;
   }
 
-  .backend-link{
+  .backend-link {
     padding: 17px 0 0 0;
     font-size: 9px;
 
-    @include md(){
+    @include md() {
       font-size: 14px;
       padding: 25px 0 0 0;
     }
 
-    a{
+    a {
       color: #707070;
       text-decoration: underline;
 
-      &:hover{
+      &:hover {
         color: $base-color;
         text-decoration: none;
       }
     }
   }
 
-  .btn-row{
+  .btn-row {
     padding: 30px 0 0;
 
-    @include md(){
+    @include md() {
       padding: 56px 0 0;
     }
 
-    a{
+    a {
       width: 157px;
       height: 33px;
       font-size: 12px;
@@ -195,7 +192,7 @@ body.pure-blue{
       text-decoration: none;
       margin: 10px 12px 0 0;
 
-      @include md(){
+      @include md() {
         width: 231px;
         height: 48px;
         padding: 10px 0 12px;
@@ -203,25 +200,25 @@ body.pure-blue{
         font-size: 18px;
       }
 
-      &.black-btn{
+      &.black-btn {
         background: $base-color;
         color: $white-color;
       }
 
-      &.blue-btn{
+      &.blue-btn {
         border: 1px solid $blue-color;
         color: $blue-color;
         margin-right: 0;
       }
 
-      &:hover{
+      &:hover {
         background: $blue-color;
         color: $white-color;
       }
     }
   }
 
-  .back-to-top{
+  .back-to-top {
     width: 57px;
     height: 41px;
     position: fixed;
@@ -229,8 +226,7 @@ body.pure-blue{
     right: 0;
     background: url("/assets/enclomiphene/back-to-top.png") no-repeat left top;
     cursor: pointer;
-    transition: background-color .3s,
-    opacity .5s, visibility .5s;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1;
@@ -239,5 +235,86 @@ body.pure-blue{
       opacity: 1;
       visibility: visible;
     }
+  }
+}
+.step-box {
+  background: transparent linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 13px;
+  padding: 15px 16px 36px 16px;
+  position: relative;
+  .step-blue-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    font-size: 23px;
+    letter-spacing: -0.81px;
+    font-weight: 700;
+    color: #fff;
+    background: transparent linear-gradient(180deg, #68b3ff 0%, #0077f0 100%) 0%
+      0% no-repeat padding-box;
+    border-radius: 0px 0px 10px 10px;
+    padding: 18px 41px 18px 41px;
+    &:before {
+      content: "";
+      border-top: 8px solid transparent;
+      border-left: 10px solid #5385b8;
+      position: absolute;
+      top: 0;
+      right: -9px;
+    }
+    &:after {
+      content: "";
+      border-top: 8px solid transparent;
+      border-right: 10px solid #5385b8;
+      position: absolute;
+      top: 0;
+      left: -9px;
+    }
+  }
+}
+.padding-11 {
+  padding-top: 165px;
+  padding-bottom: 209px;
+}
+.font-35 {
+  font-size: 35px;
+}
+.font-17 {
+  font-size: 17px;
+}
+.pb-92 {
+  padding-bottom: 92px;
+}
+.ls2 {
+  letter-spacing: -0.7px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.padding-12 {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.color-grey {
+  color: #4a4a4a;
+}
+.grey-line {
+  background: #d8d8d8;
+  height: 1px;
+  margin-bottom: 22px;
+}
+.ls3 {
+  letter-spacing: -0.61px;
+}
+@media screen and (max-width: 550px) {
+  .padding-11 {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+  .ls2 {
+    font-size: 20px;
   }
 }

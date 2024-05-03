@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import CardCarousel from "../../components/landingPageV2/CardCarousel";
 import Image from "next/image";
 import { searchParamsUrl } from "../../components/searchParams";
+
 const index = () => {
   const router = useRouter();
   const getMyTreatment = () => {
