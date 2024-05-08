@@ -464,29 +464,75 @@
     z-index: 1;
   }
 
-  .revolutionary-section-top{
+  ul {
+    border: none;
     border-bottom: 1px solid #919191;
-    padding: 0 0 23px;
+    padding: 0 0 23px !important;
 
     @include md(){
-      padding: 0 0 40px;
+      padding: 0 0 40px !important;
     }
 
-    ul{
-      li{
-        font-size: 16px;
-        font-weight: 500;
-        padding: 0 8px;
+    li {
+      padding: 0 15px;
+      width: auto;
+      position: relative;
+      border: none;
+
+      @include md(){
+        padding: 0 40px;
+      }
+
+      &:after{
+        width: 2px;
+        height: 14px;
+        position: absolute;
+        right: -1px;
+        top: 6px;
+        background: $base-color;
+        content: "";
 
         @include md(){
-          font-size: 22px;
-          padding: 0 21px;
+          height: 20px;
+          top: 6px;
+          width: 3px;
         }
+      }
+
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+
+    button{
+      color: $base-color !important;
+      font-size: 16px  !important;
+      font-weight: 500  !important;
+      padding: 0  !important;
+      border: none  !important;
+      background: none !important;
+
+      @include md(){
+        font-size: 22px !important;
+      }
+
+      &:hover{
+        border: none;
+      }
+
+      &.active{
+        background: none;
+        border: none;
+        position: relative;
+        padding: 0;
+        color: $blue-color !important;
       }
     }
   }
 
-  .revolutionary-section-bottom{
+  .tab-data{
     padding: 35px 0 0;
 
     @include md(){

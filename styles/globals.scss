@@ -240,4 +240,318 @@ body.pure-blue{
       visibility: visible;
     }
   }
+
+  .revolutionary-section {
+    button {
+      &.active {
+        background: none;
+        border: none;
+        position: relative;
+        padding: 0;
+        color: $blue-color !important;
+      }
+    }
+  }
+
+  .no-js .owl-carousel, .owl-carousel.owl-loaded{display:block}
+
+  .owl-carousel{
+    -webkit-tap-highlight-color:transparent;
+    position:relative;
+    display:none;
+    width:100%;
+    z-index:1;
+
+    .owl-item{
+      -webkit-tap-highlight-color:transparent;
+      position:relative;
+      -webkit-backface-visibility:hidden;
+      -moz-backface-visibility:hidden;
+      -ms-backface-visibility:hidden;
+      -webkit-transform:translate3d(0, 0, 0);
+      -moz-transform:translate3d(0, 0, 0);
+      -ms-transform:translate3d(0, 0, 0);
+      min-height:1px;
+      float:left;
+      -webkit-backface-visibility:hidden;
+      -webkit-touch-callout:none;
+
+      img{
+        display:block;
+        width:100%;
+      }
+    }
+
+    .owl-stage{
+      position:relative;
+      -ms-touch-action:pan-Y;
+      -moz-backface-visibility:hidden;
+
+      &:after{
+        content:".";
+        display:block;
+        clear:both;
+        visibility:hidden;
+        line-height:0;
+        height:0;
+      }
+    }
+
+    .owl-stage-outer{
+      position:relative;
+      overflow:hidden;
+      -webkit-transform:translate3d(0, 0, 0);
+    }
+
+    .owl-wrapper{
+      -webkit-backface-visibility:hidden;
+      -moz-backface-visibility:hidden;
+      -ms-backface-visibility:hidden;
+      -webkit-transform:translate3d(0, 0, 0);
+      -moz-transform:translate3d(0, 0, 0);
+      -ms-transform:translate3d(0, 0, 0);
+    }
+
+    .owl-dots{
+      cursor:pointer;
+      cursor:hand;
+      -webkit-user-select:none;
+      -khtml-user-select:none;
+      -moz-user-select:none;
+      -ms-user-select:none;
+      user-select:none;
+      text-align:center;
+      -webkit-tap-highlight-color:transparent;
+      position:absolute;
+      bottom:-92px;
+      width:100%;
+
+      &.disabled{
+        display:none;
+      }
+
+      .owl-dot{
+        display:inline-block;
+        zoom:1;
+        *display:inline;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        span{
+          width:18px;
+          height:18px;
+          margin:5px 5px;
+          border-radius: 50%;
+          display:block;
+          -webkit-backface-visibility:visible;
+          transition:opacity 200ms ease;
+          background: #D2D2D2;
+        }
+
+        &:hover{
+          span{
+            opacity: 1;
+          }
+        }
+        &.active{
+          span{
+            opacity: 1;
+            background: $blue-color;
+          }
+        }
+      }
+    }
+
+    .owl-nav{
+      .owl-next,
+      .owl-prev{
+        cursor:pointer;
+        cursor:hand;
+        -webkit-user-select:none;
+        -khtml-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+        position:absolute;
+        bottom: -50px;
+        z-index:10000;
+        font-size:0px;
+        background: none;
+        border: none;
+        width: 26px;
+        height: 33px;
+        float: left;
+        z-index: 1;
+
+        bottom: -25px;
+        border: none;
+        border-radius: 0;
+
+        &.disabled{
+          display: none;
+        }
+      }
+
+      .owl-next{
+        //background: url("#{$images-path}/arrow-right.svg") no-repeat center;
+        left: 240px;
+      }
+      .owl-prev{
+        //background: url("#{$images-path}/arrow-left.svg") no-repeat center;
+        left: 80px;
+      }
+
+
+      &.disabled{
+        display:none;
+
+
+        + .owl-dots{
+          margin-top:30px;
+        }
+      }
+    }
+
+    &.owl-loading{
+      opacity:0;
+      display:block;
+    }
+
+    &.owl-hidden{
+      opacity:0;
+    }
+
+    &.owl-refresh{
+      .owl-item{
+        visibility:hidden
+      }
+    }
+
+    &.owl-drag{
+      .owl-item{
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none
+      }
+    }
+
+    &.owl-grab{
+      cursor:move;
+      cursor:grab;
+    }
+
+    &.owl-rtl{
+      direction:rtl;
+
+      .owl-item{
+        float:right;
+      }
+    }
+
+    .animated{
+      animation-duration:1s;
+      animation-fill-mode:both
+    }
+
+    .owl-animated-in{
+      z-index:0;
+    }
+
+    .owl-animated-out{
+      z-index:1;
+    }
+
+    .fadeOut{
+      animation-name:fadeOut;
+    }
+
+    .owl-height{
+      transition:height .5s ease-in-out;
+    }
+  }
+
+}
+.step-box {
+  background: transparent linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 13px;
+  padding: 15px 16px 36px 16px;
+  position: relative;
+  .step-blue-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    font-size: 23px;
+    letter-spacing: -0.81px;
+    font-weight: 700;
+    color: #fff;
+    background: transparent linear-gradient(180deg, #68b3ff 0%, #0077f0 100%) 0%
+      0% no-repeat padding-box;
+    border-radius: 0px 0px 10px 10px;
+    padding: 18px 41px 18px 41px;
+    &:before {
+      content: "";
+      border-top: 8px solid transparent;
+      border-left: 10px solid #5385b8;
+      position: absolute;
+      top: 0;
+      right: -9px;
+    }
+    &:after {
+      content: "";
+      border-top: 8px solid transparent;
+      border-right: 10px solid #5385b8;
+      position: absolute;
+      top: 0;
+      left: -9px;
+    }
+  }
+}
+.padding-11 {
+  padding-top: 165px;
+  padding-bottom: 209px;
+}
+.font-35 {
+  font-size: 35px;
+}
+.font-17 {
+  font-size: 17px;
+}
+.pb-92 {
+  padding-bottom: 92px;
+}
+.ls2 {
+  letter-spacing: -0.7px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.padding-12 {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.color-grey {
+  color: #4a4a4a;
+}
+.grey-line {
+  background: #d8d8d8;
+  height: 1px;
+  margin-bottom: 22px;
+}
+.ls3 {
+  letter-spacing: -0.61px;
+}
+@media screen and (max-width: 550px) {
+  .padding-11 {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+  .ls2 {
+    font-size: 20px;
+  }
 }

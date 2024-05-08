@@ -2,18 +2,14 @@ import Head from "next/head";
 import React, { useEffect, useState, useContext } from "react";
 import { Col, Container, Row, Image, Accordion, AccordionBody, AccordionHeader, AccordionItem } from "react-bootstrap";
 import styles from "./Enclomiphene.styles.module.scss";
-import Start from "../../components/Consultation/Start";
-import Button from "../../components/Button";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useConsultationContext } from "../../store/consultation-context";
-import QuestionParser from "../../components/Consultation/QuestionParser";
-import Form from "../../components/Form";
-import { useForm } from "react-hook-form";
-import Axios from "axios";
-import AuthContext from "../../store/auth-context";
-import { useRef } from "react";
-import { searchParamsUrl } from "../../components/searchParams";
+import dynamic from "next/dynamic";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+
+const TestimonialCarousel = dynamic(
+    () => import("../../components/TestimonialCarousel/index"),
+    { ssr: false }
+)
 
 const Enclomiphene = (props) => {
   return (
@@ -237,32 +233,64 @@ const Enclomiphene = (props) => {
           <div className={`${styles['enclomiphene-section']} w-100 d-block`}>
               <Container className={styles['container']}>
                   <div className={`${styles['enclomiphene-section-top']} w-100 d-block fw-medium`}>
-                      <ul className={`d-flex flex-wrap`}>
-                          <li>Meds</li>
-                          <li>|</li>
-                          <li>How it works</li>
-                          <li>|</li>
-                          <li>Pricing</li>
-                          <li>|</li>
-                          <li>Safety</li>
-                      </ul>
-                  </div>
-                  <div className={`${styles['enclomiphene-section-bottom']} w-100 d-block`}>
-                      <h3>Enclomiphene</h3>
-                      <div className={`${styles['image-row']} w-100 d-block`}>
-                          <Image
-                              src="/assets/enclomiphene/bottle-with-box.png"
-                              className={`d-block m-auto`}
-                          />
-                      </div>
-                      <div className={`${styles['btn-row']} btn-row w-100 d-flex flex-wrap`}>
-                          <a href="#" className={`${styles['black-btn']} black-btn fw-semibold text-center`}>Get
-                              Started</a>
-                          <a href="#" className={`${styles['blue-btn']} blue-btn fw-semibold text-center`}>Learn
-                              More</a>
-                      </div>
-                      <div className={`${styles['backend-link']} backend-link w-100 d-block fw-medium`}><a href="#">Important
-                          safety information</a></div>
+                      <Tabs defaultActiveKey="meds">
+                          <Tab eventKey="meds" title="Meds">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <h3>Enclomiphene</h3>
+                                  <div className={`${styles['image-row']} w-100 d-block`}><img
+                                      src="/assets/enclomiphene/bottle-with-box.png" alt=""
+                                      className={`d-block m-auto`}/></div>
+                                  <div className={`btn-row w-100 d-flex flex-wrap`}>
+                                      <a href="#" className={`black-btn fw-semibold text-center`}>Get Started</a>
+                                      <a href="#" className={`blue-btn fw-semibold text-center`}>Learn More</a>
+                                  </div>
+                                  <div className={`backend-link w-100 d-block fw-medium`}><a href="#">Important safety
+                                      information</a></div>
+                              </div>
+                          </Tab>
+                          <Tab eventKey="how-it-works" title="How it works">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <h3>Enclomiphene</h3>
+                                  <div className={`${styles['image-row']} w-100 d-block`}><img
+                                      src="/assets/enclomiphene/bottle-with-box.png" alt=""
+                                      className={`d-block m-auto`}/></div>
+                                  <div className={`btn-row w-100 d-flex flex-wrap`}>
+                                      <a href="#" className={`black-btn fw-semibold text-center`}>Get Started</a>
+                                      <a href="#" className={`blue-btn fw-semibold text-center`}>Learn More</a>
+                                  </div>
+                                  <div className={`backend-link w-100 d-block fw-medium`}><a href="#">Important safety
+                                      information</a></div>
+                              </div>
+                          </Tab>
+                          <Tab eventKey="pricing" title="Pricing">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <h3>Enclomiphene</h3>
+                                  <div className={`${styles['image-row']} w-100 d-block`}><img
+                                      src="/assets/enclomiphene/bottle-with-box.png" alt=""
+                                      className={`d-block m-auto`}/></div>
+                                  <div className={`btn-row w-100 d-flex flex-wrap`}>
+                                      <a href="#" className={`black-btn fw-semibold text-center`}>Get Started</a>
+                                      <a href="#" className={`blue-btn fw-semibold text-center`}>Learn More</a>
+                                  </div>
+                                  <div className={`backend-link w-100 d-block fw-medium`}><a href="#">Important safety
+                                      information</a></div>
+                              </div>
+                          </Tab>
+                          <Tab eventKey="safety" title="Safety">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <h3>Enclomiphene</h3>
+                                  <div className={`${styles['image-row']} w-100 d-block`}><img
+                                      src="/assets/enclomiphene/bottle-with-box.png" alt=""
+                                      className={`d-block m-auto`}/></div>
+                                  <div className={`btn-row w-100 d-flex flex-wrap`}>
+                                      <a href="#" className={`black-btn fw-semibold text-center`}>Get Started</a>
+                                      <a href="#" className={`blue-btn fw-semibold text-center`}>Learn More</a>
+                                  </div>
+                                  <div className={`backend-link w-100 d-block fw-medium`}><a href="#">Important safety
+                                      information</a></div>
+                              </div>
+                          </Tab>
+                      </Tabs>
                   </div>
               </Container>
           </div>
@@ -332,7 +360,7 @@ const Enclomiphene = (props) => {
               </Container>
           </div>
 
-          {/*add testimonial slider*/}
+          <TestimonialCarousel />
 
           <div className={`${styles['customer-section']} w-100 d-block`}>
               <Container className={styles['container']}>

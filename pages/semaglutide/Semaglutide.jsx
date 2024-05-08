@@ -2,6 +2,8 @@ import Head from "next/head";
 import React, { useEffect, useState, useContext } from "react";
 import { Col, Container, Row, Image, Accordion, AccordionBody, AccordionHeader, AccordionItem } from "react-bootstrap";
 import styles from "./Semaglutide.styles.module.scss";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 const Semaglutide = (props) => {
   return (
@@ -150,48 +152,125 @@ const Semaglutide = (props) => {
                       </div>
                   </Container>
               </div>
-              <div className={`${styles['revolutionary-section']} w-100 d-block`}>
+              <div className={`${styles['revolutionary-section']} revolutionary-section w-100 d-block`}>
                   <Container className={styles['container']}>
-                      <div className={`${styles['revolutionary-section-top']} w-100 d-block`}>
-                          <ul className={`w-100 d-flex flex-wrap justify-content-center`}>
-                              <li>Meds</li>
-                              <li>|</li>
-                              <li>How it works</li>
-                              <li>|</li>
-                              <li>Pricing</li>
-                              <li>|</li>
-                              <li>Safety</li>
-                          </ul>
-                      </div>
-                      <div className={`${styles['revolutionary-section-bottom']} w-100 d-block`}>
-                          <Row>
-                              <Col md={6}>
-                                  <h3>Revolutionary weight<br/>loss medications</h3>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                      exercitation ullamco laboris nisi ut aliquip ex ea tte6nh commodo consequat. Duis
-                                      aute irure dolor in eteyyyou reprehenderit in voluptate velit esse cillum dolore
-                                      euoip fugiat nulla pariatur. e dolor in reprehenderit in teteye pivoluptate velit
-                                      esse cillum dolore eu fugiat nulla jtu ry pariatur.</p>
-                              </Col>
-                              <Col md={6}>
-                                  <div className={`${styles['product-box']} w-100 d-block`}>
-                                      <div className={`${styles['title']} w-100 d-block fw-semibold`}>Semaglutide</div>
-                                      <div className={`${styles['product-img']} w-100 d-block`}>
-                                          <Image
-                                              src="/assets/semaglutide/product-img.png"
-                                              className={`img-fluid d-block m-auto`}
-                                          />
-                                      </div>
-                                      <div className={`${styles['btn-row']} btn-row w-100 d-flex flex-wrap`}>
-                                          <a href="#" className={`${styles['black-btn']} black-btn fw-semibold text-center`}>Get Started</a>
-                                          <a href="#" className={`${styles['blue-btn']} blue-btn fw-semibold text-center`}>Learn More</a>
-                                      </div>
-                                      <div className={`${styles['backend-link']} backend-link w-100 d-block`}><a href="#">Important safety information</a></div>
-                                  </div>
-                              </Col>
-                          </Row>
-                      </div>
+                      <Tabs defaultActiveKey="meds" className={`justify-content-center`}>
+                          <Tab eventKey="meds" title="Meds">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <Row>
+                                      <Col md={6}>
+                                          <h3>Revolutionary weight<br/>
+                                              loss medications</h3>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                              ea tte6nh commodo consequat. Duis aute irure dolor in eteyyyou
+                                              reprehenderit in voluptate velit esse cillum dolore euoip fugiat nulla
+                                              pariatur. e dolor in reprehenderit in teteye pivoluptate velit esse
+                                              cillum dolore eu fugiat nulla jtu ry pariatur.</p>
+                                      </Col>
+                                      <Col md={6}>
+                                          <div className={`${styles['product-box']} w-100 d-block`}>
+                                              <div className={`${styles['title']} w-100 d-block fw-semibold`}>Semaglutide</div>
+                                              <div className={`${styles['product-img']} w-100 d-block`}><img src="/assets/semaglutide/product-img.png" alt="" className={`img-fluid d-block m-auto`} /></div>
+                                              <div className="btn-row w-100 d-flex flex-wrap">
+                                                  <a href="#" className="black-btn fw-semibold text-center">Get Started</a>
+                                                  <a href="#" className="blue-btn fw-semibold text-center">Learn More</a>
+                                              </div>
+                                              <div className="backend-link w-100 d-block"><a href="#">Important safety information</a></div>
+                                          </div>
+                                      </Col>
+                                  </Row>
+                              </div>
+                          </Tab>
+
+                          <Tab eventKey="how-it-works" title="How it works">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <Row>
+                                      <Col md={6}>
+                                          <h3>Revolutionary weight<br/>
+                                              loss medications</h3>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                              ea tte6nh commodo consequat. Duis aute irure dolor in eteyyyou
+                                              reprehenderit in voluptate velit esse cillum dolore euoip fugiat nulla
+                                              pariatur. e dolor in reprehenderit in teteye pivoluptate velit esse
+                                              cillum dolore eu fugiat nulla jtu ry pariatur.</p>
+                                      </Col>
+                                      <Col md={6}>
+                                          <div className={`${styles['product-box']} w-100 d-block`}>
+                                              <div className={`${styles['title']} w-100 d-block fw-semibold`}>Semaglutide</div>
+                                              <div className={`${styles['product-img']} w-100 d-block`}><img src="/assets/semaglutide/product-img.png" alt="" className={`img-fluid d-block m-auto`} /></div>
+                                              <div className="btn-row w-100 d-flex flex-wrap">
+                                                  <a href="#" className="black-btn fw-semibold text-center">Get Started</a>
+                                                  <a href="#" className="blue-btn fw-semibold text-center">Learn More</a>
+                                              </div>
+                                              <div className="backend-link w-100 d-block"><a href="#">Important safety information</a></div>
+                                          </div>
+                                      </Col>
+                                  </Row>
+                              </div>
+                          </Tab>
+
+                          <Tab eventKey="pricing" title="Pricing">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <Row>
+                                      <Col md={6}>
+                                          <h3>Revolutionary weight<br/>
+                                              loss medications</h3>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                              ea tte6nh commodo consequat. Duis aute irure dolor in eteyyyou
+                                              reprehenderit in voluptate velit esse cillum dolore euoip fugiat nulla
+                                              pariatur. e dolor in reprehenderit in teteye pivoluptate velit esse
+                                              cillum dolore eu fugiat nulla jtu ry pariatur.</p>
+                                      </Col>
+                                      <Col md={6}>
+                                          <div className={`${styles['product-box']} w-100 d-block`}>
+                                              <div className={`${styles['title']} w-100 d-block fw-semibold`}>Semaglutide</div>
+                                              <div className={`${styles['product-img']} w-100 d-block`}><img src="/assets/semaglutide/product-img.png" alt="" className={`img-fluid d-block m-auto`} /></div>
+                                              <div className="btn-row w-100 d-flex flex-wrap">
+                                                  <a href="#" className="black-btn fw-semibold text-center">Get Started</a>
+                                                  <a href="#" className="blue-btn fw-semibold text-center">Learn More</a>
+                                              </div>
+                                              <div className="backend-link w-100 d-block"><a href="#">Important safety information</a></div>
+                                          </div>
+                                      </Col>
+                                  </Row>
+                              </div>
+                          </Tab>
+
+                          <Tab eventKey="safety" title="Safety">
+                              <div className={`${styles['tab-data']} w-100 d-block`}>
+                                  <Row>
+                                      <Col md={6}>
+                                          <h3>Revolutionary weight<br/>
+                                              loss medications</h3>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                              ea tte6nh commodo consequat. Duis aute irure dolor in eteyyyou
+                                              reprehenderit in voluptate velit esse cillum dolore euoip fugiat nulla
+                                              pariatur. e dolor in reprehenderit in teteye pivoluptate velit esse
+                                              cillum dolore eu fugiat nulla jtu ry pariatur.</p>
+                                      </Col>
+                                      <Col md={6}>
+                                          <div className={`${styles['product-box']} w-100 d-block`}>
+                                              <div className={`${styles['title']} w-100 d-block fw-semibold`}>Semaglutide</div>
+                                              <div className={`${styles['product-img']} w-100 d-block`}><img src="/assets/semaglutide/product-img.png" alt="" className={`img-fluid d-block m-auto`} /></div>
+                                              <div className="btn-row w-100 d-flex flex-wrap">
+                                                  <a href="#" className="black-btn fw-semibold text-center">Get Started</a>
+                                                  <a href="#" className="blue-btn fw-semibold text-center">Learn More</a>
+                                              </div>
+                                              <div className="backend-link w-100 d-block"><a href="#">Important safety information</a></div>
+                                          </div>
+                                      </Col>
+                                  </Row>
+                              </div>
+                          </Tab>
+                      </Tabs>
                   </Container>
               </div>
               <div className={`${styles['how-section']} w-100 d-block`}>
@@ -204,7 +283,8 @@ const Semaglutide = (props) => {
                                   completing your lab test. If you’d like to use your insurance, it can take an
                                   additional 2-3 weeks to try to get coverage. But don’t worry, we’ll handle all the
                                   paperwork.</p>
-                              <div className={`${styles['small-title']} w-100 d-block fw-semibold`}>Getting started <span>$99</span>
+                              <div className={`${styles['small-title']} w-100 d-block fw-semibold`}>Getting
+                                  started <span>$99</span>
                               </div>
                               <div className={`${styles['acco-data-row']} w-100 d-block`}>
                                   <Accordion defaultActiveKey="0">
