@@ -792,8 +792,8 @@ export default function Telehealth() {
             notify others who have copies of the information about the change.
             Note that even if we accept your request, we may not delete any
             information already documented in your medical record. You can make
-            such requests by contacting support@mdintegrations.com or directly
-            inside your MDI patient portal under the “privacy center” section.
+            such requests by contacting info@trypureblue.com or directly inside
+            your MDI patient portal under the “privacy center” section.
             <br />
             <br /> Accounting for Disclosures of Your PHI. In accordance with
             applicable law, you can ask for an accounting of certain disclosures
@@ -829,9 +829,8 @@ export default function Telehealth() {
           <h2>Additional Information</h2>
           <p>
             Complaints. If you believe your privacy rights have been violated,
-            you can file a complaint with the PureBlue privacy officer (Ana
-            Ramos) by contacting support@mdintegrations.com or calling
-            6297775752.
+            you can file a complaint with the PureBlue privacy officer by
+            contacting info@trypureblue.com or calling 1-888-534-8977.
             <br />
             <br /> You can also file a complaint with the Secretary of the U.S.
             Department of Health and Human Services in Washington D.C.

@@ -1045,9 +1045,8 @@ export default function Privacy() {
           <h2>Additional Information</h2>
           <p>
             Complaints. If you believe your privacy rights have been violated,
-            you can file a complaint with the PureBlue privacy officer (Ana
-            Ramos) by contacting support@mdintegrations.com or calling
-            6297775752.
+            you can file a complaint with the PureBlue privacy officer by
+            contacting info@trypureblue.com or calling 1-888-534-8977.
             <br />
             <br />
             You can also file a complaint with the Secretary of the U.S.

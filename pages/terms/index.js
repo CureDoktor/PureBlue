@@ -792,9 +792,8 @@ export default function Terms() {
           </p>
           <h2>28. Doctor and Pharmacy Information.</h2>
           <p>
-            Marc Serota, M.D; CEO MD Integrations; Board certified: Dermatology,
-            Allergy/Immunology, Pediatrics; 816-679-2211 (Cell);
-            mj.serota@gmail.com (Email).
+            MD Integrations;
+            <a href="https://mdintegrations.com">https://mdintegrations.com</a>
             <br />
             <br />
             Richelle Aldrich, EVP Ops; GenRx Pharmacy; 17250 N Hartford Dr Ste
@@ -812,137 +811,14 @@ export default function Terms() {
             <br /> 42 Broadway, 12th Floor
             <br /> New York, NY 10004
             <br />
-            <br /> MD Integrations
-            <br /> 9071 E Mississippi Ave, Unit 6C, Denver, CO 80247
-            <br /> Dr. Andrew Sakla Licenses
           </p>
           <br />
           <br />
           <div className={styles.grayField}>
             <h3>Our Clinicians</h3>
             <br />
-            <Row>
-              <Col md={6}>
-                <p>
-                  Alabama Medical License Number: DO.2327 Expires 12/31/2024
-                  <br />
-                  Arizona Medical License Number: 8699 Expires 12/31/2024
-                  <br />
-                  Arkansas Medical License Number: E-13340 Expires 10/31/2025
-                  <br />
-                  California Medical License Number: 18058 Expires 10/31/2025
-                  <br />
-                  Colorado Medical License Number: DR.0063114 Expires 04/30/2025
-                  <br />
-                  Connecticut Medical License Number: 66855 Expires 10/31/2024
-                  <br />
-                  Delaware Medical License Number: C2-0023917 Expires 03/31/2025
-                  <br />
-                  District of Columbia Medical License Number: DO034895 Expires
-                  12/31/2024
-                  <br />
-                  Florida Medical License Number: OS12612 Expires 03/31/2026
-                  <br />
-                  Georgia Medical License Number: 78730 Expires 10/31/2024
-                  <br />
-                  Hawaii Medical License Number: DOS-2214 Expires 06/30/2024
-                  <br />
-                  Idaho Medical License Number: O-1465 Expires 06/30/2024
-                  <br />
-                  Illinois Medical License Number: 36.148872 Expires 07/31/2026
-                  <br />
-                  Indiana Medical License Number: TH0004680 Expires 10/31/2025
-                  <br />
-                  Iowa Medical License Number: DO-05075 Expires 10/01/2024
-                  <br />
-                  Kansas Medical License Number: 05-43760 Expires 10/31/2024
-                  <br />
-                  Kentucky Medical License Number: 4809 Expires 02/28/2025
-                  <br />
-                  Louisiana Medical License Number: 324077 Expires 10/31/2024
-                  <br />
-                  Maine Medical License Number: DO3113 Expires 10/31/2024
-                  <br />
-                  Maryland Medical License Number: H0088559 Expires 09/30/2025
-                  <br />
-                  Massachusetts Medical License Number: 285750 Expires
-                  10/20/2024
-                  <br />
-                  Michigan Medical License Number: 5101025238 Expires 10/01/2025
-                  <br />
-                  Minnesota Medical License Number: TM 2634 Expires 12/31/2024
-                  <br />
-                  Mississippi Medical License Number: 29513 Expires 06/30/2024
-                  <br />
-                </p>
-              </Col>
-              <Col md={6}>
-                <p>
-                  Missouri Medical License Number: 2020022922 Expires 01/31/2025
-                  <br />
-                  Montana Medical License Number: MED-PHY-LIC-100712 Expires
-                  01/31/2025
-                  <br />
-                  Nebraska Medical License Number: 2238 Expires 10/01/2024
-                  <br />
-                  Nevada Medical License Number: DO3035 Expires 12/31/2024
-                  <br />
-                  New Hampshire Medical License Number: 22026 Expires 06/30/2025
-                  <br />
-                  New Jersey Medical License Number: 25MB10941200 Expires
-                  06/30/2025
-                  <br />
-                  New Mexico Medical License Number: TM2022-0975 Expires
-                  07/01/2025
-                  <br />
-                  New York Medical License Number: 297988 Expires 09/30/2024
-                  <br />
-                  North Carolina Medical License Number: 2019-02671 Expires
-                  10/20/2024
-                  <br />
-                  North Dakota Medical License Number: 17208 Expires 10/20/2025
-                  <br />
-                  Ohio Medical License Number: 34.014602 Expires 06/11/2024
-                  <br />
-                  Oklahoma Medical License Number: 7062 Expires 06/30/2024
-                  <br />
-                  Oregon Medical License Number: DO198547 Expires 12/31/2025
-                  <br />
-                  Pennsylvania Medical License Number: OS020431 Expires
-                  10/31/2024
-                  <br />
-                  Rhode Island Medical License Number: DO01057 Expires
-                  06/30/2024
-                  <br />
-                  South Carolina Medical License Number: DO.82979 Expires
-                  06/30/2025
-                  <br />
-                  South Dakota Medical License Number: 12999 Expires 03/01/2025
-                  <br />
-                  Tennessee Medical License Number: 3331 Expires 10/31/2024
-                  <br />
-                  Texas Medical License Number: S1698 Expires 05/31/2024
-                  <br />
-                  Utah Medical License Number: 10385749-1204 Expires 05/31/2024
-                  <br />
-                  Vermont Medical License Number: 32.0133963 Expires 09/30/2024
-                  <br />
-                  Virginia Medical License Number: 102206300 Expires 05/31/2024
-                  <br />
-                  Washington Medical License Number: OP61055072 Expires
-                  10/31/2024
-                  <br />
-                  West Virginia Medical License Number: 3750 Expires 06/30/2025
-                  <br />
-                  Wisconsin Medical License Number: 72103-21 Expires 10/31/2025
-                  <br />
-                  Wyoming Medical License Number: 14047A Expires 06/30/2024
-                  <br />
-                  <br />
-                </p>
-              </Col>
-            </Row>
-            <br />
+            <br /> MD Integrations
+            <br /> 9071 E Mississippi Ave, Unit 6C, Denver, CO 80247
             <br />
             <p>
               If you are from any of the following states you will be required
