@@ -2,18 +2,12 @@ import Head from "next/head";
 import React, { useEffect, useState, useContext } from "react";
 import { Col, Container, Row, Image, Accordion, AccordionBody, AccordionHeader, AccordionItem } from "react-bootstrap";
 import styles from "./Enclomiphene.styles.module.scss";
-import Start from "../../components/Consultation/Start";
-import Button from "../../components/Button";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useConsultationContext } from "../../store/consultation-context";
-import QuestionParser from "../../components/Consultation/QuestionParser";
-import Form from "../../components/Form";
-import { useForm } from "react-hook-form";
-import Axios from "axios";
-import AuthContext from "../../store/auth-context";
-import { useRef } from "react";
-import { searchParamsUrl } from "../../components/searchParams";
+import dynamic from "next/dynamic";
+
+const TestimonialCarousel = dynamic(
+    () => import("../../components/TestimonialCarousel/TestimonialCarousel"),
+    { ssr: false }
+)
 
 const Enclomiphene = (props) => {
   return (
@@ -332,7 +326,7 @@ const Enclomiphene = (props) => {
               </Container>
           </div>
 
-          {/*add testimonial slider*/}
+          <TestimonialCarousel />
 
           <div className={`${styles['customer-section']} w-100 d-block`}>
               <Container className={styles['container']}>
