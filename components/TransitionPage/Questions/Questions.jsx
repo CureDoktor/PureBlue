@@ -57,7 +57,6 @@ const Questions = (props) => {
       setShowFill(false);
     }
   };
-
   const submitForm = (values) => {
     try {
       let updatedForm = { ...form }; // Create a copy of the current form state
