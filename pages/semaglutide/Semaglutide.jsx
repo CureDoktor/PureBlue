@@ -2,6 +2,16 @@ import Head from "next/head";
 import React, { useEffect, useState, useContext } from "react";
 import { Col, Container, Row, Image, Accordion, AccordionBody, AccordionHeader, AccordionItem } from "react-bootstrap";
 import styles from "./Semaglutide.styles.module.scss";
+import dynamic from "next/dynamic";
+import localFont from 'next/font/local';
+
+const sliderFont = localFont({ src: '../../public/fonts/SteelfishRg-Regular.woff' });
+
+const RangeSliderComponent = dynamic(
+    () => import("../../components/RangeSlider/RangeSlider"),
+    { ssr: false }
+)
+
 
 const Semaglutide = (props) => {
   return (
@@ -117,7 +127,7 @@ const Semaglutide = (props) => {
                   <Container className={styles['container']}>
                       <div className={`d-flex flex-wrap justify-content-between align-items-end`}>
                           <div className={`${styles['calc-left']} w-100 d-block`}>
-                              <div className={`${styles['calc-left-top']} w-100 d-block text-center`}>20%</div>
+                              <div className={`${styles['calc-left-top']} ${sliderFont.className} w-100 d-block text-center`}>20%</div>
                               <div className={`${styles['calc-left-bottom']} w-100 d-block`}>
                                   <div className={`${styles['image-row']}`}>
                                       <Image
@@ -128,25 +138,7 @@ const Semaglutide = (props) => {
                                   <div className={`${styles['left-text']} w-100 d-block text-center`}>On average, people on Semaglutide lose 15-20% of their weight in a year*.</div>
                               </div>
                           </div>
-                          <div className={`${styles['calc-right']} w-100 d-block`}>
-                              <div className={`${styles['calc-right-top']} w-100 d-block`}>
-                                  <div className={`${styles['title-row-1']} w-100 d-block fw-medium`}>Select your<br/>Current weight
-                                      <div className={`fw-bold bold-text ${styles['bold-text']}`}><output>180</output> <span>lbs</span></div>
-                                  </div>
-                                  <div className={`${styles['range-slider-row']} w-100 d-block`}>
-                                      <input type="range" name="weightSlider" min="100" max="300" value="180" onInput="showVal(this.value)" id="weightField" />
-                                  </div>
-                                  <div className={`${styles['title-row-1']} w-100 d-block fw-medium`}>Weight you<br/>could lose (lbs):
-                                      <div className={`fw-bold ${styles['bold-text']} bold-text`} id="amount">28 lbs</div>
-                                  </div>
-                              </div>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                  exercitation ullamco laboris nisi ut aliquip ex ea tte6nh commodo consequat. Duis aute
-                                  irure dolor in eteyyyou reprehenderit in voluptate velit esse cillum dolore euoip
-                                  fugiat nulla pariatur. e dolor in reprehenderit in teteye pivoluptate velit esse
-                                  cillum dolore eu fugiat nulla jtu ry pariatur.</p>
-                          </div>
+                          <RangeSliderComponent />
                       </div>
                   </Container>
               </div>
