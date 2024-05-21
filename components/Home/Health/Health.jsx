@@ -77,14 +77,18 @@ const Health = ({ handleShow }) => {
             <Button
               variant="dark"
               size="sm"
-              onClick={handleShow}
+              onClick={() => {
+                router.push("transition-page");
+              }}
               className={styles.btn}
             >
               Find my treatment
             </Button>
             <Button
               variant="outline-dark"
-              onClick={handleShow}
+              onClick={() => {
+                router.push("transition-page");
+              }}
               size="sm"
               className={styles.btn}
             >

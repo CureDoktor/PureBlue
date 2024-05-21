@@ -25,7 +25,11 @@ const HomePage = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    () => {
+      router.push("transition-page");
+    };
+  };
 
   const [content, setContent] = useState(0);
   const chooseContent = () => {
@@ -51,7 +55,11 @@ const HomePage = (props) => {
             Your free online visit starts here. Tell us what we can help you
             with.
           </p>
-          <div onClick={handleShow}>
+          <div
+            onClick={() => {
+              router.push("transition-page");
+            }}
+          >
             <SearchButton className="bg-primary" span="Find my treatment" />
           </div>
         </div>
@@ -89,7 +97,11 @@ const HomePage = (props) => {
             <span>PureBlue </span>
             makes men’s health simpler, more convenient, and affordable.
           </h1>
-          <div onClick={handleShow}>
+          <div
+            onClick={() => {
+              router.push("transition-page");
+            }}
+          >
             <SearchButton
               className="bg-dark"
               span="Explore treatments"

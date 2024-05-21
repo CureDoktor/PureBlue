@@ -59,7 +59,7 @@ const CardSection = ({ handleShow }) => {
             key={index}
             onClick={() => {
               if (!card.soon) {
-                handleShow();
+                router.push("transition-page");
               }
             }}
             className={styles.slide}

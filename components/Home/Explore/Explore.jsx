@@ -1,7 +1,7 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 import SearchButton from "../SearchBtn";
-
+import { useRouter } from "next/router";
 import styles from "./explore.styles.module.scss";
 
 const cardData = [
@@ -28,6 +28,7 @@ const cardData = [
 ];
 
 const Explore = ({ handleShow }) => {
+  const router = useRouter();
   return (
     <Container className={styles.mainContainer}>
       <Row className="justify-content-md-center">
@@ -36,7 +37,11 @@ const Explore = ({ handleShow }) => {
             <span className="text-primary">PureBlue </span>
             makes men's health simpler, more convenient, and affordable.
           </h1>
-          <div onClick={handleShow}>
+          <div
+            onClick={() => {
+              router.push("transition-page");
+            }}
+          >
             <SearchButton
               className="bg-dark"
               span="Explore treatments"

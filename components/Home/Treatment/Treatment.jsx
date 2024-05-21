@@ -86,7 +86,7 @@ const Treatment = ({ handleShow }) => {
                   <Button
                     onClick={() => {
                       if (card.proceed) {
-                        handleShow();
+                        router.push("transition-page");
                       }
                     }}
                     className={`bg-primary ${styles.cardBtn}`}

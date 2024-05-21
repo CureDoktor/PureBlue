@@ -16,7 +16,7 @@ const products = [
     rating: "/assets/homepage/popular/stars.png",
     imageUrl: "/assets/Generic Viagra.png",
     comingSoon: false,
-    redirectUrl: "/sildenafil-s2",
+    redirectUrl: "/transition-page",
   },
   {
     name: "Generic Cialis",
@@ -24,7 +24,7 @@ const products = [
     rating: "/assets/homepage/popular/stars.png",
     imageUrl: "/assets/Generic Cialis.png",
     comingSoon: false,
-    redirectUrl: "/tadalafil-s2",
+    redirectUrl: "/transition-page",
   },
   {
     name: "Alpha Protocol",
@@ -91,7 +91,9 @@ const Popular = ({ handleShow }) => {
                   <Button
                     size="sm"
                     disabled={product.comingSoon}
-                    onClick={handleShow}
+                    onClick={() => {
+                      router.push("transition-page");
+                    }}
                     className={`bg-primary ${styles.btn}`}
                     style={{ fontSize: product.comingSoon ? "10px" : "13px" }}
                   >
