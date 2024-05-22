@@ -160,7 +160,7 @@ export default function Tadalafil() {
                 </h2>
                 <Image
                   className={styles.Image}
-                  src="/images/tadalafil-10.png"
+                  src="/images/ed-consultation/sachet1000/tadalafil-10mg.png"
                   height={306}
                   width={298}
                 />

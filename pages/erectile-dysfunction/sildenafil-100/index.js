@@ -160,7 +160,7 @@ export default function Sildenafil() {
                 </h2>
                 <Image
                   className={styles.Image}
-                  src="/images/sildenafil-100.png"
+                  src="/images/erectile-dysfunction/sachet1000/sildenafil-100mg.png"
                   height={306}
                   width={298}
                 />
