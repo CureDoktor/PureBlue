@@ -790,11 +790,8 @@ export default function Terms() {
             herefrom) to the extent necessary to permit the remaining provisions
             to remain in full force and effect.
           </p>
-          <h2>28. Doctor and Pharmacy Information.</h2>
+          <h2>28. Pharmacy Information.</h2>
           <p>
-            MD Integrations;
-            <a href="https://mdintegrations.com">https://mdintegrations.com</a>
-            <br />
             <br />
             Richelle Aldrich, EVP Ops; GenRx Pharmacy; 17250 N Hartford Dr Ste
             115, Scottsdale, AZ 85255; RAldrich@genrx2u.com (email);
