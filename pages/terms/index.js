@@ -812,10 +812,6 @@ export default function Terms() {
           <br />
           <br />
           <div className={styles.grayField}>
-            <h3>Our Clinicians</h3>
-            <br />
-            <br /> MD Integrations
-            <br /> 9071 E Mississippi Ave, Unit 6C, Denver, CO 80247
             <br />
             <p>
               If you are from any of the following states you will be required
