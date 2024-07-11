@@ -18,32 +18,33 @@ export default function UploadVerification() {
   const authCtx = useContext(AuthContext);
 
   const handleUploadFiles = async (event) => {
-    for (let i = 0; i < event.target.files.length; i++) {
-      const formData = new FormData();
+    // for (let i = 0; i < event.target.files.length; i++) {
+    //   const formData = new FormData();
 
-      if (event.target.files && event.target.files[i]) {
-        const ih = event.target.files[i];
-        formData.append("file", ih);
-        formData.append("token", authCtx.Token());
-      }
+    //   if (event.target.files && event.target.files[i]) {
+    //     const ih = event.target.files[i];
+    //     formData.append("file", ih);
+    //     formData.append("token", authCtx.Token());
+    //   }
 
-      const route = "/api/case/upload-file";
-      try {
-        const rese = await Axios.post(route, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-          .then((res) => {
-            console.log(res);
-          })
-          .catch((error) => {
-            alert(error);
-          });
-      } catch (err) {
-        alert("Something went wrong!" + err);
-      }
-    }
+    //   const route = "/api/case/upload-file";
+    //   try {
+    //     const rese = await Axios.post(route, formData, {
+    //       headers: {
+    //         "Content-Type": "multipart/form-data",
+    //       },
+    //     })
+    //       .then((res) => {
+    //         console.log(res);
+    //       })
+    //       .catch((error) => {
+    //         alert(error);
+    //       });
+    //   } catch (err) {
+    //     alert("Something went wrong!" + err);
+    //   }
+    // }
+    setVerified(true);
   };
 
   return (
@@ -60,10 +61,12 @@ export default function UploadVerification() {
             <Form onSubmit={handleUploadFiles}>
               <input type="file" multiple />
 
-              <Button className="mx-auto">Upload Files</Button>
+              <Button type="submit" className="mx-auto">
+                Upload Files
+              </Button>
             </Form>
           ) : (
-            <div></div>
+            <div>Uploaded!</div>
           )}
         </Container>
       </main>
