@@ -7,7 +7,9 @@ import Axios from "axios";
 import AuthContext from "../../../../store/auth-context";
 import { useSearchParams } from "next/navigation";
 import { Spinner } from "react-bootstrap";
+import { useRouter } from "next/navigation";
 import Modal from "react-bootstrap/Modal";
+import { searchParamsUrl } from "../../../searchParams";
 import {
   Col,
   Container,
@@ -32,6 +34,7 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
   const handleShow = () => setShowOrderModal(true);
   const handleClose1 = () => setShowOrderModal1(false);
   const handleShow1 = () => setShowOrderModal1(true);
+  const router = useRouter();
   const [chosingProduct, setChosingProduct] = useState([
     {
       id: 37,
@@ -344,7 +347,8 @@ const OrderFlowCardDetails = ({ onNext, props }) => {
             klaviyo.push(["track", "Completed Order Form", chosenMed]);
           } catch {}
           handleClose();
-          onNext();
+          // onNext();
+          router.push("/account" + searchParamsUrl());
         })
         .catch((error) => {
           handleClose();

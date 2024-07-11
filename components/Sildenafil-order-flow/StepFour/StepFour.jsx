@@ -8,6 +8,15 @@ const StepFour = ({ onNext }) => {
     setProduct({ viagra: localStorage.getItem("viagra") });
   }, []);
 
+  const onContinue = () => {
+    if (localStorage.getItem("times") == 30) {
+      onNext();
+      onNext();
+    } else {
+      onNext();
+    }
+  };
+
   return (
     <div className={styles.mainContainer}>
       <h6>
@@ -51,7 +60,7 @@ const StepFour = ({ onNext }) => {
         erectile dysfunction (ED) medications
       </p>
       <div className={styles.buttonContainer}>
-        <button className={styles.takePhoto} onClick={onNext}>
+        <button className={styles.takePhoto} onClick={onContinue}>
           Continue
         </button>
       </div>
